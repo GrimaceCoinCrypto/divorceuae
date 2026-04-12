@@ -1,0 +1,447 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Lawyer Dubai — Best Family Lawyers for Expats (2025)';
+const description =
+  'Find the best divorce lawyer in Dubai for expats and UAE residents. Qualified family lawyers covering all Personal Status Court proceedings. Free consultation. English & Arabic.';
+
+const canonical = 'https://divorceuae.ae/en/divorce-lawyer-dubai';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/divorce-lawyer-dubai',
+  ar: 'https://divorceuae.ae/ar/محامي-طلاق-دبي',
+};
+
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://divorceuae.ae/en/' },
+  { name: 'Divorce Lawyer Dubai' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a divorce lawyer cost in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce lawyer fees in Dubai typically range from AED 5,000 to AED 25,000 for an uncontested divorce, and AED 20,000 to AED 80,000+ for contested cases. Most lawyers offer a free initial consultation. Court filing fees are separate and range from AED 600 to AED 2,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a lawyer to get divorced in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "You are not legally required to have a lawyer for divorce proceedings in Dubai's Personal Status Court. However, a qualified divorce lawyer significantly improves outcomes, especially for contested cases involving child custody, alimony, or asset division. For expats unfamiliar with UAE law, legal representation is strongly recommended.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can expats hire a divorce lawyer in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Expats can and should hire a UAE-licensed family lawyer for divorce proceedings. Many Dubai law firms specialise in expat divorce cases, including non-Muslim divorces under the 2022 Personal Status Law. Look for a lawyer licensed by the UAE Ministry of Justice.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does a divorce lawyer in Dubai do?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A divorce lawyer in Dubai prepares and files your case at the Personal Status Court, represents you at all hearings, negotiates child custody and visitation arrangements, argues for alimony and financial settlements, and ensures the final decree is correctly executed and attested.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I find the best divorce lawyer in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Look for a lawyer who is: (1) licensed by the UAE Ministry of Justice, (2) specialises in family and personal status law, (3) has experience with your specific situation — Muslim or non-Muslim, expat nationality, contested or uncontested. Request a free initial consultation to assess fit before committing.",
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'How much does a divorce lawyer cost in Dubai?',
+    answer:
+      'Divorce lawyer fees in Dubai typically range from <strong>AED 5,000 to AED 25,000</strong> for an uncontested divorce, and AED 20,000–80,000+ for contested cases. Most lawyers offer a free initial consultation. Court filing fees are separate: AED 600–2,000.',
+  },
+  {
+    question: 'Do I need a lawyer to get divorced in Dubai?',
+    answer:
+      "You are not legally required to have a lawyer for Personal Status Court proceedings. However, a qualified divorce lawyer significantly improves outcomes — especially for contested cases involving child custody, alimony, or asset division. For expats unfamiliar with UAE law, legal representation is strongly recommended.",
+  },
+  {
+    question: 'Can expats hire a divorce lawyer in Dubai?',
+    answer:
+      'Yes. Expats can hire any UAE-licensed family lawyer. Many Dubai firms specialise in expat divorce cases, including non-Muslim divorces under the 2022 Personal Status Law. Verify the lawyer is licensed by the UAE Ministry of Justice.',
+  },
+  {
+    question: 'What does a divorce lawyer in Dubai do?',
+    answer:
+      'A divorce lawyer prepares and files your case at the Personal Status Court, represents you at all hearings, negotiates child custody and visitation, argues for alimony and financial settlements, and ensures the final decree is correctly executed and attested.',
+  },
+  {
+    question: 'How do I find the best divorce lawyer in Dubai?',
+    answer:
+      "Look for a lawyer who is: (1) licensed by the UAE Ministry of Justice, (2) specialises in family and personal status law, (3) has experience with your situation — Muslim or non-Muslim, expat nationality, contested or uncontested. Use our free consultation form to get matched today.",
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={faqSchema}
+>
+  <main>
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <Breadcrumb items={breadcrumbItems} lang="en" />
+          <h1 class="hero__h1">
+            Divorce Lawyer Dubai —<br />
+            Expert Family Law Representation
+          </h1>
+          <p class="hero__sub">
+            Whether you are filing for divorce, defending a petition, or navigating child custody —
+            our network of UAE Ministry of Justice-licensed family lawyers in Dubai is ready to help.
+            Expat specialists. Muslim and non-Muslim cases. Free consultation.
+          </p>
+          <ul class="hero__trust">
+            <li>✓ Licensed by UAE Ministry of Justice</li>
+            <li>✓ Expat divorce specialists</li>
+            <li>✓ English &amp; Arabic representation</li>
+            <li>✓ Free first consultation</li>
+          </ul>
+        </div>
+        <div class="hero__form">
+          <LeadForm lang="en" variant="hero" heading="Speak to a Divorce Lawyer Today" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <!-- ===== WHY YOU NEED A LAWYER ===== -->
+      <section class="section" aria-labelledby="why-heading">
+        <h2 id="why-heading">Can You Divorce in Dubai Without a Lawyer?</h2>
+        <p>
+          Technically, yes — UAE law does not mandate legal representation at the Personal Status Court.
+          In practice, attempting to navigate divorce proceedings without a lawyer is a serious risk,
+          particularly for expats who are unfamiliar with UAE personal status law.
+        </p>
+        <p>
+          A qualified divorce lawyer in Dubai ensures your rights are protected at every stage:
+          correct filing, reconciliation session strategy, custody negotiation, and enforcement of the final decree.
+          Mistakes made during proceedings — missed deadlines, incorrect filings, poorly worded agreements —
+          are extremely difficult to reverse after the court issues its ruling.
+        </p>
+
+        <div class="callout">
+          <strong>Key fact:</strong> In contested divorce cases, parties represented by a lawyer consistently
+          achieve better outcomes on child custody and financial settlements than those who represent themselves.
+        </div>
+
+        <h3>When a Divorce Lawyer Is Essential</h3>
+        <ul class="list">
+          <li>You and your spouse disagree on any terms (custody, alimony, assets)</li>
+          <li>Children are involved and custody is disputed</li>
+          <li>You hold significant assets, property, or business interests in the UAE</li>
+          <li>Your spouse has already filed against you</li>
+          <li>You are an expat and unfamiliar with UAE personal status law</li>
+          <li>Your divorce may need to be recognised in another country</li>
+        </ul>
+      </section>
+
+      <!-- ===== WHAT A LAWYER DOES ===== -->
+      <section class="section" aria-labelledby="services-heading">
+        <h2 id="services-heading">What a Divorce Lawyer in Dubai Does for You</h2>
+        <p>
+          Divorce law in the UAE is handled under Federal Personal Status Law (Law No. 28 of 2005),
+          with significant amendments in 2022 for non-Muslim expats. A specialist divorce lawyer manages:
+        </p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>Case Filing &amp; Court Preparation</h3>
+            <p>Drafting and submitting the divorce petition, gathering required documents, and ensuring correct court jurisdiction based on your emirate of residence.</p>
+          </div>
+          <div class="service-card">
+            <h3>Reconciliation Session Strategy</h3>
+            <p>UAE courts mandate a reconciliation attempt before proceeding. Your lawyer prepares you for this session and ensures it does not disadvantage your case.</p>
+          </div>
+          <div class="service-card">
+            <h3>Child Custody &amp; Visitation</h3>
+            <p>Arguing custody arrangements in your child's best interest, negotiating visitation schedules, and securing travel permission provisions.</p>
+          </div>
+          <div class="service-card">
+            <h3>Alimony &amp; Financial Settlement</h3>
+            <p>Calculating and claiming nafaqa (maintenance), mahr (dowry) return, housing entitlements, and asset division under applicable law.</p>
+          </div>
+          <div class="service-card">
+            <h3>Decree Attestation</h3>
+            <p>After the court issues the divorce decree, your lawyer arranges official attestation and legalisation for recognition in your home country.</p>
+          </div>
+          <div class="service-card">
+            <h3>Visa Status Guidance</h3>
+            <p>Advising on your 30-day window to change visa status after divorce, and options including employment visa, investor visa, or divorce/custody visa.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== HOW TO CHOOSE ===== -->
+      <section class="section" aria-labelledby="choose-heading">
+        <h2 id="choose-heading">How to Choose the Best Divorce Lawyer in Dubai</h2>
+        <p>
+          Not all family lawyers in Dubai have equal experience with expat cases or contested proceedings.
+          Use these criteria when selecting legal representation:
+        </p>
+
+        <h3>Must-Have Qualifications</h3>
+        <ul class="list">
+          <li><strong>Licensed by the UAE Ministry of Justice</strong> — verify on the Ministry's official lawyer register</li>
+          <li><strong>Specialises in family / personal status law</strong> — not a general commercial lawyer</li>
+          <li><strong>Experience with your type of case</strong> — Muslim vs non-Muslim, expat nationality, contested vs uncontested</li>
+          <li><strong>Speaks your language</strong> — critical for complex legal matters</li>
+        </ul>
+
+        <h3>Questions to Ask in Your First Consultation</h3>
+        <ol class="ordered-list">
+          <li>How many divorce cases do you handle per year at the Personal Status Court?</li>
+          <li>Have you handled cases for my nationality / religion before?</li>
+          <li>What is your fee structure — fixed or hourly?</li>
+          <li>What is a realistic timeline and expected outcome for my situation?</li>
+          <li>Will you personally handle my case or delegate to a junior associate?</li>
+        </ol>
+
+        <div class="cta-inline">
+          <p>We match you with pre-vetted divorce lawyers in Dubai.</p>
+          <a href="#contact" class="btn btn--primary">Request Free Matching</a>
+        </div>
+      </section>
+
+      <!-- ===== COST ===== -->
+      <section class="section" aria-labelledby="cost-heading">
+        <h2 id="cost-heading">How Much Does a Divorce Lawyer Cost in Dubai?</h2>
+        <p>
+          Legal fees in Dubai vary significantly based on case complexity, the lawyer's seniority,
+          and whether the divorce is contested. Below is a realistic cost breakdown:
+        </p>
+
+        <div class="cost-table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Case Type</th>
+                <th>Lawyer Fees (AED)</th>
+                <th>Court Fees (AED)</th>
+                <th>Total Estimate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Uncontested (mutual agreement)</td>
+                <td>5,000 – 15,000</td>
+                <td>600 – 1,200</td>
+                <td>~6,000 – 16,000</td>
+              </tr>
+              <tr>
+                <td>Uncontested with children</td>
+                <td>8,000 – 20,000</td>
+                <td>800 – 1,500</td>
+                <td>~9,000 – 22,000</td>
+              </tr>
+              <tr>
+                <td>Contested (disputed terms)</td>
+                <td>20,000 – 50,000</td>
+                <td>1,000 – 2,000</td>
+                <td>~21,000 – 52,000</td>
+              </tr>
+              <tr>
+                <td>Highly contested (long trial)</td>
+                <td>50,000 – 100,000+</td>
+                <td>2,000+</td>
+                <td>52,000 – 100,000+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Figures are estimates. Fees vary by firm and case complexity. All consultations through this site begin with a free initial session.</p>
+      </section>
+
+      <!-- ===== EXPAT-SPECIFIC ===== -->
+      <section class="section" aria-labelledby="expat-heading">
+        <h2 id="expat-heading">Divorce Lawyers for Expats in Dubai</h2>
+        <p>
+          Dubai's population is over 88% expat, and expat divorce cases have specific legal complexities
+          that general family lawyers may not handle well. Key expat-specific issues include:
+        </p>
+
+        <h3>Non-Muslim Expats — 2022 Law</h3>
+        <p>
+          Under <strong>Federal Law No. 41 of 2022</strong>, non-Muslim expats can now divorce under civil
+          law principles rather than Islamic personal status law. This changes everything: equal asset division,
+          joint custody by default, and no mandatory iddah waiting period. Your lawyer must be familiar
+          with this law specifically.
+        </p>
+        <p>
+          <a href="/en/divorce-in-uae-for-expats">Full guide: Divorce in UAE for non-Muslim expats →</a>
+        </p>
+
+        <h3>Divorce Recognition in Your Home Country</h3>
+        <p>
+          A Dubai divorce decree must typically be attested (via the UAE Ministry of Foreign Affairs)
+          and then legalised at your home country's embassy. Your lawyer handles this process.
+          Without proper attestation, the divorce may not be legally recognised abroad.
+        </p>
+
+        <h3>Indian Nationals Divorcing in Dubai</h3>
+        <p>
+          Indian nationals are the largest expat group in Dubai. Indian courts recognise UAE divorce decrees
+          subject to mutual consent provisions under Indian law. An experienced Dubai divorce lawyer will ensure
+          your decree is structured to be recognised in India.
+        </p>
+      </section>
+
+      <!-- ===== RELATED LINKS ===== -->
+      <section class="section" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related Legal Guides</h2>
+        <div class="related-links">
+          <a href="/en/how-to-file-for-divorce-in-dubai" class="related-link">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step Personal Status Court guide</span>
+          </a>
+          <a href="/en/child-custody-uae" class="related-link">
+            <strong>Child Custody UAE</strong>
+            <span>Who gets custody and how courts decide</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats" class="related-link">
+            <strong>Divorce for Expats in UAE</strong>
+            <span>2022 civil law divorce for non-Muslims</span>
+          </a>
+          <a href="/en/uae-divorce-law" class="related-link">
+            <strong>UAE Divorce Law Explained</strong>
+            <span>Federal personal status law overview</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <FAQSection items={faqItems} lang="en" />
+
+      <!-- ===== BOTTOM CTA ===== -->
+      <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Get Matched with a Divorce Lawyer in Dubai — Free</h2>
+        <p>Fill in the form below. We match you with a qualified, Ministry of Justice-licensed divorce lawyer in Dubai within 24 hours.</p>
+        <LeadForm lang="en" variant="inline" />
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceUAE.ae — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/محامي-طلاق-دبي">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff; padding: 60px 0 50px;
+  }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.02rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.88rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 56px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.35rem, 2.8vw, 1.85rem); font-weight: 700; color: #1e3a5f; margin-bottom: 18px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 14px; }
+  .section a { color: #2563eb; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 56px 40px; margin-bottom: 60px; text-align: center; }
+
+  .callout {
+    background: #eff6ff; border-left: 4px solid #2563eb;
+    padding: 16px 20px; border-radius: 0 8px 8px 0;
+    color: #1e3a5f; font-size: 0.97rem; margin: 20px 0;
+  }
+
+  .list { margin: 10px 0 18px 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
+  .ordered-list { margin: 10px 0 18px 24px; }
+  .ordered-list li { margin-bottom: 10px; color: #374151; line-height: 1.6; }
+
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
+  .service-card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .service-card h3 { font-size: 0.97rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .service-card p { font-size: 0.9rem; color: #6b7280; margin: 0; line-height: 1.6; }
+
+  .cost-table-wrapper { overflow-x: auto; margin: 20px 0; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .cost-table th {
+    background: #1e3a5f; color: #fff;
+    padding: 12px 16px; text-align: left; font-weight: 600;
+  }
+  .cost-table td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin-top: 8px; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; color: #1e3a5f; }
+  .btn--primary {
+    display: inline-block; padding: 12px 28px;
+    background: #c9a84c; color: #fff;
+    border-radius: 8px; text-decoration: none; font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn--primary:hover { background: #b8942d; }
+
+  .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
+  .related-link {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 18px 20px; background: #fff;
+    border: 1.5px solid #e5e7eb; border-radius: 10px;
+    text-decoration: none; transition: border-color 0.2s;
+  }
+  .related-link:hover { border-color: #2563eb; }
+  .related-link strong { color: #1e3a5f; font-size: 0.97rem; }
+  .related-link span { color: #6b7280; font-size: 0.85rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 36px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.82rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; }
+  .footer nav a:hover { color: #fff; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 36px; }
+    .hero { padding: 44px 0 36px; }
+    .section--cta { padding: 40px 20px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق للضرر في الإمارات — الشروط والإجراءات وأسباب الرفض 2025';
+const description =
+  'دليل شامل عن الطلاق للضرر في الإمارات: ما هو الضرر الموجب للطلاق، شروط القبول، الأدلة المطلوبة، أسباب رفض الدعوى، وإجراءات محكمة الأحوال الشخصية.';
+
+const canonical = 'https://divorceuae.ae/ar/طلاق-للضرر';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/divorce-lawyer-dubai',
+  ar: 'https://divorceuae.ae/ar/طلاق-للضرر',
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceuae.ae/ar/' },
+  { name: 'الطلاق للضرر في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما هو الطلاق للضرر في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق للضرر هو حق الزوجة في طلب التفريق القضائي إذا لحق بها ضرر من زوجها يتعذر معه الاستمرار في الحياة الزوجية. يشمل الضرر: الإيذاء الجسدي، والإيذاء النفسي، والإهمال المادي، والهجر، وإساءة استخدام سلطة الطلاق، وعدم الإنفاق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما هي أسباب رفض دعوى الطلاق للضرر في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أبرز أسباب رفض دعوى الطلاق للضرر: عدم كفاية الأدلة لإثبات الضرر، تقديم الدعوى دون توثيق مسبق للحوادث، وجود تناقضات في الشهادات، عدم الإفصاح عن الضرر عند الإيداع، وإمكانية إثبات الزوج أن الضرر مبالغ فيه أو ملفّق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم يستغرق الطلاق للضرر في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يستغرق الطلاق للضرر عادةً من 3 إلى 12 شهراً اعتماداً على قوة الأدلة وتعقيد القضية. في الحالات الواضحة وجود وثائق كافية، يصدر الحكم في 3–6 أشهر.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'ما هو الطلاق للضرر في الإمارات؟',
+    answer: 'حق الزوجة في التفريق القضائي إذا لحق بها ضرر يتعذر معه الاستمرار: إيذاء جسدي أو نفسي أو إهمال مادي أو هجر أو عدم إنفاق.',
+  },
+  {
+    question: 'ما هي أسباب رفض دعوى الطلاق للضرر؟',
+    answer: 'أبرزها: <strong>عدم كفاية الأدلة</strong>، غياب توثيق مسبق للحوادث، التناقضات في الشهادات، وإمكانية الزوج دحض الادعاءات.',
+  },
+  {
+    question: 'كم يستغرق الطلاق للضرر في الإمارات؟',
+    answer: 'من <strong>3 إلى 12 شهراً</strong> حسب قوة الأدلة وتعقيد القضية. الحالات الموثقة جيداً تُحسم في 3–6 أشهر.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+  schema={faqSchema}
+>
+  <main>
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <Breadcrumb items={breadcrumbItems} lang="ar" />
+          <h1 class="hero__h1">
+            الطلاق للضرر في الإمارات —<br />
+            الشروط والأدلة وأسباب الرفض
+          </h1>
+          <p class="hero__sub">
+            الطلاق للضرر هو حق قانوني للزوجة في طلب التفريق القضائي عند تعرضها لأذى جسدي
+            أو نفسي أو مادي من زوجها. هذا الدليل يوضح ما يُعدّ ضرراً موجباً للطلاق،
+            والأدلة المطلوبة، وأسباب رفض الدعاوى، وكيفية تقديم قضية قوية أمام المحكمة.
+          </p>
+          <ul class="hero__trust">
+            <li>✓ أنواع الضرر الموجب للطلاق</li>
+            <li>✓ الأدلة المقبولة قانونياً</li>
+            <li>✓ أسباب رفض الدعاوى</li>
+            <li>✓ استشارة مجانية</li>
+          </ul>
+        </div>
+        <div class="hero__form">
+          <LeadForm lang="ar" variant="hero" heading="قدّم قضيتك بقوة — استشارة مجانية" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <section class="section" aria-labelledby="definition-heading">
+        <h2 id="definition-heading">ما هو الطلاق للضرر في قانون الأحوال الشخصية الإماراتي؟</h2>
+        <p>
+          الطلاق للضرر — أو التفريق القضائي للضرر — حق كفله قانون الأحوال الشخصية الاتحادي
+          رقم 28 لسنة 2005 للزوجة التي يلحق بها ضرر من زوجها يجعل الاستمرار في الحياة الزوجية
+          متعذراً أو مستحيلاً. يُقدَّم الطلب إلى محكمة الأحوال الشخصية، وتقرر المحكمة
+          بعد التحقق من الضرر.
+        </p>
+
+        <h3>أنواع الضرر الموجب للطلاق للضرر</h3>
+        <ul class="list">
+          <li><strong>الإيذاء الجسدي:</strong> الضرب أو الاعتداء الجسدي بأي صورة</li>
+          <li><strong>الإيذاء النفسي:</strong> الإهانة المتكررة والإذلال والتحكم والعزل الاجتماعي</li>
+          <li><strong>الإهمال المادي (عدم الإنفاق):</strong> رفض الزوج الإنفاق على زوجته دون مسوّغ شرعي</li>
+          <li><strong>الهجر:</strong> مغادرة الزوج البيت الزوجي لفترة مطوّلة دون عذر مقبول</li>
+          <li><strong>إساءة استخدام حق الطلاق:</strong> تهديد الزوجة بالطلاق بشكل متكرر إضراراً بها</li>
+          <li><strong>الزنا أو التعدد غير المُبلَّغ عنه:</strong> في حالات بعينها</li>
+        </ul>
+
+        <div class="callout">
+          <strong>مبدأ أساسي:</strong> يجب إثبات الضرر بأدلة ملموسة أمام المحكمة. الادعاء وحده
+          — بدون وثائق أو شهود — نادراً ما يكفي لقبول الدعوى.
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">الأدلة المقبولة في دعوى الطلاق للضرر</h2>
+        <p>
+          قوة قضيتك تعتمد اعتماداً مباشراً على جودة وكمية الأدلة التي تقدمينها.
+          المحاكم في الإمارات تُعطي الأولوية للأدلة الموثقة:
+        </p>
+
+        <div class="evidence-grid">
+          <div class="evidence-card evidence-card--strong">
+            <h3>أدلة قوية</h3>
+            <ul>
+              <li>تقارير طبية تثبت الإصابات</li>
+              <li>تقارير الشرطة عن حوادث سابقة</li>
+              <li>رسائل وتسجيلات صوتية أو مرئية</li>
+              <li>شهادة شهود موثوقين</li>
+              <li>تقارير الخدمات الاجتماعية</li>
+              <li>أوامر الحماية السابقة</li>
+            </ul>
+          </div>
+          <div class="evidence-card evidence-card--weak">
+            <h3>أدلة أضعف (تحتاج دعماً)</h3>
+            <ul>
+              <li>الادعاءات الشفهية دون توثيق</li>
+              <li>شهادة أفراد من عائلة الزوجة فقط</li>
+              <li>رسائل قديمة دون تسلسل زمني واضح</li>
+              <li>ادعاءات الإيذاء النفسي دون سجلات علاجية</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="rejection-heading">
+        <h2 id="rejection-heading">أسباب رفض دعوى الطلاق للضرر في الإمارات</h2>
+        <p>
+          كثير من دعاوى الطلاق للضرر تُرفض لأسباب يمكن تفاديها. إليك أبرزها:
+        </p>
+        <ol class="rejection-list">
+          <li>
+            <h3>ضعف الأدلة أو انعدامها</h3>
+            <p>السبب الأكثر شيوعاً. بدون وثائق طبية أو شرطية أو رسائل موثقة، يصعب إقناع المحكمة بوجود ضرر فعلي.</p>
+          </li>
+          <li>
+            <h3>غياب التوثيق الفوري للحوادث</h3>
+            <p>عدم الإبلاغ عن الحوادث فور وقوعها يضعف المصداقية. كل حادثة يجب توثيقها فور حدوثها.</p>
+          </li>
+          <li>
+            <h3>التناقضات في الرواية</h3>
+            <p>تضارب الشهادات أو التفاصيل المتناقضة في ادعاءات الزوجة يُفيد الزوج وقد يؤدي لرفض القضية.</p>
+          </li>
+          <li>
+            <h3>إمكانية دحض الادعاءات</h3>
+            <p>إذا استطاع الزوج تقديم أدلة مضادة — شهود أو وثائق أو بيانات — تُثبت أن الادعاءات مبالغ فيها أو مختلقة.</p>
+          </li>
+          <li>
+            <h3>تقديم الدعوى بعد فوات الأوان</h3>
+            <p>التأخر الطويل في رفع الدعوى بعد وقوع الحوادث يُثير تساؤلات حول جدية الضرر المدّعى.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="steps-heading">
+        <h2 id="steps-heading">إجراءات رفع دعوى الطلاق للضرر في الإمارات</h2>
+        <ol class="steps">
+          <li>
+            <h3>استشارة محامٍ متخصص فوراً</h3>
+            <p>قبل أي خطوة، استشيري محامياً لتقييم قوة قضيتك وما تحتاجينه من أدلة.</p>
+          </li>
+          <li>
+            <h3>جمع وتوثيق الأدلة</h3>
+            <p>اجمعي التقارير الطبية والرسائل والتسجيلات وأي وثيقة تثبت الضرر. كلما كان التوثيق أشمل، كانت القضية أقوى.</p>
+          </li>
+          <li>
+            <h3>تقديم الدعوى في محكمة الأحوال الشخصية</h3>
+            <p>يُقدّم محاميك دعوى الطلاق للضرر مع جميع الوثائق المدعمة. يُسدَّد رسم التسجيل.</p>
+          </li>
+          <li>
+            <h3>جلسة المصالحة</h3>
+            <p>حتى في دعاوى الضرر، تشترط المحكمة محاولة مصالحة. إن فشلت، تُعيَّن جلسات استماع.</p>
+          </li>
+          <li>
+            <h3>جلسات الاستماع وتقديم الأدلة</h3>
+            <p>يعرض محاميك أدلة الضرر أمام القاضي. قد تُستدعى شهود وتُطلب تقارير خبراء.</p>
+          </li>
+          <li>
+            <h3>صدور الحكم</h3>
+            <p>إذا ثبت الضرر، يصدر القاضي حكم التفريق. يُرتَّب بعدها النفقة وحقوق الحضانة.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="related-heading">
+        <h2 id="related-heading">أدلة ذات صلة</h2>
+        <div class="related-links">
+          <a href="/ar/محامي-طلاق" class="related-link">
+            <strong>محامي طلاق في الإمارات</strong>
+            <span>قدّم قضيتك مع محامٍ متخصص</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات" class="related-link">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>النفقة والمهر وحق السكن</span>
+          </a>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات" class="related-link">
+            <strong>إجراءات الطلاق في الإمارات</strong>
+            <span>خطوة بخطوة من التقديم للحكم</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات" class="related-link">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>حقوق الحضانة بعد التفريق</span>
+          </a>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} lang="ar" />
+
+      <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">قدّم دعوى طلاق للضرر بقوة — استشارة مجانية</h2>
+        <p>تحدثي مع محامٍ متخصص يقيّم قضيتك ويرشدك لأفضل طريق للحصول على حقك.</p>
+        <LeadForm lang="ar" variant="inline" />
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceUAE.ae — خدمة إحالة قانونية. ليست مكتب محاماة.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/en/divorce-lawyer-dubai">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 60px 0 50px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.35; margin-bottom: 16px; }
+  .hero__sub { font-size: 1rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.9; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.88rem; }
+  .hero__trust li { opacity: 0.9; }
+  .section { padding: 56px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.3rem, 2.8vw, 1.8rem); font-weight: 700; color: #1e3a5f; margin-bottom: 18px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 2; margin-bottom: 14px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 56px 40px; margin-bottom: 60px; text-align: center; }
+  .callout { background: #eff6ff; border-right: 4px solid #2563eb; border-left: none; padding: 14px 18px; border-radius: 8px 0 0 8px; color: #1e3a5f; font-size: 0.95rem; margin: 16px 0; }
+  .list { margin: 10px 0 18px 0; padding-right: 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.8; }
+  .evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+  .evidence-card { padding: 22px; border-radius: 12px; }
+  .evidence-card h3 { font-size: 0.97rem; font-weight: 700; margin: 0 0 12px; }
+  .evidence-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .evidence-card ul li { font-size: 0.9rem; line-height: 1.5; }
+  .evidence-card--strong { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .evidence-card--strong h3 { color: #14532d; }
+  .evidence-card--strong ul li::before { content: '✓ '; color: #22c55e; }
+  .evidence-card--strong ul li { color: #166534; }
+  .evidence-card--weak { background: #fff7ed; border: 1.5px solid #fed7aa; }
+  .evidence-card--weak h3 { color: #92400e; }
+  .evidence-card--weak ul li::before { content: '△ '; color: #f59e0b; }
+  .evidence-card--weak ul li { color: #78350f; }
+  .rejection-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 20px; counter-reset: rejection; }
+  .rejection-list li { counter-increment: rejection; padding: 20px 68px 20px 20px; position: relative; background: #fff7ed; border-radius: 10px; border-right: 4px solid #f59e0b; }
+  .rejection-list li::after { content: counter(rejection); position: absolute; right: 16px; top: 20px; width: 32px; height: 32px; background: #f59e0b; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .rejection-list li h3 { font-size: 0.97rem; font-weight: 700; color: #92400e; margin: 0 0 6px; }
+  .rejection-list li p { font-size: 0.88rem; color: #78350f; margin: 0; line-height: 1.6; }
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+  .steps li { counter-increment: steps; padding: 20px 68px 20px 20px; position: relative; background: #f8faff; border-radius: 10px; border-right: 4px solid #2563eb; }
+  .steps li::after { content: counter(steps); position: absolute; right: 16px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.97rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.88rem; color: #374151; margin: 0; line-height: 1.6; }
+  .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .related-link { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .related-link:hover { border-color: #2563eb; }
+  .related-link strong { color: #1e3a5f; font-size: 0.97rem; }
+  .related-link span { color: #6b7280; font-size: 0.85rem; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 36px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.82rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; }
+  @media (max-width: 768px) { .hero__inner { grid-template-columns: 1fr; } .evidence-grid { grid-template-columns: 1fr; } .section--cta { padding: 40px 20px; } }
+</style>

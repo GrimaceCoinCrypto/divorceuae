@@ -1,0 +1,54 @@
+---
+export interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+export interface Props {
+  items: BreadcrumbItem[];
+  lang?: 'en' | 'ar';
+}
+
+const { items, lang = 'en' } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    ...(item.url ? { item: item.url } : {}),
+  })),
+};
+---
+
+<nav aria-label={lang === 'ar' ? 'مسار التنقل' : 'Breadcrumb'} class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
+    {items.map((item, i) => (
+      <li class="breadcrumb-item">
+        {item.url && i < items.length - 1 ? (
+          <a href={item.url}>{item.name}</a>
+        ) : (
+          <span aria-current="page">{item.name}</span>
+        )}
+        {i < items.length - 1 && (
+          <span class="breadcrumb-sep" aria-hidden="true">
+            {lang === 'ar' ? '‹' : '›'}
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<style>
+  .breadcrumb-nav { padding: 12px 0; font-size: 0.875rem; color: #6b7280; }
+  .breadcrumb-list { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; align-items: center; }
+  .breadcrumb-item { display: flex; align-items: center; gap: 4px; }
+  .breadcrumb-item a { color: #2563eb; text-decoration: none; }
+  .breadcrumb-item a:hover { text-decoration: underline; }
+  .breadcrumb-sep { color: #9ca3af; }
+</style>

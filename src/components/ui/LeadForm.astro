@@ -1,0 +1,160 @@
+---
+export interface Props {
+  lang?: 'en' | 'ar';
+  variant?: 'hero' | 'inline' | 'sticky';
+  heading?: string;
+}
+
+const { lang = 'en', variant = 'hero', heading } = Astro.props;
+
+const copy = {
+  en: {
+    heading: heading ?? 'Get Free Legal Advice Today',
+    sub: 'Speak to a qualified divorce lawyer in Dubai. Confidential. No obligation.',
+    name: 'Your Full Name',
+    phone: 'Phone Number (WhatsApp)',
+    email: 'Email Address',
+    situation: 'Briefly describe your situation (optional)',
+    cta: 'Request Free Consultation',
+    whatsapp: 'Or chat instantly on WhatsApp',
+    privacy: 'Your details are 100% confidential and never shared.',
+  },
+  ar: {
+    heading: heading ?? 'احصل على استشارة قانونية مجانية اليوم',
+    sub: 'تحدث مع محامي طلاق مؤهل في دبي. سري. بدون التزام.',
+    name: 'الاسم الكامل',
+    phone: 'رقم الهاتف (واتساب)',
+    email: 'البريد الإلكتروني',
+    situation: 'وصف موجز لوضعك (اختياري)',
+    cta: 'طلب استشارة مجانية',
+    whatsapp: 'أو تحدث فوراً عبر واتساب',
+    privacy: 'معلوماتك سرية بالكامل ولا تُشارك مع أي طرف.',
+  },
+};
+
+const t = copy[lang];
+---
+
+<section class={`lead-form lead-form--${variant}`} id="contact">
+  <div class="lead-form__inner">
+    <h2 class="lead-form__heading">{t.heading}</h2>
+    <p class="lead-form__sub">{t.sub}</p>
+
+    <form
+      class="lead-form__form"
+      name="divorce-lead"
+      method="POST"
+      action="/thank-you"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="divorce-lead" />
+      <input type="hidden" name="lang" value={lang} />
+      <!-- Honeypot -->
+      <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <div class="lead-form__fields">
+        <label class="lead-form__label">
+          <span>{t.name} *</span>
+          <input type="text" name="name" required autocomplete="name" placeholder={t.name} />
+        </label>
+
+        <label class="lead-form__label">
+          <span>{t.phone} *</span>
+          <input type="tel" name="phone" required autocomplete="tel" placeholder="+971 50 000 0000" />
+        </label>
+
+        <label class="lead-form__label">
+          <span>{t.email}</span>
+          <input type="email" name="email" autocomplete="email" placeholder="you@example.com" />
+        </label>
+
+        <label class="lead-form__label lead-form__label--full">
+          <span>{t.situation}</span>
+          <textarea name="situation" rows="3" placeholder={t.situation}></textarea>
+        </label>
+      </div>
+
+      <button type="submit" class="lead-form__submit">{t.cta}</button>
+
+      <p class="lead-form__privacy">{t.privacy}</p>
+    </form>
+
+    <div class="lead-form__divider">
+      <span>{lang === 'ar' ? 'أو' : 'or'}</span>
+    </div>
+
+    <a
+      href="https://wa.me/971XXXXXXXXX?text=Hello%2C%20I%20need%20divorce%20legal%20advice%20in%20UAE"
+      class="lead-form__whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      {t.whatsapp}
+    </a>
+  </div>
+</section>
+
+<style>
+  .lead-form { background: #f0f4ff; border-radius: 16px; padding: 40px 32px; }
+  .lead-form--hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; }
+  .lead-form__heading { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; margin-bottom: 8px; }
+  .lead-form__sub { opacity: 0.85; margin-bottom: 24px; font-size: 1rem; }
+  .lead-form__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .lead-form__label { display: flex; flex-direction: column; gap: 6px; font-size: 0.875rem; font-weight: 500; }
+  .lead-form__label--full { grid-column: 1 / -1; }
+  .lead-form__label input,
+  .lead-form__label textarea {
+    padding: 10px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+    color: #1a1a2e;
+    transition: border-color 0.2s;
+  }
+  .lead-form__label input:focus,
+  .lead-form__label textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  }
+  .lead-form__submit {
+    width: 100%;
+    padding: 14px;
+    background: #c9a84c;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .lead-form__submit:hover { background: #b8942d; transform: translateY(-1px); }
+  .lead-form__privacy { font-size: 0.78rem; color: #6b7280; text-align: center; margin-top: 10px; }
+  .lead-form--hero .lead-form__privacy { color: rgba(255,255,255,0.65); }
+  .lead-form__divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; color: #9ca3af; font-size: 0.85rem; }
+  .lead-form__divider::before,
+  .lead-form__divider::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+  .lead-form--hero .lead-form__divider::before,
+  .lead-form--hero .lead-form__divider::after { background: rgba(255,255,255,0.2); }
+  .lead-form__whatsapp {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; width: 100%; padding: 13px;
+    background: #25d366; color: #fff;
+    border-radius: 8px; text-decoration: none;
+    font-weight: 600; font-size: 1rem;
+    transition: background 0.2s;
+  }
+  .lead-form__whatsapp:hover { background: #1ebe5d; }
+
+  @media (max-width: 600px) {
+    .lead-form { padding: 28px 20px; }
+    .lead-form__fields { grid-template-columns: 1fr; }
+  }
+</style>

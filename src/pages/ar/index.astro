@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+
+const title = 'طلاق في الإمارات — محامي طلاق دبي واستشارة قانونية مجانية';
+const description =
+  'استشارات قانونية متخصصة في الطلاق لسكان الإمارات والمقيمين. تواصل مع محامي طلاق مؤهل في دبي وأبوظبي وجميع الإمارات. استشارة مجانية.';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/',
+  ar: 'https://divorceuae.ae/ar/',
+};
+
+const faqItems = [
+  {
+    question: 'كم يستغرق الطلاق في دبي؟',
+    answer:
+      'يستغرق الطلاق بالتراضي عادةً من 1 إلى 3 أشهر في محكمة الأحوال الشخصية بدبي. أما الطلاق المتنازع عليه، حيث تعترض إحدى الطرفين على الشروط، فقد يستغرق من 6 إلى 24 شهراً حسب تعقيد قضايا الحضانة والنزاعات المالية.',
+  },
+  {
+    question: 'ما هو الخُلع في قانون الإمارات؟',
+    answer:
+      'الخُلع هو الطلاق الذي تطلبه الزوجة من القضاء مقابل إعادة المهر إلى الزوج. يتم تقديم طلب الخُلع إلى محكمة الأحوال الشخصية، وعادةً يستغرق 1 إلى 3 أشهر. لا يمكن للزوج الاعتراض على الخُلع، لكنه يحق له استرداد المهر.',
+  },
+  {
+    question: 'من يحصل على حضانة الأطفال في الإمارات؟',
+    answer:
+      'وفق قانون الأحوال الشخصية الإماراتي، تحصل الأم عادةً على الحضانة الفعلية للأطفال الصغار (الأولاد حتى سن 11، والبنات حتى سن 13). يحتفظ كلا الوالدين بحقوق الولاية.',
+  },
+  {
+    question: 'ما الذي يحدث لتأشيرتي بعد الطلاق في الإمارات؟',
+    answer:
+      'إذا كانت تأشيرتك صادرة عن طريق زوجك/زوجتك، فلديك 30 يوماً بعد صدور حكم الطلاق لتغيير وضعك. يمكنك التحول إلى تأشيرة عمل أو تأشيرة مستثمر أو التقدم بطلب للحصول على تأشيرة طلاق/حضانة لمدة سنة إذا كان أطفالك في الإمارات.',
+  },
+  {
+    question: 'كم تكلفة الطلاق في دبي؟',
+    answer:
+      'تبدأ رسوم تقديم الطلب في المحكمة من 600 إلى 2000 درهم. تتراوح أتعاب المحامين في الطلاق بالتراضي بين 5,000 و15,000 درهم. تكون تكاليف الطلاق المتنازع عليه أعلى بكثير. يقدم كثير من المحامين استشارة أولى مجانية.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+>
+  <!-- ===== هيرو ===== -->
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__h1">
+          محامي طلاق في دبي والإمارات —<br />
+          استشارة قانونية مجانية
+        </h1>
+        <p class="hero__sub">
+          التعامل مع الطلاق في الإمارات أمر معقد. سواء كنت مسلماً أو غير مسلم، مقيماً أجنبياً أو مواطناً —
+          يرشدك شبكتنا من محامي الأسرة المؤهلين في دبي خلال كل خطوة،
+          من تقديم الطلب في محكمة الأحوال الشخصية إلى الحضانة وتقسيم الأصول.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ استشارة أولى مجانية</li>
+          <li>✓ دعم باللغتين العربية والإنجليزية</li>
+          <li>✓ دبي وجميع الإمارات</li>
+          <li>✓ سرية تامة</li>
+        </ul>
+      </div>
+
+      <div class="hero__form">
+        <LeadForm lang="ar" variant="hero" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- ===== عملية الطلاق ===== -->
+    <section class="section" aria-labelledby="process-heading">
+      <h2 id="process-heading">كيفية تقديم طلب الطلاق في دبي — خطوة بخطوة</h2>
+      <p>
+        تُنظر قضايا الطلاق في دبي من قبل محكمة الأحوال الشخصية. إليك ما يمكن توقعه:
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>الخطوة الأولى — استشارة محامي أسرة</h3>
+          <p>قبل تقديم الطلب، استشر محامي أسرة مؤهلاً في الإمارات لفهم حقوقك والنتائج المحتملة.</p>
+        </li>
+        <li>
+          <h3>الخطوة الثانية — التقديم في محكمة الأحوال الشخصية</h3>
+          <p>قدم طلب الطلاق في محكمة الأحوال الشخصية في الإمارة التي تقيم فيها. المستندات المطلوبة: عقد الزواج، جوازات السفر، وبطاقة الهوية الإماراتية.</p>
+        </li>
+        <li>
+          <h3>الخطوة الثالثة — جلسة المصالحة الإلزامية</h3>
+          <p>تشترط المحاكم الإماراتية محاولة مصالحة واحدة على الأقل قبل المضي قدماً. يلتقي مستشار معين من المحكمة مع كلا الطرفين. إذا فشلت المصالحة، تستمر القضية.</p>
+        </li>
+        <li>
+          <h3>الخطوة الرابعة — جلسات الاستماع</h3>
+          <p>للطلاق بالتراضي، غالباً ما تكفي جلسة واحدة. أما القضايا المتنازع عليها فتستدعي جلسات متعددة.</p>
+        </li>
+        <li>
+          <h3>الخطوة الخامسة — صدور حكم الطلاق</h3>
+          <p>تصدر المحكمة حكم الطلاق. يجب تصديقه، وبالنسبة للمقيمين الأجانب، يتم توثيقه رسمياً للاعتراف به في بلدهم الأصلي.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== أسئلة شائعة ===== -->
+    <FAQSection items={faqItems} lang="ar" />
+
+    <!-- ===== CTA سفلي ===== -->
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading">
+      <h2 id="bottom-cta-heading">ابدأ استشارتك المجانية اليوم</h2>
+      <p>
+        تحدث مع محامي طلاق في دبي خلال 24 ساعة. سري تماماً.
+        متوفر باللغتين العربية والإنجليزية.
+      </p>
+      <LeadForm lang="ar" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceUAE.ae — خدمة إحالة قانونية. ليست مكتب محاماة. المعلومات المقدمة للإرشاد فقط ولا تشكل استشارة قانونية.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/سياسة-الخصوصية">سياسة الخصوصية</a>
+        <a href="/ar/إخلاء-المسؤولية">إخلاء المسؤولية</a>
+        <a href="/en/">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff; padding: 80px 0 60px;
+  }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.9; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section p { color: #374151; line-height: 2; margin-bottom: 16px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
+  .steps li {
+    counter-increment: steps;
+    padding: 24px 72px 24px 24px;
+    position: relative;
+    background: #f8faff;
+    border-radius: 12px;
+    border-right: 4px solid #2563eb;
+  }
+  .steps li::after {
+    content: counter(steps);
+    position: absolute; right: 20px; top: 24px;
+    width: 36px; height: 36px;
+    background: #2563eb; color: #fff;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+  .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .section--cta { padding: 40px 24px; }
+  }
+</style>

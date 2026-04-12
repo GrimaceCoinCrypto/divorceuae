@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'حقوق الزوجة بعد الطلاق في الإمارات — دليل شامل 2025';
+const description =
+  'حقوق الزوجة المالية والقانونية بعد الطلاق في الإمارات: النفقة، المهر المؤجل، حق السكن، حضانة الأطفال، والإقامة. دليل شامل وفق قانون الأحوال الشخصية الإماراتي.';
+
+const canonical = 'https://divorceuae.ae/ar/حقوق-الزوجة-بعد-الطلاق-الامارات';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/wife-rights-after-divorce-uae',
+  ar: 'https://divorceuae.ae/ar/حقوق-الزوجة-بعد-الطلاق-الامارات',
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceuae.ae/ar/' },
+  { name: 'حقوق الزوجة بعد الطلاق' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما هي النفقة التي تستحقها الزوجة بعد الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تستحق الزوجة المطلّقة في الإمارات نفقة العدة طوال فترة العدة (3 أشهر للمطلّقة، حتى الوضع للحامل). إذا كانت حاضنة لأطفال، تستحق نفقة الأولاد ومسكن مناسب. تُحدَّد قيمة النفقة من قِبل المحكمة بناءً على دخل الزوج وظروف الزوجة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تحصل الزوجة على المهر المؤجل بعد الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. المهر المؤجل (المتأخر) حق ثابت للزوجة عند الطلاق أو الوفاة. يجب المطالبة به في دعوى الطلاق أمام محكمة الأحوال الشخصية. أما في حالة الخلع، فإن الزوجة تُعيد المهر المقدّم للزوج كشرط للخلع.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تحصل الزوجة على حق السكن بعد الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا كانت الزوجة حاضنة لأطفال، يلزم الزوج بتوفير مسكن مناسب لها ولأطفاله طوال فترة الحضانة. إذا لم تكن حاضنة، فليس لها حق قانوني في سكن الزوجية بعد انقضاء العدة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الذي يحدث لإقامة الزوجة بعد الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا كانت إقامة الزوجة مرتبطة بكفالة زوجها، فلديها 30 يوماً من صدور حكم الطلاق لتغيير وضعها. يمكنها التحوّل إلى تأشيرة عمل أو تأشيرة مستثمر أو التقدم بطلب للحصول على تأشيرة طلاق/حضانة لمدة سنة إذا كان لديها أطفال في الإمارات.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'ما هي النفقة التي تستحقها الزوجة بعد الطلاق في الإمارات؟',
+    answer: 'تستحق الزوجة المطلّقة <strong>نفقة العدة</strong> طوال 3 أشهر. إن كانت حاضنة للأطفال، تستحق نفقة الأولاد ومسكناً مناسباً. تُحدَّد القيمة بناءً على دخل الزوج وظروف الزوجة.',
+  },
+  {
+    question: 'هل تحصل الزوجة على المهر المؤجل بعد الطلاق؟',
+    answer: 'نعم. المهر المؤجل حق ثابت للزوجة عند الطلاق أو الوفاة. يجب المطالبة به في دعوى الطلاق. في حالة الخُلع، تُعيد الزوجة المهر المقدّم كشرط للحصول على الطلاق.',
+  },
+  {
+    question: 'هل تحصل الزوجة على حق السكن بعد الطلاق؟',
+    answer: 'إن كانت حاضنة للأطفال، يلزم الزوج بتوفير مسكن مناسب لها ولأطفاله طوال فترة الحضانة. بدون حضانة، لا يوجد حق قانوني في السكن بعد انقضاء العدة.',
+  },
+  {
+    question: 'ما الذي يحدث لإقامة الزوجة بعد الطلاق في الإمارات؟',
+    answer: 'إن كانت الإقامة بكفالة الزوج، فلديها <strong>30 يوماً</strong> للتحوّل إلى إقامة مستقلة: تأشيرة عمل، مستثمر، أو تأشيرة طلاق/حضانة لمدة سنة للحاضنات.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+  schema={faqSchema}
+>
+  <main>
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <Breadcrumb items={breadcrumbItems} lang="ar" />
+          <h1 class="hero__h1">
+            حقوق الزوجة بعد الطلاق في الإمارات —<br />
+            دليل شامل 2025
+          </h1>
+          <p class="hero__sub">
+            بعد الطلاق، للزوجة حقوق مالية وقانونية كاملة كفلها قانون الأحوال الشخصية الإماراتي.
+            هذا الدليل يشرح حقوق النفقة والمهر المؤجل وحق السكن وحضانة الأطفال وما يحدث لإقامتك في الإمارات.
+          </p>
+          <ul class="hero__trust">
+            <li>✓ حقوق مالية مضمونة قانونياً</li>
+            <li>✓ نفقة وحضانة وسكن</li>
+            <li>✓ حماية الإقامة بعد الطلاق</li>
+            <li>✓ استشارة مجانية</li>
+          </ul>
+        </div>
+        <div class="hero__form">
+          <LeadForm lang="ar" variant="hero" heading="احمِ حقوقك — استشارة مجانية" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <section class="section" aria-labelledby="financial-heading">
+        <h2 id="financial-heading">الحقوق المالية للزوجة بعد الطلاق في الإمارات</h2>
+        <p>
+          يُرسي قانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005 منظومة واضحة من الحقوق المالية
+          للزوجة عند الطلاق. يجب المطالبة بهذه الحقوق صراحةً في دعوى الطلاق — إذ لا تُمنح تلقائياً.
+        </p>
+
+        <h3>أولاً: نفقة العدة</h3>
+        <p>
+          تستحق الزوجة المطلّقة نفقةً كاملة طوال فترة العدة، وهي ثلاثة أشهر قمرية للمطلّقة
+          غير الحامل، وحتى الوضع للحامل. تشمل النفقة: المأكل والملبس والمسكن والرعاية الصحية.
+          يُحدَّد مقدارها وفق دخل الزوج ومستوى المعيشة المعتاد للأسرة.
+        </p>
+
+        <h3>ثانياً: المهر المؤجل (المتأخر)</h3>
+        <p>
+          المهر المؤجل — أو المتأخر — هو الجزء من المهر الذي يُسدَّد عند الطلاق أو الوفاة.
+          وهو حق مالي ثابت للزوجة لا يسقط بالتقادم ما لم تتنازل عنه صراحةً.
+          يجب تضمين المطالبة به في دعوى الطلاق أمام محكمة الأحوال الشخصية.
+        </p>
+        <div class="callout">
+          <strong>ملاحظة مهمة:</strong> في حالة الخُلع، تُعيد الزوجة عادةً المهر المقدّم للزوج
+          مقابل الحصول على الطلاق. أما المهر المؤجل فلا يُستعاد في الخلع.
+        </div>
+
+        <h3>ثالثاً: متعة الطلاق</h3>
+        <p>
+          يستحق بعض الزوجات متعةً إضافية بعد الطلاق، خاصةً في الطلاق التعسفي. يُقدّر القاضي
+          هذا المبلغ استناداً إلى مدة الزواج وظروف الطلاق ومستوى المعيشة.
+        </p>
+
+        <h3>رابعاً: نفقة الأولاد ومسكن الحضانة</h3>
+        <p>
+          إذا كانت الزوجة حاضنة للأطفال، يلزم الأب بسداد:
+        </p>
+        <ul class="list">
+          <li><strong>نفقة الأولاد الشهرية:</strong> تشمل المأكل والملبس والتعليم والرعاية الصحية</li>
+          <li><strong>مسكن الحضانة:</strong> توفير مسكن مناسب للأم والأطفال طوال فترة الحضانة</li>
+          <li><strong>أجر الحضانة:</strong> يستحق الحاضن أجراً مقابل رعاية الأطفال وفق تقدير المحكمة</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="custody-heading">
+        <h2 id="custody-heading">حقوق الحضانة للأم بعد الطلاق</h2>
+        <p>
+          وفق قانون الأحوال الشخصية الإماراتي، تحصل الأم عادةً على الحضانة الفعلية للأطفال:
+        </p>
+        <ul class="list">
+          <li>الأولاد: حتى سن الحادية عشرة</li>
+          <li>البنات: حتى سن الثالثة عشرة</li>
+          <li>بعد هذه السن، يختار الطفل أو تقرر المحكمة بناءً على مصلحته الفضلى</li>
+        </ul>
+        <p>
+          يحتفظ كلا الوالدين بالولاية القانونية على الأطفال بصرف النظر عن الحضانة الفعلية.
+          القرارات المصيرية كالتعليم والسفر والرعاية الصحية تستلزم موافقة كليهما.
+        </p>
+        <p>
+          <a href="/ar/حضانة-الاطفال-الامارات">دليل مفصّل: حضانة الأطفال في الإمارات ←</a>
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="residency-heading">
+        <h2 id="residency-heading">ماذا يحدث لإقامة الزوجة بعد الطلاق في الإمارات؟</h2>
+        <p>
+          إذا كانت إقامة الزوجة مرتبطة بكفالة زوجها، تنتهي إقامتها تلقائياً بصدور حكم الطلاق.
+          لديها <strong>30 يوماً</strong> للتحوّل إلى وضع إقامة مستقل. الخيارات المتاحة:
+        </p>
+        <ul class="list">
+          <li><strong>تأشيرة العمل:</strong> إن كان لديها عرض عمل أو صاحب عمل راغب في كفالتها</li>
+          <li><strong>تأشيرة المستثمر:</strong> إن كان لديها استثمار أو عمل تجاري في الإمارات</li>
+          <li><strong>تأشيرة الطلاق/الحضانة:</strong> تأشيرة إقامة لمدة سنة قابلة للتجديد للأمهات الحاضنات لأطفال في الإمارات</li>
+          <li><strong>كفالة الأبناء:</strong> إذا بلغ أبناؤها سن 18 وأصبحوا من أصحاب الدخل، يمكنهم كفالتها</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="related-heading">
+        <h2 id="related-heading">أدلة ذات صلة</h2>
+        <div class="related-links">
+          <a href="/ar/محامي-طلاق" class="related-link">
+            <strong>محامي طلاق في الإمارات</strong>
+            <span>احمِ حقوقك مع محامٍ متخصص</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات" class="related-link">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>الحقوق والإجراءات كاملةً</span>
+          </a>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات" class="related-link">
+            <strong>إجراءات الطلاق في الإمارات</strong>
+            <span>خطوة بخطوة من التقديم للحكم</span>
+          </a>
+          <a href="/ar/قانون-الطلاق-في-الامارات" class="related-link">
+            <strong>قانون الطلاق في الإمارات</strong>
+            <span>القانون الاتحادي موضّحاً بالكامل</span>
+          </a>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} lang="ar" />
+
+      <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">احمِ حقوقك — استشارة مجانية</h2>
+        <p>تحدثي مع محامي أسرة متخصص يشرح لك حقوقك كاملةً ويساعدك على المطالبة بها أمام المحكمة.</p>
+        <LeadForm lang="ar" variant="inline" />
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceUAE.ae — خدمة إحالة قانونية. ليست مكتب محاماة.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/en/wife-rights-after-divorce-uae">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 60px 0 50px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.35; margin-bottom: 16px; }
+  .hero__sub { font-size: 1rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.9; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.88rem; }
+  .hero__trust li { opacity: 0.9; }
+  .section { padding: 56px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.3rem, 2.8vw, 1.8rem); font-weight: 700; color: #1e3a5f; margin-bottom: 18px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 28px 0 10px; }
+  .section p { color: #374151; line-height: 2; margin-bottom: 14px; }
+  .section a { color: #2563eb; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 56px 40px; margin-bottom: 60px; text-align: center; }
+  .callout { background: #eff6ff; border-right: 4px solid #2563eb; border-left: none; padding: 14px 18px; border-radius: 8px 0 0 8px; color: #1e3a5f; font-size: 0.95rem; margin: 16px 0; }
+  .list { margin: 10px 0 18px 0; padding-right: 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.8; }
+  .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .related-link { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .related-link:hover { border-color: #2563eb; }
+  .related-link strong { color: #1e3a5f; font-size: 0.97rem; }
+  .related-link span { color: #6b7280; font-size: 0.85rem; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 36px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.82rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; }
+  @media (max-width: 768px) { .hero__inner { grid-template-columns: 1fr; } .section--cta { padding: 40px 20px; } }
+</style>

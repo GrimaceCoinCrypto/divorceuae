@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce in UAE for Expats — 2022 Civil Law Guide for Non-Muslims';
+const description =
+  'Complete guide to divorce in UAE for expats. Non-Muslim civil divorce under the 2022 law: equal asset division, joint custody, no iddah. Muslim expat divorce process explained. Free consultation.';
+
+const canonical = 'https://divorceuae.ae/en/divorce-in-uae-for-expats';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/divorce-in-uae-for-expats',
+  ar: 'https://divorceuae.ae/ar/الطلاق-في-الامارات',
+};
+
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://divorceuae.ae/en/' },
+  { name: 'Divorce in UAE for Expats' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can non-Muslim expats divorce in UAE without Islamic law applying?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Federal Law No. 41 of 2022, non-Muslim expats can divorce under civil law principles in UAE. This means equal asset division, joint custody by default, and no Islamic waiting period (iddah). At least one spouse must be non-Muslim and the civil law pathway must be requested at filing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does UAE divorce apply to all expat nationalities?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Any expat residing in the UAE — regardless of nationality — can file for divorce at the Personal Status Court in the emirate where they live. The applicable law depends on religion: Muslim expats are subject to Islamic personal status law; non-Muslim expats can opt for the 2022 civil law.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will a UAE divorce be recognised in my home country?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE divorce decrees are generally recognised internationally once properly attested and legalised. The decree must be certified by the UAE Ministry of Justice, attested by the UAE Ministry of Foreign Affairs, then legalised at the relevant embassy. Indian courts, UK courts, and most European courts recognise UAE divorces when properly attested.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to my UAE visa after divorce as an expat?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your residence visa was sponsored by your spouse, you have 30 days from the divorce decree to change your visa status. Options include: employment visa, investor visa, or a 1-year divorce/custody visa if you have children in the UAE.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'Can non-Muslim expats divorce in UAE without Islamic law applying?',
+    answer: "Yes. Under <strong>Federal Law No. 41 of 2022</strong>, non-Muslim expats can divorce under civil law principles — equal asset division, joint custody by default, no iddah. At least one spouse must be non-Muslim and you must request the civil pathway at filing.",
+  },
+  {
+    question: 'Does UAE divorce apply to all expat nationalities?',
+    answer: 'Yes. Any UAE resident can file regardless of nationality. Applicable law depends on religion: Muslim expats follow Islamic personal status law; non-Muslim expats can use the 2022 civil law.',
+  },
+  {
+    question: 'Will a UAE divorce be recognised in my home country?',
+    answer: 'Generally yes, once properly attested. The decree must be certified by the UAE Ministry of Justice, attested by Ministry of Foreign Affairs, then legalised at the relevant embassy. Indian, UK, and most European courts recognise properly attested UAE divorces.',
+  },
+  {
+    question: 'What happens to my UAE visa after divorce?',
+    answer: "If your visa was sponsored by your spouse, you have <strong>30 days</strong> from the decree to change status: employment visa, investor visa, or a 1-year divorce/custody visa for parents with children in UAE.",
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={faqSchema}
+>
+  <main>
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <Breadcrumb items={breadcrumbItems} lang="en" />
+          <h1 class="hero__h1">
+            Divorce in UAE for Expats —<br />
+            Non-Muslim Civil Law Guide (2022)
+          </h1>
+          <p class="hero__sub">
+            Over 88% of UAE residents are expats. Divorce law for non-citizens changed significantly
+            in 2022. This guide explains how non-Muslim expats can now divorce under civil law,
+            and what Muslim expats need to know about UAE personal status law.
+          </p>
+          <ul class="hero__trust">
+            <li>✓ 2022 civil law explained</li>
+            <li>✓ All expat nationalities covered</li>
+            <li>✓ Visa status after divorce</li>
+            <li>✓ Home country recognition</li>
+          </ul>
+        </div>
+        <div class="hero__form">
+          <LeadForm lang="en" variant="hero" heading="Get Free Expat Divorce Advice" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <section class="section" aria-labelledby="2022law-heading">
+        <h2 id="2022law-heading">The 2022 UAE Personal Status Law for Non-Muslims</h2>
+        <p>
+          <strong>Federal Law No. 41 of 2022</strong> came into force on 1 February 2023 and fundamentally
+          changed divorce for non-Muslim expats in the UAE. Before this law, all divorces in the UAE —
+          regardless of religion — were governed by Islamic personal status principles. Now, non-Muslim
+          expats have a distinct civil law pathway.
+        </p>
+
+        <h3>What Changes Under the 2022 Law</h3>
+        <div class="compare-grid">
+          <div class="compare-card compare-card--old">
+            <h3>Before 2022 (Islamic law applied)</h3>
+            <ul>
+              <li>Husband could initiate talaq unilaterally</li>
+              <li>Wife required to prove harm for khul'a</li>
+              <li>Iddah (3-month waiting period) mandatory</li>
+              <li>Assets not automatically divided equally</li>
+              <li>Custody defaulted to mother for young children only</li>
+            </ul>
+          </div>
+          <div class="compare-card compare-card--new">
+            <h3>2022 Civil Law (non-Muslims)</h3>
+            <ul>
+              <li>Either spouse can file for divorce</li>
+              <li>No fault required — no need to prove harm</li>
+              <li>No iddah waiting period</li>
+              <li>Equal division of marital assets by default</li>
+              <li>Joint parental custody as default</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Who Can Use the 2022 Law</h3>
+        <ul class="list">
+          <li>At least one spouse must be non-Muslim</li>
+          <li>Both spouses must be residing in the UAE</li>
+          <li>You must explicitly request the civil law pathway when filing at the Personal Status Court</li>
+          <li>If you do not request it, Islamic law may be applied by default</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Critical:</strong> You must affirmatively opt into the 2022 civil law at the time of filing.
+          Tell your lawyer you want to file under Federal Law No. 41 of 2022. Do not assume it applies automatically.
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="nonmuslim-heading">
+        <h2 id="nonmuslim-heading">Divorce Process for Non-Muslim Expats in Dubai</h2>
+        <p>
+          The procedural steps are the same as any divorce — Personal Status Court, reconciliation session,
+          hearings — but the legal rules that govern your outcome are fundamentally different:
+        </p>
+
+        <h3>Asset Division</h3>
+        <p>
+          Under the 2022 law, all assets acquired during the marriage are split 50/50 by default.
+          This includes savings, investments, and property purchased during the marriage — regardless
+          of whose name it is in. Pre-marital assets and inheritances are excluded.
+        </p>
+
+        <h3>Child Custody</h3>
+        <p>
+          The 2022 law defaults to <strong>joint custody</strong> for non-Muslim parents. Courts determine
+          the practical custody arrangement based on the best interests of the child, with a strong
+          presumption towards equal involvement of both parents.
+        </p>
+
+        <h3>No Waiting Period</h3>
+        <p>
+          The Islamic iddah (3-month waiting period before remarriage) does not apply to non-Muslim divorces
+          under the 2022 law. Once the decree is issued, both parties are immediately free to remarry.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="muslim-expat-heading">
+        <h2 id="muslim-expat-heading">Divorce for Muslim Expats in UAE</h2>
+        <p>
+          Muslim expats — regardless of nationality — are subject to UAE personal status law based on
+          Islamic jurisprudence. Key rules:
+        </p>
+
+        <h3>Talaq (Husband-Initiated Divorce)</h3>
+        <p>
+          A Muslim husband can pronounce talaq, but it must be registered with the Personal Status Court
+          to be legally recognised. Unregistered verbal talaq has no legal effect in the UAE.
+          The iddah period (3 months) must elapse before the divorce is final.
+        </p>
+
+        <h3>Khul'a (Wife-Initiated Divorce)</h3>
+        <p>
+          A Muslim wife can apply to the court for khul'a — divorce in exchange for returning the mahr
+          (dowry) to the husband. The husband cannot refuse a khul'a, but he is entitled to recover
+          the mahr amount. Khul'a typically takes 1–3 months.
+        </p>
+
+        <h3>Divorce for Harm (Talaq lil-Darar)</h3>
+        <p>
+          A wife can seek divorce by proving harm — physical or emotional abuse, failure to provide,
+          abandonment, or other grounds. This requires evidence and typically takes longer than khul'a.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="recognition-heading">
+        <h2 id="recognition-heading">Will Your UAE Divorce Be Recognised Abroad?</h2>
+        <p>
+          UAE divorce decrees are recognised internationally in most jurisdictions once correctly
+          attested and legalised. The standard process:
+        </p>
+        <ol class="steps">
+          <li>
+            <h3>UAE Ministry of Justice Certification</h3>
+            <p>The court issues the decree; your lawyer arranges official Ministry of Justice certification.</p>
+          </li>
+          <li>
+            <h3>UAE Ministry of Foreign Affairs Attestation</h3>
+            <p>The certified decree is attested by the UAE MoFA, giving it international standing.</p>
+          </li>
+          <li>
+            <h3>Embassy Legalisation</h3>
+            <p>The attested decree is presented to the embassy of your home country in the UAE for final legalisation (apostille or stamp).</p>
+          </li>
+          <li>
+            <h3>Certified Translation</h3>
+            <p>If your home country requires documents in its official language, a certified translation is produced.</p>
+          </li>
+        </ol>
+        <p>
+          <strong>Indian nationals:</strong> Indian courts recognise UAE mutual consent divorce decrees.
+          Contested decrees may require an additional petition in an Indian family court.
+          A lawyer experienced in both jurisdictions is strongly recommended.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="visa-heading">
+        <h2 id="visa-heading">Visa Status After Divorce for Expats</h2>
+        <p>
+          If your UAE residency visa was sponsored by your spouse, you have exactly <strong>30 days</strong>
+          from the divorce decree to change your status. Options:
+        </p>
+        <ul class="list">
+          <li><strong>Employment visa:</strong> Switch to employer sponsorship if you have a job offer</li>
+          <li><strong>Investor/partner visa:</strong> If you own a business or investment in the UAE</li>
+          <li><strong>Freelance visa:</strong> Available through various free zones if self-employed</li>
+          <li><strong>Divorce/custody visa (1 year):</strong> Available for expat parents with children residing in the UAE; renewable annually</li>
+          <li><strong>Sponsored by adult children:</strong> If your UAE-resident children are 18+ and employed</li>
+        </ul>
+        <div class="callout">
+          <strong>Do not wait:</strong> The 30-day window starts from the date the court issues the decree,
+          not from when you receive the document. Overstaying results in fines and possible deportation.
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related Guides</h2>
+        <div class="related-links">
+          <a href="/en/divorce-lawyer-dubai" class="related-link">
+            <strong>Find a Divorce Lawyer in Dubai</strong>
+            <span>Ministry of Justice-licensed expat specialists</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai" class="related-link">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step court procedure guide</span>
+          </a>
+          <a href="/en/child-custody-uae" class="related-link">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody under the 2022 law explained</span>
+          </a>
+          <a href="/en/uae-divorce-law" class="related-link">
+            <strong>UAE Divorce Law Explained</strong>
+            <span>Federal personal status law in full</span>
+          </a>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} lang="en" />
+
+      <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Free Expat Divorce Consultation</h2>
+        <p>Get matched with a divorce lawyer in Dubai who specialises in expat cases. Free, confidential, within 24 hours.</p>
+        <LeadForm lang="en" variant="inline" />
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceUAE.ae — Legal referral service. Not a law firm.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/ar/الطلاق-في-الامارات">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 60px 0 50px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.02rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.88rem; }
+  .hero__trust li { opacity: 0.9; }
+  .section { padding: 56px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.35rem, 2.8vw, 1.85rem); font-weight: 700; color: #1e3a5f; margin-bottom: 18px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 14px; }
+  .section a { color: #2563eb; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 56px 40px; margin-bottom: 60px; text-align: center; }
+  .callout { background: #eff6ff; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 0 8px 8px 0; color: #1e3a5f; font-size: 0.95rem; margin: 16px 0; }
+  .list { margin: 10px 0 18px 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+  .compare-card { padding: 24px; border-radius: 12px; }
+  .compare-card h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 14px; }
+  .compare-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; }
+  .compare-card ul li { font-size: 0.9rem; line-height: 1.5; padding-right: 0; }
+  .compare-card--old { background: #fef2f2; border: 1.5px solid #fecaca; }
+  .compare-card--old h3 { color: #991b1b; }
+  .compare-card--old ul li { color: #7f1d1d; }
+  .compare-card--old ul li::before { content: '✗ '; color: #ef4444; }
+  .compare-card--new { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+  .compare-card--new h3 { color: #14532d; }
+  .compare-card--new ul li { color: #166534; }
+  .compare-card--new ul li::before { content: '✓ '; color: #22c55e; }
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
+  .steps li { counter-increment: steps; padding: 22px 22px 22px 72px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 22px; width: 34px; height: 34px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.6; }
+  .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .related-link { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .related-link:hover { border-color: #2563eb; }
+  .related-link strong { color: #1e3a5f; font-size: 0.97rem; }
+  .related-link span { color: #6b7280; font-size: 0.85rem; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 36px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.82rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; }
+  @media (max-width: 768px) { .hero__inner { grid-template-columns: 1fr; } .compare-grid { grid-template-columns: 1fr; } .section--cta { padding: 40px 20px; } }
+</style>

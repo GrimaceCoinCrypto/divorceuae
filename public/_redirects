@@ -1,0 +1,7 @@
+# Cloudflare Pages redirect rules
+
+# Root → /en/
+/  /en/  301
+
+# 404 fallback
+/*  /404  404

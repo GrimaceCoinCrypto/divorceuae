@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'قانون الطلاق في الإمارات — شرح قانون الأحوال الشخصية 2025';
+const description =
+  'شرح شامل لقانون الطلاق في الإمارات: قانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005 وتعديلات 2022. أنواع الطلاق، حقوق الزوجين، الحضانة، النفقة، وأحكام غير المسلمين.';
+
+const canonical = 'https://divorceuae.ae/ar/قانون-الطلاق-في-الامارات';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/uae-divorce-law',
+  ar: 'https://divorceuae.ae/ar/قانون-الطلاق-في-الامارات',
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceuae.ae/ar/' },
+  { name: 'قانون الطلاق في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما هو القانون الذي يحكم الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يُحكم الطلاق في الإمارات بقانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005 وتعديلاته. وبالنسبة لغير المسلمين المقيمين، يُطبَّق قانون الأحوال الشخصية للأجانب غير المسلمين الصادر بالقانون الاتحادي رقم 41 لسنة 2022.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الذي غيّره قانون 2022 في أحكام الطلاق بالإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أتاح القانون الاتحادي رقم 41 لسنة 2022 لغير المسلمين الطلاق وفق أحكام مدنية: قسمة متساوية للأصول المكتسبة خلال الزواج، حضانة مشتركة مبدئية للأطفال، وانتفاء فترة العدة. يتضمن هذا القانون أيضاً أحكاماً للميراث والوصية وإثبات النسب.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'ما هو القانون الذي يحكم الطلاق في الإمارات؟',
+    answer: 'قانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005 وتعديلاته للمسلمين. والقانون الاتحادي رقم 41 لسنة 2022 لغير المسلمين المقيمين في الإمارات.',
+  },
+  {
+    question: 'ما الذي غيّره قانون 2022؟',
+    answer: 'أتاح لغير المسلمين الطلاق وفق أحكام مدنية: <strong>قسمة متساوية للأصول، حضانة مشتركة بالتساوي، وانتفاء العدة</strong>.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+  schema={faqSchema}
+>
+  <main>
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <Breadcrumb items={breadcrumbItems} lang="ar" />
+          <h1 class="hero__h1">
+            قانون الطلاق في الإمارات —<br />
+            شرح شامل للتشريع والأحكام
+          </h1>
+          <p class="hero__sub">
+            يُحكم الطلاق في الإمارات بقانون الأحوال الشخصية الاتحادي، مع نظام قانوني مدني
+            خاص بغير المسلمين أُقرّ عام 2022. هذا الدليل يشرح القانون الإماراتي للطلاق
+            بلغة واضحة: أنواع الطلاق، حقوق الزوجين، الحضانة، والنفقة.
+          </p>
+          <ul class="hero__trust">
+            <li>✓ القانون الاتحادي للأحوال الشخصية</li>
+            <li>✓ تعديلات 2022 لغير المسلمين</li>
+            <li>✓ حقوق الزوجين كاملةً</li>
+            <li>✓ استشارة مجانية</li>
+          </ul>
+        </div>
+        <div class="hero__form">
+          <LeadForm lang="ar" variant="hero" heading="افهم حقوقك — استشارة مجانية" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <section class="section" aria-labelledby="law-heading">
+        <h2 id="law-heading">قانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005</h2>
+        <p>
+          يُشكّل هذا القانون الإطار القانوني الرئيسي للزواج والطلاق والحضانة والنفقة
+          في الإمارات العربية المتحدة، وينطبق على المسلمين من مواطنين ومقيمين.
+          يستند القانون إلى أحكام الشريعة الإسلامية مع مراعاة خصوصية التطبيق في المجتمع الإماراتي.
+        </p>
+
+        <h3>أبرز أحكام الطلاق في القانون</h3>
+        <ul class="list">
+          <li><strong>الطلاق:</strong> حق الزوج في إنهاء الزواج، يجب تسجيله قضائياً ليكون نافذاً</li>
+          <li><strong>الخلع:</strong> حق الزوجة في طلب الطلاق مقابل رد المهر، لا يحق للزوج رفضه</li>
+          <li><strong>التفريق القضائي:</strong> الطلاق للضرر أو الغيبة أو عدم الإنفاق</li>
+          <li><strong>العدة:</strong> فترة انتظار إلزامية (3 أشهر) بعد الطلاق قبل الزواج الجديد</li>
+          <li><strong>النفقة:</strong> يلتزم الزوج بالإنفاق على الزوجة المطلقة طوال فترة العدة</li>
+          <li><strong>المهر المؤجل:</strong> يُستحق للزوجة عند الطلاق أو الوفاة</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="2022-heading">
+        <h2 id="2022-heading">القانون الاتحادي رقم 41 لسنة 2022 — أحكام غير المسلمين</h2>
+        <p>
+          يُعدّ هذا القانون نقلة نوعية في التشريع الإماراتي، إذ يُتيح لغير المسلمين المقيمين
+          في الإمارات تطبيق أحكام مدنية على زواجهم وطلاقهم بدلاً من أحكام الشريعة الإسلامية.
+        </p>
+
+        <h3>أحكام الطلاق لغير المسلمين</h3>
+        <div class="law-grid">
+          <div class="law-item">
+            <span class="law-icon">⚖️</span>
+            <h3>قسمة الأصول</h3>
+            <p>تُقسَّم الأصول المكتسبة خلال فترة الزواج بالتساوي بين الزوجين بصرف النظر عن اسم مَن سُجِّلت باسمه.</p>
+          </div>
+          <div class="law-item">
+            <span class="law-icon">👨‍👧</span>
+            <h3>الحضانة المشتركة</h3>
+            <p>الحضانة المشتركة هي الأصل — يتشارك الوالدان وقت الأطفال بالتساوي ولهما حق متساوٍ في القرارات المصيرية.</p>
+          </div>
+          <div class="law-item">
+            <span class="law-icon">🚫</span>
+            <h3>انتفاء العدة</h3>
+            <p>لا تسري فترة العدة الإسلامية على غير المسلمين — يجوز الزواج الجديد فور صدور حكم الطلاق.</p>
+          </div>
+          <div class="law-item">
+            <span class="law-icon">📋</span>
+            <h3>إجراءات مبسّطة</h3>
+            <p>لا يشترط تقديم أسباب للطلاق — طلب الطرفين أو أحدهما كافٍ، دون الحاجة لإثبات الضرر.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>كيف تستفيد من قانون 2022:</strong> يجب أن يكون أحد الزوجين على الأقل غير مسلم،
+          وأن تطلب صراحةً تطبيق هذا القانون عند تقديم دعوى الطلاق. إذا لم تطلبه، قد يُطبَّق
+          القانون الإسلامي تلقائياً.
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="types-heading">
+        <h2 id="types-heading">أنواع الطلاق وفق القانون الإماراتي</h2>
+
+        <h3>الطلاق (بإرادة الزوج)</h3>
+        <p>يملك الزوج المسلم حق الطلاق، لكن يجب تسجيله قضائياً في محكمة الأحوال الشخصية ليكون نافذاً قانونياً. الطلاق الشفهي غير المسجّل لا أثر قانونياً له في الإمارات.</p>
+
+        <h3>الخلع (بطلب الزوجة)</h3>
+        <p>تطلب الزوجة من المحكمة إنهاء الزواج مقابل ردّ المهر المقدّم. لا يحق للزوج الاعتراض، لكنه يحق له استرداد المهر. يستغرق الخلع عادةً 1–3 أشهر.</p>
+
+        <h3>التفريق القضائي للضرر</h3>
+        <p>تلجأ إليه الزوجة عند الإيذاء أو الإهمال أو الهجر. يتطلب تقديم أدلة أمام المحكمة.</p>
+
+        <h3>الطلاق بالتراضي</h3>
+        <p>يتفق الزوجان على جميع شروط الطلاق ويقدمان طلباً مشتركاً. الأسرع والأقل تكلفةً: 1–3 أشهر.</p>
+
+        <p>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات">دليل مفصّل: إجراءات الطلاق خطوة بخطوة ←</a>
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="related-heading">
+        <h2 id="related-heading">أدلة ذات صلة</h2>
+        <div class="related-links">
+          <a href="/ar/محامي-طلاق" class="related-link">
+            <strong>محامي طلاق في الإمارات</strong>
+            <span>استشر محامياً متخصصاً في القانون الإماراتي</span>
+          </a>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات" class="related-link">
+            <strong>إجراءات الطلاق في الإمارات</strong>
+            <span>خطوة بخطوة من التقديم للحكم</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات" class="related-link">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>النفقة والمهر وحق السكن</span>
+          </a>
+          <a href="/ar/طلاق-للضرر" class="related-link">
+            <strong>الطلاق للضرر</strong>
+            <span>الشروط والأدلة والإجراءات</span>
+          </a>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} lang="ar" />
+
+      <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">افهم حقوقك القانونية — استشارة مجانية</h2>
+        <p>تحدث مع محامٍ متخصص في قانون الأحوال الشخصية الإماراتي. سري ومجاني.</p>
+        <LeadForm lang="ar" variant="inline" />
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceUAE.ae — خدمة إحالة قانونية. ليست مكتب محاماة.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/en/uae-divorce-law">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 60px 0 50px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.35; margin-bottom: 16px; }
+  .hero__sub { font-size: 1rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.9; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.88rem; }
+  .hero__trust li { opacity: 0.9; }
+  .section { padding: 56px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.3rem, 2.8vw, 1.8rem); font-weight: 700; color: #1e3a5f; margin-bottom: 18px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 2; margin-bottom: 14px; }
+  .section a { color: #2563eb; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 56px 40px; margin-bottom: 60px; text-align: center; }
+  .callout { background: #eff6ff; border-right: 4px solid #2563eb; border-left: none; padding: 14px 18px; border-radius: 8px 0 0 8px; color: #1e3a5f; font-size: 0.95rem; margin: 20px 0; }
+  .list { margin: 10px 0 18px 0; padding-right: 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.8; }
+  .law-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 24px 0; }
+  .law-item { padding: 22px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .law-icon { font-size: 1.6rem; display: block; margin-bottom: 10px; }
+  .law-item h3 { font-size: 0.97rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .law-item p { font-size: 0.9rem; color: #6b7280; margin: 0; line-height: 1.6; }
+  .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .related-link { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .related-link:hover { border-color: #2563eb; }
+  .related-link strong { color: #1e3a5f; font-size: 0.97rem; }
+  .related-link span { color: #6b7280; font-size: 0.85rem; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 36px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.82rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; }
+  @media (max-width: 768px) { .hero__inner { grid-template-columns: 1fr; } .section--cta { padding: 40px 20px; } }
+</style>

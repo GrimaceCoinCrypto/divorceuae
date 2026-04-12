@@ -1,0 +1,342 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+
+const title = 'Divorce UAE — Divorce Lawyer Dubai & Legal Advice for Expats';
+const description =
+  'Expert divorce legal advice for UAE residents and expats. Get connected with qualified divorce lawyers in Dubai, Abu Dhabi, and all Emirates. Free consultation.';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/',
+  ar: 'https://divorceuae.ae/ar/',
+};
+
+const homepageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Divorce UAE',
+  url: 'https://divorceuae.ae',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://divorceuae.ae/en/?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const faqItems = [
+  {
+    question: 'How long does divorce take in Dubai?',
+    answer:
+      'Mutual (uncontested) divorce typically takes 1–3 months at the Personal Status Court in Dubai. Contested divorce, where one party disputes the terms, can take 6–24 months depending on the complexity of child custody and financial disputes.',
+  },
+  {
+    question: 'Can non-Muslims get divorced in UAE?',
+    answer:
+      "Yes. UAE's 2022 Personal Status Law allows non-Muslim expats to divorce under civil law principles. This means equal division of marital assets and shared custody by default — without requiring Islamic law to apply. The process is handled at the Personal Status Court.",
+  },
+  {
+    question: 'What is the cost of divorce in Dubai?',
+    answer:
+      'Court filing fees start at AED 600–2,000. Lawyer fees for an uncontested divorce range from AED 5,000–15,000. Contested divorces can cost significantly more depending on the duration. Many lawyers offer a free initial consultation.',
+  },
+  {
+    question: 'What happens to my UAE visa after divorce?',
+    answer:
+      "If you were on your spouse's visa, you have 30 days after the divorce is finalised to change your visa status. You can switch to an employment visa, investor visa, or apply for a 1-year divorce/custody visa if you have children in the UAE.",
+  },
+  {
+    question: 'Who gets child custody in UAE?',
+    answer:
+      'Under UAE law, mothers typically receive physical custody of young children (boys until age 11, girls until age 13 under personal status law). However, both parents retain guardianship rights. The 2022 law for non-Muslims allows equal custody arrangements.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={homepageSchema}
+>
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__h1">
+          Divorce Lawyer Dubai &amp; UAE —<br />
+          Free Legal Consultation
+        </h1>
+        <p class="hero__sub">
+          Navigating divorce in the UAE is complex. Whether you are Muslim or non-Muslim,
+          expat or Emirati — our network of qualified family lawyers in Dubai guides you
+          through every step, from Personal Status Court filing to custody and asset division.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Free first consultation</li>
+          <li>✓ English &amp; Arabic support</li>
+          <li>✓ Dubai &amp; all Emirates</li>
+          <li>✓ 100% confidential</li>
+        </ul>
+      </div>
+
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- ===== WHY CHOOSE ===== -->
+    <section class="section" aria-labelledby="why-heading">
+      <h2 id="why-heading">Why UAE Residents Trust Divorce UAE</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="card__icon">⚖️</span>
+          <h3>Qualified Family Lawyers</h3>
+          <p>Every lawyer in our network is licensed with the UAE Ministry of Justice and specialises in family and personal status law.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon">🌐</span>
+          <h3>English &amp; Arabic</h3>
+          <p>Full support in both languages. We understand the legal nuances for both Muslim and non-Muslim expats under UAE law.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon">🛡️</span>
+          <h3>Confidential Process</h3>
+          <p>Your personal details and case information are never shared without your consent. Complete discretion guaranteed.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon">📋</span>
+          <h3>End-to-End Guidance</h3>
+          <p>From initial consultation through court filing, hearings, and final decree — we support you at every stage.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIVORCE PROCESS ===== -->
+    <section class="section" aria-labelledby="process-heading">
+      <h2 id="process-heading">How to File for Divorce in Dubai — Step by Step</h2>
+      <p>
+        The divorce process in Dubai is handled by the Personal Status Court. Here is what to expect:
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Step 1 — Consult a Family Lawyer</h3>
+          <p>Before filing, consult a qualified UAE family lawyer to understand your rights, likely outcomes, and whether reconciliation is possible or desired.</p>
+        </li>
+        <li>
+          <h3>Step 2 — File at the Personal Status Court</h3>
+          <p>Submit your divorce application at the Personal Status Court in the emirate where you reside. Required documents include your marriage certificate, passports, and Emirates ID.</p>
+        </li>
+        <li>
+          <h3>Step 3 — Mandatory Reconciliation Session</h3>
+          <p>UAE courts require at least one reconciliation attempt before proceeding. A court-appointed counsellor will meet with both parties. If reconciliation fails, the case proceeds.</p>
+        </li>
+        <li>
+          <h3>Step 4 — Court Hearings</h3>
+          <p>For uncontested divorce, a single hearing is often sufficient. Contested cases involving custody or asset disputes require multiple hearings.</p>
+        </li>
+        <li>
+          <h3>Step 5 — Final Decree Issued</h3>
+          <p>The court issues the divorce decree. This must be attested and, for expats, legalised for recognition in your home country.</p>
+        </li>
+      </ol>
+
+      <div class="cta-inline">
+        <p>Need help with the filing process?</p>
+        <a href="#contact" class="btn btn--primary">Get Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- ===== EXPATS ===== -->
+    <section class="section" aria-labelledby="expat-heading">
+      <h2 id="expat-heading">Divorce in UAE for Expats — What You Need to Know</h2>
+      <p>
+        Expats make up over 88% of the UAE population, and divorce law for non-citizens has changed significantly
+        following the <strong>2022 UAE Personal Status Law</strong> reform.
+      </p>
+
+      <h3>Non-Muslim Expats (2022 Law)</h3>
+      <p>
+        Under Federal Law No. 41 of 2022, non-Muslim expats can now divorce under civil principles — not Islamic law.
+        Key differences include:
+      </p>
+      <ul class="list">
+        <li>Equal division of marital assets acquired during the marriage</li>
+        <li>Joint parental custody as the default (subject to best interests of the child)</li>
+        <li>No mandatory waiting period (iddah) for non-Muslims</li>
+        <li>Either spouse can initiate divorce proceedings</li>
+      </ul>
+
+      <h3>Muslim Expats</h3>
+      <p>
+        Muslim expats — regardless of nationality — are subject to UAE personal status law based on Islamic principles.
+        This includes rules around <em>talaq</em> (husband-initiated divorce), <em>khul'a</em> (wife-initiated divorce),
+        iddah waiting period, and mahr (dowry) obligations.
+      </p>
+
+      <p>
+        <a href="/en/divorce-in-uae-for-expats">Full guide: Divorce in UAE for expats →</a>
+      </p>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section" aria-labelledby="services-heading">
+      <h2 id="services-heading">Our Legal Services</h2>
+      <div class="service-links">
+        <a href="/en/divorce-lawyer-dubai" class="service-link">
+          <strong>Divorce Lawyer Dubai</strong>
+          <span>Find a qualified family lawyer in Dubai</span>
+        </a>
+        <a href="/en/child-custody-uae" class="service-link">
+          <strong>Child Custody UAE</strong>
+          <span>Understand custody rights and court process</span>
+        </a>
+        <a href="/en/uae-divorce-law" class="service-link">
+          <strong>UAE Divorce Law Guide</strong>
+          <span>Complete guide to personal status law</span>
+        </a>
+        <a href="/en/divorce-in-uae-for-expats" class="service-link">
+          <strong>Divorce for Expats</strong>
+          <span>Non-Muslim divorce under the 2022 law</span>
+        </a>
+        <a href="/en/how-to-file-for-divorce-in-dubai" class="service-link">
+          <strong>How to File for Divorce</strong>
+          <span>Step-by-step court filing guide</span>
+        </a>
+        <a href="/en/wife-rights-after-divorce-uae" class="service-link">
+          <strong>Wife's Rights After Divorce</strong>
+          <span>Financial rights, alimony, and housing</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <FAQSection items={faqItems} lang="en" />
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading">
+      <h2 id="bottom-cta-heading">Start Your Free Consultation Today</h2>
+      <p>
+        Speak to a divorce lawyer in Dubai within 24 hours. Completely confidential.
+        Available in English and Arabic.
+      </p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceUAE.ae — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    padding: 80px 0 60px;
+  }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  /* Sections */
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 32px; }
+  .card { padding: 28px 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card__icon { font-size: 1.8rem; display: block; margin-bottom: 12px; }
+  .card h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.9rem; color: #6b7280; margin: 0; }
+
+  /* Steps */
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
+  .steps li {
+    counter-increment: steps;
+    padding: 24px 24px 24px 72px;
+    position: relative;
+    background: #f8faff;
+    border-radius: 12px;
+    border-left: 4px solid #2563eb;
+  }
+  .steps li::before {
+    content: counter(steps);
+    position: absolute; left: 20px; top: 24px;
+    width: 36px; height: 36px;
+    background: #2563eb; color: #fff;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+  .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.9rem; color: #374151; margin: 0; }
+
+  /* List */
+  .list { margin: 12px 0 20px 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
+
+  /* CTA inline */
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 32px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c9a84c;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn--primary:hover { background: #b8942d; }
+
+  /* Service links */
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 20px; background: #fff;
+    border: 1.5px solid #e5e7eb; border-radius: 10px;
+    text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .service-link:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
+  .service-link strong { color: #1e3a5f; font-size: 1rem; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  /* Footer */
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

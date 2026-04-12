@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'محامي طلاق في دبي — أفضل محامي أسرة معتمد | DivorceUAE';
+const description =
+  'ابحث عن أفضل محامي طلاق في دبي لقضايا الطلاق بالتراضي والخلع والطلاق للضرر وحضانة الأطفال. مرخّص من وزارة العدل. استشارة مجانية باللغة العربية.';
+
+const canonical = 'https://divorceuae.ae/ar/محامي-طلاق-دبي';
+
+const hreflang = {
+  en: 'https://divorceuae.ae/en/divorce-lawyer-dubai',
+  ar: 'https://divorceuae.ae/ar/محامي-طلاق-دبي',
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceuae.ae/ar/' },
+  { name: 'محامي طلاق', url: 'https://divorceuae.ae/ar/محامي-طلاق' },
+  { name: 'محامي طلاق في دبي' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'أين تقع محكمة الأحوال الشخصية في دبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تقع محكمة الأحوال الشخصية في دبي في منطقة ديرة. يمكن تسجيل القضايا إلكترونياً عبر تطبيق محاكم دبي أو الموقع الإلكتروني، غير أن الحضور الشخصي لا يزال مطلوباً لجلسات المصالحة والاستماع.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكنني توكيل محامٍ عبر الإنترنت في دبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، يمكنك التواصل مع محامي الطلاق وتوكيله عبر الإنترنت في دبي. كثير من مكاتب المحاماة تقدم استشارات عن بُعد عبر الهاتف أو الفيديو. استخدم نموذج التواصل للحصول على مطابقة مجانية مع محامٍ مناسب.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم يستغرق الطلاق في دبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'وفق إجراءات محكمة الأحوال الشخصية في دبي، يستغرق الطلاق بالتراضي 1–3 أشهر. أما الطلاق المتنازع عليه فيستغرق 6–24 شهراً حسب تعقيد القضية.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'أين تقع محكمة الأحوال الشخصية في دبي؟',
+    answer:
+      'تقع في منطقة <strong>ديرة</strong>. يمكن تسجيل القضايا إلكترونياً عبر تطبيق محاكم دبي، لكن الحضور الشخصي لا يزال مطلوباً لجلسات المصالحة والاستماع.',
+  },
+  {
+    question: 'هل يمكنني توكيل محامٍ عبر الإنترنت في دبي؟',
+    answer:
+      'نعم. كثير من مكاتب المحاماة في دبي تقدم استشارات أولية عن بُعد عبر الهاتف أو الفيديو. استخدم نموذج التواصل للحصول على مطابقة مجانية مع محامٍ مناسب لحالتك.',
+  },
+  {
+    question: 'كم يستغرق الطلاق في دبي؟',
+    answer:
+      'وفق إجراءات محكمة الأحوال الشخصية في دبي، يستغرق <strong>الطلاق بالتراضي 1–3 أشهر</strong>. الطلاق المتنازع عليه يستغرق 6–24 شهراً.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+  schema={faqSchema}
+>
+  <main>
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <Breadcrumb items={breadcrumbItems} lang="ar" />
+          <h1 class="hero__h1">
+            محامي طلاق في دبي —<br />
+            خبرة في جميع قضايا الأسرة
+          </h1>
+          <p class="hero__sub">
+            نُوفّر لك أفضل محامي طلاق في دبي مرخّصين من وزارة العدل الإماراتية.
+            خبرة في الطلاق بالتراضي، الطلاق المتنازع عليه، الخلع، الطلاق للضرر،
+            وحضانة الأطفال أمام محكمة الأحوال الشخصية في دبي.
+          </p>
+          <ul class="hero__trust">
+            <li>✓ مرخّصون من وزارة العدل الإماراتية</li>
+            <li>✓ خبرة في محكمة الأحوال الشخصية دبي</li>
+            <li>✓ دعم كامل باللغة العربية</li>
+            <li>✓ استشارة أولى مجانية</li>
+          </ul>
+        </div>
+        <div class="hero__form">
+          <LeadForm lang="ar" variant="hero" heading="تواصل مع محامي طلاق دبي الآن" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <!-- ===== خدمات محكمة دبي ===== -->
+      <section class="section" aria-labelledby="court-heading">
+        <h2 id="court-heading">محكمة الأحوال الشخصية في دبي — ما تحتاج معرفته</h2>
+        <p>
+          تنظر محكمة الأحوال الشخصية في دبي في جميع قضايا الطلاق للمقيمين في دبي.
+          تعمل المحكمة وفق <strong>قانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005</strong>،
+          مع تعديلات 2022 الخاصة بالمقيمين غير المسلمين.
+        </p>
+
+        <h3>الإجراءات في محكمة الأحوال الشخصية دبي</h3>
+        <ol class="steps">
+          <li>
+            <h3>تقديم الدعوى</h3>
+            <p>يُقدّم محاميك دعوى الطلاق مع المستندات المطلوبة، ويُسدَّد رسم التسجيل (600–2,000 درهم).</p>
+          </li>
+          <li>
+            <h3>جلسة المصالحة الإلزامية</h3>
+            <p>تُعيّن المحكمة مستشاراً اجتماعياً لمحاولة المصالحة بين الطرفين. إن فشلت، تُحدَّد جلسة استماع.</p>
+          </li>
+          <li>
+            <h3>جلسات الاستماع</h3>
+            <p>للطلاق بالتراضي، غالباً جلسة واحدة تكفي. للطلاق المتنازع عليه، جلسات متعددة على فترات 4–6 أسابيع.</p>
+          </li>
+          <li>
+            <h3>صدور الحكم وتوثيقه</h3>
+            <p>يصدر حكم الطلاق. يُرتّب محاميك تصديقه لدى الجهات الرسمية والاعتراف به في بلدك إن لزم.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ===== خدمات المحامي ===== -->
+      <section class="section" aria-labelledby="services-heading">
+        <h2 id="services-heading">خدمات محامي الطلاق في دبي</h2>
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>الطلاق بالتراضي</h3>
+            <p>إعداد وتقديم اتفاق الطلاق المشترك وضمان صياغته بشكل يحمي حقوقك قانونياً.</p>
+          </div>
+          <div class="service-card">
+            <h3>الطلاق المتنازع عليه</h3>
+            <p>التمثيل الكامل في جلسات الاستماع والدفاع عن موقفك بشأن الحضانة والنفقة والأصول.</p>
+          </div>
+          <div class="service-card">
+            <h3>الخلع</h3>
+            <p>رفع دعوى الخلع وإدارة مفاوضات إعادة المهر وضمان صدور الحكم في أسرع وقت.</p>
+          </div>
+          <div class="service-card">
+            <h3>الطلاق للضرر</h3>
+            <p>جمع الأدلة وتقديمها لإثبات الضرر أمام المحكمة وضمان قبول الدعوى.</p>
+          </div>
+          <div class="service-card">
+            <h3>حضانة الأطفال</h3>
+            <p>التفاوض على ترتيبات الحضانة وحق الزيارة والحصول على إذن السفر للأطفال.</p>
+          </div>
+          <div class="service-card">
+            <h3>توثيق الحكم</h3>
+            <p>تصديق حكم الطلاق لدى وزارة الخارجية وتوثيقه للاعتراف به في بلدك الأصلي.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== روابط ذات صلة ===== -->
+      <section class="section" aria-labelledby="related-heading">
+        <h2 id="related-heading">أدلة قانونية ذات صلة</h2>
+        <div class="related-links">
+          <a href="/ar/محامي-طلاق" class="related-link">
+            <strong>محامي طلاق في الإمارات</strong>
+            <span>دليل شامل لاختيار المحامي المناسب</span>
+          </a>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات" class="related-link">
+            <strong>إجراءات الطلاق في الإمارات</strong>
+            <span>خطوة بخطوة من التقديم حتى الحكم</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات" class="related-link">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>من يحصل على الحضانة وشروطها</span>
+          </a>
+          <a href="/ar/محامي-طلاق-ابوظبي" class="related-link">
+            <strong>محامي طلاق في أبوظبي</strong>
+            <span>خدمات الطلاق في العاصمة</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== أسئلة شائعة ===== -->
+      <FAQSection items={faqItems} lang="ar" />
+
+      <!-- ===== CTA ===== -->
+      <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">ابدأ استشارتك المجانية مع محامي طلاق في دبي</h2>
+        <p>نُطابق حالتك مع محامٍ مرخّص ومتخصص خلال 24 ساعة. سري تماماً.</p>
+        <LeadForm lang="ar" variant="inline" />
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceUAE.ae — خدمة إحالة قانونية. ليست مكتب محاماة.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/سياسة-الخصوصية">سياسة الخصوصية</a>
+        <a href="/en/divorce-lawyer-dubai">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 60px 0 50px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.35; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.02rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.9; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.88rem; }
+  .hero__trust li { opacity: 0.9; }
+  .section { padding: 56px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.35rem, 2.8vw, 1.85rem); font-weight: 700; color: #1e3a5f; margin-bottom: 18px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 2; margin-bottom: 14px; }
+  .section a { color: #2563eb; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 56px 40px; margin-bottom: 60px; text-align: center; }
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
+  .steps li {
+    counter-increment: steps; padding: 22px 70px 22px 22px; position: relative;
+    background: #f8faff; border-radius: 12px; border-right: 4px solid #2563eb;
+  }
+  .steps li::after {
+    content: counter(steps); position: absolute; right: 18px; top: 22px;
+    width: 34px; height: 34px; background: #2563eb; color: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem;
+  }
+  .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.7; }
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; margin-top: 24px; }
+  .service-card { padding: 22px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .service-card h3 { font-size: 0.97rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .service-card p { font-size: 0.9rem; color: #6b7280; margin: 0; line-height: 1.7; }
+  .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .related-link {
+    display: flex; flex-direction: column; gap: 4px; padding: 18px 20px;
+    background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px;
+    text-decoration: none; transition: border-color 0.2s;
+  }
+  .related-link:hover { border-color: #2563eb; }
+  .related-link strong { color: #1e3a5f; font-size: 0.97rem; }
+  .related-link span { color: #6b7280; font-size: 0.85rem; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 36px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.82rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; }
+  .footer nav a:hover { color: #fff; }
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 36px; }
+    .hero { padding: 44px 0 36px; }
+    .section--cta { padding: 40px 20px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

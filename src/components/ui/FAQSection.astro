@@ -1,0 +1,101 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: FAQItem[];
+  lang?: 'en' | 'ar';
+  heading?: string;
+}
+
+const { items, lang = 'en', heading } = Astro.props;
+
+const defaultHeading = lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<section class="faq-section" id="faq" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">{heading ?? defaultHeading}</h2>
+
+  <div class="faq-list">
+    {items.map((item, i) => (
+      <details class="faq-item" open={i === 0}>
+        <summary class="faq-question">
+          <h3>{item.question}</h3>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p set:html={item.answer} />
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<style>
+  .faq-section { margin: 60px 0; }
+  .faq-section h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #1e3a5f;
+  }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .faq-item[open] { border-color: #2563eb; }
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    cursor: pointer;
+    list-style: none;
+    gap: 12px;
+  }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e3a5f;
+    margin: 0;
+    flex: 1;
+  }
+  .faq-icon {
+    font-size: 1.4rem;
+    color: #2563eb;
+    font-weight: 300;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    padding: 0 20px 18px;
+    color: #374151;
+    font-size: 0.97rem;
+    line-height: 1.7;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 14px;
+  }
+</style>
