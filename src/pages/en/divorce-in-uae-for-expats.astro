@@ -270,6 +270,29 @@ const faqItems = [
         </div>
       </section>
 
+      <!-- ===== COST TABLE ===== -->
+      <section class="section" aria-labelledby="costs-heading">
+        <h2 id="costs-heading">Cost of Divorce in UAE for Expats</h2>
+        <p>
+          Costs vary depending on whether you use the civil law (2022) track or the Islamic law track,
+          and whether the divorce is contested. Here is a realistic breakdown:
+        </p>
+        <div class="cost-table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr><th>Type</th><th>Court Fees</th><th>Lawyer Fees</th><th>Timeline</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Mutual / uncontested (civil law)</strong></td><td>AED 600–1,500</td><td>AED 5,000–15,000</td><td>1–3 months</td></tr>
+              <tr><td><strong>Contested (civil law, no custody dispute)</strong></td><td>AED 1,000–2,000</td><td>AED 12,000–25,000</td><td>3–9 months</td></tr>
+              <tr><td><strong>Contested (civil law, with custody)</strong></td><td>AED 1,500–2,500</td><td>AED 20,000–50,000+</td><td>6–18 months</td></tr>
+              <tr><td><strong>Khul'a (Muslim expat, wife-initiated)</strong></td><td>AED 600–1,500</td><td>AED 6,000–15,000</td><td>2–4 months</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Fees above are estimates. Document attestation and translation adds AED 500–2,000. Many lawyers offer a free first consultation.</p>
+      </section>
+
       <section class="section" aria-labelledby="related-heading">
         <h2 id="related-heading">Related Guides</h2>
         <div class="related-links">
@@ -348,6 +371,12 @@ const faqItems = [
   .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 22px; width: 34px; height: 34px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
   .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
   .steps li p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.6; }
+  .cost-table-wrapper { overflow-x: auto; margin: 20px 0; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+  .cost-table td { padding: 10px 14px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 8px 0 0; }
   .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
   .related-link { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
   .related-link:hover { border-color: #2563eb; }
