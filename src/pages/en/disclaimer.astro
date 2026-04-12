@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Disclaimer — DivorceU.AE';
+const description = 'Legal disclaimer for DivorceU.AE — this site is a referral service, not a law firm. Information provided is for guidance only.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/disclaimer',
+  ar: 'https://divorceu.ae/ar/إخلاء-المسؤولية',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Disclaimer', url: 'https://divorceu.ae/en/disclaimer' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  noindex={true}
+>
+  <main class="container page">
+    <Breadcrumb items={breadcrumbs} lang="en" />
+
+    <div class="content">
+      <h1>Disclaimer</h1>
+      <p class="updated">Last updated: April 2025</p>
+
+      <h2>1. Not a Law Firm</h2>
+      <p>
+        DivorceU.AE is a legal referral and information service. We are <strong>not a law firm</strong>
+        and we do not employ lawyers. We do not provide legal advice, legal representation, or legal
+        services of any kind directly.
+      </p>
+      <p>
+        Nothing on this website constitutes legal advice or creates an attorney-client relationship.
+        The information provided is for general guidance purposes only and may not reflect the most
+        current legal developments in the UAE.
+      </p>
+
+      <h2>2. No Attorney-Client Relationship</h2>
+      <p>
+        Submitting a consultation request through this website does not create an attorney-client
+        relationship between you and DivorceU.AE, or between you and any lawyer in our network
+        until you have formally engaged that lawyer and they have agreed to represent you.
+      </p>
+
+      <h2>3. Information Accuracy</h2>
+      <p>
+        We make every effort to ensure the information on this website is accurate, up to date, and
+        relevant to UAE law. However, UAE laws and regulations — including personal status laws and
+        court procedures — change over time. We cannot guarantee that all information on this site
+        is current or complete at any given time.
+      </p>
+      <p>
+        You should always verify legal information with a qualified, licensed UAE lawyer before
+        taking any legal action.
+      </p>
+
+      <h2>4. No Guarantee of Outcomes</h2>
+      <p>
+        Any information about typical timelines, costs, or outcomes of divorce proceedings in the
+        UAE is provided for general guidance only. Every case is different. DivorceU.AE makes no
+        warranty or guarantee — express or implied — regarding the outcome of any legal matter.
+      </p>
+
+      <h2>5. Third-Party Lawyers</h2>
+      <p>
+        The lawyers and law firms in our referral network are independent professionals. DivorceU.AE
+        does not employ them, supervise their work, or guarantee the quality of their services.
+        By connecting you with a lawyer, we do not endorse or recommend any specific legal outcome
+        or course of action.
+      </p>
+      <p>
+        Any engagement you enter into with a referred lawyer is solely between you and that lawyer.
+        DivorceU.AE accepts no liability for the advice, actions, or omissions of any referred lawyer.
+      </p>
+
+      <h2>6. External Links</h2>
+      <p>
+        This website may contain links to external websites. DivorceU.AE is not responsible for
+        the content, accuracy, or privacy practices of any third-party websites. Links do not
+        constitute endorsement of those sites.
+      </p>
+
+      <h2>7. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by UAE law, DivorceU.AE, its operators, and its affiliates
+        shall not be liable for any direct, indirect, incidental, consequential, or punitive damages
+        arising from your use of this website or reliance on any information contained herein.
+      </p>
+
+      <h2>8. Governing Law</h2>
+      <p>
+        This Disclaimer is governed by the laws of the United Arab Emirates. Any disputes shall
+        be subject to the exclusive jurisdiction of UAE courts.
+      </p>
+
+      <h2>9. Contact</h2>
+      <p>
+        If you have any questions about this Disclaimer or the information on this website, please
+        contact us through the <a href="/en/#contact">consultation form</a> on our homepage.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .page { padding: 60px 0 80px; }
+  .content { max-width: 760px; }
+  h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: #1e3a5f; margin-bottom: 8px; }
+  .updated { color: #9ca3af; font-size: 0.875rem; margin-bottom: 48px; }
+  h2 { font-size: 1.15rem; font-weight: 700; color: #1e3a5f; margin: 36px 0 12px; }
+  p { color: #374151; line-height: 1.8; margin-bottom: 14px; }
+  ul { margin: 0 0 16px 20px; }
+  li { color: #374151; line-height: 1.7; margin-bottom: 6px; }
+  a { color: #2563eb; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; margin-top: 80px; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  @media (max-width: 768px) {
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

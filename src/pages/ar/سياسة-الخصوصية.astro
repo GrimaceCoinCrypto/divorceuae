@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'سياسة الخصوصية — DivorceU.AE';
+const description = 'سياسة الخصوصية لموقع DivorceU.AE — كيف نجمع معلوماتك الشخصية ونستخدمها ونحميها.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/privacy-policy',
+  ar: 'https://divorceu.ae/ar/سياسة-الخصوصية',
+};
+
+const breadcrumbs = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'سياسة الخصوصية', url: 'https://divorceu.ae/ar/سياسة-الخصوصية' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+  noindex={true}
+>
+  <main class="container page">
+    <Breadcrumb items={breadcrumbs} lang="ar" />
+
+    <div class="content">
+      <h1>سياسة الخصوصية</h1>
+      <p class="updated">آخر تحديث: أبريل 2025</p>
+
+      <h2>1. من نحن</h2>
+      <p>
+        DivorceU.AE ("نحن"، "موقعنا") هي خدمة إحالة قانونية تعمل على الموقع
+        <strong>https://divorceu.ae</strong>. نحن لسنا مكتب محاماة ولا نقدم استشارات قانونية مباشرة.
+        نحن نربط الأفراد الباحثين عن مساعدة في قضايا الطلاق وقانون الأسرة بمحامين مرخصين ومؤهلين في الإمارات.
+      </p>
+
+      <h2>2. المعلومات التي نجمعها</h2>
+      <p>عند تقديم طلب استشارة عبر موقعنا، نجمع المعلومات التالية:</p>
+      <ul>
+        <li>الاسم الكامل</li>
+        <li>رقم الهاتف (بما في ذلك واتساب)</li>
+        <li>البريد الإلكتروني</li>
+        <li>وصف موجز لوضعك (إن أُدرج)</li>
+        <li>تفضيل اللغة</li>
+      </ul>
+      <p>
+        نجمع أيضاً بيانات تقنية معيارية تلقائياً عبر Google Analytics، بما في ذلك موقعك التقريبي
+        ونوع المتصفح والجهاز والصفحات التي زرتها والوقت الذي قضيته في الموقع. هذه البيانات مجهولة
+        الهوية ومجمّعة — ولا تعرّفك شخصياً.
+      </p>
+
+      <h2>3. كيف نستخدم معلوماتك</h2>
+      <p>نستخدم المعلومات التي تقدمها حصراً من أجل:</p>
+      <ul>
+        <li>ربطك بمحامي طلاق مؤهل من شبكتنا</li>
+        <li>الرد على طلب استشارتك خلال 24 ساعة</li>
+        <li>متابعة استفسارك في حال عدم تلقّي رد منك</li>
+      </ul>
+      <p>لا نستخدم بياناتك الشخصية لأغراض تسويقية دون موافقتك الصريحة.</p>
+
+      <h2>4. كيف نشارك معلوماتك</h2>
+      <p>
+        تُشارك معلوماتك فقط مع المحامي أو مكتب المحاماة الذي نربطك به استجابةً لطلب استشارتك.
+        لا نبيع بياناتك الشخصية أو نؤجرها أو نتداولها مع أطراف ثالثة لأغراض تجارية.
+      </p>
+      <p>نستخدم خدمات الطرف الثالث التالية لتشغيل الموقع:</p>
+      <ul>
+        <li><strong>Web3Forms</strong> — يعالج طلبات النماذج ويرسلها إلينا عبر البريد الإلكتروني. تمر بياناتك عبر خوادمهم.</li>
+        <li><strong>Google Analytics</strong> — تحليلات مجهولة الهوية لحركة الموقع.</li>
+        <li><strong>Cloudflare</strong> — استضافة الموقع وأمنه.</li>
+      </ul>
+
+      <h2>5. الاحتفاظ بالبيانات</h2>
+      <p>
+        نحتفظ بمعلوماتك الشخصية طالما كان ذلك ضرورياً لتلبية طلب استشارتك وأي متابعة لاحقة.
+        إذا طلبت حذف بياناتك، سنفعل ذلك خلال 30 يوماً، ما لم يكن يُلزمنا القانون بالاحتفاظ بها.
+      </p>
+
+      <h2>6. حقوقك</h2>
+      <p>يحق لك:</p>
+      <ul>
+        <li>طلب الاطلاع على البيانات الشخصية التي نحتفظ بها عنك</li>
+        <li>طلب تصحيح البيانات غير الدقيقة</li>
+        <li>طلب حذف بياناتك</li>
+        <li>سحب موافقتك على التواصل في أي وقت</li>
+      </ul>
+      <p>
+        لممارسة أي من هذه الحقوق، تواصل معنا عبر نموذج الاستشارة في موقعنا مع الإشارة إلى "طلب بيانات" في رسالتك.
+      </p>
+
+      <h2>7. الأمن</h2>
+      <p>
+        نتخذ خطوات معقولة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو الفقدان أو الإفصاح.
+        تُنقل جميع البيانات عبر اتصالات HTTPS مشفرة. ومع ذلك، لا يمكن ضمان أمان كامل لأي عملية نقل عبر الإنترنت.
+      </p>
+
+      <h2>8. ملفات تعريف الارتباط (الكوكيز)</h2>
+      <p>
+        يستخدم موقعنا كوكيز Google Analytics لفهم كيفية استخدام الزوار للموقع. لا تعرّفك هذه الكوكيز شخصياً.
+        يمكنك تعطيل الكوكيز في إعدادات متصفحك في أي وقت.
+      </p>
+
+      <h2>9. خصوصية الأطفال</h2>
+      <p>
+        خدماتنا موجهة للبالغين الذين تجاوزوا 18 عاماً. لا نجمع معلومات شخصية من الأطفال دون سن 18 عن قصد.
+      </p>
+
+      <h2>10. التغييرات على هذه السياسة</h2>
+      <p>
+        قد نحدّث سياسة الخصوصية هذه من وقت لآخر. سيعكس تاريخ "آخر تحديث" في أعلى هذه الصفحة أي تغييرات.
+        استمرار استخدامك للموقع بعد نشر التغييرات يُعدّ قبولاً للسياسة المحدّثة.
+      </p>
+
+      <h2>11. القانون الحاكم</h2>
+      <p>
+        تخضع سياسة الخصوصية هذه لقوانين دولة الإمارات العربية المتحدة. تخضع أي نزاعات تتعلق بهذه السياسة
+        لاختصاص المحاكم الإماراتية.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceU.AE — خدمة إحالة قانونية. ليست مكتب محاماة. المعلومات المقدمة للإرشاد فقط ولا تشكل استشارة قانونية.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/سياسة-الخصوصية">سياسة الخصوصية</a>
+        <a href="/ar/إخلاء-المسؤولية">إخلاء المسؤولية</a>
+        <a href="/en/">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .page { padding: 60px 0 80px; }
+  .content { max-width: 760px; }
+  h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: #1e3a5f; margin-bottom: 8px; }
+  .updated { color: #9ca3af; font-size: 0.875rem; margin-bottom: 48px; }
+  h2 { font-size: 1.15rem; font-weight: 700; color: #1e3a5f; margin: 36px 0 12px; }
+  p { color: #374151; line-height: 1.9; margin-bottom: 14px; }
+  ul { margin: 0 0 16px 0; padding-right: 20px; padding-left: 0; }
+  li { color: #374151; line-height: 1.7; margin-bottom: 6px; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; margin-top: 80px; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  @media (max-width: 768px) {
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>
