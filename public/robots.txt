@@ -4,4 +4,4 @@ Allow: /
 Disallow: /thank-you
 Disallow: /404
 
-Sitemap: https://divorceuae.ae/sitemap-index.xml
+Sitemap: https://divorceu.ae/sitemap-index.xml
