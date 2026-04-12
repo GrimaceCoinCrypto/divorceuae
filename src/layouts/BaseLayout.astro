@@ -57,6 +57,15 @@ const allSchemas = [legalServiceSchema, ...schemas];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q144FGC7KR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q144FGC7KR');
+    </script>
+
     <!-- Primary meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
