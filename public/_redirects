@@ -1,7 +1,10 @@
 # Cloudflare Pages redirect rules
 
-# Root → /en/
-/  /en/  301
+# Root → serve /en/ content without redirect (URL stays as divorceu.ae/)
+/  /en/  200
+
+# Thank-you page rewrite (form redirect target)
+/thank-you  /en/thank-you  200
 
 # 404 fallback
 /*  /404  404

@@ -42,16 +42,14 @@ const t = copy[lang];
 
     <form
       class="lead-form__form"
-      name="divorce-lead"
       method="POST"
-      action="/thank-you"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
+      action="https://api.web3forms.com/submit"
     >
-      <input type="hidden" name="form-name" value="divorce-lead" />
+      <input type="hidden" name="access_key" value="a9bbab78-31f2-4714-8fa6-79ea3f564e4e" />
+      <input type="hidden" name="subject" value="New Divorce Consultation Request — DivorceU.AE" />
+      <input type="hidden" name="redirect" value="https://divorceu.ae/thank-you" />
       <input type="hidden" name="lang" value={lang} />
-      <!-- Honeypot -->
-      <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <input type="hidden" name="botcheck" class="sr-only" />
 
       <div class="lead-form__fields">
         <label class="lead-form__label">

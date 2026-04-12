@@ -1,0 +1,377 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'UAE Divorce Law — Complete Guide to Personal Status Law 2025';
+const description =
+  'Full guide to UAE divorce law: Personal Status Law, 2022 reforms for non-Muslims, Islamic divorce rules, court procedures, and your legal rights.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/uae-divorce-law',
+  ar: 'https://divorceu.ae/ar/قانون-الطلاق-في-الامارات',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'UAE Divorce Law', url: 'https://divorceu.ae/en/uae-divorce-law' },
+];
+
+const faqItems = [
+  {
+    question: 'What is the main law governing divorce in UAE?',
+    answer:
+      'Federal Personal Status Law No. 28 of 2005 governs divorce for Muslims in the UAE. For non-Muslim expats, Federal Law No. 41 of 2022 introduced civil divorce rules based on secular principles.',
+  },
+  {
+    question: 'Can a wife initiate divorce in UAE?',
+    answer:
+      'Yes. Under Islamic law, a wife can file for khul\'a (divorce with financial settlement) or judicial divorce (tafreeq) on specific grounds such as harm, abandonment, or non-payment of maintenance. Under the 2022 civil law for non-Muslims, either spouse can initiate divorce without grounds.',
+  },
+  {
+    question: 'Does UAE recognise foreign divorces?',
+    answer:
+      'UAE courts generally recognise foreign divorce decrees if they were obtained legally in the country of origin and do not conflict with UAE public policy. The decree must be attested and officially translated into Arabic.',
+  },
+  {
+    question: 'What is the iddah waiting period?',
+    answer:
+      'Iddah is the mandatory waiting period for Muslim women after divorce before they may remarry. It is typically three menstrual cycles (approximately 3 months), or until delivery if pregnant. The iddah period does not apply to non-Muslim divorcees under the 2022 law.',
+  },
+  {
+    question: 'How is property divided in a UAE divorce?',
+    answer:
+      'For Muslims, there is no default community property rule — each spouse retains their own assets. For non-Muslim expats under the 2022 law, marital assets acquired during the marriage are divided equally by default.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">UAE Divorce Law — Complete Guide</h1>
+        <p class="hero__sub">
+          Understanding UAE divorce law is essential before taking any legal steps.
+          The UAE operates a dual legal system: Islamic personal status law for Muslims,
+          and a 2022 civil law for non-Muslim expats. This guide covers both.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Updated for 2025</li>
+          <li>✓ Muslim &amp; non-Muslim rules</li>
+          <li>✓ Federal + Emirate-level courts</li>
+          <li>✓ Free consultation available</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Speak to a UAE Divorce Lawyer" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Overview -->
+    <section class="section" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Overview of Divorce Law in UAE</h2>
+      <p>
+        The UAE's legal system for divorce is divided into two main frameworks depending on the
+        religion of the parties involved:
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Muslim Personal Status Law</h3>
+          <p>Governed by <strong>Federal Law No. 28 of 2005</strong>. Applies to all Muslims in the UAE regardless of nationality. Based on Islamic jurisprudence (fiqh) with specific rules on talaq, khul'a, mahr, iddah, and child custody.</p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Civil Divorce Law (2022)</h3>
+          <p>Governed by <strong>Federal Law No. 41 of 2022</strong>. Applies to non-Muslim expats who opt in. Based on secular civil principles: equal asset division, no-fault divorce, and joint custody defaults.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Divorce -->
+    <section class="section" aria-labelledby="types-heading">
+      <h2 id="types-heading">Types of Divorce Under UAE Law</h2>
+
+      <h3>1. Talaq (طلاق) — Husband-Initiated Divorce</h3>
+      <p>
+        A Muslim husband may pronounce talaq (divorce) under Islamic law. However, in the UAE, this must
+        be registered with the Personal Status Court within 30 days of pronouncement. Unregistered talaq
+        can have serious legal consequences.
+      </p>
+      <ul class="list">
+        <li><strong>Revocable talaq (raj'i):</strong> The husband can revoke within the iddah period</li>
+        <li><strong>Irrevocable talaq (ba'in):</strong> Cannot be revoked — divorce is final</li>
+        <li><strong>Triple talaq:</strong> Pronouncing talaq three times makes the divorce final and irrevocable</li>
+      </ul>
+
+      <h3>2. Khul'a (خلع) — Wife-Initiated Divorce</h3>
+      <p>
+        A Muslim wife can initiate divorce by returning her mahr (dowry) to the husband in exchange for
+        release from the marriage. The court must approve khul'a. If the husband agrees, it proceeds quickly;
+        if he refuses, the court can still grant it if the wife returns the financial compensation.
+      </p>
+
+      <h3>3. Judicial Divorce (Tafreeq — تفريق)</h3>
+      <p>
+        A Muslim wife (or husband in limited cases) can apply to the court for judicial divorce on specific
+        grounds, including:
+      </p>
+      <ul class="list">
+        <li>Harm or domestic abuse (dharar)</li>
+        <li>Abandonment for more than 6 months</li>
+        <li>Failure to pay maintenance for 3+ months</li>
+        <li>Imprisonment of the husband for 3+ years</li>
+        <li>Incurable disease that causes harm to the other spouse</li>
+      </ul>
+
+      <h3>4. Civil Divorce (Non-Muslims, 2022 Law)</h3>
+      <p>
+        Under Federal Law No. 41 of 2022, non-Muslim expats can divorce without grounds. Either spouse
+        files at the Personal Status Court, there is no mandatory reconciliation requirement under the
+        civil track, and assets are divided 50/50 by default.
+      </p>
+    </section>
+
+    <!-- 2022 Law Reform -->
+    <section class="section" aria-labelledby="reform-heading">
+      <h2 id="reform-heading">2022 UAE Personal Status Law Reform — What Changed</h2>
+      <p>
+        In November 2022, the UAE enacted Federal Decree-Law No. 41 of 2022, creating a dedicated civil
+        personal status law for non-Muslim expats. This was a landmark reform that removed the obligation
+        for non-Muslims to follow Islamic law in family matters.
+      </p>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Issue</th>
+              <th>Before 2022 (Islamic Law Applied)</th>
+              <th>After 2022 (Civil Law Option)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Divorce grounds</td>
+              <td>Required specific Islamic grounds</td>
+              <td>No-fault — either party can file</td>
+            </tr>
+            <tr>
+              <td>Asset division</td>
+              <td>Each spouse keeps own assets</td>
+              <td>Equal 50/50 split of marital assets</td>
+            </tr>
+            <tr>
+              <td>Child custody</td>
+              <td>Mother: physical custody; Father: guardianship</td>
+              <td>Joint custody default, shared decision-making</td>
+            </tr>
+            <tr>
+              <td>Iddah waiting period</td>
+              <td>Required for wife (3 months)</td>
+              <td>Not required</td>
+            </tr>
+            <tr>
+              <td>Mahr (dowry)</td>
+              <td>Obligatory in marriage contract</td>
+              <td>Not required</td>
+            </tr>
+            <tr>
+              <td>Who can initiate</td>
+              <td>Husband (talaq) or wife (khul'a / grounds)</td>
+              <td>Either spouse, equal standing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Court System -->
+    <section class="section" aria-labelledby="courts-heading">
+      <h2 id="courts-heading">UAE Divorce Courts — How the System Works</h2>
+      <p>
+        Divorce cases in the UAE are handled by the <strong>Personal Status Courts</strong>, which exist
+        in each emirate. There is no single federal court for personal status matters — each emirate
+        has its own Personal Status Court system.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Dubai Personal Status Court</h3>
+          <p>Located at the Dubai Courts complex. Handles both Muslim and non-Muslim cases. Has a dedicated Family Guidance Section for reconciliation sessions.</p>
+        </div>
+        <div class="card">
+          <h3>Abu Dhabi Family Court</h3>
+          <p>Part of Abu Dhabi Judicial Department. Also operates a Family Guidance Department to attempt mediation before hearings proceed.</p>
+        </div>
+        <div class="card">
+          <h3>Other Emirates</h3>
+          <p>Sharjah, Ajman, RAK, UAQ and Fujairah each have Personal Status Courts. Cases are filed in the emirate where the couple resides.</p>
+        </div>
+        <div class="card">
+          <h3>Appeals</h3>
+          <p>Divorce rulings can be appealed to the Court of Appeal within 30 days, and further to the Court of Cassation on points of law only.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Financial Rights -->
+    <section class="section" aria-labelledby="financial-heading">
+      <h2 id="financial-heading">Financial Rights in UAE Divorce</h2>
+
+      <h3>Mahr (Dowry) — Muslim Marriages</h3>
+      <p>
+        Mahr is the mandatory gift from husband to wife specified in the Islamic marriage contract.
+        The wife is entitled to any unpaid mahr upon divorce. If she initiates khul'a, she typically
+        returns the mahr amount to the husband.
+      </p>
+
+      <h3>Alimony (Nafaqa)</h3>
+      <p>
+        Under Islamic law, the husband must pay the wife's living expenses during the iddah period.
+        After iddah, ongoing alimony (beyond iddah) is limited — the wife's entitlement ends once she
+        remarries or the court determines she is self-sufficient.
+      </p>
+      <p>
+        Under the 2022 civil law, courts can order alimony based on standard civil principles — similar
+        to Western divorce law — without the iddah limitation.
+      </p>
+
+      <h3>Asset Division</h3>
+      <p>
+        For Muslims: UAE law does not automatically divide marital assets — each spouse retains property
+        in their own name. Joint assets or property disputes are resolved separately through civil courts.
+      </p>
+      <p>
+        For non-Muslims (2022 law): Marital assets (acquired during the marriage) are divided equally
+        unless a prenuptial agreement specifies otherwise.
+      </p>
+
+      <div class="cta-inline">
+        <p>Need advice on your financial rights?</p>
+        <a href="#contact" class="btn btn--primary">Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Related links -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/divorce-lawyer-dubai" class="service-link">
+          <strong>Divorce Lawyer Dubai</strong>
+          <span>Find a qualified family lawyer</span>
+        </a>
+        <a href="/en/divorce-in-uae-for-expats" class="service-link">
+          <strong>Divorce for Expats</strong>
+          <span>2022 civil law in detail</span>
+        </a>
+        <a href="/en/child-custody-uae" class="service-link">
+          <strong>Child Custody UAE</strong>
+          <span>Custody rights and court process</span>
+        </a>
+        <a href="/en/wife-rights-after-divorce-uae" class="service-link">
+          <strong>Wife's Rights After Divorce</strong>
+          <span>Financial entitlements and housing</span>
+        </a>
+        <a href="/en/how-to-file-for-divorce-in-dubai" class="service-link">
+          <strong>How to File for Divorce</strong>
+          <span>Step-by-step court guide</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Legal Advice on UAE Divorce Law</h2>
+      <p>Speak to a qualified divorce lawyer within 24 hours. Confidential. Available in English and Arabic.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.15rem; font-weight: 700; color: #1e3a5f; margin: 28px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .info-box { padding: 28px 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 10px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .list { margin: 12px 0 20px 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
+
+  .comparison-table { margin-top: 24px; overflow-x: auto; }
+  .comparison-table table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .comparison-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .comparison-table td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .comparison-table tr:nth-child(even) td { background: #f8faff; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 32px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; font-size: 1rem; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

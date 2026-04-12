@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Thank You — We Will Be in Touch Shortly | Divorce UAE';
+const description = 'Your consultation request has been received. A qualified divorce lawyer will contact you within 24 hours.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/thank-you',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  noindex={true}
+>
+  <main class="container page">
+    <div class="thank-you">
+      <div class="icon">✓</div>
+      <h1>Thank You — We've Received Your Request</h1>
+      <p>A qualified divorce lawyer from our network will contact you within <strong>24 hours</strong>. All communications are completely confidential.</p>
+      <p>If you need to speak to someone urgently, you can also reach us directly on WhatsApp:</p>
+      <a
+        href="https://wa.me/971XXXXXXXXX?text=Hello%2C%20I%20just%20submitted%20a%20consultation%20request%20on%20DivorceU.AE"
+        class="btn-wa"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Chat on WhatsApp Now</a>
+      <a href="/en/" class="btn-home">Back to Homepage</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .page { padding: 80px 0; min-height: 60vh; display: flex; align-items: center; justify-content: center; }
+  .thank-you { text-align: center; max-width: 560px; }
+  .icon { font-size: 4rem; background: #25d366; color: #fff; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-weight: 700; }
+  h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 16px; }
+  p { color: #374151; line-height: 1.7; margin-bottom: 16px; }
+  .btn-wa {
+    display: inline-block; padding: 14px 32px;
+    background: #25d366; color: #fff; font-weight: 700;
+    border-radius: 8px; text-decoration: none; margin: 12px 8px;
+    transition: background 0.2s;
+  }
+  .btn-wa:hover { background: #1ebe5d; }
+  .btn-home {
+    display: inline-block; padding: 14px 32px;
+    background: #f3f4f6; color: #374151; font-weight: 600;
+    border-radius: 8px; text-decoration: none; margin: 12px 8px;
+    transition: background 0.2s;
+  }
+  .btn-home:hover { background: #e5e7eb; }
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+</style>
