@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Cost in UAE 2025 — Court Fees, Lawyer Fees & Hidden Costs';
+const description =
+  'How much does divorce cost in UAE? Complete breakdown of court filing fees, lawyer fees, mediation costs, and what drives your total divorce bill — with real Dubai figures for 2025.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-cost-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Cost UAE', url: 'https://divorceu.ae/en/divorce-cost-uae' },
+];
+
+const courtFees = [
+  { item: 'Court filing fee (first-time registration)', cost: 'AED 200–300', notes: 'Paid when submitting the petition. Differs slightly by emirate and case type.' },
+  { item: 'Case registration (Personal Status Court)', cost: 'AED 150–250', notes: 'Administrative fee to open the case file in the Family Court system.' },
+  { item: 'Mediation / Family Guidance session fee', cost: 'AED 100–300', notes: 'Mandatory for most contested cases in Dubai and Abu Dhabi. Sessions can range from 1 to 4+ meetings.' },
+  { item: 'Expert witness / psychologist (if appointed)', cost: 'AED 500–2,500', notes: 'Applies in custody disputes where the court orders a welfare report.' },
+  { item: 'Translation of documents (per document)', cost: 'AED 100–400', notes: 'Certified legal translation required for foreign documents (passports, marriage certificates, financial records).' },
+  { item: 'Document attestation', cost: 'AED 150–600+', notes: 'Foreign marriage certificates must be attested by UAE Ministry of Foreign Affairs and home country embassy.' },
+  { item: 'Court-appointed legal representative', cost: 'Variable', notes: 'If either spouse does not engage their own lawyer, the court may appoint one. Costs are assessed case-by-case.' },
+];
+
+const lawyerFees = [
+  { type: 'Uncontested / Mutual Consent', range: 'AED 3,000–8,000', desc: 'Both parties agree on all terms. Lawyer prepares and files the agreement. Minimal court time required.' },
+  { type: 'Contested (no children)', range: 'AED 8,000–20,000', desc: 'Disputes over assets, alimony, or property. Requires multiple court hearings. Complexity varies significantly.' },
+  { type: 'Contested with child custody', range: 'AED 15,000–45,000+', desc: 'Custody battles are the most expensive and time-consuming. May run 12–24 months with multiple expert reports.' },
+  { type: 'Non-Muslim / Expat cases', range: 'AED 6,000–25,000', desc: 'Cases heard under home country law or DIFC jurisdiction add procedural complexity and research time.' },
+  { type: 'Khulʿa (wife-initiated)', range: 'AED 4,000–12,000', desc: 'Simpler if husband agrees. Contested khulʿa cases are more complex as the wife may need to return the mahr.' },
+];
+
+const faqItems = [
+  {
+    question: 'How much does it cost to file for divorce in Dubai?',
+    answer: 'The government court fees for filing a divorce in Dubai typically total AED 500–1,500 including registration, mediation sessions, and document processing. This is separate from lawyer fees, which are the larger cost. For a simple uncontested divorce with a lawyer, the total out-of-pocket cost is usually AED 4,000–10,000. Contested divorces with custody disputes can cost AED 20,000–60,000 or more over the full case duration.',
+  },
+  {
+    question: 'Is divorce free in the UAE if both parties agree?',
+    answer: 'Court fees still apply even for mutual consent divorces, but they are minimal (AED 500–1,500 total). The real cost saving with a mutual consent divorce is in lawyer fees — an agreed divorce can be handled for AED 3,000–8,000 in total legal fees rather than AED 15,000–45,000+ for a contested case. Many couples also save by having one lawyer draft the agreement, which both then sign.',
+  },
+  {
+    question: 'Do I need a lawyer to get divorced in the UAE?',
+    answer: 'Technically no — you can represent yourself in UAE courts. In practice, for foreign nationals especially, the procedural requirements (Arabic pleadings, court decorum, personal status law knowledge) make self-representation very difficult. UAE courts require documents in Arabic; many expats do not speak Arabic and cannot follow proceedings. A lawyer also ensures that settlements — especially custody terms — are correctly drafted and enforceable.',
+  },
+  {
+    question: 'How long does divorce take in UAE and how does that affect cost?',
+    answer: 'An uncontested divorce can be completed in 1–3 months. A contested divorce typically takes 6–18 months; custody battles can run 2+ years. The duration directly affects lawyer fees, as most UAE lawyers bill by the hearing or by the month. A case that takes 18 months at AED 1,500–3,000 per hearing (with 1–2 hearings per month) can accumulate AED 25,000–60,000+ in legal fees alone.',
+  },
+  {
+    question: 'Are mediation sessions mandatory before divorce in Dubai?',
+    answer: 'Yes. Under UAE Federal Law, most divorce cases must go through the Family Guidance Section (also called Family Counselling or Reconciliation) before the court will hear the case. In Dubai, this is administered by the Dubai Courts Family Department. The goal is reconciliation; if it fails, a certificate is issued allowing the case to proceed. Fees are AED 100–300 per session; typically 1–4 sessions are held.',
+  },
+  {
+    question: 'What hidden costs should I budget for in a UAE divorce?',
+    answer: 'Several costs catch clients off guard: (1) Certified legal translation of all foreign documents — AED 100–400 per document. (2) Attestation of foreign marriage certificates — AED 300–1,000+ depending on origin country. (3) Process server fees if the spouse must be formally served. (4) Travel costs if one party is abroad. (5) Enforcement proceedings — if your ex-spouse does not comply with the court order, a separate enforcement application costs an additional AED 2,000–6,000 in fees and legal time.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-cost-uae" lang="en" hreflang={hreflang}>
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Cost Guide · UAE 2025</p>
+      <h1>Divorce Cost in UAE 2025 — Court Fees, Lawyer Fees &amp; Hidden Costs</h1>
+      <p class="hero-sub">A complete breakdown of what divorce actually costs in the UAE — government fees, lawyer rates, how long it takes, and what drives the total bill. Based on real Dubai and Abu Dhabi figures.</p>
+      <div class="hero-meta">
+        <span>Updated: April 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Quick summary box -->
+      <div class="summary-box">
+        <h2>Quick Cost Summary — Divorce in UAE</h2>
+        <div class="summary-grid">
+          <div class="summary-card summary-card--highlight">
+            <p class="summary-label">Uncontested Divorce</p>
+            <p class="summary-amount">AED 4,000–10,000</p>
+            <p class="summary-note">Total (court fees + lawyer). Both parties agree on all terms.</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">Contested Divorce</p>
+            <p class="summary-amount">AED 15,000–45,000+</p>
+            <p class="summary-note">Assets, alimony, or property in dispute. 6–18 months.</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">Custody Battle</p>
+            <p class="summary-amount">AED 25,000–80,000+</p>
+            <p class="summary-note">Most complex cases. Can run 12–24 months.</p>
+          </div>
+        </div>
+        <p class="summary-note-footer">All figures are total estimates including court fees and lawyer fees. Document translation and attestation costs are additional.</p>
+      </div>
+
+      <!-- Court fees table -->
+      <section class="content-section">
+        <h2>UAE Court Fees — What You Pay the Government</h2>
+        <p>Government court fees are set by each emirate's judiciary and are generally affordable. The fees below apply in Dubai; Abu Dhabi and Sharjah have similar structures with minor differences.</p>
+
+        <div class="table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Fee Item</th>
+                <th>Amount</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {courtFees.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-label">{row.item}</td>
+                  <td class="td-cost">{row.cost}</td>
+                  <td class="td-notes">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Court fees typically total AED 500–2,000 for a straightforward case. Complex cases with multiple sessions and expert appointments can reach AED 3,000–5,000 in government fees alone.</p>
+      </section>
+
+      <!-- Lawyer fees -->
+      <section class="content-section">
+        <h2>Lawyer Fees — The Biggest Cost Variable</h2>
+        <p>Legal fees are where divorce costs diverge dramatically based on how much you and your spouse agree on. UAE lawyers typically charge per case (for simple matters), per hearing, or a monthly retainer for long-running contested cases.</p>
+
+        <div class="lawyer-cards">
+          {lawyerFees.map(fee => (
+            <div class="lawyer-card">
+              <div class="lawyer-card-header">
+                <h3>{fee.type}</h3>
+                <span class="lawyer-cost">{fee.range}</span>
+              </div>
+              <p class="lawyer-desc">{fee.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="info-box info-box--warning">
+          <h3>Hourly vs. Fixed vs. Per-Hearing Billing</h3>
+          <p>Most UAE divorce lawyers use one of three billing models:</p>
+          <ul>
+            <li><strong>Fixed fee</strong> — common for uncontested cases (AED 3,000–8,000 total). Clear budget, no surprises.</li>
+            <li><strong>Per hearing</strong> — AED 1,500–5,000 per court session. If the case runs long, costs accumulate fast.</li>
+            <li><strong>Retainer + hourly</strong> — common for complex contested cases. Monthly retainer of AED 3,000–8,000 plus hourly rates of AED 500–1,500 for senior lawyers.</li>
+          </ul>
+          <p>Always ask for a written fee agreement before engaging any lawyer. Verbal estimates are not binding under UAE law.</p>
+        </div>
+      </section>
+
+      <!-- What drives costs -->
+      <section class="content-section">
+        <h2>What Drives Your Divorce Cost Higher</h2>
+
+        <div class="driver-grid">
+          {[
+            { factor: 'Dispute over child custody', impact: 'Very High', desc: 'Custody cases involve social reports, psychologist assessments, multiple hearings, and often appeals. A contested custody case can run 18–36 months.' },
+            { factor: 'Property and asset division', impact: 'High', desc: 'If matrimonial property, business interests, or UAE property are disputed, valuations, expert witnesses, and disclosure proceedings add significantly to costs.' },
+            { factor: 'Spouse is abroad', impact: 'High', desc: 'Serving divorce papers internationally, obtaining foreign court documents, and managing timezone differences all add procedural costs and delays.' },
+            { factor: 'Non-Muslim / foreign law cases', impact: 'Medium–High', desc: 'Applying home-country law requires the court to receive evidence about foreign law, which typically needs a qualified legal expert to testify or submit a report.' },
+            { factor: 'Unresponsive spouse', impact: 'Medium', desc: 'If your spouse ignores proceedings, the case defaults after notice periods. This adds time but not necessarily huge cost if you have a lawyer managing it.' },
+            { factor: 'Translation volume', impact: 'Medium', desc: 'Each foreign document requires certified translation and often attestation. Large financial disclosure cases (bank records, foreign property documents) accumulate significant translation costs.' },
+          ].map(d => (
+            <div class="driver-card">
+              <div class="driver-header">
+                <span class="driver-factor">{d.factor}</span>
+                <span class={`driver-impact driver-impact--${d.impact.toLowerCase().replace(/[^a-z]/g, '-')}`}>{d.impact}</span>
+              </div>
+              <p class="driver-desc">{d.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to reduce costs -->
+      <section class="content-section">
+        <h2>How to Reduce Your Divorce Costs in UAE</h2>
+
+        <div class="tips-list">
+          {[
+            { tip: 'Reach agreement before filing', detail: 'Every item you agree on outside court — asset split, alimony amount, custody schedule, school fees — reduces hearing time. Draft a separation agreement first, then have your lawyer review and file it. This can cut legal fees by 60–80%.' },
+            { tip: 'Use one lawyer to draft, not two to fight', detail: 'For genuinely amicable separations, one lawyer can draft the agreement for both parties to review and sign. This is not appropriate if there is a power imbalance or dispute, but for cooperative separations it is significantly cheaper.' },
+            { tip: 'Organise your documents before your first meeting', detail: 'Lawyer time spent chasing documents is billed time. Bring your marriage certificate (attested), passports, UAE residence details, property documents, and financial records to your first consultation.' },
+            { tip: 'Attend mediation in good faith', detail: 'Mandatory UAE family mediation is an opportunity to resolve the case at very low cost. Couples who use mediation constructively often avoid full court proceedings entirely. A mediated agreement takes days, not months.' },
+            { tip: 'Understand what your spouse actually wants', detail: 'Many prolonged divorces are not about the stated issue — they are about unresolved grievances. A single direct conversation (or one mediation session) about what each party genuinely needs often unlocks resolution faster than months of legal correspondence.' },
+          ].map((t, i) => (
+            <div class="tip-item">
+              <div class="tip-number">{i + 1}</div>
+              <div class="tip-content">
+                <h3>{t.tip}</h3>
+                <p>{t.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <h2>Get a Clear Cost Estimate for Your Case</h2>
+        <p>Every divorce is different. A brief consultation gives you a clear picture of likely costs, timeline, and what steps to take first — with no obligation to proceed.</p>
+        <LeadForm source="divorce-cost-uae" />
+      </div>
+
+      <!-- Related links -->
+      <section class="related-links-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step guide to the filing process in Dubai courts.' },
+            { title: 'Alimony in UAE', href: '/en/alimony-uae', desc: 'Types of financial support, who qualifies, and how courts calculate amounts.' },
+            { title: 'Child Custody UAE', href: '/en/child-custody-uae', desc: 'UAE custody rules, age limits, and how judges make decisions.' },
+            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: 'The 30-day rule and your 7 visa pathway options after divorce.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero-section {
+    background: #0a1628;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  /* ── Main container ───────────────────────────────── */
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.55rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  /* ── Summary box ──────────────────────────────────── */
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 3rem; }
+  .summary-box h2 { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-card--highlight { border-color: #c9a84c; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-amount { font-size: 1.25rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; }
+  .summary-note-footer { font-size: 0.75rem; color: #998; margin-top: 1rem; }
+
+  /* ── Table ────────────────────────────────────────── */
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .cost-table thead tr { background: #0a1628; color: #fff; }
+  .cost-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .cost-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; }
+  .row-alt { background: #f8f9fa; }
+  .td-label { font-weight: 600; color: #0a1628; }
+  .td-cost { color: #c9a84c; font-weight: 700; white-space: nowrap; }
+  .td-notes { color: #556; }
+  .table-note { font-size: 0.78rem; color: #889; }
+
+  /* ── Lawyer cards ─────────────────────────────────── */
+  .lawyer-cards { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 1.5rem; }
+  .lawyer-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1.1rem 1.25rem; }
+  .lawyer-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .lawyer-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .lawyer-cost { font-weight: 800; color: #c9a84c; font-size: 0.95rem; white-space: nowrap; }
+  .lawyer-desc { font-size: 0.88rem; color: #556; line-height: 1.6; margin: 0; }
+
+  /* ── Info boxes ───────────────────────────────────── */
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.95rem; font-weight: 700; color: #6b5700; margin-bottom: 0.5rem; }
+  .info-box p, .info-box li { font-size: 0.88rem; color: #554400; line-height: 1.6; }
+  .info-box ul { margin: 0.5rem 0 0.75rem 1.25rem; }
+  .info-box li { margin-bottom: 0.35rem; }
+
+  /* ── Driver grid ──────────────────────────────────── */
+  .driver-grid { display: flex; flex-direction: column; gap: 0.875rem; }
+  .driver-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; }
+  .driver-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .driver-factor { font-weight: 700; color: #0a1628; font-size: 0.95rem; }
+  .driver-impact { font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap; }
+  .driver-impact--very-high { background: #fde8e8; color: #c0392b; }
+  .driver-impact--high { background: #fef3e2; color: #b7770d; }
+  .driver-impact--medium { background: #eaf4fb; color: #2471a3; }
+  .driver-impact--medium-high { background: #fef3e2; color: #b7770d; }
+  .driver-desc { font-size: 0.85rem; color: #556; line-height: 1.6; margin: 0; }
+
+  /* ── Tips list ────────────────────────────────────── */
+  .tips-list { display: flex; flex-direction: column; gap: 1rem; }
+  .tip-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tip-number { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-top: 0.1rem; }
+  .tip-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
+  .tip-content p { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+
+  /* ── CTA box ──────────────────────────────────────── */
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  /* ── Related links ────────────────────────────────── */
+  .related-links-section { margin-bottom: 2rem; }
+  .related-links-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
+  .related-card:hover { border-color: #c9a84c; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>
