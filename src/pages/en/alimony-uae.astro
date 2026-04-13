@@ -1,0 +1,461 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Alimony in UAE — What Are You Entitled to After Divorce?';
+const description =
+  'Complete guide to alimony in UAE: iddah maintenance, mutaa, child support, how courts calculate amounts, Muslim vs non-Muslim rules, and how to claim your entitlements.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/alimony-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Alimony UAE', url: 'https://divorceu.ae/en/alimony-uae' },
+];
+
+const alimonyTypes = [
+  {
+    type: 'Iddah Maintenance (Nafaqat Al-Iddah)',
+    who: 'Muslim wives',
+    duration: '3 months (approx. 90 days)',
+    basis: 'Islamic law — mandatory',
+    detail: 'During the iddah waiting period following talaq or court-issued divorce, the husband is legally obligated to maintain his ex-wife financially. This covers housing, food, clothing, and reasonable living expenses. The iddah period is approximately 3 lunar months (or until the birth of a child if pregnant). This is not optional — UAE courts enforce it.',
+  },
+  {
+    type: "Mut'a (Consolation Payment)",
+    who: 'Muslim wives divorced by husband (talaq)',
+    duration: 'One-time payment',
+    basis: 'Islamic law — court-determined',
+    detail: "Mut'a is a one-time consolation payment from the husband to the wife when the husband initiates divorce (talaq) without fault on the wife's part. The amount is determined by the court based on the length of the marriage, the husband's financial means, and the circumstances of the divorce. There is no fixed formula — judges have discretion.",
+  },
+  {
+    type: 'Child Support (Nafaqat Al-Awlad)',
+    who: 'Parent with custody (usually mother)',
+    duration: 'Until child reaches adulthood (boys ~18, girls until marriage)',
+    basis: 'Both Islamic and civil law',
+    detail: 'Child support is separate from alimony and covers the direct needs of the children — food, clothing, schooling, medical expenses, and housing. Under UAE law, the father is primarily responsible for child financial support regardless of who has custody. Courts set amounts based on the father\'s income and the children\'s reasonable needs.',
+  },
+  {
+    type: 'Housing Allowance During Custody',
+    who: 'Custodial parent (usually mother)',
+    duration: 'Duration of custody period',
+    basis: 'UAE Personal Status Law',
+    detail: "A wife with child custody is entitled to suitable housing for herself and the children. If the marital home is not available or suitable, the court can order the ex-husband to provide or pay for alternative accommodation. This right ends when the custody period ends (when children reach the qualifying ages).",
+  },
+  {
+    type: 'Equal Asset Division (Non-Muslims)',
+    who: 'Non-Muslim expat wives',
+    duration: 'One-time on divorce',
+    basis: 'Federal Law No. 41 of 2022',
+    detail: 'Under the 2022 civil personal status law for non-Muslim expats, marital assets acquired during the marriage are divided 50/50 by default. This is a significant departure from Islamic law — it applies automatically unless a prenuptial agreement specifies otherwise. Premarital assets and inheritance are generally excluded.',
+  },
+  {
+    type: 'Extended Alimony (Non-Muslims)',
+    who: 'Non-Muslim expat wives',
+    duration: 'Court-determined period',
+    basis: 'Federal Law No. 41 of 2022',
+    detail: 'Unlike Islamic law where alimony ends after iddah, the 2022 civil law allows UAE courts to order ongoing spousal support for non-Muslim ex-wives based on factors including the length of the marriage, standard of living, earning capacity, and childcare responsibilities.',
+  },
+];
+
+const calculationFactors = [
+  { factor: "Husband's net monthly income", weight: 'Very High', detail: 'The primary benchmark. Courts typically award a percentage of the husband\'s verified income.' },
+  { factor: 'Length of marriage',           weight: 'High',      detail: 'Longer marriages generally result in higher awards, particularly for mut\'a and non-Muslim extended alimony.' },
+  { factor: "Wife's earning capacity",      weight: 'Medium',    detail: 'If the wife is employed or has demonstrable earning capacity, courts may reduce alimony accordingly.' },
+  { factor: 'Standard of living during marriage', weight: 'High', detail: 'Maintenance awards aim to preserve the wife\'s reasonable standard of living, not reduce it dramatically.' },
+  { factor: 'Number and age of children',   weight: 'High',      detail: 'More children and younger children increase child support awards and housing entitlement duration.' },
+  { factor: 'Who initiated the divorce',    weight: 'Medium',    detail: 'For mut\'a, husband-initiated talaq without fault generally results in a higher consolation payment.' },
+  { factor: 'Prenuptial agreement',         weight: 'High',      detail: 'A registered prenuptial agreement can override default entitlements — courts honour these if legally valid.' },
+];
+
+const faqItems = [
+  {
+    question: 'How much alimony does a wife get in UAE?',
+    answer:
+      "There is no fixed formula — amounts vary significantly based on the husband's income, length of marriage, and number of children. As a rough guide, iddah maintenance typically ranges from AED 3,000 – 15,000 per month for 3 months, depending on the family's standard of living. Mut'a (one-time consolation payment) is often set at 3–12 months of the husband's salary. Child support is typically 15–30% of the father's verified income per child.",
+  },
+  {
+    question: 'How long does alimony last in UAE under Islamic law?',
+    answer:
+      "Under Islamic personal status law applied to Muslim couples, financial support to the ex-wife is limited to the iddah period — approximately 3 months after divorce. Extended alimony beyond iddah is not automatic under Islamic law. However, child support continues until children reach adulthood, and housing allowance continues for the duration of the custody period.",
+  },
+  {
+    question: 'Does a non-Muslim wife get alimony in UAE?',
+    answer:
+      "Yes — and potentially more than under Islamic law. Under Federal Law No. 41 of 2022 for non-Muslim expats, courts can order ongoing spousal support beyond the iddah period, taking into account the length of the marriage, the wife's earning capacity, and the standard of living during the marriage. Additionally, marital assets are divided equally (50/50) by default.",
+  },
+  {
+    question: 'What happens if my ex-husband refuses to pay alimony in UAE?',
+    answer:
+      "Non-payment of court-ordered alimony in UAE is a serious legal matter. The UAE Family Court can enforce payment through: wage garnishment (deducting directly from salary), travel bans preventing the husband from leaving the country, freezing bank accounts, and in serious cases criminal prosecution for abandonment. Contact your lawyer immediately if payments stop.",
+  },
+  {
+    question: "What is the difference between mahr and alimony in UAE?",
+    answer:
+      "Mahr (dowry) is a mandatory gift from the husband to the wife at marriage — it belongs entirely to the wife and is separate from alimony. Unpaid mahr (deferred mahr) becomes immediately due on divorce. Alimony (nafaqa) is ongoing financial support during and after divorce. Both are separate entitlements — a wife may claim both unpaid mahr AND alimony.",
+  },
+  {
+    question: 'Can I claim alimony retroactively in UAE?',
+    answer:
+      "UAE courts generally do not award retroactive alimony for periods when the wife did not formally claim it. It is important to file your maintenance claim with the Personal Status Court as soon as possible — ideally during divorce proceedings. Delaying your claim can result in losing entitlement to past-due maintenance.",
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">
+          Alimony in UAE —<br />What Are You Entitled to?
+        </h1>
+        <p class="hero__sub">
+          UAE alimony law is different for Muslim and non-Muslim couples — and significantly changed by the 2022 reform.
+          This guide explains every type of financial entitlement after divorce in the UAE, how amounts are calculated,
+          and how to claim what you are legally owed.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Muslim &amp; non-Muslim rules</li>
+          <li>✓ 2022 law explained</li>
+          <li>✓ Free first consultation</li>
+          <li>✓ 100% confidential</li>
+        </ul>
+        <p class="hero__author">Guide by <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant</p>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- What is alimony in UAE -->
+    <section class="section" aria-labelledby="what-heading">
+      <h2 id="what-heading">What Is Alimony in UAE?</h2>
+      <p>
+        In the UAE, the term "alimony" covers several distinct financial entitlements that arise on divorce. The Arabic term
+        <em>nafaqa</em> refers broadly to financial maintenance — and UAE law distinguishes carefully between different types
+        depending on who is receiving it and under what circumstances.
+      </p>
+      <p>
+        The rules differ significantly depending on whether the couple is Muslim or non-Muslim. Muslim couples are subject to
+        Islamic personal status law. Non-Muslim expat couples can now opt for the 2022 civil personal status law
+        (Federal Law No. 41 of 2022), which introduced equal asset division and more flexible alimony provisions.
+      </p>
+      <div class="info-box">
+        <h3>Key distinction: Muslim vs Non-Muslim</h3>
+        <div class="info-grid">
+          <div class="info-col">
+            <p class="info-label">Muslim couples</p>
+            <ul>
+              <li>Iddah maintenance (3 months, mandatory)</li>
+              <li>Mut'a consolation payment (one-time)</li>
+              <li>Child support (ongoing)</li>
+              <li>No automatic long-term alimony</li>
+            </ul>
+          </div>
+          <div class="info-col">
+            <p class="info-label">Non-Muslim expats (2022 law)</p>
+            <ul>
+              <li>50/50 asset division by default</li>
+              <li>Court-determined spousal support</li>
+              <li>Child support (ongoing)</li>
+              <li>Extended alimony possible</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of alimony -->
+    <section class="section" aria-labelledby="types-heading">
+      <h2 id="types-heading">Types of Alimony &amp; Financial Entitlements in UAE</h2>
+      <p>Here is a detailed breakdown of every financial entitlement available after divorce in the UAE:</p>
+
+      <div class="alimony-cards">
+        {alimonyTypes.map((item) => (
+          <div class="alimony-card">
+            <div class="alimony-card__header">
+              <h3>{item.type}</h3>
+              <span class="alimony-badge">{item.basis}</span>
+            </div>
+            <div class="alimony-meta">
+              <span><strong>Who:</strong> {item.who}</span>
+              <span><strong>Duration:</strong> {item.duration}</span>
+            </div>
+            <p>{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- How courts calculate -->
+    <section class="section" aria-labelledby="calculation-heading">
+      <h2 id="calculation-heading">How UAE Courts Calculate Alimony Amounts</h2>
+      <p>
+        There is no fixed alimony formula in UAE law — judges have discretion to determine amounts based on a set of
+        established factors. Understanding these factors helps you set realistic expectations and build a strong case.
+      </p>
+
+      <div class="factors-table">
+        {calculationFactors.map((item) => (
+          <div class="factor-row">
+            <div class="factor-info">
+              <h3>{item.factor}</h3>
+              <p>{item.detail}</p>
+            </div>
+            <span class={`factor-weight ${item.weight === 'Very High' ? 'weight--high' : item.weight === 'High' ? 'weight--high' : 'weight--medium'}`}>
+              {item.weight}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta-inline">
+        <p>Need help calculating your entitlements?</p>
+        <a href="#contact" class="btn btn--primary">Get Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- How to claim -->
+    <section class="section" aria-labelledby="claim-heading">
+      <h2 id="claim-heading">How to Claim Alimony in UAE — Step by Step</h2>
+      <ol class="steps">
+        <li>
+          <h3>Step 1 — Consult a family lawyer immediately</h3>
+          <p>
+            Do not wait until after the divorce is finalised. Alimony claims are far stronger when filed during
+            divorce proceedings. A lawyer will assess your specific entitlements and file the appropriate claims
+            alongside the divorce petition.
+          </p>
+        </li>
+        <li>
+          <h3>Step 2 — Gather financial evidence</h3>
+          <p>
+            The court will need evidence of the husband's income — salary certificates, bank statements, business
+            income. Gather evidence of your standard of living during the marriage: household expenses, school fees,
+            rent or mortgage, lifestyle costs. The stronger your documentation, the better the outcome.
+          </p>
+        </li>
+        <li>
+          <h3>Step 3 — File a maintenance claim at the Personal Status Court</h3>
+          <p>
+            Your lawyer files a nafaqa (maintenance) claim at the Personal Status Court in the emirate where you
+            reside. This is done alongside or immediately after divorce filing. The court can issue interim
+            maintenance orders while the case is ongoing.
+          </p>
+        </li>
+        <li>
+          <h3>Step 4 — Attend the hearing</h3>
+          <p>
+            Both parties present their financial positions. Your lawyer argues for the appropriate level of maintenance
+            based on the husband's income and your established standard of living. The judge may request additional
+            documentation.
+          </p>
+        </li>
+        <li>
+          <h3>Step 5 — Enforce the order if necessary</h3>
+          <p>
+            Once a maintenance order is issued, it is legally enforceable. If your ex-husband does not pay, the court
+            has enforcement mechanisms including wage garnishment, travel bans, and account freezing. Non-payment
+            is a serious matter under UAE law.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Mahr -->
+    <section class="section" aria-labelledby="mahr-heading">
+      <h2 id="mahr-heading">Don't Forget Your Mahr — It Becomes Due on Divorce</h2>
+      <p>
+        Mahr is the mandatory gift agreed at marriage from the husband to the wife. It is the wife's exclusive
+        property — not shared marital assets. If your mahr was partly deferred (as is common in UAE marriages),
+        the entire deferred amount becomes immediately due and payable on divorce.
+      </p>
+      <p>
+        Many women overlook this. Unpaid deferred mahr should be claimed simultaneously with alimony and child
+        support. The court enforces mahr payment the same way it enforces maintenance orders.
+      </p>
+      <ul class="list">
+        <li>Check your marriage contract for the agreed mahr amount</li>
+        <li>Identify how much was paid upfront (muqaddam) and how much is deferred (mu'akhkhar)</li>
+        <li>Claim the full deferred mahr amount through your lawyer</li>
+        <li>Mahr is separate from alimony — you are entitled to both</li>
+      </ul>
+    </section>
+
+    <!-- Related links -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Legal Guides</h2>
+      <div class="service-links">
+        <a href="/en/wife-rights-after-divorce-uae" class="service-link">
+          <strong>Wife's Rights After Divorce UAE</strong>
+          <span>Complete overview of all financial and housing rights</span>
+        </a>
+        <a href="/en/child-custody-uae" class="service-link">
+          <strong>Child Custody UAE</strong>
+          <span>Custody rules, rights, and child support</span>
+        </a>
+        <a href="/en/divorce-in-uae-for-expats" class="service-link">
+          <strong>Divorce for Expats (2022 Law)</strong>
+          <span>How the 2022 civil law changed everything for non-Muslims</span>
+        </a>
+        <a href="/en/visa-after-divorce-uae" class="service-link">
+          <strong>Visa After Divorce UAE</strong>
+          <span>What happens to your residency when you divorce</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FAQSection items={faqItems} lang="en" />
+
+    <!-- Bottom CTA -->
+    <section id="contact" class="section section--cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Speak to a UAE Family Lawyer About Your Entitlements</h2>
+      <p>
+        Alimony entitlements in UAE are time-sensitive — file your claim during proceedings, not after.
+        Get a free confidential consultation with a qualified UAE family lawyer today.
+      </p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    padding: 80px 0 60px;
+  }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+  .hero__author { font-size: 0.85rem; opacity: 0.7; margin-top: 16px; margin-bottom: 0; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 16px 0 6px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section em { font-style: italic; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .info-box { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px; margin-top: 28px; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 16px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .info-col { }
+  .info-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #2563eb; margin: 0 0 8px; }
+  .info-col ul { list-style: none; padding: 0; margin: 0; }
+  .info-col ul li { font-size: 0.875rem; color: #374151; padding: 4px 0 4px 16px; position: relative; }
+  .info-col ul li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .alimony-cards { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
+  .alimony-card { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px; }
+  .alimony-card__header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .alimony-card h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0; }
+  .alimony-badge { font-size: 0.7rem; font-weight: 600; background: #e0e7ff; color: #3730a3; border-radius: 20px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; }
+  .alimony-meta { display: flex; gap: 24px; font-size: 0.8rem; color: #6b7280; margin-bottom: 12px; flex-wrap: wrap; }
+  .alimony-card p { font-size: 0.875rem; color: #374151; line-height: 1.7; margin: 0; }
+
+  .factors-table { display: flex; flex-direction: column; gap: 0; margin: 24px 0; border: 1.5px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+  .factor-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #f3f4f6; background: #fff; }
+  .factor-row:last-child { border-bottom: none; }
+  .factor-row:nth-child(even) { background: #f8faff; }
+  .factor-info h3 { font-size: 0.9rem; font-weight: 700; color: #1e3a5f; margin: 0 0 4px; }
+  .factor-info p { font-size: 0.8rem; color: #6b7280; margin: 0; }
+  .factor-weight { font-size: 0.7rem; font-weight: 700; border-radius: 20px; padding: 4px 10px; white-space: nowrap; flex-shrink: 0; }
+  .weight--high { background: #fee2e2; color: #991b1b; }
+  .weight--medium { background: #fef3c7; color: #92400e; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
+  .steps li {
+    counter-increment: steps;
+    padding: 24px 24px 24px 72px;
+    position: relative;
+    background: #f8faff;
+    border-radius: 12px;
+    border-left: 4px solid #2563eb;
+  }
+  .steps li::before {
+    content: counter(steps);
+    position: absolute; left: 20px; top: 24px;
+    width: 36px; height: 36px;
+    background: #2563eb; color: #fff;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+  .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.9rem; color: #374151; margin: 0; }
+
+  .list { margin: 12px 0 20px 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 32px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary {
+    display: inline-block; padding: 12px 28px;
+    background: #c9a84c; color: #fff;
+    border-radius: 8px; text-decoration: none;
+    font-weight: 700; transition: background 0.2s;
+  }
+  .btn--primary:hover { background: #b8942d; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 20px; background: #fff;
+    border: 1.5px solid #e5e7eb; border-radius: 10px;
+    text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .service-link:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
+  .service-link strong { color: #1e3a5f; font-size: 1rem; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+    .info-grid { grid-template-columns: 1fr; }
+    .factor-row { flex-direction: column; align-items: flex-start; }
+  }
+</style>
