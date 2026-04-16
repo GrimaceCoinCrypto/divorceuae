@@ -1,0 +1,378 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Annulment vs Divorce UAE — What Is the Difference?';
+const description =
+  'Annulment and divorce both end a marriage, but they are legally different. In UAE, annulment declares a marriage void or voidable. Divorce ends a valid marriage. This guide explains when each applies, the grounds, process, and what it means for children and finances.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/annulment-vs-divorce-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Annulment vs Divorce UAE', url: 'https://divorceu.ae/en/annulment-vs-divorce-uae' },
+];
+
+const comparison = [
+  { factor: 'What it means',        annulment: 'Marriage declared void — legally it never happened', divorce: 'Valid marriage legally ended' },
+  { factor: 'Grounds required',     annulment: 'Specific prohibited grounds only',                   divorce: 'Broad — mutual consent, harm, talaq, khula' },
+  { factor: 'Who can apply',        annulment: 'Either party, court can act independently',           divorce: 'Either party' },
+  { factor: 'Financial claims',     annulment: 'Limited — court may award compensation',              divorce: 'Full — alimony, mahr, asset division' },
+  { factor: 'Children affected',    annulment: 'Children remain legitimate under UAE law',            divorce: 'Children remain legitimate' },
+  { factor: 'Timeline',             annulment: 'Varies — can be fast if grounds are clear',           divorce: '1 month – 2+ years depending on type' },
+  { factor: 'How common in UAE',    annulment: 'Rare — narrow grounds',                               divorce: 'Common' },
+];
+
+const annulmentGrounds = [
+  {
+    ground: 'Marriage within prohibited degrees of kinship',
+    detail: 'Marriages between close blood relatives prohibited under Islamic law (e.g. brother/sister, parent/child) are void from the outset. No divorce is required — the court declares the marriage never legally existed.'
+  },
+  {
+    ground: 'One party already legally married (polygamy without permission)',
+    detail: 'A Muslim man in the UAE may marry up to four wives, but requires court permission for each subsequent marriage. A marriage contracted without the required court permission may be annulled. For non-Muslim expats under UAE civil law, bigamy renders a subsequent marriage void.'
+  },
+  {
+    ground: 'Lack of capacity — minority or mental incapacity',
+    detail: 'A marriage contracted by someone below legal age without court approval, or by someone lacking mental capacity, may be annulled. UAE sets the minimum marriage age at 18 (with court exceptions in limited circumstances).'
+  },
+  {
+    ground: 'Marriage contracted under duress or fraud',
+    detail: 'If consent was obtained by force, coercion, or deliberate misrepresentation of a fundamental fact (e.g. concealed identity, undisclosed prior marriage), the court may annul the marriage. The party seeking annulment must act promptly once the duress or fraud is discovered.'
+  },
+  {
+    ground: 'Marriage without a wali (guardian) — in certain circumstances',
+    detail: 'Under traditional Islamic jurisprudence applied in UAE courts, a Muslim woman\'s marriage contracted without her wali\'s (male guardian\'s) involvement may be challenged, depending on the circumstances and the judge\'s interpretation. This is a complex area and outcomes vary.'
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Is annulment available for non-Muslim expats in UAE?',
+    answer:
+      'Yes. Non-Muslim expats in UAE can apply for annulment on the same grounds as under UAE civil law — void marriages (bigamy, prohibited kinship) or voidable marriages (fraud, duress, incapacity). Since the 2022 Personal Status Law reforms, non-Muslim expats have access to civil divorce, which is typically faster and simpler than annulment for most situations. Annulment is only worth pursuing over divorce if the specific grounds apply.',
+  },
+  {
+    question: 'Does annulment affect children\'s legal status in UAE?',
+    answer:
+      'No. Under UAE law, children born of an annulled marriage remain fully legitimate. The court\'s declaration that the marriage was void or voidable does not affect paternity, inheritance rights, or the child\'s nationality. Custody and financial support for children are determined the same way as in a divorce — by the court applying UAE Personal Status Law.',
+  },
+  {
+    question: 'Do I get alimony after an annulment in UAE?',
+    answer:
+      'Financial rights after annulment are more limited than after divorce. A wife in an annulled marriage is generally not entitled to ongoing maintenance (nafaqa) the way she would be after divorce. However, if the annulment was caused by the husband\'s fault (e.g. he concealed a prior marriage), the court may award compensation. The mahr (dowry) situation also depends on whether the marriage was consummated. An Islamic scholar or family lawyer should be consulted on your specific circumstances.',
+  },
+  {
+    question: 'What is the difference between a void and a voidable marriage in UAE?',
+    answer:
+      'A void marriage has no legal effect at all from the beginning — it was never a valid marriage (e.g. marriage within prohibited kinship). A voidable marriage was initially valid but can be annulled because of a defect — such as fraud or duress. A voidable marriage remains valid until one party successfully applies to the court to have it annulled. The distinction matters for financial rights and the legitimacy of children.',
+  },
+  {
+    question: 'Which is faster — annulment or divorce in UAE?',
+    answer:
+      'Divorce is almost always faster in practice. Annulment requires proving specific legal grounds to the court, which takes time and evidence. An uncontested divorce can be completed in 4–8 weeks. A contested divorce takes 6 months to 2 years. An annulment case typically runs on a similar timeline to a contested divorce because the court must examine the grounds. If your goal is to end the marriage quickly, divorce is usually the more practical option.',
+  },
+  {
+    question: 'Can I get an annulment instead of divorce to avoid paying alimony?',
+    answer:
+      'Attempting to use annulment to avoid financial obligations is unlikely to succeed and may backfire. UAE courts can still award compensation or financial support in annulment cases, particularly if the husband\'s conduct (fraud, concealed prior marriage) caused the annulment. If the goal is to avoid alimony, the court will scrutinise the application carefully.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">
+          Annulment vs Divorce<br />in UAE — Key Differences
+        </h1>
+        <p class="hero__sub">
+          Both annulment and divorce end a marriage, but they work differently under UAE law.
+          Annulment declares the marriage was legally invalid. Divorce ends a valid marriage.
+          The difference matters for alimony, children's status, and your rights.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Muslim &amp; non-Muslim rules</li>
+          <li>✓ Grounds for annulment explained</li>
+          <li>✓ Free first consultation</li>
+          <li>✓ 100% confidential</li>
+        </ul>
+        <p class="hero__author">Guide by <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant</p>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <section class="section" aria-labelledby="core-heading">
+      <h2 id="core-heading">The Core Difference</h2>
+      <div class="info-grid-2">
+        <div class="def-card def-card--annulment">
+          <h3>Annulment</h3>
+          <p>
+            A court declaration that the marriage was void or voidable — legally, it either never
+            existed or is erased. Used only when specific grounds apply (prohibited kinship, bigamy,
+            fraud, duress, incapacity).
+          </p>
+          <ul>
+            <li>Rare in UAE — narrow grounds</li>
+            <li>Limited financial claims</li>
+            <li>Court declares marriage invalid</li>
+            <li>Children remain legitimate</li>
+          </ul>
+        </div>
+        <div class="def-card def-card--divorce">
+          <h3>Divorce</h3>
+          <p>
+            The legal ending of a valid marriage. Available through mutual agreement, talaq,
+            khula, or court petition. By far the more common way to end a marriage in UAE,
+            with full financial rights for both parties.
+          </p>
+          <ul>
+            <li>Common — broad grounds</li>
+            <li>Full alimony and mahr rights</li>
+            <li>Multiple routes (contested / uncontested)</li>
+            <li>1 month – 2+ years depending on type</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Side-by-Side Comparison</h2>
+      <div class="compare-table">
+        <div class="compare-header">
+          <div class="compare-factor">Factor</div>
+          <div class="compare-col compare-col--annulment">Annulment</div>
+          <div class="compare-col compare-col--divorce">Divorce</div>
+        </div>
+        {comparison.map((row) => (
+          <div class="compare-row">
+            <div class="compare-factor">{row.factor}</div>
+            <div class="compare-col compare-col--annulment">{row.annulment}</div>
+            <div class="compare-col compare-col--divorce">{row.divorce}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="grounds-heading">
+      <h2 id="grounds-heading">Grounds for Annulment in UAE</h2>
+      <p>
+        UAE courts grant annulments only on specific, defined grounds. Unlike divorce, which is available
+        on broad grounds, annulment requires proving one of the following:
+      </p>
+      <ol class="steps">
+        {annulmentGrounds.map((item) => (
+          <li>
+            <h3>{item.ground}</h3>
+            <p>{item.detail}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="warn-box">
+        <h3>Important: Most people need divorce, not annulment</h3>
+        <p>
+          Annulment is only appropriate when specific legal grounds exist. If you simply want to end
+          your marriage, divorce is the correct legal route in UAE — and it is faster and more
+          straightforward in most cases. A lawyer can confirm which applies to your situation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="financial-heading">
+      <h2 id="financial-heading">Financial Rights: Annulment vs Divorce</h2>
+      <div class="trigger-grid">
+        <div class="trigger-item">
+          <h3>Mahr (Dowry)</h3>
+          <p>After divorce, the wife generally retains the full mahr if the marriage was consummated. After annulment, the mahr situation depends on fault and whether the marriage was consummated — typically half if unconsummated.</p>
+        </div>
+        <div class="trigger-item">
+          <h3>Alimony / Nafaqa</h3>
+          <p>After divorce, a wife is entitled to maintenance during the iddah period and potentially beyond. After annulment, ongoing maintenance rights are significantly more limited — though compensation may be awarded if the husband was at fault.</p>
+        </div>
+        <div class="trigger-item">
+          <h3>Asset Division</h3>
+          <p>Divorce entitles both parties to claim financial settlements from shared assets. In annulment, financial claims are narrower but the court can still order compensation for losses suffered due to the invalid marriage.</p>
+        </div>
+        <div class="trigger-item">
+          <h3>Child Support</h3>
+          <p>Identical in both cases — annulment does not affect the father's obligation to financially support children. Child support is calculated and enforced the same way whether parents divorced or had a marriage annulled.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Legal Guides</h2>
+      <div class="service-links">
+        <a href="/en/uae-divorce-law" class="service-link">
+          <strong>UAE Divorce Law</strong>
+          <span>Muslim and non-Muslim legal framework</span>
+        </a>
+        <a href="/en/contested-vs-uncontested-divorce-uae" class="service-link">
+          <strong>Contested vs Uncontested Divorce</strong>
+          <span>Which type of divorce applies to you</span>
+        </a>
+        <a href="/en/alimony-uae" class="service-link">
+          <strong>Alimony in UAE</strong>
+          <span>Every financial entitlement after divorce</span>
+        </a>
+        <a href="/en/divorce-cost-uae" class="service-link">
+          <strong>Divorce Cost UAE</strong>
+          <span>Court fees, legal fees, full breakdown</span>
+        </a>
+        <a href="/en/wife-rights-after-divorce-uae" class="service-link">
+          <strong>Wife's Rights After Divorce UAE</strong>
+          <span>Mahr, maintenance, housing, custody</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section id="contact" class="section section--cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Not Sure Whether Annulment or Divorce Applies to You?</h2>
+      <p>
+        Speak to a UAE family lawyer in a free confidential consultation.
+        We will assess your situation and advise on the correct legal route.
+      </p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy">Privacy Policy</a>
+        <a href="/en/disclaimer">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    padding: 80px 0 60px;
+  }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+  .hero__author { font-size: 0.85rem; opacity: 0.7; margin-top: 16px; margin-bottom: 0; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 16px 0 6px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .info-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .def-card { border-radius: 12px; padding: 28px; }
+  .def-card h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 12px; }
+  .def-card p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+  .def-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .def-card ul li { font-size: 0.85rem; padding-left: 20px; position: relative; }
+  .def-card ul li::before { content: '•'; position: absolute; left: 0; font-weight: 700; }
+  .def-card--annulment { background: #fef3c7; border: 2px solid #fde68a; }
+  .def-card--annulment h3 { color: #92400e; }
+  .def-card--annulment ul li::before { color: #d97706; }
+  .def-card--divorce { background: #f0fdf4; border: 2px solid #bbf7d0; }
+  .def-card--divorce h3 { color: #166534; }
+  .def-card--divorce ul li::before { color: #16a34a; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 12px; overflow: hidden; margin-top: 24px; }
+  .compare-header { display: grid; grid-template-columns: 1.5fr 1fr 1fr; background: #1e3a5f; color: #fff; font-weight: 700; font-size: 0.85rem; }
+  .compare-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; border-top: 1px solid #f3f4f6; }
+  .compare-row:nth-child(even) { background: #f8faff; }
+  .compare-factor { padding: 12px 16px; font-size: 0.875rem; font-weight: 600; color: #1e3a5f; display: flex; align-items: center; }
+  .compare-col { padding: 12px 16px; font-size: 0.8rem; color: #374151; display: flex; align-items: center; border-left: 1px solid #f3f4f6; }
+  .compare-col--annulment { color: #92400e; }
+  .compare-col--divorce { color: #166534; }
+  .compare-header .compare-factor { color: #fff; }
+  .compare-header .compare-col { color: #fff; border-left: 1px solid rgba(255,255,255,0.2); }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li {
+    counter-increment: steps;
+    padding: 24px 24px 24px 72px;
+    position: relative;
+    background: #f8faff;
+    border-radius: 12px;
+    border-left: 4px solid #2563eb;
+  }
+  .steps li::before {
+    content: counter(steps);
+    position: absolute; left: 20px; top: 24px;
+    width: 36px; height: 36px;
+    background: #2563eb; color: #fff;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+  .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.9rem; color: #374151; margin: 0; }
+
+  .warn-box { background: #fefce8; border: 1.5px solid #fde68a; border-radius: 12px; padding: 24px; margin-top: 28px; }
+  .warn-box h3 { color: #92400e; font-size: 1rem; font-weight: 700; margin: 0 0 8px; }
+  .warn-box p { color: #78350f; font-size: 0.875rem; line-height: 1.7; margin: 0; }
+
+  .trigger-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 24px; }
+  .trigger-item { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px; }
+  .trigger-item h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .trigger-item p { font-size: 0.85rem; color: #6b7280; line-height: 1.6; margin: 0; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 20px; background: #fff;
+    border: 1.5px solid #e5e7eb; border-radius: 10px;
+    text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .service-link:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
+  .service-link strong { color: #1e3a5f; font-size: 0.95rem; }
+  .service-link span { color: #6b7280; font-size: 0.8rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .section--cta { padding: 40px 24px; }
+    .info-grid-2 { grid-template-columns: 1fr; }
+    .compare-header, .compare-row { grid-template-columns: 1fr; }
+    .compare-factor { border-bottom: 1px solid #e5e7eb; font-weight: 700; }
+    .compare-col { border-left: none; border-top: 1px solid #f3f4f6; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>
