@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Khula Divorce UAE 2025 — Wife-Initiated Divorce Guide';
+const description =
+  'What is khula (khul\'a) divorce in the UAE? How to file, what conditions apply, how the mahr is handled, costs, timeline, and your rights as a wife initiating divorce under UAE law.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/khula-divorce-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Khula Divorce UAE', url: 'https://divorceu.ae/en/khula-divorce-uae' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is khula divorce in the UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Khula (also written khul\'a or khulʿ) is a wife-initiated divorce in Islamic law, recognised under UAE Federal Personal Status Law (Federal Law No. 28 of 2005). Unlike talaq (husband-initiated divorce), khula requires the wife to return the mahr (dowry/dower) she received at marriage as a condition of the husband\'s consent — or alternatively, the court can grant it without his consent if the marriage is found to be irreparably harmful.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the wife have to return the mahr in a khula divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally yes — in a consensual khula, the wife returns the mahr she received (the muqaddam, or advance dowry). She does not need to return gifts received during the marriage or personal income. If the husband initiated conditions that harmed the marriage, or if the judge finds the husband at fault, the court may waive or reduce the mahr return. The exact amount is negotiated or decided by the court.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a wife get khula divorce without the husband\'s consent in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Article 110 of UAE Federal Personal Status Law, a UAE court can grant khula even without the husband\'s agreement if the wife proves that continued marriage would cause her harm. The court first refers the case to mediation. If reconciliation fails, the judge may award khula and determine what portion of mahr (if any) must be returned. This judicial khula (khul\'a qada\'iyya) typically takes longer — 6–18 months — than a consensual khula.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does khula divorce cost in the UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Court fees for filing khula in the UAE are AED 500–1,500 (registration, mediation sessions). Lawyer fees range from AED 4,000–12,000 for uncontested khula to AED 15,000–35,000 for contested khula where the husband refuses consent and the case is litigated. The returned mahr is separate from legal fees and depends on what was agreed in the marriage contract.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a khula divorce take in the UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested khula (both parties agree on terms including mahr return) can be completed in 1–3 months. A contested khula — where the husband refuses and the wife must prove harm — typically takes 6–18 months through UAE Personal Status Courts. Non-Muslim expats governed by home country law may have different timelines depending on jurisdiction applied.',
+      },
+    },
+  ],
+};
+
+const steps = [
+  { num: '01', title: 'Consult a lawyer', detail: 'Before filing, confirm whether your case qualifies as khula (you are seeking the divorce) vs. talaq (husband initiates) or judicial divorce for harm. Your lawyer will advise on the mahr position and likely outcome.' },
+  { num: '02', title: 'File at the Personal Status Court', detail: 'Submit a petition at the Personal Status Court in the emirate where you reside. In Dubai this is at the Dubai Courts Family Department. Include your marriage certificate (attested if issued abroad), passport copies, and supporting statements.' },
+  { num: '03', title: 'Family Guidance (Mediation)', detail: 'UAE law requires the Family Guidance Section to attempt reconciliation. You will attend 1–4 sessions. If reconciliation fails, a certificate is issued allowing the case to proceed to the judge.' },
+  { num: '04', title: 'Court hearing(s)', detail: 'For consensual khula, the judge confirms the terms and issues the divorce decree. For contested khula, the judge hears evidence, may appoint a welfare officer if children are involved, and delivers a verdict on both the divorce and the mahr amount.' },
+  { num: '05', title: 'Divorce decree issued', detail: 'Once granted, you receive the official divorce certificate. Update your UAE visa status within 30 days if your residency was dependent on your spouse\'s sponsorship.' },
+];
+
+const faqItems = [
+  {
+    question: 'What is the difference between khula and talaq divorce?',
+    answer: 'Talaq is a husband-initiated divorce — he pronounces it or files at court. Khula is a wife-initiated divorce in which she typically returns the mahr as consideration for releasing the husband from the marriage bond. In judicial terms, a wife can also seek a divorce for harm (tatliq lil-darar) without returning mahr, but that requires proving specific harm in court. Khula is generally faster and more available to wives in UAE courts without needing to prove grounds.',
+  },
+  {
+    question: 'Do I lose custody of my children if I file for khula?',
+    answer: 'No. Custody under UAE law is determined separately from the type of divorce. The mother typically retains custody of young children (boys until age 11, girls until age 13 under UAE law, though courts can extend). Filing for khula does not affect your custody rights — the court considers the best interests of the child independently of how the divorce was initiated.',
+  },
+  {
+    question: 'Can a non-Muslim expat file for khula in the UAE?',
+    answer: 'Khula is an Islamic legal concept. Non-Muslim expats can apply to have their divorce governed by UAE Personal Status Law (which applies Islamic law by default) or by their home country law. In practice, most non-Muslim expats seek divorce under UAE law or through their home country\'s processes. The DIFC Courts also have jurisdiction for international divorces. Your lawyer will advise the most practical route for your specific nationality and circumstances.',
+  },
+  {
+    question: 'What happens to alimony (nafaqah) after khula?',
+    answer: 'After a khula divorce, the husband\'s obligation to pay iddah maintenance (nafaqat al-iddah) applies for the waiting period — approximately three menstrual cycles (about 3 months). If there are children, child support (nafaqat al-awlad) continues regardless of the divorce type. The wife who initiates khula does not receive muta\'a (post-divorce compensation payment) in most UAE court decisions, as she received consideration by returning the mahr.',
+  },
+  {
+    question: 'Is khula recognised internationally?',
+    answer: 'A UAE divorce decree (including khula) is a legally issued court document. Recognition abroad depends on each country\'s private international law. Many countries recognise foreign divorce decrees through an apostille and official translation. Your lawyer can advise on the recognition process in your home country — it typically requires an apostilled copy of the UAE divorce certificate and a certified Arabic-to-English translation.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/khula-divorce-uae"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Khula (خلع) is the Islamic right of a wife to initiate divorce in the UAE, typically by returning the mahr (dowry). Under UAE Personal Status Law, courts can grant khula even without the husband's consent if continued marriage causes harm.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>What is khula divorce?</h2>
+        <p>
+          Khula (خلع) is a wife-initiated divorce under Islamic law, recognised in the UAE under <strong>Federal Personal Status Law No. 28 of 2005</strong>.
+          The wife typically returns the mahr (advance dowry) she received at marriage. The husband must consent — or the court can grant khula without his consent if the marriage is irreparably broken.
+          Uncontested khula takes <strong>1–3 months</strong> and costs <strong>AED 4,000–12,000</strong> in total legal fees. Contested khula takes <strong>6–18 months</strong>.
+        </p>
+      </div>
+
+      <!-- How it differs -->
+      <section class="content-section">
+        <h2>Khula vs. Talaq vs. Judicial Divorce — Key Differences</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Divorce Type</div>
+            <div>Who initiates</div>
+            <div>Mahr</div>
+            <div>Grounds needed</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Talaq</div>
+            <div>Husband</div>
+            <div>Wife keeps deferred mahr</div>
+            <div>None required in most cases</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type khula">Khula</div>
+            <div>Wife</div>
+            <div>Wife returns advance mahr</div>
+            <div>None — but often requires husband consent or proof of harm</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Tatliq (judicial)</div>
+            <div>Wife (through court)</div>
+            <div>Wife keeps mahr</div>
+            <div>Proven harm, abandonment, or non-support required</div>
+          </div>
+        </div>
+        <p class="note-text">Khula is the fastest route for a wife who wants to end the marriage and can return the mahr. If the husband caused harm, a judicial divorce (tatliq lil-darar) may be preferable as the wife keeps the mahr.</p>
+      </section>
+
+      <!-- Step-by-step process -->
+      <section class="content-section">
+        <h2>How to File for Khula Divorce in the UAE — Step by Step</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Costs -->
+      <section class="content-section">
+        <h2>Khula Divorce Cost in UAE</h2>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">Court fees</p>
+            <p class="cost-amount">AED 500–1,500</p>
+            <p class="cost-detail">Registration, mediation sessions, document processing</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Lawyer fees (uncontested)</p>
+            <p class="cost-amount">AED 4,000–12,000</p>
+            <p class="cost-detail">Both parties agree on terms including mahr return</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Lawyer fees (contested)</p>
+            <p class="cost-amount">AED 15,000–35,000</p>
+            <p class="cost-detail">Husband refuses; case litigated through hearings</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Mahr return</p>
+            <p class="cost-amount">Negotiated / court-set</p>
+            <p class="cost-detail">Separate from legal fees — amount in your marriage contract</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/wife-rights-after-divorce-uae" class="related-card">
+            <strong>Wife Rights After Divorce UAE</strong>
+            <span>Mahr, alimony, housing, custody, and visa rights</span>
+          </a>
+          <a href="/en/alimony-uae" class="related-card">
+            <strong>Alimony UAE</strong>
+            <span>Types of maintenance, how amounts are calculated, and enforcement</span>
+          </a>
+          <a href="/en/child-custody-uae" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody rules for Muslims and non-Muslims in UAE courts</span>
+          </a>
+          <a href="/en/uae-divorce-law" class="related-card">
+            <strong>UAE Divorce Law</strong>
+            <span>Complete overview of UAE Personal Status Law and divorce provisions</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>
