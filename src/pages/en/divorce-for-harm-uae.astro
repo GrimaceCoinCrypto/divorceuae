@@ -1,0 +1,456 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Judicial Divorce for Harm UAE 2025 — Tatliq Lil-Darar Guide';
+const description =
+  'Can a wife divorce for abuse or abandonment in UAE? Complete guide to tatliq lil-darar — grounds, evidence needed, court process, mahr rights, costs, and timeline.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-for-harm-uae',
+  ar: 'https://divorceu.ae/ar/طلاق-للضرر',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Judicial Divorce for Harm UAE', url: 'https://divorceu.ae/en/divorce-for-harm-uae' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is tatliq lil-darar in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tatliq lil-darar (التفريق للضرر) is a judicial divorce a wife can obtain through UAE Personal Status Courts when she can prove that continuing the marriage causes her harm. Grounds include physical abuse, psychological harm, abandonment, non-payment of maintenance, and substance abuse. Unlike khula, the wife keeps her mahr and is entitled to iddah maintenance. It is governed by Federal Personal Status Law No. 28 of 2005, Articles 112–117.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What evidence is needed for divorce for harm in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Courts require documented evidence of harm. Accepted forms include: police reports or incident records; medical reports showing injuries; witness testimony from neighbours, family, or colleagues; screenshots of threatening messages or audio/video recordings; hospital admission records; bank statements showing non-payment of household expenses. The stronger and more documented the evidence, the faster the court will rule.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the grounds for judicial divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under UAE law, a wife can file for judicial divorce on these grounds: (1) physical harm or abuse; (2) psychological abuse or degrading treatment; (3) abandonment for more than 4 months without reason; (4) failure to pay maintenance (nafaqah) despite financial ability; (5) serious illness or permanent disability that makes cohabitation impossible; (6) imprisonment of the husband for 3+ years (at the wife\'s request after 1 year of imprisonment).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does judicial divorce for harm take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A well-documented case typically takes 3–9 months. Cases with strong evidence (police reports, medical records) are often resolved faster. Contested cases where the husband challenges every claim can run 12–18 months. Mediation is mandatory and takes 4–8 weeks before the court hears the substantive case.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a wife keep her mahr if she gets a judicial divorce for harm?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. This is the key difference from khula divorce. In a judicial divorce for harm, the court finds the husband at fault. As a result, the wife keeps the full mahr (advance and deferred), receives iddah maintenance for approximately 3 months, and may also receive muta\'a (post-divorce compensation) at the court\'s discretion. She does not return any part of the mahr.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between khula and tatliq lil-darar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In khula, the wife typically returns the mahr and does not need to prove specific harm. It is faster but costs the wife financially. In tatliq lil-darar, the wife proves harm in court, keeps her full mahr, and may receive additional compensation. Tatliq takes longer and requires documented evidence, but is the better financial outcome when the husband is genuinely at fault.',
+      },
+    },
+  ],
+};
+
+const grounds = [
+  { icon: '01', title: 'Physical harm or abuse', desc: 'Any act of violence — striking, pushing, restraining. A single proven incident can be sufficient if documented with a police report or medical certificate. Repeated incidents strengthen the case significantly.' },
+  { icon: '02', title: 'Psychological abuse', desc: 'Sustained degrading treatment, verbal abuse, threats, isolation, or conduct that makes cohabitation intolerable. Requires witness testimony or documented evidence (messages, recordings).' },
+  { icon: '03', title: 'Abandonment (4+ months)', desc: 'Husband leaves the marital home without legitimate reason for more than 4 continuous months. Absence for work abroad is generally not considered abandonment if maintenance is paid.' },
+  { icon: '04', title: 'Non-payment of maintenance', desc: 'Husband fails to pay the household maintenance (nafaqah) despite having the financial means. Bank statements and evidence of the husband\'s income are key.' },
+  { icon: '05', title: 'Imprisonment (3+ years)', desc: 'Wife may file after 1 year of the husband\'s imprisonment when the sentence is 3 years or more. The court considers the hardship on the wife and children.' },
+  { icon: '06', title: 'Incurable serious illness', desc: 'Illness or condition that makes continued cohabitation medically impossible or seriously harmful to the wife. Requires medical expert evidence.' },
+];
+
+const steps = [
+  { num: '01', title: 'Document the harm first', detail: 'Before filing, gather all evidence: police reports, hospital records, threatening messages, witness names. Your lawyer will tell you what additional documentation is needed for your specific ground.' },
+  { num: '02', title: 'Consult a lawyer', detail: 'Judicial divorce for harm is litigated — the husband has the right to contest. Legal representation is strongly recommended. A lawyer assesses the strength of your evidence and the realistic timeline.' },
+  { num: '03', title: 'File at Personal Status Court', detail: 'Your lawyer files the petition at the Personal Status Court in the emirate where you reside. Dubai residents file at the Dubai Courts Family Department. Attach certified copies of your marriage certificate, passport, and evidence.' },
+  { num: '04', title: 'Mandatory mediation', detail: 'UAE law requires the Family Guidance Section to attempt reconciliation before the court hears the case. Sessions typically run 4–8 weeks. If reconciliation fails, a certificate is issued and the case proceeds.' },
+  { num: '05', title: 'Court hearings', detail: 'The judge hears both sides. The husband may deny the harm allegations. Your lawyer presents the evidence, calls witnesses, and counters the husband\'s defence. In abuse cases, a welfare officer may be appointed if children are involved.' },
+  { num: '06', title: 'Judgment and divorce decree', detail: 'If the court accepts the harm grounds, it issues a divorce decree (tatliq). The husband keeps no right to revoke it. You receive an official divorce certificate. Update your UAE residency status within 30 days if your visa was dependent on the marriage.' },
+];
+
+const faqItems = [
+  {
+    question: 'Can I file for judicial divorce if my husband is not in UAE?',
+    answer: 'Yes. The court can proceed in absentia if the husband cannot be located or refuses to attend. Your lawyer will arrange formal service of court documents. Cases where the husband is abroad take longer because service must go through official channels, but they are not blocked.',
+  },
+  {
+    question: 'Will I lose child custody if I file for divorce for harm?',
+    answer: 'No. Custody and divorce are decided separately. Filing for judicial divorce does not affect your custody rights. Under UAE law, mothers typically retain custody of children -- boys until age 11, girls until age 13, with courts able to extend these ages. The court determines custody based solely on the best interests of the child.',
+  },
+  {
+    question: 'What if the judge does not believe my evidence?',
+    answer: 'If the harm is not proven, the court will not grant the tatliq. Your options are: (1) appeal the decision if new evidence is available; (2) file for khula divorce instead -- which does not require proving harm but involves returning the mahr; (3) continue gathering evidence and re-file. This is why thorough documentation before filing is critical.',
+  },
+  {
+    question: 'Can a non-Muslim expat file for judicial divorce for harm in UAE?',
+    answer: 'Non-Muslim expats can elect to have their divorce governed by UAE Personal Status Law (which applies Islamic provisions by default) or by their home country law. A non-Muslim wife can file for judicial divorce for harm under UAE courts and benefit from these protections. Alternatively, some non-Muslim expats use DIFC Courts jurisdiction for international divorces. Your lawyer will advise the most practical route given your nationality and circumstances.',
+  },
+  {
+    question: 'Is there a time limit to file for divorce for harm in UAE?',
+    answer: 'No specific statutory time limit applies to filing. However, evidence becomes harder to obtain over time. Police reports lose impact without medical follow-up; witnesses\'s memories fade. The practical advice is: document incidents as they happen, and file once you have sufficient evidence rather than waiting.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-for-harm-uae"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Tatliq lil-darar (judicial divorce for harm) is the legal route for a wife to end her marriage through UAE courts when abuse, abandonment, or non-support is proven. Unlike khula, the wife keeps her mahr and is not required to pay back anything.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <img
+        src="/images/woman-dubai-skyline.webp"
+        alt="Woman looking at Dubai skyline — judicial divorce for harm UAE"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>Key facts: judicial divorce for harm in UAE</h2>
+        <p>
+          Under <strong>Federal Personal Status Law No. 28 of 2005 (Articles 112-117)</strong>, a wife may petition UAE courts for a judicial divorce when she can prove the husband caused her physical, psychological, or financial harm.
+          The wife <strong>keeps her full mahr</strong> and receives <strong>iddah maintenance</strong> for approximately 3 months.
+          Well-documented cases resolve in <strong>3-9 months</strong>. Contested cases can take 12-18 months.
+        </p>
+      </div>
+
+      <!-- Tatliq vs Khula comparison -->
+      <section class="content-section">
+        <h2>Tatliq Lil-Darar vs. Khula -- Which Route Is Right for You?</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Factor</div>
+            <div>Tatliq (Judicial)</div>
+            <div>Khula</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Who decides</div>
+            <div>Judge -- based on proof of harm</div>
+            <div>Judge or husband's consent</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-label">Mahr</div>
+            <div class="highlight">Wife keeps it all</div>
+            <div>Wife typically returns advance mahr</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Grounds required</div>
+            <div>Yes -- must prove harm</div>
+            <div>No specific grounds needed</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-label">Timeline</div>
+            <div>3-18 months</div>
+            <div>1-12 months</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Post-divorce muta'a</div>
+            <div class="highlight">Possible -- court may award it</div>
+            <div>Usually not awarded</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-label">Best for</div>
+            <div>Abuse, abandonment, non-support</div>
+            <div>Incompatibility, no grounds to prove</div>
+          </div>
+        </div>
+        <p class="note-text">Choose tatliq when the husband is clearly at fault and you have documented evidence. Choose khula when you want a faster exit and can return the mahr.</p>
+      </section>
+
+      <!-- Grounds -->
+      <section class="content-section">
+        <h2>Legal Grounds for Judicial Divorce in UAE</h2>
+        <p>UAE courts recognise six primary grounds under Articles 112-117 of Federal Personal Status Law No. 28 of 2005:</p>
+        <div class="grounds-list">
+          {grounds.map(g => (
+            <div class="ground-card">
+              <div class="ground-num">{g.icon}</div>
+              <div class="ground-body">
+                <h3>{g.title}</h3>
+                <p>{g.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Evidence -->
+      <section class="content-section">
+        <h2>Evidence Required to Prove Harm in UAE Courts</h2>
+        <p>The burden of proof lies with the wife. Courts in Dubai and Abu Dhabi accept the following types of evidence:</p>
+        <div class="evidence-grid">
+          <div class="evidence-card">
+            <h3>Official records</h3>
+            <ul>
+              <li>Police reports and incident numbers</li>
+              <li>Hospital discharge summaries or A&E records</li>
+              <li>Medical certificates documenting injuries</li>
+              <li>Court orders (restraining orders, interim injunctions)</li>
+            </ul>
+          </div>
+          <div class="evidence-card">
+            <h3>Witness testimony</h3>
+            <ul>
+              <li>Neighbours or building staff who witnessed incidents</li>
+              <li>Family members who observed abuse</li>
+              <li>Colleagues who noticed injuries or distress</li>
+              <li>Social workers or counsellors (with consent)</li>
+            </ul>
+          </div>
+          <div class="evidence-card">
+            <h3>Digital and documentary</h3>
+            <ul>
+              <li>Screenshots of threatening or abusive messages</li>
+              <li>Audio or video recordings (check admissibility with lawyer)</li>
+              <li>Bank statements showing non-payment of maintenance</li>
+              <li>Travel records proving abandonment</li>
+            </ul>
+          </div>
+          <div class="evidence-card">
+            <h3>Expert reports</h3>
+            <ul>
+              <li>Psychological assessment commissioned by the court</li>
+              <li>Welfare officer report if children are involved</li>
+              <li>Financial expert on maintenance capacity</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note-text">Start documenting incidents as they happen -- file a police report even if you are not yet ready to divorce. These records become the backbone of a future case.</p>
+      </section>
+
+      <!-- Step-by-step process -->
+      <section class="content-section">
+        <h2>How to File for Judicial Divorce for Harm in UAE -- Step by Step</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Financial rights -->
+      <section class="content-section">
+        <h2>Your Financial Rights After Judicial Divorce for Harm</h2>
+        <div class="rights-grid">
+          <div class="rights-card rights-card--gold">
+            <p class="rights-label">Full mahr retained</p>
+            <p class="rights-detail">Both the advance (muqaddam) and deferred (mu'akhkhar) portions of the mahr are yours. The court does not order you to return any part.</p>
+          </div>
+          <div class="rights-card">
+            <p class="rights-label">Iddah maintenance</p>
+            <p class="rights-detail">The husband must pay household maintenance for the iddah waiting period -- approximately 3 menstrual cycles (roughly 3 months) following the divorce.</p>
+          </div>
+          <div class="rights-card">
+            <p class="rights-label">Muta'a (post-divorce gift)</p>
+            <p class="rights-detail">The court may award muta'a -- a compensatory payment to the wife -- at its discretion, especially when the husband is found clearly at fault.</p>
+          </div>
+          <div class="rights-card">
+            <p class="rights-label">Child support (nafaqah)</p>
+            <p class="rights-detail">The husband's obligation to pay child support (nafaqat al-awlad) continues regardless of the divorce type. This is calculated separately from spousal maintenance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Costs and timeline -->
+      <section class="content-section">
+        <h2>Cost and Timeline -- Judicial Divorce for Harm</h2>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">Court fees</p>
+            <p class="cost-amount">AED 500-1,500</p>
+            <p class="cost-detail">Filing, registration, mediation sessions, document processing</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Lawyer fees (documented case)</p>
+            <p class="cost-amount">AED 8,000-20,000</p>
+            <p class="cost-detail">Strong evidence, limited hearings, husband does not vigorously contest</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Lawyer fees (contested)</p>
+            <p class="cost-amount">AED 20,000-50,000+</p>
+            <p class="cost-detail">Husband disputes all allegations, multiple hearings, expert witnesses</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Timeline</p>
+            <p class="cost-amount">3-18 months</p>
+            <p class="cost-detail">Well-documented: 3-9 months. Contested: 9-18 months.</p>
+          </div>
+        </div>
+        <p class="note-text">Costs are broadly similar to a contested divorce. See our <a href="/en/divorce-cost-uae">complete UAE divorce cost guide</a> for a full breakdown including translation and attestation fees.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/khula-divorce-uae" class="related-card">
+            <strong>Khula Divorce UAE</strong>
+            <span>Wife-initiated divorce -- mahr, process, costs, without husband's consent</span>
+          </a>
+          <a href="/en/wife-rights-after-divorce-uae" class="related-card">
+            <strong>Wife Rights After Divorce UAE</strong>
+            <span>Mahr, alimony, housing, custody, and visa rights</span>
+          </a>
+          <a href="/en/alimony-uae" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Types of maintenance, calculation, and enforcement</span>
+          </a>
+          <a href="/en/child-custody-uae" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody rules for Muslims and non-Muslims, age thresholds</span>
+          </a>
+          <a href="/en/divorce-cost-uae" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and what drives your total bill</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer in Dubai</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #78350f; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1.2fr 1.4fr 1.4fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 480px; }
+  .compare-row { display: grid; grid-template-columns: 1.2fr 1.4fr 1.4fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 480px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-label { font-weight: 700; color: #0a1628; }
+  .highlight { color: #15803d; font-weight: 700; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  .grounds-list { display: flex; flex-direction: column; gap: 1rem; }
+  .ground-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .ground-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .ground-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .ground-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+  .evidence-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1rem 1.1rem; }
+  .evidence-card h3 { font-size: 0.85rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .evidence-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+  .evidence-card li { font-size: 0.82rem; color: #4b5563; padding-left: 1rem; position: relative; line-height: 1.5; }
+  .evidence-card li::before { content: '·'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .rights-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .rights-card--gold { border-color: #c9a84c; background: #fffbeb; }
+  .rights-label { font-size: 0.85rem; font-weight: 700; color: #0a1628; margin: 0 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .rights-detail { font-size: 0.82rem; color: #4b5563; margin: 0; line-height: 1.6; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .rights-grid, .evidence-grid { grid-template-columns: 1fr; }
+    .compare-header, .compare-row { grid-template-columns: 1fr; min-width: unset; }
+  }
+</style>

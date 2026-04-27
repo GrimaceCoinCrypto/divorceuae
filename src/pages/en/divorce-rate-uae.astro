@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Rate in UAE 2025 — Statistics, Trends & Key Causes';
+const description =
+  'UAE divorce rate facts for 2025: how many marriages end in divorce, trends over the last decade, the gap between nationals and expats, and the main causes behind rising figures.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-rate-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Rate UAE', url: 'https://divorceu.ae/en/divorce-rate-uae' },
+];
+
+const statsCards = [
+  { stat: '~26%', label: 'Overall UAE divorce-to-marriage ratio', note: 'Roughly 1 in 4 marriages registered in the UAE ends in divorce. Figures vary by emirate and nationality.' },
+  { stat: '~48%', label: 'Emirati citizen divorce rate', note: 'The divorce rate among UAE nationals is significantly higher than the expat average, reflecting different legal access and cultural norms around remarriage.' },
+  { stat: '1–3 yrs', label: 'Median marriage duration before divorce', note: 'Most divorces in the UAE are filed within the first three years of marriage, with a secondary peak at 7–10 years.' },
+  { stat: '2022', label: 'Year of non-Muslim divorce law reform', note: 'Federal Decree-Law No. 41 of 2022 introduced no-fault civil divorce for non-Muslim expats, simplifying access to divorce for the majority of UAE residents.' },
+];
+
+const causes = [
+  { cause: 'Incompatibility & communication breakdown', frequency: 'Most common', detail: 'Cited in the majority of mutual consent divorce filings. UAE courts have noted that early-stage marital conflicts are the leading trigger for divorce applications.' },
+  { cause: 'Financial disputes', frequency: 'Very common', detail: 'Disputes over spending, debt, financial support obligations, and differing financial expectations — particularly in high-cost emirates like Dubai and Abu Dhabi.' },
+  { cause: 'Family interference', frequency: 'Common (Nationals)', detail: 'Among Emirati nationals, interference from extended family (particularly in-laws) is consistently cited as a significant divorce cause in UAE court welfare reports.' },
+  { cause: 'Domestic violence & abuse', frequency: 'Common (underreported)', detail: 'Physical and psychological abuse is grounds for judicial divorce (faskh) for Muslim women. The 2022 law also strengthens non-Muslim access to no-fault divorce, removing the need to prove abuse.' },
+  { cause: 'Long-distance / work separation', frequency: 'Common (Expats)', detail: 'Frequent travel, long work hours, and extended family separation from home countries create relationship strain that is especially acute in the UAE\'s expatriate-heavy workforce.' },
+  { cause: 'Social media & external relationships', frequency: 'Rising', detail: 'UAE courts and the Judicial Council have flagged social media use and online relationships as a growing factor in matrimonial breakdown, particularly among younger couples.' },
+  { cause: 'Hasty or arranged marriages', frequency: 'Documented', detail: 'Short courtship periods and social pressure to marry have been specifically cited in UAE National Programme for Happiness research as a contributing factor to early-stage divorce.' },
+];
+
+const emirateData = [
+  { emirate: 'Dubai', divorceRatio: 'High', note: 'Largest expatriate population; significant non-Muslim divorce caseload, especially post-2022 reform. Dubai Courts Family Department handles high case volume.' },
+  { emirate: 'Abu Dhabi', divorceRatio: 'High', note: 'High Emirati national population relative to other emirates; historically elevated national divorce rate, offset by larger expat base.' },
+  { emirate: 'Sharjah', divorceRatio: 'Moderate', note: 'More conservative social norms; family reconciliation services are actively used. Lower absolute divorce numbers than Dubai.' },
+  { emirate: 'Northern Emirates', divorceRatio: 'Moderate–Low', note: 'Smaller populations and fewer commercial courts. Tribal and extended family mediation remains influential in reducing formal filings.' },
+];
+
+const faqItems = [
+  {
+    question: 'What is the divorce rate in the UAE?',
+    answer: 'The UAE\'s overall divorce-to-marriage ratio is approximately 25–30% when looking at all residents (nationals and expats combined). Among Emirati nationals specifically, estimates have placed the rate as high as 46–50% in some years, though official figures vary by source and year. The UAE National Statistics Authority publishes annual marriage and divorce counts; the most recent available data shows divorces increasing in absolute terms alongside population growth.',
+  },
+  {
+    question: 'Is the divorce rate in Dubai higher than the UAE average?',
+    answer: 'Dubai consistently records the highest absolute number of divorce filings in the UAE, driven by its large and diverse population. On a per-capita basis, Dubai\'s rate is comparable to the national average. Following the 2022 non-Muslim divorce law reform, Dubai courts saw a notable rise in civil divorce filings from expatriates who previously lacked a straightforward legal path to divorce under UAE law.',
+  },
+  {
+    question: 'Why is the divorce rate high among UAE nationals?',
+    answer: 'Several factors are cited in research: short courtship periods, early marriage ages, extended family pressure, relatively accessible remarriage (particularly for men under Islamic law), and financial disputes over mahr and maintenance obligations. The UAE government has responded with mandatory pre-marital counselling for nationals and family guidance centres attached to all Personal Status Courts.',
+  },
+  {
+    question: 'Does the 2022 law change how divorce statistics are counted?',
+    answer: 'Yes, indirectly. The 2022 Federal Decree-Law No. 41 created a new civil divorce pathway for non-Muslim expats, meaning divorces that previously required home-country proceedings or DIFC jurisdiction are now recorded in UAE court statistics. This is expected to increase the reported UAE divorce rate going forward simply because more divorces now go through UAE courts rather than being handled abroad.',
+  },
+  {
+    question: 'What percentage of UAE divorces involve children?',
+    answer: 'UAE family court data indicates that approximately 40–50% of divorce cases involve minor children, which is the primary driver of contested divorce proceedings and longer case timelines. Child custody disputes are the most complex and expensive type of divorce case in the UAE.',
+  },
+  {
+    question: 'How does the UAE divorce rate compare globally?',
+    answer: 'The UAE\'s crude divorce rate (divorces per 1,000 population) is roughly in line with Western European countries. The USA and Russia have higher crude divorce rates. Gulf Cooperation Council neighbours — Saudi Arabia, Qatar, Kuwait — have similarly elevated national divorce rates. The MENA region overall has seen rising divorce rates over the past two decades as urbanisation, women\'s workforce participation, and legal reforms have expanded access to divorce.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-rate-uae" lang="en" hreflang={hreflang}>
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Statistics &amp; Analysis · UAE 2025</p>
+      <h1>Divorce Rate in UAE 2025 — Statistics, Trends &amp; Key Causes</h1>
+      <p class="hero-sub">How many marriages in the UAE end in divorce, how figures have changed over the past decade, the difference between nationals and expats, and what is driving the numbers. Based on UAE court records, government statistics, and published research.</p>
+      <div class="hero-meta">
+        <span>Updated: April 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Stats cards -->
+      <div class="stats-row">
+        {statsCards.map(s => (
+          <div class="stat-card">
+            <p class="stat-number">{s.stat}</p>
+            <p class="stat-label">{s.label}</p>
+            <p class="stat-note">{s.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Context -->
+      <section class="content-section">
+        <h2>Understanding UAE Divorce Statistics</h2>
+        <p>UAE divorce statistics are reported by the Federal Competitiveness and Statistics Centre (FCSC) and individual emirate courts. They count registered divorces in UAE Personal Status Courts — which means they historically undercounted expat divorces, since many expatriates handled divorces through their home-country consulates or the DIFC Courts rather than UAE family courts.</p>
+        <p>Since the introduction of Federal Decree-Law No. 41 of 2022, non-Muslim expatriates have a dedicated civil divorce pathway in UAE courts. This has shifted more expat divorces into the official UAE court count, making post-2022 statistics less comparable to earlier years.</p>
+        <p>When sources quote a "UAE divorce rate," they may mean: the crude divorce rate (divorces per 1,000 population), the divorce-to-marriage ratio (divorces in a year divided by marriages in the same year), or the cumulative divorce probability for a given cohort. These produce very different-looking numbers from the same underlying data.</p>
+
+        <div class="info-box info-box--blue">
+          <h3>What the Numbers Actually Mean</h3>
+          <p>A divorce-to-marriage ratio of 26% does NOT mean 26% of marriages end in divorce. It means that in a given year, for every 100 marriages registered, 26 divorces were also registered — but those divorces are from marriages that began in previous years. The true lifetime divorce probability for UAE marriages is not precisely known but is estimated at 30–40% for nationals and 15–20% for expatriates.</p>
+        </div>
+      </section>
+
+      <!-- Trends -->
+      <section class="content-section">
+        <h2>Trends Over the Past Decade</h2>
+
+        <div class="trend-list">
+          {[
+            { year: '2013–2016', trend: 'Stable', desc: 'Divorce rates among nationals were broadly stable. Expat divorces largely handled outside UAE courts.' },
+            { year: '2017–2019', trend: 'Gradually rising', desc: 'Increasing divorce filings particularly in Dubai and Abu Dhabi. UAE government introduces expanded family counselling services in response.' },
+            { year: '2020–2021', trend: 'Spike', desc: 'COVID-19 lockdowns correlated with a notable increase in divorce filings across the UAE, consistent with global trends. Extended cohabitation and financial stress were cited as triggers.' },
+            { year: '2022', trend: 'Legal reform', desc: 'Federal Decree-Law No. 41 creates civil divorce for non-Muslims. Significant increase in expat divorce filings in Dubai Courts from H2 2022 onward.' },
+            { year: '2023–2025', trend: 'Rising (adjusted)', desc: 'Official statistics show rising absolute divorce numbers, partly reflecting the broader capture of expat divorces post-reform. Per-capita trends among nationals remain elevated.' },
+          ].map(t => (
+            <div class="trend-item">
+              <div class="trend-year">{t.year}</div>
+              <div class="trend-content">
+                <span class="trend-label">{t.trend}</span>
+                <p>{t.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Emirate breakdown -->
+      <section class="content-section">
+        <h2>Divorce Rates by Emirate</h2>
+        <p>Divorce rates vary significantly across the seven emirates, driven by differences in population composition, legal infrastructure, and cultural norms.</p>
+
+        <div class="table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Emirate</th>
+                <th>Divorce Ratio</th>
+                <th>Key Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              {emirateData.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-label">{row.emirate}</td>
+                  <td class="td-cost">{row.divorceRatio}</td>
+                  <td class="td-notes">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Causes -->
+      <section class="content-section">
+        <h2>Main Causes of Divorce in the UAE</h2>
+        <p>UAE family courts and government research identify the following as the most frequently cited causes in divorce proceedings and welfare reports.</p>
+
+        <div class="cause-list">
+          {causes.map(c => (
+            <div class="cause-card">
+              <div class="cause-header">
+                <span class="cause-name">{c.cause}</span>
+                <span class="cause-freq">{c.frequency}</span>
+              </div>
+              <p class="cause-detail">{c.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Government response -->
+      <section class="content-section">
+        <h2>Government Initiatives to Reduce Divorce</h2>
+
+        <div class="initiative-list">
+          {[
+            { initiative: 'Mandatory pre-marital counselling for UAE nationals', detail: 'Since 2008, UAE nationals must complete a pre-marital counselling course before obtaining a marriage licence. The programme covers communication, financial planning, and family values.' },
+            { initiative: 'Family Guidance Sections in all courts', detail: 'Every UAE Personal Status Court has a Family Guidance and Reconciliation department. Attendance is mandatory before divorce proceedings can begin. Reconciliation rates are approximately 10–15%.' },
+            { initiative: 'Marriage Fund (Sandooq Al Zawaj)', detail: 'The UAE Marriage Fund provides financial assistance and counselling to Emirati men to reduce barriers to marriage and support marital stability. Recipients receive pre-marital training as a condition.' },
+            { initiative: 'National Programme for Happiness — family stability pillar', detail: 'The UAE\'s national happiness programme includes family stability as a core metric. Research commissioned under this programme has produced policy recommendations on causes of and interventions for divorce.' },
+          ].map((item, i) => (
+            <div class="tip-item">
+              <div class="tip-number">{i + 1}</div>
+              <div class="tip-content">
+                <h3>{item.initiative}</h3>
+                <p>{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <h2>Going Through a Divorce in the UAE?</h2>
+        <p>Statistics are one thing — your situation is personal. Get a free, confidential consultation to understand your rights, timelines, and options before you make any decisions.</p>
+        <LeadForm source="divorce-rate-uae" />
+      </div>
+
+      <!-- Related links -->
+      <section class="related-links-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'Divorce in UAE — Complete Guide', href: '/en/divorce-in-uae', desc: 'Everything you need to know about the UAE divorce process.' },
+            { title: 'UAE Divorce Law', href: '/en/uae-divorce-law', desc: 'Personal Status Law, 2022 reforms, and your legal rights.' },
+            { title: 'Divorce Cost UAE', href: '/en/divorce-cost-uae', desc: 'Court fees, lawyer fees, and how to budget accurately.' },
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step guide to the filing process.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero-section { background: #0a1628; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  /* ── Main container ───────────────────────────────── */
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.55rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  /* ── Stats row ────────────────────────────────────── */
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+  .stat-card { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.875rem; padding: 1.25rem; }
+  .stat-number { font-size: 2rem; font-weight: 800; color: #c9a84c; margin-bottom: 0.25rem; }
+  .stat-label { font-size: 0.82rem; font-weight: 700; color: #0a1628; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-note { font-size: 0.78rem; color: #667; line-height: 1.55; margin: 0; }
+
+  /* ── Info boxes ───────────────────────────────────── */
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+  .info-box--blue { background: #eef4ff; border: 1px solid #aac4f0; }
+  .info-box h3 { font-size: 0.95rem; font-weight: 700; color: #1a3a6b; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.88rem; color: #2a3a5e; line-height: 1.65; margin: 0; }
+
+  /* ── Trend list ───────────────────────────────────── */
+  .trend-list { display: flex; flex-direction: column; gap: 0; border-left: 3px solid #c9a84c; padding-left: 1.5rem; margin-top: 1rem; }
+  .trend-item { display: flex; gap: 1.25rem; padding-bottom: 1.5rem; align-items: flex-start; }
+  .trend-year { font-size: 0.78rem; font-weight: 700; color: #c9a84c; white-space: nowrap; min-width: 90px; padding-top: 0.1rem; }
+  .trend-content { flex: 1; }
+  .trend-label { display: inline-block; font-size: 0.75rem; font-weight: 700; background: #0a1628; color: #fff; border-radius: 999px; padding: 0.15rem 0.65rem; margin-bottom: 0.3rem; }
+  .trend-content p { font-size: 0.87rem; color: #445; line-height: 1.65; margin: 0; }
+
+  /* ── Table ────────────────────────────────────────── */
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .cost-table thead tr { background: #0a1628; color: #fff; }
+  .cost-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .cost-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; }
+  .row-alt { background: #f8f9fa; }
+  .td-label { font-weight: 600; color: #0a1628; }
+  .td-cost { color: #c9a84c; font-weight: 700; white-space: nowrap; }
+  .td-notes { color: #556; font-size: 0.82rem; }
+
+  /* ── Cause list ───────────────────────────────────── */
+  .cause-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .cause-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; }
+  .cause-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .cause-name { font-weight: 700; color: #0a1628; font-size: 0.95rem; }
+  .cause-freq { font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap; background: #fef3e2; color: #b7770d; }
+  .cause-detail { font-size: 0.85rem; color: #556; line-height: 1.6; margin: 0; }
+
+  /* ── Initiatives / Tips list ─────────────────────── */
+  .initiative-list { display: flex; flex-direction: column; gap: 1rem; }
+  .tip-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tip-number { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-top: 0.1rem; }
+  .tip-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
+  .tip-content p { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+
+  /* ── CTA box ──────────────────────────────────────── */
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  /* ── Related links ────────────────────────────────── */
+  .related-links-section { margin-bottom: 2rem; }
+  .related-links-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
+  .related-card:hover { border-color: #c9a84c; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

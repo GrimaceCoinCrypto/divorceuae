@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'عدة الطلاق — المدة والأحكام والحقوق في الإسلام والقانون الإماراتي';
+const description =
+  'كل ما تحتاج معرفته عن عدة الطلاق: مدتها للمطلقة والأرملة والحامل، ما يجب وما يحرم أثناء العدة، حق السكنى والنفقة، وكيف ينظر القانون الإماراتي للعدة.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/uae-divorce-law',
+  ar: 'https://divorceu.ae/ar/عدة-الطلاق',
+};
+
+const breadcrumbs = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'عدة الطلاق', url: 'https://divorceu.ae/ar/عدة-الطلاق' },
+];
+
+const iddahTypes = [
+  {
+    type: 'المطلقة ذات الحيض (غير الحامل)',
+    duration: 'ثلاثة قروء (3 حيضات أو 3 أطهار)',
+    basis: 'قوله تعالى: {وَالْمُطَلَّقَاتُ يَتَرَبَّصْنَ بِأَنفُسِهِنَّ ثَلَاثَةَ قُرُوءٍ} (البقرة: 228)',
+    detail: 'الراجح عند الحنابلة والشافعية: القرء هو الطهر، فتنتهي العدة بانتهاء الطهر الثالث. وعند الحنفية والمالكية: القرء هو الحيضة، فتنتهي بانتهاء الحيضة الثالثة.',
+  },
+  {
+    type: 'المطلقة الحامل',
+    duration: 'حتى الوضع (ولادة الجنين)',
+    basis: 'قوله تعالى: {وَأُولَاتُ الْأَحْمَالِ أَجَلُهُنَّ أَن يَضَعْنَ حَمْلَهُنَّ} (الطلاق: 4)',
+    detail: 'تنتهي العدة بمجرد الولادة حتى لو كانت بعد الطلاق بأيام. إذا أسقطت جنيناً تبيّن فيه خلق الإنسان انقضت به العدة.',
+  },
+  {
+    type: 'المطلقة التي توقف حيضها (يأس أو صغر)',
+    duration: 'ثلاثة أشهر قمرية',
+    basis: 'قوله تعالى: {وَاللَّائِي يَئِسْنَ مِنَ الْمَحِيضِ مِن نِّسَائِكُمْ إِنِ ارْتَبْتُمْ فَعِدَّتُهُنَّ ثَلَاثَةُ أَشْهُرٍ} (الطلاق: 4)',
+    detail: 'تشمل التي بلغت سن اليأس وتوقف حيضها، وكذلك الصغيرة التي لم تحض بعد.',
+  },
+  {
+    type: 'المطلقة قبل الدخول',
+    duration: 'لا عدة عليها',
+    basis: 'قوله تعالى: {يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نَكَحْتُمُ الْمُؤْمِنَاتِ ثُمَّ طَلَّقْتُمُوهُنَّ مِن قَبْلِ أَن تَمَسُّوهُنَّ فَمَا لَكُمْ عَلَيْهِنَّ مِنْ عِدَّةٍ} (الأحزاب: 49)',
+    detail: 'المرأة التي طُلِّقت قبل الدخول بها (أي قبل المعاشرة الزوجية) ليس عليها عدة، وتستحق نصف المهر إذا كان قد سُمِّي.',
+  },
+  {
+    type: 'الأرملة (المتوفى عنها زوجها)',
+    duration: 'أربعة أشهر وعشرة أيام',
+    basis: 'قوله تعالى: {وَالَّذِينَ يُتَوَفَّوْنَ مِنكُمْ وَيَذَرُونَ أَزْوَاجًا يَتَرَبَّصْنَ بِأَنفُسِهِنَّ أَرْبَعَةَ أَشْهُرٍ وَعَشْرًا} (البقرة: 234)',
+    detail: 'هذه عدة الوفاة وليست عدة الطلاق، لكنها تُذكر هنا للتمييز. إذا كانت حاملاً فعدتها وضع الحمل.',
+  },
+];
+
+const rights = [
+  { right: 'السكنى', detail: 'تجب للمطلقة السكنى في بيت الزوجية طوال مدة العدة. لا يجوز للزوج إخراجها من البيت ولا لها الخروج إلا لحاجة. قال تعالى: {لَا تُخْرِجُوهُنَّ مِن بُيُوتِهِنَّ وَلَا يَخْرُجْنَ} (الطلاق: 1).' },
+  { right: 'النفقة', detail: 'تجب النفقة (الطعام والكساء والمسكن) طوال العدة على الزوج المطلِّق. وتجب النفقة حتى للطلاق البائن — وهذا متفق عليه في المذاهب الأربعة. أما في الطلاق الثلاث (البائن بينونة كبرى) ففي النفقة خلاف: الجمهور يُوجبونها، ومالك لا يُوجبها.' },
+  { right: 'نفقة الحمل', detail: 'إذا كانت المطلقة حاملاً وجبت نفقتها حتى الوضع بنص الآية الكريمة. وتشمل تكاليف الولادة والرعاية الطبية.' },
+  { right: 'عدم إلزامها بالخروج', detail: 'لا يجوز للزوج إجبار المطلقة على مغادرة المنزل إلا بحكم قضائي. وإذا خرجت المرأة بإرادتها دون عذر شرعي أسقطت حقها في النفقة والسكنى.' },
+];
+
+const faqItems = [
+  {
+    question: 'ما هي عدة الطلاق وما الحكمة منها؟',
+    answer:
+      'العدة هي مدة انتظار مقررة شرعاً تلتزم بها المرأة بعد الفراق (طلاقاً أو وفاة) قبل أن يجوز لها الزواج من رجل آخر. والحكم منها عدة أمور: أولاً — استبراء الرحم والتأكد من عدم الحمل، ثانياً — إعطاء فرصة للمراجعة إذا كان الطلاق رجعياً، ثالثاً — صون المرأة من التسرع في قرارات مصيرية في ظروف عاطفية صعبة.',
+  },
+  {
+    question: 'هل تجب النفقة أثناء العدة حتى في الطلاق البائن؟',
+    answer:
+      'نعم عند جمهور الفقهاء. المطلقة رجعياً تجب لها النفقة والسكنى بلا خلاف. المطلقة بائناً بينونة صغرى (كالخلع والطلاق بعد انتهاء العدة): يُوجب الجمهور النفقة لها. والمطلقة ثلاثاً (بائناً كبرى): الجمهور يُوجبون النفقة لها طوال العدة، والمالكية لا يُوجبونها. القانون الإماراتي يُلزم بالنفقة طوال العدة في جميع أنواع الطلاق.',
+  },
+  {
+    question: 'هل يجوز للمطلقة الخروج من المنزل أثناء العدة؟',
+    answer:
+      'الأصل أن تلتزم المطلقة البيت أثناء العدة. ويُجيز الفقهاء الخروج للحاجة الضرورية كقضاء الحوائج والعلاج وما شابه، لا سيما في العصر الحديث. المرأة العاملة: أجاز كثير من العلماء المعاصرين خروجها للعمل لأن النفقة قد لا تكفيها وقد تكون هي العائلة على أطفالها. والضابط الشرعي: تجتنب مواطن الفتنة والظهور الاجتماعي غير الضروري.',
+  },
+  {
+    question: 'ما مدة عدة الطلاق في القانون الإماراتي؟',
+    answer:
+      'القانون الإماراتي (قانون الأحوال الشخصية الاتحادي رقم 28 لسنة 2005، المواد 140-153) يتبع الفقه الإسلامي في تحديد مدة العدة: ثلاثة قروء للمطلقة ذات الحيض، ثلاثة أشهر للتي لا تحيض، حتى الوضع للحامل، ولا عدة على المطلقة قبل الدخول. وتُحسب العدة ابتداءً من تاريخ صدور حكم الطلاق القضائي.',
+  },
+  {
+    question: 'هل يجوز الزواج من امرأة في عدة الطلاق؟',
+    answer:
+      'لا يجوز التصريح بخطبة المعتدة من الطلاق البائن ولا عقد الزواج عليها إلا بعد انتهاء عدتها. أما المطلقة رجعياً فهي لا تزال زوجة في حكم الشرع ولا يجوز لأي رجل آخر خطبتها. الزواج الذي يُعقد أثناء العدة باطل وقد يُفضي إلى عقوبة قانونية بتهمة الزنا أو تعدد الزيجات غير المشروع في الإمارات.',
+  },
+  {
+    question: 'ماذا يحدث لتأشيرة إقامة المرأة في الإمارات أثناء العدة؟',
+    answer:
+      'إذا كانت المرأة مقيمة على تأشيرة زوجها، فتأشيرتها مرتبطة بوضعه القانوني. بعد صدور حكم الطلاق تبدأ مهلة 30 يوماً لتغيير وضعها الإقامي. يُستحسن البدء فوراً في إجراءات نقل التأشيرة (عمل، مستثمر، أو تأشيرة طلاق/حضانة). العدة الشرعية والتأشيرة أمران مستقلان — انتهاء العدة لا يعني تمديد التأشيرة.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="ar" />
+        <h1 class="hero__h1">عدة الطلاق — الأحكام والمدة والحقوق</h1>
+        <p class="hero__sub">
+          دليل شامل لعدة الطلاق في الإسلام والقانون الإماراتي: متى تجب العدة، كم تستغرق، ما حقوق المرأة أثناءها، وما الذي يجب وما يحرم عليها.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ مدة العدة لكل حالة</li>
+          <li>✓ حق السكنى والنفقة</li>
+          <li>✓ موقف القانون الإماراتي</li>
+          <li>✓ استشارة قانونية مجانية</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="ar" variant="hero" heading="استشارة طلاق مجانية" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Intro -->
+    <section class="section" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">ما هي العدة؟</h2>
+      <p>
+        العدة لغةً: المدة والحساب. واصطلاحاً: مدة انتظار مقدّرة شرعاً تلتزم بها المرأة بعد فراق زوجها طلاقاً أو وفاةً، لا يحلّ لها خلالها الزواج برجل آخر.
+      </p>
+      <p>
+        والحكمة من مشروعية العدة: استبراء الرحم ومعرفة براءته من الحمل، وإعطاء فرصة للمراجعة في الطلاق الرجعي، وصون المرأة من التسرع في قرارات مصيرية في ظروف عاطفية صعبة، وصون الأنساب.
+      </p>
+
+      <div class="alert-box">
+        <strong>تنبيه مهم:</strong> عدة الطلاق والعدة بعد الوفاة مختلفتان. هذه الصفحة تتناول عدة الطلاق تحديداً. عدة الوفاة هي أربعة أشهر وعشرة أيام (أو حتى الوضع إن كانت حاملاً).
+      </div>
+    </section>
+
+    <!-- Iddah types -->
+    <section class="section" aria-labelledby="types-heading">
+      <h2 id="types-heading">مدة عدة الطلاق حسب حالة المرأة</h2>
+
+      <div class="types-list">
+        {iddahTypes.map((item, i) => (
+          <div class="type-card">
+            <div class="type-header">
+              <div class="type-num">{i + 1}</div>
+              <div class="type-info">
+                <h3 class="type-name">{item.type}</h3>
+                <span class="type-duration">{item.duration}</span>
+              </div>
+            </div>
+            <p class="type-basis">{item.basis}</p>
+            <p class="type-detail">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Quick reference table -->
+    <section class="section" aria-labelledby="table-heading">
+      <h2 id="table-heading">جدول مدد العدة</h2>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr>
+              <th>حالة المرأة</th>
+              <th>مدة العدة</th>
+              <th>نوع العدة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>مطلقة ذات حيض</td><td>3 قروء (3 حيضات أو أطهار)</td><td>عدة طلاق</td></tr>
+            <tr><td>مطلقة حامل</td><td>حتى الوضع (الولادة)</td><td>عدة طلاق</td></tr>
+            <tr><td>مطلقة آيسة أو صغيرة</td><td>3 أشهر قمرية</td><td>عدة طلاق</td></tr>
+            <tr><td>مطلقة قبل الدخول</td><td>لا عدة</td><td>—</td></tr>
+            <tr><td>أرملة (وفاة الزوج)</td><td>4 أشهر و10 أيام</td><td>عدة وفاة</td></tr>
+            <tr><td>أرملة حامل</td><td>حتى الوضع</td><td>عدة وفاة</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Rights during iddah -->
+    <section class="section" aria-labelledby="rights-heading">
+      <h2 id="rights-heading">حقوق المرأة أثناء عدة الطلاق</h2>
+
+      <div class="rights-list">
+        {rights.map((r, i) => (
+          <div class="right-card">
+            <div class="right-num">{i + 1}</div>
+            <div class="right-content">
+              <h3>{r.right}</h3>
+              <p>{r.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- What is prohibited -->
+    <section class="section" aria-labelledby="prohibited-heading">
+      <h2 id="prohibited-heading">ما يحرم على المعتدة</h2>
+
+      <div class="qa-list">
+        <div class="qa-card">
+          <h3>الزواج برجل آخر</h3>
+          <p>يحرم تحريماً قاطعاً على المعتدة الزواج برجل آخر أثناء العدة. وهذا من أجلى حكمة العدة: استبراء الرحم وصون الأنساب. أي عقد زواج يُعقد أثناء العدة يكون باطلاً شرعاً وقانوناً.</p>
+        </div>
+        <div class="qa-card">
+          <h3>الخروج من البيت بغير حاجة (للمطلقة الرجعية)</h3>
+          <p>المطلقة رجعياً يُستحسن أن تبقى في البيت وتجتنب الخروج للمجالس والحفلات والظهور الاجتماعي غير الضروري. الخروج للعمل والحاجة جائز عند كثير من العلماء المعاصرين.</p>
+        </div>
+        <div class="qa-card">
+          <h3>الإحداد (لعدة الوفاة لا الطلاق)</h3>
+          <p>الإحداد الكامل (ترك الزينة والطيب والخروج) واجب في عدة الوفاة لا في عدة الطلاق. المطلقة لا يجب عليها الإحداد وإن كان يُستحسن لها الحشمة وترك ما يُوهم التبذل.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UAE law -->
+    <section class="section" aria-labelledby="law-heading">
+      <h2 id="law-heading">عدة الطلاق في القانون الإماراتي</h2>
+      <p>
+        ينظّم قانون الأحوال الشخصية الإماراتي الاتحادي رقم 28 لسنة 2005 أحكام العدة في المواد (140 إلى 153). ويتوافق القانون مع الفقه الإسلامي في جوهره مع بعض المواد التفصيلية:
+      </p>
+
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>بداية حساب العدة</h3>
+            <p>تُحسب العدة من تاريخ وقوع الطلاق رجعياً كان أم بائناً. في الطلاق القضائي يُحسب من تاريخ صدور حكم الطلاق النهائي.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>النفقة أثناء العدة</h3>
+            <p>يُلزم القانون الإماراتي الزوج بنفقة المطلقة طوال مدة العدة، سواء كان الطلاق رجعياً أو بائناً. وتُحدد المحكمة مقدار النفقة الشهرية بناءً على دخل الزوج ومستوى معيشة الزوجة.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>السكنى أثناء العدة</h3>
+            <p>المادة (143): "يجب للمطلقة طاعة عدتها في مسكن الزوجية..." ولا يجوز للزوج إخراجها قبل انقضاء عدتها إلا لضرورة أو بموافقتها.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>المرأة الأجنبية والعدة</h3>
+            <p>على المرأة الأجنبية المقيمة في الإمارات مراعاة أن العدة حق ديني وقانوني — وأن تأشيرة الإقامة أمر منفصل. يُستحسن الاستعانة بمحامٍ لترتيب وضع التأشيرة فور صدور حكم الطلاق.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related links -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">أدلة ذات صلة</h2>
+      <div class="service-links">
+        <a href="/ar/انواع-الطلاق" class="service-link">
+          <strong>أنواع الطلاق</strong>
+          <span>الرجعي والبائن والبدعي والخلع</span>
+        </a>
+        <a href="/ar/قانون-الطلاق-في-الامارات" class="service-link">
+          <strong>قانون الطلاق في الإمارات</strong>
+          <span>شرح قانون الأحوال الشخصية الاتحادي</span>
+        </a>
+        <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات" class="service-link">
+          <strong>حقوق الزوجة بعد الطلاق</strong>
+          <span>النفقة والمهر والمسكن والحضانة</span>
+        </a>
+        <a href="/ar/الطلاق-في-الامارات" class="service-link">
+          <strong>الطلاق في الإمارات — دليل شامل</strong>
+          <span>الإجراءات والتكاليف والجداول الزمنية</span>
+        </a>
+        <a href="/ar/حضانة-الاطفال-الامارات" class="service-link">
+          <strong>حضانة الأطفال في الإمارات</strong>
+          <span>قواعد الحضانة وحقوق الرؤية</span>
+        </a>
+        <a href="/ar/محامي-طلاق" class="service-link">
+          <strong>محامي طلاق في الإمارات</strong>
+          <span>ابحث عن محامٍ متخصص</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="ar" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">هل لديك أسئلة حول العدة أو الطلاق في الإمارات؟</h2>
+      <p>تحدث مع محامي أحوال شخصية مؤهل خلال 24 ساعة. سري تماماً. دعم باللغتين العربية والإنجليزية.</p>
+      <LeadForm lang="ar" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceU.AE — خدمة إحالة قانونية. ليست مكتب محاماة. المعلومات المقدمة للإرشاد فقط ولا تشكل استشارة قانونية.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/سياسة-الخصوصية">سياسة الخصوصية</a>
+        <a href="/ar/إخلاء-المسؤولية">إخلاء المسؤولية</a>
+        <a href="/en/">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.8; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.9; margin-bottom: 16px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  /* Alert box */
+  .alert-box { background: #fffbe6; border: 1.5px solid #f0c040; border-radius: 10px; padding: 16px 20px; font-size: 0.875rem; color: #554400; line-height: 1.7; margin-top: 20px; }
+  .alert-box strong { color: #2a2000; }
+
+  /* Types list */
+  .types-list { display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .type-card { background: #f8faff; border: 1px solid #dde6f5; border-radius: 12px; padding: 24px; }
+  .type-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+  .type-num { width: 36px; height: 36px; min-width: 36px; background: #1e3a5f; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .type-info { flex: 1; }
+  .type-name { font-size: 1.05rem; font-weight: 800; color: #1e3a5f; margin: 0 0 6px; }
+  .type-duration { display: inline-block; font-size: 0.85rem; font-weight: 700; background: #c9a84c; color: #fff; padding: 3px 12px; border-radius: 999px; }
+  .type-basis { font-size: 0.85rem; color: #1e3a5f; font-style: italic; background: #eef4ff; padding: 10px 14px; border-radius: 6px; margin-bottom: 10px; line-height: 1.7; }
+  .type-detail { font-size: 0.875rem; color: #374151; line-height: 1.75; margin: 0; }
+
+  /* Table */
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: right; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; text-align: right; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+
+  /* Rights list */
+  .rights-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .right-card { display: flex; gap: 16px; align-items: flex-start; background: #f8faff; border: 1px solid #dde6f5; border-radius: 12px; padding: 20px; }
+  .right-num { width: 32px; height: 32px; min-width: 32px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .right-content h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .right-content p { font-size: 0.875rem; color: #374151; line-height: 1.75; margin: 0; }
+
+  /* QA cards */
+  .qa-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .qa-card { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; }
+  .qa-card h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .qa-card p { font-size: 0.875rem; color: #374151; line-height: 1.75; margin: 0; }
+
+  /* Steps */
+  .steps { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .step-item { display: flex; gap: 16px; align-items: flex-start; }
+  .step-num { width: 32px; height: 32px; min-width: 32px; background: #1e3a5f; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 4px; }
+  .step-content p { font-size: 0.875rem; color: #374151; line-height: 1.75; margin: 0; }
+
+  /* Service links */
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+    .right-card { flex-direction: column; }
+  }
+</style>

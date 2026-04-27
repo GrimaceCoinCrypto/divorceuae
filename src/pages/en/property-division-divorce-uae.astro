@@ -1,0 +1,427 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Property Division in UAE Divorce 2025 — Who Gets What';
+const description =
+  'How is property divided in a UAE divorce? Family home, joint bank accounts, business assets, and gifts. UAE has no community property — learn how courts actually decide.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/property-division-divorce-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Property Division Divorce UAE', url: 'https://divorceu.ae/en/property-division-divorce-uae' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is property divided in a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The UAE does not have a community property or marital estate system. Under UAE Personal Status Law (Federal Law No. 28 of 2005), each spouse retains ownership of assets registered in their own name. There is no automatic 50/50 split. Property registered jointly is divided based on proven contribution. The wife\'s primary financial protections are the mahr, iddah maintenance, and child support -- not a share of the husband\'s assets.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who gets the family home in a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The family home belongs to whoever\'s name is on the title deed. If registered in the husband\'s name, he keeps it -- but the court may order him to provide alternative housing for the wife during the iddah period (approximately 3 months) and for minor children in his custody arrangement. If the home is jointly registered, courts examine contribution and may order a sale or buyout. Non-Muslim expats may have different rights depending on home country law applied.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a wife claim a share of her husband\'s savings in a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not automatically. Under UAE law, bank accounts belong to whoever\'s name is on the account. A wife can claim a share of a joint account based on proven contributions. If the wife contributed money to savings held in the husband\'s name (e.g., salary deposited there), she can argue unjust enrichment -- but this is a civil claim that requires evidence of contribution. The mahr and maintenance rights are clearer and more reliably enforced.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are gifts from the husband my property in a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Gifts (hibah) given during the marriage to the wife are considered her property. The husband cannot reclaim gifts on divorce. This is separate from the mahr (dowry). Wedding gifts given to the couple jointly are generally considered the wife\'s if they were given for her household use. However, gifts given to the couple as a whole (e.g., furniture, a car) are more contested and depend on registration and intended use.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can non-Muslim expats use home country law for property division?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Non-Muslim expats in the UAE can elect to have their divorce (including property matters) governed by their home country law rather than UAE Personal Status Law. Many Western countries have marital property or community property regimes that give spouses stronger claims on jointly-accumulated assets. This election is made through your lawyer at the time of filing. The DIFC Courts also have jurisdiction for international divorces with a more common-law approach to property.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to a business owned by one spouse in a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A business registered in one spouse\'s name remains that spouse\'s property. The other spouse cannot claim a share of a business they have no ownership stake in, unless they can prove direct financial contribution (e.g., capital invested, documented loans) or that the business was jointly operated. Courts may appoint a financial expert to value a business if ownership or contribution is disputed. This is complex -- legal representation is essential.',
+      },
+    },
+  ],
+};
+
+const assetTypes = [
+  {
+    asset: 'Real estate (property)',
+    rule: 'Owner on title deed keeps it',
+    detail: 'Jointly-registered property is divided by proven contribution or court-ordered sale.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'Bank accounts',
+    rule: 'Account holder keeps it',
+    detail: 'Joint accounts split by proven contribution. Transfers during separation may be challenged.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'Mahr (dowry)',
+    rule: 'Always the wife\'s',
+    detail: 'The advance mahr is already paid. The deferred mahr is payable on divorce or death.',
+    flag: 'wife',
+  },
+  {
+    asset: 'Gifts from husband',
+    rule: 'Wife keeps them',
+    detail: 'Gifts made to the wife during marriage cannot be reclaimed on divorce.',
+    flag: 'wife',
+  },
+  {
+    asset: 'Gifts from wife',
+    rule: 'Husband keeps them',
+    detail: 'Similarly, gifts the wife made to the husband remain his.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'Business / company shares',
+    rule: 'Registered owner keeps it',
+    detail: 'The other spouse can claim contribution-based share only with documented proof.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'Vehicles',
+    rule: 'Registered owner keeps it',
+    detail: 'Registration is decisive. Courts rarely transfer a vehicle unless jointly registered.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'Savings accumulated during marriage',
+    rule: 'Account holder keeps it',
+    detail: 'No automatic spousal claim. Contribution must be proven if held in the other spouse\'s account.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'Inheritance received during marriage',
+    rule: 'Recipient spouse keeps it',
+    detail: 'Inheritance is personal property -- not a marital asset in UAE law.',
+    flag: 'neutral',
+  },
+  {
+    asset: 'End-of-service gratuity (EOSB)',
+    rule: 'Earning spouse keeps it',
+    detail: 'UAE employment gratuity belongs to the employee. Courts do not divide it, though it factors into maintenance calculations.',
+    flag: 'neutral',
+  },
+];
+
+const steps = [
+  { num: '01', title: 'Inventory all assets before filing', detail: 'List every asset and whose name it is in. Check land registry, bank account holders, vehicle registrations, trade licences, and investment accounts. Your lawyer needs this full picture to advise your realistic claim.' },
+  { num: '02', title: 'Gather evidence of contribution', detail: 'If you contributed money to assets in the other spouse\'s name, collect bank transfer records, salary deposit slips, loan agreements, and any written acknowledgements. Digital records -- emails, messages -- can also evidence an understanding of joint ownership.' },
+  { num: '03', title: 'Protect accessible assets early', detail: 'If you have legitimate access to joint accounts or assets, document the balance before separation. Courts can reverse large pre-divorce transfers but cannot easily recover spent or hidden funds. Take photos of valuable household items.' },
+  { num: '04', title: 'Do not transfer assets to relatives', detail: 'Transferring property to family members to prevent your spouse from claiming it is considered asset concealment. UAE courts can and do reverse such transfers if they occur within a short period before filing.' },
+  { num: '05', title: 'Apply for a precautionary attachment if needed', detail: 'If you fear the spouse will transfer, sell, or dissipate assets before the case is resolved, your lawyer can apply for a precautionary attachment order (Hajz Ihtiyati) at the court. This freezes the asset pending the divorce outcome.' },
+  { num: '06', title: 'Negotiate a settlement where possible', detail: 'Property disputes can be resolved by agreement, which is faster and cheaper than litigation. Most lawyers recommend negotiating a clear asset split before court -- especially for the family home, joint savings, and valuable possessions.' },
+];
+
+const faqItems = [
+  {
+    question: 'What is the wife\'s main financial protection in a UAE divorce if there is no community property?',
+    answer: 'The wife\'s core financial rights are: (1) the full mahr (advance already paid, deferred payable on divorce); (2) iddah maintenance for approximately 3 months post-divorce; (3) child support if she has custody; (4) housing during the iddah period. These rights apply regardless of asset ownership. For longer marriages, the wife may also receive muta\'a -- a post-divorce compensatory payment at the court\'s discretion. See our <a href="/en/alimony-uae">alimony guide</a> for full details.',
+  },
+  {
+    question: 'Can the husband empty the joint bank account before divorce?',
+    answer: 'Technically yes -- if the account is in his name or a joint account he has access to. Courts can reverse withdrawals that occurred after the divorce petition was filed, but recovering funds spent before filing is very difficult. This is why legal advice before filing (not after) is critical. Your lawyer may advise securing liquid assets or obtaining a court freeze before the petition is served.',
+  },
+  {
+    question: 'What if the family home is rented, not owned?',
+    answer: 'For a rented home, the spouse whose name is on the tenancy agreement keeps it. The other spouse has no automatic right to remain. UAE courts can order the husband to pay for the wife\'s alternative housing during the iddah period and, if she has custody of children, for a reasonable period thereafter. Many divorce settlements include an explicit provision for housing costs.',
+  },
+  {
+    question: 'Does it matter who paid for household expenses during the marriage?',
+    answer: 'Under UAE law, the husband is legally obligated to pay household maintenance (nafaqah) regardless of the wife\'s income. A wife who earned and contributed to household expenses cannot claim those contributions back on divorce -- they were voluntary. However, if the wife paid for assets that ended up in the husband\'s name (e.g., she funded a property purchase), she can argue a contribution-based ownership claim with documented evidence.',
+  },
+  {
+    question: 'We bought property together but it is in his name only. What can I do?',
+    answer: 'You can file a civil claim (separate from the divorce) arguing unjust enrichment or a trust -- that you funded the purchase and the husband holds your share. You need bank transfer records, loan agreements, or other documented proof that you contributed to the purchase price. This is a complex civil case that runs alongside (or after) the divorce proceedings. Get legal advice immediately and preserve all financial records.',
+  },
+  {
+    question: 'Can I keep gold jewellery given to me during marriage?',
+    answer: 'Yes. Gold jewellery given to the wife during marriage (whether as part of the mahr or as gifts) is her personal property. The husband cannot reclaim it on divorce. If the jewellery was given as a loan or specifically earmarked as the husband\'s, he would need to prove that in court -- which is very difficult without written documentation.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/property-division-divorce-uae"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Asset Division Guide · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        UAE divorce law does not split marital assets 50/50. Each spouse keeps what is in their own name. Understanding this before you file -- and knowing where you do have rights -- is critical to protecting your financial future.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="UAE legal documents with gold pen on dark desk — property division divorce"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Key fact box -->
+      <div class="answer-box">
+        <h2>The core rule: UAE has no community property</h2>
+        <p>
+          Under <strong>Federal Personal Status Law No. 28 of 2005</strong>, there is no automatic marital estate or 50/50 split in UAE divorce.
+          Each spouse retains ownership of assets <strong>registered in their name</strong>.
+          The wife's primary protections are the <strong>mahr</strong>, <strong>iddah maintenance</strong>, and <strong>child support</strong> -- not a share of the husband's accumulated wealth.
+          Non-Muslim expats can elect to apply their home country law, which may offer stronger property rights.
+        </p>
+      </div>
+
+      <!-- Asset table -->
+      <section class="content-section">
+        <h2>How Specific Assets Are Treated in UAE Divorce</h2>
+        <div class="table-wrapper">
+          <table class="asset-table">
+            <thead>
+              <tr>
+                <th>Asset type</th>
+                <th>Default rule</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              {assetTypes.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-asset">{row.asset}</td>
+                  <td class={`td-rule ${row.flag === 'wife' ? 'td-rule--wife' : ''}`}>{row.rule}</td>
+                  <td class="td-detail">{row.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">The above applies under UAE Personal Status Law (Islamic law default). Non-Muslim expats who elect home country law may have very different rules on joint assets.</p>
+      </section>
+
+      <!-- Family home -->
+      <section class="content-section">
+        <h2>The Family Home -- Your Most Important Asset</h2>
+        <p>The family home is typically the most valuable and contested asset in a divorce. Here is how UAE courts handle it:</p>
+        <div class="scenario-list">
+          <div class="scenario-card">
+            <p class="scenario-title">Home in husband's name only</p>
+            <p>The husband keeps the property. However, the court can order him to provide the wife with housing (or a housing allowance) during the iddah period -- approximately 3 months. If the wife has custody of minor children, the court may extend the housing obligation for the duration of custody.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Home jointly registered</p>
+            <p>Courts will examine each party's contribution to the purchase price and mortgage payments. Options include: one party buys out the other's share; the property is sold and proceeds divided by contribution; the court sets a percentage ownership. Joint ownership disputes require a property valuation and often a financial expert.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Home in wife's name only</p>
+            <p>The wife keeps the property. The husband has no claim on it. If he contributed to the purchase, he can argue a civil contribution claim -- but the burden of proof is on him.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Rented home</p>
+            <p>The person named on the tenancy agreement keeps the rental. UAE courts can order the husband to pay for alternative housing for the wife and children during and after the iddah. The amount depends on the standard of living during the marriage.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Protecting assets -->
+      <section class="content-section">
+        <h2>6 Steps to Protect Your Assets in a UAE Divorce</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Non-Muslim expats -->
+      <section class="content-section">
+        <h2>Non-Muslim Expats -- A Different Set of Rights</h2>
+        <p>
+          If you are a non-Muslim expat, you can elect to have your divorce governed by your home country's law rather than UAE Personal Status Law.
+          This matters enormously for property. Many European, American, and Commonwealth countries have marital property regimes that treat jointly-accumulated wealth as shared regardless of whose name it is in.
+        </p>
+        <div class="expat-options">
+          <div class="expat-card">
+            <h3>European Union residents</h3>
+            <p>Many EU countries use a community of acquests system -- assets acquired during the marriage are split 50/50. If your home country is France, Germany, or Spain, for example, your home country law may give you a much stronger claim on joint assets than UAE law would.</p>
+          </div>
+          <div class="expat-card">
+            <h3>UK / Commonwealth nationals</h3>
+            <p>English law uses a needs-based approach that can result in the financially weaker spouse receiving a substantial share of assets, especially after a long marriage. This is often significantly more generous than the UAE default.</p>
+          </div>
+          <div class="expat-card">
+            <h3>US nationals</h3>
+            <p>US divorce law varies by state (community property states vs. equitable distribution states). In community property states, assets acquired during the marriage are split equally. Your UAE lawyer can advise whether applying US state law through the DIFC Courts is practical.</p>
+          </div>
+          <div class="expat-card">
+            <h3>DIFC Courts option</h3>
+            <p>The DIFC Courts in Dubai can handle international divorces using common law principles. This is an increasingly used route for high-net-worth expats where property division under home country law would be significantly more favourable than UAE Personal Status Law.</p>
+          </div>
+        </div>
+        <p class="note-text">Electing home country law is a legal strategy decision -- it must be made correctly at filing. Get advice before filing if you are non-Muslim and have significant jointly-accumulated assets.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/alimony-uae" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Types of maintenance, how amounts are calculated, and enforcement</span>
+          </a>
+          <a href="/en/wife-rights-after-divorce-uae" class="related-card">
+            <strong>Wife Rights After Divorce UAE</strong>
+            <span>Mahr, alimony, housing, custody, and visa rights</span>
+          </a>
+          <a href="/en/divorce-cost-uae" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and what drives your total bill</span>
+          </a>
+          <a href="/en/child-support-uae" class="related-card">
+            <strong>Child Support UAE</strong>
+            <span>How nafaqah al-awlad is calculated and enforced</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>How expat divorce works -- jurisdiction, law choices, recognition</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer in Dubai</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #78350f; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .asset-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .asset-table thead tr { background: #0a1628; color: #fff; }
+  .asset-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .asset-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; }
+  .row-alt { background: #fafafa; }
+  .td-asset { font-weight: 700; color: #0a1628; }
+  .td-rule { color: #374151; font-weight: 600; white-space: nowrap; }
+  .td-rule--wife { color: #15803d; }
+  .td-detail { color: #6b7280; font-size: 0.82rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  .scenario-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .scenario-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .expat-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.75rem 0; }
+  .expat-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .expat-card h3 { font-size: 0.85rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .expat-card p { font-size: 0.82rem; color: #4b5563; line-height: 1.6; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .expat-options { grid-template-columns: 1fr; }
+    .asset-table { min-width: unset; }
+  }
+</style>

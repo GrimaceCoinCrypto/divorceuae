@@ -84,6 +84,14 @@ const faqItems = [
   <main class="main-content">
     <div class="container">
 
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="UAE legal documents with gold pen — divorce cost guide"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
       <!-- Quick summary box -->
       <div class="summary-box">
         <h2>Quick Cost Summary — Divorce in UAE</h2>
@@ -233,6 +241,7 @@ const faqItems = [
             { title: 'Alimony in UAE', href: '/en/alimony-uae', desc: 'Types of financial support, who qualifies, and how courts calculate amounts.' },
             { title: 'Child Custody UAE', href: '/en/child-custody-uae', desc: 'UAE custody rules, age limits, and how judges make decisions.' },
             { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: 'The 30-day rule and your 7 visa pathway options after divorce.' },
+            { title: 'Property Division in UAE Divorce', href: '/en/property-division-divorce-uae', desc: 'Who keeps the family home, joint accounts, and business assets.' },
           ].map(link => (
             <a href={link.href} class="related-card">
               <span class="related-title">{link.title} →</span>
@@ -248,6 +257,7 @@ const faqItems = [
 
 <style>
   /* ── Hero ─────────────────────────────────────────── */
+  .article-img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; display: block; }
   .hero-section {
     background: #0a1628;
     color: #fff;
