@@ -1,0 +1,376 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Mutual Consent Divorce in UAE 2025 — Step-by-Step Guide';
+const description =
+  'How to get a mutual consent divorce in UAE: step-by-step process, required documents, court fees, timeline, and what to agree on before you file — for both Muslims and non-Muslims.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/mutual-consent-divorce-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Mutual Consent Divorce UAE' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does mutual consent divorce work in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In a mutual consent divorce in UAE, both spouses agree to end the marriage and agree on all key terms — alimony, child custody, child support, and property split — before filing. This is presented to the Personal Status Court as an agreed petition. The court reviews the terms, may order a mediation session, and issues the divorce decree. The entire process typically takes 1–3 months and costs a fraction of a contested divorce.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do both spouses need to appear in court for a mutual consent divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In most UAE emirate courts, both spouses are required to appear in person at least for the initial filing and the final hearing. If one spouse is abroad, a power of attorney authorising a representative may be accepted in some cases, but procedures vary by emirate. Your lawyer can advise whether a POA approach works for your specific court.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the cost of a mutual consent divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A mutual consent divorce in UAE typically costs AED 4,000–10,000 in total — including government court fees of AED 500–1,500 and lawyer fees of AED 3,000–8,000. Document translation and attestation for expats adds AED 500–2,000. This is significantly cheaper than a contested divorce (AED 15,000–45,000+).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can non-Muslims get a mutual consent divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Non-Muslim expats can obtain a mutual consent divorce in UAE. Under UAE Federal Law amendments (effective 2023), non-Muslim expats can apply their home country\'s civil law to their divorce. This is often simpler if both parties are the same nationality. The DIFC Courts also offer an alternative jurisdiction option for certain expat divorces. A lawyer familiar with expat divorce procedures is strongly recommended.',
+      },
+    },
+  ],
+};
+
+const steps = [
+  {
+    num: 1,
+    title: 'Draft a Separation Agreement',
+    desc: 'Before filing, agree in writing on: child custody schedule, child support amount, alimony (if any), division of property and joint accounts, and who retains UAE residency (if tied to spouse\'s visa). This document becomes the basis of your court filing.',
+    tip: 'A lawyer-drafted agreement saves time in court and ensures terms are enforceable.',
+  },
+  {
+    num: 2,
+    title: 'Gather and Translate Documents',
+    desc: 'Both parties collect: original marriage certificate (attested), passports and Emirates IDs, children\'s documents if applicable, and financial documents if alimony or support is involved. Foreign documents must be legally translated to Arabic and attested.',
+    tip: 'Translation costs AED 100–400 per document. Have all documents ready before your first lawyer appointment.',
+  },
+  {
+    num: 3,
+    title: 'File at the Personal Status Court',
+    desc: 'Your lawyer submits the divorce petition and signed separation agreement to the Personal Status Court in your emirate. Government fees of AED 500–1,500 are paid at this stage. The court opens a case file and schedules a Family Guidance session.',
+    tip: 'In Dubai, this is handled through the Dubai Courts Family Section.',
+  },
+  {
+    num: 4,
+    title: 'Attend Family Guidance / Mediation',
+    desc: 'UAE law requires most divorcing couples to attend at least one Family Guidance session. For mutual consent cases, this is typically a single brief session confirming both parties freely consent. The mediator issues a certificate allowing the case to proceed.',
+    tip: 'Attend in good faith. The session is not designed to stop you — it is a procedural step.',
+  },
+  {
+    num: 5,
+    title: 'Court Hearing and Decree',
+    desc: 'The judge reviews the agreement, confirms both parties consent, and issues the divorce decree. For genuinely agreed cases, this hearing is usually brief. The decree is the legal proof of divorce for all subsequent purposes (visa, remarriage, document changes).',
+    tip: 'Request certified copies of the decree immediately — you will need them for your visa, passport, and bank.',
+  },
+];
+
+const checklist = [
+  { item: 'Child custody — primary and secondary arrangements', critical: true },
+  { item: 'Parenting schedule — weekdays, weekends, holidays, school breaks', critical: true },
+  { item: 'Child support amount and payment method', critical: true },
+  { item: 'Alimony — amount, duration, trigger for termination', critical: true },
+  { item: 'Division of joint bank accounts', critical: false },
+  { item: 'Division of UAE property or agreement on sale', critical: false },
+  { item: 'Who retains the family home and until when', critical: false },
+  { item: 'Visa arrangements — who sponsors the children post-divorce', critical: true },
+  { item: 'Mahr (Muslim marriages) — agreed return or waiver', critical: false },
+  { item: 'International travel consent for children', critical: false },
+  { item: 'Process for resolving future disputes (mediation first)', critical: false },
+];
+
+const faqItems = [
+  {
+    question: 'How long does a mutual consent divorce take in UAE?',
+    answer: 'A well-prepared mutual consent divorce in UAE takes 1–3 months from filing to decree. The timeline depends on how quickly the Family Guidance session is scheduled (usually 2–4 weeks after filing) and court scheduling. If both parties are present and fully agreed, the hearing itself is often 30–60 minutes. Contested issues — even minor ones raised at the hearing — can extend the process to 6 months or more.',
+  },
+  {
+    question: 'What if we agree on everything except one issue?',
+    answer: 'You can still file a joint petition with all agreed terms and let the judge decide the one disputed issue. This is a hybrid approach — cheaper and faster than a fully contested divorce, while resolving the sticking point through the court. However, any contested issue increases hearing time and legal fees. It is often worth hiring a mediator for a single session to resolve the last disagreement before filing.',
+  },
+  {
+    question: 'Do I need a separate lawyer from my spouse?',
+    answer: 'For a genuinely amicable divorce where both parties trust the arrangement, one lawyer can draft and file the agreement on behalf of both. However, if there is any significant asset, custody dispute, or power imbalance, each party should have independent legal advice. Independent lawyers do not mean adversarial lawyers — they can work cooperatively while ensuring each client\'s interests are properly represented.',
+  },
+  {
+    question: 'Is a mutual consent divorce valid in our home countries?',
+    answer: 'UAE divorce decrees are generally recognised internationally, but the rules vary by country. Most Western countries require registration of the foreign divorce at home country authorities. Some countries require that the divorce proceedings met their own minimum procedural standards. If you need the divorce recognised in a specific country, get the UAE decree apostilled and consult a lawyer in the home country about registration requirements.',
+  },
+  {
+    question: 'What happens to residence visas after a mutual consent divorce?',
+    answer: 'If your UAE residency is tied to your spouse\'s visa sponsorship, you have 30 days from the divorce decree to arrange alternative sponsorship. Options include transferring to employer sponsorship, parental/family sponsorship, investor visa, or freelance permit. Read our full guide: Visa After Divorce UAE.',
+  },
+  {
+    question: 'Can a mutual consent divorce be reversed or challenged later?',
+    answer: 'Once a UAE court issues a final divorce decree following a mutual consent process, it is very difficult to reverse. A party who feels they signed under duress or without understanding the terms can appeal within the statutory window (30 days in most cases), but must present strong evidence. This is why having independent legal advice before signing is important — the agreement you sign becomes binding once the judge approves it.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/mutual-consent-divorce-uae"
+  lang="en"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Amicable Divorce Guide · UAE 2025</p>
+      <h1>Mutual Consent Divorce in UAE 2025 — Step-by-Step Guide</h1>
+      <p class="hero-sub">If both spouses agree to end the marriage, a mutual consent divorce in UAE is significantly faster and cheaper than a contested case. Here is exactly how the process works — from agreement to decree.</p>
+      <div class="hero-meta">
+        <span>Updated: April 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="highlight-box">
+        <h2>Mutual Consent Divorce — At a Glance</h2>
+        <div class="at-glance-grid">
+          <div class="glance-item">
+            <span class="glance-label">Timeline</span>
+            <span class="glance-value">1–3 months</span>
+          </div>
+          <div class="glance-item">
+            <span class="glance-label">Total Cost</span>
+            <span class="glance-value">AED 4,000–10,000</span>
+          </div>
+          <div class="glance-item">
+            <span class="glance-label">Court Hearings</span>
+            <span class="glance-value">1–2 sessions</span>
+          </div>
+          <div class="glance-item">
+            <span class="glance-label">Key Requirement</span>
+            <span class="glance-value">Full agreement on all terms</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>Step-by-Step: Mutual Consent Divorce in UAE</h2>
+        <div class="steps-list">
+          {steps.map(s => (
+            <div class="step-card">
+              <div class="step-header">
+                <div class="step-num">{s.num}</div>
+                <h3>{s.title}</h3>
+              </div>
+              <p class="step-desc">{s.desc}</p>
+              <p class="step-tip"><strong>Tip:</strong> {s.tip}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What to Agree On Before You File</h2>
+        <p>A mutual consent divorce succeeds or fails based on how thoroughly you have resolved these issues before walking into court. Any term left unresolved becomes a contested point once proceedings begin.</p>
+
+        <div class="checklist">
+          {checklist.map(c => (
+            <div class={`checklist-item ${c.critical ? 'checklist-item--critical' : ''}`}>
+              <span class="check-icon">{c.critical ? '★' : '✓'}</span>
+              <span>{c.item}</span>
+              {c.critical && <span class="critical-badge">Critical</span>}
+            </div>
+          ))}
+        </div>
+        <p class="checklist-note">★ Critical items — court will not finalise the divorce without resolution on these. ✓ Important but may be handled separately from the divorce decree.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Mutual Consent vs. Contested Divorce — Cost Comparison</h2>
+        <div class="compare-grid">
+          <div class="compare-card compare-card--good">
+            <h3>Mutual Consent</h3>
+            <div class="compare-stat">AED 4,000–10,000</div>
+            <ul>
+              <li>1–3 months total</li>
+              <li>1–2 court hearings</li>
+              <li>One lawyer or two cooperative lawyers</li>
+              <li>Private settlement terms</li>
+              <li>Lower emotional cost</li>
+            </ul>
+          </div>
+          <div class="compare-card compare-card--warn">
+            <h3>Contested Divorce</h3>
+            <div class="compare-stat">AED 15,000–80,000+</div>
+            <ul>
+              <li>6–24 months typical</li>
+              <li>Multiple hearings + expert reports</li>
+              <li>Each party has separate counsel</li>
+              <li>Court-determined outcome</li>
+              <li>Higher stress on children and both parties</li>
+            </ul>
+          </div>
+        </div>
+        <p class="compare-note">Even resolving one contested custody or alimony issue before filing can save AED 10,000+ and 6 months of proceedings.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Special Considerations for Expats</h2>
+        <div class="expat-cards">
+          <div class="expat-card">
+            <h3>Choosing Which Country's Law Applies</h3>
+            <p>Non-Muslim expats can elect to apply their home country's civil law to the divorce under UAE Federal Law amendments effective 2023. If both spouses share the same nationality, applying home country law often simplifies the process and ensures the divorce is automatically recognised back home.</p>
+          </div>
+          <div class="expat-card">
+            <h3>Visa and Residency Planning</h3>
+            <p>Plan your post-divorce visa before you file, not after. You have 30 days from the divorce decree to transfer sponsorship. Options: employer sponsorship, investor/freelance visa, parent visa if children are UAE citizens. See our full guide: <a href="/en/visa-after-divorce-uae">Visa After Divorce UAE</a>.</p>
+          </div>
+          <div class="expat-card">
+            <h3>International Recognition of the Decree</h3>
+            <p>UAE divorce decrees are widely recognised but usually require apostille and registration in your home country. Plan for this step in advance — waiting until you need the document (for remarriage, pension, property) creates unnecessary delays.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Ready to Start? Get a Free Consultation</h2>
+        <p>An experienced UAE divorce lawyer can review your draft agreement, flag any terms that could cause problems at the hearing, and file everything correctly the first time. Most mutual consent cases complete within 2 months with proper preparation.</p>
+        <LeadForm source="mutual-consent-divorce-uae" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Full step-by-step filing guide for Dubai courts.' },
+            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Court fees, lawyer fees, and what drives your total bill.' },
+            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: 'The 30-day rule and your 7 visa pathways.' },
+            { title: 'Child Custody UAE', href: '/en/child-custody-uae', desc: 'UAE custody rules, age limits, and how judges decide.' },
+            { title: 'Property Division in UAE Divorce', href: '/en/property-division-divorce-uae', desc: 'Who keeps the family home and how assets are split.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.78), rgba(10,22,40,0.78)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  .highlight-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.5rem; margin-bottom: 3rem; }
+  .highlight-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .at-glance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; }
+  .glance-item { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 0.875rem; text-align: center; }
+  .glance-label { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.3rem; }
+  .glance-value { display: block; font-size: 1rem; font-weight: 800; color: #0a1628; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .step-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .step-header { display: flex; align-items: flex-start; gap: 0.875rem; margin-bottom: 0.6rem; }
+  .step-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .step-header h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0; padding-top: 0.3rem; }
+  .step-desc { font-size: 0.9rem; color: #445; line-height: 1.7; margin-bottom: 0.5rem; }
+  .step-tip { font-size: 0.82rem; color: #5a6a40; background: #f0fdf4; border-radius: 6px; padding: 0.5rem 0.75rem; margin: 0; }
+  .step-tip strong { color: #064e3b; }
+
+  .checklist { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .checklist-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.625rem 0.875rem; background: #f8f9fa; border-radius: 8px; font-size: 0.88rem; color: #334; }
+  .checklist-item--critical { background: #fffbe6; }
+  .check-icon { font-size: 0.8rem; color: #16a34a; font-weight: 700; }
+  .checklist-item--critical .check-icon { color: #c9a84c; }
+  .critical-badge { margin-right: auto; margin-left: 0; font-size: 0.65rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 0.15rem 0.5rem; border-radius: 999px; }
+  .checklist-note { font-size: 0.78rem; color: #778; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .compare-card { border-radius: 0.875rem; padding: 1.25rem; }
+  .compare-card h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .compare-stat { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .compare-card ul { margin: 0; padding-left: 1.25rem; }
+  .compare-card li { font-size: 0.84rem; line-height: 1.7; margin-bottom: 0.25rem; }
+  .compare-card--good { background: #f0fdf4; border: 1.5px solid #86efac; }
+  .compare-card--good h3 { color: #064e3b; }
+  .compare-card--good .compare-stat { color: #16a34a; }
+  .compare-card--good li { color: #1a4d30; }
+  .compare-card--warn { background: #fff7ed; border: 1.5px solid #fdba74; }
+  .compare-card--warn h3 { color: #7c2d12; }
+  .compare-card--warn .compare-stat { color: #c0392b; }
+  .compare-card--warn li { color: #5a2010; }
+  .compare-note { font-size: 0.82rem; color: #667; font-style: italic; }
+
+  .expat-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .expat-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.1rem 1.25rem; }
+  .expat-card h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.4rem; }
+  .expat-card p { font-size: 0.87rem; color: #445; line-height: 1.7; margin: 0; }
+  .expat-card a { color: #c9a84c; font-weight: 600; text-decoration: none; }
+  .expat-card a:hover { text-decoration: underline; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 640px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .at-glance-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

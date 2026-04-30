@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Settlement Agreement UAE 2025 — What to Include and Enforce';
+const description =
+  'A UAE divorce settlement agreement covers alimony, child custody, child support, and property. Learn what must be in it, how to make it enforceable, and what happens if one party breaches it.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-settlement-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Settlement UAE' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is a divorce settlement agreement legally binding in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A divorce settlement agreement becomes legally binding in UAE once it is ratified by the Personal Status Court as part of the divorce decree. A privately signed agreement between the parties, without court ratification, is enforceable as a civil contract but does not carry the same weight as a court-endorsed decree. Always have your settlement agreement ratified by the court as part of your divorce proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What can a divorce settlement agreement cover in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A UAE divorce settlement agreement can cover: alimony amount and duration, child custody schedule (primary residence, school, holiday arrangements), child support amount and payment method, division of UAE and overseas property, joint bank accounts, vehicle ownership, debt responsibility, mahr (for Muslim couples), post-divorce visa arrangements, and the mechanism for resolving future disputes about children.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if my spouse breaks the divorce settlement agreement in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your spouse breaches a court-ratified settlement agreement, you can file an enforcement application with the UAE Execution Court. The court can freeze bank accounts, garnish salary, prevent travel outside the UAE, and in repeat cases refer the matter for criminal prosecution. Enforcement applications typically take 1–3 months. Having a lawyer manage enforcement significantly increases the speed and completeness of recovery.',
+      },
+    },
+  ],
+};
+
+const clauses = [
+  {
+    category: 'Children',
+    critical: true,
+    items: [
+      { clause: 'Primary custody designation', note: 'Who the children live with primarily. UAE law sets ages for custody transfer (boys 7, girls 9) unless court extends.' },
+      { clause: 'Parenting schedule', note: 'Exact weekly schedule, holiday split, school break division. Vague schedules create future disputes.' },
+      { clause: 'Child support amount', note: 'Monthly amount, what it covers, payment date, and payment method.' },
+      { clause: 'School decision-making', note: 'Which parent chooses the school; who pays fees; how disagreements are resolved.' },
+      { clause: 'Medical decisions', note: 'Routine decisions vs. major medical decisions; who carries the health insurance.' },
+      { clause: 'International travel consent', note: 'Process for taking children outside UAE; what notice is required; no-travel defaults.' },
+      { clause: 'Relocation restrictions', note: 'Whether either parent can relocate abroad with the children, and under what process.' },
+    ],
+  },
+  {
+    category: 'Financial',
+    critical: true,
+    items: [
+      { clause: 'Alimony / spousal support', note: 'Amount, payment frequency, duration, and the specific events that trigger termination.' },
+      { clause: 'Family home', note: 'Who retains the home; buyout terms; timeline for sale if applicable.' },
+      { clause: 'Joint bank accounts', note: 'How existing joint accounts are divided; when accounts are closed.' },
+      { clause: 'Investment accounts and savings', note: 'UAE bank deposits, shares, overseas investments — each must be specifically addressed.' },
+      { clause: 'Debt responsibility', note: 'Who is responsible for joint debts, credit cards, and any outstanding loans.' },
+      { clause: 'Business interests', note: 'If either party owns a business, how shares or profit rights are treated.' },
+    ],
+  },
+  {
+    category: 'Practical Post-Divorce',
+    critical: false,
+    items: [
+      { clause: 'Visa and residency arrangements', note: 'Sponsored spouse has 30 days to transfer visa. Agreement should confirm who covers visa fees for children.' },
+      { clause: 'Mahr (Muslim marriages)', note: 'Return of the advance mahr; waiver of deferred mahr; or agreed alternative.' },
+      { clause: 'Dispute resolution mechanism', note: 'Agreeing to mediation before litigation for future child-related disputes saves significant cost.' },
+      { clause: 'Communication protocol', note: 'How co-parenting communication happens (app, email) and response time expectations.' },
+    ],
+  },
+];
+
+const mistakes = [
+  { mistake: 'Vague custody language', fix: 'Define exact handover times and locations. "Reasonable visitation" is unenforceable — courts cannot act on it without specific terms.' },
+  { mistake: 'No inflation adjustment on support', fix: 'Add an annual review clause or CPI adjustment. A fixed AED 3,000/month in 2025 may be inadequate by 2030.' },
+  { mistake: 'Leaving relocation rights open', fix: 'Specifically address whether either parent can move abroad with the children. Silence here enables disputes and parental abduction concerns.' },
+  { mistake: 'Agreeing orally without writing', fix: 'All UAE divorce agreements must be in writing and court-ratified to be fully enforceable. Oral agreements are not recognised by the Execution Court.' },
+  { mistake: 'Not planning for changed circumstances', fix: 'Include a variation clause that sets out how the parties will handle changes (job loss, illness, school change) before resorting to the court.' },
+  { mistake: 'Ignoring overseas assets', fix: 'A UAE court ratified settlement only covers what is listed. Overseas property, pensions, and accounts need to be specifically included and may need parallel proceedings abroad.' },
+];
+
+const faqItems = [
+  {
+    question: 'Does a UAE divorce settlement need a lawyer?',
+    answer: 'Technically no, but practically yes for most people. The agreement must be submitted to the Personal Status Court in Arabic, meet specific formal requirements, and not contravene UAE law (for example, you cannot contract out of mandatory child support). A lawyer ensures the agreement is court-ready the first time and catches terms that would be struck down by a judge. For complex financial or custody arrangements, independent legal advice for each party is strongly recommended.',
+  },
+  {
+    question: 'Can we modify the settlement agreement after the divorce is final?',
+    answer: 'Some terms can be modified — child support and custody schedules can be varied by a new court order if circumstances have materially changed. Alimony terms can sometimes be modified if the original agreement included a variation clause. Property division, once executed, is generally final. Modifications require a new court application; they cannot be done by private agreement alone if the original was court-ratified.',
+  },
+  {
+    question: 'What if we have assets in multiple countries?',
+    answer: 'A UAE court decree covers what is specified in the agreement and recognised under UAE law. For overseas assets (foreign real estate, overseas pensions, foreign bank accounts), you typically need separate legal proceedings or at minimum a specific clause in the UAE agreement that each party undertakes to comply with. A lawyer with international family law experience can advise on structuring the agreement to maximise cross-border enforceability.',
+  },
+  {
+    question: 'How long does it take to enforce a settlement agreement breach?',
+    answer: 'An enforcement application in UAE typically takes 1–3 months for initial orders (account freeze, salary garnishment). Complex enforcement involving overseas assets or a party who has left the UAE takes longer — 6–12 months is realistic. For urgent situations (child abduction risk, sudden asset transfer), emergency injunctions can be obtained within days through the UAE courts.',
+  },
+  {
+    question: 'Is a UAE settlement agreement recognised in my home country?',
+    answer: 'UAE court decrees (including settlement agreements ratified by the Personal Status Court) are widely recognised internationally, but registration requirements vary. Most countries require: an apostilled copy of the UAE decree, certified Arabic to home-language translation, and registration with the relevant home country authority (court or civil registry). Do this promptly — some countries have limitation periods for registering foreign decrees.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-settlement-uae"
+  lang="en"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Settlement Guide · UAE 2025</p>
+      <h1>Divorce Settlement Agreement UAE 2025 — What to Include and Enforce</h1>
+      <p class="hero-sub">A properly drafted UAE divorce settlement agreement gives both parties clarity, saves years of future disputes, and is enforceable by the courts. This guide covers every clause that belongs in it — and the common mistakes that make agreements unenforceable.</p>
+      <div class="hero-meta">
+        <span>Updated: April 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="key-point">
+        <h2>How a Settlement Agreement Becomes Binding</h2>
+        <p>A UAE divorce settlement agreement is enforceable through the Execution Court only once it has been <strong>ratified by the Personal Status Court</strong> as part of the divorce decree. A privately signed agreement has civil contract status — better than nothing, but cannot trigger the court's enforcement powers (asset freeze, salary garnishment, travel ban) without a court order behind it.</p>
+        <p>Always submit your settlement agreement to the court as part of your divorce petition. The judge will review the terms, confirm both parties consent freely, and incorporate it into the decree.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>Complete Clause Checklist</h2>
+        <p>These are the clauses every UAE divorce settlement should address. Missing items become flash-points for future litigation.</p>
+
+        {clauses.map(cat => (
+          <div class="clause-category">
+            <div class="clause-cat-header">
+              <h3>{cat.category}</h3>
+              {cat.critical && <span class="critical-tag">Must include</span>}
+            </div>
+            <div class="clause-list">
+              {cat.items.map(item => (
+                <div class="clause-item">
+                  <div class="clause-check">✓</div>
+                  <div>
+                    <p class="clause-name">{item.clause}</p>
+                    <p class="clause-note">{item.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section class="content-section">
+        <h2>Common Settlement Mistakes — and How to Avoid Them</h2>
+
+        <div class="mistakes-list">
+          {mistakes.map(m => (
+            <div class="mistake-card">
+              <div class="mistake-header">
+                <span class="mistake-icon">✗</span>
+                <h3>{m.mistake}</h3>
+              </div>
+              <div class="fix-row">
+                <span class="fix-icon">→</span>
+                <p>{m.fix}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Enforcement — What Happens If Your Ex Breaches the Agreement</h2>
+        <div class="enforcement-grid">
+          <div class="enf-card">
+            <h3>Non-payment of alimony or child support</h3>
+            <p>File an enforcement application. The Execution Court can garnish salary directly from the employer, freeze bank accounts, and issue a travel ban preventing the payer from leaving the UAE until arrears are cleared.</p>
+          </div>
+          <div class="enf-card">
+            <h3>Custody and visitation violations</h3>
+            <p>A parent who repeatedly blocks court-ordered visitation can be held in contempt. The court may modify the custody arrangement in favour of the complying parent. Child abduction (taking the child abroad without consent) triggers criminal procedures.</p>
+          </div>
+          <div class="enf-card">
+            <h3>Property not transferred</h3>
+            <p>If the agreement requires a property transfer that is not completed, the Execution Court can order the transfer directly through the land registry or compel a sale. Bank accounts can be frozen if one party fails to pay out their share.</p>
+          </div>
+          <div class="enf-card">
+            <h3>Parties who leave the UAE</h3>
+            <p>Enforcement becomes more complex once a party has left. UAE courts can still act on local assets. For overseas enforcement, the UAE decree needs recognition in the destination country — a process that varies significantly by jurisdiction.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Get Your Settlement Agreement Right the First Time</h2>
+        <p>A poorly drafted agreement costs far more to fix than it cost to get wrong. A consultation before you sign gives you a clause-by-clause review and ensures the agreement is structured to be enforced when you need it.</p>
+        <LeadForm source="divorce-settlement-uae" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'Mutual Consent Divorce UAE', href: '/en/mutual-consent-divorce-uae', desc: 'Step-by-step guide to the amicable divorce process.' },
+            { title: 'Alimony in UAE', href: '/en/alimony-uae', desc: 'Types of spousal support and how courts calculate amounts.' },
+            { title: 'Child Custody UAE', href: '/en/child-custody-uae', desc: 'UAE custody rules, age limits, and judicial considerations.' },
+            { title: 'Child Support UAE', href: '/en/child-support-uae', desc: 'What child support covers and how it is enforced.' },
+            { title: 'Property Division in UAE Divorce', href: '/en/property-division-divorce-uae', desc: 'Who keeps the family home and how assets are split.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.78), rgba(10,22,40,0.78)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  .key-point { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 0.875rem; padding: 1.4rem; margin-bottom: 3rem; }
+  .key-point h2 { font-size: 1.05rem; font-weight: 800; color: #064e3b; margin-bottom: 0.6rem; }
+  .key-point p { font-size: 0.9rem; color: #1a4d30; line-height: 1.75; margin-bottom: 0.6rem; }
+  .key-point p:last-child { margin-bottom: 0; }
+  .key-point strong { color: #064e3b; }
+
+  .clause-category { margin-bottom: 2rem; }
+  .clause-cat-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.875rem; }
+  .clause-cat-header h3 { font-size: 1rem; font-weight: 800; color: #0a1628; margin: 0; }
+  .critical-tag { font-size: 0.68rem; font-weight: 700; background: #fde8e8; color: #c0392b; padding: 0.2rem 0.6rem; border-radius: 999px; }
+  .clause-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .clause-item { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 1rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 8px; }
+  .clause-check { color: #c9a84c; font-weight: 700; font-size: 0.85rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .clause-name { font-size: 0.9rem; font-weight: 600; color: #0a1628; margin: 0 0 0.2rem; }
+  .clause-note { font-size: 0.8rem; color: #667; margin: 0; }
+
+  .mistakes-list { display: flex; flex-direction: column; gap: 1rem; }
+  .mistake-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.1rem 1.25rem; }
+  .mistake-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.6rem; }
+  .mistake-icon { color: #c0392b; font-size: 1rem; font-weight: 900; flex-shrink: 0; margin-top: 0.05rem; }
+  .mistake-header h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .fix-row { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .fix-icon { color: #16a34a; font-weight: 900; font-size: 1rem; flex-shrink: 0; }
+  .fix-row p { font-size: 0.86rem; color: #334; line-height: 1.7; margin: 0; }
+
+  .enforcement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .enf-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.1rem 1.25rem; }
+  .enf-card h3 { font-size: 0.9rem; font-weight: 700; color: #0a1628; margin-bottom: 0.4rem; }
+  .enf-card p { font-size: 0.84rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 640px) {
+    .enforcement-grid { grid-template-columns: 1fr; }
+  }
+</style>

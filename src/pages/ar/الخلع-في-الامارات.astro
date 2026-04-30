@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الخلع في الإمارات ٢٠٢٥ — الشروط والإجراءات وحقوق المرأة';
+const description =
+  'دليل كامل عن الخلع في الإمارات: ما هو، شروط قبوله، المهر الواجب ردّه، إجراءات المحكمة، الفرق بين الخلع والطلاق، وكيف تتقدمين بطلبه وفق قانون الأحوال الشخصية الإماراتي.';
+
+const canonical = 'https://divorceu.ae/ar/الخلع-في-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/khula-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الخلع في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما هو الخلع في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الخلع هو حق الزوجة في طلب فسخ عقد الزواج من القضاء مقابل ردّ المهر المُقدَّم إلى الزوج. يُعدّ الخلع طلاقاً بائناً بينونة صغرى لا يحق للزوج بعدها رجعة الزوجة إلا بعقد ومهر جديدَين. يُنظّمه قانون الأحوال الشخصية الاتحادي رقم ٢٨ لعام ٢٠٠٥ المادة ١١٠-١١٢.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يحتاج الخلع إلى موافقة الزوج في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. وفق قانون الأحوال الشخصية الإماراتي، يمكن للقاضي الحكم بالخلع حتى إذا رفض الزوج، بشرط أن تثبت الزوجة أن الحياة الزوجية أصبحت مستحيلة وأن تردّ المهر المُقدَّم. هذا هو الخلع القضائي الذي أقرّه القانون الاتحادي بوضوح.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما المهر الذي يجب ردّه في الخلع؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تردّ الزوجة المهر المُقدَّم (المعجَّل) فقط في الغالب. إذا لم يكن قد دُفع بعد، تسقطه من حقها. المهر المؤجَّل (المؤخَّر) لا يجب ردّه عموماً. يجوز للمحكمة بحسب ظروف القضية أن تقضي بردّ أقل من المهر الكامل أو أكثر بالاتفاق بين الزوجَين.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تستغرق قضية الخلع في محاكم الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا وافق الزوج، يُنجز الخلع في ١-٣ أشهر عادةً. إذا رفض الزوج ولجأت الزوجة إلى القضاء، تستغرق القضية ٣-٨ أشهر في الغالب تشمل جلسات وساطة وتبادل مذكرات. الاستئنافات قد تُطيل الأمد إلى ما بين ١٢-١٨ شهراً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الفرق بين الخلع والطلاق للضرر في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الخلع طلاق بطلب من الزوجة مقابل ردّ المهر، ولا يستلزم إثبات ضرر. الطلاق للضرر (التطليق) يُطلب بسبب أذى ثابت (ضرب، إهمال، غياب) ولا تردّ الزوجة فيه المهر بل قد تحتفظ بكل حقوقها المالية. الخلع أسرع وأقل إثباتاً لكن له تكلفة مالية على الزوجة.',
+      },
+    },
+  ],
+};
+
+const steps = [
+  {
+    num: '١',
+    title: 'التحقق من الأهلية والتوثيق',
+    desc: 'تأكدي من وجود عقد الزواج وأي وثائق إقامة ذات صلة. إذا كنت ستردين المهر، حددي قيمته وفق ما هو مُدوَّن في عقد الزواج.',
+  },
+  {
+    num: '٢',
+    title: 'التقديم أمام محكمة الأسرة',
+    desc: 'تُقدَّم دعوى الخلع أمام محكمة الأحوال الشخصية في إمارة إقامتك. يُرفق بالعريضة: صورة عقد الزواج، إثبات الهوية، وثائق الأطفال إن وُجدوا.',
+  },
+  {
+    num: '٣',
+    title: 'جلسة الوساطة / التوجيه الأسري',
+    desc: 'ترسل المحكمة الطرفَين إلى جلسة توجيه أسري. إذا تعذّر الصلح، يُصدَر تقرير يُتيح للمحكمة الفصل في القضية.',
+  },
+  {
+    num: '٤',
+    title: 'الجلسات والمذكرات',
+    desc: 'إذا لم يوافق الزوج، ينظر القاضي في الأدلة ويسمع الطرفَين. المحكمة تحكم بالخلع إذا ثبت أن الحياة الزوجية مستحيلة وأن الزوجة مستعدة لردّ المهر.',
+  },
+  {
+    num: '٥',
+    title: 'الحكم وردّ المهر',
+    desc: 'يصدر حكم الخلع. تردّ الزوجة المهر المُقدَّم إلى الزوج. يُعدّ الطلاق بائناً بينونة صغرى من تاريخ الحكم. عدة الخلع ثلاثة أطهار.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'هل تفقد الزوجة حقها في النفقة بعد الخلع؟',
+    answer: 'في الخلع تفقد الزوجة نفقة المتعة لأنها هي من طلبت الفراق. غير أن نفقة العدة (ثلاثة أطهار) تبقى واجبة على الزوج. نفقة الأطفال لا تتأثر بالخلع — تظل واجبة على الأب بغض النظر عمن طلب الطلاق.',
+  },
+  {
+    question: 'هل يؤثر الخلع على حضانة الأطفال؟',
+    answer: 'لا يؤثر الخلع في حد ذاته على الحضانة. تُطبَّق نفس قواعد حضانة الأطفال في قانون الأحوال الشخصية الإماراتي سواء كان الطلاق بطلب من الزوج أو الزوجة. الأم تحتفظ بالحضانة الفعلية للأطفال دون البنات ٩ سنوات والأولاد ٧ سنوات مع قابلية التمديد.',
+  },
+  {
+    question: 'هل يمكن للزوجة الأجنبية غير المسلمة طلب الخلع في الإمارات؟',
+    answer: 'الخلع كمفهوم إسلامي يُطبَّق أساساً على الزوجَين المسلمَين. الزوجة غير المسلمة المتزوجة من غير مسلم يمكن أن تطلب الطلاق عبر مسارات أخرى — منها تطبيق قانون البلد الأصلي للزوجَين أو الفصل القضائي بسبب الضرر. استشيري محامياً للوقوف على المسار الأنسب.',
+  },
+  {
+    question: 'هل يمكن للزوجة استرداد المهر إذا كان الخلع بموافقة الزوج؟',
+    answer: 'إذا تنازل الزوج عن حقه في المهر ووافق على الخلع بدون مقابل، فيجوز ذلك وهو من أفضل الحلول لكلا الطرفَين. الاتفاق على شروط الخلع خارج المحكمة يُسرّع الإجراء ويُقلل التكلفة بشكل ملحوظ.',
+  },
+  {
+    question: 'ما الفرق بين الخلع والفسخ في القانون الإماراتي؟',
+    answer: 'الخلع: الزوجة تطلبه مقابل ردّ المهر، وهو أشبه بمبادرة من الزوجة لإنهاء الزواج. الفسخ القضائي: تطلبه الزوجة أمام القضاء لسبب شرعي (غياب، عجز جنسي، مرض معدٍ) دون اشتراط ردّ المهر. الطلاق للضرر: للأذى الثابت دون فقدان المهر. يحدد المحامي الأنسب لحالتك.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        الخلع في الإمارات حق كفله القانون الاتحادي لكل زوجة تعسّرت معها الحياة الزوجية — دون حاجة إلى موافقة الزوج. تعرّفي على شروطه وإجراءاته وما تترتب عليه من آثار مالية وحضانية.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>الخلع في الإمارات — بإيجاز</h2>
+        <p>
+          الخلع هو حق الزوجة في طلب فسخ الزواج قضاءً مقابل ردّ <strong>المهر المُقدَّم</strong> إلى الزوج.
+          لا يستلزم القانون الإماراتي موافقة الزوج — يكفي أن تُثبت الزوجة أن الحياة المشتركة أصبحت مستحيلة.
+          يُصدر الحكم بالخلع كطلاق بائن (لا رجعة فيه إلا بعقد جديد)، وتبدأ عدة الزوجة فور صدوره.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>الفرق بين الخلع والطلاق في الإمارات</h2>
+        <div class="compare-table-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>وجه المقارنة</th>
+                <th>الطلاق</th>
+                <th>الخلع</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { aspect: 'من يبادر', talaq: 'الزوج', khul: 'الزوجة' },
+                { aspect: 'هل يحتاج موافقة الطرف الآخر؟', talaq: 'لا (إرادة منفردة للزوج)', khul: 'لا (بالتقاضي)' },
+                { aspect: 'المهر', talaq: 'تحتفظ الزوجة بمهرها', khul: 'تردّ الزوجة المهر المُقدَّم' },
+                { aspect: 'نفقة المتعة', talaq: 'تستحقها الزوجة', khul: 'لا تستحقها (بادرت بالفراق)' },
+                { aspect: 'نوع الطلاق', talaq: 'رجعي أو بائن', khul: 'بائن بينونة صغرى دائماً' },
+                { aspect: 'اشتراط إثبات الضرر', talaq: 'لا', khul: 'لا (يكفي تعذّر الحياة)' },
+              ].map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-aspect">{row.aspect}</td>
+                  <td>{row.talaq}</td>
+                  <td class="td-khul">{row.khul}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>خطوات الخلع في محاكم الإمارات</h2>
+        <div class="steps-list">
+          {steps.map(s => (
+            <div class="step-item">
+              <div class="step-num">{s.num}</div>
+              <div class="step-body">
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>ما الذي يجب ردّه في الخلع؟</h2>
+        <div class="mahr-cards">
+          <div class="mahr-card mahr-card--yes">
+            <h3>يُردّ في الغالب</h3>
+            <ul>
+              <li>المهر المُقدَّم (المعجَّل) — ما دُفع عند الزواج</li>
+              <li>إذا لم يُدفع بعد: تتنازل الزوجة عنه</li>
+              <li>مبالغ إضافية بالاتفاق بين الزوجَين</li>
+            </ul>
+          </div>
+          <div class="mahr-card mahr-card--no">
+            <h3>لا يُردّ عادةً</h3>
+            <ul>
+              <li>المهر المؤجَّل (المؤخَّر) — لم يُدفع أصلاً</li>
+              <li>نفقة الأطفال (واجبة على الأب بصرف النظر)</li>
+              <li>نفقة العدة (تبقى واجبة على الزوج)</li>
+              <li>مصاريف الحضانة الجارية</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mahr-note">يجوز للمحكمة تعديل المهر المردود بالزيادة أو النقصان تبعاً لملابسات القضية. المحامي يضمن لك أحسن التقديرات.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>الخلع والأطفال — ماذا يحدث بعده؟</h2>
+        <div class="children-grid">
+          <div class="children-card">
+            <h3>الحضانة</h3>
+            <p>لا يؤثر الخلع على الحضانة. تُطبَّق نفس قواعد قانون الأحوال الشخصية الإماراتي: الأم حاضنة للبنات حتى ٩ سنوات وللأولاد حتى ٧ سنوات — مع إمكانية التمديد قضاءً.</p>
+          </div>
+          <div class="children-card">
+            <h3>نفقة الأطفال</h3>
+            <p>تظل واجبة على الأب بعد الخلع تماماً كما كانت قبله. لا يجوز للزوج إسقاطها بدعوى أن الزوجة هي من طلبت الخلع. يصدر بها حكم مستقل إذا لم يتفق الطرفان.</p>
+          </div>
+          <div class="children-card">
+            <h3>حق الزيارة</h3>
+            <p>يحتفظ الوالد غير الحاضن بحق الزيارة وفق جدول تحدده المحكمة. الخلع لا يُعدّ سبباً لحرمان الأب من الزيارة ما لم تثبت أضرار على الطفل.</p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/طلاق-للضرر" class="related-card">
+            <strong>الطلاق للضرر</strong>
+            <span>التطليق بسبب الأذى الثابت وكيفية إثباته</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وحقوق المرأة المالية</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات" class="related-card">
+            <strong>حضانة الأطفال</strong>
+            <span>قواعد الحضانة ومتى تنتقل للأب</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>المهر والسكن والتأشيرة والحضانة</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.85; margin-bottom: 0.75rem; }
+
+  .compare-table-wrapper { overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .compare-table thead tr { background: #0a1628; color: #fff; }
+  .compare-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; }
+  .row-alt { background: #f8f9fa; }
+  .td-aspect { font-weight: 600; color: #0a1628; }
+  .td-khul { color: #c9a84c; font-weight: 600; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; margin-top: 0.1rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
+  .step-body p { font-size: 0.85rem; color: #4b5563; line-height: 1.75; margin: 0; }
+
+  .mahr-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem; }
+  .mahr-card { border-radius: 10px; padding: 1.1rem; }
+  .mahr-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .mahr-card ul { margin: 0; padding-right: 1.1rem; }
+  .mahr-card li { font-size: 0.82rem; color: #374151; line-height: 1.75; margin-bottom: 0.3rem; }
+  .mahr-card--yes { background: #f0fdf4; border: 1.5px solid #86efac; }
+  .mahr-card--yes h3 { color: #064e3b; }
+  .mahr-card--no { background: #fff7ed; border: 1.5px solid #fdba74; }
+  .mahr-card--no h3 { color: #7c2d12; }
+  .mahr-note { font-size: 0.8rem; color: #6b7280; font-style: italic; }
+
+  .children-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.875rem; }
+  .children-card { background: #f8f9fa; border: 1.5px solid #e0e4ea; border-radius: 10px; padding: 1.1rem; }
+  .children-card h3 { font-size: 0.9rem; font-weight: 700; color: #0a1628; margin-bottom: 0.4rem; }
+  .children-card p { font-size: 0.82rem; color: #374151; line-height: 1.75; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .mahr-cards { grid-template-columns: 1fr; }
+    .children-grid { grid-template-columns: 1fr; }
+  }
+</style>

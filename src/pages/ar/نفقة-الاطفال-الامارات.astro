@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'نفقة الأطفال في الإمارات ٢٠٢٥ — كيف تُحسب وكيف تُطالب بها';
+const description =
+  'دليل كامل عن نفقة الأطفال في الإمارات: من يدفع، كيف تحسبها المحكمة، ما تشمله، متى تسقط، وكيف تُطالبين بها أو تُعدّلينها أمام محكمة الأسرة الإماراتية ٢٠٢٥.';
+
+const canonical = 'https://divorceu.ae/ar/نفقة-الاطفال-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/child-support-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'نفقة الأطفال في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'من يدفع نفقة الأطفال في الإمارات بعد الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يلتزم الأب بدفع نفقة الأطفال في الإمارات بصرف النظر عمن يملك الحضانة الفعلية. هذا الالتزام ثابت قانوناً بموجب المادة ٧٨ من قانون الأحوال الشخصية الاتحادي رقم ٢٨ لعام ٢٠٠٥. لا تُعفيه إقامته خارج الإمارات ولا زواجه مرة أخرى من هذا الالتزام.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف تحسب المحكمة نفقة الأطفال في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تستند المحكمة في تحديد نفقة الأطفال إلى عدة عوامل: دخل الأب (راتبه وأي مصادر أخرى)، مستوى معيشة الأسرة قبل الطلاق، عدد الأطفال وأعمارهم واحتياجاتهم (التعليمية والطبية والمعيشية). لا يوجد جدول ثابت — القاضي يقدر المبلغ حسب ملابسات كل قضية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تشمل نفقة الأطفال المصاريف المدرسية والطبية؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. نفقة الأطفال في الإمارات تشمل: المصاريف المعيشية اليومية (غذاء وملبس)، الرسوم الدراسية ومصاريف المدرسة، النفقات الطبية والعلاجية، وأي مصاريف ضرورية أخرى. تُحدد المحكمة مبلغاً شهرياً ثابتاً مع إمكانية الحكم بمصاريف استثنائية إضافية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'متى تنتهي نفقة الأطفال في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تنتهي نفقة الذكور ببلوغهم سن العمل (١٨-٢١ عاماً عادةً) أو بزواجهم. تنتهي نفقة الإناث بزواجهن. تُمدَّد النفقة إذا استمرت الدراسة الجامعية أو ثبت عجز الولد عن الكسب. للمحكمة صلاحية التمديد للدراسة العليا.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث إذا امتنع الأب عن دفع نفقة الأطفال؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا امتنع الأب عن دفع نفقة الأطفال المحكوم بها، يمكن تقديم طلب تنفيذ للمحكمة. تملك المحكمة صلاحية: تجميد حساباته البنكية، الحجز على راتبه، منعه من السفر، وفي حالات التكرار قد يُعدّ ذلك جريمة جزائية في الإمارات.',
+      },
+    },
+  ],
+};
+
+const includes = [
+  { item: 'المصاريف المعيشية', detail: 'الغذاء والملبس والأغراض اليومية. المبلغ يتناسب مع المستوى المعيشي الذي اعتاد عليه الأطفال.' },
+  { item: 'الرسوم المدرسية', detail: 'الرسوم الدراسية السنوية والكتب واللوازم المدرسية. إذا كان الأطفال في مدرسة خاصة، يُلزَم الأب بمواصلة تمويلها إذا كان دخله يسمح.' },
+  { item: 'النفقات الطبية', detail: 'التأمين الصحي أو تغطية تكاليف العلاج. المصاريف الاستثنائية (عمليات، حوادث) يُمكن الحكم بها بصورة منفصلة.' },
+  { item: 'مسكن الحضانة', detail: 'يلتزم الأب بتوفير مسكن مناسب للحاضنة وأطفاله، أو دفع إيجار مستقل إذا لم تكن الأم تسكن في منزل الزوجية.' },
+  { item: 'نشاطات ترفيهية وتطويرية', detail: 'الأنشطة اللاصفية والرياضة والدروس الخصوصية — تُراعى إذا كانت جزءاً من نمط حياة الأسرة المعتاد.' },
+];
+
+const factors = [
+  { name: 'دخل الأب', desc: 'الراتب الشهري ومصادر الدخل الأخرى هو العامل الأساسي. المحكمة قد تطلب كشف راتب وكشف حساب بنكي. إخفاء الدخل يُعرض الأب لعقوبات.' },
+  { name: 'مستوى المعيشة قبل الطلاق', desc: 'معيار قانوني — ليس تقديرياً فقط. الأطفال يحق لهم الاستمرار على المستوى الذي اعتادوا عليه بالقدر الممكن.' },
+  { name: 'عدد الأطفال وأعمارهم', desc: 'الطفل الرضيع يختلف احتياجاً عن الطالب الجامعي. الأطفال ذوو الاحتياجات الخاصة يستحقون نفقة مُعدَّلة تعكس تكاليفهم الفعلية.' },
+  { name: 'حال الحاضن', desc: 'دخل الأم لا يُلغي التزام الأب بالنفقة، لكنه قد يُراعى في تحديد المبلغ — خاصةً نفقة المسكن.' },
+  { name: 'اتفاق الطرفين', desc: 'إذا اتفق الوالدان على مبلغ معقول، يمكن تقنينه في وثيقة اتفاق قضائية مُلزِمة دون الحاجة إلى قضاء خلافي.' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يمكن تعديل نفقة الأطفال بعد صدور الحكم؟',
+    answer: 'نعم. إذا تغيّرت ظروف الأب المادية (زيادة دخل، أو انخفاضه الحقيقي الموثق) أو تغيّرت احتياجات الأطفال (دخول جامعة، مصاريف طبية جديدة)، يمكن تقديم دعوى تعديل نفقة. يُشترط إثبات تغيّر جوهري في الظروف.',
+  },
+  {
+    question: 'هل تتأثر نفقة الأطفال إذا تزوجت الأم مرة أخرى؟',
+    answer: 'زواج الأم لا يُسقط نفقة الأطفال الواجبة على الأب. النفقة حق للأطفال لا للأم. ومع ذلك قد يُؤثر زواج الأم على الحضانة الفعلية — وإذا انتقلت الحضانة للأب تتغيّر ترتيبات الدفع.',
+  },
+  {
+    question: 'هل نفقة الأطفال للوافدين تختلف عن المواطنين؟',
+    answer: 'المبدأ القانوني واحد للجميع. الفارق العملي في تحديد مستوى المعيشة الذي يؤخذ معياراً — أسرة وافدة تسكن في دبي في مدرسة خاصة تُحسب نفقتها بشكل مختلف عن أسرة تسكن في مدينة صناعية. المحكمة تقدر وفق الواقع الفعلي لكل أسرة.',
+  },
+  {
+    question: 'ماذا لو كان الأب خارج الإمارات ولا يدفع؟',
+    answer: 'الحكم الصادر بنفقة الأطفال في الإمارات قابل للتنفيذ داخل الإمارات. إذا كان الأب خارج الإمارات، يمكن تجميد أصوله وحساباته إن وُجدت هنا. بعض دول الخليج ودول أخرى لديها اتفاقيات تنفيذ متبادلة مع الإمارات. استشيري محامياً لتحديد مسار التنفيذ في حالتك.',
+  },
+  {
+    question: 'كيف أبدأ دعوى نفقة الأطفال في الإمارات؟',
+    answer: 'تُقدَّم الدعوى أمام محكمة الأحوال الشخصية في إمارة إقامتك. الوثائق المطلوبة: شهادة الطلاق، وثائق الأطفال (شهادات الميلاد)، إثبات الهوية، وإثبات دخل الأب إن أمكن الحصول عليه. مدة إصدار الحكم الابتدائي ٣-٦ أشهر عادةً.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        نفقة الأطفال في الإمارات حق أصيل للطفل مكفول قانوناً بصرف النظر عمن يملك الحضانة أو من طلب الطلاق. تعرّفي على كيفية تحديدها ومطالبتك بها وتعديلها أمام محاكم الأسرة.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>نفقة الأطفال — ما يجب معرفته أولاً</h2>
+        <p>
+          يلتزم <strong>الأب</strong> بنفقة الأطفال في الإمارات وفق المادة ٧٨ من قانون الأحوال الشخصية — بصرف النظر عمن يملك الحضانة ولا عن سبب الطلاق.
+          تشمل النفقة المصاريف المعيشية والدراسية والطبية ومسكن الحضانة.
+          يُحددها القاضي بحسب دخل الأب ومتطلبات الأطفال الفعلية — ولا يوجد جدول رسمي ثابت.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>ما تشمله نفقة الأطفال في الإمارات</h2>
+        <div class="includes-list">
+          {includes.map(inc => (
+            <div class="include-item">
+              <div class="include-dot"></div>
+              <div>
+                <h3>{inc.item}</h3>
+                <p>{inc.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>كيف تحسب المحكمة النفقة؟</h2>
+        <p>لا يوجد جدول رسمي مُعلَن لنفقة الأطفال في الإمارات. تقدير القاضي يستند إلى هذه العوامل:</p>
+        <div class="factors-list">
+          {factors.map(f => (
+            <div class="factor-item">
+              <h3>{f.name}</h3>
+              <p>{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>متى تنتهي نفقة الأطفال؟</h2>
+        <div class="end-grid">
+          <div class="end-card end-card--end">
+            <h3>تنتهي النفقة عند:</h3>
+            <ul>
+              <li>بلوغ الذكر سن العمل (١٨-٢١ عاماً حسب الحالة)</li>
+              <li>زواج الذكر أو الأنثى</li>
+              <li>انتهاء الدراسة الجامعية (بدون عجز)</li>
+              <li>استقلال الولد مالياً وثبوت كفايته</li>
+            </ul>
+          </div>
+          <div class="end-card end-card--cont">
+            <h3>تستمر النفقة في حال:</h3>
+            <ul>
+              <li>استمرار الدراسة الجامعية أو العليا</li>
+              <li>إعاقة أو مرض يمنع الكسب</li>
+              <li>الأنثى غير المتزوجة دون دخل مستقل</li>
+              <li>قرار قضائي بالتمديد</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>ماذا لو لم يدفع الأب؟</h2>
+        <div class="enforcement-steps">
+          {[
+            { num: '١', text: 'تقديم طلب تنفيذ أمام محكمة التنفيذ في إمارة إقامتك.' },
+            { num: '٢', text: 'تجميد الحسابات البنكية للأب والحجز على راتبه بموجب أمر قضائي.' },
+            { num: '٣', text: 'منعه من السفر خارج الإمارات حتى سداد المتأخرات.' },
+            { num: '٤', text: 'في حالات التكرار: الإحالة للنيابة العامة للنظر في التهمة الجزائية.' },
+          ].map(s => (
+            <div class="enf-item">
+              <span class="enf-num">{s.num}</span>
+              <p>{s.text}</p>
+            </div>
+          ))}
+        </div>
+        <p class="enf-note">المتأخرات لا تسقط بالتقادم وتُحتسب تراكمياً. توكيل محامٍ للتنفيذ يُسرّع الإجراء ويضمن احتساب كامل المبالغ.</p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/حضانة-الاطفال-الامارات" class="related-card">
+            <strong>حضانة الأطفال</strong>
+            <span>قواعد الحضانة ومتى تنتقل للأب</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>نفقة العدة والمتعة وحقوق الزوجة المالية</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>المهر والتأشيرة والمسكن والنفقة</span>
+          </a>
+          <a href="/ar/تكلفة-الطلاق-في-الامارات" class="related-card">
+            <strong>تكلفة الطلاق في الإمارات</strong>
+            <span>رسوم المحاكم وأتعاب المحامين</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.85; margin-bottom: 0.75rem; }
+
+  .includes-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .include-item { display: flex; gap: 0.875rem; align-items: flex-start; background: #f8f9fa; border: 1.5px solid #e0e4ea; border-radius: 10px; padding: 1rem; }
+  .include-dot { width: 10px; height: 10px; min-width: 10px; background: #c9a84c; border-radius: 50%; margin-top: 0.4rem; }
+  .include-item h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .include-item p { font-size: 0.83rem; color: #4b5563; line-height: 1.75; margin: 0; }
+
+  .factors-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .factor-item { border-right: 4px solid #c9a84c; padding: 0.875rem 1rem 0.875rem 0.75rem; background: #fffbeb; border-radius: 0 10px 10px 0; }
+  .factor-item h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .factor-item p { font-size: 0.83rem; color: #4b5563; line-height: 1.75; margin: 0; }
+
+  .end-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .end-card { border-radius: 10px; padding: 1.1rem; }
+  .end-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .end-card ul { margin: 0; padding-right: 1.1rem; }
+  .end-card li { font-size: 0.82rem; color: #374151; line-height: 1.75; margin-bottom: 0.3rem; }
+  .end-card--end { background: #fff7ed; border: 1.5px solid #fdba74; }
+  .end-card--end h3 { color: #7c2d12; }
+  .end-card--cont { background: #f0fdf4; border: 1.5px solid #86efac; }
+  .end-card--cont h3 { color: #064e3b; }
+
+  .enforcement-steps { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .enf-item { display: flex; gap: 0.875rem; align-items: flex-start; }
+  .enf-num { width: 1.8rem; height: 1.8rem; min-width: 1.8rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; margin-top: 0.05rem; }
+  .enf-item p { font-size: 0.87rem; color: #374151; line-height: 1.75; margin: 0; padding-top: 0.2rem; }
+  .enf-note { font-size: 0.8rem; color: #6b7280; font-style: italic; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .end-grid { grid-template-columns: 1fr; }
+  }
+</style>

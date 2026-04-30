@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'تفسير الطلاق في المنام — معنى الحلم للمتزوجة والرجل';
+const description =
+  'تفسير رؤية الطلاق في المنام للمتزوجة والرجل والعزباء — دلالات الحلم وفق ابن سيرين والمفسرين المعاصرين، مع التمييز بين ما يُقلق وما لا يُقلق.';
+
+const canonical = 'https://divorceu.ae/ar/تفسير-الطلاق-في-المنام';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/dreaming-about-divorce-meaning',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'تفسير الطلاق في المنام' },
+];
+
+const interpretations = [
+  {
+    title: 'تفسير الطلاق في المنام للمتزوجة',
+    scenarios: [
+      { scenario: 'رؤية الزوجة أن زوجها طلقها', meaning: 'قد تدل على تحول في طبيعة العلاقة الزوجية، أو رغبة في استقلالية أكبر، أو توتر مكبوت يحتاج إلى حوار. لا تُعدّ بذاتها نبوءة بالفراق.' },
+      { scenario: 'رؤية المرأة أنها طلبت الطلاق', meaning: 'تُفسَّر أحياناً بأنها تعبير عن رغبة في التغيير أو الحرية من ضغوط معينة، وقد تكون إشارة لضرورة مراجعة الأوضاع الزوجية.' },
+      { scenario: 'رؤية ورقة الطلاق', meaning: 'ربما تعكس قلقاً من الوضع الزوجي أو خشية من المستقبل. الرؤى المتكررة من هذا النوع تستحق الانتباه والحوار الزوجي.' },
+      { scenario: 'رؤية الطلاق وسط بكاء وحزن', meaning: 'يرى بعض المفسرين أنها تدل على مشاعر الحنين والخوف من الفقدان، لا على وقوع الطلاق فعلاً. الحزن في الحلم غالباً علامة على تعلق وليس نبوءة.' },
+    ],
+  },
+  {
+    title: 'تفسير الطلاق في المنام للرجل',
+    scenarios: [
+      { scenario: 'رؤية الرجل أنه طلق زوجته', meaning: 'قد تعكس ضغطاً نفسياً، أو توترات في العلاقة الزوجية لم تُحسم، أو خوفاً من الفشل. لا تُفهَم كقرار ضمير مسبق.' },
+      { scenario: 'رؤية الرجل أنه رجع زوجته بعد طلاق', meaning: 'تُفسَّر عادةً بالإيجاب — عودة إلى الاستقرار، أو تجاوز أزمة، أو تحسّن مرتقب في العلاقة.' },
+      { scenario: 'سماع خبر الطلاق في المنام دون أن يراه', meaning: 'قد تكون مجرد مخاوف مُعاشة تجد طريقها في الحلم، خاصةً إذا كان صاحبها يمر بفترة توتر زوجي.' },
+    ],
+  },
+  {
+    title: 'تفسير الطلاق في المنام للعزباء',
+    scenarios: [
+      { scenario: 'رؤية العزباء أنها تُطلَّق رغم أنها غير متزوجة', meaning: 'يرى بعض المفسرين أن هذه الرؤية تدل على انفصال عن وضع أو علاقة مُقيِّدة، وقد تُبشّر بتخلص من أمر كان يثقل كاهلها.' },
+      { scenario: 'رؤية العزباء طلاق شخص تعرفه', meaning: 'غالباً ما تعكس مخاوف المشاهِدة من الزواج والطلاق كظاهرة اجتماعية، لا علاقة لها مباشرة بمستقبلها الشخصي.' },
+    ],
+  },
+];
+
+const ibnSirinNote = 'تُجمع كتب التفسير المنسوبة لابن سيرين وغيره من علماء المسلمين على أن الأحلام ثلاثة أضرب: رحماني وهو البشارة من الله، ونفساني وهو ما يُحدّث به الإنسان نفسه يقظةً فيراه في نومه، وشيطاني وهو ما يُحزن ويُقلق. ولا ينبغي التسرع في بناء قرارات مصيرية على الأحلام دون مشاورة أهل العلم والخبرة.';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما تفسير رؤية الطلاق في المنام للمتزوجة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تفسير رؤية الطلاق في المنام للمتزوجة يتوقف على تفاصيل الرؤية ومشاعرها. يرى كثير من المفسرين أنها لا تعني الطلاق الفعلي، بل قد تعبر عن توترات علاقية مكبوتة أو رغبة في تغيير ما في الحياة الزوجية. إذا كانت الرؤية متكررة ومصحوبة بضيق، فقد تكون إشارة للاهتمام بالحوار مع الزوج أو استشارة متخصص.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل رؤية الطلاق في المنام تعني وقوعه؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا، رؤية الطلاق في المنام لا تعني وقوعه بأي وجه من الوجوه الشرعية أو العملية. الطلاق في الفقه الإسلامي يتطلب لفظاً صريحاً أو كناية في اليقظة لا في النوم، وهذا مجمع عليه. أما من الناحية النفسية فهي رؤية شائعة تعكس مخاوف أو ضغوطاً يعيشها الإنسان.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما معنى الطلاق في المنام للمتزوجة من منظور ابن سيرين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تُشير الروايات المنسوبة لابن سيرين في كتب التفسير إلى أن رؤية الطلاق لا تُقرأ على ظاهرها دائماً. قد تدل على انفصال عن وضع غير ملائم، أو على تحول إيجابي إذا كانت الرؤية مصحوبة بهدوء أو ارتياح. أما إذا اقترنت بحزن شديد فقد تعبر عن مخاوف الرائية من الخسارة أو الفراق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تفسير الطلاق في المنام يختلف بين الرجل والمرأة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، يتباين التفسير. فرؤية الرجل أنه طلق زوجته قد تعكس توترات لم تُحسم أو قلقاً من المسؤولية، في حين أن رؤية المرأة المتزوجة أنها تُطلَّق قد تدل على رغبة في تغيير ديناميكية العلاقة أو خوف من الفقد. الاثنان لا يُعدّان مؤشراً قاطعاً على وقوع الطلاق في الواقع.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل أنا في خطر إذا كان الطلاق يتكرر في أحلامي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تكرار أي حلم مُقلق يستحق الانتباه لا من باب التشاؤم بل كمؤشر نفسي. إذا كانت رؤى الطلاق تتكرر وتُوقظك بضيق، فقد يكون ذلك تعبيراً عن توتر في علاقتك الزوجية يستحق الحوار أو الاستشارة. أما إذا كانت تتكرر دون أن تُربكك فهي غالباً مجرد موضوع يشغل ذهنك.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="ar"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">تفسير الأحلام · الطلاق في المنام</p>
+      <h1>تفسير الطلاق في المنام — للمتزوجة والرجل والعزباء</h1>
+      <p class="hero-sub">رؤية الطلاق في المنام من أكثر الرؤى التي تُقلق أصحابها. هنا نستعرض ما قاله المفسرون في دلالاتها حسب السياق والمشاعر المصاحبة — مع التأكيد على أنها لا تعني وقوع الطلاق.</p>
+      <div class="hero-meta">
+        <span>تحديث: مايو ٢٠٢٥</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="notice-box">
+        <span class="notice-icon">📌</span>
+        <p><strong>تنبيه مهم:</strong> الطلاق في المنام لا يقع شرعاً ولا قانوناً. لا يترتب على رؤية الطلاق في النوم أي أثر فقهي. ما يلي هو تفسير تراثي ونفسي للرؤيا، لا فتوى دينية.</p>
+      </div>
+
+      {interpretations.map(group => (
+        <section class="content-section">
+          <h2>{group.title}</h2>
+          <div class="scenarios-list">
+            {group.scenarios.map(s => (
+              <div class="scenario-card">
+                <div class="scenario-q">{s.scenario}</div>
+                <p class="scenario-meaning">{s.meaning}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section class="content-section">
+        <h2>رأي ابن سيرين في تفسير أحلام الطلاق</h2>
+        <div class="ibnsirin-box">
+          <p>{ibnSirinNote}</p>
+          <p>ومن أبرز ما يُروى في كتب التفسير أن الرؤية إذا كانت مصحوبة بفرح أو ارتياح فإنها تُعبَّر بما يقابلها من حسن الحال، أما إذا كانت مصحوبة بحزن شديد أو بكاء فقد تعبّر عن هم أو خوف مقيم في النفس يستحق الاهتمام والمعالجة بالحوار والدعاء.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>متى تكون رؤية الطلاق مجرد "حلم نفسي"؟</h2>
+        <p>يُميّز علم النفس بين الأحلام التي تعكس القلق اليومي وتلك التي تعالج مشاعر أعمق. رؤية الطلاق غالباً ما تكون نفسية المنشأ إذا:</p>
+        <ul class="psy-list">
+          <li>كنت تمر بضغوط زوجية أو مهنية حديثة.</li>
+          <li>تابعت مؤخراً قصصاً عن طلاق في محيطك أو في وسائل الإعلام.</li>
+          <li>كنت تعاني من قلق عام يتجلى في أحلام متعددة من نوع "الفقدان".</li>
+          <li>اختفت الرؤية بمجرد تحسّن الوضع الزوجي أو تخفيف الضغط النفسي.</li>
+        </ul>
+        <p>في هذه الحالات لا تحتاج إلى أكثر من الحوار مع شريك حياتك أو مع متخصص نفسي إذا تكرر القلق.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>إذا كنت تفكر فعلاً في الطلاق</h2>
+        <p>إذا كانت رؤياك ليست مجرد حلم بل تعكس تفكيراً حقيقياً في الانفصال، فمن المهم أن تعرف حقوقك وخياراتك القانونية قبل أي خطوة. في الإمارات، تختلف إجراءات الطلاق ونتائجه اختلافاً كبيراً بحسب وضعك القانوني وجنسيتك ووجود أطفال من عدمه.</p>
+        <div class="legal-links">
+          <a href="/ar/الطلاق-في-الامارات">الطلاق في الإمارات — دليل شامل</a>
+          <a href="/ar/الخلع-في-الامارات">الخلع في الإمارات — متى وكيف</a>
+          <a href="/ar/تكلفة-الطلاق-في-الامارات">تكلفة الطلاق في الإمارات</a>
+          <a href="/ar/حضانة-الاطفال-الامارات">حضانة الأطفال في الإمارات</a>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>هل تحتاج إلى استشارة قانونية متعلقة بالطلاق؟</h2>
+        <p>إذا كانت أفكارك تتجاوز الحلم وتصل إلى التساؤل عن حقوقك في حالة الطلاق، يسعدنا ربطك بمحامٍ متخصص في أحوال الأسرة يعمل في الإمارات. الاستشارة الأولى مجانية.</p>
+        <LeadForm source="تفسير-الطلاق-في-المنام" />
+      </div>
+
+      <section class="related-section">
+        <h2>مقالات قد تهمك</h2>
+        <div class="related-grid">
+          {[
+            { title: 'الطلاق في الإمارات', href: '/ar/الطلاق-في-الامارات', desc: 'دليل شامل للطلاق في الإمارات بكل تفاصيله.' },
+            { title: 'الخلع في الإمارات', href: '/ar/الخلع-في-الامارات', desc: 'شروطه وإجراءاته وأثره على المهر.' },
+            { title: 'حقوق الزوجة بعد الطلاق', href: '/ar/حقوق-الزوجة-بعد-الطلاق-الامارات', desc: 'المهر والنفقة والحضانة وحق الإقامة.' },
+            { title: 'نفقة بعد الطلاق', href: '/ar/نفقة-بعد-الطلاق-الامارات', desc: 'أنواع النفقة وكيفية احتسابها وتنفيذها.' },
+            { title: 'نسبة الطلاق في الإمارات', href: '/ar/نسبة-الطلاق-في-الامارات', desc: 'إحصائيات وأسباب وتحليل للظاهرة.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  :global(body) { direction: rtl; }
+
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.85), rgba(10,22,40,0.85)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; }
+  .hero-meta { margin-top: 1.25rem; font-size: 0.85rem; color: #7a8fa6; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.85; margin-bottom: 1rem; }
+
+  .notice-box { background: #fffbe6; border: 1.5px solid #fde68a; border-radius: 0.875rem; padding: 1rem 1.25rem; margin-bottom: 2.5rem; display: flex; gap: 0.75rem; align-items: flex-start; }
+  .notice-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .notice-box p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
+
+  .scenarios-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .scenario-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .scenario-q { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .scenario-meaning { font-size: 0.87rem; color: #445; line-height: 1.75; margin: 0; }
+
+  .ibnsirin-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.875rem; padding: 1.25rem 1.5rem; }
+  .ibnsirin-box p { font-size: 0.9rem; color: #5a4a20; line-height: 1.85; margin-bottom: 0.875rem; }
+  .ibnsirin-box p:last-child { margin-bottom: 0; }
+
+  .psy-list { margin: 0.75rem 0 1rem; padding-right: 1.5rem; }
+  .psy-list li { font-size: 0.88rem; color: #445; line-height: 1.8; margin-bottom: 0.3rem; }
+
+  .legal-links { display: flex; flex-wrap: wrap; gap: 0.625rem; }
+  .legal-links a { display: inline-block; background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.82rem; font-weight: 600; color: #7a6a30; text-decoration: none; transition: background 0.2s; }
+  .legal-links a:hover { background: #c9a84c; color: #fff; border-color: #c9a84c; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.75; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

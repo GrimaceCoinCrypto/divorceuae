@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'نسبة الطلاق في الإمارات ٢٠٢٥ — إحصائيات وأسباب واتجاهات';
+const description =
+  'نسبة الطلاق في الإمارات لعام ٢٠٢٥: كم نسبة الطلاق بين المواطنين والمقيمين الأجانب، وما أبرز أسباب الطلاق وكيف تغيرت الأرقام خلال العقد الماضي.';
+
+const canonical = 'https://divorceu.ae/ar/نسبة-الطلاق-في-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-rate-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'نسبة الطلاق في الإمارات' },
+];
+
+const statsCards = [
+  { stat: '٢٦٪ تقريباً', label: 'نسبة الطلاق إلى الزواج في الإمارات', note: 'نحو واحد من كل أربعة زيجات مسجلة في الإمارات ينتهي بالطلاق. تتفاوت الأرقام حسب الإمارة والجنسية.' },
+  { stat: '٤٨٪ تقريباً', label: 'نسبة الطلاق بين المواطنين الإماراتيين', note: 'نسبة الطلاق بين المواطنين أعلى بكثير من المتوسط العام، وهو ما يعكس اختلاف إمكانية الوصول القانوني والأعراف الاجتماعية المتعلقة بالزواج مجدداً.' },
+  { stat: '١–٣ سنوات', label: 'متوسط مدة الزواج قبل الطلاق', note: 'تُقدَّم معظم طلبات الطلاق خلال السنوات الثلاث الأولى من الزواج، مع موجة ثانوية بين السنة السابعة والعاشرة.' },
+  { stat: '٢٠٢٢', label: 'عام إصلاح قانون طلاق غير المسلمين', note: 'أتاح المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٢ الطلاق المدني دون إثبات ذنب لغير المسلمين المقيمين في الإمارات.' },
+];
+
+const causes = [
+  { cause: 'التنافر وانهيار التواصل', frequency: 'الأكثر شيوعاً', detail: 'يُذكر في معظم طلبات الطلاق بالتراضي. أشارت محاكم الإمارات إلى أن النزاعات المبكرة تمثل المحرك الأول لطلبات الطلاق.' },
+  { cause: 'الخلافات المالية', frequency: 'شائع جداً', detail: 'نزاعات تتعلق بالإنفاق والديون والتزامات النفقة والتوقعات المالية المتباينة، لا سيما في إمارتَي دبي وأبوظبي ذواتَي التكلفة المعيشية العالية.' },
+  { cause: 'تدخل الأسرة الممتدة', frequency: 'شائع بين المواطنين', detail: 'يحتل تدخل أسرة الزوجين - الأهل خاصةً - مرتبة رئيسية في تقارير الرعاية الاجتماعية للمحاكم الإماراتية المتعلقة بالمواطنين.' },
+  { cause: 'العنف الأسري', frequency: 'شائع (مُبلَّغ عنه بأقل من حجمه الحقيقي)', detail: 'يُعدّ التعدي الجسدي والنفسي سبباً للطلاق القضائي (الفسخ) للمرأة المسلمة. ويوفر قانون ٢٠٢٢ للمرأة غير المسلمة الحماية ذاتها دون الحاجة إلى إثبات الإيذاء.' },
+  { cause: 'السفر المتكرر وضغوط العمل', frequency: 'شائع بين الوافدين', detail: 'الانفصال المتكرر بسبب السفر وساعات العمل الطويلة والبُعد عن الأسرة في البلد الأصلي يولّد ضغطاً علاقياً حاداً في بيئة الإمارات التي تعتمد على العمالة الوافدة بشكل رئيسي.' },
+  { cause: 'وسائل التواصل الاجتماعي والعلاقات الخارجية', frequency: 'في ارتفاع', detail: 'رصدت محاكم الإمارات والمجلس القضائي تنامياً ملحوظاً في دور وسائل التواصل الاجتماعي والعلاقات الإلكترونية في تفكك الروابط الزوجية، خاصةً لدى الأزواج الشباب.' },
+  { cause: 'الزواج المتسرع أو المرتب اجتماعياً', frequency: 'موثق', detail: 'أشارت أبحاث البرنامج الوطني للسعادة إلى أن قِصَر فترة التعارف والضغط الاجتماعي للزواج يسهمان في ارتفاع نسب الطلاق في مراحل الزواج الأولى.' },
+];
+
+const emirateData = [
+  { emirate: 'دبي', divorceRatio: 'مرتفعة', note: 'أكبر تجمع للوافدين في الإمارات؛ حجم قضايا الطلاق كبير، لا سيما بعد إصلاحات ٢٠٢٢ المتعلقة بغير المسلمين. تتولى إدارة شؤون الأسرة في محاكم دبي معالجة هذا الملف.' },
+  { emirate: 'أبوظبي', divorceRatio: 'مرتفعة', note: 'نسبة عالية من المواطنين الإماراتيين؛ ارتفاع تاريخي في معدل طلاق المواطنين يعوضه الحضور الواسع للوافدين.' },
+  { emirate: 'الشارقة', divorceRatio: 'متوسطة', note: 'موروث اجتماعي أكثر محافظة؛ خدمات المصالحة الأسرية نشطة وفعالة. الأرقام المطلقة أدنى من دبي.' },
+  { emirate: 'الإمارات الشمالية', divorceRatio: 'متوسطة-منخفضة', note: 'تجمعات سكانية أصغر، ووساطة قبلية وعائلية فاعلة تحد من اللجوء الرسمي للمحاكم.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما نسبة الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تبلغ نسبة الطلاق إلى الزواج في الإمارات نحو ٢٥–٣٠٪ إذا شملنا جميع المقيمين (مواطنين ووافدين). أما بين المواطنين الإماراتيين تحديداً فقد وصلت تقديرات بعض السنوات إلى ٤٦–٥٠٪، وإن كانت الأرقام الرسمية تتفاوت بحسب المصدر والسنة. تنشر الهيئة الوطنية للإحصاء بيانات الزواج والطلاق سنوياً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل معدل الطلاق في الإمارات في ازدياد؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'في الأعداد المطلقة نعم، الطلاق يتزايد تبعاً لنمو السكان. أما النسبة إلى الزواج فتشير البيانات المتاحة إلى استقرار نسبي مع تذبذبات سنوية. ولمحت إصلاحات ٢٠٢٢ الخاصة بطلاق غير المسلمين إلى ارتفاع في الطلبات المسجلة من الوافدين غير المسلمين بسبب تيسّر الإجراءات لا تفاقم الأوضاع الزوجية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما أبرز أسباب الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تتصدر قائمة أسباب الطلاق في الإمارات: التنافر وانهيار التواصل، ثم الخلافات المالية، فتدخل الأسرة الممتدة لدى المواطنين، إضافةً إلى ضغوط السفر المتكرر وطبيعة العمل بالنسبة للوافدين. أما وسائل التواصل الاجتماعي فقد باتت عاملاً متنامياً رصده القضاء الإماراتي في السنوات الأخيرة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف تختلف نسبة الطلاق بين المواطنين والوافدين في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'معدل الطلاق بين المواطنين الإماراتيين أعلى بكثير من معدله بين الوافدين بشكل عام. يُعزى ذلك جزئياً إلى يسر اللجوء للقضاء من قِبَل المواطنين، وإلى الطابع الاقتصادي لبعض الزيجات في أوساط الوافدين حيث يؤثر الوضع القانوني للإقامة على القرار. كذلك يُتيح قانون ٢٠٢٢ لغير المسلمين الحصول على الطلاق بيسر أكبر مما أسهم في تسجيل المزيد من القضايا.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما حكم الطلاق في الإمارات للوافدين غير المسلمين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أتاح المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٢ للمقيمين غير المسلمين الحصول على الطلاق المدني دون إثبات ذنب. يمكن لأي من الطرفين تقديم طلب الطلاق، وتُطبق المحاكم هذا القانون بصرف النظر عن الجنسية أو الديانة. ويختلف هذا جوهرياً عن المنظومة القانونية السابقة التي كانت تُلزم الوافدين في الغالب بتطبيق قانون بلدانهم الأصلية.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="ar"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">إحصائيات الطلاق في الإمارات · ٢٠٢٥</p>
+      <h1>نسبة الطلاق في الإمارات ٢٠٢٥ — إحصائيات وأسباب واتجاهات</h1>
+      <p class="hero-sub">كم نسبة الطلاق في الإمارات؟ وما الفجوة بين المواطنين والوافدين؟ وما الأسباب الرئيسية وراء الأرقام المرتفعة؟ إجابات شاملة بأحدث البيانات المتاحة لعام ٢٠٢٥.</p>
+      <div class="hero-meta">
+        <span>تحديث: مايو ٢٠٢٥</span>
+        <span class="sep">·</span>
+        <span>بقلم أليكسي سوونينن، مستشار قانوني ومقيم في الإمارات</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="stats-grid">
+        {statsCards.map(s => (
+          <div class="stat-card">
+            <div class="stat-num">{s.stat}</div>
+            <div class="stat-label">{s.label}</div>
+            <p class="stat-note">{s.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <section class="content-section">
+        <h2>نسبة الطلاق في الإمارات — لمحة عامة</h2>
+        <p>تُصنَّف الإمارات ضمن دول الشرق الأوسط ذات معدلات الطلاق المرتفعة نسبياً. وتشير التقديرات المستقاة من بيانات الهيئة الوطنية للإحصاء إلى أن نحو ٢٥–٣٠٪ من الزيجات المسجلة في الدولة تنتهي بالطلاق حين يُحتسب جميع المقيمين.</p>
+        <p>غير أن هذا الرقم الإجمالي يخفي تبايناً واضحاً؛ إذ تبلغ نسبة الطلاق بين المواطنين الإماراتيين ما بين ٤٥–٥٠٪ وفق بعض التقديرات، في حين تظل نسبة الوافدين أدنى من ذلك بشكل ملموس وإن كانت تختلف اختلافاً كبيراً بحسب الجنسية والخلفية الثقافية وطبيعة الزواج.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسباب الرئيسية للطلاق في الإمارات</h2>
+        <div class="causes-list">
+          {causes.map(c => (
+            <div class="cause-card">
+              <div class="cause-header">
+                <span class="cause-name">{c.cause}</span>
+                <span class="cause-freq">{c.frequency}</span>
+              </div>
+              <p>{c.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>نسب الطلاق حسب الإمارة</h2>
+        <p>تنظر جميع محاكم الإمارات بقانون الأحوال الشخصية الاتحادي ذاته، إلا أن وتيرة القضايا وطبيعة التركيبة السكانية تتباين من إمارة إلى أخرى.</p>
+        <div class="emirate-table">
+          <div class="emirate-header">
+            <span>الإمارة</span>
+            <span>معدل الطلاق</span>
+            <span>ملاحظات</span>
+          </div>
+          {emirateData.map(e => (
+            <div class="emirate-row">
+              <span class="emirate-name">{e.emirate}</span>
+              <span class="emirate-ratio">{e.divorceRatio}</span>
+              <span class="emirate-note">{e.note}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>تأثير إصلاحات ٢٠٢٢ على إحصائيات الطلاق</h2>
+        <p>أحدث المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٢ تحولاً جوهرياً في منظومة الطلاق للوافدين غير المسلمين؛ إذ أتاح لهم الطلاق المدني دون إثبات ذنب لأول مرة في تاريخ الإمارات.</p>
+        <div class="reform-box">
+          <div class="reform-item">
+            <span class="reform-label">ماذا يعني للإحصائيات؟</span>
+            <p>أسهم القانون في رفع عدد القضايا المسجلة رسمياً من الوافدين غير المسلمين، لا لأن الانفصالات ازدادت بل لأن الإجراءات أصبحت أيسر. وهذا يعني أن الأرقام الإجمالية ربما ترتفع مع اكتمال رصد أثر القانون.</p>
+          </div>
+          <div class="reform-item">
+            <span class="reform-label">تساوٍ بين الجنسين</span>
+            <p>أصبح بإمكان المرأة غير المسلمة تقديم طلب الطلاق منفردةً دون تقديم أي مسوّغ، مما يُقلّص الفجوة التاريخية في الوصول إلى حقوق الطلاق بين الجنسين.</p>
+          </div>
+          <div class="reform-item">
+            <span class="reform-label">الوصاية على الأطفال</span>
+            <p>يُرسي القانون الجديد مبدأ تساوي الوالدين في حضانة الأطفال دون تفضيل أحدهما على الآخر تلقائياً، وهو ما يختلف عن نظام الأحوال الشخصية الإسلامية التقليدي.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الطلاق وأثره على إقامة الوافدين</h2>
+        <p>من أبرز المخاوف العملية بين الوافدين المقبلين على الطلاق مسألة الإقامة. إذا كانت تأشيرتك مرتبطة بكفالة زوجك، فأمامك <strong>٣٠ يوماً</strong> من تاريخ صدور حكم الطلاق لترتيب وضعك القانوني. اطلع على دليلنا الكامل: <a href="/ar/الطلاق-في-الامارات">الطلاق في الإمارات — دليل المقيمين الأجانب</a>.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة حول نسبة الطلاق في الإمارات</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>هل تفكر في الطلاق؟ استشر محامياً متخصصاً</h2>
+        <p>سواء كنت مواطناً أو وافداً، تتباين إجراءات الطلاق بحسب وضعك القانوني وجنسيتك وطبيعة القضية. تواصل معنا للحصول على استشارة مجانية مع محامٍ متخصص في الإمارات.</p>
+        <LeadForm source="نسبة-الطلاق-في-الامارات" />
+      </div>
+
+      <section class="related-section">
+        <h2>مقالات ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'الطلاق في الإمارات', href: '/ar/الطلاق-في-الامارات', desc: 'دليل شامل للطلاق في الإمارات للمقيمين الأجانب.' },
+            { title: 'تكلفة الطلاق في الإمارات', href: '/ar/تكلفة-الطلاق-في-الامارات', desc: 'رسوم المحكمة وأتعاب المحامين وعوامل الرفع والخفض.' },
+            { title: 'حضانة الأطفال في الإمارات', href: '/ar/حضانة-الاطفال-الامارات', desc: 'قواعد الحضانة وحدود السن وكيف يبت القضاء.' },
+            { title: 'نفقة الأطفال في الإمارات', href: '/ar/نفقة-الاطفال-الامارات', desc: 'من يدفع ومتى تنتهي النفقة وكيف تُنفَّذ.' },
+            { title: 'حقوق الزوجة بعد الطلاق', href: '/ar/حقوق-الزوجة-بعد-الطلاق-الامارات', desc: 'المهر والنفقة والحضانة وحق الإقامة.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  :global(body) { direction: rtl; }
+
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.78), rgba(10,22,40,0.78)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.85; margin-bottom: 1rem; }
+  .content-section a { color: #c9a84c; font-weight: 600; text-decoration: none; }
+  .content-section a:hover { text-decoration: underline; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+  .stat-card { background: #f9f4e8; border: 1.5px solid #e8d89a; border-radius: 1rem; padding: 1.25rem; }
+  .stat-num { font-size: 2rem; font-weight: 800; color: #c9a84c; margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.82rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .stat-note { font-size: 0.78rem; color: #556; line-height: 1.6; margin: 0; }
+
+  .causes-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .cause-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .cause-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.4rem; }
+  .cause-name { font-weight: 700; color: #0a1628; font-size: 0.95rem; }
+  .cause-freq { font-size: 0.72rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 0.15rem 0.6rem; border-radius: 999px; }
+  .cause-card p { font-size: 0.85rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .emirate-table { border: 1px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; font-size: 0.85rem; }
+  .emirate-header { display: grid; grid-template-columns: 1fr 1.2fr 3fr; gap: 0.5rem; background: #0a1628; color: #fff; padding: 0.75rem 1rem; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .emirate-row { display: grid; grid-template-columns: 1fr 1.2fr 3fr; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid #e8eaed; align-items: start; }
+  .emirate-row:nth-child(odd) { background: #f8f9fa; }
+  .emirate-name { font-weight: 700; color: #0a1628; }
+  .emirate-ratio { font-weight: 700; color: #c9a84c; }
+  .emirate-note { color: #445; line-height: 1.6; }
+
+  .reform-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .reform-item { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .reform-label { display: block; font-size: 0.75rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 0.4rem; letter-spacing: 0.04em; }
+  .reform-item p { font-size: 0.85rem; color: #1e3a5f; line-height: 1.7; margin: 0; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.75; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 600px) {
+    .emirate-header, .emirate-row { grid-template-columns: 1fr 1fr; }
+    .emirate-header span:last-child, .emirate-note { display: none; }
+  }
+</style>

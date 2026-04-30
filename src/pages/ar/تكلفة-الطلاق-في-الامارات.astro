@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'تكلفة الطلاق في الإمارات ٢٠٢٥ — رسوم المحكمة وأتعاب المحامين';
+const description =
+  'كم تكلفة الطلاق في الإمارات؟ تفصيل كامل لرسوم المحكمة وأتعاب المحامين وتكاليف الوساطة — بأرقام حقيقية من دبي وأبوظبي لعام ٢٠٢٥.';
+
+const canonical = 'https://divorceu.ae/ar/تكلفة-الطلاق-في-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-cost-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'تكلفة الطلاق في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'كم تكلفة الطلاق في الإمارات بشكل عام؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تتراوح تكلفة الطلاق بالتراضي في الإمارات بين ٤٠٠٠ و١٠٠٠٠ درهم شاملاً رسوم المحكمة وأتعاب المحامي. أما الطلاق الخلافي دون نزاع على الحضانة فيتراوح بين ١٥٠٠٠ و٤٥٠٠٠ درهم. وتتجاوز قضايا الحضانة المتنازع عليها ٢٥٠٠٠ درهم في أغلب الأحيان وقد تصل إلى ٨٠٠٠٠ درهم أو أكثر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما هي رسوم تقديم طلب الطلاق في المحاكم الإماراتية؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تتراوح رسوم المحكمة الحكومية لتقديم دعوى الطلاق في الإمارات بين ٥٠٠ و٢٠٠٠ درهم للقضايا البسيطة، وتشمل رسوم تسجيل القضية وجلسات الوساطة الأسرية. القضايا المعقدة التي تستلزم خبراء أو تقارير اجتماعية قد تصل رسومها الحكومية إلى ٥٠٠٠ درهم.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل الوساطة الأسرية إلزامية قبل الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. وفق القانون الاتحادي، تمر معظم قضايا الطلاق بمرحلة التوجيه الأسري أو الوساطة قبل نظر المحكمة في القضية. في دبي تتولى هذا الدور إدارة الخدمات الاجتماعية في المحاكم. تستغرق من جلسة إلى أربع جلسات عادةً، والرسوم بين ١٠٠ و٣٠٠ درهم لكل جلسة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف أخفض تكلفة الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أفضل طريقة لخفض التكلفة هي الاتفاق على أكبر قدر من البنود خارج المحكمة قبل تقديم الطلب. كل بند تتفقان عليه (النفقة، الحضانة، توزيع الأصول) يقلل عدد الجلسات ويوفر أتعاب المحامين بنسبة ٦٠-٨٠٪. كذلك احضر وثائقك مترجمة ومصادقاً عليها قبل اللقاء الأول مع المحامي لتوفير وقت الاستشارة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يحتاج المقيمون الأجانب إلى مزيد من المستندات وهل تزيد التكلفة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. المقيمون الأجانب يحتاجون عادةً إلى ترجمة قانونية معتمدة لعقد الزواج ووثائق الهوية، وأحياناً تصديق من وزارة الخارجية وسفارة بلد الأصل. تكلفة الترجمة المعتمدة بين ١٠٠ و٤٠٠ درهم للوثيقة، والتصديق يضيف ٣٠٠-١٠٠٠ درهم حسب بلد المنشأ.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تستغرق قضية الطلاق في الإمارات وكيف يؤثر ذلك على التكلفة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق بالتراضي يكتمل في ١-٣ أشهر عادةً. الطلاق الخلافي يستغرق ٦-١٨ شهراً. نزاعات الحضانة قد تمتد ٢٤ شهراً أو أكثر. كل شهر إضافي يعني رسوماً لمحامٍ يتقاضى ٣٠٠٠-٨٠٠٠ درهم شهرياً ومصاريف جلسات إضافية.',
+      },
+    },
+  ],
+};
+
+const courtFees = [
+  { item: 'رسوم تسجيل الدعوى', cost: '٢٠٠–٣٠٠ درهم', notes: 'تُدفع عند تقديم العريضة. تتباين قليلاً بين الإمارات.' },
+  { item: 'رسوم فتح ملف القضية', cost: '١٥٠–٢٥٠ درهم', notes: 'رسوم إدارية لفتح ملف القضية في محكمة الأسرة.' },
+  { item: 'جلسات الوساطة / التوجيه الأسري', cost: '١٠٠–٣٠٠ درهم/جلسة', notes: 'إلزامية في معظم القضايا الخلافية. من جلسة إلى أربع جلسات عادةً.' },
+  { item: 'خبير / أخصائي اجتماعي (إذا عيّنته المحكمة)', cost: '٥٠٠–٢٥٠٠ درهم', notes: 'يُطلب في نزاعات الحضانة حين تأمر المحكمة بتقرير رعاية.' },
+  { item: 'ترجمة المستندات (للوثيقة الواحدة)', cost: '١٠٠–٤٠٠ درهم', notes: 'الترجمة القانونية المعتمدة مطلوبة للوثائق الأجنبية كالجوازات وعقود الزواج.' },
+  { item: 'تصديق المستندات', cost: '١٥٠–٦٠٠ درهم+', notes: 'عقود الزواج الأجنبية تحتاج تصديق وزارة الخارجية الإماراتية وسفارة البلد الأصلي.' },
+];
+
+const lawyerFees = [
+  { type: 'الطلاق بالتراضي', range: '٣٠٠٠–٨٠٠٠ درهم', desc: 'يتفق الزوجان على جميع البنود. يُعدّ المحامي الاتفاقية ويُقدمها. حد أدنى من الجلسات.' },
+  { type: 'طلاق خلافي (بلا أطفال)', range: '٨٠٠٠–٢٠٠٠٠ درهم', desc: 'نزاع على الأصول أو النفقة أو الممتلكات. يستلزم جلسات متعددة.' },
+  { type: 'طلاق خلافي مع نزاع حضانة', range: '١٥٠٠٠–٤٥٠٠٠ درهم+', desc: 'الأكثر تعقيداً وتكلفةً. قد يمتد ١٢-٢٤ شهراً مع تقارير خبراء متعددة.' },
+  { type: 'قضايا غير المسلمين / الوافدين', range: '٦٠٠٠–٢٥٠٠٠ درهم', desc: 'القضايا المنظورة وفق قانون البلد الأصلي أو تحت اختصاص DIFC تضيف تعقيدات إجرائية.' },
+  { type: 'الخلع (بطلب من الزوجة)', range: '٤٠٠٠–١٢٠٠٠ درهم', desc: 'أبسط إذا وافق الزوج. يزداد تعقيداً إذا كان خلافياً وتعلق بإعادة المهر.' },
+];
+
+const faqItems = [
+  {
+    question: 'كم تكلفة الطلاق في الإمارات بشكل عام؟',
+    answer: 'تتراوح تكلفة الطلاق بالتراضي في الإمارات بين ٤٠٠٠ و١٠٠٠٠ درهم شاملاً رسوم المحكمة وأتعاب المحامي. أما الطلاق الخلافي دون نزاع على الحضانة فيتراوح بين ١٥٠٠٠ و٤٥٠٠٠ درهم. وتتجاوز قضايا الحضانة المتنازع عليها ٢٥٠٠٠ درهم في أغلب الأحيان وقد تصل إلى ٨٠٠٠٠ درهم أو أكثر.',
+  },
+  {
+    question: 'هل الطلاق مجاني في الإمارات إذا اتفق الزوجان؟',
+    answer: 'لا تزال رسوم المحكمة سارية حتى في الطلاق بالتراضي، غير أنها محدودة (٥٠٠-١٥٠٠ درهم). الوفر الحقيقي يكون في أتعاب المحامين — الطلاق المتفق عليه يُنجز بأتعاب إجمالية ٣٠٠٠-٨٠٠٠ درهم بدلاً من ١٥٠٠٠-٤٥٠٠٠ درهم للطلاق الخلافي. يمكن كذلك أن يُعدّ محامٍ واحد الاتفاقية ويوقع عليها الطرفان.',
+  },
+  {
+    question: 'هل يلزمني توكيل محامٍ للطلاق في الإمارات؟',
+    answer: 'من الناحية النظرية لا — يمكنك تمثيل نفسك أمام المحاكم. لكن عملياً، ولا سيما للمقيمين الأجانب، فإن إجراءات التقاضي (المذكرات باللغة العربية وآداب المحكمة ومعرفة قانون الأحوال الشخصية) تجعل التمثيل الذاتي بالغ الصعوبة. تشترط المحاكم الإماراتية تقديم وثائق باللغة العربية. كما يضمن المحامي صياغة التسويات — خاصةً بنود الحضانة — بشكل صحيح وقابل للتنفيذ.',
+  },
+  {
+    question: 'ما التكاليف الخفية التي يجب أن أضعها في الحسبان؟',
+    answer: 'ثمة تكاليف كثيراً ما تفاجئ العملاء: (١) الترجمة القانونية المعتمدة لكل الوثائق الأجنبية ١٠٠-٤٠٠ درهم للوثيقة. (٢) تصديق عقود الزواج الأجنبية ٣٠٠-١٠٠٠ درهم+ حسب البلد. (٣) رسوم مأمور التبليغ إذا كان الزوج بحاجة إلى إبلاغ رسمي. (٤) إجراءات التنفيذ — إذا لم يلتزم الطرف الآخر بالحكم تحتاج طلب تنفيذ إضافي يُكلف ٢٠٠٠-٦٠٠٠ درهم.',
+  },
+  {
+    question: 'هل تختلف التكاليف بين دبي وأبوظبي والشارقة؟',
+    answer: 'الرسوم الحكومية متقاربة في مختلف الإمارات مع فوارق طفيفة. أتعاب المحامين في دبي تميل إلى الأعلى نظراً لارتفاع تكاليف المعيشة والطلب الأعلى. الشارقة وعجمان أقل تكلفةً قليلاً. المحامي ذو الخبرة في المنطقة التي تُعقد فيها المحكمة يمثل ميزة عملية تفوق أي فارق في الأتعاب.',
+  },
+  {
+    question: 'ما نموذج الفوترة الشائع لدى محامي الطلاق في الإمارات؟',
+    answer: 'يستخدم محامو الطلاق في الإمارات ثلاثة نماذج: (١) رسم ثابت للقضايا غير الخلافية ٣٠٠٠-٨٠٠٠ درهم. (٢) رسم لكل جلسة ١٥٠٠-٥٠٠٠ درهم وقد يتراكم سريعاً إذا امتدت القضية. (٣) مُحتجَز شهري ٣٠٠٠-٨٠٠٠ درهم + ساعي للقضايا الخلافية المعقدة. اطلب دائماً اتفاقية أتعاب خطية قبل التوقيع مع أي محامٍ.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل التكاليف · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        تفصيل كامل لما يكلفه الطلاق فعلياً في الإمارات — رسوم الحكومة، أتعاب المحامين، مدة القضية، وما يرفع الفاتورة أو يخفضها. بأرقام حقيقية من دبي وأبوظبي.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>ملخص سريع — تكاليف الطلاق في الإمارات</h2>
+        <div class="summary-grid">
+          <div class="summary-card summary-card--highlight">
+            <p class="summary-label">طلاق بالتراضي</p>
+            <p class="summary-amount">٤٠٠٠–١٠٠٠٠ درهم</p>
+            <p class="summary-note">إجمالاً (رسوم + محامٍ). يتفق الطرفان على كل البنود.</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">طلاق خلافي</p>
+            <p class="summary-amount">١٥٠٠٠–٤٥٠٠٠ درهم</p>
+            <p class="summary-note">نزاع على الأصول أو النفقة أو الممتلكات. ٦-١٨ شهراً.</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">نزاع حضانة</p>
+            <p class="summary-amount">٢٥٠٠٠–٨٠٠٠٠ درهم+</p>
+            <p class="summary-note">أعقد القضايا. قد يمتد ١٢-٢٤ شهراً أو أكثر.</p>
+          </div>
+        </div>
+        <p class="summary-note-footer">جميع الأرقام تقديرية إجمالية تشمل رسوم المحكمة والمحامي. تكاليف الترجمة والتصديق إضافية.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>رسوم المحاكم الإماراتية — ما تدفعه للجهات الحكومية</h2>
+        <p>رسوم المحاكم الحكومية محددة من قِبل سلطة قضاء كل إمارة وهي في العموم معقولة. الأرقام أدناه خاصة بدبي؛ أبوظبي والشارقة لهما هياكل مماثلة مع فوارق طفيفة.</p>
+
+        <div class="table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>البند</th>
+                <th>المبلغ</th>
+                <th>ملاحظات</th>
+              </tr>
+            </thead>
+            <tbody>
+              {courtFees.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-label">{row.item}</td>
+                  <td class="td-cost">{row.cost}</td>
+                  <td class="td-notes">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">تبلغ الرسوم الحكومية في مجملها ٥٠٠-٢٠٠٠ درهم للقضايا المباشرة. القضايا المعقدة التي تشمل جلسات متعددة وتعيين خبراء قد تصل رسومها الحكومية إلى ٣٠٠٠-٥٠٠٠ درهم.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>أتعاب المحامين — أكبر متغير في التكلفة</h2>
+        <p>الأتعاب القانونية هي حيث تتباين تكاليف الطلاق تبايناً كبيراً بحسب حجم الاتفاق بينك وبين شريكك. يتقاضى محامو الإمارات عادةً رسماً ثابتاً للقضايا البسيطة أو رسماً لكل جلسة أو أتعاباً شهرية ثابتة للقضايا المتنازع عليها الطويلة.</p>
+
+        <div class="lawyer-cards">
+          {lawyerFees.map(fee => (
+            <div class="lawyer-card">
+              <div class="lawyer-card-header">
+                <h3>{fee.type}</h3>
+                <span class="lawyer-cost">{fee.range}</span>
+              </div>
+              <p class="lawyer-desc">{fee.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="info-box">
+          <h3>الرسم الثابت مقابل الجلسة مقابل المُحتجَز الشهري</h3>
+          <p>يستخدم محامو طلاق الإمارات ثلاثة نماذج فوترة:</p>
+          <ul>
+            <li><strong>رسم ثابت</strong> — شائع في قضايا التراضي (٣٠٠٠-٨٠٠٠ درهم إجمالاً). واضح في الميزانية بلا مفاجآت.</li>
+            <li><strong>رسم لكل جلسة</strong> — ١٥٠٠-٥٠٠٠ درهم للجلسة. إذا امتدت القضية تراكمت التكاليف سريعاً.</li>
+            <li><strong>مُحتجَز + ساعي</strong> — شائع في القضايا الخلافية المعقدة. مُحتجَز شهري ٣٠٠٠-٨٠٠٠ درهم وأجر ساعي ٥٠٠-١٥٠٠ درهم لكبار المحامين.</li>
+          </ul>
+          <p>اطلب دائماً اتفاقية أتعاب خطية قبل توكيل أي محامٍ. التقديرات الشفهية غير ملزمة قانونياً في الإمارات.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>ما يرفع تكلفة الطلاق</h2>
+
+        <div class="driver-list">
+          {[
+            { factor: 'النزاع على حضانة الأطفال', impact: 'مرتفع جداً', cls: 'very-high', desc: 'تشمل قضايا الحضانة تقارير اجتماعية وتقييمات نفسية وجلسات متعددة واستئنافات في الغالب. القضية الخلافية قد تمتد ١٨-٣٦ شهراً.' },
+            { factor: 'النزاع على الممتلكات والأصول', impact: 'مرتفع', cls: 'high', desc: 'إذا كانت الأملاك أو مصالح تجارية أو عقارات في الإمارات محل خلاف، فإن تقييمات الخبراء والإفصاح المالي يرفعان التكلفة بشكل ملحوظ.' },
+            { factor: 'أحد الزوجين خارج الإمارات', impact: 'مرتفع', cls: 'high', desc: 'التبليغ الدولي والحصول على وثائق محاكم أجنبية وإدارة فوارق التوقيت تضيف تكاليف إجرائية وتأخيرات.' },
+            { factor: 'قضايا غير المسلمين / القانون الأجنبي', impact: 'متوسط–مرتفع', cls: 'medium-high', desc: 'تطبيق قانون البلد الأصلي يستلزم تقديم بيّنة بالقانون الأجنبي، وهو ما يتطلب عادةً خبيراً قانونياً يدلي بشهادته.' },
+            { factor: 'حجم وثائق الترجمة', impact: 'متوسط', cls: 'medium', desc: 'كل وثيقة أجنبية تستلزم ترجمة معتمدة وأحياناً تصديقاً. قضايا الإفصاح المالي الكبيرة تتراكم فيها تكاليف الترجمة.' },
+            { factor: 'الزوج المتهرب من الإجراءات', impact: 'متوسط', cls: 'medium', desc: 'إذا تجاهل أحد الزوجين الإجراءات، تسير القضية بعد مُهل التبليغ. يضيف وقتاً وليس بالضرورة تكلفةً كبيرة إذا كان لديك محامٍ.' },
+          ].map(d => (
+            <div class="driver-card">
+              <div class="driver-header">
+                <span class="driver-factor">{d.factor}</span>
+                <span class={`driver-impact driver-impact--${d.cls}`}>{d.impact}</span>
+              </div>
+              <p class="driver-desc">{d.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>كيف تخفض تكلفة طلاقك في الإمارات</h2>
+
+        <div class="tips-list">
+          {[
+            { tip: 'تفق على أكبر قدر ممكن قبل تقديم الطلب', detail: 'كل بند تتفقان عليه خارج المحكمة — النفقة، الحضانة، توزيع الأصول، المصاريف المدرسية — يقلل جلسات المحكمة ويوفر ٦٠-٨٠٪ من الأتعاب. ضع اتفاقية فراق أولاً ثم اطلب من محاميك مراجعتها وتقديمها.' },
+            { tip: 'استخدم محامياً واحداً للصياغة لا محاميين للتقاضي', detail: 'في حالات الافتراق الودي الحقيقي، يمكن لمحامٍ واحد إعداد الاتفاقية ليراجعها ويوقعها الطرفان. هذا أرخص بكثير من وجود محامٍ لكل طرف متقابلَين أمام المحكمة.' },
+            { tip: 'رتب وثائقك قبل اللقاء الأول مع المحامي', detail: 'وقت المحامي المُنفق في ملاحقة الوثائق يُحتسب في الأتعاب. احضر معك عقد الزواج (مُصدَّقاً)، الجوازات، تفاصيل الإقامة في الإمارات، وثائق الممتلكات، والسجلات المالية.' },
+            { tip: 'احضر جلسات الوساطة بنية حقيقية للحل', detail: 'الوساطة الأسرية الإلزامية في الإمارات فرصة لإنهاء القضية بتكلفة منخفضة جداً. الأزواج الذين يستخدمونها بجدية يتجنبون الإجراءات القضائية الكاملة. الاتفاق عبر الوساطة يستغرق أياماً لا أشهراً.' },
+            { tip: 'افهم ما يريده شريكك فعلاً', detail: 'كثير من حالات الطلاق الطويلة ليست خلافاً حقيقياً على المبلغ المذكور — بل شكاوى غير محسومة. محادثة مباشرة واحدة أو جلسة وساطة واحدة حول ما يحتاجه كل طرف فعلاً تُحدث فارقاً أكثر من أشهر من المراسلات القانونية.' },
+          ].map((t, i) => (
+            <div class="tip-item">
+              <div class="tip-number">{i + 1}</div>
+              <div class="tip-content">
+                <h3>{t.tip}</h3>
+                <p>{t.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيفية حسابها والمطالبة بها</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة للمسلمين وغير المسلمين</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لأحكام الطلاق في الإمارات</span>
+          </a>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات" class="related-card">
+            <strong>كيفية تقديم الطلاق</strong>
+            <span>خطوات تقديم الدعوى في محاكم الإمارات</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1.05rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-card--highlight { border-color: #c9a84c; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-amount { font-size: 1.2rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; }
+  .summary-note-footer { font-size: 0.72rem; color: #998; margin-top: 1rem; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.85; margin-bottom: 0.75rem; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .cost-table thead tr { background: #0a1628; color: #fff; }
+  .cost-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .cost-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; }
+  .row-alt { background: #f8f9fa; }
+  .td-label { font-weight: 600; color: #0a1628; }
+  .td-cost { color: #c9a84c; font-weight: 700; white-space: nowrap; }
+  .td-notes { color: #556; }
+  .table-note { font-size: 0.78rem; color: #889; }
+
+  .lawyer-cards { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 1.5rem; }
+  .lawyer-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1.1rem 1.25rem; }
+  .lawyer-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .lawyer-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .lawyer-cost { font-weight: 800; color: #c9a84c; font-size: 0.92rem; white-space: nowrap; }
+  .lawyer-desc { font-size: 0.87rem; color: #556; line-height: 1.65; margin: 0; }
+
+  .info-box { background: #fffbe6; border: 1px solid #f0d060; border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+  .info-box h3 { font-size: 0.95rem; font-weight: 700; color: #6b5700; margin-bottom: 0.5rem; }
+  .info-box p, .info-box li { font-size: 0.87rem; color: #554400; line-height: 1.7; }
+  .info-box ul { margin: 0.5rem 0 0.75rem 0; padding-right: 1.25rem; }
+  .info-box li { margin-bottom: 0.35rem; }
+
+  .driver-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .driver-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; }
+  .driver-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .driver-factor { font-weight: 700; color: #0a1628; font-size: 0.95rem; }
+  .driver-impact { font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap; }
+  .driver-impact--very-high { background: #fde8e8; color: #c0392b; }
+  .driver-impact--high { background: #fef3e2; color: #b7770d; }
+  .driver-impact--medium { background: #eaf4fb; color: #2471a3; }
+  .driver-impact--medium-high { background: #fef3e2; color: #b7770d; }
+  .driver-desc { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+
+  .tips-list { display: flex; flex-direction: column; gap: 1rem; }
+  .tip-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tip-number { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-top: 0.1rem; }
+  .tip-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
+  .tip-content p { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>

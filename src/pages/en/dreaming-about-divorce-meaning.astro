@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Dreaming About Divorce — What Does It Mean? Islamic & Psychological View';
+const description =
+  'What does it mean to dream about divorce? Interpretations for married women, men, and single women — from Islamic dream tradition and modern psychology. Plus: when a dream signals something real.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/dreaming-about-divorce-meaning',
+  ar: 'https://divorceu.ae/ar/تفسير-الطلاق-في-المنام',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Dreaming About Divorce — Meaning', url: 'https://divorceu.ae/en/dreaming-about-divorce-meaning' },
+];
+
+const interpretations = [
+  {
+    title: 'Dreaming About Divorce — For a Married Woman',
+    scenarios: [
+      { scenario: 'Dreaming that your husband divorced you', meaning: 'Often reflects a perceived shift in the marital dynamic, a desire for greater independence, or unspoken tension that needs addressing. It is not generally interpreted as a prophecy of actual separation.' },
+      { scenario: 'Dreaming that you asked for divorce', meaning: "May symbolise a desire for change or freedom from a specific source of pressure. Can be a signal to reflect on what feels suffocating in the relationship — not a sign that you subconsciously want to leave." },
+      { scenario: 'Seeing a divorce certificate in the dream', meaning: 'Often mirrors anxiety about the stability of the marriage or fear about the future. Recurring versions of this dream are worth paying attention to as a prompt for open conversation with your partner.' },
+      { scenario: 'Dreaming of divorce with crying or grief', meaning: 'Islamic interpreters often read grief in a dream as a sign of emotional attachment and fear of loss — not as a foretelling of loss itself. The sadness signals how much the relationship matters to you.' },
+    ],
+  },
+  {
+    title: 'Dreaming About Divorce — For a Man',
+    scenarios: [
+      { scenario: 'Dreaming that you divorced your wife', meaning: "May reflect unresolved stress, marital tension that hasn't been addressed, or anxiety about failure. Not understood as a subconscious decision or pre-approval of divorce." },
+      { scenario: "Dreaming that you took back your wife after divorce (ruju')", meaning: "Typically interpreted positively — a return to stability, recovery from a difficult period, or an upcoming improvement in the relationship." },
+      { scenario: 'Hearing about a divorce in the dream without witnessing it', meaning: 'May simply be daily anxieties finding expression in sleep — especially common if the dreamer is going through a period of marital stress.' },
+    ],
+  },
+  {
+    title: 'Dreaming About Divorce — For a Single Woman',
+    scenarios: [
+      { scenario: 'Dreaming of being divorced despite not being married', meaning: "Some interpreters read this as a sign of detaching from a restrictive situation, habit, or relationship — and possibly a positive sign of regaining freedom from something that was weighing on the dreamer." },
+      { scenario: 'Dreaming about someone you know getting divorced', meaning: "Generally reflects the dreamer's own concerns about marriage and divorce as social phenomena, not a personal sign about her own future." },
+    ],
+  },
+];
+
+const ibnSirinNote = 'Classical Islamic dream interpretation, attributed to Ibn Sirin and other scholars, categorises dreams into three types: divinely inspired (a form of glad tidings), psychologically generated (reflecting one\'s own thoughts and worries), and distressing (attributed to negative influences). Scholars generally caution against making major life decisions based solely on dreams, advising consultation with knowledgeable people before acting.';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does it mean to dream about divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Dreaming about divorce most commonly reflects unspoken tension, fear of loss, or a desire for change in a relationship — rather than a prophecy of actual divorce. Both Islamic dream tradition and psychology agree that the content of dreams is shaped by the dreamer's emotional state and daily concerns. If the dream is recurring and causing significant anxiety, it may be worth reflecting on what is unresolved in your relationship.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does dreaming about divorce mean it will happen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "No. Dreaming about divorce has no legal or religious effect whatsoever. In Islamic jurisprudence, divorce requires an explicit verbal pronouncement while awake — words spoken in a dream have no legal consequence. This is a settled matter in Islamic law. Psychologically, the dream is a processing mechanism for emotion and anxiety, not a prediction.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "What does Ibn Sirin say about dreaming of divorce?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Classical Islamic dream interpretation texts attributed to Ibn Sirin suggest that a dream of divorce should not be read at face value. If the dream was accompanied by calm or relief, it may be interpreted positively — as a transition or release from difficulty. If accompanied by intense grief, it may reflect deep fear of loss or an unresolved emotional burden that warrants attention and prayer.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the meaning of a divorce dream differ for men and women?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes, the interpretation differs by context. For a man dreaming he divorced his wife, it often reflects unresolved stress or responsibility anxiety. For a married woman dreaming she is being divorced, it may signal a desire to change the relationship dynamic or fear of abandonment. Neither is a reliable indicator of actual divorce occurring.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I be worried if I keep dreaming about divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Recurring anxiety dreams — including divorce dreams — are worth noticing, not as omens but as psychological signals. If the dream keeps returning and wakes you with distress, it may be pointing to unresolved tension in your relationship that deserves a real conversation. If the dreams feel neutral and don't disturb you, they are likely just a topic on your mind with no deeper significance.",
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/dreaming-about-divorce-meaning"
+  lang="en"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Dream Interpretation</p>
+      <h1>Dreaming About Divorce — What Does It Mean?</h1>
+      <p class="hero-sub">Divorce dreams are among the most distressing people experience. Here is what Islamic dream tradition and psychology say about them — by scenario — and when a recurring dream might be pointing to something worth addressing in real life.</p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="notice-box">
+        <span class="notice-icon">📌</span>
+        <p><strong>Important:</strong> Dreaming about divorce has no legal or religious effect. In Islamic law, divorce requires an explicit verbal pronouncement while awake — a dream carries no legal weight whatsoever. What follows is interpretive and psychological context, not a religious ruling.</p>
+      </div>
+
+      {interpretations.map(group => (
+        <section class="content-section">
+          <h2>{group.title}</h2>
+          <div class="scenarios-list">
+            {group.scenarios.map(s => (
+              <div class="scenario-card">
+                <div class="scenario-q">{s.scenario}</div>
+                <p class="scenario-meaning">{s.meaning}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section class="content-section">
+        <h2>What Islamic Dream Tradition Says — Ibn Sirin</h2>
+        <div class="ibnsirin-box">
+          <p>{ibnSirinNote}</p>
+          <p>Classical interpretations consistently note that a dream read in isolation — without considering the dreamer's emotional state and waking circumstances — is unreliable as guidance. The presence of calm or relief in the dream generally points toward a positive reading; the presence of grief or distress points toward an emotional burden that is already present in the dreamer's waking life.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>When Is a Divorce Dream Just a Psychological Dream?</h2>
+        <p>Psychology distinguishes between dreams that process daily stress and those that surface deeper emotional conflict. A divorce dream is most likely psychological in origin if:</p>
+        <ul class="psy-list">
+          <li>You have recently been under marital or work-related stress.</li>
+          <li>You recently encountered stories about divorce in your social circle or in the media.</li>
+          <li>You experience general anxiety that manifests as "loss" dreams across various topics.</li>
+          <li>The dream stopped recurring once your relationship stress decreased.</li>
+        </ul>
+        <p>In these cases, the dream is a processing mechanism — not a signal. An open conversation with your partner or a session with a counsellor is likely all that is needed.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>If You Are Actually Considering Divorce</h2>
+        <p>If your dream reflects genuine thoughts about separation rather than just anxiety, it is worth knowing your legal rights and options before taking any step. In the UAE, divorce procedures and outcomes differ significantly based on your legal status, nationality, and whether children are involved.</p>
+        <div class="legal-links">
+          <a href="/en/divorce-in-uae">Divorce in UAE — Full Guide</a>
+          <a href="/en/khula-divorce-uae">Khulʿa Divorce UAE — Process &amp; Rights</a>
+          <a href="/en/divorce-cost-uae">Divorce Cost in UAE</a>
+          <a href="/en/child-custody-uae">Child Custody UAE</a>
+          <a href="/en/mutual-consent-divorce-uae">Mutual Consent Divorce UAE</a>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Need Legal Advice About Divorce in UAE?</h2>
+        <p>If your thoughts go beyond the dream and you have questions about your rights in a UAE divorce, we can connect you with a specialist family lawyer. Free initial consultation.</p>
+        <LeadForm source="dreaming-about-divorce-meaning" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'Divorce in UAE', href: '/en/divorce-in-uae', desc: 'Complete guide to divorce in UAE for residents and expats.' },
+            { title: 'Khulʿa Divorce UAE', href: '/en/khula-divorce-uae', desc: 'Wife-initiated divorce — conditions, process and mahr.' },
+            { title: "Wife's Rights After Divorce UAE", href: '/en/wife-rights-after-divorce-uae', desc: 'Mahr, alimony, custody rights and residency.' },
+            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Full cost breakdown — court fees and lawyer fees.' },
+            { title: 'Divorce Rate in UAE', href: '/en/divorce-rate-uae', desc: 'Statistics, trends and causes behind UAE divorce figures.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.85), rgba(10,22,40,0.85)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; font-size: 0.85rem; color: #7a8fa6; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  .notice-box { background: #fffbe6; border: 1.5px solid #fde68a; border-radius: 0.875rem; padding: 1rem 1.25rem; margin-bottom: 2.5rem; display: flex; gap: 0.75rem; align-items: flex-start; }
+  .notice-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .notice-box p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
+
+  .scenarios-list { display: flex; flex-direction: column; gap: 0.875rem; }
+  .scenario-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .scenario-q { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .scenario-meaning { font-size: 0.87rem; color: #445; line-height: 1.75; margin: 0; }
+
+  .ibnsirin-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.875rem; padding: 1.25rem 1.5rem; }
+  .ibnsirin-box p { font-size: 0.9rem; color: #5a4a20; line-height: 1.85; margin-bottom: 0.875rem; }
+  .ibnsirin-box p:last-child { margin-bottom: 0; }
+
+  .psy-list { margin: 0.75rem 0 1rem; padding-left: 1.5rem; }
+  .psy-list li { font-size: 0.88rem; color: #445; line-height: 1.8; margin-bottom: 0.3rem; }
+
+  .legal-links { display: flex; flex-wrap: wrap; gap: 0.625rem; }
+  .legal-links a { display: inline-block; background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.82rem; font-weight: 600; color: #7a6a30; text-decoration: none; transition: background 0.2s; }
+  .legal-links a:hover { background: #c9a84c; color: #fff; border-color: #c9a84c; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

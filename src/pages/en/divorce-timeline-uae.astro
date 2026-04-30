@@ -1,0 +1,376 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'How Long Does Divorce Take in UAE 2025 — Timeline by Case Type';
+const description =
+  'How long does divorce take in UAE? Full timeline for uncontested, contested, and custody cases — stage-by-stage from first filing to final decree, with Dubai, Abu Dhabi and Sharjah specifics.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-timeline-uae',
+  ar: 'https://divorceu.ae/ar/مدة-الطلاق-في-الامارات',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Timeline UAE', url: 'https://divorceu.ae/en/divorce-timeline-uae' },
+];
+
+const timelineCards = [
+  { type: 'Uncontested / Mutual Consent', duration: '1–3 months', cost: 'AED 4,000–10,000', hearings: '1–2', note: 'Both parties agree on all terms before filing. Fastest route to a decree.' },
+  { type: 'Contested — No Children', duration: '6–12 months', cost: 'AED 10,000–25,000', hearings: '4–8', note: 'Disputes over alimony or property. May require expert financial assessment.' },
+  { type: 'Contested — With Custody Dispute', duration: '12–24 months', cost: 'AED 20,000–60,000+', hearings: '8–15+', note: 'Welfare reports, expert witnesses, and multiple adjournments are common.' },
+  { type: 'Khulʿa (Wife-Initiated)', duration: '2–6 months', cost: 'AED 5,000–15,000', hearings: '2–4', note: 'Faster if husband agrees. Contested khulʿa can extend to 9–12 months.' },
+  { type: 'Non-Muslim Civil Divorce', duration: '1–4 months', cost: 'AED 3,500–12,000', hearings: '1–3', note: 'No-fault civil divorce for non-Muslim expats under Federal Decree-Law No. 41/2022.' },
+];
+
+const stages = [
+  {
+    num: 1,
+    title: 'Family Guidance / Reconciliation Session',
+    duration: '2–6 weeks from filing',
+    desc: 'All UAE divorce cases pass through a mandatory Family Guidance stage. The officer attempts reconciliation; if it fails, a certificate is issued allowing proceedings to continue. In Dubai this is the Family Guidance Section of Dubai Courts; in Abu Dhabi it falls under the Abu Dhabi Judicial Department. Expect 1–4 sessions for contested cases.',
+  },
+  {
+    num: 2,
+    title: 'First Court Hearing',
+    duration: '4–8 weeks after Family Guidance',
+    desc: 'The judge reviews the petition, confirms representation, and sets a procedural schedule. For uncontested cases the judge may finalise here or schedule a single confirmation hearing. Contested cases move to evidence exchange.',
+  },
+  {
+    num: 3,
+    title: 'Evidence Exchange and Expert Reports',
+    duration: '2–6 months (contested cases only)',
+    desc: 'Both sides submit financial records, witness statements, and property valuations. If children are involved, the court may appoint a social worker or psychologist to produce a welfare report. Expert reports are the main driver of delays in contested cases.',
+  },
+  {
+    num: 4,
+    title: 'Hearings and Pleadings',
+    duration: 'Ongoing — 1–2 hearings per month',
+    desc: 'The court schedules regular hearings. Adjournments for missing documents, absent parties, or additional evidence are common and add 3–6 weeks each. Experienced lawyers minimise adjournments by having all documents prepared in advance.',
+  },
+  {
+    num: 5,
+    title: 'Judgment',
+    duration: '1–4 weeks after final hearing',
+    desc: 'The judge issues a written ruling. In uncontested cases this often happens the same day as the final hearing. In contested cases the judge may reserve judgment and issue it at a separate session. Either party has 30 days to file an appeal.',
+  },
+  {
+    num: 6,
+    title: 'Divorce Certificate Issuance',
+    duration: '1–3 weeks after final judgment',
+    desc: 'Once the judgment is final — appeal period elapsed or both parties waive appeal — the court issues the official divorce certificate. This document is required for visa applications, name changes, remarriage, and home-country record updates.',
+  },
+];
+
+const delayFactors = [
+  { factor: 'Missing or unattested documents', impact: '+3–8 weeks per incident', tip: 'Have all documents translated and attested before your first hearing.' },
+  { factor: 'Party fails to appear', impact: '+3–6 weeks per missed hearing', tip: 'Both parties must be present or represented at every scheduled date.' },
+  { factor: 'Expert report ordered by court', impact: '+6–16 weeks', tip: 'Common in custody disputes. Agree on custody terms before filing to avoid this.' },
+  { factor: 'Post-judgment appeal', impact: '+3–6 months', tip: 'Appeal period is 30 days. If both parties waive, the decree becomes final immediately.' },
+  { factor: 'Disputed financial disclosure', impact: '+2–4 months', tip: 'Prepare a full asset schedule with your lawyer before proceedings begin.' },
+];
+
+const emirateDiffs = [
+  { emirate: 'Dubai', typical: '1–3 months (uncontested)', note: 'Highest caseload in UAE. Family Guidance sessions often scheduled within 2–3 weeks of filing. Well-staffed for expat cases under the 2022 civil divorce law.' },
+  { emirate: 'Abu Dhabi', typical: '2–4 months (uncontested)', note: 'Slightly longer average timelines for contested cases. Higher reliance on expert welfare reports in custody matters involving Emirati nationals.' },
+  { emirate: 'Sharjah', typical: '2–5 months (uncontested)', note: 'More active reconciliation process. Courts may schedule multiple Family Guidance sessions before allowing a case to proceed, which adds time but sometimes avoids a full contested hearing.' },
+  { emirate: 'Northern Emirates', typical: '2–4 months (uncontested)', note: 'Smaller caseloads can allow faster initial scheduling. Complex custody cases may take longer due to fewer specialist family judges.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does divorce take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested divorce in UAE typically takes 1–3 months from filing to final decree. A contested divorce without custody disputes takes 6–12 months. Divorces involving child custody disputes are the longest, typically 12–24 months. The single biggest variable is whether both parties agree on all terms before filing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a mutual consent divorce take in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A well-prepared mutual consent divorce in Dubai typically takes 4–12 weeks from first filing to decree. This includes the mandatory Family Guidance session (2–4 weeks) plus 1–2 court hearings. Having all documents translated, attested, and ready before filing is the most effective way to minimise the total time.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What causes delays in UAE divorce proceedings?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The most common causes of delay are missing or improperly attested documents, adjournments when one party fails to appear, disputes requiring expert reports (financial valuations, welfare reports), and post-judgment appeals. Each adjournment typically adds 3–6 weeks. An experienced divorce lawyer minimises delays by anticipating document requirements at every stage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you get a fast divorce in UAE without a court hearing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You cannot entirely bypass the court process in UAE, but a fully agreed mutual consent divorce can often be resolved in 1–2 hearings. The mandatory Family Guidance session must be completed first. If both spouses have a pre-signed separation agreement covering custody, alimony, and property, the court hearing itself is typically brief — often 30–60 minutes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long after divorce can you remarry in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Under UAE personal status law, a divorced Muslim woman must observe the iddah (waiting period) of approximately 3 months before remarrying. A Muslim man may remarry immediately after the decree. Non-Muslim expats are governed by their home country's law on remarriage waiting periods, though the official UAE divorce certificate must be issued first.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if one spouse is abroad during divorce proceedings in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If a spouse is abroad, proceedings can sometimes continue via power of attorney allowing a representative to appear. However, courts vary on when they accept POA representation vs. requiring personal appearance. In some stages — such as signing a mutual consent agreement — personal appearance or a notarised remote consent may be required. Your lawyer can advise on the specific requirements of your emirate and case type.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-timeline-uae"
+  lang="en"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">UAE Divorce Guide · 2025</p>
+      <h1>How Long Does Divorce Take in UAE? — Complete Timeline</h1>
+      <p class="hero-sub">From mandatory Family Guidance sessions to the final decree — here is the realistic stage-by-stage timeline for every type of divorce in UAE, with what causes delays and how to avoid them.</p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="highlight-box">
+        <h2>UAE Divorce Timeline — Quick Reference</h2>
+        <div class="timeline-cards">
+          {timelineCards.map(c => (
+            <div class="tl-card">
+              <div class="tl-type">{c.type}</div>
+              <div class="tl-duration">{c.duration}</div>
+              <div class="tl-meta">
+                <span>{c.hearings} hearings</span>
+                <span class="sep">·</span>
+                <span>{c.cost}</span>
+              </div>
+              <div class="tl-note">{c.note}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>Stage-by-Stage: What Happens at Each Step</h2>
+        <p>Every UAE divorce case — regardless of type — follows the same procedural sequence. The difference between a 6-week case and a 2-year case is almost entirely driven by what happens at stages 3 and 4.</p>
+        <div class="stages-list">
+          {stages.map(s => (
+            <div class="stage-card">
+              <div class="stage-header">
+                <div class="stage-num">{s.num}</div>
+                <div class="stage-head-text">
+                  <h3>{s.title}</h3>
+                  <span class="stage-duration">{s.duration}</span>
+                </div>
+              </div>
+              <p>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What Causes Delays — and How to Avoid Them</h2>
+        <p>Most UAE divorce timeline overruns are avoidable. The table below covers the five most common delay factors and what to do about each.</p>
+        <div class="delay-table">
+          <div class="delay-header">
+            <span>Delay Factor</span>
+            <span>Typical Impact</span>
+            <span>How to Avoid</span>
+          </div>
+          {delayFactors.map(d => (
+            <div class="delay-row">
+              <span class="delay-factor">{d.factor}</span>
+              <span class="delay-impact">{d.impact}</span>
+              <span class="delay-tip">{d.tip}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Timeline by Emirate</h2>
+        <p>All UAE courts follow the same federal personal status law, but processing times and local procedures vary. Here is what to expect in each main emirate.</p>
+        <div class="emirate-grid">
+          {emirateDiffs.map(e => (
+            <div class="emirate-card">
+              <h3>{e.emirate}</h3>
+              <div class="emirate-typical">{e.typical}</div>
+              <p>{e.note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Timeline for Non-Muslim Expats</h2>
+        <p>Federal Decree-Law No. 41 of 2022 introduced a civil personal status system for non-Muslims resident in the UAE. This significantly simplified and shortened divorce timelines for the majority of UAE expats.</p>
+        <div class="expat-box">
+          <div class="expat-item">
+            <span class="expat-label">No-fault divorce</span>
+            <p>Non-Muslims no longer need to prove grounds. Either party can file. Courts accept a unilateral no-fault petition.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">Typical timeline</span>
+            <p>1–4 months for straightforward non-Muslim civil divorces. Significantly faster than under the previous system where expats had to apply their home country law through UAE courts.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">Joint property and custody</span>
+            <p>Property and custody disputes still extend the timeline — 6–18 months for contested custody. The 2022 law does not bypass mediation requirements.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">DIFC Courts option</span>
+            <p>High-net-worth expats with DIFC-connected contracts can opt into DIFC Courts jurisdiction, which operates under common law and often resolves financial matters faster than the Personal Status Courts.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>How Divorce Timeline Affects Your Visa</h2>
+        <p>If your UAE residence visa is sponsored by your spouse, the clock starts ticking the moment the divorce decree is issued. You have <strong>30 days</strong> from the decree date to transfer or arrange new sponsorship.</p>
+        <p>This means that in a contested divorce where judgment day is unpredictable, you should prepare your alternative visa well in advance — before the final hearing, not after. Read our full guide: <a href="/en/visa-after-divorce-uae">Visa After Divorce UAE — Your 7 Pathways</a>.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Concerned About How Long Your Case Will Take?</h2>
+        <p>An experienced UAE divorce lawyer can give you a realistic timeline for your specific situation after reviewing the facts — and identify any steps you can take now to avoid delays. Initial consultations are typically 30–60 minutes.</p>
+        <LeadForm source="divorce-timeline-uae" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Court fees, lawyer fees, and what drives your total bill.' },
+            { title: 'Mutual Consent Divorce UAE', href: '/en/mutual-consent-divorce-uae', desc: 'Fastest route — how to agree and file together.' },
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step filing guide for Dubai courts.' },
+            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: 'The 30-day rule and your 7 visa pathways.' },
+            { title: 'Documents for Divorce UAE', href: '/en/documents-for-divorce-uae', desc: 'Complete checklist + attestation guide.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.78), rgba(10,22,40,0.78)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+  .content-section a { color: #c9a84c; font-weight: 600; text-decoration: none; }
+  .content-section a:hover { text-decoration: underline; }
+
+  .highlight-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.5rem; margin-bottom: 3rem; }
+  .highlight-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .timeline-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.875rem; }
+  .tl-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1rem; }
+  .tl-type { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .tl-duration { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .tl-meta { font-size: 0.78rem; color: #667; margin-bottom: 0.5rem; }
+  .tl-meta .sep { margin: 0 0.3rem; }
+  .tl-note { font-size: 0.78rem; color: #556; line-height: 1.55; }
+
+  .stages-list { display: flex; flex-direction: column; gap: 1rem; }
+  .stage-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .stage-header { display: flex; align-items: flex-start; gap: 0.875rem; margin-bottom: 0.6rem; }
+  .stage-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .stage-head-text h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0 0 0.2rem; }
+  .stage-duration { font-size: 0.75rem; font-weight: 600; color: #c9a84c; background: #fef9e7; padding: 0.15rem 0.5rem; border-radius: 999px; }
+  .stage-card p { font-size: 0.88rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .delay-table { border: 1px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; font-size: 0.85rem; }
+  .delay-header { display: grid; grid-template-columns: 2fr 1.5fr 2fr; gap: 0.5rem; background: #0a1628; color: #fff; padding: 0.75rem 1rem; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .delay-row { display: grid; grid-template-columns: 2fr 1.5fr 2fr; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid #e8eaed; align-items: start; }
+  .delay-row:nth-child(odd) { background: #f8f9fa; }
+  .delay-factor { color: #0a1628; font-weight: 600; }
+  .delay-impact { color: #c0392b; font-weight: 700; }
+  .delay-tip { color: #445; }
+
+  .emirate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .emirate-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.1rem 1.25rem; }
+  .emirate-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
+  .emirate-typical { font-size: 0.8rem; font-weight: 700; color: #c9a84c; background: #fef9e7; display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; margin-bottom: 0.6rem; }
+  .emirate-card p { font-size: 0.83rem; color: #445; line-height: 1.65; margin: 0; }
+
+  .expat-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .expat-item { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .expat-label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #1e40af; margin-bottom: 0.4rem; letter-spacing: 0.05em; }
+  .expat-item p { font-size: 0.85rem; color: #1e3a5f; line-height: 1.65; margin: 0; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 700px) {
+    .delay-header, .delay-row { grid-template-columns: 1fr; }
+    .delay-header span:not(:first-child) { display: none; }
+    .delay-impact, .delay-tip { padding-left: 0.5rem; }
+  }
+</style>

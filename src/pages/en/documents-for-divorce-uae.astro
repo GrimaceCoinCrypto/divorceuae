@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Documents Required for Divorce in UAE 2025 — Complete Checklist';
+const description =
+  'Full checklist of documents required to file for divorce in UAE — what to prepare, how to get them translated and attested, and what expats need that residents may not. Updated April 2025.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/documents-for-divorce-uae',
+  ar: 'https://divorceu.ae/ar/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Documents for Divorce UAE' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What documents do I need to file for divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To file for divorce in UAE, you typically need: original marriage certificate (attested and translated to Arabic), passports of both parties, UAE residence visas or Emirates IDs, recent passport-size photographs, and children\'s birth certificates if applicable. Expats also need their marriage certificate attested by the UAE Ministry of Foreign Affairs and their home country embassy. Additional financial documents may be required for contested alimony or property claims.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does my marriage certificate need to be translated for UAE divorce proceedings?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. All foreign documents presented to UAE courts must be translated into Arabic by a certified legal translator accredited by UAE Ministry of Justice. The marriage certificate also typically needs to be attested — first in your home country (notary + foreign affairs ministry), then by the UAE Ministry of Foreign Affairs. Costs: AED 100–400 per translation, AED 150–600 for attestation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I file for divorce in UAE without the original marriage certificate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The original (or certified copy) of the marriage certificate is generally required by UAE courts. If your original was issued abroad and is difficult to obtain, contact the issuing registry for a certified copy. Some courts may accept alternative proof of marriage (such as a certificate from a religious authority) in exceptional circumstances, but this varies by emirate and judge. A lawyer can advise on options for your specific situation.',
+      },
+    },
+  ],
+};
+
+const docCategories = [
+  {
+    title: 'Essential for Both Parties',
+    icon: '📋',
+    critical: true,
+    docs: [
+      { doc: 'Original marriage certificate', note: 'Must be the original or a certified copy. If issued abroad, needs attestation.' },
+      { doc: 'Certified Arabic translation of marriage certificate', note: 'By a UAE Ministry of Justice accredited translator. AED 100–400.' },
+      { doc: 'Valid passports (both parties)', note: 'Copies of current passport — all pages with stamps.' },
+      { doc: 'UAE residence visa or Emirates ID', note: 'Or tourist visa stamp if on short-term stay. Both parties\' residency status affects which court has jurisdiction.' },
+      { doc: 'Recent passport-size photographs', note: '4–6 photos each. Some courts specify white or grey background.' },
+    ],
+  },
+  {
+    title: 'If Children Are Involved',
+    icon: '👨‍👩‍👧',
+    critical: true,
+    docs: [
+      { doc: 'Children\'s birth certificates (originals + Arabic translation)', note: 'Attested if issued abroad.' },
+      { doc: 'Children\'s UAE school enrollment records', note: 'Relevant if custody arrangement involves school district.' },
+      { doc: 'Children\'s passports or UAE ID cards', note: 'Required for identifying the children in custody orders.' },
+      { doc: 'Current custody arrangement (if any prior order exists)', note: 'Any existing formal custody agreement or prior court order.' },
+    ],
+  },
+  {
+    title: 'For Contested Alimony or Financial Claims',
+    icon: '💰',
+    critical: false,
+    docs: [
+      { doc: 'Recent salary certificate or employment letter', note: 'For both parties if relevant. Certifies current monthly income.' },
+      { doc: 'Bank statements (last 3–6 months)', note: 'Key for proving income or establishing standard of living.' },
+      { doc: 'UAE property title deeds', note: 'If joint property or family home is part of the settlement.' },
+      { doc: 'Vehicle registration documents', note: 'If vehicles are part of the asset division.' },
+      { doc: 'Business ownership documents', note: 'Trade license, shareholding certificates if a business is at stake.' },
+      { doc: 'Rental agreement / utility bills', note: 'Proves current residence and helps establish household expenses.' },
+    ],
+  },
+  {
+    title: 'Expats Only — Additional Requirements',
+    icon: '🌍',
+    critical: true,
+    docs: [
+      { doc: 'Marriage certificate attested by home country notary', note: 'First step in the attestation chain. Varies by country — may require state or federal authentication.' },
+      { doc: 'Attestation by home country Ministry of Foreign Affairs', note: 'Second attestation step. Known as "legalisation" in some countries.' },
+      { doc: 'UAE Ministry of Foreign Affairs attestation', note: 'Final step. Required before UAE courts will accept foreign documents.' },
+      { doc: 'Home country embassy in UAE attestation (if required)', note: 'Some countries require an additional embassy stamp in the UAE. Check with your embassy.' },
+    ],
+  },
+];
+
+const attestationSteps = [
+  { num: 1, step: 'Get the document notarised by a local notary in your home country.' },
+  { num: 2, step: 'Submit to the relevant state or regional government for authentication (varies by country).' },
+  { num: 3, step: 'Submit to your home country\'s Ministry of Foreign Affairs for the foreign affairs apostille or legalisation stamp.' },
+  { num: 4, step: 'Submit to your home country\'s embassy or consulate in the UAE (if your country requires this step).' },
+  { num: 5, step: 'Submit to the UAE Ministry of Foreign Affairs (MOFA) in Abu Dhabi, Dubai, or the relevant emirate. MOFA attestation can now be done online via the MOFA UAE portal or through approved service agents.' },
+  { num: 6, step: 'Take the fully attested document to a UAE Ministry of Justice accredited legal translator for the Arabic certified translation.' },
+];
+
+const faqItems = [
+  {
+    question: 'How much does it cost to attest a marriage certificate for UAE divorce?',
+    answer: 'Attestation costs vary significantly by country of origin. In total, the full attestation chain (home country notary + state authentication + home country foreign affairs + UAE MOFA) typically costs AED 300–1,000 equivalent. Professional document clearing agencies in the UAE charge AED 300–600 to handle the UAE MOFA step on your behalf. Adding the certified Arabic translation, budget AED 500–1,500 total per foreign document.',
+  },
+  {
+    question: 'What if my spouse refuses to provide documents?',
+    answer: 'If your spouse refuses to produce documents they control (bank statements, property documents), your lawyer can apply to the court for a disclosure order. The court can compel production of financial documents. For documents issued by third parties (banks, employers), your lawyer can request the court to issue subpoenas or information orders directly to the institution.',
+  },
+  {
+    question: 'Do UAE marriage certificates need attestation too?',
+    answer: 'UAE-issued marriage certificates (issued by the UAE courts or authorised religious officials) are already official UAE government documents and do not need attestation for use in UAE courts. However, if you need to use a UAE marriage certificate abroad (for divorce recognition in another country), it would need UAE MOFA attestation and then authentication in the destination country.',
+  },
+  {
+    question: 'How long does the attestation process take?',
+    answer: 'UAE MOFA attestation for routine documents takes 1–3 working days in person, or 3–5 days online. The home country steps vary widely — the US State Department takes 8–12 weeks for apostille by mail, while UK Foreign Office apostille takes 10 days. Most expats spend 2–6 weeks completing the full chain before their documents are ready for court. Plan this well in advance of your intended filing date.',
+  },
+  {
+    question: 'Can I hire someone to handle document attestation for me?',
+    answer: 'Yes. Document clearing agencies (PRO services) in the UAE handle the MOFA and translation steps efficiently for AED 300–800 depending on the service. For the home country steps, you need to either handle it yourself, use your home country\'s embassy in UAE, or hire a local service in your home country. Your UAE lawyer will typically coordinate or recommend reliable service providers.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/documents-for-divorce-uae"
+  lang="en"
+  hreflang={hreflang}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Practical Guide · UAE 2025</p>
+      <h1>Documents Required for Divorce in UAE 2025 — Complete Checklist</h1>
+      <p class="hero-sub">Getting your documents right before you file saves weeks and thousands of dirhams. This is the complete list of what UAE courts require — for residents, expats, Muslims, and non-Muslims.</p>
+      <div class="hero-meta">
+        <span>Updated: April 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="quick-note">
+        <p><strong>Key rule:</strong> All foreign documents presented to UAE courts must be (1) attested through the full chain from your home country to UAE MOFA, and (2) translated into Arabic by a UAE Ministry of Justice accredited translator. Without both steps, the document will not be accepted.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>Document Checklist by Category</h2>
+
+        {docCategories.map(cat => (
+          <div class="doc-category">
+            <div class="cat-header">
+              <span class="cat-icon">{cat.icon}</span>
+              <h3>{cat.title}</h3>
+              {cat.critical && <span class="required-badge">Required</span>}
+            </div>
+            <div class="doc-list">
+              {cat.docs.map(d => (
+                <div class="doc-item">
+                  <div class="doc-check">✓</div>
+                  <div>
+                    <p class="doc-name">{d.doc}</p>
+                    <p class="doc-note">{d.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section class="content-section">
+        <h2>How to Attest a Foreign Marriage Certificate for UAE Courts</h2>
+        <p>This is the step that catches most expats off guard. The full attestation chain for a foreign marriage certificate is:</p>
+
+        <div class="attest-steps">
+          {attestationSteps.map(s => (
+            <div class="attest-step">
+              <div class="attest-num">{s.num}</div>
+              <p>{s.step}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="attest-note">
+          <h3>Countries that use the Apostille system</h3>
+          <p>If your home country is a member of the Hague Apostille Convention (US, UK, Australia, most EU countries), you can replace steps 2 and 3 with a single apostille stamp — significantly faster. UAE MOFA accepts apostilled documents. Countries not in the convention (Pakistan, India, some Middle Eastern countries) must complete the full legalisation chain.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Document Preparation Timeline</h2>
+        <div class="timeline">
+          {[
+            { period: '6–8 weeks before filing', tasks: ['Request certified copy of marriage certificate from issuing registry', 'Begin home-country attestation chain', 'Gather financial documents (bank statements, salary certificates)'] },
+            { period: '3–4 weeks before filing', tasks: ['Complete UAE MOFA attestation', 'Submit to accredited Arabic translator', 'Consult with a lawyer and confirm what they need for your specific case'] },
+            { period: '1–2 weeks before filing', tasks: ['Collect all translated and attested documents', 'Organise children\'s documents if applicable', 'Confirm all parties have valid UAE residence documents'] },
+            { period: 'Day of filing', tasks: ['Bring originals AND certified copies of everything', 'Bring payment for court fees (AED 500–1,500)', 'Bring your lawyer or confirm appointment with the filing agent'] },
+          ].map(t => (
+            <div class="timeline-item">
+              <div class="tl-period">{t.period}</div>
+              <ul class="tl-tasks">
+                {t.tasks.map(task => <li>{task}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Not Sure Which Documents You Need?</h2>
+        <p>Document requirements can differ by emirate, case type, and nationality. A brief consultation will give you a precise list for your situation and avoid costly delays at filing.</p>
+        <LeadForm source="documents-for-divorce-uae" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step guide to the court filing process.' },
+            { title: 'Mutual Consent Divorce UAE', href: '/en/mutual-consent-divorce-uae', desc: 'The fastest, cheapest divorce path if you both agree.' },
+            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Government fees, lawyer fees, and hidden costs.' },
+            { title: 'Divorce in UAE for Expats', href: '/en/divorce-in-uae-for-expats', desc: 'What changes for expat couples under UAE law.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.78), rgba(10,22,40,0.78)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  .quick-note { background: #fffbe6; border: 1px solid #f0d060; border-radius: 0.875rem; padding: 1.1rem 1.4rem; margin-bottom: 3rem; }
+  .quick-note p { font-size: 0.92rem; color: #554400; line-height: 1.7; margin: 0; }
+  .quick-note strong { color: #6b5700; }
+
+  .doc-category { margin-bottom: 2rem; }
+  .cat-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.875rem; flex-wrap: wrap; }
+  .cat-icon { font-size: 1.25rem; }
+  .cat-header h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .required-badge { font-size: 0.68rem; font-weight: 700; background: #fde8e8; color: #c0392b; padding: 0.2rem 0.6rem; border-radius: 999px; }
+  .doc-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .doc-item { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 1rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 8px; }
+  .doc-check { color: #16a34a; font-weight: 700; font-size: 0.85rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .doc-name { font-size: 0.9rem; font-weight: 600; color: #0a1628; margin: 0 0 0.2rem; }
+  .doc-note { font-size: 0.8rem; color: #667; margin: 0; }
+
+  .attest-steps { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+  .attest-step { display: flex; gap: 0.875rem; align-items: flex-start; }
+  .attest-num { width: 1.8rem; height: 1.8rem; min-width: 1.8rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+  .attest-step p { font-size: 0.88rem; color: #334; line-height: 1.7; margin: 0; padding-top: 0.2rem; }
+  .attest-note { background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.75rem; padding: 1rem 1.25rem; }
+  .attest-note h3 { font-size: 0.92rem; font-weight: 700; color: #064e3b; margin-bottom: 0.35rem; }
+  .attest-note p { font-size: 0.85rem; color: #1a4d30; line-height: 1.7; margin: 0; }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; border-right: 3px solid #c9a84c; padding-right: 1.5rem; }
+  .timeline-item { position: relative; padding: 0 0 1.5rem 0; }
+  .timeline-item::before { content: ''; position: absolute; right: -1.65rem; top: 0.3rem; width: 10px; height: 10px; background: #c9a84c; border-radius: 50%; }
+  .tl-period { font-size: 0.8rem; font-weight: 700; color: #c9a84c; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .tl-tasks { margin: 0; padding-left: 1.25rem; }
+  .tl-tasks li { font-size: 0.87rem; color: #334; line-height: 1.7; margin-bottom: 0.2rem; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>
