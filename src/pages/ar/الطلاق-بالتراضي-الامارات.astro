@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق بالتراضي في الإمارات ٢٠٢٥ — الخطوات والتكلفة والوثائق';
+const description =
+  'دليل شامل للطلاق بالتراضي في الإمارات: خطوات التقديم، الوثائق المطلوبة، رسوم المحكمة، المدة الزمنية، وما يجب الاتفاق عليه قبل التقديم — للمسلمين وغير المسلمين.';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-بالتراضي-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/mutual-consent-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق بالتراضي في الإمارات' },
+];
+
+const glance = [
+  { label: 'المدة الزمنية', value: '١–٣ أشهر' },
+  { label: 'التكلفة الإجمالية', value: '٤٠٠٠–١٠٠٠٠ درهم' },
+  { label: 'جلسات المحكمة', value: '١–٢ جلسات' },
+  { label: 'الشرط الأساسي', value: 'الاتفاق الكامل على جميع البنود' },
+];
+
+const steps = [
+  {
+    num: '١',
+    title: 'صياغة اتفاقية الانفصال',
+    desc: 'قبل التقديم، يتفق الطرفان كتابياً على: حضانة الأطفال وجدول الزيارات، ومبلغ النفقة ومدتها، وتقسيم الممتلكات والحسابات المشتركة، والإقامة في الإمارات. يصبح هذا الاتفاق أساس طلب الطلاق أمام المحكمة.',
+    tip: 'الاتفاقية المحررة من محامٍ توفر الوقت في المحكمة وتضمن قابلية البنود للتنفيذ.',
+  },
+  {
+    num: '٢',
+    title: 'جمع الوثائق وترجمتها',
+    desc: 'يجمع كلا الطرفين: عقد الزواج الأصلي (مصدَّق)، جوازات السفر وبطاقات الهوية الإماراتية، وثائق الأطفال إن وجدت، والوثائق المالية إذا تعلق الأمر بالنفقة. الوثائق الأجنبية تحتاج إلى ترجمة قانونية معتمدة إلى العربية وتصديق.',
+    tip: 'تكلفة الترجمة ١٠٠–٤٠٠ درهم للوثيقة. أعدّ جميع الوثائق قبل موعدك الأول مع المحامي.',
+  },
+  {
+    num: '٣',
+    title: 'تقديم الطلب لمحكمة الأحوال الشخصية',
+    desc: 'يقدم محاميك عريضة الطلاق واتفاقية الانفصال الموقعة لمحكمة الأحوال الشخصية في إمارتك. تُدفع رسوم حكومية قدرها ٥٠٠–١٥٠٠ درهم في هذه المرحلة. تفتح المحكمة ملف القضية وتحدد موعد جلسة الإرشاد الأسري.',
+    tip: 'في دبي تتولى ذلك قسم شؤون الأسرة في محاكم دبي.',
+  },
+  {
+    num: '٤',
+    title: 'حضور جلسة الإرشاد الأسري',
+    desc: 'يُلزم القانون الإماراتي معظم الأزواج الراغبين في الطلاق بحضور جلسة إرشاد أسري واحدة على الأقل. في حالات الطلاق بالتراضي عادةً ما تكون جلسة واحدة قصيرة للتأكد من حرية موافقة الطرفين، ثم يُصدر المرشد شهادة تتيح متابعة القضية.',
+    tip: 'احضر بحسن نية. الجلسة ليست لإيقافك بل هي إجراء شكلي.',
+  },
+  {
+    num: '٥',
+    title: 'جلسة المحكمة وإصدار الحكم',
+    desc: 'يراجع القاضي الاتفاقية ويتأكد من موافقة الطرفين ويُصدر حكم الطلاق. في القضايا المتفق عليها فعلاً تكون هذه الجلسة مختصرة في الغالب. الحكم هو الإثبات القانوني للطلاق لجميع الأغراض اللاحقة (التأشيرة، الزواج مجدداً، تغيير الوثائق).',
+    tip: 'اطلب نسخاً موثقة من الحكم فوراً — ستحتاجها لتأشيرتك وجواز سفرك والبنك.',
+  },
+];
+
+const checklist = [
+  { item: 'حضانة الأطفال — الترتيب الأساسي والتكميلي', critical: true },
+  { item: 'جدول الزيارات — أيام الأسبوع وعطل نهاية الأسبوع والإجازات', critical: true },
+  { item: 'مبلغ نفقة الأطفال وطريقة الدفع', critical: true },
+  { item: 'النفقة — المبلغ والمدة وشرط الانتهاء', critical: true },
+  { item: 'تقسيم الحسابات البنكية المشتركة', critical: false },
+  { item: 'الممتلكات في الإمارات أو الاتفاق على البيع', critical: false },
+  { item: 'من يحتفظ بمسكن الزوجية وإلى متى', critical: false },
+  { item: 'ترتيبات التأشيرة — من يكفل الأطفال بعد الطلاق', critical: true },
+  { item: 'المهر (للزيجات الإسلامية) — الاتفاق على الإعادة أو التنازل', critical: false },
+  { item: 'موافقة السفر الدولي للأطفال', critical: false },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'كيف يعمل الطلاق بالتراضي في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'في الطلاق بالتراضي يتفق الزوجان على إنهاء الزواج وعلى جميع البنود الرئيسية — النفقة والحضانة ونفقة الأطفال وتقسيم الممتلكات — قبل التقديم. يُقدَّم هذا الاتفاق لمحكمة الأحوال الشخصية كطلب مشترك. تراجع المحكمة البنود وقد تطلب جلسة إرشاد، ثم تُصدر حكم الطلاق. تستغرق العملية عادةً ١–٣ أشهر وتكلف جزءاً بسيطاً من تكلفة الطلاق الخلافي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم يستغرق الطلاق بالتراضي في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق بالتراضي المُعدّ جيداً يستغرق ١–٣ أشهر من التقديم حتى صدور الحكم. تعتمد المدة على سرعة تحديد موعد جلسة الإرشاد الأسري (عادةً ٢–٤ أسابيع بعد التقديم) وجدول المحكمة. إذا كان الطرفان حاضرَين ومتفقَين تماماً فالجلسة نفسها كثيراً ما تنتهي في ٣٠–٦٠ دقيقة. أي خلاف حتى بسيط قد يمدّ الإجراءات لستة أشهر أو أكثر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تكلفة الطلاق بالتراضي في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يتكلف الطلاق بالتراضي في الإمارات عادةً ٤٠٠٠–١٠٠٠٠ درهم إجمالاً، تشمل رسوم المحكمة الحكومية ٥٠٠–١٥٠٠ درهم وأتعاب المحامي ٣٠٠٠–٨٠٠٠ درهم. ترجمة الوثائق وتصديقها للوافدين يُضيف ٥٠٠–٢٠٠٠ درهم. وهذا أقل بكثير من الطلاق الخلافي (١٥٠٠٠–٨٠٠٠٠ درهم أو أكثر).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع غير المسلمين الحصول على الطلاق بالتراضي في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. يستطيع الوافدون غير المسلمون الحصول على طلاق بالتراضي في الإمارات. بموجب تعديلات القانون الاتحادي (السارية منذ ٢٠٢٣) يستطيع الوافدون غير المسلمين تطبيق قانون بلدهم المدني على طلاقهم. يُنصح بشدة بالاستعانة بمحامٍ متخصص في طلاقات الوافدين.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن التراجع عن الطلاق بالتراضي بعد صدور الحكم؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'بعد أن تُصدر محكمة إماراتية حكم طلاق نهائياً في قضية تراضٍ، يصعب جداً التراجع عنه. يستطيع طرف يشعر بأنه وقّع تحت الإكراه أو دون فهم كافٍ الطعن خلال المهلة القانونية (٣٠ يوماً في معظم الحالات) لكنه يحتاج إلى إثبات قوي. لهذا تحديداً من الضروري الحصول على مشورة قانونية مستقلة قبل التوقيع — الاتفاقية ملزمة حين يوافق القاضي عليها.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث لتأشيرة الإقامة بعد الطلاق بالتراضي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا كانت إقامتك في الإمارات مرتبطة بكفالة زوجك/زوجتك فلديك ٣٠ يوماً من صدور حكم الطلاق لترتيب كفالة بديلة. الخيارات: كفالة صاحب العمل، تأشيرة المستثمر أو العمل الحر، كفالة أحد الوالدين إذا كان الأطفال مواطنين إماراتيين. راجع دليلنا الكامل: تأشيرة بعد الطلاق في الإمارات.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق الودي · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        إذا اتفق الزوجان على إنهاء الزواج، فالطلاق بالتراضي في الإمارات أسرع وأقل تكلفة بكثير من الطلاق الخلافي. إليك بالضبط كيف تسير الإجراءات — من الاتفاق حتى صدور الحكم.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="glance-box">
+        <h2>الطلاق بالتراضي — لمحة سريعة</h2>
+        <div class="glance-grid">
+          {glance.map(g => (
+            <div class="glance-item">
+              <span class="glance-label">{g.label}</span>
+              <span class="glance-value">{g.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>الخطوات — الطلاق بالتراضي في الإمارات</h2>
+        <div class="steps-list">
+          {steps.map(s => (
+            <div class="step-card">
+              <div class="step-header">
+                <div class="step-num">{s.num}</div>
+                <h3>{s.title}</h3>
+              </div>
+              <p class="step-desc">{s.desc}</p>
+              <p class="step-tip"><strong>نصيحة:</strong> {s.tip}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>ما يجب الاتفاق عليه قبل التقديم</h2>
+        <p>ينجح الطلاق بالتراضي أو يتعثر بناءً على مدى شمولية الاتفاق قبل الحضور للمحكمة. أي بند غير محسوم يتحول إلى نقطة خلافية حين تبدأ الإجراءات.</p>
+        <div class="checklist">
+          {checklist.map(c => (
+            <div class={`checklist-item ${c.critical ? 'checklist-item--critical' : ''}`}>
+              <span class="check-icon">{c.critical ? '★' : '✓'}</span>
+              <span>{c.item}</span>
+              {c.critical && <span class="critical-badge">أساسي</span>}
+            </div>
+          ))}
+        </div>
+        <p class="checklist-note">★ البنود الأساسية — لن تُنهي المحكمة الطلاق دون تسويتها. ✓ مهمة لكن يمكن معالجتها بصورة منفصلة.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>مقارنة التكلفة: الطلاق بالتراضي مقابل الطلاق الخلافي</h2>
+        <div class="compare-grid">
+          <div class="compare-card compare-card--good">
+            <h3>الطلاق بالتراضي</h3>
+            <div class="compare-stat">٤٠٠٠–١٠٠٠٠ درهم</div>
+            <ul>
+              <li>١–٣ أشهر إجمالاً</li>
+              <li>١–٢ جلسات قضائية</li>
+              <li>محامٍ واحد أو محاميان بالتنسيق</li>
+              <li>شروط التسوية سرية</li>
+              <li>تكلفة عاطفية أقل</li>
+            </ul>
+          </div>
+          <div class="compare-card compare-card--warn">
+            <h3>الطلاق الخلافي</h3>
+            <div class="compare-stat">١٥٠٠٠–٨٠٠٠٠ درهم أو أكثر</div>
+            <ul>
+              <li>٦–٢٤ شهراً في الغالب</li>
+              <li>جلسات متعددة وتقارير خبراء</li>
+              <li>محامٍ لكل طرف على حدة</li>
+              <li>النتيجة يقررها القاضي</li>
+              <li>ضغط أكبر على الأطفال والطرفين</li>
+            </ul>
+          </div>
+        </div>
+        <p class="compare-note">حتى تسوية نزاع واحد حول الحضانة أو النفقة قبل التقديم قد توفر ١٠٠٠٠ درهم أو أكثر وستة أشهر من الإجراءات.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>اعتبارات خاصة بالوافدين</h2>
+        <div class="expat-grid">
+          <div class="expat-item">
+            <span class="expat-label">اختيار القانون المطبَّق</span>
+            <p>يستطيع الوافدون غير المسلمين اختيار تطبيق قانون بلدهم المدني على الطلاق بموجب تعديلات القانون الاتحادي السارية منذ ٢٠٢٣. إذا كان الزوجان يحملان نفس الجنسية فتطبيق قانون البلد الأصلي غالباً ما يبسّط الإجراءات ويضمن الاعتراف بالطلاق في بلدهما.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">التخطيط للتأشيرة والإقامة</span>
+            <p>خطط لتأشيرتك بعد الطلاق قبل التقديم لا بعده. لديك ٣٠ يوماً من صدور الحكم لنقل الكفالة. الخيارات: كفالة صاحب العمل، تأشيرة مستثمر أو حر، كفالة أحد الوالدين إذا كان الأطفال مواطنين. راجع دليلنا: <a href="/ar/تأشيرة-بعد-الطلاق-الامارات">تأشيرة بعد الطلاق في الإمارات</a>.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">الاعتراف الدولي بالحكم</span>
+            <p>أحكام الطلاق الإماراتية معترف بها دولياً على نطاق واسع لكنها تستلزم عادةً التصديق بالأبوستيل وتسجيلها في بلدك الأصلي. خطط لهذه الخطوة مسبقاً لتفادي التأخير عند الحاجة لها (الزواج مجدداً، المعاش، العقارات).</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-section">
+        <h2>مستعد للبدء؟ احصل على استشارة مجانية</h2>
+        <p>محامي الطلاق الإماراتي المتمرس يستطيع مراجعة مسودة اتفاقيتك، وتنبيهك لأي بنود قد تُسبب إشكالاً في الجلسة، وتقديم كل الوثائق بصورة صحيحة من المرة الأولى. معظم قضايا التراضي المُعدّة جيداً تنتهي في شهرين.</p>
+        <LeadForm source="الطلاق-بالتراضي" />
+      </div>
+
+      <section class="related-section">
+        <h2>دلائل ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'كيفية تقديم الطلاق في الإمارات', href: '/ar/كيفية-تقديم-الطلاق-في-الامارات', desc: 'دليل خطوة بخطوة لإجراءات المحكمة.' },
+            { title: 'تكلفة الطلاق في الإمارات', href: '/ar/تكلفة-الطلاق-في-الامارات', desc: 'رسوم المحكمة وأتعاب المحامين ومحركات التكلفة.' },
+            { title: 'مدة الطلاق في الإمارات', href: '/ar/مدة-الطلاق-في-الامارات', desc: 'الجدول الزمني لكل نوع من أنواع الطلاق.' },
+            { title: 'تأشيرة بعد الطلاق في الإمارات', href: '/ar/تأشيرة-بعد-الطلاق-الامارات', desc: 'قاعدة الثلاثين يوماً وسبع مسارات للتأشيرة.' },
+            { title: 'الطلاق الخلافي والاتفاقي في الإمارات', href: '/ar/الطلاق-الخلافي-والاتفاقي-الامارات', desc: 'مقارنة بين نوعَي الطلاق بالتفصيل.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+    text-align: right;
+  }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-author { font-size: 0.85rem; color: #7a8fa6; }
+
+  .page-layout { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .glance-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.5rem; margin-bottom: 3rem; }
+  .glance-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .glance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; }
+  .glance-item { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 0.875rem; text-align: center; }
+  .glance-label { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.3rem; }
+  .glance-value { display: block; font-size: 1rem; font-weight: 800; color: #0a1628; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.8; margin-bottom: 0.9rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .step-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .step-header { display: flex; align-items: flex-start; gap: 0.875rem; margin-bottom: 0.6rem; }
+  .step-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .step-header h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0; padding-top: 0.3rem; }
+  .step-desc { font-size: 0.9rem; color: #445; line-height: 1.7; margin-bottom: 0.5rem; }
+  .step-tip { font-size: 0.82rem; color: #5a6a40; background: #f0fdf4; border-radius: 6px; padding: 0.5rem 0.75rem; margin: 0; }
+  .step-tip strong { color: #064e3b; }
+
+  .checklist { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .checklist-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.625rem 0.875rem; background: #f8f9fa; border-radius: 8px; font-size: 0.88rem; color: #334; }
+  .checklist-item--critical { background: #fffbe6; }
+  .check-icon { font-size: 0.8rem; color: #16a34a; font-weight: 700; }
+  .checklist-item--critical .check-icon { color: #c9a84c; }
+  .critical-badge { margin-right: auto; margin-left: 0; font-size: 0.65rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 0.15rem 0.5rem; border-radius: 999px; }
+  .checklist-note { font-size: 0.78rem; color: #778; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .compare-card { border-radius: 0.875rem; padding: 1.25rem; }
+  .compare-card h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .compare-stat { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .compare-card ul { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .compare-card li { font-size: 0.84rem; line-height: 1.7; margin-bottom: 0.25rem; }
+  .compare-card--good { background: #f0fdf4; border: 1.5px solid #86efac; }
+  .compare-card--good h3 { color: #064e3b; }
+  .compare-card--good .compare-stat { color: #16a34a; }
+  .compare-card--good li { color: #1a4d30; }
+  .compare-card--warn { background: #fff7ed; border: 1.5px solid #fdba74; }
+  .compare-card--warn h3 { color: #7c2d12; }
+  .compare-card--warn .compare-stat { color: #c0392b; }
+  .compare-card--warn li { color: #5a2010; }
+  .compare-note { font-size: 0.82rem; color: #667; font-style: italic; }
+
+  .expat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .expat-item { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .expat-label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #1e40af; margin-bottom: 0.4rem; letter-spacing: 0.04em; }
+  .expat-item p { font-size: 0.83rem; color: #1e3a5f; line-height: 1.65; margin: 0; }
+  .expat-item a { color: #c9a84c; font-weight: 600; text-decoration: none; }
+
+  .cta-section { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-section p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 640px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .glance-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

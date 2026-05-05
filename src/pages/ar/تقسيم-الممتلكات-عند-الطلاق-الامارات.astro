@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'تقسيم الممتلكات عند الطلاق في الإمارات ٢٠٢٥ — من يأخذ ماذا؟';
+const description =
+  'كيف تُقسَّم الممتلكات عند الطلاق في الإمارات؟ مسكن الزوجية والحسابات المشتركة والأصول التجارية والهدايا. لا يوجد في الإمارات نظام الملكية المشتركة — تعرف كيف تقرر المحاكم فعلاً.';
+
+const canonical = 'https://divorceu.ae/ar/تقسيم-الممتلكات-عند-الطلاق-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/property-division-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'تقسيم الممتلكات عند الطلاق في الإمارات' },
+];
+
+const assetTable = [
+  { asset: 'العقارات', rule: 'من اسمه في سند الملكية', detail: 'العقارات المسجلة بشكل مشترك تُقسَّم بحسب الإسهام الموثق أو بأمر بيع من المحكمة.', who: 'neutral' },
+  { asset: 'الحسابات البنكية', rule: 'صاحب الحساب يحتفظ به', detail: 'الحسابات المشتركة تُقسَّم بحسب الإسهام الموثق. التحويلات خلال فترة الانفصال قابلة للطعن.', who: 'neutral' },
+  { asset: 'المهر (المقدم والمؤخر)', rule: 'دائماً للزوجة', detail: 'المهر المقدم مدفوع بالفعل. المهر المؤخر يستحق عند الطلاق أو الوفاة.', who: 'wife' },
+  { asset: 'الهدايا من الزوج', rule: 'الزوجة تحتفظ بها', detail: 'لا يحق للزوج استرداد الهدايا المقدمة للزوجة خلال الزواج بعد الطلاق.', who: 'wife' },
+  { asset: 'الهدايا من الزوجة', rule: 'الزوج يحتفظ بها', detail: 'الهدايا التي قدمتها الزوجة للزوج تبقى ملكه بالمثل.', who: 'neutral' },
+  { asset: 'الأعمال التجارية / الأسهم', rule: 'المالك المسجل يحتفظ بها', detail: 'يمكن للطرف الآخر المطالبة بحصة قائمة على الإسهام الموثق فقط.', who: 'neutral' },
+  { asset: 'المركبات', rule: 'المالك المسجل يحتفظ بها', detail: 'التسجيل حاسم. نادراً ما تنقل المحاكم مركبة إلا إذا كانت مسجلة مشتركاً.', who: 'neutral' },
+  { asset: 'المدخرات المتراكمة خلال الزواج', rule: 'صاحب الحساب يحتفظ بها', detail: 'لا يوجد حق تلقائي للآخر. لكن يمكن المطالبة بها عبر دعوى إثراء بلا سبب مع إثبات الإسهام.', who: 'neutral' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'كيف تُقسَّم الممتلكات عند الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا يوجد في الإمارات نظام الممتلكات الزوجية المشتركة. بموجب قانون الأحوال الشخصية الاتحادي (القانون الاتحادي رقم ٢٨ لسنة ٢٠٠٥) يحتفظ كل زوج بالأصول المسجلة باسمه. لا يوجد توزيع تلقائي بنسبة ٥٠/٥٠. تُقسَّم الممتلكات المسجلة مشتركاً بحسب الإسهام الموثق. الحمايات المالية الرئيسية للزوجة هي المهر ونفقة العدة ونفقة الأطفال — لا حصة في أصول الزوج.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'من يحصل على مسكن الزوجية عند الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'المسكن يعود لمن اسمه في سند الملكية. إذا كان مسجلاً باسم الزوج يحتفظ به — غير أن المحكمة قد تأمره بتوفير سكن بديل للزوجة طوال فترة العدة (نحو ثلاثة أشهر) وللأطفال القاصرين في ترتيبات الحضانة. إذا كان المسكن مسجلاً مشتركاً تدرس المحاكم الإسهام وقد تأمر بالبيع أو بالاستحواذ.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تستطيع الزوجة المطالبة بحصة من مدخرات الزوج عند الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ليس تلقائياً. بموجب القانون الإماراتي تعود الحسابات البنكية لصاحبها. يمكن للزوجة المطالبة بحصة في حساب مشترك إذا أثبتت إسهامها. وإذا أودعت أموالاً في حساب باسم الزوج يمكنها المطالبة بإثراء بلا سبب — لكنه ادعاء مدني يستلزم الإثبات. المهر وحقوق النفقة أوضح وأسهل تطبيقاً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تبقى الهدايا ملكي عند الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. الهدايا (الهبة) المقدمة للزوجة خلال الزواج تُعدّ ملكها. لا يستطيع الزوج استردادها بعد الطلاق. هذا مستقل عن المهر. هدايا الأفراح المقدمة للزوجين معاً تُعدّ عموماً ملك الزوجة إذا كانت مخصصة لاستخدامها المنزلي. أما الهدايا المقدمة للزوجين معاً (كالأثاث أو السيارة) فأكثر خلافية وتعتمد على التسجيل والغرض المقصود.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع الوافدون غير المسلمين استخدام قانون بلدهم لتقسيم الممتلكات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. يستطيع الوافدون غير المسلمون في الإمارات اختيار أن يخضع طلاقهم (بما فيه مسائل الممتلكات) لقانون بلدهم بدلاً من قانون الأحوال الشخصية الإماراتي. كثير من الدول الغربية لديها أنظمة ملكية زوجية تمنح الأزواج حقوقاً أقوى في الأصول المتراكمة. يُقدَّم هذا الاختيار عبر محاميك عند التقديم. كذلك يملك قضاء مركز دبي المالي العالمي اختصاصاً لطلاق الدوليين بمنهج أكثر توافقاً مع القانون العرفي في مسائل الممتلكات.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث لعمل تجاري يمتلكه أحد الزوجين عند الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يبقى العمل التجاري المسجل باسم أحد الزوجين ملكه. لا يستطيع الطرف الآخر المطالبة بحصة في عمل ليس له فيه حصة ملكية، إلا إذا أثبت إسهاماً مالياً مباشراً (كرأس مال مستثمر أو قروض موثقة) أو أن العمل كان مشتركاً. قد تعيّن المحاكم خبيراً مالياً لتقييم العمل إذا كانت الملكية أو الإسهام موضع نزاع. هذه مسائل بالغة التعقيد — التمثيل القانوني ضرورة.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الممتلكات والطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        لا يعتمد القانون الإماراتي مبدأ الملكية الزوجية المشتركة. كل شريك يحتفظ بما هو مسجل باسمه — لكن ثمة حالات تُفصل فيها المحاكم بطرق مختلفة. إليك كيف تعمل القواعد فعلياً بالنسبة للعقارات والحسابات البنكية والهدايا والأصول التجارية.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>المبدأ الجوهري في القانون الإماراتي</h2>
+        <div class="principle-grid">
+          <div class="principle-item principle-item--key">
+            <span class="principle-icon">⚖️</span>
+            <h3>لا ملكية زوجية مشتركة</h3>
+            <p>لا يوجد في الإمارات توزيع تلقائي بنسبة ٥٠/٥٠. كل زوج يحتفظ بما هو مسجل باسمه.</p>
+          </div>
+          <div class="principle-item">
+            <span class="principle-icon">📋</span>
+            <h3>التسجيل هو الفصل</h3>
+            <p>من اسمه في سند الملكية أو عقد الحساب هو المالك القانوني — بصرف النظر عمن دفع فعلياً.</p>
+          </div>
+          <div class="principle-item">
+            <span class="principle-icon">💍</span>
+            <h3>المهر والنفقة حقوق الزوجة</h3>
+            <p>الحماية المالية للزوجة تأتي من المهر ونفقة العدة ونفقة الأطفال — لا من الأصول المشتركة.</p>
+          </div>
+          <div class="principle-item">
+            <span class="principle-icon">🌍</span>
+            <h3>للوافدين غير المسلمين قواعد مختلفة</h3>
+            <p>يستطيع الوافدون غير المسلمون اختيار تطبيق قانون بلدهم الذي قد يمنح حقوقاً أوسع في الممتلكات.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>جدول الأصول — من يحصل على ماذا</h2>
+        <p>القاعدة العامة في الإمارات: تعود كل أصل إلى من اسمه عليه. في ما يلي تفصيل لأكثر أنواع الأصول شيوعاً:</p>
+        <div class="table-wrapper">
+          <table class="asset-table">
+            <thead>
+              <tr>
+                <th>نوع الأصل</th>
+                <th>القاعدة العامة</th>
+                <th>تفاصيل</th>
+              </tr>
+            </thead>
+            <tbody>
+              {assetTable.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-asset">{row.asset}</td>
+                  <td class={`td-rule td-rule--${row.who}`}>{row.rule}</td>
+                  <td class="td-detail">{row.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مسكن الزوجية — الحالة الأكثر نزاعاً</h2>
+        <p>مسكن الزوجية غالباً ما يكون المسألة الأشد خلافية في طلاقات الإمارات. إليك كيف تقرر المحاكم:</p>
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <h3>مسجل باسم الزوج</h3>
+            <p>يحتفظ الزوج بالمسكن. لكن المحكمة قد تأمره بتوفير سكن مناسب للزوجة طوال فترة العدة (نحو ٣ أشهر) وتأمين السكن للأطفال القاصرين وفق ترتيبات الحضانة — حتى لو لم يكن في المسكن الأصلي.</p>
+          </div>
+          <div class="scenario-card">
+            <h3>مسجل باسم الزوجة</h3>
+            <p>تحتفظ الزوجة بالمسكن. الزوج لا يملك مطالبة آلية. إذا أسهم الزوج في ثمن الشراء يستطيع رفع دعوى إثراء بلا سبب بإثبات الدفع — لكنها دعوى مدنية منفصلة.</p>
+          </div>
+          <div class="scenario-card">
+            <h3>مسجل مشتركاً</h3>
+            <p>تفحص المحاكم الإسهام الموثق لكل طرف. قد تأمر بالبيع وتقسيم العائد أو تمكّن أحدهما من استحواذ حصة الآخر بالقيمة السوقية. شهادات التحويل المصرفي وعقود القروض أدلة رئيسية.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الوافدون غير المسلمون — حقوق أوسع في الممتلكات</h2>
+        <p>منح قانون ٢٠٢٢ المدني للوافدين غير المسلمين خيارات أوسع:</p>
+        <div class="expat-grid">
+          <div class="expat-item">
+            <span class="expat-label">اختيار قانون البلد الأصلي</span>
+            <p>يستطيع الوافدون غير المسلمين اختيار تطبيق قانون بلدهم على مسائل الممتلكات. كثير من الدول الغربية (بريطانيا وفرنسا وكندا وأستراليا) لديها أنظمة تُوزع الأصول الزوجية المكتسبة بشكل أكثر إنصافاً.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">اختصاص مركز دبي المالي العالمي</span>
+            <p>يتاح لأصحاب الثروات والوافدين ذوي الصلات بالمركز المالي اللجوء إلى قضاء مركز دبي المالي الذي يعمل وفق القانون العرفي وكثيراً ما يُسرّع في الفصل بالمسائل المالية.</p>
+          </div>
+          <div class="expat-item">
+            <span class="expat-label">الطلاق الحيادي (بلا إثبات ذنب)</span>
+            <p>لا يحتاج الوافدون غير المسلمون وفق قانون ٢٠٢٢ إلى إثبات مخطأ. هذا يُحوّل مفاوضات الممتلكات من تبادل اتهامات إلى تقييم موضوعي للأصول.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-section">
+        <h2>قلق بشأن ممتلكاتك في الطلاق؟</h2>
+        <p>محامي الأسرة الإماراتي المتمرس يستطيع تقييم حقوقك في الأصول بعد الاطلاع على تفاصيل قضيتك — والتوصية بخطوات الحماية المناسبة قبل تقديم الطلب أو في أثناء الإجراءات.</p>
+        <LeadForm source="تقسيم-الممتلكات" />
+      </div>
+
+      <section class="related-section">
+        <h2>دلائل ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'نفقة ما بعد الطلاق في الإمارات', href: '/ar/نفقة-بعد-الطلاق-الامارات', desc: 'الأنواع الستة للنفقة وعوامل الحساب.' },
+            { title: 'الخلع في الإمارات', href: '/ar/الخلع-في-الامارات', desc: 'الطلاق بطلب من الزوجة وإعادة المهر.' },
+            { title: 'تكلفة الطلاق في الإمارات', href: '/ar/تكلفة-الطلاق-في-الامارات', desc: 'رسوم المحكمة وأتعاب المحامين.' },
+            { title: 'مدة الطلاق في الإمارات', href: '/ar/مدة-الطلاق-في-الامارات', desc: 'الجدول الزمني لكل نوع من أنواع الطلاق.' },
+            { title: 'حقوق الزوجة بعد الطلاق في الإمارات', href: '/ar/حقوق-الزوجة-بعد-الطلاق-الامارات', desc: 'دليل شامل لحقوق المرأة بعد الطلاق.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+    text-align: right;
+  }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-author { font-size: 0.85rem; color: #7a8fa6; }
+
+  .page-layout { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.5rem; margin-bottom: 3rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .principle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .principle-item { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1rem; }
+  .principle-item--key { border-color: #c9a84c; border-width: 2px; }
+  .principle-icon { font-size: 1.4rem; display: block; margin-bottom: 0.4rem; }
+  .principle-item h3 { font-size: 0.88rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
+  .principle-item p { font-size: 0.8rem; color: #556; line-height: 1.6; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.8; margin-bottom: 0.9rem; }
+
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .asset-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; border: 1px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; }
+  .asset-table thead { background: #0a1628; color: #fff; }
+  .asset-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 700; font-size: 0.78rem; }
+  .asset-table td { padding: 0.75rem 1rem; vertical-align: top; border-top: 1px solid #f0f0f0; }
+  .row-alt { background: #f8f9fa; }
+  .td-asset { font-weight: 700; color: #0a1628; white-space: nowrap; }
+  .td-rule { font-weight: 600; white-space: nowrap; }
+  .td-rule--wife { color: #166534; }
+  .td-rule--neutral { color: #1e40af; }
+  .td-detail { color: #556; line-height: 1.6; }
+
+  .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .scenario-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .scenario-card h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .scenario-card p { font-size: 0.83rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .expat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .expat-item { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .expat-label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #1e40af; margin-bottom: 0.4rem; letter-spacing: 0.04em; }
+  .expat-item p { font-size: 0.83rem; color: #1e3a5f; line-height: 1.65; margin: 0; }
+
+  .cta-section { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-section p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

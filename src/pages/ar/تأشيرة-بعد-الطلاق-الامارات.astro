@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'التأشيرة بعد الطلاق في الإمارات ٢٠٢٥ — ماذا يحدث لإقامتك؟';
+const description =
+  'ما الذي يحدث لتأشيرة الإقامة الإماراتية بعد الطلاق؟ قاعدة الـ٣٠ يوماً، خيارات نقل الكفالة، تأشيرة الطلاق لمدة سنة، وخطوات يجب اتخاذها فوراً.';
+
+const canonical = 'https://divorceu.ae/ar/تأشيرة-بعد-الطلاق-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/visa-after-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'التأشيرة بعد الطلاق في الإمارات' },
+];
+
+const visaOptions = [
+  {
+    type: 'تأشيرة العمل',
+    who: 'كل من لديه عرض عمل في الإمارات',
+    timeline: 'يمكن إنجازها خلال ٣٠ يوماً',
+    notes: 'الخيار الأسرع إذا كنت موظفاً. صاحب العمل هو الكفيل الجديد. أبلغ قسم الموارد البشرية فور صدور حكم الطلاق.',
+  },
+  {
+    type: 'تأشيرة المستثمر / صاحب العمل',
+    who: 'أصحاب الأعمال وأصحاب الرخص التجارية',
+    timeline: '٢-٤ أسابيع',
+    notes: 'إذا كنت تمتلك شركة أو رخصة تجارية إماراتية يمكنك كفالة نفسك. المنطقة البرية والمناطق الحرة كلتاهما مؤهلتان.',
+  },
+  {
+    type: 'تأشيرة العمل الحر',
+    who: 'المستقلون في تخصصات مؤهلة',
+    timeline: '٢-٤ أسابيع',
+    notes: 'تتيح تصاريح العمل الحر (عبر المناطق الحرة وهيئة تنظيم سوق العمل) الكفالة الذاتية. القطاعات تشمل الإعلام والتكنولوجيا والتعليم والصناعات الإبداعية.',
+  },
+  {
+    type: 'تأشيرة مالك العقار',
+    who: 'مالكو العقارات في الإمارات (قيمة العقار ٧٥٠٠٠٠ درهم فأكثر)',
+    timeline: '٣-٦ أسابيع',
+    notes: 'إذا كنت تمتلك عقاراً في دبي أو إمارة أخرى بقيمة لا تقل عن ٧٥٠,٠٠٠ درهم فأنت مؤهل للحصول على تأشيرة المستثمر العقاري بصرف النظر عن وضع زوجك السابق.',
+  },
+  {
+    type: 'تأشيرة الطلاق / الحضانة لمدة سنة',
+    who: 'الأمهات المطلقات اللواتي أطفالهن في مدارس إماراتية',
+    timeline: 'تصدرها إدارة الجوازات والإقامة والشؤون الأجنبية',
+    notes: 'تأشيرة إقامة خاصة مدتها سنة قابلة للتجديد للأمهات المطلقات اللواتي يلتحق أطفالهن بالمدارس الإماراتية. تتيح البقاء في الإمارات لرعاية الأطفال والحفاظ على حضانتهم.',
+  },
+  {
+    type: 'كفالة الابن / البنت البالغ',
+    who: 'آباء وأمهات المقيمين الإماراتيين (فوق ١٨ سنة) بدخل كافٍ',
+    timeline: '٢-٤ أسابيع',
+    notes: 'إذا كان ابنك أو ابنتك مقيماً في الإمارات ويتقاضى الراتب الأدنى المطلوب يمكنه كفالتك كتابع.',
+  },
+  {
+    type: 'الإقامة الذهبية',
+    who: 'المستثمرون والكفاءات المتميزة',
+    timeline: '٤-٨ أسابيع',
+    notes: 'الإقامة الذهبية الإماراتية (٥ أو ١٠ سنوات) متاحة للمستثمرين ورواد الأعمال والمهنيين المتميزين. توفر إقامة مستقلة بلا كفيل.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'كم من الوقت أملك لتغيير تأشيرتي بعد الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لديك ٣٠ يوماً من تاريخ الحكم القانوني بالطلاق لتغيير تأشيرتك أو نقل كفالتك. بعد هذه المدة تُعتبر متجاوزاً لمدة إقامتك مما يستوجب غرامات يومية وقد يؤثر على طلبات الإقامة المستقبلية في الإمارات. تصرف فوراً — استشر محامياً أو قسم الموارد البشرية في شركتك فور صدور الحكم.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما تأشيرة الطلاق لمدة سنة في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تمنح الإمارات تأشيرة إقامة خاصة مدتها سنة قابلة للتجديد للأمهات المطلقات اللواتي يلتحق أطفالهن بالمدارس الإماراتية. تصدرها إدارة الجوازات والإقامة والشؤون الأجنبية (GDRFA). تشترط إثبات الطلاق وإثبات التحاق الأطفال بالمدارس وإثبات الحضانة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكنني البقاء في الإمارات بعد الطلاق إذا لم يكن لدي عمل؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، ثمة خيارات غير العمل: تأشيرة مالك العقار (إذا كنت تمتلك عقاراً بقيمة ٧٥٠,٠٠٠ درهم فأكثر)، وتأشيرة العمل الحر أو صاحب العمل، وتأشيرة الطلاق/الحضانة إذا كانت تنطبق عليك، والإقامة الذهبية إذا كنت مؤهلاً، أو الكفالة من قِبل ابنك أو ابنتك البالغ. المحامي يساعدك على تحديد الخيار الأنسب لوضعك.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث لتأشيرة الأطفال بعد الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تُربط تأشيرات الأطفال عادةً بكفالة الأب بموجب القانون الإماراتي. خلال إجراءات الطلاق، من الضروري معالجة مسألة كفالة الأطفال بصراحة. يمكن للوالد الحاضن في أغلب الأحيان نقل تأشيرة الأطفال إلى كفالته، ولا سيما وفق قانون الأحوال الشخصية المدني لغير المسلمين لعام ٢٠٢٢ أو بأمر قضائي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يؤثر الطلاق على رخصة القيادة الإماراتية؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا — رخصة القيادة الإماراتية صادرة باسمك ولا يؤثر فيها وضعك الزوجي أو الطلاق. غير أنه إذا ارتبطت رخصتك بتأشيرة مُلغاة فتأكد من حصولك على تأشيرة صالحة جديدة قبل تجديد الرخصة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع زوجي إلغاء تأشيرتي خلال إجراءات الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يملك الزوج من الناحية الفنية تقديم طلب إلغاء تأشيرة التابع. غير أن سلطات الهجرة الإماراتية لا تُعالج إلغاء التأشيرات عادةً في خضم إجراءات الطلاق، وبإمكان المحاكم إصدار أوامر وقائية. إذا كنت تخشى أن يسعى زوجك لإلغاء تأشيرتك أبلغ محاميك فوراً ليتخذ الإجراءات القانونية اللازمة لحمايتك.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الإقامة والتأشيرة · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        معظم المقيمين الأجانب في الإمارات تكون تأشيرتهم مرتبطة بكفالة الزوج. الطلاق يعني تغيير وضع إقامتك — ولديك
+        <strong>٣٠ يوماً فقط</strong> للتصرف. يشرح هذا الدليل ما يجري بالضبط، وما هي خياراتك، والخطوات التي يجب اتخاذها فوراً.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="alert-box">
+        <span class="alert-icon">⚠️</span>
+        <div>
+          <p class="alert-title">تحذير: ٣٠ يوماً من تاريخ الحكم القانوني بالطلاق</p>
+          <p>بمجرد صدور حكم الطلاق، لديك <strong>٣٠ يوماً</strong> لنقل تأشيرتك أو تغيير وضعك الإقامي. بعد هذه المدة تُعتبر متجاوزاً مما يستوجب غرامات يومية وقد يؤثر سلباً على طلبات الإقامة الإماراتية المستقبلية.</p>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>قاعدة الـ٣٠ يوماً — ما يجب أن تعرفه</h2>
+        <p>
+          يحمل معظم الأزواج الأجانب في الإمارات <em>تأشيرة تابع / أسري</em> بكفالة الزوج أو الزوجة. حين ينتهي الزواج قانونياً تنقطع علاقة الكفالة. لا تمنح هيئة الهجرة الإماراتية تمديداً تلقائياً — عليك أنت المبادرة بالانتقال إلى فئة تأشيرة جديدة.
+        </p>
+        <p>
+          البشرى الطيبة: ثمة مسارات متعددة، وبالاستشارة القانونية المناسبة يستطيع معظم الناس إتمام تأشيرة إقامة صالحة قبل انتهاء مهلة الثلاثين يوماً.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>خياراتك للإقامة بعد الطلاق في الإمارات</h2>
+        <p>يعتمد الخيار الأنسب على وضعك الوظيفي، وما إذا كان لديك أطفال في مدارس إماراتية، وما إذا كنت تمتلك عقاراً، وخططك على المدى البعيد. إليك جميع المسارات المتاحة:</p>
+
+        <div class="visa-cards">
+          {visaOptions.map((v) => (
+            <div class="visa-card">
+              <div class="visa-card__header">
+                <h3>{v.type}</h3>
+                <span class="visa-timeline">{v.timeline}</span>
+              </div>
+              <p class="visa-who"><strong>من يستحقها:</strong> {v.who}</p>
+              <p class="visa-notes">{v.notes}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الخطوات الفورية التي يجب اتخاذها بعد الطلاق</h2>
+        <ol class="steps-list">
+          <li>
+            <span class="step-num">١</span>
+            <div>
+              <h3>احصل على نسخة معتمدة من حكم الطلاق</h3>
+              <p>ستحتاج الوثيقة الرسمية المصادق عليها لجميع إجراءات نقل التأشيرة. احرص على الحصول على نسخ معتمدة متعددة — النسخة العربية الأصلية والترجمة الإنجليزية معاً.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">٢</span>
+            <div>
+              <h3>حدد مسار تأشيرتك (خلال الأسبوع الأول)</h3>
+              <p>استشر محامياً أو قسم الموارد البشرية فوراً. لا تنتظر حتى الأسبوع الثالث — معالجة نقل التأشيرة تستغرق وقتاً وقد تتأخر الطلبات. حدد خيارك الأفضل في الأيام السبعة الأولى.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">٣</span>
+            <div>
+              <h3>تقدم بطلب تأشيرتك الجديدة</h3>
+              <p>قدم طلبك عبر الجهة المختصة: إدارة الجوازات والإقامة (GDRFA) لتأشيرة الطلاق/الحضانة، أو صاحب العمل لتأشيرة العمل، أو هيئة الهوية والجنسية والجمارك (ICA) للمستثمرين والإقامة الذهبية.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">٤</span>
+            <div>
+              <h3>اطلب خطاب حالة رسمياً إذا لزم</h3>
+              <p>إذا كان طلب تأشيرتك قيد المعالجة واقترب موعد الـ٣٠ يوماً، يمكن لمحاميك طلب خطاب حالة رسمي من الهجرة يؤكد أن طلبك قيد الدراسة. هذا يحميك من غرامات التجاوز خلال فترة المعالجة.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">٥</span>
+            <div>
+              <h3>جدد بطاقة الهوية الإماراتية</h3>
+              <p>بمجرد إصدار تأشيرتك الجديدة جدد بطاقة هويتك الإماراتية. تأشيرتك الجديدة وبطاقة الهوية مرتبطتان — تأكد من تحديث كلتيهما.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>أثر الطلاق على إقامة الأطفال</h2>
+        <p>تُربط تأشيرات الأطفال عادةً بكفالة الأب وفق القانون الإماراتي. خلال إجراءات الطلاق يجب معالجة مسألة كفالة الأطفال بصراحة. تتضمن الاعتبارات الرئيسية:</p>
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>الأم الحاضنة</h3>
+            <p>يمكن للأم الحاضنة في الغالب نقل تأشيرات الأطفال إلى كفالتها، ولا سيما وفق قانون ٢٠٢٢ أو بأمر من المحكمة.</p>
+          </div>
+          <div class="info-item">
+            <h3>الأب الكفيل</h3>
+            <p>إذا ظل الأب كفيلاً للأطفال فيبقى مسؤولاً عن تأشيراتهم بصرف النظر عن ترتيبات الحضانة.</p>
+          </div>
+          <div class="info-item">
+            <h3>تأشيرة طلاق الأم</h3>
+            <p>تأشيرة الطلاق لمدة سنة الخاصة بالأمهات المطلقات تتضمن ضمنياً الإقامة بهدف رعاية أطفال ملتحقين بمدارس إماراتية.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-section">
+        <h2>تحتاج للتصرف السريع بشأن تأشيرتك؟</h2>
+        <p>يمكن لمحامي الطلاق الإماراتي المتمرس تحديد أفضل خيار لوضعك وتقديم الطلب معك في أسرع وقت — مما يضمن بقاءك داخل مهلة الثلاثين يوماً.</p>
+        <LeadForm source="تأشيرة-بعد-الطلاق" />
+      </div>
+
+      <section class="related-section">
+        <h2>دلائل ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'تكلفة الطلاق في الإمارات', href: '/ar/تكلفة-الطلاق-في-الامارات', desc: 'رسوم المحكمة وأتعاب المحامين والعوامل المؤثرة في الفاتورة.' },
+            { title: 'مدة الطلاق في الإمارات', href: '/ar/مدة-الطلاق-في-الامارات', desc: 'الجدول الزمني الواقعي لكل نوع من أنواع الطلاق.' },
+            { title: 'نفقة الأطفال في الإمارات', href: '/ar/نفقة-الاطفال-الامارات', desc: 'من يدفع، كيف تُحسب، وكيف تُنفَّذ.' },
+            { title: 'الخلع في الإمارات', href: '/ar/الخلع-في-الامارات', desc: 'دليل شامل للطلاق بطلب من الزوجة.' },
+            { title: 'حضانة الأطفال في الإمارات', href: '/ar/حضانة-الاطفال-الامارات', desc: 'كيف تقرر المحاكم الإماراتية في قضايا الحضانة.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+    text-align: right;
+  }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-author { font-size: 0.85rem; color: #7a8fa6; }
+
+  .page-layout { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .alert-box {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: #fff8e1; border: 1.5px solid #f9c74f; border-radius: 0.875rem;
+    padding: 1.25rem; margin-bottom: 2.5rem;
+  }
+  .alert-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .alert-title { font-weight: 700; color: #7a4f00; margin-bottom: 0.25rem; }
+  .alert-box p { color: #5c3c00; font-size: 0.9rem; line-height: 1.7; margin: 0 0 0.3rem; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.8; margin-bottom: 0.9rem; }
+
+  .visa-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+  .visa-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .visa-card__header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .visa-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .visa-timeline { font-size: 0.75rem; font-weight: 700; color: #c9a84c; background: #fef9e7; padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap; }
+  .visa-who { font-size: 0.85rem; color: #334; margin-bottom: 0.4rem; }
+  .visa-notes { font-size: 0.83rem; color: #556; line-height: 1.65; margin: 0; }
+
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .steps-list li { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .step-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .steps-list h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .steps-list p { font-size: 0.86rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .info-item { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .info-item h3 { font-size: 0.9rem; font-weight: 700; color: #1e40af; margin-bottom: 0.3rem; }
+  .info-item p { font-size: 0.83rem; color: #1e3a5f; line-height: 1.65; margin: 0; }
+
+  .cta-section { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-section p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

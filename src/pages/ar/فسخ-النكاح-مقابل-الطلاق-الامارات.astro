@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'فسخ النكاح مقابل الطلاق في الإمارات ٢٠٢٥ — ما الفرق؟';
+const description =
+  'فسخ النكاح والطلاق كلاهما ينهيان الزواج لكنهما مختلفان قانونياً. في الإمارات يُعلن الفسخ بطلان الزواج، أما الطلاق فينهي زواجاً صحيحاً. دليلك لفهم متى يُطبَّق كل منهما وأسبابه وإجراءاته وأثره على الأطفال والمال.';
+
+const canonical = 'https://divorceu.ae/ar/فسخ-النكاح-مقابل-الطلاق-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/annulment-vs-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'فسخ النكاح مقابل الطلاق في الإمارات' },
+];
+
+const comparison = [
+  { factor: 'ما يعنيه', faskh: 'الزواج يُعلَن باطلاً — كأنه لم يكن', talaq: 'زواج صحيح يُنهى قانونياً' },
+  { factor: 'الأسباب المطلوبة', faskh: 'أسباب محددة ومحدودة فقط', talaq: 'واسعة — تراضٍ، ضرر، طلاق، خلع' },
+  { factor: 'من يحق له التقديم', faskh: 'أي من الزوجين أو المحكمة تلقائياً', talaq: 'أي من الزوجين' },
+  { factor: 'الحقوق المالية', faskh: 'محدودة — قد تمنح المحكمة تعويضاً', talaq: 'كاملة — نفقة ومهر وتقسيم أصول' },
+  { factor: 'أثره على الأطفال', faskh: 'الأطفال يبقون شرعيين بموجب القانون الإماراتي', talaq: 'الأطفال يبقون شرعيين' },
+  { factor: 'المدة الزمنية', faskh: 'تتفاوت — قد تكون سريعة إذا كانت الأسباب واضحة', talaq: 'شهر إلى سنتين أو أكثر حسب النوع' },
+  { factor: 'مدى شيوعه في الإمارات', faskh: 'نادر — أسبابه ضيقة', talaq: 'شائع' },
+];
+
+const annulmentGrounds = [
+  {
+    ground: 'الزواج من المحارم',
+    detail: 'زيجات الأقارب المباشرين المحرمة بالشريعة الإسلامية (كالأخ والأخت، الأب والابنة) باطلة من الأساس. لا يُشترط طلاق — تُعلن المحكمة أن الزواج لم يكن صحيحاً قانونياً قط.'
+  },
+  {
+    ground: 'أحد الطرفين متزوج بالفعل (تعدد الزوجات بلا إذن)',
+    detail: 'يحق للرجل المسلم في الإمارات الزواج بأربع زوجات بإذن المحكمة لكل زواج لاحق. الزواج المعقود دون الإذن المطلوب قابل للفسخ. أما الوافدون غير المسلمون فالازدواج في الزواج يُبطل الزواج اللاحق.'
+  },
+  {
+    ground: 'انعدام الأهلية — القصر أو العجز العقلي',
+    detail: 'يجوز فسخ زواج عُقد دون الحصول على موافقة المحكمة لمن هو دون سن الزواج القانونية، أو لمن يفتقر إلى الأهلية العقلية. تحدد الإمارات سن الزواج بثمانية عشر عاماً مع استثناءات محدودة بأمر المحكمة.'
+  },
+  {
+    ground: 'الزواج تحت الإكراه أو التدليس',
+    detail: 'إذا انتُزع القبول بالقوة أو الإكراه أو التضليل المتعمد بشأن حقيقة جوهرية (كإخفاء هوية أو زواج سابق)، جاز للمحكمة فسخ الزواج. يجب على طالب الفسخ التحرك فوراً بمجرد اكتشاف الإكراه أو التدليس.'
+  },
+  {
+    ground: 'الزواج دون ولي (في حالات معينة)',
+    detail: 'بموجب الفقه الإسلامي المعمول به في المحاكم الإماراتية قد يُطعن في زواج المرأة المسلمة المعقود دون مشاركة وليّها وفق الظروف وتقدير القاضي. هذا مجال قانوني دقيق وتتباين نتائجه.'
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما الفرق بين فسخ النكاح والطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق ينهي زواجاً صحيحاً ومعترفاً به قانوناً. فسخ النكاح يُعلن أن الزواج كان باطلاً منذ البداية — أي أنه لم يُعقد صحيحاً قط وفق القانون. في الإمارات الفسخ نادر لأن أسبابه ضيقة جداً وتشمل عقد زواج من المحارم وتعدد الزوجات بلا إذن والإكراه والتدليس وانعدام الأهلية. الطلاق أشمل وأكثر تطبيقاً بكثير.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يتأثر الأطفال بفسخ النكاح في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. بموجب القانون الإماراتي يبقى أطفال الزواج المفسوخ شرعيين وتسري عليهم نفس قواعد الحضانة ونفقة الأطفال المعمول بها في الطلاق. الفسخ لا يُلغي حقوقهم القانونية بأي حال.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستحق النفقة من يحصل على فسخ النكاح في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ليس بشكل تلقائي. في الطلاق تُعدّ النفقة حقاً راسخاً للزوجة. في فسخ النكاح تتقلص الحقوق المالية لأن الزواج يُعدّ كأن لم يكن. مع ذلك تملك المحكمة صلاحية منح التعويض إذا رأت ضرراً يستوجبه. مطالبة المهر قد تنجح جزئياً حسب ملابسات الفسخ وحسن النية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يتاح فسخ النكاح للوافدين غير المسلمين في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. يستطيع الوافدون غير المسلمون طلب الفسخ للأسباب ذاتها بموجب القانون المدني الإماراتي: الزيجات الباطلة (تعدد الزوجات، القرابة المحرمة) أو القابلة للفسخ (التدليس، الإكراه، انعدام الأهلية). منذ إصلاحات قانون الأحوال الشخصية ٢٠٢٢ يتمتع الوافدون غير المسلمين بإمكانية الطلاق المدني الأسرع والأبسط في معظم الحالات. الفسخ يستحق المتابعة فقط حين تتوفر أسبابه تحديداً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف أطلب فسخ النكاح في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يُقدَّم طلب فسخ النكاح لمحكمة الأحوال الشخصية المختصة بإمارتك. عليك إثبات أحد الأسباب القانونية المعترف بها بأدلة داعمة (وثائق أو شهادات أو قرار طبي في حالات انعدام الأهلية). يُوصى بشدة بالاستعانة بمحامٍ متخصص في شؤون الأسرة لأن عبء الإثبات أثقل من الطلاق العادي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل الفسخ أسرع من الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يتوقف ذلك على الأسباب. إذا كانت الأسباب واضحة وموثقة (كوثيقة زواج مسجل تُثبت الازدواج) فقد يكون الفسخ سريعاً. أما إذا احتاج الأمر إلى إثبات التدليس أو الإكراه أو انعدام الأهلية فقد يستلزم الفسخ إجراءات طويلة تشبه الطلاق الخلافي.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل قانون الأسرة · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        فسخ النكاح والطلاق كلاهما ينهيان الزواج لكنهما يختلفان قانونياً اختلافاً جوهرياً. هذا الدليل يشرح متى يُطبَّق كل منهما وأسبابه وإجراءاته وأثره على المال والأطفال.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="key-point">
+        <h2>النقطة الجوهرية</h2>
+        <p>في الإمارات <strong>الفسخ نادر والطلاق هو الأصل</strong>. الفسخ يُعلن بطلان الزواج من الأساس، ويستلزم إثبات أسباب محددة وضيقة. أما الطلاق فينهي زواجاً صحيحاً وهو الأداة القانونية المعتادة لإنهاء معظم الزيجات.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>مقارنة سريعة: فسخ النكاح مقابل الطلاق</h2>
+        <div class="table-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>العامل</th>
+                <th>فسخ النكاح</th>
+                <th>الطلاق</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-factor">{row.factor}</td>
+                  <td class="td-faskh">{row.faskh}</td>
+                  <td class="td-talaq">{row.talaq}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>أسباب فسخ النكاح في الإمارات</h2>
+        <p>المحاكم الإماراتية تقبل طلب فسخ النكاح في حالات محددة فقط. إذا لم تنطبق عليك إحدى هذه الحالات فالطلاق هو المسار الصحيح.</p>
+        <div class="grounds-list">
+          {annulmentGrounds.map((g, i) => (
+            <div class="ground-card">
+              <div class="ground-num">{i + 1}</div>
+              <div class="ground-body">
+                <h3>{g.ground}</h3>
+                <p>{g.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الحقوق المالية: فسخ النكاح مقابل الطلاق</h2>
+        <div class="finance-grid">
+          <div class="finance-card finance-card--faskh">
+            <h3>فسخ النكاح</h3>
+            <ul>
+              <li>لا نفقة تلقائية — قد تمنح المحكمة تعويضاً</li>
+              <li>المهر: يُسترد جزئياً أو كلياً حسب الملابسات</li>
+              <li>الحقوق المالية محدودة لأن الزواج يُعدّ كأن لم يكن</li>
+              <li>تقسيم الأصول: لا يوجد حق تلقائي كما في الطلاق</li>
+            </ul>
+          </div>
+          <div class="finance-card finance-card--talaq">
+            <h3>الطلاق</h3>
+            <ul>
+              <li>النفقة حق ثابت للزوجة (مشروط بالحالة)</li>
+              <li>المهر المؤخر يستحق فور الطلاق</li>
+              <li>حقوق مالية كاملة وفق قانون الأحوال الشخصية</li>
+              <li>نفقة الأطفال وحضانتهم تُحدد بأمر المحكمة</li>
+            </ul>
+          </div>
+        </div>
+        <p class="finance-note">في كلتا الحالتين يبقى الأطفال شرعيين وتُطبَّق عليهم أحكام الحضانة والنفقة بالكامل.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>متى تختار الفسخ بدلاً من الطلاق؟</h2>
+        <div class="when-grid">
+          <div class="when-card when-card--yes">
+            <h3>اطلب الفسخ إذا</h3>
+            <ul>
+              <li>اكتشفت أن زواجك كان باطلاً من الأصل (قرابة محرمة، ازدواج)</li>
+              <li>وقّعت عقد الزواج تحت الإكراه أو التهديد</li>
+              <li>تبين لك أن الطرف الآخر أخفى زواجاً سابقاً أو قدّم معلومات مضللة</li>
+              <li>كنت قاصراً دون إذن المحكمة وقت الزواج</li>
+            </ul>
+          </div>
+          <div class="when-card when-card--no">
+            <h3>اختر الطلاق إذا</h3>
+            <ul>
+              <li>زواجك صحيح لكن العلاقة انتهت</li>
+              <li>تريد الحصول على حقوق مالية كاملة (نفقة، مهر مؤخر)</li>
+              <li>لا تنطبق عليك أسباب الفسخ القانونية</li>
+              <li>تريد التفاوض على الحضانة والممتلكات بشكل شامل</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-section">
+        <h2>غير متأكد من المسار الأنسب لك؟</h2>
+        <p>محامي الأسرة المتمرس يُقيّم ظروفك تحديداً ويُرشدك إلى المسار الأصح — فسخاً كان أم طلاقاً — مع ضمان حمايتك المالية والقانونية الكاملة.</p>
+        <LeadForm source="فسخ-النكاح-مقابل-الطلاق" />
+      </div>
+
+      <section class="related-section">
+        <h2>دلائل ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'قانون الطلاق في الإمارات', href: '/ar/قانون-الطلاق-في-الامارات', desc: 'الإطار القانوني الكامل للطلاق في الإمارات.' },
+            { title: 'أنواع الطلاق في الإمارات', href: '/ar/انواع-الطلاق', desc: 'الطلاق الرجعي والبائن والثلاث وغيرها.' },
+            { title: 'الطلاق للضرر في الإمارات', href: '/ar/طلاق-للضرر', desc: 'أسباب وإجراءات الطلاق بسبب الضرر.' },
+            { title: 'الخلع في الإمارات', href: '/ar/الخلع-في-الامارات', desc: 'طلاق الزوجة بمبادرتها وإعادة المهر.' },
+            { title: 'حقوق الزوجة بعد الطلاق في الإمارات', href: '/ar/حقوق-الزوجة-بعد-الطلاق-الامارات', desc: 'دليل شامل لحقوق المرأة بعد الطلاق.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+    text-align: right;
+  }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-author { font-size: 0.85rem; color: #7a8fa6; }
+
+  .page-layout { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .key-point { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.5rem; margin-bottom: 3rem; }
+  .key-point h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.5rem; }
+  .key-point p { color: #445; line-height: 1.8; margin: 0; font-size: 0.95rem; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.8; margin-bottom: 0.9rem; }
+
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; border: 1px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; }
+  .compare-table thead { background: #0a1628; color: #fff; }
+  .compare-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 700; font-size: 0.78rem; }
+  .compare-table td { padding: 0.75rem 1rem; vertical-align: top; border-top: 1px solid #f0f0f0; }
+  .row-alt { background: #f8f9fa; }
+  .td-factor { font-weight: 700; color: #0a1628; white-space: nowrap; }
+  .td-faskh { color: #7c2d12; font-size: 0.83rem; line-height: 1.6; }
+  .td-talaq { color: #1e3a5f; font-size: 0.83rem; line-height: 1.6; }
+
+  .grounds-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .ground-card { display: flex; gap: 1rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .ground-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .ground-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.4rem; }
+  .ground-body p { font-size: 0.85rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .finance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .finance-card { border-radius: 0.875rem; padding: 1.25rem; }
+  .finance-card h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .finance-card ul { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .finance-card li { font-size: 0.84rem; line-height: 1.7; margin-bottom: 0.3rem; }
+  .finance-card--faskh { background: #fff7ed; border: 1.5px solid #fdba74; }
+  .finance-card--faskh h3 { color: #7c2d12; }
+  .finance-card--faskh li { color: #5a2010; }
+  .finance-card--talaq { background: #f0fdf4; border: 1.5px solid #86efac; }
+  .finance-card--talaq h3 { color: #064e3b; }
+  .finance-card--talaq li { color: #1a4d30; }
+  .finance-note { font-size: 0.82rem; color: #667; font-style: italic; }
+
+  .when-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .when-card { border-radius: 0.875rem; padding: 1.25rem; }
+  .when-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .when-card ul { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .when-card li { font-size: 0.84rem; line-height: 1.7; margin-bottom: 0.3rem; }
+  .when-card--yes { background: #f0f7ff; border: 1px solid #bfdbfe; }
+  .when-card--yes h3 { color: #1e40af; }
+  .when-card--yes li { color: #1e3a5f; }
+  .when-card--no { background: #f9f4e8; border: 1px solid #e8d89a; }
+  .when-card--no h3 { color: #7a6a30; }
+  .when-card--no li { color: #445; }
+
+  .cta-section { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-section p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 640px) {
+    .finance-grid { grid-template-columns: 1fr; }
+    .when-grid { grid-template-columns: 1fr; }
+  }
+</style>

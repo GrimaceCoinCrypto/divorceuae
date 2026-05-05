@@ -1,0 +1,384 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق الخلافي مقابل الطلاق بالتراضي في الإمارات — الفرق والأثر';
+const description =
+  'الفرق بين الطلاق الخلافي والطلاق بالتراضي في الإمارات: التكلفة والمدة وعدد الجلسات. دليل شامل يساعدك على معرفة أيهما ينطبق على وضعك.';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-الخلافي-والاتفاقي-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/contested-vs-uncontested-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق الخلافي والاتفاقي في الإمارات' },
+];
+
+const comparison = [
+  { factor: 'موافقة الطرفين', contested: 'لا — أحدهما يرفض', uncontested: 'نعم — اتفاق متبادل' },
+  { factor: 'جلسات المحكمة', contested: 'متعددة (٣-١٠+ جلسات)', uncontested: 'محدودة (١-٢ جلسة)' },
+  { factor: 'المدة', contested: '٦ أشهر – سنتان فأكثر', uncontested: '١-٤ أشهر' },
+  { factor: 'التكلفة القانونية', contested: '١٥٠٠٠ – ٨٠٠٠٠ درهم+', uncontested: '٣٠٠٠ – ١٥٠٠٠ درهم' },
+  { factor: 'مستوى التوتر', contested: 'مرتفع — مسار تنافسي', uncontested: 'منخفض — مسار تعاوني' },
+  { factor: 'الخصوصية', contested: 'أقل — جلسات علنية', uncontested: 'أعلى — جلسات محدودة' },
+  { factor: 'حضانة الأطفال', contested: 'المحكمة تقرر عند التنازع', uncontested: 'الوالدان يتفقان مسبقاً' },
+  { factor: 'توزيع الأصول', contested: 'المحكمة تفصل في النزاعات', uncontested: 'اتفاق بين الطرفين' },
+];
+
+const contestedSteps = [
+  {
+    step: 'تقديم العريضة',
+    detail: 'يرفع أحد الزوجين عريضة طلاق في محكمة الأحوال الشخصية بإمارة إقامته. يُبلَّغ الزوج الآخر رسمياً ويُمنح مهلة للرد. إن اعترض جدولت المحكمة جلسة مصالحة أولية — وهي إلزامية بموجب القانون الإماراتي.'
+  },
+  {
+    step: 'المصالحة الإلزامية',
+    detail: 'يلزم القانون الإماراتي المحاكمَ بمحاولة الإصلاح قبل المضي في الطلاق الخلافي. يلتقي مستشار معين من المحكمة بالطرفين. نادراً ما تنجح المصالحة في القضايا الخلافية لكنها متطلب إجرائي يضيف ١-٣ أشهر.'
+  },
+  {
+    step: 'تقديم المطالب والأدلة',
+    detail: 'يُقدم كل طرف مطالبه وأدلته وقائمة شهوده. المسائل الخلافية — الحضانة وتوزيع الأصول والنفقة والممتلكات — تُناقش بشكل منفصل. قد تستوجب كل مسألة خلافية جلستها الخاصة.'
+  },
+  {
+    step: 'جلسات المحكمة',
+    detail: 'يستمع القاضي إلى مرافعات المحامين عبر جلسات متعددة. قد تمتد المدة بين الجلسات أشهراً بسبب كثافة القضايا. القضايا المعقدة التي تشمل أصولاً دولية أو نزاعات حضانة قد تستمر ١٢-٢٤ شهراً.'
+  },
+  {
+    step: 'الحكم والتنفيذ',
+    detail: 'يُصدر القاضي حكماً في جميع المسائل الخلافية. يحق لأي طرف الاستئناف خلال المدة المحددة. بعد اكتساب الحكم القطعية يصبح واجب التنفيذ — بإمكان المحكمة إلزام الامتثال بتجميد الأصول وحظر السفر وحجز الرواتب.'
+  },
+];
+
+const uncontestSteps = [
+  {
+    step: 'الاتفاق على جميع المسائل الجوهرية',
+    detail: 'قبل التقديم، يجب أن يتفق الطرفان على: أسباب الطلاق، حضانة الأطفال وحق الزيارة، النفقة المالية، توزيع الأصول المشتركة، ومن يحتفظ بمسكن الزوجية. يمكن للمحامي هيكلة هذا الاتفاق في صيغة قانونية ملزمة.'
+  },
+  {
+    step: 'صياغة اتفاقية التسوية وتوقيعها',
+    detail: 'يُعد المحامي اتفاقية تسوية شاملة تغطي جميع البنود المتفق عليها. يراجعها الطرفان ويوقعانها. للمسلمين تجري هذه العملية عادةً في مكتب الوساطة التابع للمحكمة؛ وللمسلمين غير المسلمين عبر اتفاق قانوني مقدم للمحكمة.'
+  },
+  {
+    step: 'التقديم في محكمة الأحوال الشخصية',
+    detail: 'تُقدم العريضة واتفاقية التسوية معاً. تتحقق المحكمة من أن الاتفاقية تستوفي المتطلبات القانونية ولا تنتهك حقوق أي طرف — ولا سيما متطلبات رعاية الأطفال.'
+  },
+  {
+    step: 'جلسة المحكمة الواحدة',
+    detail: 'يحضر الطرفان جلسة واحدة (أو جلستين أحياناً) يراجع فيها القاضي الاتفاقية ويؤكدها. عادةً ما تكون إجرائية مختصرة لا تنافسية. قد يطرح القاضي أسئلة توضيحية لكنه لا يبت في النزاعات.'
+  },
+  {
+    step: 'إصدار حكم الطلاق',
+    detail: 'تُصدر المحكمة حكم الطلاق الرسمي. تصبح اتفاقية التسوية ملزمة وقابلة للتنفيذ من هذه اللحظة. المدة من التقديم إلى الحكم: ٤-٨ أسابيع عادةً للقضايا المتفق عليها المباشرة.'
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل أستطيع الحصول على طلاق بالتراضي إذا رفض زوجي التعاون؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا — يستلزم الطلاق بالتراضي موافقة حقيقية من الطرفين على جميع المسائل الجوهرية. إذا رفض زوجك التعاون أو اعترض على أي مسألة رئيسية (الحضانة، الأصول، النفقة) أصبح الطلاق خلافياً ويسلك المسار القضائي الكامل. غير أن محامياً ماهراً يستطيع أحياناً التفاوض على اتفاق خارج المحكمة وتحويل القضية الخلافية إلى متفق عليها.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تستغرق قضية الطلاق الخلافي في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يستغرق الطلاق الخلافي في الإمارات عادةً من ٦ أشهر إلى سنتين من التقديم حتى الحكم النهائي. تعتمد المدة على: عدد المسائل الخلافية، سرعة جدولة الجلسات، ما إذا استأنف أي طرف، وما إذا تضمنت القضية أصولاً دولية أو حضانة دولية. القضايا ذات المسائل الخلافية المتعددة (حضانة + أصول + نفقة) تستمر عادةً ١٢-١٨ شهراً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع الزوج المسلم الحصول على طلاق بالتراضي عبر الطلاق الرجعي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. يحق للزوج المسلم إيقاع الطلاق دون اشتراط موافقة الزوجة. غير أنه لا بد من تسجيل الطلاق في محكمة الأحوال الشخصية ليكون معتبراً قانونياً في الإمارات. إن لم تكن للزوجة مطالبات مالية واتُّفق على الحضانة أمكن السير فيه كطلاق غير متنازع عليه. أما إذا وُجدت نزاعات مالية أو على الحضانة فلا بد من بتها قضائياً بصرف النظر عن الطلاق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'بكم يكون الطلاق بالتراضي أرخص من الخلافي في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أرخص بفارق كبير. يكلف الطلاق بالتراضي في الإمارات ما بين ٣٠٠٠ و١٥٠٠٠ درهم إجمالاً (محامٍ + رسوم محكمة). أما الطلاق الخلافي فيكلف ١٥٠٠٠-٨٠٠٠٠ درهم+ بحسب التعقيد والمدة. القضايا التي تشمل أصولاً دولية أو حضانة خلافية أو مصالح تجارية قد تتجاوز ١٠٠٠٠٠ درهم.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تشترط الإمارات تقديم سبب للطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'للأزواج المسلمين: يحق للزوج الطلاق دون ذكر سبب. أما الزوجة فعليها إما الحصول على موافقة زوجها (الخلع) أو إثبات أسباب أمام المحكمة (الضرر، الهجر، الإخلال بالنفقة، السجن). أما غير المسلمين بموجب قانون ٢٠٢٢ المدني فيتاح لهم الطلاق دون إثبات ذنب — مما يُيسّر كثيراً الطلاق بالتراضي للوافدين غير المسلمين.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الخلع وهل هو طلاق خلافي أم بالتراضي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الخلع طلاق تبادي تبادر به الزوجة في مقابل رد المهر للزوج. إذا وافق الزوج على الخلع سار كطلاق متفق عليه. أما إذا رفض فعلى الزوجة اللجوء إلى المحكمة التي تستطيع منح خلع قضائي — وهذا يعني إجراءات قضائية ويُعدّ شكلاً من أشكال الطلاق الخلافي.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        الفرق بين طلاق مدته ٦ أسابيع وقضية تمتد سنتين يتوقف على سؤال واحد: هل يتفق الطرفان على المسائل الجوهرية؟ يشرح هذا الدليل كلا المسارين وتكلفة كل منهما وكيفية اختيار النهج الأنسب لوضعك.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <section class="content-section">
+        <h2>الفرق الجوهري</h2>
+        <div class="def-grid">
+          <div class="def-card def-card--contested">
+            <h3>الطلاق الخلافي</h3>
+            <p>أحد الطرفين أو كلاهما يتنازعان على الطلاق ذاته أو لا يتفقان على شروطه — الحضانة أو المال أو الأصول أو النفقة. على المحكمة الفصل في هذه النزاعات. القاضي يقرر ما عجز الطرفان عن الاتفاق عليه.</p>
+            <ul>
+              <li>٦ أشهر – سنتان فأكثر</li>
+              <li>١٥٠٠٠ – ٨٠٠٠٠ درهم+ في الأتعاب</li>
+              <li>جلسات متعددة</li>
+              <li>تكلفة عاطفية عالية</li>
+            </ul>
+          </div>
+          <div class="def-card def-card--uncontested">
+            <h3>الطلاق بالتراضي</h3>
+            <p>يوافق الطرفان على الطلاق ويتفقان على جميع الشروط الجوهرية قبل اللجوء إلى المحكمة. تُقرّ المحكمة الاتفاقية بدلاً من الفصل في نزاعات. أسرع وأرخص وأقل إرهاقاً.</p>
+            <ul>
+              <li>٤-١٢ أسبوعاً</li>
+              <li>٣٠٠٠ – ١٥٠٠٠ درهم في الأتعاب</li>
+              <li>١-٢ جلسة</li>
+              <li>مسار تعاوني منخفض التوتر</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مقارنة تفصيلية</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div class="compare-factor">العامل</div>
+            <div class="compare-col compare-col--contested">خلافي</div>
+            <div class="compare-col compare-col--uncontested">بالتراضي</div>
+          </div>
+          {comparison.map((row) => (
+            <div class="compare-row">
+              <div class="compare-factor">{row.factor}</div>
+              <div class="compare-col compare-col--contested">{row.contested}</div>
+              <div class="compare-col compare-col--uncontested">{row.uncontested}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مسار الطلاق الخلافي في الإمارات</h2>
+        <p>ينظر الطلاق الخلافي في الإمارات في محكمة الأحوال الشخصية. المسار تنافسي — يدافع كل طرف عن موقفه والقاضي يُقرر. إليك ما يمكن توقعه:</p>
+        <ol class="steps-list">
+          {contestedSteps.map((item, i) => (
+            <li>
+              <span class="step-num">{['١','٢','٣','٤','٥'][i]}</span>
+              <div>
+                <h3>{item.step}</h3>
+                <p>{item.detail}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <div class="warn-box">
+          <h3>مهم: المصالحة الإلزامية</h3>
+          <p>يُوجب القانون الإماراتي على المحكمة محاولة الإصلاح قبل منح الطلاق الخلافي. هذا يضيف وقتاً لا يمكن تجاوزه. تعيّن المحكمة خبير وساطة يلتقي بالطرفين. وفقط بعد فشل المصالحة تُستأنف إجراءات الطلاق الخلافي.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مسار الطلاق بالتراضي في الإمارات</h2>
+        <p>الطلاق بالتراضي أسرع لأن المحكمة تحتاج فقط إلى تأكيد شروطك المتفق عليها لا الفصل في نزاعات. المفتاح هو التوصل إلى اتفاق كامل قبل التقديم.</p>
+        <ol class="steps-list">
+          {uncontestSteps.map((item, i) => (
+            <li>
+              <span class="step-num">{['١','٢','٣','٤','٥'][i]}</span>
+              <div>
+                <h3>{item.step}</h3>
+                <p>{item.detail}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>أسباب تحول الطلاق إلى خلافي</h2>
+        <p>يبدأ طلاقك كطلاق بالتراضي إذا اتفق الطرفان على جميع المسائل الجوهرية. ويتحول إلى خلافي بمجرد أن يتنازع أحدهما على بند جوهري. أكثر الأسباب شيوعاً:</p>
+        <div class="trigger-grid">
+          <div class="trigger-item">
+            <span class="trigger-icon">⚖️</span>
+            <h3>نزاع الحضانة</h3>
+            <p>كل والد يريد الحضانة الرئيسية، أو الاختلاف على حق الزيارة أو اختيار المدرسة أو إذن السفر.</p>
+          </div>
+          <div class="trigger-item">
+            <span class="trigger-icon">🏠</span>
+            <h3>نزاع الممتلكات</h3>
+            <p>الخلاف على من يحتفظ بمسكن الزوجية أو عقار استثماري مشترك أو كيفية تقسيم الأصول المشتركة.</p>
+          </div>
+          <div class="trigger-item">
+            <span class="trigger-icon">💰</span>
+            <h3>نزاع النفقة</h3>
+            <p>الزوجة تطالب بالنفقة والزوج يتنازع على القيمة أو المدة أو الأهلية.</p>
+          </div>
+          <div class="trigger-item">
+            <span class="trigger-icon">✈️</span>
+            <h3>تعقيدات دولية</h3>
+            <p>أصول أو أطفال في أكثر من دولة، أو زوجان من جنسيتين مختلفتين تتعارض قوانين طلاقهما.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-section">
+        <h2>لست متأكداً من نوع طلاقك؟</h2>
+        <p>تحدث مع محامي أسرة إماراتي في استشارة مجانية وسرية. نقيّم وضعك ونوجهك نحو النهج الأقل تكلفة.</p>
+        <LeadForm source="طلاق-خلافي-اتفاقي" />
+      </div>
+
+      <section class="related-section">
+        <h2>دلائل ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'تكلفة الطلاق في الإمارات', href: '/ar/تكلفة-الطلاق-في-الامارات', desc: 'رسوم المحكمة وأتعاب المحامين والعوامل المؤثرة.' },
+            { title: 'مدة الطلاق في الإمارات', href: '/ar/مدة-الطلاق-في-الامارات', desc: 'الجدول الزمني لكل نوع من أنواع الطلاق.' },
+            { title: 'الخلع في الإمارات', href: '/ar/الخلع-في-الامارات', desc: 'دليل شامل للطلاق بطلب من الزوجة.' },
+            { title: 'نفقة الأطفال في الإمارات', href: '/ar/نفقة-الاطفال-الامارات', desc: 'من يدفع وكيف تُحسب النفقة.' },
+            { title: 'الطلاق للضرر', href: '/ar/طلاق-للضرر', desc: 'الأسباب والإجراءات وحق المهر.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+    text-align: right;
+  }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-author { font-size: 0.85rem; color: #7a8fa6; }
+
+  .page-layout { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.8; margin-bottom: 0.9rem; }
+
+  .def-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
+  .def-card { border-radius: 0.875rem; padding: 1.5rem; }
+  .def-card h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 0.75rem; }
+  .def-card p { font-size: 0.87rem; line-height: 1.7; margin-bottom: 1rem; }
+  .def-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .def-card ul li { font-size: 0.83rem; padding-right: 1.25rem; position: relative; }
+  .def-card ul li::before { content: '•'; position: absolute; right: 0; font-weight: 700; }
+  .def-card--contested { background: #fff1f2; border: 2px solid #fecdd3; }
+  .def-card--contested h3 { color: #991b1b; }
+  .def-card--contested ul li::before { color: #dc2626; }
+  .def-card--uncontested { background: #f0fdf4; border: 2px solid #bbf7d0; }
+  .def-card--uncontested h3 { color: #166534; }
+  .def-card--uncontested ul li::before { color: #16a34a; }
+
+  .compare-table { border: 1.5px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; margin-top: 1rem; }
+  .compare-header { display: grid; grid-template-columns: 1.5fr 1fr 1fr; background: #0a1628; color: #fff; font-weight: 700; font-size: 0.8rem; }
+  .compare-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; border-top: 1px solid #f3f4f6; }
+  .compare-row:nth-child(even) { background: #f8f9fa; }
+  .compare-factor { padding: 0.75rem 1rem; font-size: 0.875rem; font-weight: 600; color: #0a1628; display: flex; align-items: center; }
+  .compare-col { padding: 0.75rem 1rem; font-size: 0.8rem; color: #445; display: flex; align-items: center; border-right: 1px solid #f3f4f6; }
+  .compare-col--contested { color: #991b1b; }
+  .compare-col--uncontested { color: #166534; }
+  .compare-header .compare-factor { color: #fff; }
+  .compare-header .compare-col { color: #fff; border-right: 1px solid rgba(255,255,255,0.2); }
+
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .steps-list li { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .step-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .steps-list h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .steps-list p { font-size: 0.86rem; color: #445; line-height: 1.7; margin: 0; }
+
+  .warn-box { background: #fefce8; border: 1.5px solid #fde68a; border-radius: 0.875rem; padding: 1.25rem; margin-top: 1.25rem; }
+  .warn-box h3 { color: #92400e; font-size: 1rem; font-weight: 700; margin: 0 0 0.4rem; }
+  .warn-box p { color: #78350f; font-size: 0.875rem; line-height: 1.7; margin: 0; }
+
+  .trigger-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .trigger-item { background: #f8f9fa; border: 1.5px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .trigger-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+  .trigger-item h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.4rem; }
+  .trigger-item p { font-size: 0.83rem; color: #667; line-height: 1.65; margin: 0; }
+
+  .cta-section { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-section p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 640px) {
+    .def-grid { grid-template-columns: 1fr; }
+    .compare-header, .compare-row { grid-template-columns: 1fr; }
+    .compare-header .compare-col:not(:first-child) { display: none; }
+  }
+</style>

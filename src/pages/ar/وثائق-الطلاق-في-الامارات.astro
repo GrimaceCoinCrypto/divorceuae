@@ -1,0 +1,320 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'وثائق الطلاق في الإمارات ٢٠٢٥ — القائمة الكاملة للمستندات';
+const description =
+  'قائمة شاملة بالوثائق المطلوبة لتقديم طلب الطلاق في الإمارات — ما تحتاجه، وكيف تُترجَم الوثائق وتُصدَّق، وما يحتاجه الوافدون إضافةً عن المقيمين. محدَّثة أبريل ٢٠٢٥.';
+
+const canonical = 'https://divorceu.ae/ar/وثائق-الطلاق-في-الامارات';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/documents-for-divorce-uae',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'وثائق الطلاق في الإمارات' },
+];
+
+const docCategories = [
+  {
+    title: 'الوثائق الأساسية للطرفين',
+    icon: '📋',
+    critical: true,
+    docs: [
+      { doc: 'عقد الزواج الأصلي', note: 'لا بد أن يكون الأصل أو نسخة مصدَّقة. إذا صدر في الخارج يستلزم التصديق.' },
+      { doc: 'ترجمة عقد الزواج إلى العربية', note: 'من مترجم معتمد لدى وزارة العدل الإماراتية. التكلفة ١٠٠–٤٠٠ درهم.' },
+      { doc: 'جوازات سفر سارية (للطرفين)', note: 'نسخ من الجواز الحالي بجميع صفحات الختم.' },
+      { doc: 'بطاقات الهوية الإماراتية أو تصاريح الإقامة', note: 'بطاقة الهوية للمواطنين، تصريح الإقامة للوافدين.' },
+      { doc: 'صور شخصية بحجم جواز السفر', note: 'عادةً ٢–٤ صور حديثة لكل طرف.' },
+    ],
+  },
+  {
+    title: 'وثائق الأطفال (إن وجدوا)',
+    icon: '👶',
+    critical: true,
+    docs: [
+      { doc: 'شهادات ميلاد الأطفال', note: 'مع ترجمة عربية معتمدة إذا صدرت في الخارج.' },
+      { doc: 'بطاقات هوية الأطفال أو جوازات سفرهم', note: 'للإثبات والتحقق من وضعهم في الإمارات.' },
+      { doc: 'وثائق المدرسة إذا طُلبت', note: 'بعض المحاكم تطلبها لتحديد إمارة الحضانة.' },
+    ],
+  },
+  {
+    title: 'وثائق إضافية للوافدين',
+    icon: '✈️',
+    critical: false,
+    docs: [
+      { doc: 'التصديق الأجنبي على عقد الزواج', note: 'تصديق كاتب العدل ثم وزارة الخارجية في البلد المُصدِر، ثم وزارة الخارجية الإماراتية.' },
+      { doc: 'شهادة إثبات العزوبة (إن طُلبت)', note: 'بعض المحاكم تشترطها. اسأل محاميك مسبقاً.' },
+      { doc: 'توكيل رسمي (إذا كان أحد الطرفين في الخارج)', note: 'موثق ومصدَّق بالأبوستيل. إمكانية قبوله تتفاوت حسب الإمارة.' },
+    ],
+  },
+  {
+    title: 'وثائق مالية (للطلاق الخلافي أو مطالبات النفقة)',
+    icon: '💰',
+    critical: false,
+    docs: [
+      { doc: 'كشوف الحسابات البنكية (٣–٦ أشهر)', note: 'لإثبات الدخل أو للمطالبة بنفقة.' },
+      { doc: 'إثبات الراتب أو الدخل', note: 'خطاب من صاحب العمل أو كشف حساب أو إيصالات الراتب.' },
+      { doc: 'وثائق الملكية العقارية', note: 'رسوم ملكية دائرة الأراضي أو ما يعادلها في الإمارات الأخرى.' },
+      { doc: 'عقود الإيجار أو وثائق السكن', note: 'تُستخدم لتحديد احتياجات السكن بعد الطلاق.' },
+    ],
+  },
+];
+
+const attestationSteps = [
+  { step: '١', title: 'التوثيق لدى كاتب العدل في البلد المُصدِر', desc: 'أول تصديق — كاتب العدل المحلي أو الهيئة المختصة في البلد الذي أصدر الوثيقة.' },
+  { step: '٢', title: 'التصديق من وزارة الخارجية في البلد المُصدِر', desc: 'توثق وزارة الخارجية توقيع كاتب العدل. بعض الدول تُصدر أبوستيل بدلاً من ذلك.' },
+  { step: '٣', title: 'التصديق من سفارة الإمارات أو قنصليتها', desc: 'للتحقق من الوثيقة في الخارج قبل الاستخدام داخل الإمارات. بعض الدول تُعفى من هذه الخطوة.' },
+  { step: '٤', title: 'التصديق من وزارة الخارجية الإماراتية', desc: 'يُنجز في الإمارات. التكلفة عادةً ١٥٠–٦٠٠ درهم للوثيقة.' },
+  { step: '٥', title: 'الترجمة المعتمدة إلى العربية', note: 'بعد إتمام التصديق تُترجَم الوثيقة بواسطة مترجم معتمد لدى وزارة العدل. التكلفة ١٠٠–٤٠٠ درهم.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ما الوثائق المطلوبة لتقديم طلب الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لتقديم طلب الطلاق في الإمارات تحتاج عادةً إلى: عقد الزواج الأصلي (مع ترجمة عربية معتمدة وتصديق)، جوازات السفر لكلا الطرفين، بطاقات الهوية الإماراتية أو تصاريح الإقامة، صور شخصية حديثة، وشهادات ميلاد الأطفال إذا كانوا طرفاً في النزاع. يحتاج الوافدون إضافةً إلى تصديق عقد الزواج من وزارة الخارجية الإماراتية. وثائق مالية إضافية مطلوبة إذا كانت هناك مطالبات بالنفقة أو الممتلكات.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجب ترجمة عقد الزواج للطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. جميع الوثائق الأجنبية المقدَّمة للمحاكم الإماراتية يجب ترجمتها إلى العربية بواسطة مترجم قانوني معتمد لدى وزارة العدل الإماراتية. عقد الزواج يحتاج عادةً أيضاً إلى التصديق — أولاً في بلدك (كاتب عدل + وزارة خارجية)، ثم من وزارة الخارجية الإماراتية. التكلفة: ١٠٠–٤٠٠ درهم للترجمة، ١٥٠–٦٠٠ درهم للتصديق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن تقديم طلب الطلاق في الإمارات دون عقد الزواج الأصلي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تشترط المحاكم الإماراتية في العموم تقديم الأصل أو نسخة مصدَّقة من عقد الزواج. إذا كان أصلك صادراً في الخارج ويصعب الحصول عليه فتواصل مع سجل العقود للحصول على نسخة مصدَّقة. بعض المحاكم قد تقبل دليلاً بديلاً على الزواج (كشهادة جهة دينية) في حالات استثنائية، لكن ذلك يتفاوت حسب الإمارة والقاضي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تستغرق عملية التصديق للوثائق الأجنبية في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تتفاوت مدة التصديق من أسبوع إلى ثلاثة أشهر حسب البلد المُصدِر ومستوى الخدمة المختار. دول الأبوستيل (التي وقّعت اتفاقية لاهاي) عموماً أسرع — الأبوستيل يحل محل عدة خطوات من التصديق. ابدأ في جمع الوثائق في أقرب وقت ممكن قبل تقديم طلب الطلاق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يحتاج الزوجان في الخارج إلى حضور جلسات الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'في معظم محاكم الإمارات يُشترط حضور الزوجين شخصياً في الجلسة الأولى والجلسة النهائية على الأقل. إذا كان أحد الطرفين في الخارج فقد يُقبل توكيل رسمي موثق ومصدَّق بالأبوستيل في بعض الحالات، لكن الإجراءات تتفاوت حسب الإمارة. محاميك يُرشدك وفق وضعك تحديداً.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل وثائق الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        تعرف على الوثائق المطلوبة بالضبط لتقديم طلب الطلاق في الإمارات — ما تحتاجه وكيف تُترجَم وتُصدَّق وما يحتاجه الوافدون إضافةً عن المقيمين الإماراتيين.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <p><strong>نصيحة:</strong> ابدأ في جمع الوثائق مبكراً. تصديق الوثائق الأجنبية يستغرق أسبوعاً إلى ثلاثة أشهر حسب البلد. وثيقة واحدة مفقودة كافية لتأخير جلسة المحكمة.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>القائمة الكاملة للوثائق</h2>
+        {docCategories.map(cat => (
+          <div class="doc-category">
+            <div class="cat-header">
+              <span class="cat-icon">{cat.icon}</span>
+              <h3>{cat.title}</h3>
+              {cat.critical && <span class="cat-badge">مطلوب</span>}
+            </div>
+            <div class="doc-list">
+              {cat.docs.map(d => (
+                <div class="doc-row">
+                  <span class="doc-check">✓</span>
+                  <div class="doc-body">
+                    <span class="doc-name">{d.doc}</span>
+                    <span class="doc-note">{d.note}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section class="content-section">
+        <h2>سلسلة التصديق للوثائق الأجنبية</h2>
+        <p>إذا صدر عقد زواجك في الخارج فيجب المرور بهذه الخطوات قبل قبوله من المحاكم الإماراتية:</p>
+        <div class="attest-list">
+          {attestationSteps.map(s => (
+            <div class="attest-step">
+              <div class="attest-num">{s.step}</div>
+              <div class="attest-body">
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="apostille-note">
+          <h3>اتفاقية الأبوستيل</h3>
+          <p>إذا كان بلدك موقِّعاً على اتفاقية لاهاي (الأبوستيل) يستبدل الأبوستيل الخطوتين الثانية والثالثة ويُسرِّع كثيراً في العملية. تأكد مسبقاً من وضع بلدك مع هذه الاتفاقية.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الجدول الزمني والتكاليف</h2>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <h3>الترجمة المعتمدة</h3>
+            <div class="cost-amount">١٠٠–٤٠٠ درهم</div>
+            <p>للوثيقة الواحدة. مترجم معتمد لدى وزارة العدل الإماراتية. المدة: ١–٣ أيام عمل عادةً.</p>
+          </div>
+          <div class="cost-card">
+            <h3>التصديق من وزارة الخارجية الإماراتية</h3>
+            <div class="cost-amount">١٥٠–٦٠٠ درهم</div>
+            <p>للوثيقة الواحدة. يتوقف على نوع الوثيقة ودرجة الخدمة المختارة. المدة: يوم إلى أسبوع.</p>
+          </div>
+          <div class="cost-card">
+            <h3>التصديق الأجنبي (الأبوستيل)</h3>
+            <div class="cost-amount">يتفاوت</div>
+            <p>يعتمد على بلدك. بعض الدول تُقدم الخدمة بأيام وأخرى تستغرق أسابيع. اسأل مسبقاً وخطط بمرونة.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسئلة الشائعة</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-section">
+        <h2>تحتاج مساعدة في إعداد الوثائق؟</h2>
+        <p>محامي الأسرة المتمرس يرشدك لجمع الوثائق الصحيحة وتصديقها وترجمتها وتقديمها بالشكل المقبول من المحكمة — من المرة الأولى، دون تأخيرات مكلفة.</p>
+        <LeadForm source="وثائق-الطلاق" />
+      </div>
+
+      <section class="related-section">
+        <h2>دلائل ذات صلة</h2>
+        <div class="related-grid">
+          {[
+            { title: 'كيفية تقديم الطلاق في الإمارات', href: '/ar/كيفية-تقديم-الطلاق-في-الامارات', desc: 'دليل خطوة بخطوة لإجراءات المحكمة.' },
+            { title: 'تكلفة الطلاق في الإمارات', href: '/ar/تكلفة-الطلاق-في-الامارات', desc: 'رسوم المحكمة وأتعاب المحامين ومحركات التكلفة.' },
+            { title: 'مدة الطلاق في الإمارات', href: '/ar/مدة-الطلاق-في-الامارات', desc: 'الجدول الزمني لكل نوع من أنواع الطلاق.' },
+            { title: 'الطلاق بالتراضي في الإمارات', href: '/ar/الطلاق-بالتراضي-الامارات', desc: 'طلاق بموافقة الطرفين: الخطوات والتكلفة.' },
+            { title: 'الطلاق الخلافي والاتفاقي في الإمارات', href: '/ar/الطلاق-الخلافي-والاتفاقي-الامارات', desc: 'مقارنة بين نوعَي الطلاق بالتفصيل.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} ←</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+    text-align: right;
+  }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-author { font-size: 0.85rem; color: #7a8fa6; }
+
+  .page-layout { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  .tip-box { display: flex; gap: 0.75rem; align-items: flex-start; background: #f0fdf4; border: 1px solid #86efac; border-radius: 1rem; padding: 1.25rem; margin-bottom: 2.5rem; }
+  .tip-icon { font-size: 1.25rem; flex-shrink: 0; }
+  .tip-box p { font-size: 0.9rem; color: #1a4d30; line-height: 1.7; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.4rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.8; margin-bottom: 0.9rem; }
+
+  .doc-category { margin-bottom: 1.75rem; }
+  .cat-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .cat-icon { font-size: 1.2rem; }
+  .cat-header h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .cat-badge { font-size: 0.65rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 0.15rem 0.6rem; border-radius: 999px; }
+  .doc-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .doc-row { display: flex; gap: 0.75rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 0.75rem 1rem; }
+  .doc-check { color: #16a34a; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .doc-body { display: flex; flex-direction: column; gap: 0.2rem; }
+  .doc-name { font-size: 0.9rem; font-weight: 600; color: #0a1628; }
+  .doc-note { font-size: 0.8rem; color: #667; }
+
+  .attest-list { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 1.25rem; }
+  .attest-step { display: flex; gap: 1rem; align-items: flex-start; }
+  .attest-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .attest-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.25rem; }
+  .attest-body p { font-size: 0.84rem; color: #445; line-height: 1.65; margin: 0; }
+  .apostille-note { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 0.875rem; padding: 1rem 1.25rem; }
+  .apostille-note h3 { font-size: 0.9rem; font-weight: 700; color: #1e40af; margin: 0 0 0.35rem; }
+  .apostille-note p { font-size: 0.84rem; color: #1e3a5f; line-height: 1.65; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .cost-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .cost-card h3 { font-size: 0.88rem; font-weight: 700; color: #0a1628; margin-bottom: 0.4rem; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #c9a84c; margin-bottom: 0.5rem; }
+  .cost-card p { font-size: 0.82rem; color: #556; line-height: 1.6; margin: 0; }
+
+  .cta-section { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-section p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>
