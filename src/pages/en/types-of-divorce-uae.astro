@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Types of Divorce in UAE 2025 — Islamic Law and UAE Personal Status Code';
+const description =
+  'UAE recognises six types of divorce: revocable, irrevocable (minor and major), khul\'a, judicial separation, and bid\'i divorce. Learn what each means for your rights, remarriage, and the divorce process.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/types-of-divorce-uae',
+  ar: 'https://divorceu.ae/ar/انواع-الطلاق',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Types of Divorce UAE' },
+];
+
+const divorceTypes = [
+  {
+    name: 'Revocable Divorce (Talaq Raj\'i)',
+    arabic: 'الطلاق الرجعي',
+    tag: 'First or second pronouncement',
+    desc: 'The husband pronounces divorce once or twice. During the waiting period (iddah — typically three menstrual cycles), he retains the right to revoke the divorce and resume the marriage without a new contract or the wife\'s consent.',
+    keyPoints: [
+      'Wife remains legally married during the iddah period',
+      'Husband can revoke verbally or by resuming cohabitation',
+      'If iddah ends without revocation, it converts to Minor Irrevocable Divorce',
+      'Wife is entitled to full accommodation and financial support throughout iddah',
+    ],
+    uaeLaw: 'UAE Personal Status Law (Federal Law No. 28 of 2005), Article 98 — the first and second pronouncements are revocable.',
+  },
+  {
+    name: 'Minor Irrevocable Divorce (Ba\'in Sughra)',
+    arabic: 'الطلاق البائن بينونة صغرى',
+    tag: 'After iddah expires, or khul\'a',
+    desc: 'A revocable divorce that expired without the husband revoking it, a divorce before consummation of marriage, or a divorce obtained through khul\'a (wife-initiated). The parties may remarry with a new marriage contract and new mahr.',
+    keyPoints: [
+      'Requires a new marriage contract and mahr to remarry',
+      'Covers the first and second pronouncements after iddah ends',
+      'Includes divorce before consummation (no iddah required in this case)',
+      'Includes khul\'a (wife returns the mahr in exchange for release)',
+    ],
+    uaeLaw: 'UAE law Articles 99–101 — a divorce completed after iddah, or by court-ordered khul\'a, is Ba\'in Sughra.',
+  },
+  {
+    name: 'Major Irrevocable Divorce (Ba\'in Kubra)',
+    arabic: 'الطلاق البائن بينونة كبرى',
+    tag: 'Third pronouncement — final',
+    desc: 'The third pronouncement of divorce. The wife is forbidden from remarrying her former husband until she has married another man in a genuine marriage, that marriage has been consummated, and that second husband has divorced her or died.',
+    keyPoints: [
+      'Absolutely final — no revocation or remarriage without intervening marriage',
+      'UAE law explicitly prohibits \'tahleel\' (sham marriage to enable remarriage) — it is void and criminal',
+      'Three pronouncements in a single sitting count as ONE under UAE Article 99',
+      'All financial rights (alimony during iddah, deferred mahr) still apply',
+    ],
+    uaeLaw: 'Article 99: "Divorce accompanied by a number, whether by word or gesture, does not count as more than one." Three pronouncements in one session = one revocable divorce under UAE law.',
+  },
+  {
+    name: "Khul'a (Wife-Initiated Divorce)",
+    arabic: 'الخلع',
+    tag: 'Wife\'s right',
+    desc: 'A wife may request a divorce in exchange for returning the mahr (dower) to her husband. If the husband refuses, she may petition the Personal Status Court which can order the khul\'a over his objection.',
+    keyPoints: [
+      'Wife returns the advance mahr as the standard compensation',
+      'Court-ordered khul\'a is available even if the husband refuses',
+      'Counts as Ba\'in Sughra — new contract required to remarry',
+      'Some scholars hold that a khul\'a wife does not need the full three-cycle iddah — UAE practice typically follows a one-cycle waiting period',
+    ],
+    uaeLaw: 'Articles 110–117 of UAE Personal Status Law govern khul\'a. Court must verify the wife\'s request is free and voluntary and that the mahr arrangement is clear.',
+  },
+  {
+    name: 'Judicial Separation (Faskh / Tatliq)',
+    arabic: 'التفريق القضائي',
+    tag: 'Court-ordered',
+    desc: 'A judge dissolves the marriage on application by either party when specific legal grounds are met: harm or abuse, desertion for four or more months, failure to provide financial support, long absence, or a hidden defect at the time of marriage.',
+    keyPoints: [
+      'Wife can petition on grounds of harm, desertion, non-maintenance, long absence, or contagious disease',
+      'Husband can petition on grounds of hidden defect or fraud',
+      'Court investigates the claim before granting the separation',
+      'Treated as Ba\'in Sughra — a new contract is required to remarry',
+    ],
+    uaeLaw: 'Articles 118–132 of UAE Personal Status Law list the specific grounds for judicial separation. The court appoints mediators before granting the separation in cases of harm.',
+  },
+  {
+    name: "Bid'i Divorce (Forbidden Innovation)",
+    arabic: 'الطلاق البدعي',
+    tag: 'Prohibited — but valid in UAE',
+    desc: 'A divorce pronounced in a way that violates Islamic law — most commonly: divorce during menstruation or postnatal bleeding, or three pronouncements in a single session. It is sinful but takes legal effect under most classical and UAE law interpretations.',
+    keyPoints: [
+      'Divorce during menstruation: sinful, but UAE courts treat it as valid — the husband may be ordered to revoke it',
+      'Three pronouncements in one session: sinful — but UAE Article 99 treats this as a single revocable divorce',
+      'Marriage with intent to divorce (mutah-style) is explicitly banned and void under UAE law',
+      'If in doubt whether your divorce falls into this category, consult a UAE personal status lawyer immediately',
+    ],
+    uaeLaw: 'Article 99 of UAE Personal Status Law: three-in-one counts as one revocable divorce — one of the most significant UAE departures from classical Hanbali/Shafi\'i opinion.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'What type of divorce is most common in UAE for expats?',
+    answer: 'Most expat divorces in the UAE proceed as either mutual consent divorce (which ends as a Ba\'in Sughra after the judge ratifies the agreement) or as contested divorce through the Personal Status Court. Non-Muslim expats may apply their home country\'s law in some circumstances — particularly for property and financial matters. A UAE divorce lawyer can advise on which route applies to your situation.',
+  },
+  {
+    question: 'Does UAE law recognise three divorces in one session as final?',
+    answer: 'No. Article 99 of UAE Federal Law No. 28 of 2005 explicitly states that divorce accompanied by a number — whether by word or gesture — does not count as more than one. So "You are divorced three times" counts as one revocable divorce under UAE law. This is a significant departure from the classical majority view and is one of the most practically important distinctions in UAE divorce law.',
+  },
+  {
+    question: 'Can a wife initiate divorce in the UAE?',
+    answer: 'Yes. A wife has two main routes. First, khul\'a: she requests divorce in exchange for returning the mahr — the husband may agree or the court can order it over his refusal. Second, judicial separation (tatliq / faskh): she petitions the court on specific grounds such as harm, desertion, failure to maintain, or the husband\'s long absence. Both routes are well-established in UAE law.',
+  },
+  {
+    question: 'What is the difference between khul\'a and tatliq (judicial separation)?',
+    answer: 'Khul\'a is a wife-initiated divorce involving financial compensation (return of mahr). The wife does not need to prove fault — she simply needs to establish that she cannot continue the marriage. Tatliq (judicial separation) is fault-based: the wife must prove a specific legal ground (harm, desertion, non-maintenance, etc.) to the court. Khul\'a is generally faster; tatliq allows the wife to retain the mahr if the court finds the husband at fault.',
+  },
+  {
+    question: 'How many divorces are allowed before the marriage is permanently over?',
+    answer: 'In Islamic law followed by UAE courts, a Muslim couple may divorce and remarry twice. The third divorce is the Ba\'in Kubra — permanently final unless the wife genuinely marries another man, that marriage is consummated, and she is subsequently divorced or widowed from him. Under UAE Article 99, three pronouncements in one session count as only one divorce, so the count of two-before-final still applies across separate occasions.',
+  },
+  {
+    question: 'Does UAE divorce type affect alimony and mahr rights?',
+    answer: 'Yes, significantly. In a revocable divorce: the wife retains all maintenance during iddah. In Ba\'in Sughra: maintenance during iddah is due (UAE courts enforce this). In Ba\'in Kubra (third divorce): maintenance during iddah is still due under UAE law. In khul\'a: the wife forfeits the mahr she returns, but deferred mahr arrangements can vary. In judicial separation for the husband\'s fault: the wife retains the full mahr. Always get specific advice on the financial implications for your type of divorce.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/types-of-divorce-uae"
+  lang="en"
+  hreflang={hreflang}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">UAE Divorce Law Guide · 2025</p>
+      <h1>Types of Divorce in UAE — Islamic Law and the Personal Status Code</h1>
+      <p class="hero-sub">UAE divorce law recognises six distinct types of divorce, each with different rules for revocation, remarriage, and financial rights. Knowing which type applies to your situation determines your rights from day one.</p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="key-point">
+        <h2>The Single Most Important UAE Rule</h2>
+        <p>Under <strong>Article 99 of UAE Federal Law No. 28 of 2005</strong>, pronouncing divorce three times in one session counts as only <strong>one revocable divorce</strong> — not three. This departs from the classical majority Islamic opinion and is one of the most practically significant rules in UAE personal status law. Many couples do not realise this until it is too late to act on it correctly.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>The Six Types of Divorce Explained</h2>
+
+        {divorceTypes.map((type, i) => (
+          <div class="type-card">
+            <div class="type-header">
+              <div class="type-num">{i + 1}</div>
+              <div class="type-titles">
+                <h3>{type.name}</h3>
+                <span class="type-arabic">{type.arabic}</span>
+              </div>
+              <span class="type-tag">{type.tag}</span>
+            </div>
+            <p class="type-desc">{type.desc}</p>
+            <ul class="type-points">
+              {type.keyPoints.map(pt => (
+                <li>{pt}</li>
+              ))}
+            </ul>
+            <div class="type-law">
+              <span class="law-label">UAE Law:</span> {type.uaeLaw}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section class="content-section">
+        <h2>Quick Comparison Table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Who initiates</th>
+                <th>Revocable?</th>
+                <th>New contract to remarry?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Revocable (1st or 2nd)</td><td>Husband</td><td>Yes — during iddah</td><td>No</td></tr>
+              <tr><td>Ba'in Sughra (after iddah)</td><td>Husband</td><td>No — new contract needed</td><td>Yes</td></tr>
+              <tr><td>Ba'in Kubra (3rd divorce)</td><td>Husband</td><td>No — until intervening marriage</td><td>Yes (after 2nd marriage)</td></tr>
+              <tr><td>Khul'a</td><td>Wife / Court</td><td>No</td><td>Yes</td></tr>
+              <tr><td>Judicial Separation</td><td>Court</td><td>No</td><td>Yes</td></tr>
+              <tr><td>Bid'i Divorce</td><td>Husband (prohibited)</td><td>Treated per actual count</td><td>Per actual count</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Not Sure Which Type Applies to Your Situation?</h2>
+        <p>The type of divorce affects your alimony rights, mahr entitlements, custody standing, and visa status. Get a clear answer from a UAE personal status lawyer before any step is taken.</p>
+        <LeadForm source="types-of-divorce-uae" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'UAE Divorce Law', href: '/en/uae-divorce-law', desc: 'Full overview of Federal Law No. 28 of 2005.' },
+            { title: "Khul'a Divorce UAE", href: '/en/khula-divorce-uae', desc: "Complete guide to wife-initiated divorce and mahr return." },
+            { title: 'Divorce for Harm UAE', href: '/en/divorce-for-harm-uae', desc: 'Grounds, evidence, and process for tatliq lil-darar.' },
+            { title: 'Iddah Waiting Period UAE', href: '/en/iddah-waiting-period-uae', desc: 'Duration, rights, and obligations during the waiting period.' },
+            { title: 'Alimony in UAE', href: '/en/alimony-uae', desc: 'All six types of spousal support and how they are calculated.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  .key-point { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 0.875rem; padding: 1.4rem; margin-bottom: 3rem; }
+  .key-point h2 { font-size: 1.05rem; font-weight: 800; color: #064e3b; margin-bottom: 0.6rem; }
+  .key-point p { font-size: 0.9rem; color: #1a4d30; line-height: 1.75; margin-bottom: 0; }
+  .key-point strong { color: #064e3b; }
+
+  /* Type cards */
+  .type-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.4rem; margin-bottom: 1.25rem; }
+  .type-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.875rem; flex-wrap: wrap; }
+  .type-num { width: 36px; height: 36px; min-width: 36px; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0; }
+  .type-titles { flex: 1; }
+  .type-titles h3 { font-size: 1.05rem; font-weight: 800; color: #0a1628; margin: 0 0 3px; }
+  .type-arabic { font-size: 0.85rem; color: #667; }
+  .type-tag { font-size: 0.7rem; font-weight: 700; background: #c9a84c; color: #fff; padding: 3px 10px; border-radius: 999px; white-space: nowrap; align-self: flex-start; }
+  .type-desc { font-size: 0.9rem; color: #334; line-height: 1.75; margin-bottom: 0.75rem; }
+  .type-points { list-style: none; padding: 0; margin: 0 0 0.875rem; display: flex; flex-direction: column; gap: 5px; }
+  .type-points li { font-size: 0.84rem; color: #445; padding-left: 1rem; position: relative; line-height: 1.6; }
+  .type-points li::before { content: '•'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+  .type-law { font-size: 0.8rem; color: #556; background: #eef4ff; border-radius: 6px; padding: 8px 12px; line-height: 1.6; }
+  .law-label { font-weight: 700; color: #0a1628; margin-left: 4px; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; margin-top: 1rem; }
+  .table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .table-wrap th { background: #0a1628; color: #fff; padding: 10px 14px; text-align: left; }
+  .table-wrap td { padding: 9px 14px; border-bottom: 1px solid #e5e7eb; color: #334; }
+  .table-wrap tr:nth-child(even) td { background: #f8f9fa; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+
+  @media (max-width: 640px) {
+    .type-header { flex-wrap: wrap; }
+    .type-tag { align-self: auto; }
+  }
+</style>

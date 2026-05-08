@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'اتفاقية تسوية الطلاق في الإمارات — ما يجب تضمينه وكيف تُنفَّذ';
+const description =
+  'دليل شامل لاتفاقية تسوية الطلاق في الإمارات: البنود الضرورية (الحضانة والنفقة والممتلكات والتأشيرة)، كيف تصبح ملزمة قانونياً، والأخطاء الشائعة التي تجعل الاتفاقية غير قابلة للتنفيذ.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-settlement-uae',
+  ar: 'https://divorceu.ae/ar/تسوية-الطلاق-الامارات',
+};
+
+const breadcrumbs = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'تسوية الطلاق في الإمارات', url: 'https://divorceu.ae/ar/تسوية-الطلاق-الامارات' },
+];
+
+const clauseCategories = [
+  {
+    category: 'بنود الأطفال',
+    critical: true,
+    items: [
+      { clause: 'تحديد الحضانة الأصلية', note: 'من يعيش معه الأطفال أساساً. ينص القانون الإماراتي على سن انتقال الحضانة (بنين 7 سنوات، بنات 9 سنوات) ما لم تقرر المحكمة خلاف ذلك.' },
+      { clause: 'جدول الرؤية والزيارات', note: 'المواعيد الأسبوعية والأعياد والإجازات المدرسية بشكل مفصّل. الصياغة المبهمة تُفضي إلى نزاعات مستقبلية.' },
+      { clause: 'مقدار نفقة الأطفال', note: 'المبلغ الشهري، ما يشمله، تاريخ الدفع، وطريقة الدفع.' },
+      { clause: 'قرارات التعليم', note: 'من يختار المدرسة، من يدفع الرسوم، وكيف يُحسم الخلاف.' },
+      { clause: 'القرارات الطبية', note: 'القرارات الروتينية مقابل القرارات الطبية الكبرى، ومن يمتلك التأمين الصحي.' },
+      { clause: 'السفر خارج الإمارات', note: 'آلية أخذ الأطفال خارج البلاد، المدة المطلوبة للإخطار، والمواقف الافتراضية.' },
+      { clause: 'قيود الانتقال للخارج', note: 'هل يحق لأي من الوالدين الانتقال مع الأطفال للخارج؟ وبأي إجراء؟' },
+    ],
+  },
+  {
+    category: 'البنود المالية',
+    critical: true,
+    items: [
+      { clause: 'النفقة الزوجية (المتعة والعدة)', note: 'المبلغ، التكرار، المدة، والأحداث المحددة التي تُنهيها.' },
+      { clause: 'مسكن الأسرة', note: 'من يحتفظ بالمسكن؛ شروط الشراء بالقيمة السوقية؛ جدول البيع إن انطبق.' },
+      { clause: 'الحسابات البنكية المشتركة', note: 'كيف تُقسَّم الحسابات المشتركة، ومتى تُغلق.' },
+      { clause: 'الاستثمارات والمدخرات', note: 'الودائع الإماراتية والأسهم والاستثمارات الخارجية — يجب تحديد كل بند.' },
+      { clause: 'المسؤولية عن الديون', note: 'من يتحمل الديون المشتركة وبطاقات الائتمان والقروض.' },
+      { clause: 'حصص الأعمال التجارية', note: 'إذا كان أي من الطرفين يمتلك نشاطاً تجارياً يجب تحديد كيفية التعامل مع الحصص أو حقوق الأرباح.' },
+    ],
+  },
+  {
+    category: 'البنود العملية بعد الطلاق',
+    critical: false,
+    items: [
+      { clause: 'ترتيبات التأشيرة والإقامة', note: 'الزوجة المقيمة على تأشيرة الزوج تملك 30 يوماً لتغيير وضعها. يجب أن تُحدد الاتفاقية من يتحمل رسوم تأشيرة الأطفال.' },
+      { clause: 'المهر (المسلمون)', note: 'ردّ المهر المعجّل، إسقاط المهر المؤجّل، أو بديل متفق عليه.' },
+      { clause: 'آلية حل النزاعات', note: 'الاتفاق على الوساطة قبل التقاضي في النزاعات المتعلقة بالأطفال يوفر تكاليف باهظة.' },
+      { clause: 'بروتوكول التواصل', note: 'كيفية التواصل بين الوالدين (تطبيق، بريد إلكتروني) وتوقعات الاستجابة.' },
+    ],
+  },
+];
+
+const mistakes = [
+  { mistake: 'لغة الحضانة المبهمة', fix: 'حدّد أوقات وأماكن تسليم الأطفال بدقة. "حق الزيارة المعقول" غير قابل للتنفيذ — المحاكم لا تستطيع التصرف بغير شروط واضحة.' },
+  { mistake: 'عدم ربط النفقة بمؤشر غلاء المعيشة', fix: 'أضف بنداً للمراجعة السنوية أو التعديل وفق مؤشر التضخم. مبلغ ثابت عام 2025 قد يكون غير كافٍ عام 2030.' },
+  { mistake: 'ترك حقوق الانتقال للخارج مفتوحة', fix: 'حدّد صراحةً هل يحق لأي من الوالدين الانتقال مع الأطفال للخارج. الصمت هنا يُمهّد لنزاعات واختطاف الأطفال.' },
+  { mistake: 'الاتفاق الشفهي دون توثيق', fix: 'جميع اتفاقيات الطلاق في الإمارات يجب أن تكون مكتوبة ومصادقاً عليها من المحكمة لتكون قابلة للتنفيذ الكامل. الاتفاقيات الشفهية لا تُعترف بها من محكمة التنفيذ.' },
+  { mistake: 'إغفال الأصول الخارجية', fix: 'المصادقة الإماراتية تشمل فقط ما هو مُدرج فيها. العقارات الخارجية وصناديق التقاعد والحسابات الأجنبية تحتاج إلى تضمين صريح وربما إجراءات موازية في الخارج.' },
+  { mistake: 'عدم وضع بند للظروف الطارئة', fix: 'أضف بند التعديل الذي يُحدد كيفية تعامل الطرفين مع التغييرات (فقدان الوظيفة، المرض، تغيير المدرسة) قبل اللجوء للقضاء.' },
+];
+
+const faqItems = [
+  {
+    question: 'هل اتفاقية تسوية الطلاق ملزمة قانونياً في الإمارات؟',
+    answer:
+      'تصبح اتفاقية التسوية ملزمة قانونياً في الإمارات بمجرد مصادقة محكمة الأحوال الشخصية عليها كجزء من حكم الطلاق. أما الاتفاقية الموقعة بين الطرفين دون مصادقة قضائية فتأخذ حكم العقد المدني — أفضل من لا شيء، لكنها لا تُخوِّل محكمة التنفيذ صلاحيات التجميد والحجز والحظر إلا بأمر قضائي. احرص دائماً على تقديم الاتفاقية للمحكمة ضمن دعوى الطلاق.',
+  },
+  {
+    question: 'ماذا تشمل اتفاقية التسوية في الإمارات؟',
+    answer:
+      'يمكن أن تشمل: مبلغ النفقة الزوجية ومدتها، جدول حضانة الأطفال (الإقامة والمدرسة وترتيبات الأعياد)، مقدار نفقة الأطفال وطريقة دفعها، تقسيم العقارات في الإمارات والخارج، الحسابات البنكية المشتركة، ملكية السيارات، المسؤولية عن الديون، المهر (للزواج الإسلامي)، ترتيبات التأشيرة بعد الطلاق، وآلية حل نزاعات الأطفال مستقبلاً.',
+  },
+  {
+    question: 'ماذا يحدث إذا خالف أحد الطرفين الاتفاقية؟',
+    answer:
+      'إذا خالف طرف اتفاقية مصادقاً عليها من المحكمة، يمكنك تقديم طلب تنفيذ لمحكمة التنفيذ الإماراتية. تستطيع المحكمة تجميد الحسابات البنكية، والحجز على الراتب، ومنع السفر خارج الإمارات، وفي حالات التكرار الإحالة للملاحقة الجزائية. تستغرق طلبات التنفيذ عادةً 1 إلى 3 أشهر.',
+  },
+  {
+    question: 'هل نحتاج إلى محامٍ لاتفاقية التسوية؟',
+    answer:
+      'من الناحية التقنية لا، لكن عملياً نعم في معظم الحالات. يجب تقديم الاتفاقية للمحكمة باللغة العربية، ومستوفيةً شروطاً شكلية محددة، وغير مخالفة للقانون الإماراتي (مثلاً لا يمكن الاتفاق على إسقاط نفقة الأطفال الواجبة). المحامي يضمن أن تكون الاتفاقية جاهزة للمحكمة من أول مرة.',
+  },
+  {
+    question: 'هل يمكن تعديل الاتفاقية بعد صدور حكم الطلاق؟',
+    answer:
+      'بعض البنود قابلة للتعديل — نفقة الأطفال وجداول الحضانة يمكن تغييرها بأمر قضائي جديد عند تغيّر الظروف تغيراً جوهرياً. بنود النفقة الزوجية قابلة للتعديل أحياناً إن تضمنت الاتفاقية الأصلية بند مراجعة. أما تقسيم الأصول بعد تنفيذه فهو نهائي في الغالب. التعديلات تتطلب طلباً قضائياً جديداً ولا تتم بالاتفاق الخاص وحده.',
+  },
+  {
+    question: 'هل تُعترف باتفاقية الطلاق الإماراتية في بلدي؟',
+    answer:
+      'أحكام محاكم الإمارات (بما فيها اتفاقيات التسوية المصادَق عليها) معترف بها دولياً على نطاق واسع، لكن إجراءات التسجيل تختلف. معظم الدول تشترط: نسخة مُؤَبَّرة (مُصادقة أبوستيل) من الحكم الإماراتي، وترجمة معتمدة من العربية، والتسجيل لدى الجهة المختصة في البلد الأصلي. أنجز هذا فور صدور الحكم — بعض الدول لها مدة محددة لتسجيل الأحكام الأجنبية.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="ar"
+  dir="rtl"
+  hreflang={hreflang}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="ar" />
+        <h1 class="hero__h1">اتفاقية تسوية الطلاق في الإمارات</h1>
+        <p class="hero__sub">
+          دليل شامل للبنود الضرورية في اتفاقية التسوية، وكيف تجعلها ملزمة قانونياً، والأخطاء الشائعة التي تُفضي إلى نزاعات مستقبلية.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ بنود الأطفال والمالية والتأشيرة</li>
+          <li>✓ كيف تُصادق المحكمة على الاتفاقية</li>
+          <li>✓ التنفيذ عند مخالفة أحد الطرفين</li>
+          <li>✓ استشارة قانونية مجانية</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="ar" variant="hero" heading="استشارة طلاق مجانية" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Key point -->
+    <section class="section" aria-labelledby="binding-heading">
+      <h2 id="binding-heading">كيف تصبح اتفاقية التسوية ملزمة قانونياً</h2>
+      <div class="alert-box alert-box--green">
+        <strong>المبدأ الأساسي:</strong> اتفاقية التسوية تكون قابلة للتنفيذ عبر محكمة التنفيذ الإماراتية فقط بعد <strong>مصادقة محكمة الأحوال الشخصية</strong> عليها كجزء من حكم الطلاق. الاتفاقية الموقعة بين الطرفين دون مصادقة قضائية تأخذ حكم العقد المدني — لكنها لا تُخوِّل المحكمة صلاحيات التجميد والحجز والحظر التلقائية.
+      </div>
+      <p>
+        احرص دائماً على تقديم الاتفاقية للمحكمة ضمن دعوى الطلاق. يراجع القاضي البنود، ويتأكد من موافقة الطرفين طوعاً، ثم يُدرجها في حكم الطلاق.
+      </p>
+    </section>
+
+    <!-- Clauses checklist -->
+    <section class="section" aria-labelledby="clauses-heading">
+      <h2 id="clauses-heading">قائمة البنود الشاملة</h2>
+      <p>هذه البنود يجب أن تعالجها كل اتفاقية طلاق إماراتية. البنود الغائبة تتحول إلى نقاط توتر مستقبلية.</p>
+
+      {clauseCategories.map(cat => (
+        <div class="clause-category">
+          <div class="clause-cat-header">
+            <h3>{cat.category}</h3>
+            {cat.critical && <span class="critical-tag">يجب التضمين</span>}
+          </div>
+          <div class="clause-list">
+            {cat.items.map(item => (
+              <div class="clause-item">
+                <div class="clause-check">✓</div>
+                <div>
+                  <p class="clause-name">{item.clause}</p>
+                  <p class="clause-note">{item.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Mistakes -->
+    <section class="section" aria-labelledby="mistakes-heading">
+      <h2 id="mistakes-heading">الأخطاء الشائعة في اتفاقيات التسوية وكيف تتجنبها</h2>
+
+      <div class="mistakes-list">
+        {mistakes.map(m => (
+          <div class="mistake-card">
+            <div class="mistake-header">
+              <span class="mistake-icon">✗</span>
+              <h3>{m.mistake}</h3>
+            </div>
+            <div class="fix-row">
+              <span class="fix-icon">←</span>
+              <p>{m.fix}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Enforcement -->
+    <section class="section" aria-labelledby="enforcement-heading">
+      <h2 id="enforcement-heading">التنفيذ — ماذا يحدث عند مخالفة الاتفاقية</h2>
+
+      <div class="enf-grid">
+        <div class="enf-card">
+          <h3>عدم دفع النفقة أو نفقة الأطفال</h3>
+          <p>تقديم طلب تنفيذ. تستطيع محكمة التنفيذ الحجز على الراتب مباشرةً من صاحب العمل، وتجميد الحسابات البنكية، ومنع الممتنع عن الدفع من السفر خارج الإمارات حتى سداد المتأخرات.</p>
+        </div>
+        <div class="enf-card">
+          <h3>انتهاك الحضانة وحق الزيارة</h3>
+          <p>الوالد الذي يعيق الزيارات المقررة بصفة متكررة قد يواجه اتهاماً بالإخلال. قد تُعدّل المحكمة ترتيبات الحضانة لصالح الوالد الملتزم. اختطاف الطفل (أخذه خارج الإمارات دون موافقة) يُفضي إلى إجراءات جزائية.</p>
+        </div>
+        <div class="enf-card">
+          <h3>عدم نقل ملكية العقار</h3>
+          <p>إذا اشترطت الاتفاقية نقل ملكية عقار ولم ينفَّذ، يمكن لمحكمة التنفيذ أمر النقل مباشرةً عبر دائرة الأراضي أو إلزام أحد الطرفين بالبيع.</p>
+        </div>
+        <div class="enf-card">
+          <h3>الطرف الذي غادر الإمارات</h3>
+          <p>التنفيذ يصبح أكثر تعقيداً عند مغادرة الطرف. تستطيع المحاكم الإماراتية التصرف في الأصول المحلية. للتنفيذ في الخارج، يحتاج الحكم الإماراتي إلى اعتراف به في دولة الوجهة — وهذا يختلف من دولة إلى أخرى.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related links -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">أدلة ذات صلة</h2>
+      <div class="service-links">
+        <a href="/ar/الطلاق-بالتراضي-الامارات" class="service-link">
+          <strong>الطلاق بالتراضي في الإمارات</strong>
+          <span>خطوات الطلاق الاتفاقي ومقارنة التكاليف</span>
+        </a>
+        <a href="/ar/نفقة-بعد-الطلاق-الامارات" class="service-link">
+          <strong>النفقة بعد الطلاق</strong>
+          <span>أنواع النفقة وكيف تحسب المحاكم المبالغ</span>
+        </a>
+        <a href="/ar/حضانة-الاطفال-الامارات" class="service-link">
+          <strong>حضانة الأطفال في الإمارات</strong>
+          <span>قواعد الحضانة وأعمار الأطفال وحق الرؤية</span>
+        </a>
+        <a href="/ar/تقسيم-الممتلكات-عند-الطلاق-الامارات" class="service-link">
+          <strong>تقسيم الممتلكات عند الطلاق</strong>
+          <span>المسكن العائلي وتقسيم الأصول وحقوق المغتربين</span>
+        </a>
+        <a href="/ar/نفقة-الاطفال-الامارات" class="service-link">
+          <strong>نفقة الأطفال في الإمارات</strong>
+          <span>من يدفع، كيف تُحسب، وكيف تُنفَّذ</span>
+        </a>
+        <a href="/ar/محامي-طلاق" class="service-link">
+          <strong>محامي طلاق في الإمارات</strong>
+          <span>ابحث عن محامٍ متخصص</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="ar" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">احرص على أن تكون اتفاقيتك صحيحة من البداية</h2>
+      <p>اتفاقية مصاغة بشكل خاطئ تكلف أضعاف ما يكلفه تصحيحها. استشارة قبل التوقيع تُجنبك سنوات من النزاعات.</p>
+      <LeadForm lang="ar" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 DivorceU.AE — خدمة إحالة قانونية. ليست مكتب محاماة. المعلومات المقدمة للإرشاد فقط ولا تشكل استشارة قانونية.</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/سياسة-الخصوصية">سياسة الخصوصية</a>
+        <a href="/ar/إخلاء-المسؤولية">إخلاء المسؤولية</a>
+        <a href="/en/">English</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.8; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .section p { color: #374151; line-height: 1.9; margin-bottom: 16px; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .alert-box { border-radius: 10px; padding: 16px 20px; font-size: 0.875rem; line-height: 1.7; margin-bottom: 20px; }
+  .alert-box strong { display: block; margin-bottom: 4px; }
+  .alert-box--green { background: #f0fdf4; border: 1.5px solid #86efac; color: #1a4d30; }
+  .alert-box--green strong { color: #064e3b; }
+
+  /* Clause checklist */
+  .clause-category { margin-bottom: 28px; }
+  .clause-cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .clause-cat-header h3 { font-size: 1rem; font-weight: 800; color: #1e3a5f; margin: 0; }
+  .critical-tag { font-size: 0.68rem; font-weight: 700; background: #fde8e8; color: #c0392b; padding: 2px 10px; border-radius: 999px; }
+  .clause-list { display: flex; flex-direction: column; gap: 8px; }
+  .clause-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; background: #f8faff; border: 1px solid #dde6f5; border-radius: 8px; }
+  .clause-check { color: #c9a84c; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+  .clause-name { font-size: 0.9rem; font-weight: 600; color: #1e3a5f; margin: 0 0 3px; }
+  .clause-note { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.6; }
+
+  /* Mistakes */
+  .mistakes-list { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+  .mistake-card { background: #f8faff; border: 1px solid #dde6f5; border-radius: 12px; padding: 16px 20px; }
+  .mistake-header { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+  .mistake-icon { color: #c0392b; font-size: 1rem; font-weight: 900; flex-shrink: 0; }
+  .mistake-header h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0; }
+  .fix-row { display: flex; gap: 10px; align-items: flex-start; }
+  .fix-icon { color: #16a34a; font-weight: 900; font-size: 1rem; flex-shrink: 0; }
+  .fix-row p { font-size: 0.86rem; color: #374151; line-height: 1.7; margin: 0; }
+
+  /* Enforcement */
+  .enf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  .enf-card { background: #f8faff; border: 1px solid #dde6f5; border-radius: 12px; padding: 20px; }
+  .enf-card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .enf-card p { font-size: 0.84rem; color: #374151; line-height: 1.7; margin: 0; }
+
+  /* Service links */
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+    .enf-grid { grid-template-columns: 1fr; }
+  }
+</style>

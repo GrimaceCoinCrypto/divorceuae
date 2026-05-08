@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = "Iddah (Waiting Period) After Divorce in UAE 2025 — Duration, Rights, and Obligations";
+const description =
+  "The iddah is the mandatory waiting period after divorce in UAE. Learn how long it lasts for different situations, what financial rights apply, whether you must stay in the marital home, and how UAE law enforces it.";
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/iddah-waiting-period-uae',
+  ar: 'https://divorceu.ae/ar/عدة-الطلاق',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Iddah Waiting Period UAE' },
+];
+
+const iddahDurations = [
+  {
+    situation: 'Divorced woman with regular menstrual cycle',
+    duration: 'Three menstrual cycles (quru\')',
+    detail: 'The Hanafi and Maliki schools count three complete menstrual periods. The Hanbali and Shafi\'i schools count three complete intervals between periods. In practice, this is approximately 3 months. UAE courts follow the Maliki/Hanafi interpretation as a general rule.',
+    basis: 'Quran 2:228 — "Divorced women shall wait for three periods."',
+  },
+  {
+    situation: 'Pregnant divorced woman',
+    duration: 'Until delivery of the child',
+    detail: 'The iddah ends the moment the child is born, regardless of whether the divorce was only days ago. If the wife miscarries a foetus where human features are recognisable, that also ends the iddah.',
+    basis: 'Quran 65:4 — "For those who are pregnant, their term is until they deliver their burden."',
+  },
+  {
+    situation: 'Post-menopausal woman (or one who has not yet menstruated)',
+    duration: 'Three lunar months',
+    detail: 'If the wife has stopped menstruating due to age, or has never menstruated, the iddah is three lunar months (approximately 89 days).',
+    basis: 'Quran 65:4 — "And those who no longer expect menstruation — their waiting period is three months."',
+  },
+  {
+    situation: 'Divorced before consummation of marriage',
+    duration: 'No iddah required',
+    detail: 'If the divorce takes place before the marriage was physically consummated, there is no iddah obligation. The wife is free to remarry immediately. She is entitled to half the specified mahr if it was agreed in the contract.',
+    basis: 'Quran 33:49 — "If you marry believing women and then divorce them before you have touched them, you have no waiting period to reckon against them."',
+  },
+];
+
+const rights = [
+  {
+    right: 'Accommodation in the marital home',
+    detail: 'The divorced wife has the right to remain in the marital home throughout the iddah. The husband cannot evict her, and she should not leave without need. This is an unconditional right under UAE Personal Status Law Article 143. If the wife leaves voluntarily without a legitimate reason, she may forfeit her maintenance rights.',
+  },
+  {
+    right: 'Financial maintenance (nafaqa)',
+    detail: 'The husband must pay full financial maintenance — food, clothing, and accommodation costs — throughout the iddah. This applies to revocable divorce, minor irrevocable divorce, and under UAE law to major irrevocable divorce as well. The UAE courts will set the monthly maintenance amount based on the husband\'s income and the couple\'s standard of living.',
+  },
+  {
+    right: 'Maintenance during pregnancy',
+    detail: 'If the wife is pregnant, maintenance continues until the child is born. This includes reasonable medical and childbirth costs. The obligation ends at delivery, not when the iddah might otherwise have ended.',
+  },
+  {
+    right: 'Protection from eviction',
+    detail: 'The husband cannot force the wife to vacate the marital property until the iddah is complete. Evicting a wife during iddah is a violation of UAE law and can result in court action against the husband.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'What is the iddah and why does UAE law require it?',
+    answer: 'The iddah is a mandatory waiting period after divorce during which a woman may not remarry. Its purposes are: to confirm whether the woman is pregnant (protecting lineage), to give the couple a final opportunity for reconciliation in a revocable divorce, and to protect the woman from being pressured into hasty remarriage while in emotional distress. UAE Federal Law No. 28 of 2005, Articles 140–153, incorporates the iddah rules from Islamic jurisprudence.',
+  },
+  {
+    question: 'Is the iddah the same as the divorce waiting period in Western courts?',
+    answer: 'They serve some similar functions but are legally distinct. The iddah is a religious and legal obligation under Islamic law — it is not merely a civil procedural delay. It creates specific legal rights (accommodation, maintenance) and obligations (cannot remarry). Western divorce waiting periods are generally bureaucratic procedures with no financial or accommodation rights attached. Expats from non-Muslim backgrounds are sometimes surprised to learn that the iddah rules apply if their divorce is processed under UAE personal status law.',
+  },
+  {
+    question: 'Does iddah affect my UAE residence visa?',
+    answer: 'Yes, indirectly. Your residence visa and the iddah are separate legal matters — but both run simultaneously after a divorce decree. If you were residing on your husband\'s visa sponsorship, you have 30 days from the divorce decree to transfer to a new visa category (work visa, investor visa, or the UAE divorcee visa). The iddah does not extend your visa, so you must act on the visa immediately regardless of how long the iddah lasts. Consult a UAE immigration lawyer alongside your family lawyer.',
+  },
+  {
+    question: 'What financial maintenance is the husband required to pay during iddah?',
+    answer: 'During iddah, the husband must pay: monthly living allowance (nafaqa — covering food, clothing, and personal expenses), the full cost of accommodation in the marital home (or equivalent rental elsewhere if the marital home is unavailable), and medical costs if the wife is pregnant. The UAE courts calculate nafaqa based on the husband\'s documented income and the standard of living the couple maintained during the marriage. Failure to pay is enforceable through the Execution Court.',
+  },
+  {
+    question: 'Can I leave the UAE during my iddah?',
+    answer: 'Leaving the UAE during iddah is legally complex. Strictly, the wife is expected to remain in the marital home. Extended travel without necessity during iddah could be used by the husband\'s lawyer as grounds to argue she has forfeited maintenance rights. If you need to travel for an urgent reason during iddah, get specific legal advice first. Note also that your residence visa situation must be handled separately.',
+  },
+  {
+    question: 'Does the iddah apply to non-Muslim expats in the UAE?',
+    answer: 'Non-Muslim expats have the option to apply their home country\'s law to their divorce proceedings in some circumstances. If you choose to proceed under UAE personal status law, or if the Personal Status Court has jurisdiction over your divorce, the iddah rules apply. Many expat couples opt for a mutual consent divorce through the UAE courts which is typically fast (3–6 months), and in practice the iddah runs concurrently with the court process.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/iddah-waiting-period-uae"
+  lang="en"
+  hreflang={hreflang}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">UAE Divorce Law Guide · 2025</p>
+      <h1>Iddah — The Waiting Period After Divorce in UAE</h1>
+      <p class="hero-sub">The iddah is the mandatory waiting period after divorce under UAE personal status law. Its duration depends on your situation — and it comes with specific financial rights that the courts will enforce. Here is everything you need to know.</p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="key-point">
+        <h2>What the Iddah Means in Practice</h2>
+        <p>During the iddah: the wife cannot remarry, the husband cannot evict her from the marital home, and the husband must pay full financial maintenance. In a <strong>revocable divorce</strong> (first or second pronouncement), the iddah is also the window during which the husband can revoke the divorce and resume the marriage without a new contract. If iddah expires without revocation, the divorce converts to an irrevocable one.</p>
+      </div>
+
+      <section class="content-section">
+        <h2>How Long is the Iddah? — By Situation</h2>
+
+        <div class="dur-list">
+          {iddahDurations.map((item, i) => (
+            <div class="dur-card">
+              <div class="dur-header">
+                <div class="dur-num">{i + 1}</div>
+                <div class="dur-info">
+                  <h3>{item.situation}</h3>
+                  <span class="dur-badge">{item.duration}</span>
+                </div>
+              </div>
+              <p class="dur-basis">{item.basis}</p>
+              <p class="dur-detail">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Situation</th>
+                <th>Iddah Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Menstruating (not pregnant)</td><td>3 menstrual cycles (~3 months)</td></tr>
+              <tr><td>Pregnant</td><td>Until delivery</td></tr>
+              <tr><td>Post-menopausal / pre-pubescent</td><td>3 lunar months</td></tr>
+              <tr><td>Divorced before consummation</td><td>No iddah</td></tr>
+              <tr><td>Widowed (death of husband)</td><td>4 months and 10 days</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Note: Widowhood iddah is listed for comparison only — it is a separate category under UAE Articles 154–158, not a divorce iddah.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Your Rights During the Iddah</h2>
+
+        <div class="rights-list">
+          {rights.map((r, i) => (
+            <div class="right-card">
+              <div class="right-num">{i + 1}</div>
+              <div class="right-content">
+                <h3>{r.right}</h3>
+                <p>{r.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>UAE Law — Articles 140 to 153</h2>
+        <p>UAE Federal Law No. 28 of 2005 (Personal Status Law) governs the iddah in Articles 140–153. Key provisions:</p>
+
+        <div class="law-steps">
+          <div class="law-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Iddah starts from the date of divorce</h3>
+              <p>The iddah begins on the date the divorce takes legal effect — for court divorces, this is the date of the final divorce decree. It does not begin when the couple separates physically.</p>
+            </div>
+          </div>
+          <div class="law-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Maintenance is mandatory and enforceable</h3>
+              <p>Article 150 requires the husband to pay maintenance for all types of divorce throughout the iddah. The Execution Court can garnish salary and freeze accounts if he refuses to pay.</p>
+            </div>
+          </div>
+          <div class="law-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Marital home rights are absolute during iddah</h3>
+              <p>Article 143 requires the wife to observe the iddah in the marital home, and prohibits the husband from expelling her. If the home is unavailable, he must provide equivalent alternative accommodation.</p>
+            </div>
+          </div>
+          <div class="law-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Foreign women must act on their visa immediately</h3>
+              <p>The iddah and the visa are separate matters. If you were on a spouse visa, the 30-day visa transfer window begins from the divorce decree — the iddah does not pause the clock. Start the visa process the day the divorce is granted.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Questions About the Iddah or Your Rights After Divorce?</h2>
+        <p>The iddah creates enforceable financial and accommodation rights — but you need to act quickly, especially on your visa. Speak to a UAE family lawyer within 24 hours of your divorce decree.</p>
+        <LeadForm source="iddah-waiting-period-uae" />
+      </div>
+
+      <section class="related-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          {[
+            { title: 'Types of Divorce in UAE', href: '/en/types-of-divorce-uae', desc: 'Revocable, khul\'a, judicial separation and more explained.' },
+            { title: 'Alimony in UAE', href: '/en/alimony-uae', desc: 'All six types of spousal support and how amounts are calculated.' },
+            { title: 'Wife Rights After Divorce UAE', href: '/en/wife-rights-after-divorce-uae', desc: 'Mahr, nafaqa, custody, and housing rights.' },
+            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: '30-day rule and all 7 visa pathways after divorce.' },
+            { title: 'UAE Divorce Law', href: '/en/uae-divorce-law', desc: 'Complete guide to Federal Law No. 28 of 2005.' },
+          ].map(link => (
+            <a href={link.href} class="related-card">
+              <span class="related-title">{link.title} →</span>
+              <span class="related-desc">{link.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(10,22,40,0.82), rgba(10,22,40,0.82)), url('/images/hero-dubai-office.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 3.5rem 1.5rem;
+  }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+
+  .key-point { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 0.875rem; padding: 1.4rem; margin-bottom: 3rem; }
+  .key-point h2 { font-size: 1.05rem; font-weight: 800; color: #064e3b; margin-bottom: 0.6rem; }
+  .key-point p { font-size: 0.9rem; color: #1a4d30; line-height: 1.75; margin-bottom: 0; }
+  .key-point strong { color: #064e3b; }
+
+  /* Duration cards */
+  .dur-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.5rem; }
+  .dur-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .dur-header { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem; }
+  .dur-num { width: 36px; height: 36px; min-width: 36px; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0; }
+  .dur-info { flex: 1; }
+  .dur-info h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0 0 5px; }
+  .dur-badge { display: inline-block; font-size: 0.8rem; font-weight: 700; background: #c9a84c; color: #fff; padding: 3px 12px; border-radius: 999px; }
+  .dur-basis { font-size: 0.82rem; color: #556; font-style: italic; background: #eef4ff; padding: 8px 12px; border-radius: 6px; margin-bottom: 0.6rem; line-height: 1.6; }
+  .dur-detail { font-size: 0.875rem; color: #334; line-height: 1.75; margin: 0; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; margin: 1rem 0 0.5rem; }
+  .table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .table-wrap th { background: #0a1628; color: #fff; padding: 10px 14px; text-align: left; }
+  .table-wrap td { padding: 9px 14px; border-bottom: 1px solid #e5e7eb; color: #334; }
+  .table-wrap tr:nth-child(even) td { background: #f8f9fa; }
+  .table-note { font-size: 0.78rem; color: #778; margin-top: 0.5rem; }
+
+  /* Rights */
+  .rights-list { display: flex; flex-direction: column; gap: 1rem; }
+  .right-card { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.1rem; }
+  .right-num { width: 32px; height: 32px; min-width: 32px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .right-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 5px; }
+  .right-content p { font-size: 0.875rem; color: #445; line-height: 1.75; margin: 0; }
+
+  /* Law steps */
+  .law-steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .law-step { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num { width: 32px; height: 32px; min-width: 32px; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .step-content h3 { font-size: 0.9rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-content p { font-size: 0.875rem; color: #445; line-height: 1.75; margin: 0; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>
