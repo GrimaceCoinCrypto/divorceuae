@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Non-Muslim Divorce in UAE — Complete Guide for Expats 2025';
+const description =
+  'Non-Muslim expat divorce in UAE under Federal Law No. 41 of 2022: no-fault divorce, joint custody, no waiting period, DIFC Courts option, and how to apply your home country law. Full guide.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/non-muslim-divorce-uae',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Non-Muslim Divorce UAE', url: 'https://divorceu.ae/en/non-muslim-divorce-uae' },
+];
+
+const comparison = [
+  { aspect: 'Fault requirement', before: 'Must prove "harm" or fault to obtain divorce', after: 'No-fault — either spouse can file unilaterally, no reason needed' },
+  { aspect: 'Mandatory mediation', before: 'Family Guidance Committee referral required', after: 'Exempt — non-Muslims skip mandatory reconciliation' },
+  { aspect: 'Waiting period', before: 'Obligatory Iddah (Islamic waiting period)', after: 'None — divorce effective immediately upon judgment' },
+  { aspect: 'Property division', before: 'Sharia-based rules applied to non-Muslims', after: 'Separate property regime (or elect home country law)' },
+  { aspect: 'Child custody', before: 'Mother-favoured rules by default', after: 'Equal joint custody until age 18 — default for both parents' },
+  { aspect: 'Inheritance', before: 'Gender-based (Sharia shares)', after: 'Equal shares regardless of gender' },
+  { aspect: 'Choice of law', before: 'Limited options, often unclear', after: 'Explicit right to apply home country law (Article 1)' },
+  { aspect: 'First hearing', before: 'No standard timeline', after: 'Minimum 30 days from filing' },
+];
+
+const processSteps = [
+  {
+    n: 1,
+    title: 'Confirm jurisdiction',
+    body: 'You must be resident in the UAE. File in the emirate where you are registered. Abu Dhabi residents use the Abu Dhabi Civil Family Court; Dubai and other emirate residents use the Family Court civil division. Either spouse can initiate.',
+  },
+  {
+    n: 2,
+    title: 'Instruct a family lawyer',
+    body: 'Retain a UAE-licensed family lawyer specialising in non-Muslim personal status. Unlike Muslim divorce, no mandatory Family Guidance Centre step — your lawyer files directly. Agree upfront whether you will proceed under Federal Law 41/2022 or elect your home country law.',
+  },
+  {
+    n: 3,
+    title: 'Prepare and file documents',
+    body: 'Submit: marriage certificate (attested + Arabic translation), Emirates IDs and passport copies, proof of UAE residence, children\'s birth certificates (if applicable), financial documents. If electing home country law, include legalised, translated copies of the relevant foreign legislation.',
+  },
+  {
+    n: 4,
+    title: 'Attend first hearing',
+    body: 'Scheduled minimum 30 days from filing. For uncontested divorce where both spouses agree, the judge reviews the settlement agreement and can grant the divorce at this hearing. Contested cases proceed to additional hearings.',
+  },
+  {
+    n: 5,
+    title: 'Receive divorce judgment',
+    body: 'The court issues a divorce judgment. Under Federal Law 41/2022, this is effective immediately — there is no waiting period or Iddah. The judgment covers divorce, custody, alimony, and property as agreed or ordered.',
+  },
+  {
+    n: 6,
+    title: 'Apostille and register abroad',
+    body: 'To use your UAE divorce decree in your home country, obtain an apostille from the UAE Ministry of Foreign Affairs. Most countries (EU, UK, Commonwealth, North America) recognise UAE divorce decrees through this process. Your lawyer prepares the apostille package.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Does Federal Law No. 41 of 2022 apply across all UAE emirates?',
+    answer: 'Yes. Federal Decree-Law No. 41 of 2022 is a federal law that applies across all seven emirates — not only Abu Dhabi. It took effect on February 1, 2023. Abu Dhabi additionally has its own Abu Dhabi Civil Family Court (established under Law No. 14/2021) with a dedicated non-Muslim court facility and judges who may themselves be non-Muslim.',
+  },
+  {
+    question: 'Can I apply my home country law instead of UAE law?',
+    answer: 'Yes. Article 1 of Federal Law 41/2022 explicitly allows non-Muslims to elect their home country\'s law for marriage, divorce, custody, inheritance, and property. You must declare this before the court, provide legalised and translated copies of the relevant foreign legislation, and the chosen law must not contradict UAE public policy. When home country law has procedural gaps, UAE law fills them.',
+  },
+  {
+    question: 'What are the DIFC Courts and can I use them for divorce?',
+    answer: 'The Dubai International Financial Centre (DIFC) Courts operate under English common law and have jurisdiction over non-Muslim family law matters for parties who opt in or meet specific criteria. They are particularly suited to expats from UK, Commonwealth, or common law jurisdictions who want familiar legal procedures. DIFC Courts do not require mandatory mediation for non-Muslims and apply common law principles to asset division and custody.',
+  },
+  {
+    question: 'Is joint custody automatic for non-Muslims under the new law?',
+    answer: 'Yes. Under Federal Law 41/2022, joint and equal custody of children until age 18 is the default for non-Muslim parents. Both parents retain equal rights unless the court determines a different arrangement is in the best interests of the child. This is a significant departure from earlier rules that favoured the mother.',
+  },
+  {
+    question: 'How does property division work for non-Muslims in UAE?',
+    answer: 'Federal Law 41/2022 applies a separate property regime: each spouse keeps assets registered in their name. This differs from community property or equitable distribution principles used in many Western countries. If you want home country law applied (which may allow asset-sharing), you must elect this before court. A lawyer can advise on which regime produces a better outcome in your specific case.',
+  },
+  {
+    question: 'How long does non-Muslim divorce take in the UAE?',
+    answer: 'An uncontested non-Muslim divorce where both spouses agree takes 1-2 months from filing to judgment. The first hearing is scheduled no earlier than 30 days after filing; if the settlement is accepted, the divorce can be granted at that hearing. Contested cases (disputes over assets, custody, or alimony) typically take 6-9 months at first instance, with appeals adding a further 4-6 months.',
+  },
+  {
+    question: 'Do I need to go to the Family Guidance Centre first?',
+    answer: 'No. Non-Muslims are explicitly exempt from the mandatory Family Guidance Committee referral under Federal Law 41/2022. This is a major time-saver compared to the Muslim divorce process, where one or more reconciliation sessions are required before the case can proceed to court.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/non-muslim-divorce-uae"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Non-Muslim Expat Divorce · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        A 2022 federal law transformed divorce for non-Muslim expats in the UAE. No-fault divorce, equal joint custody, no waiting period, and the right to apply your home country's law — most expats still don't know these rights exist. This guide explains exactly what changed, how the process works, and which court to use.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts — non-Muslim divorce in UAE</h2>
+        <p>
+          <strong>Governing law:</strong> Federal Decree-Law No. 41 of 2022 (effective February 1, 2023) — applies all 7 emirates.<br />
+          <strong>No-fault divorce:</strong> Either spouse can file unilaterally — no reason required.<br />
+          <strong>No mediation:</strong> Non-Muslims skip mandatory Family Guidance Centre referral.<br />
+          <strong>No waiting period:</strong> Divorce effective immediately upon judgment.<br />
+          <strong>Custody:</strong> Joint and equal custody until age 18 — the default for both parents.<br />
+          <strong>Timeline:</strong> 1-2 months uncontested; 6-9 months contested.<br />
+          <strong>Court fees:</strong> AED 2,000-3,000 filing fee.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>What Federal Law No. 41 of 2022 Changed</h2>
+        <p>
+          Before October 2022, non-Muslim expats in the UAE had to navigate personal status courts that largely applied Islamic law principles — including the requirement to prove fault, mandatory reconciliation, and an Islamic waiting period (Iddah). Federal Decree-Law No. 41 of 2022 replaced this entirely with a secular civil framework.
+        </p>
+        <p>
+          The law consists of 18 provisions covering divorce, civil marriage, child custody, alimony, and inheritance. It applies to all non-Muslim UAE nationals and non-Muslim foreign residents across all seven emirates.
+        </p>
+
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Aspect</div>
+            <div>Before 2022</div>
+            <div>Under Law 41/2022</div>
+          </div>
+          {comparison.map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.aspect}</div>
+              <div class="compare-before">{row.before}</div>
+              <div class="compare-after">{row.after}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Who the Law Applies To</h2>
+        <ul class="checklist">
+          <li>Non-Muslim foreign residents of the UAE (regardless of nationality)</li>
+          <li>Non-Muslim UAE nationals</li>
+          <li>Both parties must be non-Muslim; if one is Muslim, different rules apply</li>
+          <li>At least one spouse must be a UAE resident at the time of filing</li>
+          <li>You file in the emirate where you are registered as a resident</li>
+        </ul>
+        <div class="info-box">
+          <p><strong>Abu Dhabi residents:</strong> Use the dedicated <strong>Abu Dhabi Civil Family Court</strong>, established under Law No. 14/2021 and now operating under the federal framework. This court has a dedicated non-Muslim facility and may have non-Muslim judges.</p>
+          <p style="margin-bottom:0"><strong>Dubai and other emirates:</strong> File at the emirate's Family Court civil division. Dubai residents may also opt for the <strong>DIFC Courts</strong> for a common law framework (see below).</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>The Divorce Process — Step by Step</h2>
+        <ol class="steps">
+          {processSteps.map((s) => (
+            <li>
+              <div class="step-num">{s.n}</div>
+              <div class="step-body">
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>Your Right to Apply Home Country Law</h2>
+        <p>
+          Article 1 of Federal Law 41/2022 gives non-Muslims a powerful opt-out right: you can request that your home country's law governs the divorce instead of UAE law. This applies to property division, alimony, custody, inheritance, and proof of parentage.
+        </p>
+        <h3>Why this matters for property</h3>
+        <p>
+          Under UAE law (separate property regime), each spouse keeps assets registered in their own name. If you are British, for example, and elect English law, you may be entitled to equitable distribution of all marital assets — including those solely registered in your spouse's name. This can materially change the financial outcome of your divorce.
+        </p>
+        <h3>How to invoke your home country law</h3>
+        <ul class="checklist">
+          <li>Declare the election clearly before the court (your lawyer does this)</li>
+          <li>Provide legalised, officially translated copies of the relevant foreign legislation</li>
+          <li>Expert reports on foreign law may be required</li>
+          <li>The chosen law must not contradict UAE public order or policy</li>
+          <li>Where home country law has procedural gaps, UAE law fills them</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>DIFC Courts — A Common Law Alternative for Dubai Residents</h2>
+        <p>
+          Non-Muslim expats in Dubai (particularly those from UK, Commonwealth, or other common law jurisdictions) have the option to use the <strong>DIFC Courts</strong> instead of Dubai Family Courts. DIFC Courts operate under English common law and are conducted in English.
+        </p>
+        <div class="two-col">
+          <div class="info-card">
+            <h3>DIFC Courts</h3>
+            <ul class="compact-list">
+              <li>English common law procedures</li>
+              <li>Proceedings in English</li>
+              <li>No mandatory mediation</li>
+              <li>Familiar to UK/Commonwealth expats</li>
+              <li>Requires opt-in or qualifying criteria</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3>Dubai Family Courts</h3>
+            <ul class="compact-list">
+              <li>UAE civil law (Federal Law 41/2022)</li>
+              <li>Proceedings in Arabic</li>
+              <li>No mandatory mediation for non-Muslims</li>
+              <li>Lower court fees</li>
+              <li>Available to all UAE residents</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Child Custody Under the New Law</h2>
+        <p>
+          Equal joint custody until age 18 is the default outcome for non-Muslim parents under Federal Law 41/2022. Both parents have equal legal rights to custody and decision-making. The court determines the practical custody schedule (weekly, bi-monthly, monthly) if parents cannot agree.
+        </p>
+        <p>
+          The best interests of the child remain the paramount consideration. Either parent can petition for a different arrangement if they can demonstrate it serves the child's interests better than equal joint custody.
+        </p>
+        <div class="highlight-box">
+          <p>Unlike earlier UAE custody rules that heavily favoured mothers for young children, the 2022 law creates a presumption of equality. Fathers have substantially stronger custody rights under the new framework.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Court Fees and Timeline</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">Court filing fee</p>
+            <p class="fee-amount">AED 2,000-3,000</p>
+            <p class="fee-detail">Varies by emirate and case complexity</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Lawyer fees (uncontested)</p>
+            <p class="fee-amount">AED 8,000-20,000</p>
+            <p class="fee-detail">Settlement preparation and filing</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Lawyer fees (contested)</p>
+            <p class="fee-amount">AED 20,000-80,000+</p>
+            <p class="fee-detail">Multiple hearings, asset disputes, custody battles</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Timeline uncontested</p>
+            <p class="fee-amount">1-2 months</p>
+            <p class="fee-detail">From filing to final judgment</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Documents You Will Need</h2>
+        <ul class="checklist">
+          <li>Marriage certificate — attested and officially translated into Arabic</li>
+          <li>Passports and Emirates ID for both spouses</li>
+          <li>UAE residence proof (tenancy contract, utility bills, or Emirates ID)</li>
+          <li>Children's birth certificates (if applicable)</li>
+          <li>Bank statements and proof of income (salary certificates)</li>
+          <li>Asset documentation: property ownership certificates, vehicle registrations</li>
+          <li>Debt documentation if relevant</li>
+          <li>If electing home country law: legalised, translated foreign legislation</li>
+          <li>Proposed settlement agreement (if both spouses agree)</li>
+        </ul>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-in-uae-for-expats" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Overview of expat divorce rights and options</span>
+          </a>
+          <a href="/en/property-division-divorce-uae" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>How assets are split — UAE law vs home country law</span>
+          </a>
+          <a href="/en/child-custody-uae" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody rules, rights, and how courts decide</span>
+          </a>
+          <a href="/en/divorce-cost-uae" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and total cost estimates</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-top: 1.25rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-factor { font-weight: 700; color: #0a1628; }
+  .compare-before { color: #6b7280; }
+  .compare-after { color: #16a34a; font-weight: 600; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { background: #f8faff; border: 1.5px solid #e0e7ff; border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1rem; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin-bottom: 0.5rem; line-height: 1.7; }
+
+  .highlight-box { background: #fff7ed; border-left: 4px solid #c9a84c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin-top: 0.75rem; }
+  .highlight-box p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .info-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1rem; }
+  .info-card h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .compact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+  .compact-list li { font-size: 0.82rem; color: #374151; padding-left: 1rem; position: relative; }
+  .compact-list li::before { content: '•'; position: absolute; left: 0; color: #c9a84c; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .fee-grid, .related-grid, .two-col { grid-template-columns: 1fr; }
+  }
+</style>

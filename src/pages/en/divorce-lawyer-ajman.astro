@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Lawyer Ajman — Ajman Family Court Guide 2025';
+const description =
+  'Looking for a divorce lawyer in Ajman? How Ajman Personal Status Courts work, court fees, filing process, and the key differences from Dubai — a complete guide for expats and UAE residents.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-ajman',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Lawyer Ajman', url: 'https://divorceu.ae/en/divorce-lawyer-ajman' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Where do I file for divorce in Ajman?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce cases in Ajman are filed at the Ajman Personal Status Court, part of the Ajman Courts complex. If you are a resident of Ajman — regardless of where you were married — you file in Ajman. Emiratis may be directed first to the Family Guidance and Reconciliation Centre before the court accepts the case.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a divorce lawyer cost in Ajman?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce lawyer fees in Ajman are generally slightly lower than in Dubai or Abu Dhabi due to lower overhead. Expect AED 2,500-6,000 for uncontested mutual consent divorce, AED 6,000-20,000 for contested cases without children, and AED 15,000-45,000+ for contested cases involving custody disputes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an expat file for divorce in Ajman if married abroad?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. If you are registered as a resident in Ajman, you file for divorce in Ajman regardless of where the marriage took place. Your foreign marriage certificate must be officially translated into Arabic and attested by your home country\'s embassy and the UAE Ministry of Foreign Affairs. Your lawyer handles this process.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does divorce take in Ajman?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested mutual consent divorce in Ajman takes 1-4 months, accounting for the mandatory reconciliation sessions. A contested divorce typically takes 6-18 months. Ajman courts have lower case volumes than Dubai, which can mean faster scheduling but also fewer specialist judges for complex international cases.',
+      },
+    },
+  ],
+};
+
+const differences = [
+  { factor: 'Legal framework', ajman: 'Federal Personal Status Law No. 28 of 2005 (same as all UAE)', dubai: 'Same federal law' },
+  { factor: 'Reconciliation', ajman: 'Mandatory Family Guidance sessions — typically 1-3 required', dubai: 'Mandatory but often processed faster for expat cases' },
+  { factor: 'Case volume', ajman: 'Lower — smaller emirate, fewer filings per year', dubai: 'Very high — largest court system in UAE' },
+  { factor: 'Court language', ajman: 'Arabic only — all documents must be officially translated', dubai: 'Arabic only — same requirement' },
+  { factor: 'Non-Muslim expats', ajman: 'UAE law applies by default; Federal Law 41/2022 for non-Muslims', dubai: 'Same + DIFC Courts as alternative for non-Muslims' },
+  { factor: 'Lawyer fees', ajman: 'Generally 10-20% lower than Dubai equivalents', dubai: 'Higher due to cost of living and demand' },
+];
+
+const lawyerChecklist = [
+  'Licensed by the Ajman Department of Justice — verify their Bar registration number',
+  'Specialist in Personal Status / Family Law, not a general civil or commercial lawyer',
+  'Has handled cases specifically in Ajman courts, not only Dubai',
+  'Speaks your language or provides a qualified court interpreter',
+  'Transparent fee structure — fixed fee vs per-hearing billing',
+  'Explains all three divorce types available to you: talaq, khula, or judicial divorce',
+  'Advises on UAE law vs home country law implications for your assets',
+];
+
+const faqItems = [
+  {
+    question: 'Do I need a lawyer for divorce in Ajman?',
+    answer: 'You can technically represent yourself, but it is extremely difficult in practice. All Ajman court proceedings are conducted in Arabic, and personal status procedural rules require detailed knowledge to navigate. For any contested element — custody, alimony, or asset disputes — a licensed Ajman lawyer is essential. Even for uncontested cases, a lawyer significantly reduces the risk of filing errors that delay the process.',
+  },
+  {
+    question: 'What is the Family Guidance and Reconciliation Centre in Ajman?',
+    answer: 'The Family Guidance and Reconciliation Centre (also called the Family Counselling Centre) is a mandatory first step for most divorce cases in Ajman before the Personal Status Court accepts the filing. Its role is to attempt reconciliation between spouses. For UAE nationals and Muslim residents, multiple sessions are standard. If reconciliation genuinely fails, the centre issues a certificate enabling the court case to proceed. Expats and non-Muslim residents may also be directed here depending on case type.',
+  },
+  {
+    question: 'Will my Ajman divorce be recognised in my home country?',
+    answer: 'Yes, in most cases. A UAE court divorce decree from any emirate, including Ajman, is a legally valid court document. Recognition abroad requires an apostille from the UAE Ministry of Foreign Affairs, a certified Arabic-to-English (or other language) translation, and in some countries registration with your home embassy or civil register. Your lawyer can prepare the full apostille package. The vast majority of EU, UK, Commonwealth, and North American countries recognise UAE divorce decrees through this process.',
+  },
+  {
+    question: 'Can I transfer my divorce case from Ajman to Dubai?',
+    answer: 'Jurisdiction in UAE personal status cases is based on the emirate of your registered residence. If you live in Ajman, your case belongs in Ajman courts. You cannot simply transfer it to Dubai courts for convenience. If your residence changes to Dubai during proceedings, there may be grounds to apply for a transfer — discuss this with your lawyer. For non-Muslim expats in Ajman who want a common law forum, the DIFC Courts in Dubai may be a viable option depending on your circumstances.',
+  },
+  {
+    question: 'Is Ajman divorce process different for Muslims vs non-Muslims?',
+    answer: 'Yes. Muslim residents follow Federal Personal Status Law No. 28 of 2005 (as amended), which includes Sharia-based rules on talaq, khula, alimony (nafaqa), and custody. Non-Muslim residents are governed by Federal Decree-Law No. 41 of 2022 — a secular civil framework with no-fault divorce, equal joint custody, no waiting period, and the option to apply home country law. The procedural courts are the same, but the legal rules and outcomes differ significantly.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-lawyer-ajman"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · Ajman 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Divorce in Ajman follows the same UAE Federal Personal Status Law as Dubai and Sharjah. Filing happens at the Ajman Personal Status Court, with mandatory reconciliation sessions through the Family Guidance Centre first. This guide covers how Ajman courts work, what a good divorce lawyer looks like, fees, and the key differences from Dubai.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Quick summary — divorcing in Ajman</h2>
+        <p>
+          Governed by <strong>UAE Federal Personal Status Law No. 28 of 2005</strong> — same as all UAE emirates.
+          File at the <strong>Ajman Personal Status Court</strong> if you are an Ajman resident.
+          Mandatory reconciliation at the Family Guidance Centre before the court case can proceed.
+          Lawyer fees: <strong>AED 2,500-45,000+</strong> depending on case type.
+          Timeline: <strong>1-4 months</strong> uncontested; <strong>6-18 months</strong> contested.
+          Non-Muslims: governed by <strong>Federal Law 41/2022</strong> — no fault, no waiting period.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>Ajman vs Dubai Divorce Courts — Key Differences</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Factor</div>
+            <div>Ajman</div>
+            <div>Dubai</div>
+          </div>
+          {differences.map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.factor}</div>
+              <div class="compare-ajman">{row.ajman}</div>
+              <div class="compare-dubai">{row.dubai}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>The Divorce Process in Ajman — Step by Step</h2>
+        <ol class="steps">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Family Guidance and Reconciliation Centre</h3>
+              <p>Before the Ajman Personal Status Court accepts most divorce filings, both spouses are referred to the Family Guidance Centre for reconciliation sessions. Typically 1-3 sessions. If reconciliation fails, the Centre issues a certificate allowing the court case to proceed.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>File the petition at Ajman Personal Status Court</h3>
+              <p>Your lawyer files the divorce petition with the court. Required documents: marriage certificate (attested + Arabic translation), Emirates IDs, proof of Ajman residence, children's documents if applicable. Court filing fees apply at this stage.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>First hearing</h3>
+              <p>The court schedules an initial hearing. For uncontested cases where both spouses agree on all terms, the judge reviews and approves the settlement agreement. For contested cases, a series of hearings follows to address disputes over custody, alimony, and assets.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Judgment</h3>
+              <p>The court issues the final divorce judgment. For Muslim cases, the judgment covers the type of divorce (talaq/khula/judicial), child custody and access, alimony (nafaqa and iddah support), and any property orders. For non-Muslim cases under Federal Law 41/2022, judgment is effective immediately.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Apostille and registration abroad</h3>
+              <p>To use your Ajman divorce decree in your home country, your lawyer obtains an apostille from the UAE Ministry of Foreign Affairs plus a certified translation. This package is recognised by most countries worldwide.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>What to Look for in an Ajman Divorce Lawyer</h2>
+        <ul class="checklist">
+          {lawyerChecklist.map(item => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Divorce Lawyer Fees in Ajman</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">Uncontested / Mutual Consent</p>
+            <p class="fee-amount">AED 2,500-6,000</p>
+            <p class="fee-detail">Both spouses agree on all terms. Lawyer prepares and files the settlement agreement.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested (no children)</p>
+            <p class="fee-amount">AED 6,000-20,000</p>
+            <p class="fee-detail">Asset or alimony disputes. Multiple court hearings required.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested with custody</p>
+            <p class="fee-amount">AED 15,000-45,000+</p>
+            <p class="fee-detail">Custody disputes are the most complex and time-intensive cases.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Khula (wife-initiated)</p>
+            <p class="fee-amount">AED 4,000-12,000</p>
+            <p class="fee-detail">Includes reconciliation sessions and court filing. Mahr return may apply.</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Court filing fees:</strong> AED 200-500 for basic filing; additional fees apply per hearing. Ajman court fees are among the lowest in UAE — often 30-50% lower than Dubai courts for equivalent case types.</p>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-lawyer-dubai" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>Finding and working with a divorce lawyer in Dubai</span>
+          </a>
+          <a href="/en/divorce-lawyer-sharjah" class="related-card">
+            <strong>Divorce Lawyer Sharjah</strong>
+            <span>Sharjah Personal Status Courts and process guide</span>
+          </a>
+          <a href="/en/divorce-lawyer-abu-dhabi" class="related-card">
+            <strong>Divorce Lawyer Abu Dhabi</strong>
+            <span>Abu Dhabi courts, ADCFC, and non-Muslim options</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>Federal Law 41/2022 — complete guide for expats</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 480px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 480px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-factor { font-weight: 700; color: #0a1628; }
+  .compare-ajman { color: #374151; }
+  .compare-dubai { color: #6b7280; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .info-box { background: #f8faff; border: 1.5px solid #e0e7ff; border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1rem; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .fee-grid, .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

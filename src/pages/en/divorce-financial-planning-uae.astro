@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Financial Planning UAE — Protect Your Money and Assets';
+const description =
+  'How to protect your finances during divorce in UAE: joint bank accounts, end-of-service gratuity, UAE property, pension, credit, and a practical financial checklist. Expat-focused guide.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-financial-planning-uae',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Financial Planning UAE', url: 'https://divorceu.ae/en/divorce-financial-planning-uae' },
+];
+
+const checklist = [
+  { phase: 'Immediately', items: [
+    'Photograph or download all bank statements (last 3 years)',
+    'List all joint and individual accounts with balances and account numbers',
+    'Change passwords to personal email and cloud accounts',
+    'Note all credit cards — joint and individual — and outstanding balances',
+    'Request a salary certificate from your employer (or HR letter confirming EOSB balance)',
+  ]},
+  { phase: 'Within 1 week', items: [
+    'Open a personal bank account in your name only if you do not already have one',
+    'Transfer your salary to your individual account (notify your employer)',
+    'Request statements from any pension, savings plan, or DIFC DEWS account',
+    'List all UAE property: title deed numbers, valuation, outstanding mortgage amounts',
+    'Photograph or list all valuable physical assets (jewellery, vehicles, electronics)',
+  ]},
+  { phase: 'Before proceedings', items: [
+    'Instruct a family lawyer — financial protection advice is part of their role',
+    'Obtain property valuations if you own UAE real estate',
+    'Request forensic accounting advice if you suspect hidden assets',
+    'Document all household debts — mortgages, car loans, credit cards',
+    'Understand your end-of-service entitlement — your employer must calculate this',
+  ]},
+];
+
+const faqItems = [
+  {
+    question: 'Is my end-of-service gratuity (EOSB) counted as a marital asset in UAE divorce?',
+    answer: 'This is one of the most common financial questions in UAE divorce — and the answer depends on how the case is approached. Under UAE Personal Status Law, there is no automatic community property rule. EOSB (End of Service Benefit / gratuity) is a statutory payment from your employer to you personally upon end of employment. Courts have taken different positions on whether accrued EOSB should be factored into alimony or financial settlements. A lawyer can advise you on the current judicial approach and how to protect your entitlement.',
+  },
+  {
+    question: 'What happens to a joint bank account during divorce in UAE?',
+    answer: 'Joint bank accounts remain accessible to both holders until formally dealt with in a court order or settlement agreement. Either party can withdraw from a joint account unless there is a court freeze order in place. You should document the balance and transaction history immediately, and your lawyer can apply to the court for a protective order freezing the account if there is risk of dissipation. Do not drain the joint account unilaterally — courts view this negatively.',
+  },
+  {
+    question: 'Can my spouse take all the money from our joint account?',
+    answer: 'Technically, either joint account holder can withdraw funds, as banks are not notified of divorce proceedings automatically. However, withdrawing joint funds in anticipation of divorce proceedings can constitute financial misconduct that courts factor into financial orders. If you believe your spouse intends to drain shared accounts, instruct a lawyer immediately to apply for a court preservation order. Act before the withdrawal happens — recovery after the fact is difficult.',
+  },
+  {
+    question: 'How is UAE property divided in divorce?',
+    answer: 'UAE applies a separate property regime — property registered in one spouse\'s name belongs to that spouse. There is no automatic 50/50 split. However, a spouse who contributed to a property financially (through mortgage payments, renovation, or direct transfer) may have a claim for reimbursement or a share. This must be argued and proven in court. If you own property jointly (both names on the title deed), the court must address how it is divided as part of the divorce settlement.',
+  },
+  {
+    question: 'What happens to my pension or DEWS plan during UAE divorce?',
+    answer: 'If you are a DIFC employee covered by the DIFC Employee Workplace Savings (DEWS) plan, your pension fund is held in your individual account and does not automatically transfer to your spouse in divorce. However, a court financial order could potentially attach to DEWS funds if it is part of a wider financial settlement. Employees in the broader UAE governed by EOSB rules should obtain a current EOSB balance statement from HR as early as possible.',
+  },
+  {
+    question: 'Can my spouse cancel my UAE credit cards during divorce?',
+    answer: 'For supplementary credit cards (where you are the additional cardholder on your spouse\'s primary account), the primary cardholder can request cancellation of the supplementary card at any time. You should transition to your own primary credit card account as soon as possible once divorce proceedings begin. Keep a record of any outstanding balances on joint credit cards — these become relevant to the financial settlement.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-financial-planning-uae"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Financial Protection · Divorce in UAE</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Divorce in the UAE can affect bank accounts, property, gratuity, pensions, and credit — often faster than people expect. The financial decisions you make in the first days and weeks matter enormously. This guide covers the UAE-specific financial risks and gives you a practical action checklist.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>The 5 biggest financial risks in UAE divorce</h2>
+        <p>
+          <strong>1. Joint accounts drained</strong> — either party can withdraw before a court order exists.<br />
+          <strong>2. EOSB at risk</strong> — end-of-service gratuity is a major UAE asset that can be contested.<br />
+          <strong>3. Property disputes</strong> — no automatic 50/50 split; contributions must be proven.<br />
+          <strong>4. Supplementary credit cards cancelled</strong> — leaving you without spending access.<br />
+          <strong>5. Salary still going to joint account</strong> — redirect your income immediately.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>UAE Divorce and Your Bank Accounts</h2>
+        <p>
+          UAE banks are not notified when divorce proceedings begin. There is no automatic freeze on joint accounts. This means both the risk and the responsibility lie with you.
+        </p>
+        <h3>Joint accounts</h3>
+        <p>
+          Both account holders retain full access to a joint account until a court order addresses it. Either spouse can legally withdraw the full balance. Document the current balance and download 3 years of statements immediately. Your lawyer can apply for a court preservation order if you believe your spouse intends to withdraw large sums.
+        </p>
+        <p>
+          Do not drain a joint account yourself in anticipation of proceedings. Courts treat unilateral dissipation of joint funds as financial misconduct and it will affect your position in the financial settlement.
+        </p>
+        <h3>Your salary</h3>
+        <p>
+          If your salary is paid into a joint account or an account your spouse has access to, redirect it to a personal individual account as soon as possible. Notify your employer's HR or payroll department in writing. This is not hiding assets — it is protecting your income during proceedings.
+        </p>
+        <div class="highlight-box">
+          <p>Open a personal bank account in your name only before you inform your spouse that divorce proceedings are beginning. Emirates NBD, ADCB, and other major UAE banks all allow individuals to open accounts quickly with Emirates ID and passport.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>End-of-Service Benefit (EOSB / Gratuity) and Divorce</h2>
+        <p>
+          End-of-service benefit is one of the largest financial assets for long-term UAE employees — often worth months or years of salary after a decade of service. Understanding how it is treated in divorce is critical.
+        </p>
+        <h3>What EOSB is</h3>
+        <p>
+          Under UAE Labour Law, employees are entitled to gratuity upon end of employment: 21 days' basic salary per year for the first 5 years, then 30 days per year thereafter. After 10 years of employment at an average UAE salary, this can amount to AED 100,000-500,000+.
+        </p>
+        <h3>How courts treat EOSB</h3>
+        <p>
+          EOSB is a statutory personal entitlement — it is paid by your employer to you alone. Under UAE property rules, it is registered in your name. However, in financial settlement arguments, a spouse may argue that accrued EOSB during the marriage represents a joint financial resource, particularly in cases involving long marriages and significant financial dependency.
+        </p>
+        <p>
+          Get your current EOSB balance from HR early. Know what you are entitled to. Your lawyer can advise on how to protect it.
+        </p>
+        <h3>DIFC DEWS (workplace pension)</h3>
+        <p>
+          DIFC employees covered by the DEWS plan have individual pension accounts. Funds are held in your name. A court financial order could theoretically attach to DEWS funds as part of a wider settlement, though this is not automatic. Request a current balance statement and inform your lawyer.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>UAE Property in Divorce</h2>
+        <p>
+          UAE law applies a separate property regime: property registered in one spouse's name belongs to that spouse. Unlike many Western jurisdictions, there is no automatic 50/50 marital property split.
+        </p>
+
+        <div class="property-scenarios">
+          <div class="scenario-card">
+            <h3>Property in both names</h3>
+            <p>If both spouses are on the title deed, the property is jointly owned and must be divided as part of the settlement — either sold and proceeds split, or one spouse buys out the other's share.</p>
+          </div>
+          <div class="scenario-card">
+            <h3>Property in one name only</h3>
+            <p>The registered owner retains the property. The other spouse may have a claim only if they can prove direct financial contribution (mortgage payments, renovation costs, direct transfer). Proving this requires documentary evidence.</p>
+          </div>
+          <div class="scenario-card">
+            <h3>Non-Muslim expats: home country law option</h3>
+            <p>Non-Muslim expats can elect their home country's law, which may provide broader sharing rights. British law (equitable distribution), French community property, or Australian matrimonial property regimes may be more favourable — discuss this with your lawyer.</p>
+          </div>
+          <div class="scenario-card">
+            <h3>Property with mortgage</h3>
+            <p>The outstanding mortgage is the joint liability of both named borrowers unless the bank agrees to restructure. Address who is responsible for mortgage payments during proceedings before the bank is affected — defaults impact both parties' credit.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Your Financial Protection Checklist</h2>
+        <p>Use this checklist the moment you decide divorce proceedings may begin. Acting quickly protects you — delays give the other party the advantage.</p>
+
+        {checklist.map((phase) => (
+          <div class="phase-block">
+            <h3 class="phase-title">{phase.phase}</h3>
+            <ul class="checklist">
+              {phase.items.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <section class="content-section">
+        <h2>Credit Cards and Debt in UAE Divorce</h2>
+        <p>
+          UAE banks can pursue both named parties on a joint credit card for the full outstanding balance, regardless of who made the purchases. Before proceedings begin:
+        </p>
+        <ul class="checklist">
+          <li>List all credit cards — primary and supplementary — and their outstanding balances</li>
+          <li>Stop using supplementary cards you hold on your spouse's primary account</li>
+          <li>Get your own primary credit card with a separate limit if you do not already have one</li>
+          <li>Agree with your spouse or request a court order on who services which debt during proceedings</li>
+          <li>Do not allow joint debt to default — this affects both parties' UAE credit records and can complicate future visa sponsorships</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>When to Suspect Hidden Assets</h2>
+        <p>
+          If your spouse controls the household finances or runs a business, there is a risk of asset concealment before proceedings begin. Warning signs include sudden business losses, unusual transfers, assets registered in third-party names, or unexplained debt.
+        </p>
+        <p>
+          Your lawyer can apply to the court for financial disclosure orders and instruct a forensic accountant if needed. UAE courts take financial disclosure obligations seriously — non-disclosure is treated as contempt.
+        </p>
+        <div class="cta-inline">
+          <p>Concerned about your financial position?</p>
+          <a href="#contact" class="btn">Speak to a Lawyer Today</a>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section id="contact" class="cta-section">
+        <h2>Get Financial and Legal Advice — Free First Consultation</h2>
+        <p>Financial decisions made in the first weeks of a divorce case have long-term consequences. Speak to a qualified UAE family lawyer before your spouse does. Free first consultation, completely confidential.</p>
+        <LeadForm lang="en" variant="inline" />
+      </section>
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>How UAE property is handled in divorce proceedings</span>
+          </a>
+          <a href="/en/alimony-uae" class="related-card">
+            <strong>Alimony UAE</strong>
+            <span>Types, calculation, and enforcement of alimony</span>
+          </a>
+          <a href="/en/divorce-settlement-uae" class="related-card">
+            <strong>Divorce Settlement UAE</strong>
+            <span>How settlement agreements work and what to include</span>
+          </a>
+          <a href="/en/divorce-cost-uae" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Full cost breakdown — court fees, lawyers, and more</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fff7ed; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #92400e; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #92400e; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .highlight-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin-top: 0.75rem; }
+  .highlight-box p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .property-scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .scenario-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .scenario-card h3 { font-size: 0.9rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .scenario-card p { font-size: 0.85rem; color: #374151; margin: 0; line-height: 1.6; }
+
+  .phase-block { margin-bottom: 1.5rem; }
+  .phase-title { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; background: #fff7ed; border-radius: 6px; padding: 4px 10px; display: inline-block; margin-bottom: 0.75rem; }
+
+  .cta-inline { display: flex; align-items: center; gap: 1.25rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; color: #0a1628; }
+  .btn { display: inline-block; padding: 10px 24px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; }
+  .btn:hover { background: #b8942d; }
+
+  .cta-section { background: #f0f4ff; border-radius: 16px; padding: 2.5rem 2rem; margin-bottom: 2.5rem; text-align: center; }
+  .cta-section h2 { font-size: 1.4rem; font-weight: 700; color: #0a1628; margin-bottom: 0.75rem; }
+  .cta-section p { color: #374151; font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .property-scenarios { grid-template-columns: 1fr; }
+  }
+</style>
