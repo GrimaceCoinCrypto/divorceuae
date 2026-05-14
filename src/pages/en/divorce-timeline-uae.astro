@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
@@ -9,13 +9,13 @@ const description =
   'How long does divorce take in UAE? Full timeline for uncontested, contested, and custody cases — stage-by-stage from first filing to final decree, with Dubai, Abu Dhabi and Sharjah specifics.';
 
 const hreflang = {
-  en: 'https://divorceu.ae/en/divorce-timeline-uae',
-  ar: 'https://divorceu.ae/ar/مدة-الطلاق-في-الامارات',
+  en: 'https://divorceu.ae/en/divorce-timeline-uae/',
+  ar: 'https://divorceu.ae/ar/مدة-الطلاق-في-الامارات/',
 };
 
 const breadcrumbs = [
   { name: 'Home', url: 'https://divorceu.ae/en/' },
-  { name: 'Divorce Timeline UAE', url: 'https://divorceu.ae/en/divorce-timeline-uae' },
+  { name: 'Divorce Timeline UAE', url: 'https://divorceu.ae/en/divorce-timeline-uae/' },
 ];
 
 const timelineCards = [
@@ -132,6 +132,38 @@ const faqSchema = {
         text: 'If a spouse is abroad, proceedings can sometimes continue via power of attorney allowing a representative to appear. However, courts vary on when they accept POA representation vs. requiring personal appearance. In some stages — such as signing a mutual consent agreement — personal appearance or a notarised remote consent may be required. Your lawyer can advise on the specific requirements of your emirate and case type.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What is the fastest possible divorce timeline in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The theoretical minimum is 4-6 weeks. This applies only to a non-Muslim civil divorce under the 2022 law, or a fully agreed mutual consent divorce where both parties have signed a notarised settlement agreement before filing, all documents are already attested and translated, and the court accepts the case for an expedited hearing track. In practice, 8-12 weeks is a more realistic fast timeline for even the most well-prepared mutual consent divorces in Dubai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to get the divorce certificate after the court judgment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'After the final divorce judgment becomes enforceable — either after the 30-day appeal period lapses or both parties waive appeal — the court issues the official divorce certificate within 1-3 weeks. For non-UAE nationals who need to use the certificate internationally, MOFA attestation takes 2 hours (digital) or 1-3 working days (courier), and home country consulate notification takes 1-6 weeks depending on nationality. Build in 3-5 weeks from judgment to a fully legalised, internationally recognised certificate.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long can I stay in UAE after divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under current UAE rules, a divorced spouse receives an automatic 1-year residency extension from the date the divorce decree becomes final. This is granted independently of the former sponsor\'s consent. After 1 year, the divorced spouse must transfer to employment, investor, freelance, or other self-sponsored visa. Use the 1-year period to arrange new sponsorship — do not wait until the final months.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What changed in UAE divorce law in 2025?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Federal Decree-Law No. 41 of 2024 took effect on 15 April 2025 and introduced significant changes: the mandatory reconciliation period was reduced from 90 to 60 days (and courts can now waive it entirely in some cases); khula divorce can now be granted by judicial decree even without the husband\'s consent; talaq must be registered with the court within 15 days of pronouncement; the alimony retroactive claim period was reduced from 3 years to 2 years; and mothers can now retain custody of sons until age 18. Non-Muslim expat divorces remain governed by the separate Federal Decree-Law No. 41 of 2022.',
+      },
+    },
   ],
 };
 
@@ -144,11 +176,27 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
 <BaseLayout
   title={title}
   description={description}
-  canonical="https://divorceu.ae/en/divorce-timeline-uae"
+  canonical="https://divorceu.ae/en/divorce-timeline-uae/"
   lang="en"
   hreflang={hreflang}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    'name': 'How to Get Divorced in UAE - Step-by-Step Court Process',
+    'description': 'The complete step-by-step process for filing and completing a divorce in UAE courts, from Family Guidance to receiving the official divorce certificate.',
+    'totalTime': 'P3M',
+    'estimatedCost': { '@type': 'MonetaryAmount', 'currency': 'AED', 'minValue': '4000', 'maxValue': '10000' },
+    'step': [
+      { '@type': 'HowToStep', 'position': 1, 'name': 'Family Guidance / Reconciliation Session', 'text': 'All UAE divorce cases pass through a mandatory Family Guidance stage. The officer attempts reconciliation; if it fails, a certificate is issued allowing proceedings to continue. Expect 1-4 sessions for contested cases.', 'timeRequired': 'P6W' },
+      { '@type': 'HowToStep', 'position': 2, 'name': 'First Court Hearing', 'text': 'The judge reviews the petition, confirms representation, and sets a procedural schedule. For uncontested cases the judge may finalise here or schedule a single confirmation hearing.', 'timeRequired': 'P8W' },
+      { '@type': 'HowToStep', 'position': 3, 'name': 'Evidence Exchange and Expert Reports', 'text': 'Both sides submit financial records, witness statements, and property valuations. If children are involved, the court may appoint a social worker or psychologist to produce a welfare report.', 'timeRequired': 'P6M' },
+      { '@type': 'HowToStep', 'position': 4, 'name': 'Hearings and Pleadings', 'text': 'The court schedules regular hearings. Adjournments for missing documents or additional evidence are common and add 3-6 weeks each.', 'timeRequired': 'P6M' },
+      { '@type': 'HowToStep', 'position': 5, 'name': 'Judgment', 'text': 'The judge issues a written ruling. Either party has 30 days to file an appeal. Both parties can sign a waiver to make the decree final immediately.', 'timeRequired': 'P4W' },
+      { '@type': 'HowToStep', 'position': 6, 'name': 'Divorce Certificate Issuance', 'text': 'Once the judgment is final, the court issues the official divorce certificate within 1-3 weeks. This document is required for visa applications, remarriage, and home-country record updates.', 'timeRequired': 'P3W' },
+    ],
+  })} />
   <Breadcrumb items={breadcrumbs} />
 
   <section class="hero-section">
@@ -262,8 +310,379 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
 
       <section class="content-section">
         <h2>How Divorce Timeline Affects Your Visa</h2>
-        <p>If your UAE residence visa is sponsored by your spouse, the clock starts ticking the moment the divorce decree is issued. You have <strong>30 days</strong> from the decree date to transfer or arrange new sponsorship.</p>
-        <p>This means that in a contested divorce where judgment day is unpredictable, you should prepare your alternative visa well in advance — before the final hearing, not after. Read our full guide: <a href="/en/visa-after-divorce-uae">Visa After Divorce UAE — Your 7 Pathways</a>.</p>
+        <p>If your UAE residence visa is sponsored by your spouse, you receive an automatic <strong>1-year residency extension</strong> from the date the divorce decree becomes final. This extension is granted independently of your former sponsor's consent and gives you time to arrange new sponsorship - employment visa, investor visa, freelance permit, or dependent visa under a relative.</p>
+        <p>In a contested divorce where the judgment date is unpredictable, begin preparing your alternative visa option before the final hearing. Read our full guide: <a href="/en/visa-after-divorce-uae/">Visa After Divorce UAE - Your 7 Pathways</a>.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>What Changed in 2025 - Federal Decree-Law No. 41 of 2024</h2>
+        <p>The most significant UAE personal status law reform in decades took effect on 15 April 2025. These changes directly affect divorce timelines - if your case was filed before that date, check with your lawyer which law applies.</p>
+        <div class="law-table">
+          <div class="law-table-header">
+            <span>Rule</span>
+            <span>Before 2025</span>
+            <span>From April 2025</span>
+            <span>Impact on Timeline</span>
+          </div>
+          <div class="law-row">
+            <span class="law-rule">Family Guidance / reconciliation period</span>
+            <span>90 days (mandatory)</span>
+            <span>60 days (court may waive)</span>
+            <span class="law-positive">Saves up to 4 weeks</span>
+          </div>
+          <div class="law-row">
+            <span class="law-rule">Khula without husband's consent</span>
+            <span>Case could drag indefinitely</span>
+            <span>Judge can now grant unilaterally</span>
+            <span class="law-positive">Removes indefinite delay risk</span>
+          </div>
+          <div class="law-row">
+            <span class="law-rule">Talaq registration deadline</span>
+            <span>No deadline specified</span>
+            <span>Must register within 15 days</span>
+            <span class="law-neutral">New compliance obligation</span>
+          </div>
+          <div class="law-row">
+            <span class="law-rule">Alimony retroactive claim period</span>
+            <span>3 years backdated</span>
+            <span>2 years backdated</span>
+            <span class="law-neutral">Less contested financial scope</span>
+          </div>
+          <div class="law-row">
+            <span class="law-rule">Son custody age (for mothers)</span>
+            <span>Mothers lost custody at son's puberty</span>
+            <span>Mothers can retain until son turns 18</span>
+            <span class="law-neutral">Fewer forced custody battles</span>
+          </div>
+        </div>
+        <p class="law-note">Non-Muslim expat divorces remain governed by Federal Decree-Law No. 41 of 2022 (effective February 2023), which is separate from the 2024 reform.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Week-by-Week: Your First 90 Days in a UAE Divorce</h2>
+        <p>For an uncontested divorce with all documents in order, the following timeline is realistic for Dubai and Abu Dhabi in 2025. Contested cases follow the same sequence but stages 2-4 stretch considerably.</p>
+        <div class="week-timeline">
+
+          <div class="week-block">
+            <div class="week-badge">Week 1</div>
+            <div class="week-content">
+              <h3>Initial Lawyer Consultation and Case Assessment</h3>
+              <p>Book a consultation with a UAE-licensed family lawyer. The lawyer reviews your marriage certificate, identifies the applicable law (UAE personal status law or the 2022 civil divorce law for non-Muslims), and advises on grounds, likely timeline, and cost. You will discuss whether both parties are in agreement and whether children or shared assets are involved. You leave with a document checklist and a clear sense of the filing strategy.</p>
+            </div>
+          </div>
+
+          <div class="week-block">
+            <div class="week-badge">Week 1-2</div>
+            <div class="week-content">
+              <h3>Document Gathering</h3>
+              <p>Collect the core documents: original marriage certificate, valid passports for both parties, UAE residence visas, Emirates IDs, and children's birth certificates if applicable. If your marriage certificate was issued abroad, this is when you identify which attestation chain it requires - typically home country apostille or Ministry of Foreign Affairs attestation followed by UAE Ministry of Justice attestation. Starting this immediately is critical because international attestation can take 2-3 weeks alone.</p>
+            </div>
+          </div>
+
+          <div class="week-block">
+            <div class="week-badge">Weeks 2-3</div>
+            <div class="week-content">
+              <h3>Attestation and Arabic Translation</h3>
+              <p>All foreign-language documents must be translated into Arabic by a UAE Ministry of Justice-approved legal translator. Attestation of the marriage certificate follows the standard chain for your home country. For UK nationals this means Foreign Commonwealth and Development Office apostille; for Indian nationals it means MEA attestation via the Ministry of External Affairs. Courts will reject documents at any stage if attestation is incomplete - do not cut corners here. Budget AED 500-1,500 for translation depending on document volume.</p>
+            </div>
+          </div>
+
+          <div class="week-block">
+            <div class="week-badge">Weeks 4-6</div>
+            <div class="week-content">
+              <h3>Filing and Family Guidance Session</h3>
+              <p>Your lawyer files the petition at the relevant court (Dubai Courts Personal Status Division, Abu Dhabi Judicial Department, or equivalent). Filing fees are paid at this stage - typically AED 300-600 for the petition. Within 1-2 weeks you are assigned a Family Guidance officer appointment. The session itself takes 30-90 minutes. The officer asks both parties about the prospects of reconciliation. If both confirm the marriage has broken down irreversibly, the officer issues a reconciliation failure certificate, which formally authorises the court case to proceed.</p>
+            </div>
+          </div>
+
+          <div class="week-block">
+            <div class="week-badge">Weeks 7-10</div>
+            <div class="week-content">
+              <h3>First Court Hearing</h3>
+              <p>The first hearing is typically scheduled 3-5 weeks after the Family Guidance certificate is issued. Both parties (or their representatives) appear before the judge. For uncontested cases the judge reviews the filed agreement, confirms that both parties are consenting freely, and either issues judgment on the spot or schedules a brief confirmation hearing 2-3 weeks later. If any point is disputed - even one financial term - the judge will set a full evidence schedule and the case moves to a contested track. This is the last cheap exit point: resolve all terms before this hearing.</p>
+            </div>
+          </div>
+
+          <div class="week-block">
+            <div class="week-badge">Weeks 10-12</div>
+            <div class="week-content">
+              <h3>Judgment and Divorce Certificate</h3>
+              <p>For a clean uncontested case, the judge issues written judgment at the confirmation hearing. Both parties have 30 days to appeal - if you both sign a waiver, the decree becomes final immediately. The court then issues the official divorce certificate, which takes 1-2 weeks to prepare after judgment. You will need certified copies: one for your visa transfer, one for your home country records update, and one for any future remarriage application. The total elapsed time for a well-prepared uncontested case in Dubai: 8-12 weeks from first lawyer meeting to certificate in hand.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What to Prepare at Each Stage - Document Checklist</h2>
+        <p>Missing a single document at the wrong moment causes a 3-6 week adjournment. This checklist maps every required item to the stage at which it is needed. Have everything for stages 1-3 ready before you file.</p>
+
+        <div class="checklist-stages">
+
+          <div class="checklist-stage">
+            <div class="checklist-stage-header">
+              <div class="checklist-stage-num">1</div>
+              <div>
+                <h3>Filing and Family Guidance</h3>
+                <span class="checklist-stage-note">Have these ready on day one</span>
+              </div>
+            </div>
+            <ul class="checklist-list">
+              <li><span class="check-icon">&#10003;</span> Original marriage certificate (with apostille or MOFA attestation if issued abroad)</li>
+              <li><span class="check-icon">&#10003;</span> Arabic translation of marriage certificate by UAE Ministry of Justice-approved translator</li>
+              <li><span class="check-icon">&#10003;</span> Valid passports for both parties (copies and originals)</li>
+              <li><span class="check-icon">&#10003;</span> UAE residence visas for both parties (copies)</li>
+              <li><span class="check-icon">&#10003;</span> Emirates ID cards for both parties (copies)</li>
+              <li><span class="check-icon">&#10003;</span> Children's birth certificates if custody is included (attested and translated)</li>
+              <li><span class="check-icon">&#10003;</span> Court filing fees (AED 300-600 approximately - confirm with your court)</li>
+              <li><span class="check-icon">&#10003;</span> Signed engagement letter with your lawyer and power of attorney if filing via representative</li>
+            </ul>
+          </div>
+
+          <div class="checklist-stage">
+            <div class="checklist-stage-header">
+              <div class="checklist-stage-num">2</div>
+              <div>
+                <h3>First Court Hearing</h3>
+                <span class="checklist-stage-note">For uncontested cases - have a signed agreement ready</span>
+              </div>
+            </div>
+            <ul class="checklist-list">
+              <li><span class="check-icon">&#10003;</span> Signed mutual consent / separation agreement covering all terms (if uncontested)</li>
+              <li><span class="check-icon">&#10003;</span> Arabic translation of the separation agreement</li>
+              <li><span class="check-icon">&#10003;</span> Family Guidance reconciliation failure certificate</li>
+              <li><span class="check-icon">&#10003;</span> Proof of current UAE address for both parties (utility bill or tenancy contract)</li>
+              <li><span class="check-icon">&#10003;</span> Employment verification letter (sometimes requested to establish financial jurisdiction)</li>
+              <li><span class="check-icon">&#10003;</span> List of jointly owned assets and liabilities</li>
+            </ul>
+          </div>
+
+          <div class="checklist-stage">
+            <div class="checklist-stage-header">
+              <div class="checklist-stage-num">3</div>
+              <div>
+                <h3>Evidence Exchange (Contested Cases)</h3>
+                <span class="checklist-stage-note">Financial and property documents - gather well in advance</span>
+              </div>
+            </div>
+            <ul class="checklist-list">
+              <li><span class="check-icon">&#10003;</span> Last 12 months of bank statements for all accounts (both parties)</li>
+              <li><span class="check-icon">&#10003;</span> Property ownership documents (title deeds, Dubai Land Department registration)</li>
+              <li><span class="check-icon">&#10003;</span> Vehicle registration certificates</li>
+              <li><span class="check-icon">&#10003;</span> Business ownership documents, share certificates, or trade licence if applicable</li>
+              <li><span class="check-icon">&#10003;</span> Employment contracts and recent payslips (both parties)</li>
+              <li><span class="check-icon">&#10003;</span> Pension and investment account statements</li>
+              <li><span class="check-icon">&#10003;</span> Mahr certificate or nikah contract confirming agreed mahr amount</li>
+              <li><span class="check-icon">&#10003;</span> Any prenuptial or postnuptial agreement (attested and translated)</li>
+            </ul>
+          </div>
+
+          <div class="checklist-stage">
+            <div class="checklist-stage-header">
+              <div class="checklist-stage-num">4</div>
+              <div>
+                <h3>Hearings and Pleadings (Contested Cases)</h3>
+                <span class="checklist-stage-note">Ongoing - submit only what the court requests</span>
+              </div>
+            </div>
+            <ul class="checklist-list">
+              <li><span class="check-icon">&#10003;</span> Witness statements (if calling character or financial witnesses)</li>
+              <li><span class="check-icon">&#10003;</span> Expert financial valuation report (if ordered or requested)</li>
+              <li><span class="check-icon">&#10003;</span> Social welfare / psychological report on children (if ordered by court)</li>
+              <li><span class="check-icon">&#10003;</span> School records and medical records for children (custody cases)</li>
+              <li><span class="check-icon">&#10003;</span> Updated bank statements if financial position has changed since filing</li>
+              <li><span class="check-icon">&#10003;</span> Evidence of any domestic abuse, parental alienation, or misconduct (if pleaded)</li>
+            </ul>
+          </div>
+
+          <div class="checklist-stage">
+            <div class="checklist-stage-header">
+              <div class="checklist-stage-num">5</div>
+              <div>
+                <h3>Judgment Stage</h3>
+                <span class="checklist-stage-note">Nothing to submit - but prepare your next steps now</span>
+              </div>
+            </div>
+            <ul class="checklist-list">
+              <li><span class="check-icon">&#10003;</span> Confirm whether you intend to appeal or waive the 30-day appeal period</li>
+              <li><span class="check-icon">&#10003;</span> Signed appeal waiver (if both parties agree) - accelerates the decree becoming final</li>
+              <li><span class="check-icon">&#10003;</span> Court fee payment for judgment issuance if applicable</li>
+              <li><span class="check-icon">&#10003;</span> New visa application prepared in advance - you have a 1-year grace period from decree</li>
+            </ul>
+          </div>
+
+          <div class="checklist-stage">
+            <div class="checklist-stage-header">
+              <div class="checklist-stage-num">6</div>
+              <div>
+                <h3>Divorce Certificate Collection</h3>
+                <span class="checklist-stage-note">Request multiple certified copies at this stage</span>
+              </div>
+            </div>
+            <ul class="checklist-list">
+              <li><span class="check-icon">&#10003;</span> Collect a minimum of 3 certified original copies of the divorce certificate</li>
+              <li><span class="check-icon">&#10003;</span> Request an English translation certified by the court or Ministry of Justice translator</li>
+              <li><span class="check-icon">&#10003;</span> Request apostille or MOFA attestation of the certificate for home-country use</li>
+              <li><span class="check-icon">&#10003;</span> Verify the names, dates, and personal details on every copy before leaving the court</li>
+              <li><span class="check-icon">&#10003;</span> Store originals in a secure location - replacement copies require a formal court application</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>After the Decree - Your 30-Day Action Plan</h2>
+        <p>The divorce certificate is not the end of the process - it is the starting gun for a series of time-sensitive administrative steps. Missing these deadlines causes serious legal and financial complications. Work through the list below in the first 30 days.</p>
+
+        <div class="action-plan-grid">
+
+          <div class="action-item action-urgent">
+            <div class="action-item-header">
+              <span class="action-urgency urgent">Days 1-7 - Urgent</span>
+              <h3>Visa Arrangement</h3>
+            </div>
+            <p>You receive an automatic 1-year residency extension from the date of the final decree. Use this time well. Begin your new visa application immediately - employment sponsorship, freelance permit, investor visa, or dependent visa under a close relative. Do not wait until month 10. See our full guide: <a href="/en/visa-after-divorce-uae/">Visa After Divorce UAE</a>.</p>
+          </div>
+
+          <div class="action-item action-urgent">
+            <div class="action-item-header">
+              <span class="action-urgency urgent">Days 1-14 - Urgent</span>
+              <h3>HR and Employment Records</h3>
+            </div>
+            <p>Notify your HR or PRO department immediately - your visa status change affects your employment file. If your employer sponsored your visa, confirm the decree does not alter your employment terms. If you were on a spouse visa and now need employer sponsorship, start the transfer request on day one. Some employers require the divorce certificate to update your family file and housing allowance category.</p>
+          </div>
+
+          <div class="action-item">
+            <div class="action-item-header">
+              <span class="action-urgency standard">Days 1-14</span>
+              <h3>Children's School Notification</h3>
+            </div>
+            <p>Notify your children's school or nursery of the change in family status. Schools need to update authorised pickup lists, emergency contact records, and fee-payer details. If custody is shared, clarify which parent holds primary school authority for decision-making. Provide the school with a certified copy of the custody order.</p>
+          </div>
+
+          <div class="action-item">
+            <div class="action-item-header">
+              <span class="action-urgency standard">Days 7-21</span>
+              <h3>Bank Accounts and Joint Property</h3>
+            </div>
+            <p>Close or restructure all joint bank accounts as soon as possible after the decree. Remove the ex-spouse as a signatory from any account you retain. Cancel any supplementary credit cards issued in the ex-spouse's name on your account. For jointly owned property in Dubai, the Land Department transfer or sale process should begin promptly - property transfers following a court order require the divorce decree and a No Objection Certificate from the court.</p>
+          </div>
+
+          <div class="action-item">
+            <div class="action-item-header">
+              <span class="action-urgency standard">Days 7-21</span>
+              <h3>Mahr - Return or Claim</h3>
+            </div>
+            <p>The mahr (dower) arrangements should be reflected in the decree. For talaq (husband-initiated divorce), the full mahr is due to the wife immediately on divorce - if not paid, it is an enforceable court debt. For khula (wife-initiated divorce), the wife typically returns the prompt mahr as part of the settlement. Confirm the mahr amount stated in your nikah contract matches the court order. If payment was not addressed in the judgment, consult your lawyer immediately.</p>
+          </div>
+
+          <div class="action-item">
+            <div class="action-item-header">
+              <span class="action-urgency standard">Days 14-30</span>
+              <h3>Home Country Notification</h3>
+            </div>
+            <p>Most countries require you to register a foreign divorce with their civil registry. UK nationals register through the General Register Office; Indian nationals notify their local Municipal Corporation. Some countries require the UAE divorce certificate to be apostilled or MOFA-attested before it is accepted. Failure to register means your home country records still show you as married, which blocks remarriage applications and may affect inheritance rights.</p>
+          </div>
+
+          <div class="action-item">
+            <div class="action-item-header">
+              <span class="action-urgency standard">Days 14-30</span>
+              <h3>Insurance, Wills, and Beneficiaries</h3>
+            </div>
+            <p>Update your life insurance beneficiary designations - in the UAE, insurance policies do not automatically change on divorce. Update any DIFC Wills or Abu Dhabi Global Market wills, or revoke and redraft entirely. Review your employer's group life insurance and medical insurance - in some cases the ex-spouse remains listed as beneficiary unless actively changed.</p>
+          </div>
+
+          <div class="action-item">
+            <div class="action-item-header">
+              <span class="action-urgency standard">Days 21-30</span>
+              <h3>Name Change (if applicable)</h3>
+            </div>
+            <p>If you wish to revert to a pre-marriage surname, this must be done via an application to your home country's civil registry - UAE courts do not issue name change orders for this purpose. Once your home country updates your passport, update your UAE residence documents, Emirates ID, bank accounts, employment records, driving licence, and vehicle registration to match. The process typically takes 2-4 months from start to finish.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Can I Speed Up My UAE Divorce?</h2>
+        <p>Yes - in most cases, the total timeline is within your control more than people realise. The delays that push UAE divorces past 6 months are almost always caused by preventable preparation failures or avoidable disputes. Here is what works.</p>
+
+        <div class="speed-tips">
+
+          <div class="speed-tip">
+            <div class="speed-tip-header">
+              <span class="speed-icon">01</span>
+              <h3>Reach Full Agreement Before You File</h3>
+            </div>
+            <p>This is the single most powerful lever. An uncontested divorce in Dubai takes 1-3 months. A contested divorce takes 6-24 months. The gap is not procedural - it is the time spent arguing. Before filing, agree in writing on: division of assets and debts, custody schedule and decision-making authority, child maintenance amount and payment method, spousal alimony (if applicable), and mahr arrangements. A one-day mediation session with a UAE family mediator typically costs AED 2,000-5,000 and can save months of litigation and AED 30,000+ in legal fees.</p>
+          </div>
+
+          <div class="speed-tip">
+            <div class="speed-tip-header">
+              <span class="speed-icon">02</span>
+              <h3>Have Every Document Attested and Translated Before the First Hearing</h3>
+            </div>
+            <p>Courts cannot accept foreign documents without UAE-compliant attestation and Ministry of Justice-certified Arabic translation. Each deficient document causes an adjournment of 3-6 weeks. Complete the full attestation chain for your marriage certificate, any prenuptial agreements, and children's birth certificates before your lawyer files the petition. A single avoided adjournment saves more time and money than the translation costs.</p>
+          </div>
+
+          <div class="speed-tip">
+            <div class="speed-tip-header">
+              <span class="speed-icon">03</span>
+              <h3>Use the 2022 Civil Divorce Law if You Are Non-Muslim</h3>
+            </div>
+            <p>Federal Decree-Law No. 41 of 2022 created a streamlined no-fault civil divorce track specifically for non-Muslim residents. Under this law, either party can file unilaterally - no grounds needed, no blame assigned. The process runs through the same courts but on a faster track with a simplified evidence standard. Non-Muslim expats who attempt to apply their home country law through UAE personal status courts face a significantly longer process. Confirm with your lawyer that your case is filed under the 2022 law from the outset.</p>
+          </div>
+
+          <div class="speed-tip">
+            <div class="speed-tip-header">
+              <span class="speed-icon">04</span>
+              <h3>Use DIFC Courts for Financial Disputes (High-Value Cases)</h3>
+            </div>
+            <p>The Dubai International Financial Centre Courts operate under English common law and are often faster for complex financial disputes than the UAE Personal Status Courts - particularly for cases involving DIFC-registered assets or international investment portfolios. Both parties can agree to DIFC jurisdiction by consent. The DIFC Small Claims Tribunal handles disputes up to AED 500,000 and has a target resolution time of under 3 months. For financial elements exceeding AED 1 million in dispute value, ask your lawyer whether a DIFC jurisdiction clause is appropriate.</p>
+          </div>
+
+          <div class="speed-tip">
+            <div class="speed-tip-header">
+              <span class="speed-icon">05</span>
+              <h3>Waive the 30-Day Appeal Period</h3>
+            </div>
+            <p>After judgment, each party has 30 days to file an appeal. If neither intends to appeal, both parties can sign a formal waiver in front of the court, making the decree final on the same day as judgment. This avoids an automatic 30-day wait before the divorce certificate can be issued. For visa-dependent spouses this is particularly valuable - it means receiving the certificate weeks earlier. Ask your lawyer to prepare the waiver paperwork before the final hearing so it can be signed immediately.</p>
+          </div>
+
+          <div class="speed-tip">
+            <div class="speed-tip-header">
+              <span class="speed-icon">06</span>
+              <h3>Appoint an Experienced Family Lawyer from Day One</h3>
+            </div>
+            <p>A lawyer who regularly practises in your specific emirate's family courts knows the procedural requirements, the judges' preferences, and the fastest filing sequences. Small procedural errors - a missing stamp, an incorrect application form, or a misspelled name across documents - cause adjournments that an experienced practitioner simply does not make. The difference in total timeline between a novice and an experienced UAE family lawyer on an uncontested case is routinely 6-10 weeks. On a contested case it can be 6-12 months.</p>
+          </div>
+
+        </div>
+
+        <div class="speed-summary-box">
+          <h3>Realistic Time Savings</h3>
+          <div class="speed-summary-grid">
+            <div class="speed-saving">
+              <span class="saving-action">Full pre-filing agreement</span>
+              <span class="saving-time">Save 3-18 months</span>
+            </div>
+            <div class="speed-saving">
+              <span class="saving-action">Complete documents before filing</span>
+              <span class="saving-time">Save 6-12 weeks</span>
+            </div>
+            <div class="speed-saving">
+              <span class="saving-action">Use 2022 civil divorce law</span>
+              <span class="saving-time">Save 2-4 months</span>
+            </div>
+            <div class="speed-saving">
+              <span class="saving-action">Waive appeal period</span>
+              <span class="saving-time">Save 3-4 weeks</span>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <section class="content-section">
@@ -284,7 +703,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
             { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Court fees, lawyer fees, and what drives your total bill.' },
             { title: 'Mutual Consent Divorce UAE', href: '/en/mutual-consent-divorce-uae', desc: 'Fastest route — how to agree and file together.' },
             { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step filing guide for Dubai courts.' },
-            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: 'The 30-day rule and your 7 visa pathways.' },
+            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae/', desc: '1-year residency extension and your 7 visa pathways after divorce.' },
             { title: 'Documents for Divorce UAE', href: '/en/documents-for-divorce-uae', desc: 'Complete checklist + attestation guide.' },
           ].map(link => (
             <a href={link.href} class="related-card">
@@ -372,5 +791,72 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
     .delay-header, .delay-row { grid-template-columns: 1fr; }
     .delay-header span:not(:first-child) { display: none; }
     .delay-impact, .delay-tip { padding-left: 0.5rem; }
+  }
+
+  /* 2024 Law Table */
+  .law-table { border: 1px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; font-size: 0.84rem; margin-bottom: 1rem; }
+  .law-table-header { display: grid; grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr; gap: 0.5rem; background: #0a1628; color: #fff; padding: 0.75rem 1rem; font-weight: 700; font-size: 0.73rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .law-row { display: grid; grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid #e8eaed; align-items: start; }
+  .law-row:nth-child(even) { background: #f8f9fa; }
+  .law-rule { color: #0a1628; font-weight: 600; }
+  .law-positive { color: #166534; font-weight: 600; }
+  .law-neutral { color: #445; }
+  .law-note { font-size: 0.78rem; color: #889; margin-top: 0.5rem; }
+
+  /* Week-by-Week Timeline */
+  .week-timeline { display: flex; flex-direction: column; gap: 0; }
+  .week-block { display: grid; grid-template-columns: 7rem 1fr; gap: 0 1.25rem; position: relative; padding-bottom: 1.75rem; }
+  .week-block:last-child { padding-bottom: 0; }
+  .week-block::before { content: ''; position: absolute; left: 3.2rem; top: 2.2rem; bottom: 0; width: 2px; background: #e8d89a; }
+  .week-block:last-child::before { display: none; }
+  .week-badge { background: #c9a84c; color: #fff; border-radius: 999px; padding: 0.25rem 0.6rem; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; height: fit-content; text-align: center; white-space: nowrap; z-index: 1; position: relative; }
+  .week-content h3 { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0 0 0.4rem; }
+  .week-content p { font-size: 0.86rem; color: #445; line-height: 1.72; margin: 0; }
+
+  /* Document Checklist */
+  .checklist-stages { display: flex; flex-direction: column; gap: 1.25rem; }
+  .checklist-stage { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .checklist-stage-header { display: flex; align-items: flex-start; gap: 0.875rem; margin-bottom: 1rem; }
+  .checklist-stage-num { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .checklist-stage-header h3 { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0 0 0.2rem; }
+  .checklist-stage-note { font-size: 0.73rem; font-weight: 600; color: #7a6a30; background: #fef9e7; padding: 0.15rem 0.5rem; border-radius: 999px; display: inline-block; }
+  .checklist-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.84rem; color: #445; line-height: 1.6; }
+  .check-icon { color: #c9a84c; font-weight: 800; font-size: 0.9rem; min-width: 1rem; margin-top: 0.05rem; }
+
+  /* 30-Day Action Plan */
+  .action-plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .action-item { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.25rem; }
+  .action-item.action-urgent { background: #fff8f0; border-color: #f5c98a; }
+  .action-item-header { margin-bottom: 0.6rem; }
+  .action-urgency { display: inline-block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.55rem; border-radius: 999px; margin-bottom: 0.4rem; }
+  .action-urgency.urgent { background: #fde8c8; color: #9a5000; }
+  .action-urgency.standard { background: #e8f0fe; color: #1e40af; }
+  .action-item-header h3 { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .action-item p { font-size: 0.84rem; color: #445; line-height: 1.7; margin: 0; }
+  .action-item p a { color: #c9a84c; font-weight: 600; text-decoration: none; }
+  .action-item p a:hover { text-decoration: underline; }
+
+  /* Speed Up Tips */
+  .speed-tips { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .speed-tip { background: #f8f9fa; border: 1px solid #e0e4ea; border-left: 3px solid #c9a84c; border-radius: 0 0.875rem 0.875rem 0; padding: 1.25rem; }
+  .speed-tip-header { display: flex; align-items: flex-start; gap: 0.875rem; margin-bottom: 0.6rem; }
+  .speed-icon { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 0.4rem; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; }
+  .speed-tip-header h3 { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0; line-height: 1.4; }
+  .speed-tip p { font-size: 0.85rem; color: #445; line-height: 1.72; margin: 0; }
+  .speed-summary-box { background: #0a1628; border-radius: 0.875rem; padding: 1.25rem 1.5rem; }
+  .speed-summary-box h3 { font-size: 0.9rem; font-weight: 800; color: #c9a84c; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.875rem; }
+  .speed-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; }
+  .speed-saving { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); border-radius: 0.6rem; padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+  .saving-action { font-size: 0.78rem; color: #b0bec5; line-height: 1.4; }
+  .saving-time { font-size: 0.95rem; font-weight: 800; color: #c9a84c; }
+
+  @media (max-width: 700px) {
+    .week-block { grid-template-columns: 5.5rem 1fr; }
+    .week-block::before { left: 2.5rem; }
+    .action-plan-grid { grid-template-columns: 1fr; }
+    .speed-summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .law-table-header, .law-row { grid-template-columns: 1fr; }
+    .law-table-header span:not(:first-child) { display: none; }
   }
 </style>

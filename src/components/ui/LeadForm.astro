@@ -3,9 +3,10 @@ export interface Props {
   lang?: 'en' | 'ar';
   variant?: 'hero' | 'inline' | 'sticky';
   heading?: string;
+  source?: string;
 }
 
-const { lang = 'en', variant = 'hero', heading } = Astro.props;
+const { lang = 'en', variant = 'hero', heading, source = '' } = Astro.props;
 
 const copy = {
   en: {
@@ -15,6 +16,36 @@ const copy = {
     phone: 'Phone Number (WhatsApp)',
     email: 'Email Address',
     situation: 'Briefly describe your situation (optional)',
+    caseTypeLabel: 'Type of case',
+    caseTypeOptions: [
+      { value: '', label: 'Select case type...' },
+      { value: 'mutual', label: 'Mutual consent / both agree' },
+      { value: 'contested', label: 'Contested (dispute)' },
+      { value: 'custody', label: 'Custody dispute' },
+      { value: 'unknown', label: 'Not sure yet' },
+    ],
+    urgencyLabel: 'How soon do you need help?',
+    urgencyOptions: [
+      { value: '', label: 'Select urgency...' },
+      { value: 'today', label: 'I need help today' },
+      { value: 'this_week', label: 'This week' },
+      { value: 'this_month', label: 'Within a month' },
+      { value: 'researching', label: 'Just researching' },
+    ],
+    lawyerLabel: 'Do you currently have a lawyer?',
+    lawyerOptions: [
+      { value: '', label: 'Select...' },
+      { value: 'no_looking', label: 'No — looking for one now' },
+      { value: 'no_research', label: 'No — just researching' },
+      { value: 'yes_second', label: 'Yes — want a second opinion' },
+      { value: 'yes', label: 'Yes — already retained' },
+    ],
+    childrenLabel: 'Children involved?',
+    childrenOptions: [
+      { value: '', label: 'Select...' },
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No' },
+    ],
     cta: 'Request Free Consultation',
     whatsapp: 'Or chat instantly on WhatsApp',
     privacy: 'Your details are 100% confidential and never shared.',
@@ -26,6 +57,36 @@ const copy = {
     phone: 'رقم الهاتف (واتساب)',
     email: 'البريد الإلكتروني',
     situation: 'وصف موجز لوضعك (اختياري)',
+    caseTypeLabel: 'نوع القضية',
+    caseTypeOptions: [
+      { value: '', label: 'اختر نوع القضية...' },
+      { value: 'mutual', label: 'طلاق بالتراضي' },
+      { value: 'contested', label: 'طلاق خلافي' },
+      { value: 'custody', label: 'نزاع حضانة' },
+      { value: 'unknown', label: 'غير محدد بعد' },
+    ],
+    urgencyLabel: 'متى تحتاج المساعدة؟',
+    urgencyOptions: [
+      { value: '', label: 'اختر...' },
+      { value: 'today', label: 'اليوم - عاجل' },
+      { value: 'this_week', label: 'هذا الأسبوع' },
+      { value: 'this_month', label: 'خلال شهر' },
+      { value: 'researching', label: 'مجرد بحث' },
+    ],
+    lawyerLabel: 'هل لديك محامٍ حالياً؟',
+    lawyerOptions: [
+      { value: '', label: 'اختر...' },
+      { value: 'no_looking', label: 'لا - أبحث الآن' },
+      { value: 'no_research', label: 'لا - مجرد بحث' },
+      { value: 'yes_second', label: 'نعم - أريد رأياً ثانياً' },
+      { value: 'yes', label: 'نعم - لدي محامٍ' },
+    ],
+    childrenLabel: 'هل يوجد أطفال؟',
+    childrenOptions: [
+      { value: '', label: 'اختر...' },
+      { value: 'yes', label: 'نعم' },
+      { value: 'no', label: 'لا' },
+    ],
     cta: 'طلب استشارة مجانية',
     whatsapp: 'أو تحدث فوراً عبر واتساب',
     privacy: 'معلوماتك سرية بالكامل ولا تُشارك مع أي طرف.',
@@ -33,6 +94,9 @@ const copy = {
 };
 
 const t = copy[lang];
+const waBaseText = lang === 'ar'
+  ? 'مرحباً، أحتاج استشارة قانونية بشأن الطلاق في الإمارات'
+  : 'Hello, I need divorce legal advice in UAE';
 ---
 
 <section class={`lead-form lead-form--${variant}`} id="contact">
@@ -43,13 +107,11 @@ const t = copy[lang];
     <form
       class="lead-form__form"
       method="POST"
-      action="https://api.web3forms.com/submit"
+      action="/api/lead"
+      id="leadForm"
     >
-      <input type="hidden" name="access_key" value="a9bbab78-31f2-4714-8fa6-79ea3f564e4e" />
-      <input type="hidden" name="subject" value="New Divorce Consultation Request — DivorceU.AE" />
-      <input type="hidden" name="redirect" value="https://divorceu.ae/thank-you" />
       <input type="hidden" name="lang" value={lang} />
-      <input type="hidden" name="botcheck" class="sr-only" />
+      <input type="hidden" name="source" value={source} />
 
       <div class="lead-form__fields">
         <label class="lead-form__label">
@@ -65,6 +127,34 @@ const t = copy[lang];
         <label class="lead-form__label">
           <span>{t.email}</span>
           <input type="email" name="email" autocomplete="email" placeholder="you@example.com" />
+        </label>
+
+        <label class="lead-form__label">
+          <span>{t.urgencyLabel} *</span>
+          <select name="urgency" required class="lead-form__select">
+            {t.urgencyOptions.map(o => <option value={o.value}>{o.label}</option>)}
+          </select>
+        </label>
+
+        <label class="lead-form__label">
+          <span>{t.caseTypeLabel} *</span>
+          <select name="case_type" required class="lead-form__select">
+            {t.caseTypeOptions.map(o => <option value={o.value}>{o.label}</option>)}
+          </select>
+        </label>
+
+        <label class="lead-form__label">
+          <span>{t.childrenLabel}</span>
+          <select name="children" class="lead-form__select">
+            {t.childrenOptions.map(o => <option value={o.value}>{o.label}</option>)}
+          </select>
+        </label>
+
+        <label class="lead-form__label">
+          <span>{t.lawyerLabel}</span>
+          <select name="has_lawyer" class="lead-form__select">
+            {t.lawyerOptions.map(o => <option value={o.value}>{o.label}</option>)}
+          </select>
         </label>
 
         <label class="lead-form__label lead-form__label--full">
@@ -83,8 +173,9 @@ const t = copy[lang];
     </div>
 
     <a
-      href="https://wa.me/971557344876?text=Hello%2C%20I%20need%20divorce%20legal%20advice%20in%20UAE"
+      href={`https://wa.me/971557344876?text=${encodeURIComponent(waBaseText)}`}
       class="lead-form__whatsapp"
+      id="waLink"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -96,6 +187,36 @@ const t = copy[lang];
   </div>
 </section>
 
+<script>
+  // Update WhatsApp link with form answers when clicked
+  const waLink = document.getElementById('waLink');
+  const form = document.getElementById('leadForm');
+  if (waLink && form) {
+    waLink.addEventListener('click', () => {
+      const phone = (form.querySelector('[name="phone"]') as HTMLInputElement)?.value || '';
+      const name = (form.querySelector('[name="name"]') as HTMLInputElement)?.value || '';
+      const urgency = (form.querySelector('[name="urgency"]') as HTMLSelectElement)?.selectedOptions[0]?.text || '';
+      const caseType = (form.querySelector('[name="case_type"]') as HTMLSelectElement)?.selectedOptions[0]?.text || '';
+      const children = (form.querySelector('[name="children"]') as HTMLSelectElement)?.selectedOptions[0]?.text || '';
+      const situation = (form.querySelector('[name="situation"]') as HTMLTextAreaElement)?.value || '';
+
+      const isAr = document.documentElement.lang === 'ar';
+      const parts = isAr
+        ? ['مرحباً، أحتاج استشارة بشأن الطلاق في الإمارات.']
+        : ['Hello, I need divorce legal advice in UAE.'];
+
+      if (name) parts.push(isAr ? `الاسم: ${name}` : `Name: ${name}`);
+      if (urgency && urgency !== (isAr ? 'اختر...' : 'Select urgency...')) parts.push(isAr ? `الأولوية: ${urgency}` : `Urgency: ${urgency}`);
+      if (caseType && caseType !== (isAr ? 'اختر نوع القضية...' : 'Select case type...')) parts.push(isAr ? `نوع القضية: ${caseType}` : `Case: ${caseType}`);
+      if (children && children !== (isAr ? 'اختر...' : 'Select...')) parts.push(isAr ? `أطفال: ${children}` : `Children: ${children}`);
+      if (situation) parts.push(isAr ? `التفاصيل: ${situation}` : `Details: ${situation}`);
+
+      const msg = parts.join('\n');
+      waLink.href = `https://wa.me/971557344876?text=${encodeURIComponent(msg)}`;
+    });
+  }
+</script>
+
 <style>
   .lead-form { background: #f0f4ff; border-radius: 16px; padding: 40px 32px; }
   .lead-form--hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; }
@@ -105,7 +226,8 @@ const t = copy[lang];
   .lead-form__label { display: flex; flex-direction: column; gap: 6px; font-size: 0.875rem; font-weight: 500; }
   .lead-form__label--full { grid-column: 1 / -1; }
   .lead-form__label input,
-  .lead-form__label textarea {
+  .lead-form__label textarea,
+  .lead-form__select {
     padding: 10px 14px;
     border: 1.5px solid #d1d5db;
     border-radius: 8px;
@@ -116,7 +238,8 @@ const t = copy[lang];
     transition: border-color 0.2s;
   }
   .lead-form__label input:focus,
-  .lead-form__label textarea:focus {
+  .lead-form__label textarea:focus,
+  .lead-form__select:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37,99,235,0.15);

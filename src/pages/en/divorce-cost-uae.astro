@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
@@ -9,13 +9,13 @@ const description =
   'How much does divorce cost in UAE? Complete breakdown of court filing fees, lawyer fees, mediation costs, and what drives your total divorce bill — with real Dubai figures for 2025.';
 
 const hreflang = {
-  en: 'https://divorceu.ae/en/divorce-cost-uae',
-  ar: 'https://divorceu.ae/ar/تكلفة-الطلاق-في-الامارات',
+  en: 'https://divorceu.ae/en/divorce-cost-uae/',
+  ar: 'https://divorceu.ae/ar/تكلفة-الطلاق-في-الامارات/',
 };
 
 const breadcrumbs = [
   { name: 'Home', url: 'https://divorceu.ae/en/' },
-  { name: 'Divorce Cost UAE', url: 'https://divorceu.ae/en/divorce-cost-uae' },
+  { name: 'Divorce Cost UAE', url: 'https://divorceu.ae/en/divorce-cost-uae/' },
 ];
 
 const courtFees = [
@@ -64,7 +64,7 @@ const faqItems = [
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-cost-uae" lang="en" hreflang={hreflang}>
+<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-cost-uae/" lang="en" hreflang={hreflang}>
   <Breadcrumb items={breadcrumbs} />
 
   <!-- Hero -->
