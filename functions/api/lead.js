@@ -92,6 +92,7 @@ export async function onRequestPost({ request }) {
     .filter((l) => l !== null)
     .join('\n');
 
+  // 1. Notify operator via Telegram
   try {
     await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
@@ -101,6 +102,23 @@ export async function onRequestPost({ request }) {
   } catch {
     // Telegram down — don't fail the form submission
   }
+
+  // 2. Forward lead to portal ingest (async — don't block redirect)
+  const PORTAL_URL = 'https://divorceuae-portal-production.up.railway.app';
+  const INGEST_SECRET = 'divorceuae-ingest-2025';
+  fetch(`${PORTAL_URL}/api/ingest`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-ingest-secret': INGEST_SECRET,
+    },
+    body: JSON.stringify({
+      name, phone, email, situation,
+      case_type: caseType, urgency,
+      has_lawyer: hasLawyer, children,
+      source, lang,
+    }),
+  }).catch(() => {});
 
   // Determine redirect based on lang
   const redirectUrl = lang === 'ar' ? '/ar/شكرا/' : '/en/thank-you/';
