@@ -1,0 +1,392 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Offshore Assets in UAE Divorce - What Courts Can Reach, What You Must Disclose';
+const description =
+  'UAE divorce courts can order division of overseas property and business assets. This guide covers disclosure obligations, hidden assets, cryptocurrency, and cross-border enforcement.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/offshore-assets-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الاصول-الخارجية-في-الطلاق-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Offshore Assets Divorce UAE', url: 'https://divorceu.ae/en/offshore-assets-divorce-uae/' },
+];
+
+const faqItems = [
+  {
+    question: 'My spouse claims the overseas property is in his mother\'s name. What can I do?',
+    answer:
+      'Courts are experienced with "nominee" arrangements. If you can show the property was purchased with marital funds or that your spouse controls it despite the nominal ownership, courts can look through the arrangement. Financial forensics and bank records are key.',
+  },
+  {
+    question: 'We have a joint overseas bank account. Can my spouse empty it during divorce?',
+    answer:
+      'Your lawyer should immediately apply for an asset freeze order from the UAE court. Simultaneously, your lawyer in the overseas jurisdiction should apply for a Mareva or freezing injunction. Act within days - not weeks - if you suspect this risk.',
+  },
+  {
+    question: 'Do UAE courts enforce foreign prenuptial agreements about overseas property?',
+    answer:
+      'Courts will consider them, but will not enforce clauses that are contrary to UAE public policy. Foreign prenups covering overseas assets have better prospects than those purporting to override UAE law on UAE-based assets.',
+  },
+  {
+    question: 'I have a pension fund in the UK from before we married in UAE. Is it at risk?',
+    answer:
+      'Pre-marital pension contributions are generally considered pre-marital assets. Contributions made during marriage may be divisible. UK pension sharing orders can be enforced via UK proceedings regardless of UAE divorce.',
+  },
+  {
+    question: 'My spouse is moving money to a foreign crypto wallet. Can the court stop this?',
+    answer:
+      'Yes. Apply for an urgent asset freeze order immediately. Courts are increasingly familiar with crypto asset preservation orders. Your lawyer should request orders requiring your spouse to disclose all crypto wallet addresses and holding amounts.',
+  },
+  {
+    question: 'How much of my overseas property will I actually have to give up?',
+    answer:
+      'UAE courts apply a "fairness" assessment, not automatic 50/50. Contributions, need, and other factors are weighed. Overseas assets of non-Muslim expats under the 2022 law are particularly fact-specific. There is no fixed percentage.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/offshore-assets-divorce-uae/"
+  lang="en"
+  hreflang={hreflang}
+>
+  <Breadcrumb items={breadcrumbs} lang="en" />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Offshore Assets - UAE Divorce 2025</p>
+      <h1>Offshore Assets in UAE Divorce - What Courts Can Reach, What You Must Disclose</h1>
+      <p class="hero-sub">
+        Many high-earning UAE expats and UAE nationals hold significant assets outside the country - property in the UK, India, or Europe, offshore bank accounts, company shares, pension funds, and increasingly, cryptocurrency. When a UAE marriage breaks down, all of it becomes relevant. UAE courts can order the division of overseas assets. The challenge is not jurisdiction - it is enforcement, disclosure, and strategy.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">-</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="summary-box">
+        <h2>At a Glance - Offshore Assets in UAE Divorce</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="summary-label">Business Valuation Cost</div>
+            <div class="summary-amount">AED 5,000-20,000</div>
+            <div class="summary-note">Court-appointed valuer</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Enforcement Timeline Overseas</div>
+            <div class="summary-amount">6-18 months</div>
+            <div class="summary-note">Recognition in foreign courts</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Countries with Mutual Legal Assistance</div>
+            <div class="summary-amount">30+ with UAE</div>
+            <div class="summary-note">Including UK, India, France</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>What Counts as "Marital Assets" in a UAE Divorce?</h2>
+        <p>
+          UAE is not a community property jurisdiction in the strict American legal sense. There is no automatic rule that everything accumulated during marriage belongs equally to both spouses. The approach under UAE law - for both Muslim couples under Federal Law No. 28 of 2005 and non-Muslim couples under Federal Law No. 41 of 2022 - is a fairness-based assessment that considers what assets exist, when they were acquired, and what role each spouse's contributions played.
+        </p>
+        <p>
+          Assets generally included in the marital pool:
+        </p>
+        <ul>
+          <li>Property purchased during the marriage using joint income or savings</li>
+          <li>Business interests built up during the marriage</li>
+          <li>Investments, savings accounts, and portfolios accumulated during the marriage</li>
+          <li>Offshore bank accounts that were funded with marital income, even if held solely in one name</li>
+          <li>Pension contributions made during the marriage period</li>
+        </ul>
+        <p>
+          Assets generally excluded from the marital pool:
+        </p>
+        <ul>
+          <li>Property owned before the marriage (pre-marital assets), provided there is no significant co-mingling</li>
+          <li>Inheritance received by one spouse during the marriage</li>
+          <li>Gifts received by one spouse from third parties</li>
+          <li>Personal injury compensation received by one spouse</li>
+        </ul>
+        <div class="info-box info-box--warning">
+          <h3>Co-mingling erodes pre-marital asset protection</h3>
+          <p>If you owned property before the marriage but refinanced it using joint funds, put your spouse on the title, or used rental income from it as the primary family income, you may have partially or fully brought it into the marital estate. The longer the marriage and the more intertwined the finances, the harder these lines are to maintain.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Can UAE Courts Order Division of Overseas Property?</h2>
+        <p>
+          Yes. A UAE court has jurisdiction to make orders about the totality of the marital estate - including assets held overseas - when it has jurisdiction over the parties. The personal jurisdiction over the parties is what matters, not where the assets are physically located.
+        </p>
+        <p>
+          However, there is a critical practical distinction between a UAE court ordering division of overseas assets and that order being enforceable. UAE court orders are not automatically self-executing in foreign countries. Enforcement requires parallel proceedings in the country where the assets are located.
+        </p>
+        <p>
+          This means the strategic picture is usually this: UAE court makes the order; your lawyer in the overseas jurisdiction files for recognition and enforcement of that order locally; the foreign court then uses its own enforcement mechanisms. The UAE order is the foundation - the foreign enforcement is the execution layer.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Voluntary compliance is common</h3>
+          <p>In many cases, both parties comply voluntarily with UAE court orders regarding overseas assets, particularly when the division is part of a negotiated settlement. Formal enforcement proceedings are most often needed when one party refuses to comply, has fled the UAE, or has transferred assets in breach of court orders.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Financial Disclosure - What You Must Reveal</h2>
+        <p>
+          UAE courts require full and frank financial disclosure from both parties. This is not optional. The disclosure obligation covers the entire financial picture - not just UAE-based assets. Failing to disclose assets is a serious matter with significant consequences.
+        </p>
+        <p>
+          What you are required to disclose includes:
+        </p>
+        <ul>
+          <li>All bank accounts worldwide - current, savings, fixed deposit, and investment accounts</li>
+          <li>Foreign property - residential, commercial, and land holdings anywhere in the world</li>
+          <li>Company shares and business interests - including minority shareholdings in private companies</li>
+          <li>Pension funds - whether UAE-based gratuity, home country pension schemes, or international pension plans</li>
+          <li>Cryptocurrency holdings - courts now routinely ask specifically about digital assets</li>
+          <li>Loans made to third parties and debts owed by third parties to you</li>
+          <li>Trusts of which you are a beneficiary, even if not the trustee</li>
+        </ul>
+        <p>
+          Deliberately hiding assets from the UAE court is contempt of court. It is also potentially a criminal offence in UAE under provisions related to fraud and obstruction of justice. Courts take this seriously and have increasingly sophisticated tools for detecting non-disclosure.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Discovering Hidden Assets - How Courts Find Concealed Wealth</h2>
+        <p>
+          If you suspect your spouse is hiding assets, you are not limited to what they voluntarily disclose. UAE courts - and your own lawyer - have multiple tools to investigate.
+        </p>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Bank subpoenas</h3>
+              <p>Courts can order UAE banks to disclose account details and transaction histories. Even accounts your spouse claimed were empty can be traced for capital movements that show outflows to overseas accounts.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Company registry searches</h3>
+              <p>Your lawyer can search company registries in UAE (DED, DIFC, ADGM) and, through international networks, in key offshore jurisdictions. Shareholdings in UAE companies are disclosed in public registries.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Mutual Legal Assistance Treaties</h3>
+              <p>UAE has mutual legal assistance agreements with over 30 countries including India, France, China, and others. These allow formal information sharing between judicial authorities across borders for matters including asset disclosure in divorce proceedings.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Forensic accountants</h3>
+              <p>Courts can appoint forensic accountants to examine business accounts and personal finances. Your lawyer can also engage a private forensic accountant. These professionals are skilled at identifying unexplained wealth, unusual asset movements, and business structures used to obscure value.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h3>Lifestyle evidence</h3>
+              <p>Courts compare declared income and assets against actual lifestyle: cars driven, holidays taken, private school fees paid, and property maintained. A significant gap between declared income and lifestyle is powerful circumstantial evidence of undisclosed assets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Business Interests and Company Shares in Divorce</h2>
+        <p>
+          Business interests are among the most complex assets to deal with in UAE divorce. The key questions are when the business was established, how it was funded, and how its value has grown.
+        </p>
+        <ul>
+          <li><strong>Business started before marriage:</strong> Generally treated as a pre-marital asset and excluded from division. However, if the business grew significantly in value during the marriage - particularly through the other spouse's direct or indirect contributions - that growth may be divisible.</li>
+          <li><strong>Business built during marriage with marital funds:</strong> Fully divisible as a marital asset. This includes businesses funded from the joint savings, salary, or with the support of a spouse who managed the household to free the other to build the business.</li>
+          <li><strong>Passive shareholding in listed companies:</strong> Relatively straightforward to value - market price at the relevant date is the starting point. Division is cleaner because shares are liquid.</li>
+          <li><strong>Private company shareholding:</strong> Requires a formal valuation. Courts appoint an independent business valuator at a cost typically ranging from AED 5,000-20,000 depending on the complexity of the business. Both parties can challenge the valuation through their own expert evidence.</li>
+        </ul>
+        <p>
+          A common strategy to protect business value is for the spouse with the business interest to offer a cash or property payment in lieu of sharing ownership. Courts generally accept clean breaks that remove the need for continued co-ownership of a business between divorced parties.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Cryptocurrency and Digital Assets</h2>
+        <p>
+          Cryptocurrency has become a significant feature of UAE divorce cases - particularly among tech sector professionals, traders, and high-net-worth individuals. UAE courts now treat digital assets as property subject to the same disclosure and division rules as any other marital asset.
+        </p>
+        <p>
+          Courts deal with crypto in several ways:
+        </p>
+        <ul>
+          <li>Ordering transfer of crypto holdings to a neutral escrow wallet pending final settlement</li>
+          <li>Requiring full disclosure of all wallet addresses, exchange accounts, and holdings</li>
+          <li>Engaging blockchain analysis companies - through lawyers - to trace crypto movements and identify wallets that may not have been disclosed</li>
+          <li>Appointing independent experts to value portfolios as of a specified date</li>
+        </ul>
+        <p>
+          The volatility of cryptocurrency creates valuation challenges that courts resolve pragmatically. Most UAE courts use the value at the date of trial, not the date of separation - which can significantly affect outcomes depending on market movements. If you hold crypto that has appreciated or declined sharply since separation, the timing of valuation is a strategic issue worth discussing with your lawyer.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Attempting to hide crypto is high risk</h3>
+          <p>Blockchain is a permanent, public record. Blockchain analysis firms can trace transactions across wallets and exchanges with a level of precision that far exceeds what is possible with traditional bank records. Courts are increasingly ordering blockchain analysis as standard practice in cases where crypto non-disclosure is suspected.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Cross-Border Enforcement - Getting Your Order Respected Abroad</h2>
+        <p>
+          Once you have a final UAE divorce order covering overseas assets, enforcement in the relevant country requires a formal recognition process. Each country has its own mechanism, but the general steps are similar.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Recognition Mechanism</th>
+                <th>Typical Timeline</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-highlight">United Kingdom</td>
+                <td>Foreign Judgments (Reciprocal Enforcement) Act or common law recognition</td>
+                <td>6-12 months</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">India</td>
+                <td>Section 13 CPC - petition in district court</td>
+                <td>3-24 months</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">France / EU</td>
+                <td>Brussels I / bilateral treaty recognition</td>
+                <td>6-12 months</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Australia</td>
+                <td>Foreign Judgments Act 1991 or common law</td>
+                <td>6-18 months</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">USA</td>
+                <td>Common law - state court recognition petition</td>
+                <td>6-18 months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          For every country where you need enforcement, you will need a local lawyer. The UAE order must typically be apostilled through the UAE Ministry of Foreign Affairs before it can be presented to a foreign court. Plan for enforcement timelines of 6-18 months in most jurisdictions, and budget for local legal costs in each country.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} lang="en" />
+      </section>
+
+      <div class="cta-box">
+        <h2>Get Expert Advice on Your Case</h2>
+        <p>Offshore asset cases require specialists who understand both UAE law and cross-border enforcement. A brief consultation gives you clarity on what is at stake, what you must disclose, and how to protect your interests.</p>
+        <LeadForm source="offshore-assets-divorce-uae" lang="en" variant="inline" />
+      </div>
+
+      <section class="related-links-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <span class="related-title">Property Division UAE</span>
+            <span class="related-desc">How UAE assets are divided at divorce</span>
+          </a>
+          <a href="/en/divorce-financial-planning-uae/" class="related-card">
+            <span class="related-title">Divorce Financial Planning UAE</span>
+            <span class="related-desc">Protecting your finances through separation</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <span class="related-title">Non-Muslim Divorce UAE</span>
+            <span class="related-desc">2022 civil law and asset division rules</span>
+          </a>
+          <a href="/en/divorce-settlement-uae/" class="related-card">
+            <span class="related-title">Divorce Settlement UAE</span>
+            <span class="related-desc">Structuring a comprehensive settlement</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.55rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+  .content-section h3 { font-size: 1.1rem; font-weight: 700; color: #0a1628; margin: 1.5rem 0 0.5rem; }
+  .content-section ul, .content-section ol { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #445; line-height: 1.7; margin-bottom: 0.35rem; }
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 3rem; }
+  .summary-box h2 { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; }
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: #0a1628; }
+  .info-box p, .info-box li { font-size: 0.88rem; line-height: 1.6; color: #445; }
+  .info-box ul { margin: 0.5rem 0 0 1.25rem; }
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #445; }
+  .data-table tr:nth-child(even) { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #c9a84c; font-weight: 700; }
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+  .related-links-section { margin-bottom: 2rem; }
+  .related-links-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

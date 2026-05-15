@@ -1,0 +1,377 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'How Indian Nationals Get Divorced in UAE - And Have It Recognised in India';
+const description =
+  'Indians are the UAE\'s largest expat group. This guide covers divorce options in UAE, whether Indian courts recognise UAE decrees, and the step-by-step recognition process.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/indian-national-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/طلاق-الهنود-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Indian National Divorce UAE', url: 'https://divorceu.ae/en/indian-national-divorce-uae/' },
+];
+
+const faqItems = [
+  {
+    question: 'My wife is in India and does not want a divorce. Can I still file in UAE?',
+    answer:
+      'Yes. UAE courts have jurisdiction if you are resident in UAE. Your spouse will be formally served in India. If she does not respond after proper service, the court may proceed and issue an ex-parte judgment.',
+  },
+  {
+    question: 'We married in India. Can we divorce in UAE?',
+    answer:
+      'Yes. Where you married does not determine where you can divorce. What matters is where you are currently resident and which court has jurisdiction over you.',
+  },
+  {
+    question: 'Does my Indian employer need to know about my divorce?',
+    answer:
+      'Your employer is not notified by the court. However, changes to family visa sponsorship - if your spouse or children are on your visa - must be processed through immigration, which your employer\'s HR may assist with.',
+  },
+  {
+    question: 'My wife is sponsored on my visa. What happens to her visa after divorce?',
+    answer:
+      'She has a 30-day grace period after the divorce decree to change her visa status - to her own employment visa, a relative\'s sponsorship, or she may need to leave UAE temporarily to process a new visa.',
+  },
+  {
+    question: 'Can I include a clause in the UAE divorce settlement about property in India?',
+    answer:
+      'UAE courts can make orders about property in their jurisdiction. For Indian property, you would typically need a separate agreement recognized by an Indian court, or a mutual consent divorce settlement referencing both UAE and Indian assets.',
+  },
+  {
+    question: 'We have a child together. Will custody be recognized in India?',
+    answer:
+      'UAE custody orders are generally respected in India, but each case depends on facts. Indian courts apply the "welfare of the child" standard and may review any foreign custody order if a parent files a habeas corpus petition in India.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/indian-national-divorce-uae/"
+  lang="en"
+  hreflang={hreflang}
+>
+  <Breadcrumb items={breadcrumbs} lang="en" />
+
+  <section class="hero-section">
+    <div class="container">
+      <p class="overline">Indian Expats - UAE Divorce 2025</p>
+      <h1>How Indian Nationals Get Divorced in UAE - And Have It Recognised in India</h1>
+      <p class="hero-sub">
+        With over 2.8 million Indian residents, Indians form the UAE's largest expat community. Divorce proceedings for Indian nationals involve two legal systems - UAE courts for the divorce itself, and Indian courts if you need the decree formally recognised back home. This guide explains both processes, the costs involved, and the practical steps that connect them.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">-</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="summary-box">
+        <h2>At a Glance - Indian Nationals Divorcing in UAE</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="summary-label">Indian Community in UAE</div>
+            <div class="summary-amount">2.8M+</div>
+            <div class="summary-note">Largest expat group</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Recognition Timeline in India</div>
+            <div class="summary-amount">3-24 months</div>
+            <div class="summary-note">Contested vs. uncontested</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Total Cost Estimate</div>
+            <div class="summary-amount">AED 7,000-20,000</div>
+            <div class="summary-note">Both jurisdictions combined</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>Indian Expats in UAE - Your Divorce Options</h2>
+        <p>
+          If you are an Indian national living in UAE and your marriage has broken down, you have two primary avenues: file for divorce in UAE courts, or file in India if one party is resident there. The choice of jurisdiction significantly affects timing, cost, and enforceability of the outcome.
+        </p>
+        <p>
+          Filing in UAE is usually the practical choice when both spouses are currently resident in the UAE. UAE courts move relatively quickly - an uncontested divorce can be finalised in 1-3 months - and both parties are physically accessible to participate in proceedings without international travel complications.
+        </p>
+        <p>
+          Filing in India becomes the preferred route when one spouse has returned to India and is unwilling or unable to participate in UAE proceedings, or when the primary marital assets and property are located in India. If your spouse is in India and refusing to engage with UAE proceedings, Indian courts have direct jurisdiction over them.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Key consideration: where are the assets?</h3>
+          <p>UAE courts can order division of UAE-based assets directly. For property in India, you will need either a mutual agreement referencing Indian assets, or parallel Indian proceedings. Factor this into your decision about which court to use.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Which UAE Court Handles Your Case?</h2>
+        <p>
+          The court that handles your divorce in UAE depends on your religion and whether you choose to use the 2022 civil law option.
+        </p>
+        <h3>Muslim Indian Nationals</h3>
+        <p>
+          Muslim Indians - the majority of Indian expats in UAE from states such as Kerala, Maharashtra, and Uttar Pradesh - have their divorce handled by the UAE Personal Status Court, which applies Islamic law (Sharia). UAE Federal Personal Status Law No. 28 of 2005 governs proceedings. Khula, talaq, mahr, iddah, and custody rules all apply as they would for any Muslim couple in UAE.
+        </p>
+        <h3>Hindu, Christian, Sikh, and Other Non-Muslim Indians</h3>
+        <p>
+          Non-Muslim Indians have two options since the introduction of Federal Law No. 41 of 2022. They can use the new UAE civil personal status law - which applies a secular framework with 50/50 asset division by default and no religious waiting periods. Alternatively, they can choose to handle the divorce through Indian legal proceedings where Indian personal law statutes (Hindu Marriage Act 1955, Indian Divorce Act 1869 for Christians, etc.) apply.
+        </p>
+        <p>
+          The 2022 UAE civil law option is increasingly popular for non-Muslim expats because it is faster and simpler than navigating Indian court proceedings from overseas.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>The Hindu Marriage Act does not apply extraterritorially</h3>
+          <p>Many Hindu Indians assume that Indian personal laws follow them abroad. They do not. The Hindu Marriage Act 1955 applies to Hindus in India - it does not govern the procedure of a divorce filed in UAE courts. UAE courts apply UAE law to proceedings before them.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Will Indian Courts Recognise a UAE Divorce?</h2>
+        <p>
+          Generally yes - but with important conditions. The recognition of foreign divorce decrees in India is governed primarily by Section 13 of the Code of Civil Procedure 1908, which sets out when a foreign court judgment is treated as conclusive in India.
+        </p>
+        <p>
+          The conditions for recognition are:
+        </p>
+        <ul>
+          <li>The UAE court must have had jurisdiction - both parties must have been lawfully present in UAE at the relevant time</li>
+          <li>Both parties must have had a proper opportunity to be heard - a complete ex-parte judgment where one party had no notice may be challenged</li>
+          <li>The judgment must not be contrary to Indian public policy</li>
+          <li>The UAE proceedings must not have been fraudulently obtained</li>
+          <li>The judgment must be final and not under appeal</li>
+        </ul>
+        <p>
+          Mutual consent divorces where both parties participated in UAE proceedings and freely agreed to the terms have the strongest prospects for recognition in India. Contested divorces where one party was present in India throughout and had limited participation in UAE proceedings are more likely to face challenges.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Recognition Process in India - Step by Step</h2>
+        <p>
+          Once you have your UAE divorce decree, recognition in India requires a formal court petition. This is not automatic - you must apply to an Indian district court.
+        </p>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Obtain the certified UAE divorce decree</h3>
+              <p>Get a certified copy of your divorce decree from the UAE court that issued it. This must be an official copy - not a photocopy.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Apostille the decree through UAE Ministry of Foreign Affairs</h3>
+              <p>The UAE divorce decree must be apostilled by the UAE Ministry of Foreign Affairs (MOFA). The UAE is a signatory to the Hague Apostille Convention. This process typically takes 3-7 working days and costs AED 150-300.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Get a certified translation</h3>
+              <p>If the decree is in Arabic, obtain a certified translation into English (and/or the relevant regional Indian language) from a notarised translator. Your Indian lawyer will advise on the specific requirements for the state where you are filing.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>File a recognition petition in Indian district court</h3>
+              <p>Your Indian lawyer files a petition in the district court of the place where you or your spouse is domiciled in India. The petition sets out the UAE proceedings, presents the apostilled decree, and requests the Indian court to recognise it as conclusive.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h3>Court hearing and recognition order</h3>
+              <p>Uncontested recognition typically takes 3-6 months. If your ex-spouse contests the recognition, proceedings can take 12-24 months. Once recognised, the decree can be used to update Indian records including civil registration, passports, and property documents.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Cost of Divorcing in UAE as an Indian National</h2>
+        <p>
+          The total cost of a UAE divorce for an Indian national depends on whether the case is contested and whether you also need Indian recognition proceedings.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cost Item</th>
+                <th>Estimated Range</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-highlight">UAE lawyer fees</td>
+                <td>AED 5,000-15,000</td>
+                <td>Lower for uncontested, higher for contested</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">UAE court fees</td>
+                <td>AED 500-2,000</td>
+                <td>Filing, mediation sessions, decree</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Translation and apostille</td>
+                <td>AED 500-1,500</td>
+                <td>Arabic to English translation + MOFA apostille</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Indian recognition lawyer</td>
+                <td>INR 10,000-50,000 / approx. AED 500-2,500</td>
+                <td>District court petition filing and hearing attendance</td>
+              </tr>
+              <tr>
+                <td class="td-gold">Total estimated range</td>
+                <td class="td-gold">AED 7,000-20,000</td>
+                <td>Uncontested to moderately contested</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Highly contested cases with custody disputes, asset division battles, or a spouse in India actively contesting both the UAE divorce and the Indian recognition can significantly exceed these figures.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Indian Personal Law vs. UAE Law - Key Differences for Indian Expats</h2>
+        <p>
+          The most important thing for Indian expats to understand is that UAE courts apply UAE law - not Indian law - to proceedings before them. This creates some practical differences:
+        </p>
+        <ul>
+          <li><strong>Muslim Indians:</strong> Both Indian Muslim Personal Law and UAE Islamic law share the same doctrinal basis, so the substantive rules are broadly similar. UAE courts have jurisdiction and the outcomes are largely aligned.</li>
+          <li><strong>Hindu Indians:</strong> The Hindu Marriage Act 1955 is an Indian territorial statute. It does not govern divorce proceedings in UAE courts. A UAE court will not apply the HMA - it applies UAE law. For recognition back in India, the resulting decree is treated as a foreign judgment.</li>
+          <li><strong>Christian Indians:</strong> The Indian Divorce Act 1869 similarly does not apply in UAE courts. However, the 2022 UAE civil law offers a clean, secular alternative that is increasingly used by Indian Christians in UAE.</li>
+          <li><strong>Custody:</strong> UAE custody courts apply UAE law and the best interests of the child as assessed under UAE standards. They do not automatically apply Indian custody frameworks, even if the family is Indian and the children hold Indian passports.</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Practical Challenges - Spouse Still in India</h2>
+        <p>
+          When one spouse is in India - particularly if they have returned to India specifically to avoid UAE proceedings - the logistics require careful handling.
+        </p>
+        <p>
+          UAE courts have jurisdiction over a case if the petitioner is resident in UAE. The absent spouse in India must be formally served. This is done through official international channels - the UAE court can issue a service request through India's reciprocal judicial cooperation arrangements, or formal service can be effected through an Indian court.
+        </p>
+        <p>
+          The absent spouse can participate in UAE proceedings via video link or through a UAE lawyer appointed under a power of attorney. If the spouse ignores proceedings entirely despite proper service, the UAE court can proceed ex-parte - issuing a judgment in the petitioner's favour without the absent party's participation. This ex-parte judgment is valid but may face challenges during Indian recognition proceedings, so thorough documentation of the service process is essential.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Document every step of service</h3>
+          <p>If your spouse is in India and you are proceeding in UAE courts without their cooperation, meticulous documentation of how they were served is critical. Poor service documentation is the most common reason an Indian court later declines to recognise a UAE decree.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} lang="en" />
+      </section>
+
+      <div class="cta-box">
+        <h2>Get Expert Advice on Your Case</h2>
+        <p>Every situation is different. A brief consultation gives you clarity on your options, timeline, and next steps - whether your spouse is in UAE or India.</p>
+        <LeadForm source="indian-national-divorce-uae" lang="en" variant="inline" />
+      </div>
+
+      <section class="related-links-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <span class="related-title">Divorce in UAE for Expats</span>
+            <span class="related-desc">Complete expat divorce guide</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <span class="related-title">Non-Muslim Divorce UAE</span>
+            <span class="related-desc">2022 civil law explained</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <span class="related-title">Child Custody UAE</span>
+            <span class="related-desc">Custody rules for expat families</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <span class="related-title">Divorce Cost UAE</span>
+            <span class="related-desc">Full breakdown of fees and costs</span>
+          </a>
+          <a href="/en/visa-after-divorce-uae/" class="related-card">
+            <span class="related-title">Visa After Divorce UAE</span>
+            <span class="related-desc">Residency options after your divorce</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-section .container { max-width: 56rem; margin: 0 auto; }
+  .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
+  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+  .main-content { padding: 3rem 1.5rem; }
+  .container { max-width: 56rem; margin: 0 auto; }
+  .content-section { margin-bottom: 3.5rem; }
+  .content-section h2 { font-size: 1.55rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
+  .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+  .content-section h3 { font-size: 1.1rem; font-weight: 700; color: #0a1628; margin: 1.5rem 0 0.5rem; }
+  .content-section ul, .content-section ol { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #445; line-height: 1.7; margin-bottom: 0.35rem; }
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 3rem; }
+  .summary-box h2 { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; }
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: #0a1628; }
+  .info-box p, .info-box li { font-size: 0.88rem; line-height: 1.6; color: #445; }
+  .info-box ul { margin: 0.5rem 0 0 1.25rem; }
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #445; }
+  .data-table tr:nth-child(even) { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #c9a84c; font-weight: 700; }
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+  .related-links-section { margin-bottom: 2rem; }
+  .related-links-section h2 { font-size: 1.3rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #778; }
+</style>

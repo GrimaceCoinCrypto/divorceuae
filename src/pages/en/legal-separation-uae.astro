@@ -1,0 +1,363 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Legal Separation in UAE - What It Means, What It Does Not Do';
+const description =
+  'UAE has no formal legal separation status, but couples can live apart without divorcing. This guide explains your rights, visa implications, financial arrangements, and children.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/legal-separation-uae/',
+  ar: 'https://divorceu.ae/ar/الانفصال-القانوني-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Legal Separation UAE', url: 'https://divorceu.ae/en/legal-separation-uae/' },
+];
+
+const summaryCards = [
+  { label: 'Visa Protection', value: 'Preserved', note: 'While still legally married' },
+  { label: 'Maintenance Obligation', value: 'Continues', note: 'Husband obliged to pay during separation' },
+  { label: 'Islamic Faskh', value: '2-4 months', note: 'Court-imposed dissolution on grounds' },
+];
+
+const separationOptions = [
+  { title: 'Physical separation without court order', body: 'Couples can simply move to separate residences. No court order is required to live apart. All legal rights and obligations of marriage continue - maintenance, visa sponsorship, property ownership. This is the most common arrangement during a period of marital difficulty.' },
+  { title: 'Court-issued interim orders', body: 'During a reconciliation phase or pending divorce proceedings, courts can issue interim orders on maintenance, child residence, and use of the family home. These provide legal structure to the separation without dissolving the marriage.' },
+  { title: 'Judicial faskh as Islamic separation', body: 'A wife can petition for judicial faskh - a court-ordered dissolution of the marriage on specific legal grounds. This is a full dissolution, not an interim measure, but it is the mechanism closest to "judicial separation" in UAE law. The process requires court proceedings and grounds such as harm, abandonment, or failure to maintain.' },
+];
+
+const faskh_grounds = [
+  'Husband\'s failure to provide financial maintenance (nafaqa) without lawful reason',
+  'Proved harm or injury inflicted by the husband on the wife',
+  'Husband\'s prolonged absence or abandonment (typically exceeding one year without valid reason)',
+  'Serious and incurable disease or disability that prevents the husband from fulfilling marital duties',
+  'Husband\'s imprisonment for a period that causes the wife undue hardship',
+  'Husband\'s persistent abuse, whether physical or psychological',
+];
+
+const faqItems = [
+  {
+    question: 'Can I force my spouse to leave the family home during separation?',
+    answer: 'Only with a court order. You cannot unilaterally remove a spouse from a jointly occupied home - this would expose you to potential legal liability. If the situation is one of domestic violence or genuine safety risk, seek an emergency protection order from the court immediately. In other separation situations, you must apply for an interim order authorizing one party to occupy the home exclusively. Courts grant these orders where the circumstances justify it, but they require a formal application.',
+  },
+  {
+    question: 'Does separation affect my children\'s UAE residency?',
+    answer: 'No. Children\'s UAE residence visas are typically sponsored by one parent (usually the father) and are separate from the marital status of the parents. Physical separation of the parents does not affect the validity of children\'s visas. Changes to children\'s residency arrangements occur upon final divorce when custody is formally determined, not during the separation period. If you are concerned about a co-parent attempting to change children\'s visa sponsorship during separation, seek urgent legal advice.',
+  },
+  {
+    question: 'Can I date during legal separation in UAE?',
+    answer: 'UAE does not recognize formal legal separation. You remain legally married until a court issues a divorce or dissolution order. Engaging in a romantic relationship while legally married raises significant legal considerations under UAE law - cohabitation outside marriage is a criminal offense under UAE Federal law. The social and legal risks are serious. This is not a situation to navigate without consulting a lawyer who understands UAE law.',
+  },
+  {
+    question: 'How does separation affect my work visa?',
+    answer: 'If you are employed in the UAE and hold your own work or employment visa, physical separation from your spouse has no impact on your residency status. Your visa is independent. If you are sponsored by your spouse\'s employment visa (as a dependent), you remain on their visa as long as you are legally married. Only upon final divorce does the dependent visa become invalid, triggering the 30-day transition period during which you must either transfer to your own visa or leave the UAE.',
+  },
+  {
+    question: 'Can I open a separate bank account during separation?',
+    answer: 'Yes. You can open a personal bank account in your own name at any time during the marriage - separation does not change this. However, joint accounts require both parties\' agreement to close, modify the mandate, or make significant withdrawals. If you believe your spouse may attempt to dissipate joint funds during separation, seek an interim court order restricting access to joint accounts. Acting unilaterally to drain a joint account can reflect badly in later court proceedings.',
+  },
+  {
+    question: 'Is Islamic faskh the same as khula?',
+    answer: 'No - they are distinct mechanisms. Khula is a wife-initiated divorce in which the wife typically returns the mahr to the husband in exchange for his agreement to release her from the marriage. The husband\'s participation - or at least his lack of active opposition - is usually part of the process. Faskh, by contrast, is a court-ordered dissolution based on specific legal grounds. The husband\'s consent is not required for a faskh judgment. If the court finds grounds are proven, it dissolves the marriage regardless of the husband\'s objection.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/legal-separation-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Legal Separation · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Couples in the UAE who want to live separately without immediately divorcing face a legal landscape very different from the UK, US, or most EU countries. There is no formal "legal separation" status - but the law does provide tools to protect your rights, your finances, and your children while the situation is unresolved. This guide explains what those tools are and how to use them.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>Key facts at a glance</h2>
+        <div class="summary-grid">
+          {summaryCards.map((card) => (
+            <div class="summary-card">
+              <p class="summary-label">{card.label}</p>
+              <p class="summary-value">{card.value}</p>
+              <p class="summary-note">{card.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>Does UAE Recognise Legal Separation?</h2>
+        <p>
+          No. The UAE does not have a formal legal separation status comparable to "judicial separation" in UK law or "legal separation" in US law. In UAE law, married couples are either married or divorced - there is no intermediate legal category that preserves the marriage while formally relieving spouses of their obligations to each other.
+        </p>
+        <p>
+          This does not mean couples are without options. Physical separation is entirely permissible - there is no legal requirement to cohabit. Courts can issue interim orders during disputes that structure the separation without dissolving the marriage. And for wives who need a court-imposed solution when a husband refuses to divorce, the Islamic judicial separation mechanism (faskh) provides a formal exit route.
+        </p>
+        <p>
+          The absence of formal legal separation has practical consequences that many expats do not anticipate - particularly around visa status and financial obligations. Understanding these is essential before deciding how to proceed.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Why this matters for expats</h3>
+          <p>In countries with legal separation, the separation order can protect assets, establish financial support, and create a formal record. In UAE, you must use a combination of interim court orders, practical financial steps, and careful legal planning to achieve the same protective effect. None of these are automatic.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Living Separately Without Divorcing - Your Options</h2>
+        <p>
+          There are three main frameworks couples can use when they want to separate without immediately divorcing in the UAE.
+        </p>
+        <div class="options-list">
+          {separationOptions.map((opt, i) => (
+            <div class="option-card">
+              <div class="option-num">{i + 1}</div>
+              <div class="option-content">
+                <h3>{opt.title}</h3>
+                <p>{opt.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p>
+          Many couples use a combination of these approaches: living separately by agreement, with a court application for interim maintenance and child arrangements, while they take time to decide whether to proceed to divorce or attempt reconciliation. The UAE's mandatory Family Guidance process, which is required before most divorce cases proceed, can itself serve as a structured period of reflection.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Visa and Residency During Separation</h2>
+        <p>
+          Visa status is one of the most pressing practical concerns for expats separating in the UAE, particularly those on dependent visas sponsored by their spouse.
+        </p>
+        <h3>If you are on a dependent visa sponsored by your spouse</h3>
+        <p>
+          Your UAE residence visa remains valid as long as you are legally married and your spouse continues to sponsor it. Physical separation does not automatically trigger cancellation. The critical point is the formal divorce - once a divorce judgment is issued, your dependent visa becomes invalid and you enter a 30-day grace period to transition to another visa category or leave the UAE.
+        </p>
+        <p>
+          This creates a significant practical incentive to delay finalizing divorce proceedings while alternative visa arrangements are made. Many expats use the separation period to obtain their own employment visa or explore other residency options.
+        </p>
+        <h3>If you are on your own employment visa</h3>
+        <p>
+          Separation has no impact on your residency. Your employment visa is entirely independent of your marital status. You can live separately, proceed to divorce, or reconcile - none of these affect your right to remain in the UAE under your own employment sponsorship.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Do not let your visa lapse unintentionally</h3>
+          <p>If your spouse cancels your dependent visa during the separation period (which they are technically entitled to do as sponsor), you may face an overstay situation. Get legal advice immediately if you believe your spouse may take steps to cancel your visa. Courts can, in some circumstances, issue interim orders to prevent this during active proceedings.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Financial Arrangements During Separation</h2>
+        <p>
+          The legal marriage continues during a period of physical separation, which means the financial obligations of marriage also continue. For Muslim couples in particular, this has significant practical implications.
+        </p>
+        <h3>Husband's maintenance obligation (nafaqa)</h3>
+        <p>
+          Under UAE Personal Status Law, a husband is legally required to provide financial maintenance to his wife during the marriage. This obligation does not cease because the couple is living apart. If a husband refuses to pay maintenance during separation, the wife can apply to court for an order compelling payment. Courts take these applications seriously and process them relatively quickly - typically within 2-4 weeks for an interim maintenance order.
+        </p>
+        <p>
+          The maintenance obligation extends to housing costs: if the wife is not living in a home provided by the husband, he is liable for her housing costs as part of nafaqa. This can be a significant financial obligation during a prolonged separation.
+        </p>
+        <h3>Joint assets and property</h3>
+        <p>
+          Joint bank accounts, jointly titled property, and shared investments remain as-is during separation unless a court order changes the position. Neither party can unilaterally sell jointly held property. If you are concerned that your spouse may move money abroad or dissipate assets during the separation, seek an asset freeze order from the court - this can be obtained quickly with evidence.
+        </p>
+        <h3>Non-Muslim couples</h3>
+        <p>
+          Under Federal Law No. 41 of 2022, non-Muslim couples have fewer automatic financial obligations during separation compared to Muslim couples. The nafaqa obligation does not apply in the same way. However, courts can still issue interim maintenance orders where one party demonstrates genuine financial need during the separation period.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Children and Custody During Separation</h2>
+        <p>
+          When couples separate, children's arrangements become the most urgent practical issue. UAE courts can issue interim custody and residence orders without the divorce proceedings being finalized - these orders govern where children live and when they see each parent during the separation period.
+        </p>
+        <p>
+          The default approach for interim custody during separation mirrors the final divorce principles: for Muslim couples, courts typically apply the maternal presumption for young children while the father retains guardianship rights; for non-Muslim couples, the equal parenting default applies. Both arrangements are subject to the court's overriding best interests assessment.
+        </p>
+        <h3>Travel bans during separation</h3>
+        <p>
+          If you are concerned that your spouse may take children out of the UAE without your consent during the separation period, apply immediately for a travel ban on the children. Courts can issue this urgently - within 24-72 hours in genuine risk situations. The travel ban is enforced at all UAE border points and airports and applies regardless of whether the other parent has UAE nationality.
+        </p>
+        <p>
+          Even if you believe your spouse would not actually leave, obtaining a travel ban as a precaution during a high-conflict separation is a reasonable protective step. It can always be lifted later by agreement or court order.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Islamic Judicial Separation (Faskh) - How It Works</h2>
+        <p>
+          Faskh is the closest mechanism UAE law provides to a formal court-ordered separation that becomes a full dissolution. It is available to Muslim wives (not husbands) who have specific legal grounds to end the marriage but whose husband refuses to issue a talaq (divorce) or agree to khula.
+        </p>
+        <p>
+          Recognized grounds for faskh under UAE Personal Status Law include:
+        </p>
+        <ul class="checklist">
+          {faskh_grounds.map((g) => <li>{g}</li>)}
+        </ul>
+        <p>
+          The faskh process typically takes 2-4 months. The wife files a petition with the Personal Status Court, the court examines the evidence, and if grounds are proven, issues an order dissolving the marriage. The husband's consent is not required - this is the defining feature of faskh that distinguishes it from khula.
+        </p>
+        <p>
+          A faskh judgment is a full divorce, not an interim separation. Once granted, the iddah waiting period begins. Mahr and maintenance obligations follow the standard rules for an involuntary divorce.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Faskh vs. Khula - the practical distinction</h3>
+          <p>If you can negotiate with your husband and he agrees to release you in exchange for returning the mahr, khula is typically faster and less adversarial. If your husband refuses and grounds for faskh exist, the court can override his refusal. Your lawyer will advise on which route is realistic given your specific circumstances.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Converting Separation to Divorce or Reconciliation</h2>
+        <p>
+          A period of separation ultimately resolves in one of two ways: divorce or reconciliation. UAE law accommodates both without penalty for the time spent apart.
+        </p>
+        <h3>If you reconcile</h3>
+        <p>
+          No court action is required. If no formal divorce proceedings have been issued, the couple simply resumes cohabitation and the marriage continues as before. If interim orders were obtained during the separation (maintenance, child arrangements), these may need to be formally varied or discharged - your lawyer can advise on this.
+        </p>
+        <p>
+          If a husband had issued a revocable talaq (first or second pronouncement) during the separation, reconciliation before the end of the iddah period automatically revokes it. The couple remains married without needing a new Nikah contract.
+        </p>
+        <h3>If separation leads to divorce</h3>
+        <p>
+          New divorce proceedings must be filed - the period of separation does not count as "time served" toward a divorce decree. The divorce process starts fresh, including any mandatory Family Guidance stage. However, interim orders made during separation (custody, maintenance) give the court a useful framework for the final arrangements and are often incorporated into the final divorce decree with adjustments.
+        </p>
+        <p>
+          If the husband issued a talaq during the separation period, this is already a valid first step toward divorce. The iddah period and any revocation rights must be carefully tracked.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Protect Your Position During Separation</h2>
+        <p>Separation without legal advice leaves rights unprotected. A consultation clarifies your visa position, financial entitlements, and options for the children - before the situation escalates.</p>
+        <LeadForm source="legal-separation-uae" />
+      </div>
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <span class="related-title">Divorce Timeline UAE</span>
+            <span class="related-desc">Stage-by-stage timeline from first steps to final decree</span>
+          </a>
+          <a href="/en/visa-after-divorce-uae/" class="related-card">
+            <span class="related-title">Visa After Divorce UAE</span>
+            <span class="related-desc">What happens to your UAE residency after divorce</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <span class="related-title">Alimony in UAE</span>
+            <span class="related-desc">How maintenance is calculated and for how long it lasts</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <span class="related-title">Child Custody UAE</span>
+            <span class="related-desc">How UAE courts decide custody and visitation rights</span>
+          </a>
+          <a href="/en/khula-divorce-uae/" class="related-card">
+            <span class="related-title">Khula Divorce UAE</span>
+            <span class="related-desc">Wife-initiated divorce: process, mahr, and timeline</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.85), rgba(10,22,40,0.85)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.45rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .options-list { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0 1.5rem; }
+  .option-card { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.25rem; }
+  .option-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .option-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.35rem; }
+  .option-content p { font-size: 0.87rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #6b7280; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>

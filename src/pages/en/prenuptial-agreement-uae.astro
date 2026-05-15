@@ -1,0 +1,417 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Prenuptial Agreement UAE 2025 - What You Can Protect, What Courts Enforce';
+const description =
+  'Are prenuptial agreements enforceable in UAE? Complete guide to what UAE law allows, what a valid prenup must include, and common mistakes that void them.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/prenuptial-agreement-uae/',
+  ar: 'https://divorceu.ae/ar/عقد-الزواج-المسبق-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Prenuptial Agreement UAE', url: 'https://divorceu.ae/en/prenuptial-agreement-uae/' },
+];
+
+const summaryCards = [
+  { label: 'Registration Cost', value: 'AED 200-500', note: 'At Personal Status Court' },
+  { label: 'Lawyer Drafting Fee', value: 'AED 3,000-8,000', note: 'Varies by complexity' },
+  { label: 'Enforcement Timeline', value: '2-4 months', note: 'If disputed by either party' },
+];
+
+const whatItCan = [
+  'Protect pre-marital assets from being treated as joint marital property',
+  'Ring-fence business interests, shares, or partnership stakes you held before marriage',
+  'Set out which debts each spouse is responsible for',
+  'Specify what happens to property acquired during the marriage',
+  'Formalize the deferred mahr amount and payment schedule',
+  'Clarify inheritance arrangements for assets not governed by mandatory Sharia shares',
+  'Define financial obligations if one spouse leaves employment to raise children',
+];
+
+const whatItCannot = [
+  'Waive or reduce child support - courts determine this independently based on the child\'s needs',
+  'Pre-determine custody arrangements - courts assess the child\'s best interests at time of divorce',
+  'Override mandatory Islamic inheritance shares for Muslim heirs',
+  'Exempt a husband from the basic obligation of nafaqa (maintenance) during the marriage',
+  'Contain clauses that violate UAE public policy or Sharia principles',
+];
+
+const validityRequirements = [
+  { n: 1, title: 'Written agreement', body: 'A verbal prenup has no legal standing in UAE courts. The agreement must be a formal written document, signed by both parties in the presence of witnesses.' },
+  { n: 2, title: 'Independent legal advice', body: 'Both parties should have separate legal counsel. A prenup signed without one party having independent advice is vulnerable to challenge on grounds of undue influence.' },
+  { n: 3, title: 'Free and voluntary consent', body: 'Neither party can be under duress, pressure, or coercion at the time of signing. Courts scrutinize the circumstances of signing, particularly if it happened days before the wedding.' },
+  { n: 4, title: 'Full financial disclosure', body: 'Both parties must disclose their assets, debts, and financial position honestly. Hidden assets or material omissions give grounds to void the agreement later.' },
+  { n: 5, title: 'Registration at Personal Status Court', body: 'Registration is not strictly mandatory for validity, but it creates an official court record and significantly strengthens enforceability. Cost is AED 200-500 depending on the emirate.' },
+];
+
+const faqItems = [
+  {
+    question: 'Can we write a prenup after getting married in UAE?',
+    answer: 'Yes. A postnuptial agreement drafted after marriage carries the same legal standing as a prenup under UAE law, provided it meets all the same requirements - written form, independent legal advice, voluntary consent, and full financial disclosure. Courts treat both types of agreement similarly. The key difference is practical: it can be harder to negotiate terms fairly once you are already married, so getting independent legal advice for both parties is especially important.',
+  },
+  {
+    question: 'Does a UAE prenup override Islamic inheritance rules?',
+    answer: 'No. UAE courts will not enforce prenup clauses that override mandatory Islamic inheritance shares (faraid) for heirs who are entitled to them under Sharia. These shares are fixed by law and cannot be contracted out of in a prenuptial agreement. However, non-Muslims who opt in to Federal Law No. 41 of 2022 can use a prenup to set inheritance arrangements for assets not otherwise governed by Sharia - this is a meaningful distinction for non-Muslim expat couples.',
+  },
+  {
+    question: 'What happens if we did not register our prenup?',
+    answer: 'An unregistered prenup can still be legally valid, but it is significantly harder to enforce. Without a court record, one party may deny the agreement exists or dispute its terms. Registration at the Personal Status Court for AED 200-500 creates a contemporaneous official record that is much harder to challenge. If your prenup is not registered, keep original signed copies and any correspondence showing both parties acknowledged it.',
+  },
+  {
+    question: 'Can a prenup set the mahr amount?',
+    answer: 'Yes, and it is common practice. The prenup can formalize both the prompt mahr (paid at marriage) and the deferred mahr (paid if the husband initiates divorce or upon the husband\'s death). Documenting the deferred mahr amount in a prenup prevents later disputes about what was agreed. For Muslim couples, the mahr is an integral part of the Nikah contract, but setting the amounts clearly in a separate prenup avoids ambiguity during divorce proceedings.',
+  },
+  {
+    question: 'Are prenups from other countries valid in UAE?',
+    answer: 'Foreign prenups are not automatically recognized in UAE courts. Courts will consider them, but may reject clauses that violate UAE public policy or Sharia principles applicable to the case. Islamic law courts are particularly likely to reject clauses inconsistent with Sharia. If you have a foreign prenup, a UAE lawyer should review it before you rely on it - you may need a supplementary UAE agreement to cover any gaps or conflicts.',
+  },
+  {
+    question: 'What is the difference between a prenup and a marriage settlement agreement?',
+    answer: 'A prenup is signed before marriage, when both parties are in a cooperative mindset, to govern what happens if the marriage ends. A marriage settlement agreement (or divorce settlement agreement) is drafted during divorce proceedings to resolve the actual disputes at hand. They serve completely different purposes. A prenup can make settlement negotiations faster and cheaper by pre-agreeing asset division - but it cannot anticipate every issue, and courts can still override specific clauses on child support and custody.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/prenuptial-agreement-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Prenuptial Agreements · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Prenuptial agreements are legal in the UAE, but many couples discover too late that their agreement is unenforceable - or covers far less than they assumed. This guide explains exactly what UAE law permits, what courts will refuse to enforce, and how to draft an agreement that actually holds up.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>Key numbers at a glance</h2>
+        <div class="summary-grid">
+          {summaryCards.map((card) => (
+            <div class="summary-card">
+              <p class="summary-label">{card.label}</p>
+              <p class="summary-value">{card.value}</p>
+              <p class="summary-note">{card.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>Are Prenuptial Agreements Legal in UAE?</h2>
+        <p>
+          Yes - prenuptial agreements are recognized under UAE law, but their enforceability depends on how they are drafted and what they contain. The primary legal framework is <strong>Federal Law No. 28 of 2005</strong> (the Personal Status Law), which governs marriage and divorce for Muslims and sets the general framework for marital agreements in the UAE.
+        </p>
+        <p>
+          For non-Muslim couples, <strong>Federal Law No. 41 of 2022</strong> significantly expanded prenuptial rights. Non-Muslim expats can now use a prenup to opt out of the default UAE property regime and specify arrangements that would otherwise not apply under UAE law - including asset-sharing on divorce and home country law application.
+        </p>
+        <p>
+          UAE courts treat prenuptial agreements as binding contracts subject to general contract law principles. This means the standard contract requirements apply: offer, acceptance, capacity, and legality of object. A prenup that meets these tests and does not violate Sharia principles (for Muslim couples) or public policy will generally be upheld.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Key legal references</h3>
+          <ul>
+            <li><strong>Federal Law No. 28 of 2005</strong> - Personal Status Law governing marriage contracts and marital agreements for Muslims</li>
+            <li><strong>Federal Law No. 41 of 2022</strong> - Civil personal status law for non-Muslims, with explicit prenup provisions</li>
+            <li>UAE courts apply general contract principles (UAE Civil Transactions Law) to assess prenup validity</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What a UAE Prenup Can and Cannot Do</h2>
+        <p>
+          One of the most common mistakes couples make is assuming a prenup can cover anything they agree on. UAE law draws clear lines between what courts will uphold and what they will not touch regardless of what the agreement says.
+        </p>
+        <h3>What a UAE prenup can do</h3>
+        <ul class="checklist">
+          {whatItCan.map((item) => <li>{item}</li>)}
+        </ul>
+        <h3>What a UAE prenup cannot do</h3>
+        <ul class="checklist checklist--red">
+          {whatItCannot.map((item) => <li>{item}</li>)}
+        </ul>
+        <p>
+          The most critical limitation is child-related: courts will always conduct an independent assessment of child support and custody at the time of divorce, based on the child's circumstances at that point. Any prenup clause purporting to fix these outcomes in advance is unenforceable.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Islamic Marriage Contract (Nikah) vs. Prenuptial Agreement</h2>
+        <p>
+          Many Muslim couples confuse the Nikah contract with a prenuptial agreement - they are distinct legal instruments serving different purposes.
+        </p>
+        <p>
+          The <strong>Nikah contract</strong> is the Islamic marriage contract required to make the marriage valid under Sharia. It must include the mahr (dowry), witnesses, and the consent of both parties. The Nikah itself can include certain conditions - for example, a wife may include a condition that gives her the right to initiate divorce (a delegated talaq clause) or restricts the husband from taking a second wife. These conditions are enforceable if they do not contradict Sharia principles.
+        </p>
+        <p>
+          A <strong>prenuptial agreement</strong> is a separate civil contract governing financial and property rights on divorce. It goes far beyond what a Nikah contract addresses: pre-marital asset protection, debt allocation, business interests, property acquired during marriage, and financial arrangements. For Muslim couples in the UAE, both documents can coexist and complement each other.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Practical note</h3>
+          <p>Some conditions inserted into a Nikah contract can be challenged on Sharia grounds and declared void - while the marriage itself remains valid. A standalone prenuptial agreement subject to civil contract law is generally more robust for financial protection purposes. Consult a lawyer on which approach suits your situation.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Requirements for a Valid UAE Prenup</h2>
+        <p>
+          A prenup that fails any of these requirements risks being set aside entirely or having specific clauses struck out by a UAE court.
+        </p>
+        <div class="step-list">
+          {validityRequirements.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What to Include in Your UAE Prenup</h2>
+        <p>
+          A well-drafted UAE prenup is specific - it lists actual assets, not general categories. Vague language like "all pre-marital property is retained by each party" may be challenged as insufficiently precise.
+        </p>
+        <h3>Asset and property provisions</h3>
+        <ul class="checklist">
+          <li>Schedule of pre-marital assets with descriptions and estimated values (property, bank accounts, investments, vehicles, jewelry)</li>
+          <li>How property acquired jointly during the marriage will be divided - by contribution percentage, equally, or by another agreed method</li>
+          <li>What happens to the family home - sold and split, or retained by one party</li>
+          <li>Business interests - whether a business owned before marriage can be valued and shared on divorce</li>
+          <li>Inheritance received during the marriage - typically treated as separate property, but the prenup should state this explicitly</li>
+        </ul>
+        <h3>Debt and financial obligations</h3>
+        <ul class="checklist">
+          <li>Pre-marital debts remain the responsibility of the party who incurred them</li>
+          <li>Joint debts incurred during marriage - how responsibility is allocated on divorce</li>
+          <li>Credit cards and personal loans taken individually - each spouse responsible for their own</li>
+        </ul>
+        <h3>Mahr provisions</h3>
+        <ul class="checklist">
+          <li>Prompt mahr amount - paid at time of marriage</li>
+          <li>Deferred mahr amount - payable on divorce initiated by husband or on husband's death</li>
+          <li>Conditions under which deferred mahr may be waived (relevant for khula agreements)</li>
+        </ul>
+        <h3>Financial support arrangements</h3>
+        <ul class="checklist">
+          <li>If one spouse leaves employment to raise children, what financial compensation applies on divorce</li>
+          <li>Duration and amount of post-divorce alimony - subject to court approval and cannot cut off support entirely if one party has genuine need</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Prenups for Non-Muslims Under the 2022 Law</h2>
+        <p>
+          Federal Law No. 41 of 2022 gave non-Muslim couples in the UAE prenuptial rights that did not previously exist in a clear legislative form. The law applies to all non-Muslim residents and nationals across all seven emirates.
+        </p>
+        <p>
+          Under the default UAE property regime, each spouse keeps assets registered in their own name - there is no automatic community property or equitable sharing. Non-Muslim couples can use a prenup to opt into a different arrangement: for example, agreeing that all assets acquired during the marriage are shared equally regardless of whose name they are in.
+        </p>
+        <p>
+          Non-Muslims can also use a prenup to elect their home country law for property division on divorce. This is significant: if one party is from a country with equitable distribution principles (such as the UK or most EU states), electing that law via a prenup can materially change what each party is entitled to.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Requirements under Federal Law No. 41 of 2022</h3>
+          <ul>
+            <li>Must be in writing - no oral agreements</li>
+            <li>Should be registered with the Personal Status Court or notarized</li>
+            <li>Explicit election of home country law must be stated in the agreement</li>
+            <li>The elected foreign law must not violate UAE public policy</li>
+            <li>Both parties should have independent legal advice confirming they understand the chosen law</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Common Mistakes That Invalidate UAE Prenups</h2>
+        <p>
+          Most prenup challenges in UAE courts succeed on one of a small number of recurring grounds. Avoiding these mistakes is as important as drafting the right substantive terms.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Mistake</th>
+                <th>Why it invalidates the prenup</th>
+                <th>How to avoid it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-highlight">Signed under pressure</td>
+                <td>Courts void agreements signed under duress or with no time for independent review</td>
+                <td>Sign at least 4-6 weeks before the wedding; both parties have separate lawyers</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Unconscionable terms</td>
+                <td>Terms so one-sided that no reasonable person would agree freely - signals duress or lack of understanding</td>
+                <td>Ensure both parties receive genuine benefit; avoid "all assets to me, nothing to you" clauses</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Hidden assets</td>
+                <td>Non-disclosure of significant assets allows the disadvantaged party to void the agreement on discovery</td>
+                <td>Full financial schedules attached to the agreement with honest current values</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Verbal-only agreements</td>
+                <td>No legal standing in UAE courts - entirely unenforceable</td>
+                <td>Formal written agreement, signed, witnessed, ideally registered</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Child support clauses</td>
+                <td>Courts will not enforce agreed child support caps - always set independently</td>
+                <td>Remove child support provisions; leave this to the court process</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Sharia-contrary clauses (Muslim couples)</td>
+                <td>Clauses violating mandatory Sharia principles are void as against public policy</td>
+                <td>Have a UAE family lawyer review all clauses against the Personal Status Law</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Protect Your Assets Before You Marry</h2>
+        <p>A prenuptial agreement is only as strong as its drafting. Get a consultation to understand what you can protect under UAE law and how to make it stick.</p>
+        <LeadForm source="prenuptial-agreement-uae" />
+      </div>
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <span class="related-title">Property Division on Divorce UAE</span>
+            <span class="related-desc">How UAE courts split assets when there is no prenup</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <span class="related-title">Divorce Cost UAE 2025</span>
+            <span class="related-desc">Court fees, lawyer fees, and total cost estimates</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <span class="related-title">Non-Muslim Divorce UAE</span>
+            <span class="related-desc">Federal Law 41/2022 rights for expat couples</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <span class="related-title">Alimony in UAE</span>
+            <span class="related-desc">How maintenance is calculated and for how long</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.85), rgba(10,22,40,0.85)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.45rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+  .checklist--red li::before { content: '✗'; color: #dc2626; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin-bottom: 0.4rem; }
+  .info-box ul { margin: 0.4rem 0 0 1.25rem; }
+  .info-box li { font-size: 0.87rem; color: #374151; line-height: 1.6; margin-bottom: 0.3rem; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) td { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #6b7280; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>

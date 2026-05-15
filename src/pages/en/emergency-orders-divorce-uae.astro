@@ -1,0 +1,396 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Emergency Orders in UAE Divorce - Protecting Yourself and Your Children Immediately';
+const description =
+  'UAE courts can issue emergency custody, travel ban, and asset freeze orders within 48-72 hours. This guide explains when to apply, how, and what to expect.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/emergency-orders-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/اوامر-الطوارئ-في-الطلاق-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Emergency Orders Divorce UAE', url: 'https://divorceu.ae/en/emergency-orders-divorce-uae/' },
+];
+
+const summaryCards = [
+  { label: 'Emergency Response Time', value: '48-72 hours', note: 'From urgent application to first order' },
+  { label: 'Court Fee', value: 'AED 300-500', note: 'Urgent motion filing fee' },
+  { label: 'Order Duration', value: '30-90 days', note: 'Until confirmed at main divorce hearing' },
+];
+
+const orderTypes = [
+  { icon: '👶', title: 'Emergency custody order', desc: 'Grants one parent temporary custody of children where there is documented risk. Travel ban on children applied simultaneously.' },
+  { icon: '✈️', title: 'Travel ban on children', desc: 'Prevents children from leaving the UAE at any border point or airport. Enforced by immigration within 24 hours of court order.' },
+  { icon: '🏦', title: 'Asset freeze order', desc: 'Prevents a spouse from transferring money, selling property, or dissipating marital assets during proceedings.' },
+  { icon: '🏠', title: 'Property restriction order', desc: 'Blocks registration of property transfers in the Dubai Land Department or equivalent emirate body.' },
+  { icon: '🛡️', title: 'Protection order (DV)', desc: 'Available under Federal Law 15 of 2021. Separate from divorce proceedings. Prevents contact, attendance at home or work.' },
+  { icon: '📋', title: 'Interim maintenance order', desc: 'Compels a spouse to pay maintenance pending the final divorce judgment. Enforceable against salary within 2-4 weeks.' },
+];
+
+const urgencyApplicationSteps = [
+  { n: 1, title: 'Document the evidence', body: 'Before calling your lawyer, gather everything that shows the risk or urgency: photographs, medical reports, police reports, WhatsApp messages showing threats or plans to leave, bank statements showing money transfers abroad, school records, witness contact details. Courts need to see specific, documented evidence of threat - not general relationship breakdown.' },
+  { n: 2, title: 'Instruct a lawyer immediately', body: 'Emergency applications require a lawyer to prepare an affidavit (sworn statement) in Arabic setting out the grounds. This document is the foundation of your application. A lawyer experienced in urgent applications can prepare this within hours in a genuine emergency.' },
+  { n: 3, title: 'File the urgent motion', body: 'Your lawyer files the urgent motion (talab isti\'jali) with the Personal Status Court. The filing fee is AED 300-500 depending on the emirate. The court will assess whether to convene an emergency hearing the same day or the following day.' },
+  { n: 4, title: 'Emergency hearing', body: 'The judge reviews your evidence and affidavit. You may or may not need to attend in person - your lawyer often presents the application. For the most urgent matters (imminent risk of child removal, evidence of asset flight), courts can grant orders ex parte (without notifying the other party) at this stage.' },
+  { n: 5, title: 'Order issued and enforced', body: 'Once granted, emergency orders are communicated immediately to relevant authorities: immigration (for travel bans), banks (for asset freezes), and the Land Department (for property restrictions). Enforcement is typically effective within 24 hours of the order being issued.' },
+  { n: 6, title: 'Notify the other party', body: 'In most cases, the other party is notified of the emergency order and its contents. They have the right to apply for the order to be varied or set aside. You must attend any hearing called to review the order and be prepared to justify it with evidence.' },
+];
+
+const evidenceTypes = [
+  { type: 'For emergency custody / child abduction risk', items: ['WhatsApp/email messages discussing travel plans or threats to take children', 'Evidence of one-way flight bookings', 'School withdrawal letters or requests for school records', 'Passport location (if you know children\'s passports are with the other parent)', 'History of threats to leave the UAE with children', 'Previous unauthorized travel attempts'] },
+  { type: 'For asset freeze orders', items: ['Bank statements showing large transfers abroad', 'Evidence of property listing for quick sale', 'Business asset transfers to third parties', 'Evidence of cryptocurrency or cash movements', 'Communications discussing hiding money from proceedings', 'Sudden lifestyle changes inconsistent with claimed income'] },
+  { type: 'For protection orders (domestic violence)', items: ['Police reports or hospital records', 'Photographs of injuries', 'Witness statements from neighbors, family members', 'Medical certificates', 'Previous police call-out records', 'Text messages containing threats or abuse'] },
+];
+
+const faqItems = [
+  {
+    question: 'Can I get an emergency custody order without a lawyer?',
+    answer: 'Technically the court process allows self-representation, but in practice the emergency application process is procedurally complex and all documents must be in Arabic. A lawyer dramatically increases the chance of the court granting the order on the first application - delays in an emergency situation can mean children leave the country or assets disappear. If cost is an obstacle, speak to a lawyer about a fixed-fee emergency application rather than ruling out legal representation entirely.',
+  },
+  {
+    question: 'What evidence do I need for an emergency custody order?',
+    answer: 'The court needs to see a credible, specific threat to the child - not just a difficult co-parenting situation. Useful evidence includes: photographs, medical reports showing injuries or neglect, police reports, WhatsApp messages showing threats or plans to take children abroad, evidence of one-way flight bookings, school withdrawal requests, and witness statements. The more specific and documented the evidence, the more likely the court is to grant an order on an urgent basis. General allegations without documentation will not support an emergency order.',
+  },
+  {
+    question: 'Can my spouse cancel the travel ban placed on our children?',
+    answer: 'Only through the court - not unilaterally. Your spouse must file an application with the same court to vary or lift the travel ban, setting out reasons why it should be removed. You will be notified of this application and have the right to oppose it. The court considers whether the circumstances that justified the ban have changed, whether proposed travel is to a safe destination, and whether adequate safeguards (undertakings, mirror orders in the destination country) are in place. Courts do grant temporary lifts for specific trips if appropriate conditions are met.',
+  },
+  {
+    question: 'What if my spouse has already left UAE with the children?',
+    answer: 'Act immediately - this becomes a child abduction matter. Contact your lawyer first, then report to the nearest police station and the Ministry of Justice International Cooperation Department, which handles cross-border child abduction. The UAE has bilateral treaties and Hague Convention-equivalent agreements with several countries. Speed is critical: the longer the child is in the destination country, the harder return becomes. Gather all evidence of the unauthorized removal and the children\'s last known location.',
+  },
+  {
+    question: 'How long does an asset freeze order last?',
+    answer: 'Asset freeze orders in divorce proceedings are typically linked to the main divorce case - the freeze continues until the court makes a final order on asset division, or until both parties reach a negotiated settlement that is recorded by the court. The frozen assets are not gone; they are held in place pending the outcome. If the case settles quickly, the freeze is lifted as part of the settlement. If the main proceedings take 12-24 months, the freeze remains in effect for that period, subject to any variation applications.',
+  },
+  {
+    question: 'Will an emergency order affect my divorce outcome?',
+    answer: 'Emergency orders are preliminary - they do not determine the final result of your divorce. However, the evidence gathered and presented to obtain emergency orders, and the behavior documented during the emergency proceedings, can influence the final judge\'s assessment of both parties. Courts form impressions of parental behavior from how parties conduct themselves throughout proceedings. Acting proportionately and with documented justification for every emergency application is advisable - emergency orders obtained without genuine grounds can reflect badly on the applicant.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/emergency-orders-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Emergency Orders · UAE Divorce 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        When a divorce situation becomes dangerous or urgent, UAE courts can act within 48-72 hours to protect children, freeze assets, and prevent a spouse from leaving the country. This guide explains what orders are available, what evidence courts require, the exact application process, and what happens after an order is granted.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>Key facts at a glance</h2>
+        <div class="summary-grid">
+          {summaryCards.map((card) => (
+            <div class="summary-card">
+              <p class="summary-label">{card.label}</p>
+              <p class="summary-value">{card.value}</p>
+              <p class="summary-note">{card.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>What Are Interim and Emergency Orders in UAE Divorce?</h2>
+        <p>
+          UAE Personal Status Courts can grant interim orders - temporary orders made before the final divorce judgment - to protect parties and children during the proceedings. Emergency orders are the most urgent subset: orders granted rapidly, sometimes on the same day as application, where there is an immediate risk.
+        </p>
+        <p>
+          Interim orders operate on a lower evidential threshold than final orders. The court applies a "balance of probabilities" standard: is it more likely than not that the risk is real and that the order is necessary? This lower bar means courts can act quickly without a full trial - but the order is temporary and must be confirmed (or varied) when the full case is heard.
+        </p>
+        <p>
+          The key types of emergency and interim orders available in UAE divorce proceedings are:
+        </p>
+        <div class="orders-grid">
+          {orderTypes.map((order) => (
+            <div class="order-card">
+              <div class="order-icon">{order.icon}</div>
+              <div class="order-content">
+                <h3>{order.title}</h3>
+                <p>{order.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Emergency Custody Orders - Protecting Your Children</h2>
+        <p>
+          An emergency custody order transfers temporary physical custody of children to one parent where there is documented evidence of risk. Courts can grant these within 48-72 hours in genuine emergencies, and in extreme cases (imminent international removal), within hours on an ex parte basis (without hearing from the other side first).
+        </p>
+        <p>
+          The risk that courts respond to fastest is the threat of children being taken out of UAE jurisdiction without consent. If you have concrete evidence - flight bookings, passport in the other parent's possession, messages about leaving - the court can issue a travel ban simultaneously with or even before the custody order, communicated to immigration within 24 hours.
+        </p>
+        <h3>What "risk to the child" means in practice</h3>
+        <p>
+          Courts will not grant emergency custody orders based on general parenting disagreements or normal relationship conflict. The evidence must show a specific, credible risk: domestic violence against the child, child abuse or neglect, substance abuse affecting parental capacity, or a genuine and documented threat to remove the child from UAE jurisdiction.
+        </p>
+        <p>
+          Where one parent's conduct is concerning but not at the emergency threshold, the correct application is an urgent (but not ex parte) interim order with a short hearing date - typically within 1-2 weeks rather than 48-72 hours.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Asset Freeze Orders - Preventing Financial Dissipation</h2>
+        <p>
+          If you have evidence that your spouse is moving money out of the UAE, selling assets at undervalue, or otherwise dissipating marital property before the divorce is finalized, you can apply for an asset freeze order. Courts take asset dissipation seriously - it directly undermines the court's ability to achieve a fair financial outcome.
+        </p>
+        <p>
+          An asset freeze order can cover:
+        </p>
+        <ul class="checklist">
+          <li>UAE bank accounts - banks receive direct notification and freeze movements above a specified threshold</li>
+          <li>Dubai Land Department property - transfer registrations are blocked pending the court's final order</li>
+          <li>Other UAE property registers (Abu Dhabi, Sharjah, Ajman) via the relevant authority</li>
+          <li>Business interests where the court can notify relevant registries</li>
+          <li>Specific assets identified in the affidavit (vehicles, investments, jewelry of known value)</li>
+        </ul>
+        <p>
+          The freeze does not transfer ownership - it simply prevents disposal. Assets remain under the existing holder's control for day-to-day use (living in a frozen property, operating a frozen business account for legitimate expenses), but major transactions require court approval.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Cryptocurrency and overseas assets</h3>
+          <p>UAE courts can order disclosure of cryptocurrency holdings and overseas bank accounts, but enforcement against foreign assets requires parallel proceedings in the relevant country. Mention any known overseas assets to your lawyer at the first consultation - early action increases the chance of effective freezing.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Travel Bans in Divorce Cases</h2>
+        <p>
+          UAE courts can place a travel ban on a spouse or on children. This ban is enforced at all UAE border points, airports, and land crossings - it applies regardless of the nationality of the person named and regardless of whether they hold a UAE residence visa or visit visa.
+        </p>
+        <p>
+          Travel bans on children are the most common emergency measure in high-conflict divorce cases. They are placed preventatively - you do not need to wait for an actual removal attempt. The standard for obtaining a travel ban on children is evidence that removal risk exists, not proof that removal is certain.
+        </p>
+        <p>
+          Travel bans on a spouse (as opposed to children) are less common and require stronger justification - typically evidence of flight risk combined with a financial claim that would be frustrated if the spouse left the jurisdiction. These are granted more sparingly.
+        </p>
+        <p>
+          A travel ban remains in force until the court lifts it. Either party can apply to vary or lift the ban - for example, to allow a child to travel for a specific school trip or family event, with the other parent's consent or on terms set by the court. Courts frequently grant temporary lifts for specific travel if the applicant demonstrates the trip is genuine, the destination is safe, and there are adequate safeguards against non-return.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Domestic Violence Protection Orders</h2>
+        <p>
+          Protection orders under <strong>Federal Law No. 15 of 2021 on Protection from Harassment</strong> are available to any person in the UAE regardless of nationality or visa status. They are separate from divorce proceedings and can be obtained before, during, or without any divorce case.
+        </p>
+        <p>
+          A protection order can prohibit the respondent from:
+        </p>
+        <ul class="checklist">
+          <li>Approaching the applicant within a specified distance</li>
+          <li>Attending the applicant's home, workplace, or children's school</li>
+          <li>Contacting the applicant directly or through third parties</li>
+          <li>Publishing any material about the applicant</li>
+          <li>Damaging or disposing of property belonging to the applicant</li>
+        </ul>
+        <p>
+          Breaching a protection order is a criminal offense. The respondent can be arrested and prosecuted. This is one of the strongest protective mechanisms available and should be used immediately where there is genuine risk of harm.
+        </p>
+        <p>
+          Protection orders are processed through police stations and the Public Prosecution as well as through the courts. In an immediate danger situation, go to the nearest police station first - they can provide immediate protection measures while a formal court order is processed.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>How to Apply for an Emergency Order - The Fast-Track Process</h2>
+        <div class="step-list">
+          {urgencyApplicationSteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <h3>Evidence by order type</h3>
+        <div class="evidence-list">
+          {evidenceTypes.map((ev) => (
+            <div class="evidence-card">
+              <h3>{ev.type}</h3>
+              <ul class="compact-list">
+                {ev.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>After You Get the Emergency Order - Next Steps</h2>
+        <p>
+          Obtaining the emergency order is the beginning, not the end. The order is temporary and must be maintained through the main divorce proceedings. Failing to manage the post-order period properly can result in the order being set aside on the other party's application.
+        </p>
+        <h3>Keep your evidence organized</h3>
+        <p>
+          Every incident, communication, or development that relates to the grounds for the emergency order should be documented and preserved. Your lawyer will need this to justify maintaining the order when the main case comes before the court.
+        </p>
+        <h3>Respond promptly to counter-applications</h3>
+        <p>
+          Your spouse has the right to apply to vary or discharge the emergency order. When this happens, you will receive notice of a hearing date. Attend with your lawyer and be prepared to justify the order with the evidence. Courts do not look favorably on parties who cannot substantiate emergency orders at a review hearing.
+        </p>
+        <h3>Coordinate with your divorce proceedings</h3>
+        <p>
+          The interim orders must feed into the main divorce proceedings. The court that granted the emergency order will eventually hear the full case, and the final orders on custody, finances, and property will supersede the interim ones. Your lawyer should ensure continuity between the emergency application and the main case strategy.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Cost of emergency applications</h3>
+          <p>Court filing fee is AED 300-500. Your lawyer's fee for an emergency application - including affidavit preparation, court attendance, and post-order coordination - is typically AED 3,000-8,000. This is separate from the ongoing divorce retainer fee. In genuine emergencies, speed matters more than cost - act first and manage the budget conversation once the immediate risk is addressed.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>If You Are in an Urgent Situation, Act Now</h2>
+        <p>Emergency applications in UAE divorce require experienced lawyers who can move fast. A 30-minute consultation will tell you what orders are available, what evidence you need, and whether your situation qualifies for the emergency track.</p>
+        <LeadForm source="emergency-orders-divorce-uae" />
+      </div>
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/child-custody-uae/" class="related-card">
+            <span class="related-title">Child Custody UAE</span>
+            <span class="related-desc">How UAE courts decide custody and visitation rights</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <span class="related-title">Divorce Timeline UAE</span>
+            <span class="related-desc">Stage-by-stage timeline from filing to final decree</span>
+          </a>
+          <a href="/en/contested-vs-uncontested-divorce-uae/" class="related-card">
+            <span class="related-title">Contested vs. Uncontested Divorce</span>
+            <span class="related-desc">Which type of case you have and what it means for you</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <span class="related-title">Divorce Lawyer Dubai</span>
+            <span class="related-desc">How to find and instruct a UAE family lawyer</span>
+          </a>
+          <a href="/en/documents-for-divorce-uae/" class="related-card">
+            <span class="related-title">Documents for Divorce UAE</span>
+            <span class="related-desc">Complete list of what you need to file your case</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.88), rgba(10,22,40,0.88)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.45rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .orders-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; margin: 1rem 0 1.5rem; }
+  .order-card { display: flex; gap: 0.875rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; }
+  .order-icon { font-size: 1.4rem; min-width: 2rem; text-align: center; line-height: 1; padding-top: 0.15rem; }
+  .order-content h3 { font-size: 0.88rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .order-content p { font-size: 0.82rem; color: #374151; line-height: 1.6; margin: 0; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .evidence-list { display: flex; flex-direction: column; gap: 0.875rem; margin-top: 1rem; }
+  .evidence-card { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem 1.25rem; }
+  .evidence-card h3 { font-size: 0.88rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .compact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+  .compact-list li { font-size: 0.83rem; color: #374151; line-height: 1.6; padding-left: 1rem; position: relative; }
+  .compact-list li::before { content: '•'; position: absolute; left: 0; color: #c9a84c; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #6b7280; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .orders-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,408 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'DIFC Divorce in Dubai - English Law Option for Expat Professionals';
+const description =
+  'DIFC Courts apply English law to divorce. This guide explains jurisdiction, how asset division differs from UAE Federal courts, child custody rules, costs, and who qualifies.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/difc-divorce-dubai/',
+  ar: 'https://divorceu.ae/ar/طلاق-مركز-دبي-المالي-العالمي/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'DIFC Divorce Dubai', url: 'https://divorceu.ae/en/difc-divorce-dubai/' },
+];
+
+const summaryCards = [
+  { label: 'DIFC Filing Fees', value: 'AED 5,000-10,000', note: 'At DIFC Courts Registry' },
+  { label: 'Timeline', value: '6-12 months', note: 'Contested cases; faster than Federal' },
+  { label: 'Law Applied', value: 'English Common Law', note: 'Not UAE Federal personal status law' },
+  { label: 'Child Standard', value: 'Best Interests', note: 'No age-based presumptions' },
+];
+
+const difcVsFederal = [
+  { aspect: 'Law applied', difc: 'English common law', federal: 'UAE Personal Status Law / Federal Law 41/2022' },
+  { aspect: 'Language of proceedings', difc: 'English', federal: 'Arabic' },
+  { aspect: 'Asset division', difc: 'Sharing principle - contribution, need, compensation', federal: 'Separate property or as agreed in prenup' },
+  { aspect: 'Child custody default', difc: 'Best interests standard, shared parenting possible', federal: 'Equal joint custody (non-Muslims) / mother presumption (Muslims)' },
+  { aspect: 'Islamic law applied', difc: 'No', federal: 'Yes, for Muslim couples' },
+  { aspect: 'Mandatory reconciliation', difc: 'No', federal: 'Yes, for Muslims; exempt for non-Muslims' },
+  { aspect: 'Typical timeline (contested)', difc: '6-12 months', federal: '12-24 months' },
+  { aspect: 'Filing fees', difc: 'AED 5,000-10,000', federal: 'AED 2,000-3,000' },
+  { aspect: 'Lawyer costs', difc: '15-20% higher than Federal', federal: 'Standard UAE family lawyer rates' },
+];
+
+const filingSteps = [
+  { n: 1, title: 'Assess jurisdiction', body: 'Confirm that your case meets DIFC Courts jurisdiction criteria - your lawyer will review whether the DIFC connection is through employment, assets, contracts, or opt-in agreement. Jurisdiction cannot be assumed.' },
+  { n: 2, title: 'Lodge claim at DIFC Courts Registry', body: 'File the divorce claim (and financial remedy application if needed) at the DIFC Courts Registry in the Gate Building, Dubai International Financial Centre. Pay the initial filing fee.' },
+  { n: 3, title: 'Serve proceedings on your spouse', body: 'The court issues a sealed copy of the claim which must be formally served on your spouse. Service can be completed in the UAE or abroad through formal channels. Your spouse has a set period to respond.' },
+  { n: 4, title: 'Financial disclosure phase', body: 'Both parties complete sworn financial disclosure - full details of assets, liabilities, income, and financial needs. This is mandatory and comprehensive. Failure to disclose fully constitutes contempt of court.' },
+  { n: 5, title: 'Mediation attempt', body: 'DIFC Courts strongly encourage mediation before trial. Many cases settle at this stage. A settlement recorded by the court is enforceable as a court order. Mediation is typically faster and less costly than a full trial.' },
+  { n: 6, title: 'Trial (if no settlement)', body: 'If mediation does not resolve the case, the matter proceeds to trial before a DIFC judge. Both parties give evidence. Expert financial witnesses may be called. The judge applies English law principles to the evidence.' },
+  { n: 7, title: 'Receive judgment', body: 'The DIFC Court issues a written judgment covering divorce, financial remedy, and any ancillary orders. The judgment is enforceable in UAE and - through recognition procedures - in the UK and other common law jurisdictions.' },
+];
+
+const faqItems = [
+  {
+    question: 'Do I need to work in DIFC to file for divorce there?',
+    answer: 'Not necessarily. DIFC Courts jurisdiction arises in several ways: both parties agreeing in writing to DIFC jurisdiction, the dispute relating to a DIFC-registered employment contract, assets held through DIFC-regulated entities, or contracts with DIFC jurisdiction clauses. A DIFC-registered lawyer can quickly assess whether your circumstances qualify. Many Dubai financial sector professionals have DIFC employment contracts that create this connection automatically.',
+  },
+  {
+    question: 'Can Muslims use DIFC courts for divorce?',
+    answer: 'DIFC Courts apply English common law, not Islamic personal status law. The standard family law framework for Muslim couples in the UAE is the Personal Status Law in UAE Federal courts. Muslim couples whose dispute specifically involves DIFC-regulated assets, employment contracts, or financial instruments may have aspects of their case fall within DIFC jurisdiction, but the personal status aspects (talaq, mahr, custody under Islamic law) would typically remain in UAE Federal courts. This is a complex jurisdictional question requiring specialist advice.',
+  },
+  {
+    question: 'Is DIFC divorce faster than UAE Federal courts?',
+    answer: 'Generally yes for contested cases. DIFC Courts typically resolve contested financial remedy cases within 6-12 months. Contested UAE Federal court cases regularly take 12-24 months at first instance, with appeals adding further time. The DIFC Courts are a smaller, specialist court with dedicated family law practitioners and a case management culture that emphasises efficiency. Uncontested cases in both systems can conclude much faster.',
+  },
+  {
+    question: 'Will a DIFC divorce be recognised in the UK?',
+    answer: 'Yes. DIFC Courts are recognised as a legitimate foreign court in England and Wales. A DIFC divorce decree is generally recognised in UK proceedings provided it was obtained through a process that English courts consider procedurally fair. The DIFC\'s English common law foundation makes recognition smoother than for UAE Federal court judgments in some cases. Your UK-based lawyer can advise on the recognition process if you need the decree used in the UK.',
+  },
+  {
+    question: 'Can I get a DIFC divorce if my spouse is outside the UAE?',
+    answer: 'Yes, provided DIFC jurisdiction is established. Service of proceedings can be effected abroad through formal channels - your lawyer will arrange service in the country where your spouse is located. The fact that your spouse is outside the UAE does not prevent DIFC Courts from having jurisdiction or making orders, though enforcement of those orders in a foreign country requires separate local enforcement proceedings.',
+  },
+  {
+    question: 'What happens to my UAE-based property in a DIFC divorce?',
+    answer: 'DIFC Courts can make orders about property located outside DIFC, including UAE property such as Dubai real estate or bank accounts. However, enforcing those orders against locally titled assets may require parallel proceedings in UAE Federal courts. In practice, this means your DIFC lawyer coordinates with UAE Federal court practitioners to register and enforce the DIFC property order. This adds some cost and time but is a well-established process.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/difc-divorce-dubai/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">DIFC Courts · Dubai 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Dubai's International Financial Centre operates its own court system under English common law - a genuine alternative to UAE Federal family courts for qualifying expat professionals. This guide explains who can use it, how asset division and custody work differently under English law, what it costs, and when DIFC is the better choice.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>Key numbers at a glance</h2>
+        <div class="summary-grid summary-grid--4">
+          {summaryCards.map((card) => (
+            <div class="summary-card">
+              <p class="summary-label">{card.label}</p>
+              <p class="summary-value">{card.value}</p>
+              <p class="summary-note">{card.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>What Is DIFC and Which Divorces Fall Under Its Jurisdiction?</h2>
+        <p>
+          The Dubai International Financial Centre (DIFC) is a federal financial free zone established in 2004. It operates its own legal system - based on English common law - with its own courts, judges, and procedural rules. DIFC Courts have jurisdiction over civil and commercial matters arising within the DIFC, but their family law jurisdiction is a relatively recent and specifically defined expansion.
+        </p>
+        <p>
+          DIFC Courts can hear non-Muslim family law cases - including divorce, financial remedy, and child arrangements - where the parties have opted in to DIFC jurisdiction or where the dispute arises from DIFC-connected matters. "Opting in" can happen through a pre-nuptial agreement containing a DIFC jurisdiction clause, or by both parties agreeing to DIFC jurisdiction after the marriage has broken down.
+        </p>
+        <p>
+          DIFC Courts jurisdiction typically arises where:
+        </p>
+        <ul class="checklist">
+          <li>Both parties are DIFC members (registered employees or licensed entities within the DIFC)</li>
+          <li>The financial dispute relates to DIFC-regulated assets, contracts, or employment</li>
+          <li>A prenuptial or marital agreement contains a DIFC jurisdiction clause</li>
+          <li>Both parties have explicitly opted into DIFC jurisdiction for their family case</li>
+          <li>A DIFC-licensed entity (such as an employer or fund) is relevant to the financial claims</li>
+        </ul>
+        <div class="info-box info-box--info">
+          <h3>Important: jurisdiction assessment is required</h3>
+          <p>Do not assume DIFC jurisdiction applies to your case. A preliminary assessment by a DIFC-registered family lawyer is essential before filing. Incorrect filing can result in the case being struck out and valuable time lost.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>DIFC vs. UAE Federal Personal Status Court - Key Differences</h2>
+        <p>
+          The choice between DIFC and UAE Federal courts is not simply about preference - it can materially affect the financial outcome of your divorce. Below is a direct comparison of the two systems for non-Muslim expat couples.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>DIFC Courts</th>
+                <th>UAE Federal Courts</th>
+              </tr>
+            </thead>
+            <tbody>
+              {difcVsFederal.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.aspect}</td>
+                  <td>{row.difc}</td>
+                  <td>{row.federal}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The most significant practical difference is in asset division. UAE Federal courts apply a separate property regime by default - each party keeps what is in their name. DIFC Courts apply the English "sharing principle," which means the court looks at the overall financial picture and may order transfers of assets to achieve a fair outcome, regardless of whose name they are registered in.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Asset Division Under English Law at DIFC</h2>
+        <p>
+          English law does not have a fixed formula for dividing assets on divorce. Instead, DIFC judges apply a framework of principles drawn from English family law, primarily the <strong>sharing principle</strong> - the idea that marriage is an equal partnership and assets acquired during it should generally be shared equally, unless there are good reasons to depart from that.
+        </p>
+        <h3>Factors the court considers</h3>
+        <ul class="checklist">
+          <li><strong>Contribution:</strong> What each party brought to the marriage - financial contributions, but also non-financial contributions such as childcare and homemaking</li>
+          <li><strong>Need:</strong> What each party needs going forward, particularly housing and income to meet reasonable outgoings</li>
+          <li><strong>Compensation:</strong> Where one party has sacrificed career or earning capacity for the benefit of the family, the court may award compensation</li>
+          <li><strong>Length of marriage:</strong> Shorter marriages may see pre-marital assets ring-fenced; longer marriages typically see all assets treated as shared</li>
+          <li><strong>Child arrangements:</strong> The party with primary care of children typically retains the family home or receives greater capital to rehouse near schools</li>
+        </ul>
+        <h3>Financial disclosure is mandatory</h3>
+        <p>
+          DIFC Courts require comprehensive sworn financial disclosure from both parties - bank statements, investment accounts, business interests, property valuations, pension values, income records. This is not optional. Deliberate concealment of assets constitutes contempt of court, which carries serious consequences including fines and adverse costs orders. The disclosure culture is significantly more rigorous than in UAE Federal proceedings.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Hiding assets in DIFC proceedings</h3>
+          <p>DIFC Courts can freeze assets, order third-party disclosure (including from banks and employers), and sanction parties who fail to disclose honestly. The consequences of non-disclosure are more severe than in Federal proceedings. Both parties should approach disclosure with complete honesty from the outset.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Child Custody in DIFC Courts</h2>
+        <p>
+          DIFC Courts apply the <strong>best interests of the child</strong> standard - the same principle used in English family courts. This differs meaningfully from some UAE Federal court approaches, particularly in two respects: there is no automatic age-based presumption in favour of the mother, and shared parenting orders (where both parents have substantial time with the child) are genuinely available.
+        </p>
+        <p>
+          In practice, DIFC Courts consider:
+        </p>
+        <ul class="checklist">
+          <li>The child's existing relationship with each parent and extended family</li>
+          <li>Each parent's ability to meet the child's physical, emotional, and educational needs</li>
+          <li>The child's wishes and feelings (given weight appropriate to their age and maturity)</li>
+          <li>Any history of domestic violence, substance use, or conduct affecting parental capacity</li>
+          <li>Stability of housing, schooling, and social environment</li>
+          <li>The ability of each parent to support the child's relationship with the other parent</li>
+        </ul>
+        <h3>International relocation applications</h3>
+        <p>
+          When one parent wants to relocate internationally with the children, DIFC Courts treat this with urgency. Applications for a travel ban or to prevent relocation pending a full hearing are dealt with quickly. The court will balance the applicant parent's rights against the other parent's rights and the child's interests. Relocation cases are among the most complex and emotionally charged in family law - early legal advice is essential.
+        </p>
+        <p>
+          DIFC Court orders relating to children have reciprocal enforcement with UK courts, which is valuable for cases involving parents who may relocate between Dubai and the UK.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>How to File for Divorce in DIFC Courts</h2>
+        <div class="step-list">
+          {filingSteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Cost of DIFC Divorce vs. Federal Divorce</h2>
+        <p>
+          DIFC divorce is more expensive than UAE Federal divorce in direct costs - but the faster timeline and more comprehensive financial disclosure sometimes produce a better net financial outcome for the party with more to gain from English law's sharing approach.
+        </p>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-label">DIFC filing fees</p>
+            <p class="fee-amount">AED 5,000-10,000</p>
+            <p class="fee-note">Depends on complexity and claims made</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">DIFC lawyer fees</p>
+            <p class="fee-amount">AED 20,000-80,000+</p>
+            <p class="fee-note">Contested cases with financial remedy claims</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">Federal lawyer fees</p>
+            <p class="fee-amount">AED 10,000-50,000+</p>
+            <p class="fee-note">Comparable cases; lower hourly rates typical</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">Total DIFC budget (complex)</p>
+            <p class="fee-amount">AED 30,000-120,000</p>
+            <p class="fee-note">Financial remedy + child arrangements disputed</p>
+          </div>
+        </div>
+        <p>
+          The higher cost of DIFC proceedings is partly offset by the shorter timeline - lawyers charge by time, so a 6-12 month case costs less in lawyer hours than a 12-24 month Federal case at first instance. For high-value financial cases, the sharing principle in English law may also produce a materially better outcome for one party than the Federal separate property approach - making the additional cost worthwhile.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Enforcing a DIFC Divorce Decree Elsewhere in UAE</h2>
+        <p>
+          A DIFC judgment does not automatically apply to assets held outside the DIFC zone. To enforce a DIFC financial remedy order against, for example, a Dubai Land Department-registered property or a UAE bank account held in a non-DIFC bank, the judgment must be registered in the UAE Federal court system.
+        </p>
+        <p>
+          The enforcement process works as follows:
+        </p>
+        <ul class="checklist">
+          <li>Obtain DIFC court certification of the judgment</li>
+          <li>File an enforcement application in the relevant UAE Federal court (typically Dubai Courts for Dubai-based assets)</li>
+          <li>The Federal court reviews the DIFC judgment and registers it as a foreign judgment</li>
+          <li>Enforcement orders can then be issued against the specific UAE assets - property transfer, bank account debit, salary attachment</li>
+          <li>The process typically takes 2-3 months from DIFC judgment to Federal enforcement order</li>
+        </ul>
+        <p>
+          This parallel enforcement step is a known feature of DIFC divorce proceedings, not an obstacle. Your DIFC lawyer will coordinate the Federal enforcement process as part of the same overall case.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Find Out Whether DIFC Is Right for Your Case</h2>
+        <p>Not every expat divorce belongs in DIFC Courts. A brief consultation will tell you whether you qualify, whether English law produces a better outcome for you, and what the likely costs are.</p>
+        <LeadForm source="difc-divorce-dubai" />
+      </div>
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <span class="related-title">Non-Muslim Divorce UAE</span>
+            <span class="related-desc">Federal Law 41/2022 rights and the alternative to DIFC</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <span class="related-title">Property Division on Divorce UAE</span>
+            <span class="related-desc">How assets are split under UAE and English law</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <span class="related-title">Divorce Cost UAE 2025</span>
+            <span class="related-desc">Court fees, lawyer fees, and total cost estimates</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <span class="related-title">Divorce Lawyer Dubai</span>
+            <span class="related-desc">How to find and brief a UAE family lawyer</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.85), rgba(10,22,40,0.85)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.72rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.45rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) td { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .fee-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+  .fee-card { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .fee-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.4rem; }
+  .fee-amount { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .fee-note { font-size: 0.78rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #6b7280; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .fee-grid { grid-template-columns: 1fr; }
+    .summary-grid, .summary-grid--4 { grid-template-columns: 1fr; }
+  }
+</style>

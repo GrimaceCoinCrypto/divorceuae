@@ -1,0 +1,395 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'How to Appeal a Divorce Decision in UAE - Grounds, Process & Timeline';
+const description =
+  'Lost a custody or alimony ruling in UAE? This guide explains how divorce appeals work, what grounds courts accept, the 30-day deadline, and what it costs.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-appeal-uae/',
+  ar: 'https://divorceu.ae/ar/استئناف-حكم-الطلاق-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Appeal UAE', url: 'https://divorceu.ae/en/divorce-appeal-uae/' },
+];
+
+const summaryCards = [
+  { label: 'Appeal Deadline', value: '30 days', note: 'From receipt of written judgment' },
+  { label: 'Total Cost', value: 'AED 10,000-25,000', note: 'Lawyer plus court fees' },
+  { label: 'Full Reversal Rate', value: '~15-25%', note: 'Partial modification more common' },
+];
+
+const grounds = [
+  { ground: 'Legal error', detail: 'The judge misapplied or misinterpreted UAE law or Sharia principles in reaching the decision. This is the strongest ground for appeal.' },
+  { ground: 'Procedural violation', detail: 'A significant procedural rule was broken during the first instance hearing - for example, you were not properly notified, key evidence was excluded without reason, or the court failed to follow mandatory steps.' },
+  { ground: 'Newly discovered evidence', detail: 'Evidence that did not exist or could not reasonably have been discovered before the first instance judgment. Note: general appeals courts do not ordinarily receive new evidence - this usually requires a separate application.' },
+  { ground: 'Manifest injustice', detail: 'The outcome is so disproportionate or unreasonable that no court applying the law correctly could have reached it. This is a high bar and requires clear documentation.' },
+];
+
+const appealSteps = [
+  { n: 1, title: 'Receive and review the written judgment', body: 'The 30-day clock starts from when you receive the written judgment - not the oral pronouncement in court. Ask your lawyer to request the written reasons immediately if they are not automatically provided.' },
+  { n: 2, title: 'Instruct an appellate lawyer', body: 'Appeals require a different skill set from first-instance advocacy. Your appellate lawyer reviews the transcript, evidence, and legal grounds. Instruct them as early as possible - the 30-day deadline is absolute.' },
+  { n: 3, title: 'File the appeal petition', body: 'Your lawyer files the appeal petition (Sahifa al-Istinaf) with the Court of Appeal in the relevant emirate. Pay the court filing fee of AED 500-2,000 depending on the emirate and case type.' },
+  { n: 4, title: 'Submit grounds brief', body: 'A detailed written brief setting out the legal grounds for appeal, with references to the trial record. The opposing party files a response brief. Exchange of briefs typically takes 4-8 weeks.' },
+  { n: 5, title: 'Attend oral hearing', body: 'The Court of Appeal schedules an oral hearing. Both lawyers present arguments. The court may ask questions; witnesses are not generally called at appeal stage. Proceedings are in Arabic.' },
+  { n: 6, title: 'Receive judgment', body: 'The Court of Appeal issues its judgment - typically within 60-90 days of the hearing. The court can uphold, partially modify, or reverse the original decision. A full reversal is sent back to first instance or decided directly.' },
+];
+
+const comparisonRows = [
+  { aspect: 'Purpose', appeal: 'Challenge a legal error or procedural violation in the original judgment', modification: 'Change an existing order due to changed circumstances after it was made' },
+  { aspect: 'Trigger', appeal: 'Dissatisfaction with outcome; identifiable legal or procedural error', modification: 'Job loss, relocation, health change, child reaching a different age' },
+  { aspect: 'Timeline', appeal: '30-day deadline from judgment receipt', modification: 'No fixed deadline; can apply any time circumstances change' },
+  { aspect: 'Venue', appeal: 'Court of Appeal (Mahkamah al-Istinaf)', modification: 'Same first instance court that made the original order' },
+  { aspect: 'Outcome', appeal: 'Uphold, modify, or reverse the original judgment', modification: 'Variation of the existing order going forward' },
+];
+
+const faqItems = [
+  {
+    question: 'How long do I have to file a divorce appeal in UAE?',
+    answer: 'Thirty days from receiving the written judgment. This deadline is absolute - missing it almost always prevents you from appealing entirely. If the court has not yet issued the written judgment, ask your lawyer to formally request it in writing so the clock starts running from a clear date. Do not assume you have 30 days from the oral hearing date; the written judgment triggers the period.',
+  },
+  {
+    question: 'Can I appeal a custody decision if my ex is moving abroad?',
+    answer: 'Yes - and you may also be able to apply for an urgent interim order preventing the relocation while the appeal is pending. Child relocation is grounds for both an urgent interim application and an appeal if the original order did not account for relocation risk. Speed is critical: once a child leaves the UAE jurisdiction, enforcement becomes significantly harder. Instruct a lawyer immediately if you learn your co-parent intends to relocate abroad.',
+  },
+  {
+    question: 'Does the Court of Appeal look at new evidence?',
+    answer: 'Generally no. The Court of Appeal is a legal review body, not a retrial. The court examines whether the first instance court correctly applied the law to the evidence that was before it. New evidence is not ordinarily admissible at appeal stage. If you have genuinely new evidence that did not exist at the time of the original hearing, a separate "review of judgment" (iltimas al-i\'ada) application may be the appropriate mechanism.',
+  },
+  {
+    question: 'Can I appeal in both English and Arabic?',
+    answer: 'All UAE court proceedings are conducted in Arabic. Your lawyer files the appeal petition, grounds brief, and all court documents in Arabic. If you need to participate directly, your lawyer will interpret for you. There is no provision for English-language proceedings in UAE Federal courts or personal status courts. DIFC Courts are an exception - proceedings there are in English - but they have their own separate appeal mechanisms.',
+  },
+  {
+    question: 'What happens to the original order while I am appealing?',
+    answer: 'The original order remains in force while the appeal is pending unless you successfully apply for a stay of execution. A stay requires a separate application to the Court of Appeal, and you must demonstrate that enforcing the order while the appeal proceeds would cause you serious and irreparable harm. Stays are not automatically granted - the court weighs the harm to you against the harm to the other party from non-enforcement. This is particularly relevant for financial orders.',
+  },
+  {
+    question: 'Is there a further appeal after the Court of Appeal?',
+    answer: 'Yes. The Court of Cassation (Federal Supreme Court) can hear further appeals, but only on points of law - not on findings of fact. This means the Court of Cassation asks whether the Court of Appeal correctly applied the law, not whether it reached the right factual conclusions. Family law cases rarely proceed to the Court of Cassation in practice; the threshold for admission is high and the process adds considerable cost and time. Your lawyer will advise whether cassation is realistically worth pursuing.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-appeal-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Appeals · UAE 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        A divorce judgment is not necessarily the final word. UAE courts have a full appeal system, but the window to use it is short and the grounds courts accept are specific. This guide explains the 30-day deadline, what constitutes valid grounds, the cost and timeline of an appeal, and when an appeal is unlikely to succeed.
+      </p>
+      <div class="hero-meta">
+        <span>Updated: May 2025</span>
+        <span class="sep">·</span>
+        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>Key numbers at a glance</h2>
+        <div class="summary-grid">
+          {summaryCards.map((card) => (
+            <div class="summary-card">
+              <p class="summary-label">{card.label}</p>
+              <p class="summary-value">{card.value}</p>
+              <p class="summary-note">{card.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>Can You Appeal a Divorce Decision in UAE?</h2>
+        <p>
+          Yes. All first instance divorce judgments in the UAE - whether from a Personal Status Court, Family Court, or civil division - can be appealed to the Court of Appeal (Mahkamah al-Istinaf). This court has jurisdiction to review the first instance judgment for legal errors, procedural violations, and manifest injustice.
+        </p>
+        <p>
+          The critical deadline is <strong>30 days from receipt of the written judgment</strong>. Missing this window is almost always fatal to the appeal - UAE courts rarely grant extensions, and the time limit is treated as a matter of public policy. The clock runs from when you receive the written judgment, not from the oral pronouncement of the decision in court.
+        </p>
+        <p>
+          Custody orders have a separate expedited appeal track: appeals in custody cases are typically heard within 60-90 days rather than the standard timeline, because delays in custody arrangements directly affect children's welfare. Courts give these cases priority scheduling.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Do not miss the 30-day deadline</h3>
+          <p>If you believe you have grounds to appeal, instruct a lawyer immediately upon receiving the judgment. Waiting to see whether you can negotiate with your ex-spouse wastes time you cannot recover. Even if negotiations are ongoing, file the appeal petition within the deadline to preserve your right.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Grounds for Appeal - What UAE Courts Actually Accept</h2>
+        <p>
+          An appeal is not simply a second chance to argue the same facts. The Court of Appeal reviews the first instance process for specific types of error. You must identify a recognized legal ground - dissatisfaction with the outcome alone is not sufficient.
+        </p>
+        <div class="grounds-list">
+          {grounds.map((item) => (
+            <div class="ground-card">
+              <h3>{item.ground}</h3>
+              <p>{item.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p>
+          The most commonly successful ground in family law appeals is <strong>legal error in applying the law</strong> - for example, if a court incorrectly calculated the iddah period, misapplied the nafaqa rules, or failed to apply the correct custody standard. Pure factual disagreements are much harder to win on appeal unless the factual finding was perverse.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Custody and Alimony Appeals - Specific Rules</h2>
+        <p>
+          Custody and alimony appeals have some features that distinguish them from general civil appeals.
+        </p>
+        <h3>Custody appeals</h3>
+        <p>
+          UAE courts treat custody appeals with urgency because delays harm children. The expedited 60-90 day track applies where custody of a minor child is in dispute. If you believe the original custody order placed a child at risk, you can simultaneously apply for an urgent interim order while the appeal proceeds - this prevents the other parent from consolidating a position that would be hard to reverse.
+        </p>
+        <p>
+          A "change of circumstances" after the original judgment is handled differently: this is a <strong>modification application</strong> to the original court, not an appeal. For example, if your ex-spouse has moved abroad, remarried, or if the child has grown old enough that their own preference carries weight, the correct application is for modification rather than appeal.
+        </p>
+        <h3>Alimony appeals</h3>
+        <p>
+          Alimony quantum (amount) appeals are heard regularly. Grounds include: the court used the wrong income figure, failed to account for the wife's earning capacity, or applied the wrong period. Courts of Appeal frequently adjust alimony amounts - this is one area where partial modification outcomes are more common than full reversals.
+        </p>
+        <p>
+          If a husband's financial circumstances have genuinely changed after the original order (job loss, business failure, medical condition), the correct route is a modification application, not an appeal of the original amount.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Appeal Process Step by Step</h2>
+        <div class="step-list">
+          {appealSteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>How Much Does Appealing Cost?</h2>
+        <p>
+          Appeal costs in UAE divorce cases depend on emirate, complexity, and whether the appeal is contested. Below are realistic estimates for a contested appeal through to judgment.
+        </p>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-label">Court filing fees</p>
+            <p class="fee-amount">AED 500-2,000</p>
+            <p class="fee-note">Varies by emirate and claim type</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">Lawyer fees</p>
+            <p class="fee-amount">AED 8,000-20,000</p>
+            <p class="fee-note">Appeal brief, hearing attendance, correspondence</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">Total realistic budget</p>
+            <p class="fee-amount">AED 10,000-25,000</p>
+            <p class="fee-note">More for complex financial or international cases</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">Full reversal rate</p>
+            <p class="fee-amount">~15-25%</p>
+            <p class="fee-note">Partial modification 40-60% of appeals</p>
+          </div>
+        </div>
+        <p>
+          A lawyer who is honest about your case will assess the actual legal grounds before advising you to proceed. Appeals motivated purely by emotion or a desire to delay enforcement tend to fail and add significant cost for both parties. The 15-25% full reversal rate reflects how high the bar is for convincing an appellate court to overturn a first instance judgment entirely.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Appeals vs. Modification - An Important Distinction</h2>
+        <p>
+          Many people contact lawyers wanting to "appeal" a decision when what they actually need is a modification. These are fundamentally different legal processes:
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Appeal</th>
+                <th>Modification</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.aspect}</td>
+                  <td>{row.appeal}</td>
+                  <td>{row.modification}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Filing an appeal when you need a modification wastes your 30-day window and costs money. Filing a modification when you need an appeal lets the 30-day deadline expire. A brief consultation with a UAE family lawyer will quickly clarify which route is appropriate.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>When You Should Not Appeal</h2>
+        <p>
+          Not every unfavorable judgment has valid grounds for appeal. Consider not appealing when:
+        </p>
+        <ul class="checklist">
+          <li>Your dissatisfaction is with the factual finding rather than the legal analysis - courts of appeal rarely second-guess factual determinations unless they are clearly unreasonable</li>
+          <li>Your lawyer cannot identify a specific legal error in the judgment - emotional dissatisfaction is not a ground</li>
+          <li>The cost of appeal exceeds the financial value of what you might recover even if successful</li>
+          <li>You want to appeal a custody arrangement because of changed circumstances since the judgment - use a modification application instead</li>
+          <li>The appeal would primarily harm your children by extending litigation - courts are alert to parental conflict and prolonged proceedings can affect their assessment of both parents</li>
+          <li>You have already been through one unsuccessful appeal and are considering the Court of Cassation purely on factual grounds - cassation only addresses points of law</li>
+        </ul>
+        <p>
+          A good UAE family lawyer will tell you honestly when an appeal is unlikely to succeed. Be cautious of any lawyer who enthusiastically recommends an appeal without first conducting a detailed review of the legal grounds.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <FAQSection items={faqItems} />
+      </section>
+
+      <div class="cta-box">
+        <h2>Get Expert Advice on Your Appeal</h2>
+        <p>The 30-day window closes fast. If you have received a judgment you believe is wrong, get a professional legal assessment of your grounds before it is too late.</p>
+        <LeadForm source="divorce-appeal-uae" />
+      </div>
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <span class="related-title">Divorce Cost UAE 2025</span>
+            <span class="related-desc">Full fee breakdown for contested and uncontested cases</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <span class="related-title">Child Custody UAE</span>
+            <span class="related-desc">How UAE courts decide custody and visitation</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <span class="related-title">Alimony in UAE</span>
+            <span class="related-desc">How maintenance is calculated and enforced</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <span class="related-title">Divorce Timeline UAE</span>
+            <span class="related-desc">Stage-by-stage timeline from filing to decree</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.85), rgba(10,22,40,0.85)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 56rem; margin: 0 auto; }
+  .hero-tag { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .hero-desc { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
+  .sep { opacity: 0.4; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.45rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .grounds-list { display: flex; flex-direction: column; gap: 0.875rem; margin: 1rem 0 1.25rem; }
+  .ground-card { background: #f8f9fa; border-left: 3px solid #c9a84c; border-radius: 0 0.5rem 0.5rem 0; padding: 1rem 1.25rem; }
+  .ground-card h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.35rem; }
+  .ground-card p { font-size: 0.87rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .fee-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+  .fee-card { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .fee-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.4rem; }
+  .fee-amount { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .fee-note { font-size: 0.78rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) td { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+  .related-card { display: flex; flex-direction: column; gap: 0.35rem; background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1rem 1.25rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; }
+  .related-desc { font-size: 0.8rem; color: #6b7280; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .fee-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>
