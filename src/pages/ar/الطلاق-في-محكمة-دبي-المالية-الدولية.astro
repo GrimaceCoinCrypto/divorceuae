@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق في محكمة دبي المالية الدولية DIFC — دليل العمل في القطاع المالي ٢٠٢٥';
+const description =
+  'الطلاق في محاكم مركز دبي المالي العالمي DIFC: من يحق له استخدامها، كيف يختلف توزيع الأصول بالقانون الإنجليزي، الحضانة، التكاليف، وقانون دبي رقم ٢ لسنة ٢٠٢٥ لقضايا الأحوال الشخصية.';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-في-محكمة-دبي-المالية-الدولية/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/difc-divorce-dubai/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق في محكمة دبي المالية الدولية' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل يجب أن أعمل في DIFC لأتمكن من رفع دعوى طلاق فيها؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ليس بالضرورة. الاختصاص القضائي لمحاكم DIFC ينشأ بأساليب متعددة: موافقة الزوجين خطياً على اختصاص DIFC، أو ارتباط النزاع بعقد عمل مسجّل في DIFC، أو وجود أصول تحت إشراف جهات تنظيمية في DIFC، أو عقود تتضمن شرط اختصاص DIFC. كثير من المهنيين في القطاع المالي في دبي لديهم عقود عمل تنشئ هذا الارتباط تلقائياً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل طلاق DIFC أسرع من محاكم الدولة الاتحادية؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'عموماً نعم للقضايا المتنازع عليها. محاكم DIFC تُنهي قضايا النزاعات المالية المتنازع عليها في ٦-١٢ شهراً عادةً. قضايا المحاكم الاتحادية الإماراتية المتنازع عليها كثيراً ما تستغرق ١٢-٢٤ شهراً في الدرجة الأولى. DIFC محكمة متخصصة ذات حجم قضايا أصغر وثقافة إدارة قضايا تُركز على الكفاءة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يُعترف بحكم طلاق DIFC في المملكة المتحدة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. محاكم DIFC معترف بها كمحكمة أجنبية مشروعة في إنجلترا وويلز. حكم الطلاق الصادر عنها يُعترف به عموماً في الإجراءات البريطانية شريطة أن يكون الإجراء قد سار بعدالة إجرائية. الأساس القانوني الإنجليزي لمحاكم DIFC يُيسّر الاعتراف مقارنةً بأحكام المحاكم الاتحادية الإماراتية في بعض الحالات.',
+      },
+    },
+  ],
+};
+
+const difcVsFederal = [
+  { aspect: 'القانون المطبّق', difc: 'القانون الإنجليزي المشترك (Common Law)', federal: 'قانون الأحوال الشخصية الإماراتي / القانون ٤١/٢٠٢٢' },
+  { aspect: 'لغة الإجراءات', difc: 'الإنجليزية', federal: 'العربية' },
+  { aspect: 'توزيع الأصول', difc: 'مبدأ التقاسم (المساهمة، الحاجة، التعويض)', federal: 'ملكية منفصلة أو وفق اتفاقية ما قبل الزواج' },
+  { aspect: 'الحضانة الافتراضية', difc: 'مصلحة الطفل الفضلى، مشاركة والدية ممكنة', federal: 'حضانة مشتركة متساوية (غير مسلمين) / قرينة الأم (مسلمون)' },
+  { aspect: 'الشريعة الإسلامية', difc: 'لا تُطبَّق', federal: 'تُطبَّق على المسلمين' },
+  { aspect: 'المصالحة الإلزامية', difc: 'لا', federal: 'نعم للمسلمين؛ معفى منها غير المسلمون' },
+  { aspect: 'المدة (متنازع عليه)', difc: '٦-١٢ شهراً', federal: '١٢-٢٤ شهراً' },
+  { aspect: 'رسوم التقديم', difc: '٥٠٠٠-١٠٠٠٠ درهم', federal: '٢٠٠٠-٣٠٠٠ درهم' },
+  { aspect: 'أتعاب المحامين', difc: 'أعلى بـ١٥-٢٠٪ من الاتحادية', federal: 'معدلات محامي الأسرة الإماراتية العادية' },
+];
+
+const filingSteps = [
+  { n: 1, title: 'تقييم الاختصاص القضائي', body: 'تأكد من أن قضيتك تستوفي معايير اختصاص محاكم DIFC. محاميك سيراجع ما إذا كانت صلة DIFC قائمة من خلال العمل أو الأصول أو العقود أو الاتفاق الصريح. لا يُفترض الاختصاص وجوب إثباته.' },
+  { n: 2, title: 'إيداع الدعوى في سجل محاكم DIFC', body: 'يُقدَّم طلب الطلاق (وطلب التسوية المالية إذا لزم) في سجل محاكم DIFC في مبنى The Gate داخل المركز المالي في دبي. تُسدَّد رسوم الإيداع الأولية عند هذه المرحلة.' },
+  { n: 3, title: 'تبليغ الزوج الآخر', body: 'تُصدر المحكمة نسخةً مختومةً من الطلب تُسلَّم رسمياً للزوج الآخر. يمكن التبليغ في الإمارات أو خارجها عبر القنوات الرسمية المعتمدة. يُحدد للمدّعى عليه مهلة للرد.' },
+  { n: 4, title: 'مرحلة الإفصاح المالي', body: 'كلا الطرفين يُقدمان إفصاحاً مالياً كاملاً بالقسم: تفاصيل الأصول والمطلوبات والدخل والاحتياجات المالية. هذا إلزامي وشامل. الإخفاء المتعمد يُعدّ احتقاراً للمحكمة.' },
+  { n: 5, title: 'محاولة الوساطة', body: 'تُشجع محاكم DIFC بقوة على الوساطة قبل المحاكمة. كثير من القضايا تنتهي في هذه المرحلة. التسوية المسجّلة بالمحكمة قابلة للتنفيذ كأمر قضائي. الوساطة عادةً أسرع وأقل تكلفةً من المحاكمة الكاملة.' },
+  { n: 6, title: 'المحاكمة (إن تعذّرت التسوية)', body: 'إذا لم تُحسم القضية بالتسوية تُنظر أمام قاضٍ في DIFC. يُدلي كلا الطرفين بشهادتهما. قد تُستدعى شهود خبراء ماليين. القاضي يطبق مبادئ القانون الإنجليزي على الأدلة.' },
+  { n: 7, title: 'صدور الحكم', body: 'تُصدر محكمة DIFC حكماً مكتوباً يشمل الطلاق والتسوية المالية وأي أوامر مرتبطة. الحكم قابل للتنفيذ في الإمارات وفي المملكة المتحدة وغيرها من دول القانون الإنجليزي عبر إجراءات الاعتراف المعتمدة.' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يمكن للمسلمين استخدام محاكم DIFC للطلاق؟',
+    answer: 'محاكم DIFC تطبق القانون الإنجليزي لا قانون الأحوال الشخصية الإسلامي. الإطار الاعتيادي للطلاق للأزواج المسلمين في الإمارات هو المحاكم الاتحادية. الأزواج المسلمون الذين لديهم نزاعات تتعلق تحديداً بأصول خاضعة لتنظيم DIFC أو عقود عمل صادرة منها قد تقع جوانب من قضاياهم ضمن اختصاص DIFC، لكن الجوانب الشخصية كالطلاق والمهر والحضانة الإسلامية تبقى عموماً في المحاكم الاتحادية. هذه مسألة اختصاص قضائي معقدة تستلزم استشارة متخصصة.',
+  },
+  {
+    question: 'كيف تختلف قضية الأصول في DIFC عن المحكمة الاتحادية؟',
+    answer: 'الفارق جوهري. المحاكم الاتحادية تطبق نظام الملكية المنفصلة: كل زوج يحتفظ بما هو مسجل باسمه. محاكم DIFC تطبق مبدأ التقاسم الإنجليزي: الزواج شراكة متكافئة والأصول المكتسبة خلاله تُقسَّم عادةً بالتساوي بصرف النظر عمّن هي مسجلة باسمه. هذا يعني أن الزوجة غير العاملة في بيئة DIFC قد تحصل على نصيب أكبر بكثير مقارنةً بالمحاكم الاتحادية. محامٍ يقارن مآلات كلا المنظومتين على وضعك تحديداً هو استثمار يستحق تكلفته.',
+  },
+  {
+    question: 'ماذا يحدث لأصولي الإماراتية خارج DIFC إذا حكمت لي محكمة DIFC؟',
+    answer: 'حكم DIFC المالي لا يُنفَّذ تلقائياً على الأصول الواقعة خارج النطاق، كالعقارات المسجلة في دائرة الأراضي والأملاك في دبي أو الحسابات البنكية في البنوك غير التابعة لـ DIFC. يجب تسجيل الحكم لدى المحاكم الاتحادية الإماراتية عبر إجراء التنفيذ المعتمد. تستغرق هذه العملية عادةً ٢-٣ أشهر من صدور حكم DIFC حتى أمر التنفيذ الاتحادي. هذه خطوة معروفة وليست عقبة، ويُنسّقها محاميك ضمن القضية الإجمالية.',
+  },
+  {
+    question: 'هل يمكنني رفع دعوى في DIFC إذا كان زوجي خارج الإمارات؟',
+    answer: 'نعم، شريطة إثبات اختصاص DIFC. يمكن التبليغ الرسمي بالإجراءات للمقيمين في الخارج عبر القنوات الرسمية المعتمدة في دولة إقامتهم. وجود الزوج الآخر خارج الإمارات لا يحول دون قبول محاكم DIFC الاختصاص أو إصدار الأوامر، لكن تنفيذ تلك الأوامر في الخارج يستلزم إجراءات تنفيذ محلية مستقلة في تلك الدولة.',
+  },
+  {
+    question: 'هل تُراعي محاكم DIFC مصلحة الطفل في الحضانة بنفس طريقة المحاكم الإماراتية؟',
+    answer: 'نعم، مصلحة الطفل الفضلى هي المعيار الجوهري في كلا المنظومتين. لكن التطبيق يختلف: محاكم DIFC لا تعتمد قرائن أساسية قائمة على العمر لصالح الأم، ومشاركة الوالدين المتكافئة خيار متاح فعلاً. المحاكم الاتحادية الإماراتية للمسلمين كثيراً ما تُرجّح الأم للصغار وفق أحكام الشريعة. ولغير المسلمين في المحاكم الاتحادية الحضانة المشتركة المتساوية هي الافتراضية بموجب القانون ٤١/٢٠٢٢.',
+  },
+  {
+    question: 'ما حكم أصول صندوق DEWS في DIFC خلال الطلاق؟',
+    answer: 'أصول صندوق DEWS (نظام ادخار موظفي DIFC) محفوظة في حساب شخصي لكل موظف ولا تنتقل تلقائياً للزوج الآخر في الطلاق. لكن أمراً قضائياً مالياً من محكمة DIFC يمكنه نظرياً تحديد مبالغ متعلقة بـ DEWS ضمن تسوية مالية أشمل. احصل على كشف رصيدك الحالي من DEWS وأحطِ به محاميك في وقت مبكر.',
+  },
+  {
+    question: 'ما الفرق بين محاكم DIFC لأغراض الأسرة وبين القانون ٤١/٢٠٢٢ للمحاكم الاتحادية؟',
+    answer: 'القانون ٤١/٢٠٢٢ هو الإطار الاتحادي للأحوال الشخصية المدنية لغير المسلمين في المحاكم الاتحادية الإماراتية. محاكم DIFC منظومة قضائية مستقلة تطبق القانون الإنجليزي عبر قانون دبي رقم ٢ لسنة ٢٠٢٥ لقضايا أحوال شخصية غير المسلمين في DIFC. الأول يُوفر طلاقاً مدنياً بإجراءات عربية ونظام ملكية منفصلة. الثاني يُتيح إجراءات إنجليزية ومبدأ تقاسم الأصول. الاختيار بينهما يؤثر على الحصص المالية تأثيراً كبيراً.',
+  },
+  {
+    question: 'هل يمكنني الاستئناف ضد حكم DIFC؟',
+    answer: 'نعم. لمحاكم DIFC آلية استئناف مستقلة. الطعن في أحكام DIFC يُقدَّم لمحكمة استئناف DIFC ذاتها، لا للمحاكم الاتحادية الإماراتية. هذه المحكمة تعمل بالإنجليزية وتطبق معايير قانونية مختلفة عن معايير الاستئناف في المحاكم الاتحادية. مهلة الاستئناف وإجراءاته يُحددها نظام DIFC الداخلي لا الإطار الاتحادي الإماراتي.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">محاكم DIFC · دبي ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        مركز دبي المالي العالمي يضم منظومة قضائية مستقلة تعمل وفق القانون الإنجليزي — بديلاً حقيقياً لمحاكم الأسرة الاتحادية للمقيمين الأجانب المؤهلين. بموجب قانون دبي رقم ٢ لسنة ٢٠٢٥، يتعامل DIFC مع قضايا الأحوال الشخصية لغير المسلمين. هذا الدليل يشرح من يحق له استخدامه، وكيف يختلف توزيع الأصول والحضانة، والتكاليف، ومتى يكون DIFC الخيار الأمثل.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>أرقام رئيسية</h2>
+        <div class="summary-grid summary-grid--4">
+          <div class="summary-card">
+            <p class="summary-label">رسوم إيداع DIFC</p>
+            <p class="summary-value">٥٠٠٠-١٠٠٠٠ درهم</p>
+            <p class="summary-note">في سجل محاكم DIFC</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">المدة الزمنية</p>
+            <p class="summary-value">٦-١٢ شهراً</p>
+            <p class="summary-note">للقضايا المتنازع عليها؛ أسرع من الاتحادية</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">القانون المطبّق</p>
+            <p class="summary-value">القانون الإنجليزي</p>
+            <p class="summary-note">لا قانون الأحوال الشخصية الإماراتي</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">معيار الحضانة</p>
+            <p class="summary-value">مصلحة الطفل الفضلى</p>
+            <p class="summary-note">لا قرائن أساسية قائمة على العمر</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>ما DIFC ومن تختص قضاياه بمحاكمه؟</h2>
+        <p>
+          مركز دبي المالي العالمي منطقة مالية حرة اتحادية أُسست عام ٢٠٠٤ وتعمل بمنظومتها القضائية الخاصة المستندة إلى القانون الإنجليزي. كان اختصاصها الأسري في بداياته محدوداً، قبل أن يُوسَّع بموجب قانون دبي رقم ٢ لسنة ٢٠٢٥ ليشمل قضايا الأحوال الشخصية لغير المسلمين على نحو أوضح.
+        </p>
+        <p>
+          تختص محاكم DIFC بقضايا أسرة غير المسلمين (طلاق، تسوية مالية، ترتيبات الأطفال) حين يكون الطرفان قد قبلا بالاختصاص أو حين تنشأ الدعوى من أمور مرتبطة بـ DIFC. القبول باختصاص DIFC يتم عبر اتفاق مسبق أو موافقة الطرفين بعد انهيار الزواج.
+        </p>
+        <p>
+          ينشأ اختصاص محاكم DIFC عموماً حين:
+        </p>
+        <ul class="checklist">
+          <li>كلا الطرفين أعضاء في DIFC (موظفون أو كيانات مرخصة داخل المركز)</li>
+          <li>النزاع المالي يتعلق بأصول أو عقود أو وظائف خاضعة لتنظيم DIFC</li>
+          <li>اتفاقية الزواج أو عقد ما قبل الزواج يتضمن شرط اختصاص DIFC</li>
+          <li>قبل الطرفان صراحةً بالاختصاص لمعالجة قضيتهما الأسرية</li>
+        </ul>
+        <div class="info-box info-box--warning">
+          <h3>تقييم الاختصاص شرط أساسي</h3>
+          <p>لا تفترض أن اختصاص DIFC منطبق على قضيتك. تقييم أولي بواسطة محامٍ مرخص في DIFC ضروري قبل الإيداع. تقديم دعوى لجهة غير مختصة يُؤدي إلى ردها وضياع وقت ثمين.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>DIFC مقابل المحاكم الاتحادية: الفوارق الجوهرية</h2>
+        <p>
+          الاختيار بين DIFC والمحاكم الاتحادية ليس مجرد تفضيل، بل قد يُغيّر النتيجة المالية للطلاق تغييراً جوهرياً للأزواج غير المسلمين.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الجانب</th>
+                <th>محاكم DIFC</th>
+                <th>المحاكم الاتحادية الإماراتية</th>
+              </tr>
+            </thead>
+            <tbody>
+              {difcVsFederal.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.aspect}</td>
+                  <td>{row.difc}</td>
+                  <td>{row.federal}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          أكثر فارق عملي هو في توزيع الأصول. المحاكم الاتحادية تطبق الملكية المنفصلة افتراضياً: كل طرف يحتفظ بما في اسمه. محاكم DIFC تطبق مبدأ التقاسم الإنجليزي: تفحص الصورة المالية الإجمالية وقد تأمر بتحويل أصول لتحقيق نتيجة عادلة بصرف النظر عمّن هي مسجلة باسمه.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>توزيع الأصول وفق القانون الإنجليزي في DIFC</h2>
+        <p>
+          القانون الإنجليزي لا يُقرر صيغةً ثابتةً لتقسيم الأصول. قضاة DIFC يطبقون مبدأ <strong>التقاسم</strong>: الزواج شراكة متكافئة والأصول المكتسبة خلاله تُقسَّم عموماً بالتساوي ما لم تكن ثمة أسباب وجيهة للانحراف عن ذلك.
+        </p>
+        <h3>العوامل التي تأخذها المحكمة بعين الاعتبار</h3>
+        <ul class="checklist">
+          <li><strong>المساهمة:</strong> ما أسهم به كل طرف في الزواج مالياً وغير مالياً (تربية الأطفال، تدبير المنزل)</li>
+          <li><strong>الحاجة:</strong> ما يحتاجه كل طرف مستقبلاً، لا سيما السكن والدخل لتغطية المصروفات المعقولة</li>
+          <li><strong>التعويض:</strong> إذا ضحّى أحد الطرفين بمساره المهني لمصلحة الأسرة قد تُقضي له المحكمة بتعويض</li>
+          <li><strong>مدة الزواج:</strong> الزيجات القصيرة قد تُبقي الأصول السابقة للزواج محمية؛ الزيجات الطويلة تُعامَل فيها الأصول كمشتركة عادةً</li>
+          <li><strong>ترتيبات الأطفال:</strong> الحاضن الرئيسي يحتفظ في الغالب بالمنزل أو يحصل على رأس مال أكبر للسكن قرب المدارس</li>
+        </ul>
+        <h3>الإفصاح المالي إلزامي وشامل</h3>
+        <p>
+          محاكم DIFC تشترط إفصاحاً مالياً كاملاً مُقسَماً: كشوفات بنكية، حسابات استثمار، مصالح تجارية، تقييمات عقارية، قيم معاشات، سجلات دخل. هذا غير اختياري. الإخفاء المتعمد احتقار للمحكمة يترتب عليه عواقب وخيمة تشمل الغرامات وأوامر التكاليف المعاكسة. ثقافة الإفصاح أكثر صرامةً بكثير مما هي في الإجراءات الاتحادية.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>إجراءات تقديم دعوى الطلاق في محاكم DIFC</h2>
+        <div class="step-list">
+          {filingSteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>تكلفة طلاق DIFC مقابل الطلاق الاتحادي</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-label">رسوم إيداع DIFC</p>
+            <p class="fee-amount">٥٠٠٠-١٠٠٠٠ درهم</p>
+            <p class="fee-note">يتوقف على التعقيد والطلبات المُقدَّمة</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">أتعاب محامي DIFC</p>
+            <p class="fee-amount">٢٠٠٠٠-٨٠٠٠٠ درهم+</p>
+            <p class="fee-note">القضايا المتنازع عليها مع طلبات مالية</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">أتعاب محامٍ اتحادي</p>
+            <p class="fee-amount">١٠٠٠٠-٥٠٠٠٠ درهم+</p>
+            <p class="fee-note">قضايا مماثلة؛ معدلات ساعية أقل عادةً</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">ميزانية DIFC الإجمالية (معقدة)</p>
+            <p class="fee-amount">٣٠٠٠٠-١٢٠٠٠٠ درهم</p>
+            <p class="fee-note">نزاع مالي وخلافات حضانة في آن واحد</p>
+          </div>
+        </div>
+        <p>
+          التكلفة الأعلى لـ DIFC تُخففها المدة الأقصر جزئياً، فالمحامون يتقاضون بالوقت وقضية ٦-١٢ شهراً أقل تكلفةً من حيث الساعات من قضية ١٢-٢٤ شهراً في الدرجة الأولى الاتحادية. وفي القضايا المالية كبيرة الحجم قد يُنتج مبدأ التقاسم الإنجليزي نتيجةً أفضل ماليةً لأحد الطرفين تجعل التكلفة الإضافية مبررةً.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <div class="cta-box">
+        <h2>اعرف ما إذا كانت DIFC الخيار الأنسب لقضيتك</h2>
+        <p>ليس كل طلاق لمقيم أجنبي ينتمي إلى محاكم DIFC. استشارة قصيرة تُخبرك ما إذا كنت مؤهلاً، وما إذا كان القانون الإنجليزي يُنتج نتيجةً أفضل لك، وما هي التكاليف المتوقعة.</p>
+        <LeadForm source="difc-divorce-dubai-ar" />
+      </div>
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/طلاق-غير-المسلمين-الامارات/" class="related-card">
+            <strong>طلاق غير المسلمين في الإمارات</strong>
+            <span>حقوق القانون ٤١/٢٠٢٢ والبديل عن DIFC</span>
+          </a>
+          <a href="/ar/التخطيط-المالي-للطلاق-الامارات/" class="related-card">
+            <strong>التخطيط المالي للطلاق</strong>
+            <span>حماية أصولك خلال إجراءات الطلاق</span>
+          </a>
+          <a href="/ar/اتفاقية-ما-قبل-الزواج-الامارات/" class="related-card">
+            <strong>اتفاقية ما قبل الزواج</strong>
+            <span>كيف تضع شرط اختصاص DIFC في عقدك</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل للإجراءات والخيارات المتاحة</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.72rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) td { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .fee-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+  .fee-card { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .fee-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.4rem; }
+  .fee-amount { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .fee-note { font-size: 0.78rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .fee-grid { grid-template-columns: 1fr; }
+    .summary-grid, .summary-grid--4 { grid-template-columns: 1fr; }
+  }
+</style>

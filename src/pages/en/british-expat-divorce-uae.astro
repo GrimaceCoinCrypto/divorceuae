@@ -1,0 +1,445 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'British Expat Divorce in UAE: English Courts vs UAE Courts Explained';
+const description =
+  'British expats divorcing in Dubai face a major financial choice: UAE courts apply separate property only, while English courts can redistribute all assets. This guide covers Part III claims, the SA v FA ruling, UK pensions, UAE travel bans, and what your UAE divorce means back in England.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/british-expat-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمقيمين-البريطانيين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'British Expat Divorce UAE', url: 'https://divorceu.ae/en/british-expat-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I divorce in England while living in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. English courts accept divorce petitions from British nationals resident abroad provided you were domiciled in England and Wales at the time of marriage, or have habitual residence there (which typically requires at least 12 months of residence in the 12 months before filing). If you have been living in Dubai for several years your habitual residence is likely UAE, but domicile of origin as an English national may still allow you to petition in England. You should take advice in both jurisdictions before choosing where to file.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will my UAE divorce be valid in England?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally yes. England recognises foreign divorces obtained through official court proceedings under the Family Law Act 1986, provided both parties had notice of the proceedings and an opportunity to take part. A UAE court divorce decree (authenticated and apostilled) will be recognised in England. Talaq divorces obtained without court proceedings are not recognised in England under the Divorce (Religious Marriages) Act 2002.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who gets the Dubai apartment after a British expat divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under UAE law (Federal Decree-Law No. 41 of 2024 for Muslims; No. 41 of 2022 for non-Muslims), the spouse whose name is on the DLD title deed keeps the property. UAE has no community property rule. However, if you divorce in England or bring Part III proceedings after a UAE divorce, an English court can order financial provision that takes the Dubai property into account, including ordering a lump sum payment equivalent to your share of its value.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I claim UK pension rights after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts will not divide a UK state pension or private pension. For private pensions and SIPPs, you would need to bring separate English court proceedings (via Part III of the Matrimonial and Family Proceedings Act 1984 after the UAE divorce, or in English divorce proceedings if you petition there) to obtain a pension sharing order. UK state pension rights in a UAE divorce are simply not available under UAE law.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my spouse refuses to leave UAE with our children?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts can impose a travel ban preventing children from leaving the country pending a custody determination. Because the UAE is not a signatory to the Hague Convention on International Child Abduction, there is no automatic return mechanism. An English court order granting you custody has no direct enforcement in UAE. You would need to apply to UAE courts to recognise the English order, and UAE courts are not obliged to do so. This is one of the most serious risks for British parents in UAE divorces.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Part III of the Matrimonial and Family Proceedings Act 1984?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Part III allows a spouse to apply to the English courts for financial relief after an overseas divorce. The court must first grant leave (permission) to proceed, considering whether England is the appropriate forum. If granted, the English court can make the same orders it could have made in an English divorce, including property adjustment, lump sum, pension sharing, and periodical payments. This is a significant safety net for British nationals who received an inadequate financial outcome in UAE proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the SA v FA case mean English courts defer to UAE courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SA v FA [2022] EWFC 115 involved the English court staying its own divorce proceedings in favour of the Abu Dhabi Civil Family Court, finding that Abu Dhabi was the more appropriate forum. This confirms that English courts treat UAE courts (including Abu Dhabi Civil Family Court under Law No. 14 of 2021) as legitimate venues capable of providing justice. It does not mean you have no recourse in England: Part III applications after a UAE divorce remain available, and courts assess each case on its facts.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are UK-registered marriages valid for UAE divorce proceedings?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A UK marriage certificate, apostilled under the Hague Apostille Convention and accompanied by a certified Arabic translation, is accepted by UAE courts and notaries as proof of marriage. The UAE and UK are both party to the Hague Apostille Convention, so the authentication process is straightforward. You will need the original certificate (or a certified copy from the General Register Office), the apostille from the UK Legalisation Office, and an Arabic translation certified by a UAE-licensed translator.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to my non-dom tax status and UK inheritance tax if I transfer assets during a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Asset transfers between spouses during divorce proceedings can trigger UK capital gains tax, stamp duty land tax (on UK property), and inheritance tax implications depending on the structure of the transfer and your domicile status. The inter-spouse CGT exemption applies during the tax year of separation and for up to three tax years after separation under the Finance Act 2022. Non-dom status is based on domicile, not residence, and does not automatically change because you are living in Dubai. Specialist UK tax advice alongside your UAE legal advice is strongly recommended for any British expat with significant UK assets.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a British expat divorce in UAE typically cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested divorce in UAE courts typically costs AED 8,000 to AED 15,000 in total (legal fees, court fees, translation, attestation). A contested divorce runs AED 20,000 to AED 50,000 or more depending on complexity. If you subsequently bring Part III proceedings in England, English barrister and solicitor fees will add significantly to that. A cross-border case with property in both countries, pension assets, and children issues can reach six figures in combined legal costs.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/british-expat-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">British Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>British Expat Divorce in UAE: The Financial Stakes Are Higher Than You Think</h1>
+      <p class="hero-desc">
+        The difference between divorcing in UAE courts and divorcing in England is not procedural. It is financial. UAE applies separate property only. England can redistribute everything. For British expats in Dubai with joint assets, the choice of forum can mean the difference of hundreds of thousands of dirhams.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for British expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>UAE has no community property.</strong> Title deed controls. England can redistribute all assets regardless of ownership.</li>
+          <li><strong>Part III MFPA 1984</strong> is the safety net: British nationals can bring financial claims in England after a UAE divorce.</li>
+          <li><strong>SA v FA [2022] EWFC 115</strong> confirms English courts treat UAE courts as legitimate forums, but does not close off English proceedings.</li>
+          <li><strong>UK private pensions and SIPPs</strong> are not divided by UAE courts. English proceedings are required for pension sharing.</li>
+          <li><strong>UAE is not a Hague Convention signatory.</strong> English custody orders have no automatic enforcement in UAE.</li>
+          <li><strong>Costs:</strong> Uncontested UAE divorce AED 8,000 to 15,000; contested AED 20,000 to 50,000+.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>The Forum Decision: Where You Divorce Changes What You Get</h2>
+        <p>
+          The single most important decision in a British expat divorce is where to file. UAE courts and English courts operate on fundamentally different financial philosophies, and the gap in outcome for a couple with significant assets can be enormous.
+        </p>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the UAE Personal Status Law, effective 15 April 2025), and under <strong>Federal Decree-Law No. 41 of 2022</strong> for non-Muslims, UAE courts apply a separate property regime. Each spouse keeps what is registered in their name. There is no automatic sharing of marital wealth. The financially stronger spouse, who typically holds more assets in their own name, benefits from UAE jurisdiction. The financially weaker spouse, often the one who stepped back from their career to raise children or support the family's life in Dubai, typically does better in England.
+        </p>
+        <p>
+          English courts apply the Matrimonial Causes Act 1973 Section 25 factors, giving courts wide discretion to redistribute assets, equalise standards of living, and provide for both parties' needs. On assets of any real value, these different frameworks produce very different numbers.
+        </p>
+
+        <div class="compare-grid">
+          <div class="compare-col compare-col--uae">
+            <h3>UAE Courts</h3>
+            <ul>
+              <li>Separate property: title deed controls</li>
+              <li>No automatic redistribution of assets</li>
+              <li>Wife's financial rights: mahr, iddah maintenance, child support</li>
+              <li>Non-Muslim expats can elect home country law (Article 13 Civil Code)</li>
+              <li>Abu Dhabi Civil Family Court (Law No. 14 of 2021) for non-Muslims in Abu Dhabi</li>
+              <li>DIFC Courts available for complex cross-border cases</li>
+              <li>Uncontested: AED 8,000 to 15,000 total</li>
+              <li>Contested: AED 20,000 to 50,000+</li>
+            </ul>
+          </div>
+          <div class="compare-col compare-col--eng">
+            <h3>English Courts</h3>
+            <ul>
+              <li>Full redistribution of all assets, regardless of title</li>
+              <li>Needs-based: courts provide for both spouses' futures</li>
+              <li>Pension sharing orders available (QDRO equivalent)</li>
+              <li>Clean break settlements common in high-asset cases</li>
+              <li>Spousal maintenance (periodical payments) possible</li>
+              <li>Jurisdiction requires domicile or habitual residence in E&amp;W</li>
+              <li>Can consider overseas assets including Dubai property</li>
+              <li>Higher legal costs but potentially far larger financial outcomes</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          The jurisdiction decision cannot be unmade once proceedings have started in earnest. The first party to file in a particular court gains an advantage, because courts are reluctant to cede jurisdiction once seized. If both parties are British nationals and both have any connection to England, there will be a race to file, with the financially weaker spouse typically wanting to file in England and the stronger spouse preferring UAE.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Part III Matrimonial and Family Proceedings Act 1984: The Safety Net</h2>
+        <p>
+          Even after a UAE divorce has been finalised, British nationals have an important safety net: Part III of the Matrimonial and Family Proceedings Act 1984. This allows a party to apply to the English High Court for financial relief after obtaining an overseas divorce, provided the court grants permission to proceed.
+        </p>
+        <p>
+          Part III was designed precisely for cases where the financial outcome from a foreign divorce is inadequate. The classic scenario for a British expat: a UAE divorce is obtained, the wife receives her mahr and iddah maintenance but nothing from the Dubai apartment, pension, or investment accounts that were all in the husband's name. She is a British national, may have lived or worked in England, and has property connections there. She applies under Part III.
+        </p>
+
+        <h3>How Part III works</h3>
+        <p>
+          The applicant files in the Family Court (or High Court for substantial assets) and applies first for leave to proceed. The court considers whether England is an appropriate venue, looking at the parties' connection to England, the financial resources in England, the adequacy of what was received from the overseas divorce, and whether it would be appropriate for an order to be made in England. The court must be satisfied it is appropriate for an order to be made, having particular regard to factors including the countries where the parties reside and have assets.
+        </p>
+        <p>
+          If leave is granted, the court proceeds to a full financial hearing applying the same Section 25 criteria used in an English divorce. The court can make property adjustment orders, lump sum orders, pension sharing orders, and periodical payments orders. Critically, the court can take into account the Dubai apartment and other UAE assets in assessing the overall financial position, even if it cannot directly transfer the DLD title.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Timing matters: apply before assets move</h3>
+          <p>Part III applications should be made promptly after the overseas divorce, before the financially stronger spouse moves or dissipates assets. An English court can grant a freezing injunction over assets pending the Part III application. If your UAE divorce is approaching conclusion and you believe Part III may be relevant, brief an English solicitor before the UAE decree is issued so they can advise on timing and potential interim relief.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>SA v FA [2022] EWFC 115: What It Actually Means</h2>
+        <p>
+          The case of SA v FA, decided by Mr Justice Peel in the English Family Court in August 2022, is frequently cited in discussions of British expat divorces in UAE. It is important to understand what it decided and what it did not.
+        </p>
+        <p>
+          In SA v FA, both parties were British nationals living in Abu Dhabi. Divorce proceedings were started by one party in England and by the other in the Abu Dhabi Civil Family Court (the court established under <strong>Abu Dhabi Law No. 14 of 2021</strong> to apply civil family law to non-Muslim expats). The English court was asked to stay (pause) the English proceedings in favour of the Abu Dhabi court.
+        </p>
+        <p>
+          The court stayed the English proceedings, finding that the Abu Dhabi Civil Family Court was clearly a more appropriate forum. Key factors were: both parties lived and worked in Abu Dhabi; the majority of assets were in Abu Dhabi; the children attended school in Abu Dhabi; the Abu Dhabi court was equipped to apply civil family law to non-Muslim expats and had the tools to deal with the financial issues in the case.
+        </p>
+        <p>
+          This is significant for two reasons. First, it demonstrates that English courts regard UAE civil family courts (including the Abu Dhabi Civil Family Court under Law No. 14 of 2021) as legitimate forums capable of delivering justice. A stay in favour of a UAE court is not a statement that the UAE system is inadequate. Second, however, staying English proceedings does not close off Part III entirely. If the Abu Dhabi outcome proved inadequate, the applicant retained the right to apply under Part III (though this would face scrutiny on the leave application).
+        </p>
+        <p>
+          For British expats in Dubai, the lesson is pragmatic: where you have lived your whole life in Dubai, where all your assets are in Dubai, and where any children attend school in Dubai, an English court may well stay its own proceedings in favour of UAE courts. This is not a disaster if the UAE forum can deliver a fair outcome. But if you are in a jurisdiction (Dubai, not Abu Dhabi) without a dedicated non-Muslim civil family court, or if your financial situation means UAE courts would produce a significantly worse outcome, the forum strategy matters greatly.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>UK Marriage Registration: Apostille and Documentation</h2>
+        <p>
+          British nationals married in England, Scotland, or Wales can use that marriage certificate in UAE divorce proceedings. The UK and UAE are both signatories to the Hague Apostille Convention, which simplifies the authentication process considerably.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Obtain a certified copy of the marriage certificate</h3>
+              <p>Order from the General Register Office (GRO) in England and Wales, or the equivalent in Scotland or Northern Ireland. Allow 7 to 10 working days. A recent certified copy is preferred over a decades-old original for international proceedings.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Obtain the apostille from the UK Legalisation Office</h3>
+              <p>Submit to the Legalisation Office (part of the Foreign, Commonwealth and Development Office). The apostille certifies the GRO's signature and is the authentication recognised by UAE authorities. Cost: GBP 30 per document. Online applications typically processed in 2 to 3 working days.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Arabic translation by a UAE-licensed translator</h3>
+              <p>The apostilled certificate must be translated into Arabic by a translator licensed by the UAE Ministry of Justice. Translation offices in Dubai provide this service; allow 1 to 2 working days. Cost: AED 150 to 300 for a marriage certificate.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>MOFA attestation (if required by the UAE court)</h3>
+              <p>Some UAE courts require an additional attestation stamp from the UAE Ministry of Foreign Affairs (MOFA). This is applied to the translated document. The UAE MOFA has service centres in Dubai; attestation takes 1 to 3 days. Not all courts require this for apostilled documents, but obtain it to avoid adjournments.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>UK Pensions in UAE Divorce: State Pension, SIPPs, and Workplace Schemes</h2>
+        <p>
+          Pensions are one of the most significant assets in any British family's financial position, yet UAE courts cannot divide them. Understanding which pensions are at stake and what you can do about them is essential for any British expat facing divorce.
+        </p>
+
+        <h3>UK state pension</h3>
+        <p>
+          The UK state pension is an individual entitlement based on National Insurance contributions. UAE courts have no mechanism to divide state pension rights. Even if you bring English proceedings or Part III claims, English courts are generally reluctant to issue pension sharing orders on the state pension, preferring instead to take its value into account when calculating overall financial provision. For British expats who spent many years in the UAE and therefore have limited NI contributions, state pension disparity may be relevant to a needs-based assessment in English proceedings.
+        </p>
+
+        <h3>Workplace pensions and SIPPs</h3>
+        <p>
+          Defined benefit (final salary) schemes and defined contribution schemes including SIPPs are significant assets. UAE courts do not divide UK pension schemes and have no mechanism to issue pension sharing orders under English pension legislation. This means that if you divorce in UAE and your spouse has a large SIPP or final salary scheme pension in the UK, you will receive nothing from it through UAE proceedings.
+        </p>
+        <p>
+          The remedy is English proceedings, either by filing for divorce in England (if you have the jurisdictional basis) or by bringing a Part III application after the UAE divorce. An English court can then make a pension sharing order, which is implemented by the pension provider under the Welfare Reform and Pensions Act 1999. Forensic tracing of pension assets is possible: pension providers must respond to a Financial Statement request, and where a spouse has moved pension assets to obscure them, actuarial analysis can estimate the true value of transferred-out funds.
+        </p>
+
+        <h3>HMRC and tax implications</h3>
+        <p>
+          British nationals moving assets between UAE and the UK during or after divorce face several HMRC considerations. Capital gains tax applies to UK property transfers on divorce unless the inter-spouse exemption applies (available for up to three years after separation under Finance Act 2022). Non-domiciliary status (non-dom) does not disappear because you are living in Dubai: domicile is determined by your intentions and connections, not simply your current residence. Any British national with a large UK asset base who plans to repatriate funds should take specialist UK tax advice before finalising any divorce settlement.
+        </p>
+        <p>
+          Inheritance tax (IHT) is a particular consideration for British nationals with UK property or assets. The spousal IHT exemption applies during marriage. Post-divorce transfers to a former spouse do not attract the spousal exemption. If significant UK assets are changing hands in a divorce settlement, the IHT consequences should be modelled before the settlement terms are finalised.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Children: Travel Bans, Custody, and the Hague Gap</h2>
+        <p>
+          For British parents in the UAE, child custody is the area where the absence of Hague Convention protection has the most severe practical consequences. This is not a technicality: it is a situation that leaves one parent in a very exposed position.
+        </p>
+
+        <h3>The Hague Convention gap</h3>
+        <p>
+          The Hague Convention on the Civil Aspects of International Child Abduction (1980) requires signatory countries to return children promptly to their country of habitual residence when they have been wrongfully removed or retained. The UAE is not a signatory. This means an English court order for the return of children who have been retained in the UAE by the other parent cannot be directly enforced. An English parent seeking the return of their children from UAE must apply to UAE courts, which will apply UAE law and consider the best interests of the child under UAE standards.
+        </p>
+        <p>
+          The asymmetry runs in both directions. A UAE court can impose a travel ban on children of the marriage, preventing them from leaving the UAE pending a custody determination. Even if an English court has granted a British parent parental responsibility and the right to remove the child to the UK, a UAE travel ban operates independently and UAE authorities will enforce it. British parents who are concerned that the UAE-based spouse may seek a travel ban should take urgent legal advice before the divorce proceedings are served.
+        </p>
+
+        <h3>Custody under UAE law for non-Muslim British expats</h3>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2022</strong>, joint custody is the default position for non-Muslim couples. This is a significant shift from the previous framework. Both parents retain legal guardianship. Physical custody arrangements are determined by the courts based on the best interests of the child. The parent wishing to relocate to the UK with the children after divorce must obtain the other parent's consent or a court order permitting relocation. UAE courts are generally protective of the child's access to both parents and are not quick to permit international relocation.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Practical Strategy: What to Do First</h2>
+        <p>
+          If you are a British national in the UAE and divorce is a possibility, the steps you take before formally filing matter enormously. Once proceedings start, the options narrow quickly.
+        </p>
+        <ul>
+          <li><strong>Get a UAE family lawyer and an English solicitor in the same week.</strong> You need both perspectives simultaneously. The forum decision cannot be unmade, and the English solicitor needs to assess whether you have jurisdictional grounds in England before you file anywhere.</li>
+          <li><strong>Document your financial position comprehensively.</strong> Bank statements, pension statements, property valuations, share portfolios, SIPP values, payslips from both parties. Take copies of everything you have access to before proceedings start.</li>
+          <li><strong>Consider a precautionary attachment in UAE</strong> if there is a risk your spouse will move or transfer assets before proceedings conclude. An application to the Court of Urgent Matters can freeze UAE assets within 48 hours.</li>
+          <li><strong>Assess the DLD transfer option for property.</strong> If both parties agree on who keeps the Dubai property, a transfer made while still married costs 0.125% DLD fee versus 4% post-divorce. On a AED 2 million apartment that is a saving of approximately AED 75,000.</li>
+          <li><strong>Brief your English solicitor on pension assets.</strong> If your spouse has a large SIPP or defined benefit pension, an English pension sharing order may be the only mechanism to access it. This needs English proceedings, and timing matters.</li>
+        </ul>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>DLD fees, contribution claims, and joint mortgages</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+          <a href="/en/difc-divorce-dubai/" class="related-card">
+            <strong>DIFC Courts for Divorce</strong>
+            <span>When the DIFC route makes sense for British expats</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody, travel bans, and relocation rules</span>
+          </a>
+          <a href="/en/visa-after-divorce-uae/" class="related-card">
+            <strong>Visa After Divorce UAE</strong>
+            <span>The 30-day rule and residency options after separation</span>
+          </a>
+          <a href="/en/uae-divorce-recognised-uk/" class="related-card">
+            <strong>UAE Divorce Recognised in UK</strong>
+            <span>Family Law Act 1986 rules and Part III MFPA claims</span>
+          </a>
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>Where to Divorce: UAE or Home Country?</strong>
+            <span>5-jurisdiction comparison and the race-to-file strategy</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .compare-col { border-radius: 10px; padding: 1.25rem; }
+  .compare-col--uae { background: #fef9ec; border: 1.5px solid #c9a84c; }
+  .compare-col--eng { background: #eff6ff; border: 1.5px solid #93c5fd; }
+  .compare-col h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.75rem; }
+  .compare-col ul { margin: 0; padding-left: 1.1rem; }
+  .compare-col li { font-size: 0.85rem; color: #374151; line-height: 1.7; margin-bottom: 0.3rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,408 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Filipino Divorce in UAE: What OFWs and Expats Actually Need to Know';
+const description =
+  'The Philippines does not recognise divorce for non-Muslims. Filipino expats in Dubai can divorce under UAE law, but the Philippines will not recognise it unless they go through a recognition petition. Filipino Muslims have a different and simpler path. Full guide covering annulment, recognition of foreign divorce, and OFW rights.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/filipino-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للفلبينيين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Filipino Divorce UAE', url: 'https://divorceu.ae/en/filipino-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I get divorced in UAE if I am Filipino?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAE courts will process your divorce regardless of your nationality. Non-Muslim Filipinos are processed under Federal Decree-Law No. 41 of 2022 (the civil family law for non-Muslims). Filipino Muslims can divorce under Federal Decree-Law No. 41 of 2024. The UAE divorce is legally effective within the UAE immediately upon issuance. The critical issue is recognition in the Philippines: see below.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will a UAE divorce be recognised in the Philippines?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally no, for non-Muslim Filipinos. The Philippines does not have a divorce law for non-Muslims. A UAE divorce obtained by a non-Muslim Filipino will not automatically be recognised in the Philippines. To have it recognised, you must file a "Petition for Recognition of Foreign Divorce" in the Philippine Regional Trial Court. However, if the divorce was obtained by the non-Filipino spouse (a UAE national, for example), the Filipino spouse may be able to get that foreign divorce recognised in the Philippines under Republic Act 8369 provisions and Supreme Court jurisprudence. Filipino Muslims who divorce under PD 1083 have a different and more direct route.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I annul my marriage in UAE if I am Filipino?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Philippine annulment proceedings cannot be filed from UAE directly, as they must be filed in a Philippine Regional Trial Court in the province where either party resides or where the marriage was registered. You can engage a Philippine lawyer to file on your behalf, attending only the hearings that require your physical presence. Annulment typically takes 3 to 8 years and costs PHP 500,000 to PHP 2,000,000 or more in legal fees depending on the complexity and the court\'s caseload. There is no shortcut within the Philippine system for non-Muslims.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to my OFW insurance and OWWA benefits during divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'OFW insurance under the Migrant Workers and Overseas Filipinos Act (Republic Act 10022) and OWWA membership benefits are individually held. They are not marital assets and do not become subject to division in divorce proceedings. OWWA benefits vest in the individual OFW member. However, beneficiary designations (for life insurance, SSS, GSIS) may need to be updated after divorce, and this requires completing the relevant agency forms. Do this promptly after your divorce is finalised to avoid complications.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I remarry after a UAE divorce if I am Filipino?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In the UAE: yes, immediately after your UAE divorce is finalised, subject to UAE law requirements (waiting period for women). In the Philippines: no, until the Philippine courts have issued an order recognising the foreign divorce, or until you obtain a Philippine annulment or declaration of nullity. Attempting to remarry in the Philippines while still legally married there constitutes bigamy under Article 349 of the Revised Penal Code.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the recognition of foreign divorce petition and how does it work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Petition for Recognition of Foreign Divorce is filed in the Philippine Regional Trial Court (Family Court). The petitioner must prove: (1) the foreign divorce was validly obtained under the law of the country where it was obtained; (2) the foreign court had jurisdiction; (3) due notice was given to the other party. The UAE divorce certificate must be apostilled and officially translated into Filipino or English. The court proceedings take 6 months to 2 years or longer. Once recognised, the Philippine Civil Registry and PSA records are updated to reflect the divorced status.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the recognition of foreign divorce apply to Filipinos divorced by their non-Filipino spouse?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under Republic Act 8369 and the Supreme Court decision in Republic v. Manalo (G.R. No. 221029, April 24, 2018), a Filipino citizen whose foreign spouse obtained a valid foreign divorce may have that divorce recognised in the Philippines. The 2018 Manalo decision expanded recognition to cases where the divorce was initiated by either the foreign spouse or jointly. If your UAE-national or other non-Filipino spouse obtained the UAE divorce, you can file for recognition in the Philippines under this doctrine. This is faster than a full Philippine annulment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are Filipino Muslims treated differently for divorce purposes in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, significantly. Filipino Muslims can divorce under Federal Decree-Law No. 41 of 2024 in UAE courts, and their divorce is also recognised in the Philippines under Presidential Decree 1083 (Code of Muslim Personal Laws of the Philippines). The Philippines recognises Muslim divorce as valid for Filipino Muslims who were married under PD 1083. If you are a Filipino Muslim, your UAE talaq is valid and registerable in both countries through the Philippine Shari\'ah Court system.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to property in the Philippines during a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts cannot divide property located in the Philippines. Under Article 18 of the UAE Civil Code, property located in another country is governed by that country\'s law. Philippine property is subject to the Philippine Family Code (for non-Muslims) or PD 1083 (for Muslims). The absolute community of property or conjugal partnership of gains regime applies in Philippine law, giving each spouse rights in marital property. To divide Philippine property, separate proceedings in Philippine courts are required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a Filipino divorce in UAE cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested UAE divorce for a Filipino non-Muslim under Federal Decree-Law No. 41 of 2022 typically costs AED 8,000 to AED 15,000 in total. A contested case can reach AED 20,000 to AED 50,000. This is separate from any Philippine proceedings. A Philippine annulment costs PHP 500,000 to PHP 2,000,000+. A Philippine recognition of foreign divorce petition is less expensive, typically PHP 100,000 to PHP 300,000 in attorney fees plus court costs, and takes significantly less time than a full annulment.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/filipino-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Filipino Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>Filipino Divorce in UAE: The Gap Between UAE Law and Philippine Law</h1>
+      <p class="hero-desc">
+        Filipino expats can divorce in UAE courts. The UAE will recognise that divorce immediately. The Philippines will not. Unless you are a Filipino Muslim, your UAE divorce creates a situation where you are divorced in one country and legally married in another. Here is exactly what that means and what you can do about it.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for Filipino expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>Philippines has no divorce for non-Muslims.</strong> The only domestic options are annulment (3-8+ years, PHP 500,000+) or declaration of nullity.</li>
+          <li><strong>UAE divorce is valid in UAE</strong> but the Philippines will NOT automatically recognise it.</li>
+          <li><strong>Recognition petition</strong> in Philippine courts is the route to update Philippine civil records after a UAE divorce.</li>
+          <li><strong>Manalo doctrine (2018)</strong> allows recognition even if the Filipino spouse was the one who obtained the foreign divorce.</li>
+          <li><strong>Filipino Muslims</strong> can divorce under PD 1083 and UAE law, with recognition in Philippines through Shari'ah courts.</li>
+          <li><strong>Remarrying in Philippines</strong> without recognition = bigamy under the Revised Penal Code.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>The Core Problem: Two Legal Systems, One Marriage</h2>
+        <p>
+          The Philippines is, as of 2025, one of only two countries in the world that does not provide divorce for non-Muslim citizens (the other is Vatican City). The Family Code of the Philippines (Executive Order No. 209, 1987) does not recognise divorce for non-Muslims. The only legal exit from a non-Muslim marriage in Philippine law is annulment (voidable marriage declared void from the start) or declaration of nullity (void from the beginning).
+        </p>
+        <p>
+          Filipino expats in the UAE live under two separate legal regimes simultaneously. In the UAE, they are subject to UAE family law and can access UAE divorce proceedings. In the Philippines, they remain bound by Philippine law, which does not recognise the UAE divorce they obtained.
+        </p>
+        <p>
+          The result: a Filipino non-Muslim who gets divorced in Dubai courts is legally divorced in the UAE from the moment the court issues the decree. They can remarry in the UAE, can be recognised as divorced for UAE residency visa purposes, and their UAE civil records will reflect the divorce. But if they return to the Philippines, or if they try to marry in the Philippines, they remain legally married. The Philippine Statistics Authority (PSA) records will continue to show them as married unless a Philippine court order changes that.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Bigamy risk</h3>
+          <p>Attempting to marry a second spouse in the Philippines while the first marriage remains legally unresolved under Philippine law constitutes bigamy under Article 349 of the Revised Penal Code, punishable by imprisonment. Even if you remarry abroad (in UAE or elsewhere), Philippine authorities can prosecute for bigamy if the Philippines treats you as still married. The recognition petition or annulment is not optional if you intend to remarry and have any ongoing connection to the Philippines.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>The UAE Divorce Process for Filipino Non-Muslims</h2>
+        <p>
+          Non-Muslim Filipinos in the UAE can file for divorce under <strong>Federal Decree-Law No. 41 of 2022</strong>, the civil family law for non-Muslims. This law, effective 1 February 2023, created a secular civil divorce track that does not require any religious basis. Non-Muslim residents of any nationality can access it.
+        </p>
+        <p>
+          Under this law, divorce can be granted on a no-fault basis. Joint custody of children is the default. Financial settlement is determined based on contribution and the court's assessment of the parties' needs. The court may apply the parties' home country law if they elect it under Article 13 of the UAE Civil Code, though for Filipinos this option has limited practical utility since Philippine law does not have a divorce framework to apply.
+        </p>
+        <p>
+          The practical steps for a Filipino expat divorcing in UAE courts:
+        </p>
+        <ul>
+          <li>File a divorce petition at the relevant UAE court (Dubai courts, Abu Dhabi courts, etc.) with all required documents</li>
+          <li>Attend a mandatory Family Guidance and Reconciliation Centre session before the court proceeds</li>
+          <li>If uncontested, the divorce may be finalised in 1 to 3 months; contested cases take longer</li>
+          <li>The UAE court issues a divorce decree in Arabic; obtain a certified copy with apostille for use in the Philippines</li>
+          <li>Costs: AED 8,000 to AED 15,000 uncontested; AED 20,000 to AED 50,000+ contested</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Getting Your UAE Divorce Recognised in the Philippines</h2>
+        <p>
+          After obtaining a UAE divorce, a Filipino non-Muslim who wants to update their Philippine civil records must file a Petition for Recognition of Foreign Divorce in the Philippine Regional Trial Court (which sits as a Family Court under Republic Act 8369).
+        </p>
+
+        <h3>Who can file and under what basis</h3>
+        <p>
+          The Supreme Court of the Philippines, in its landmark 2018 decision in <strong>Republic v. Manalo (G.R. No. 221029, 24 April 2018)</strong>, significantly expanded the recognition doctrine. Before Manalo, only divorces obtained by a foreign spouse could be recognised in the Philippines. After Manalo, a Filipino citizen who personally obtained a valid foreign divorce may also have that divorce recognised, provided the divorce was valid under the law of the foreign country where it was obtained.
+        </p>
+        <p>
+          This means a Filipino who obtained a UAE divorce (valid under UAE law) can file for recognition in the Philippines. The court will not re-litigate the merits of the divorce but will verify that it was validly obtained under UAE law.
+        </p>
+
+        <h3>What the petition must prove</h3>
+        <ul>
+          <li>The foreign divorce was validly obtained under UAE law: submit the UAE court decree with apostille and certified translation</li>
+          <li>The UAE court had proper jurisdiction over the parties</li>
+          <li>Both parties received proper notice of the UAE proceedings</li>
+          <li>The UAE divorce decree is final and not subject to appeal</li>
+        </ul>
+
+        <h3>Process and timeline</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Authenticate the UAE divorce decree</h3>
+              <p>The UAE court decree must be apostilled by the UAE Ministry of Foreign Affairs, then officially translated into Filipino or English by an accredited translator. The apostille is the key authentication document accepted by Philippine courts.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Engage a Philippine attorney and file the petition</h3>
+              <p>A Petition for Recognition of Foreign Divorce is filed in the Regional Trial Court in the province where you or your former spouse resides, or where the marriage was registered. You can engage a Philippine lawyer to file on your behalf without being physically present in the Philippines for all stages.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Court proceedings</h3>
+              <p>The Office of the Solicitor General represents the State. The court publishes notice of the petition (required for recognition petitions). Hearings are scheduled. In straightforward cases with complete documentation, proceedings take 6 months to 18 months. Complex cases with opposition from the OSG can take 2 to 3 years.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Register with the Philippine Civil Registry</h3>
+              <p>Once the court issues the recognition order, it must be registered with the Local Civil Registry (LCR) where the marriage was recorded and annotated in the Philippine Statistics Authority (PSA) records. This updates the PSA marriage certificate to reflect the divorce. The updated PSA records confirm single/divorced status for all official purposes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Filipino Muslims: The Different and Simpler Path</h2>
+        <p>
+          Filipino Muslims occupy a categorically different legal position. Presidential Decree No. 1083 (the Code of Muslim Personal Laws of the Philippines, 1977) applies to Filipino Muslims and governs their personal status matters including marriage, divorce, and inheritance. PD 1083 provides for divorce (talaq, khul', faskh, and others), administered through the Philippine Shari'ah court system.
+        </p>
+        <p>
+          A Filipino Muslim who divorces in UAE courts under <strong>Federal Decree-Law No. 41 of 2024</strong> can have that divorce recognised in the Philippines through the Shari'ah court system. The Shari'ah courts have jurisdiction over personal status matters of Filipino Muslims and can register a foreign Muslim divorce. This route is significantly faster and less expensive than the civil recognition petition process.
+        </p>
+        <p>
+          The practical steps: obtain the UAE talaq court decree, apostille it, have it translated, and present it to the Shari'ah District Court (or Shari'ah Circuit Court for simpler matters) in the Philippines. The court registers the foreign divorce and the records are updated accordingly.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Identifying as a Filipino Muslim for UAE proceedings</h3>
+          <p>Filipino Muslims should present their Muslim marriage certificate (nikah nama or Philippine Shari'ah court-registered marriage), not a Philippine civil registry marriage certificate, when filing for divorce in UAE courts. The court will then apply Federal Decree-Law No. 41 of 2024. Presenting only a civil registry marriage certificate may result in the court processing the case as a non-Muslim civil divorce under Federal Decree-Law No. 41 of 2022, which has different procedural and recognition implications in the Philippines.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Philippine Annulment: What It Is and Why It Takes So Long</h2>
+        <p>
+          For non-Muslim Filipinos who cannot or choose not to pursue the recognition of foreign divorce route, Philippine annulment remains the domestic option for ending a marriage under Philippine law. It is important to understand what annulment actually is in Philippine legal terms: it is a court declaration that a marriage was voidable from the start due to specific grounds, not a dissolution of a valid marriage.
+        </p>
+
+        <h3>Grounds for annulment under the Family Code</h3>
+        <ul>
+          <li>Lack of parental consent (if either party was 18-21 at the time of marriage)</li>
+          <li>Either party was of unsound mind</li>
+          <li>Fraud in obtaining consent</li>
+          <li>Force, intimidation, or undue influence</li>
+          <li>Physical incapacity to consummate the marriage</li>
+          <li>Either party had a sexually transmissible disease at the time</li>
+        </ul>
+        <p>
+          Psychological incapacity under Article 36 of the Family Code is the most commonly used ground. It must be a grave, incurable incapacity existing at the time of marriage, not simply difficulty in getting along. Philippine courts have interpreted this strictly, and success rates vary significantly by court and quality of psychological evaluation evidence.
+        </p>
+
+        <h3>Why it takes 3 to 8+ years</h3>
+        <p>
+          Philippine family courts are severely backlogged. The mandatory involvement of the Office of the Solicitor General (which represents the State in all annulment proceedings) adds procedural steps. Psychological evaluation by court-accredited psychologists is required. Multiple hearings over months or years are typical. Costs of PHP 500,000 to PHP 2,000,000 or more reflect lawyer fees, psychological evaluation fees, and court costs accumulated over this extended period.
+        </p>
+        <p>
+          For Filipinos in UAE, the practical comparison is clear: a UAE divorce costs AED 8,000 to AED 50,000+ and can be finalised in months. A Philippine annulment costs multiples of that and takes years. For many OFWs, the recognition of foreign divorce petition after a UAE divorce is the more accessible path.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>OFW Rights and Remittances During Divorce</h2>
+        <p>
+          Overseas Filipino Workers (OFWs) have specific rights and protections under Philippine law that remain in force during and after divorce proceedings. Republic Act 10022 (Migrant Workers and Overseas Filipinos Act 2010) and Republic Act 9262 (Anti-Violence Against Women and Their Children Act 2004) are the key statutes.
+        </p>
+
+        <h3>Remittance rights</h3>
+        <p>
+          OFW remittances from UAE employers are protected income. A spouse or partner in the Philippines cannot legally intercept OFW bank remittances. During divorce proceedings in UAE, the court may issue support orders requiring the OFW to remit a specified amount for children's maintenance; this is enforceable in UAE through salary garnishment if the OFW fails to comply.
+        </p>
+
+        <h3>OWWA and SSS beneficiary updates</h3>
+        <p>
+          OWWA (Overseas Workers Welfare Administration) membership benefits, SSS (Social Security System) benefits, and Pag-IBIG fund contributions are individually owned by the OFW member. After divorce, beneficiary designations for death benefits and insurance should be updated promptly. This requires filing the relevant forms directly with OWWA, SSS, and Pag-IBIG — it is not automatic upon divorce. Failure to update beneficiaries means former spouses may remain entitled to death benefits indefinitely.
+        </p>
+
+        <h3>Republic Act 9262 protections</h3>
+        <p>
+          RA 9262 extends protection against economic abuse to Filipino women including OFWs. An OFW husband who withholds financial support from a wife and children in the Philippines, or who controls the wife's finances as a form of coercion, may be liable under this statute. The Protection Order mechanism under RA 9262 can reach Filipino parties abroad. If economic abuse is a feature of your marriage, Philippine counsel familiar with RA 9262 cross-border enforcement should be part of your team.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>Title deed rules, contribution claims, DLD fees</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody, travel bans, and relocation rules</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/visa-after-divorce-uae/" class="related-card">
+            <strong>Visa After Divorce UAE</strong>
+            <span>What happens to your UAE residency status after separation</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>UAE Divorce Certificate Attestation</strong>
+            <span>How to apostille your UAE decree for use in the Philippines</span>
+          </a>
+          <a href="/en/types-of-divorce-uae/" class="related-card">
+            <strong>Types of Divorce in UAE</strong>
+            <span>Talaq, khul'a, and civil no-fault divorce explained</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

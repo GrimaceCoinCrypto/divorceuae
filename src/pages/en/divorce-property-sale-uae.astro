@@ -1,0 +1,539 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Selling Property During Divorce UAE: Your Full Legal Guide';
+const description =
+  'Can your spouse sell your Dubai home without you? How do you force a sale if they refuse? Complete guide covering DLD freeze orders, the pre-divorce transfer strategy, forced partition, mortgage consent, and DLD fees.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-property-sale-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-وتأشيرة-الإقامة-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Property Sale UAE', url: 'https://divorceu.ae/en/divorce-property-sale-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can my spouse sell our Dubai property without my consent?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If the property is registered in your spouse\'s name alone on the DLD title deed, they can legally sell it without your consent unless a court precautionary attachment (freeze) has been placed on it. If the property is jointly registered, both owners must sign for any sale and neither party can complete a sale without the other\'s consent. To protect yourself on a solely-titled property, apply for a precautionary attachment at the Court of Urgent Matters before your spouse has an opportunity to list the property for sale.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I stop my spouse selling our house during divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Apply to the Court of Urgent Matters for a precautionary attachment (Hajz Ihtiyati) on the property. File ex-parte (without notifying your spouse) showing a financial claim exceeding AED 10,000 and risk of dissipation. If granted, the DLD registers the attachment against the title, blocking any transfer or sale. The order is issued within 48 hours in urgent cases. You must then file the substantive case within 8 days. Once the DLD registers the attachment, the property cannot be transferred at any Registration Trustee centre.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the cheapest way to transfer property in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Transfer the property while you are still legally married. A spousal gift transfer between married parties attracts a DLD fee of 0.125% of property value plus AED 530. The same transfer after the divorce is finalised is treated as a standard transfer at 4% plus AED 540. On a AED 2 million property, that difference is approximately AED 77,530 vs AED 2,530 -- a saving of over AED 75,000. Both parties must attend a DLD Registration Trustee centre with the title deed, passports, Emirates IDs, marriage certificate (attested and Arabic-translated), developer NOC, and a valuation certificate.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a court order the sale of jointly owned property in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under UAE civil law principles, a co-owner who cannot reach agreement with the other co-owner on property use or disposal can file a partition and sale application. The court appoints a RERA-registered valuer to determine market value, sets a minimum reserve price, and orders the property listed for sale. Proceeds after mortgage repayment and costs are split in proportion to each party\'s ownership shares. The court process typically takes 6 to 18 months from filing to completion.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does forced property sale take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A court-ordered forced sale of jointly owned UAE property takes approximately 6 to 18 months from the date of filing the partition and sale application. The steps are: court accepts the case and appoints a valuer (1-3 months), valuation report produced (2-4 weeks), court sets reserve price and orders listing (1-2 months), property marketed and offers received (varies significantly by market), sale completed with court oversight, and proceeds distributed (1-2 months). Timeline is longer if the property is mortgaged, as lender consent is required for the sale to proceed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to property equity in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under UAE\'s separate property regime (Federal Decree-Law No. 41 of 2024 for Muslims, Federal Decree-Law No. 41 of 2022 for non-Muslims), equity belongs to the registered title holder(s). For jointly registered property, equity is split according to proven ownership shares (typically the shares listed on the title deed). If the property is in one name but both parties contributed to the purchase price or mortgage, the non-titled spouse can file a contribution claim under Article 51 of Federal Decree-Law No. 41 of 2024 and Article 318 of the Civil Code to recover their proportionate equity share.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I buy out my spouse\'s share of our UAE property?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A buyout is the most common resolution for jointly owned property in UAE divorce. The buying spouse pays the other party the agreed value of their ownership share, and the title is transferred to the buyer at the DLD. The price is typically based on a market valuation from a DLD-accredited valuer. If there is a mortgage, the buying spouse must either refinance into their sole name (requiring bank credit approval) or retain the joint mortgage with a formal repayment agreement -- though banks prefer full refinancing. The transfer itself is done at a DLD Registration Trustee centre.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need both spouses to sell an off-plan property?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If the off-plan property is registered with the DLD (interim registration for unfinished units), both registered owners must consent to any transfer or novation. The developer\'s consent is also required under the Sale and Purchase Agreement (SPA) terms -- most UAE developers charge a transfer fee (typically 1-2% of the purchase price) for novating an SPA to a new owner. If only one spouse is registered as the buyer in the SPA and with the DLD, they can novate or sell independently unless a court precautionary attachment has been registered against the unit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What DLD fees apply when transferring property at divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pre-divorce spousal gift transfer: 0.125% of property value plus AED 530, plus valuation (from AED 2,500), trustee fee (AED 4,200 including VAT for properties AED 500k and above), and title deed (AED 250). Post-divorce standard transfer: 4% of property value plus AED 540, plus trustee fee and title deed. Court-ordered transfer: 4% applies unless the court specifically orders a different treatment. On a AED 2 million property, pre-divorce transfer costs approximately AED 9,680 all-in versus AED 86,990 post-divorce -- a difference of over AED 77,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I transfer the property before the divorce is final?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, and it is substantially cheaper. A spousal gift transfer while still legally married attracts 0.125% DLD fee. Both parties must attend a DLD Registration Trustee centre together with the full document set: title deed, passports, Emirates IDs, marriage certificate (attested and Arabic-translated), developer NOC, and property valuation. If the property has a mortgage, the bank must consent to the title transfer before the DLD will process it. Get mortgage consent confirmed in writing before booking the trustee appointment.',
+      },
+    },
+  ],
+};
+
+const dldFees = [
+  { scenario: 'Pre-divorce spousal gift transfer', rate: '0.125% + AED 530', example2M: 'AED 3,030', note: 'While still legally married' },
+  { scenario: 'Post-divorce standard transfer', rate: '4% + AED 540', example2M: 'AED 80,540', note: 'After divorce is finalised' },
+  { scenario: 'Court-ordered transfer', rate: '4% + AED 540', example2M: 'AED 80,540', note: 'Standard rate applies' },
+  { scenario: 'Property valuation (gift transfers)', rate: 'From AED 2,500', example2M: 'AED 2,500+', note: 'DLD-accredited valuer required' },
+  { scenario: 'Trustee office fee (AED 500k+)', rate: 'AED 4,000 + 5% VAT', example2M: 'AED 4,200', note: 'Per transaction' },
+  { scenario: 'Title deed issuance', rate: 'AED 250', example2M: 'AED 250', note: 'Per new deed' },
+  { scenario: 'Developer NOC', rate: 'AED 500-5,000+', example2M: 'Varies', note: 'Set by developer; confirms service charges paid' },
+  { scenario: 'DLD processing time', rate: '25-30 minutes', example2M: '', note: 'When all documents are in order' },
+];
+
+const faqItems = [
+  {
+    question: 'Can my spouse sell our Dubai property without my consent?',
+    answer: 'If the property is solely in their name, yes -- unless a court precautionary attachment has been registered. Apply for a freeze order before they can list the property. For jointly registered property, both owners must sign. See our <a href="/en/property-division-divorce-uae/">property division guide</a> for the full ownership framework.',
+  },
+  {
+    question: 'How do I stop my spouse selling our house during divorce?',
+    answer: 'Apply to the Court of Urgent Matters for a precautionary attachment (Hajz Ihtiyati) on the property. File ex-parte, showing a financial claim over AED 10,000 and risk of dissipation. Once the DLD registers the attachment against the title, no transfer can proceed. See our <a href="/en/emergency-orders-divorce-uae/">emergency orders guide</a> for the step-by-step process.',
+  },
+  {
+    question: 'What is the cheapest way to transfer property in UAE divorce?',
+    answer: 'Transfer while still legally married at the 0.125% spousal gift rate. On a AED 2M property this saves over AED 75,000 compared to a post-divorce transfer at 4%. Both parties attend the DLD Registration Trustee centre together.',
+  },
+  {
+    question: 'Can a court order the sale of jointly owned property in UAE?',
+    answer: 'Yes, via a partition and sale application. The court appoints a valuer, sets a reserve price, and oversees the sale. Process takes 6-18 months. Proceeds are split by ownership shares after mortgage repayment.',
+  },
+  {
+    question: 'How long does forced property sale take in UAE?',
+    answer: 'Approximately 6-18 months from filing the partition and sale application. Contested mortgage situations and market conditions extend this timeline. Voluntary sale between parties is significantly faster (2-4 months).',
+  },
+  {
+    question: 'What happens to property equity in UAE divorce?',
+    answer: 'Equity belongs to the title deed holder(s) under UAE\'s separate property regime. Jointly registered owners split equity per ownership shares. A non-titled spouse who contributed to the purchase can file a contribution claim under Article 51 of Federal Decree-Law No. 41 of 2024.',
+  },
+  {
+    question: 'Can I buy out my spouse\'s share of our UAE property?',
+    answer: 'Yes. Agree a price based on a DLD-accredited valuation, pay the other party their share, and complete the transfer at a Registration Trustee centre. If mortgaged, the buying spouse must refinance independently or retain a co-borrower arrangement -- banks prefer refinancing.',
+  },
+  {
+    question: 'Do I need both spouses to sell an off-plan property?',
+    answer: 'Yes, if both are registered in the DLD interim registration. Developer consent and SPA novation fees also apply. If only one spouse is registered, they can transact independently unless a court attachment has been registered.',
+  },
+  {
+    question: 'What DLD fees apply when transferring property at divorce?',
+    answer: 'Pre-divorce: 0.125% + AED 530, plus valuation and trustee fees. Post-divorce: 4% + AED 540. On a AED 2M property, the difference is approximately AED 77,000. See the fee table above for the full breakdown.',
+  },
+  {
+    question: 'Can I transfer the property before the divorce is final?',
+    answer: 'Yes. Both parties attend the DLD Registration Trustee centre together with the full document set. Mortgage bank consent is required before the DLD will process the transfer. Confirm bank consent in writing before booking the appointment.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-property-sale-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Property and DLD Guide -- UAE 2025</p>
+      <h1>Selling Property During Divorce UAE: Who Can Sell, Who Can Block, and What It Costs</h1>
+      <p class="hero-desc">
+        Your Dubai apartment may be the largest asset in your marriage. Whether it is in one name or both, whether you want to sell it or prevent the sale, whether you need to force a partition or save tens of thousands in DLD fees with smart timing -- this guide walks you through every scenario with the actual law and real fee numbers.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Six things to know before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>Sole name on DLD title deed:</strong> that person can sell without your consent unless a court freeze is in place.</li>
+          <li><strong>Joint names:</strong> both owners must sign. Either party can block a sale by refusing.</li>
+          <li><strong>Pre-divorce transfer saves thousands:</strong> 0.125% DLD fee while married versus 4% after divorce. On AED 2M, the saving is over AED 75,000.</li>
+          <li><strong>Forced sale is possible but slow:</strong> 6-18 months through the partition and sale process.</li>
+          <li><strong>Banks control mortgaged property:</strong> courts cannot force a lender to restructure a loan or release a borrower.</li>
+          <li><strong>UAE has no capital gains tax:</strong> but DLD fees are a material cost in every property transfer.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: Sole title -->
+      <section class="content-section">
+        <h2>If the Property is in One Spouse's Name Only</h2>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the Personal Status Law replacing Federal Law No. 28 of 2005) and the DLD's title registration system, the person named on the title deed is the legal owner. UAE law does not impose any restriction on an owner's right to sell their own property simply because a divorce has been filed. If the property is solely in your spouse's name, they can legally complete a sale during the divorce proceedings unless you take action to prevent it.
+        </p>
+        <p>
+          This is one of the most urgent risks in UAE divorce. A spouse who suspects divorce is imminent may list the property quietly, accept an offer, and complete the transfer before proceedings are formally underway. By the time you become aware of the sale, the DLD title deed is in the buyer's name and the proceeds are cash in your spouse's account -- which they can then move offshore.
+        </p>
+
+        <h3>How to protect yourself: the precautionary attachment</h3>
+        <p>
+          A precautionary attachment (Hajz Ihtiyati) on real property works by registering a legal notice against the DLD title entry. Once registered, no Registration Trustee in the UAE can process a transfer, charge, or novation of the property. The attachment is visible to any solicitor or trustee conducting a title search.
+        </p>
+        <p>
+          The application is made to the Court of Urgent Matters on an ex-parte basis (without notifying your spouse). You must demonstrate: (1) a legitimate financial claim exceeding AED 10,000 against the titled spouse; (2) a genuine risk that the property will be sold or transferred before your claim is heard. The court typically decides within 48 hours. Once the order is issued, it is sent to the DLD for registration. You must file the substantive case within 8 days or the attachment lapses.
+        </p>
+        <p>
+          For a detailed walkthrough of the emergency order process, see our <a href="/en/emergency-orders-divorce-uae/">emergency orders in UAE divorce guide</a>.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Act before serving papers</h3>
+          <p>The moment your spouse realises a divorce is imminent, their ability and incentive to move assets increases sharply. Apply for the precautionary attachment before serving divorce papers. Once served, your spouse may engage a lawyer who will advise on protective measures of their own -- including rapid property transactions. The 48-hour court decision window means you can have protection in place before your spouse is even aware.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Joint property -->
+      <section class="content-section">
+        <h2>Jointly Registered Property: Who Can Block a Sale</h2>
+        <p>
+          When both spouses are named on the DLD title deed, any transfer, sale, or mortgage requires both owners' signatures. This applies to the sale agreement, the DLD transfer form, and the developer NOC application. A co-owner who refuses to sign simply cannot be compelled to complete a sale by the other party's unilateral action -- the transaction will stall at the DLD.
+        </p>
+        <p>
+          The practical implication is that either party can block a sale indefinitely simply by refusing to sign. This veto power is equal regardless of ownership share percentage. A spouse who owns 10% of a jointly titled property has the same absolute right to withhold consent as the spouse who owns 90%.
+        </p>
+
+        <h3>When the joint owner refuses to sell or agree a price</h3>
+        <p>
+          If you want to sell and your spouse refuses, the legal route is a partition and sale application under UAE civil law principles. This is a civil court application asking the court to order the compulsory sale of the jointly owned property when the co-owners cannot agree. The process involves:
+        </p>
+        <ul>
+          <li>Filing the application at the Civil Court of First Instance</li>
+          <li>Court accepts the case and appoints a RERA-registered independent valuer</li>
+          <li>Valuer produces a market valuation report</li>
+          <li>Court sets a minimum reserve price (typically at or near market value)</li>
+          <li>Property is listed through a court-appointed broker or public auction</li>
+          <li>Proceeds distributed after mortgage repayment, court costs, and agent fees</li>
+        </ul>
+        <p>
+          The total process takes approximately 6-18 months depending on court workload, market conditions, and whether either party challenges the valuation or sale process. A voluntary agreement between the parties -- even at a lower price -- almost always produces a better financial outcome than waiting for a court-ordered sale.
+        </p>
+      </section>
+
+      <!-- Section 3: Pre-divorce transfer strategy -->
+      <section class="content-section">
+        <h2>The Pre-Divorce Transfer Strategy: Save Over AED 75,000</h2>
+        <p>
+          This is the single most practical and underreported financial decision in UAE divorce, and it is only available to couples who reach an agreement before the divorce is formally concluded.
+        </p>
+        <p>
+          The Dubai Land Department charges a lower fee for transfers between married spouses than for transfers between divorced individuals. A spousal gift transfer (Hibah) made while both parties are legally married attracts a fee of <strong>0.125%</strong> of the property value. A standard transfer made after divorce is registered at <strong>4%</strong> of the property value. This is the same fee rate that applies to commercial sale transactions between strangers.
+        </p>
+
+        <div class="callout-box callout-box--gold">
+          <h3>The fee difference on a AED 2M property</h3>
+          <div class="fee-compare">
+            <div class="fee-col fee-col--before">
+              <div class="fee-label">Pre-divorce gift transfer</div>
+              <div class="fee-amount">AED 2,530</div>
+              <div class="fee-breakdown">0.125% x AED 2,000,000 = AED 2,500 + AED 530</div>
+              <div class="fee-extra">+ Valuation (AED 2,500) + Trustee (AED 4,200) + Title deed (AED 250)</div>
+            </div>
+            <div class="fee-col fee-col--after">
+              <div class="fee-label">Post-divorce standard transfer</div>
+              <div class="fee-amount">AED 80,540</div>
+              <div class="fee-breakdown">4% x AED 2,000,000 = AED 80,000 + AED 540</div>
+              <div class="fee-extra">+ Trustee (AED 4,200) + Title deed (AED 250)</div>
+            </div>
+          </div>
+          <p class="fee-saving">Potential saving: approximately AED 77,000 on a AED 2M property by transferring before the divorce is finalised.</p>
+        </div>
+
+        <h3>Full DLD fee reference table</h3>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Transfer scenario</th>
+                <th>Rate</th>
+                <th>Example: AED 2M property</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dldFees.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.scenario}</td>
+                  <td class="td-gold">{row.rate}</td>
+                  <td class="td-amount">{row.example2M}</td>
+                  <td class="td-light">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">Source: Dubai Land Department official fee schedule. Fees confirmed via authorised Registration Trustees, May 2025.</p>
+
+        <h3>What you need for the pre-divorce transfer</h3>
+        <p>
+          Both parties must attend a DLD-authorised Registration Trustee centre in person (or via a notarised power of attorney for an absent party). The required documents are:
+        </p>
+        <ul>
+          <li>Original title deed (or DLD property reference number)</li>
+          <li>Valid passports of both parties</li>
+          <li>Emirates IDs of both parties</li>
+          <li>Original marriage certificate, attested by UAE Ministry of Foreign Affairs (MOFA) and translated into Arabic by a UAE-certified translator</li>
+          <li>Developer No Objection Certificate (NOC) -- confirming all service charges are paid and the developer has no objection to the transfer</li>
+          <li>Property valuation certificate from a DLD-accredited valuer</li>
+          <li>If mortgaged: a No Objection Letter from the lender</li>
+        </ul>
+
+        <h3>The mortgage complication</h3>
+        <p>
+          If the property carries a mortgage, the lender's written consent is required before the DLD will process any title transfer. UAE banks will only consent to a pre-divorce spousal transfer if the receiving spouse undergoes full credit approval and qualifies to hold the mortgage in their sole name, or if the mortgage is fully discharged as part of the transfer. Banks do not consent to title changes that leave a potentially uncreditworthy sole borrower holding the loan.
+        </p>
+        <p>
+          In practice, if the keeping spouse cannot refinance independently, the pre-divorce transfer option may be blocked by the lender even if both spouses agree. In that scenario, the realistic options are a joint sale of the property followed by distribution of proceeds, or maintaining joint ownership temporarily while the keeping spouse improves their standalone credit position. See our <a href="/en/divorce-financial-planning-uae/">divorce financial planning guide</a> for pre-filing steps to strengthen your standalone mortgage position.
+        </p>
+      </section>
+
+      <!-- Section 4: Off-plan -->
+      <section class="content-section">
+        <h2>Off-Plan Properties in UAE Divorce</h2>
+        <p>
+          Off-plan properties present additional complications because the full title deed has not yet been issued. What the buyer holds is an interest registered in the DLD's interim registration system and a Sale and Purchase Agreement (SPA) with the developer.
+        </p>
+
+        <h3>DLD interim registration and transfers</h3>
+        <p>
+          The DLD registers buyers of off-plan units in its Real Estate Registry at the point of SPA execution. A precautionary attachment can be registered against this interim entry in exactly the same way as a full title deed. Any novation (transfer of the SPA to a new buyer) requires DLD consent and, importantly, the developer's written approval.
+        </p>
+
+        <h3>Developer consent and SPA novation fees</h3>
+        <p>
+          Most UAE developers include a clause in their SPAs requiring developer consent for any assignment or novation. Developer consent fees range from 1% to 2% of the original purchase price -- on a AED 1.5 million unit, this is AED 15,000-30,000. Some developers also require that all installment payments are current before they will issue consent. Outstanding installments or payment disputes must be resolved before any transfer can proceed.
+        </p>
+        <p>
+          If both spouses are named in the SPA (as joint purchasers), both must sign the novation documents. If only one is named, that person controls the off-plan unit for transfer purposes unless a precautionary attachment has been registered against it.
+        </p>
+      </section>
+
+      <!-- Section 5: Mortgage scenarios -->
+      <section class="content-section">
+        <h2>Mortgaged Property: The Four Scenarios</h2>
+        <p>
+          The majority of Dubai property held by expats in active marriages is mortgaged. The bank's position is entirely separate from the divorce proceedings -- the lender has a contract with both borrowers and will not restructure it simply because of the marriage breakdown. Here are the four realistic outcomes for mortgaged jointly owned property.
+        </p>
+
+        <div class="scenario-list">
+          <div class="scenario-card">
+            <p class="scenario-title">Scenario 1: One spouse refinances and buys out the other</p>
+            <p>The keeping spouse applies for a new mortgage in their sole name, paying off the joint mortgage and the departing spouse's equity share. Requires full credit approval from the bank. UAE banks apply the Central Bank's loan-to-value cap (up to 80% for expats on primary residence). If the outstanding loan is above 80% of current value, the keeping spouse must fund the gap. This is the cleanest resolution but requires the keeping spouse to qualify independently -- which many cannot at current UAE interest rates on a single income.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Scenario 2: Sell the property, clear the mortgage, split the equity</p>
+            <p>Both parties agree to sell to a third party on the open market. The mortgage is discharged from sale proceeds at completion. Any remaining equity is divided per the agreed ownership split. Dubai's secondary property market is liquid for well-priced units. A realistic timeline from the decision to sell to receiving net proceeds is 2-4 months in normal market conditions. This is often the most straightforward outcome when neither party can afford the property alone.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Scenario 3: Court-ordered sale (contested)</p>
+            <p>If parties cannot agree on sale, partition, or buyout, either party can apply for a court-ordered sale. The court appoints a RERA-registered valuer to determine market value, sets a reserve price, and oversees the sale process. The mortgage bank must agree to release its charge at completion. Court-ordered sales typically achieve a lower price than voluntary sales (buyers discount for the process uncertainty) and take 6-18 months. Legal costs also reduce the net proceeds.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Scenario 4: Retain joint ownership with a co-repayment agreement</p>
+            <p>Both ex-spouses continue as co-borrowers and co-owners under a notarised agreement specifying who pays what and for how long. Used where one party wants to keep the property but cannot immediately refinance, intending to do so within a defined period. The risks are significant: if the paying spouse defaults, both credit ratings are affected; if the property falls in value, negative equity becomes a shared burden; if either party remarries or relocates, the joint ownership creates ongoing complications. Only advisable as a time-limited bridge with a specific refinancing trigger date.</p>
+          </div>
+        </div>
+
+        <div class="info-box info-box--warning">
+          <h3>The bank's position is non-negotiable</h3>
+          <p>UAE courts cannot order a bank to release a borrower from a mortgage, reduce an interest rate, or change loan terms as part of a divorce settlement. The bank has a separate and independent contract. Even a court order that allocates the property entirely to one spouse does not remove the other spouse from the mortgage deed -- only a refinancing or full repayment does that. Build this reality into your settlement negotiations from the start: agreeing that one spouse keeps the mortgaged property only works financially if the refinancing actually completes.</p>
+        </div>
+      </section>
+
+      <!-- Section 6: Capital gains and tax -->
+      <section class="content-section">
+        <h2>Tax Position: What UAE Does and Does Not Have</h2>
+        <p>
+          UAE levies no capital gains tax on property disposals. This makes it substantially different from the UK (where capital gains tax on second properties can reach 28%), Australia (50% inclusion rate), and most European jurisdictions. Whether you sell Dubai property during or after divorce, you do not pay tax on any increase in value since purchase.
+        </p>
+        <p>
+          VAT (5%) applies to commercial property transactions but does not apply to residential property sales in the UAE. Rental income from UAE property also falls outside the VAT registration threshold for most individuals.
+        </p>
+        <p>
+          The significant financial cost in UAE property transfers is the DLD transfer fee, not taxation. This is why the pre-divorce versus post-divorce timing decision described above carries such material financial weight. See our <a href="/en/divorce-end-of-service-gratuity-uae/">EOSB and pension guide</a> for how gratuity interacts with property settlement negotiations.
+        </p>
+
+        <h3>Foreign tax obligations</h3>
+        <p>
+          If you are tax resident in another country alongside UAE (the UAE does not levy income tax, but your home country may tax your worldwide income or capital gains), a UAE property sale or transfer may have tax consequences in your home jurisdiction. UK residents selling UAE property need to consider UK capital gains tax on the gain. US citizens must report worldwide capital gains to the IRS regardless of the country of sale. Consult a cross-border tax adviser before completing any property transfer if you hold tax residency outside the UAE.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>Full ownership framework, contribution claims, title deed rules</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Orders in UAE Divorce</strong>
+            <span>Freeze orders, travel bans, Court of Urgent Matters process</span>
+          </a>
+          <a href="/en/divorce-end-of-service-gratuity-uae/" class="related-card">
+            <strong>EOSB and Gratuity in UAE Divorce</strong>
+            <span>How end-of-service benefits interact with property settlements</span>
+          </a>
+          <a href="/en/divorce-financial-planning-uae/" class="related-card">
+            <strong>Divorce Financial Planning UAE</strong>
+            <span>Pre-filing asset protection steps for property owners</span>
+          </a>
+          <a href="/en/divorce-joint-account-uae/" class="related-card">
+            <strong>Joint Bank Account in UAE Divorce</strong>
+            <span>Protecting liquid assets alongside property</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>How housing equity affects maintenance calculations</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #b45309; font-weight: 700; }
+  .td-amount { font-weight: 600; color: #0a1628; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Fee compare callout */
+  .callout-box { border-radius: 12px; padding: 1.5rem; margin: 1.25rem 0; }
+  .callout-box--gold { background: #fef3c7; border: 2px solid #c9a84c; }
+  .callout-box h3 { font-size: 1rem; font-weight: 700; color: #78350f; margin-bottom: 1rem; }
+  .fee-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .fee-col { border-radius: 8px; padding: 1rem; }
+  .fee-col--before { background: #d1fae5; border: 1.5px solid #6ee7b7; }
+  .fee-col--after { background: #fee2e2; border: 1.5px solid #fca5a5; }
+  .fee-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #374151; margin-bottom: 0.4rem; }
+  .fee-amount { font-size: 1.5rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .fee-breakdown { font-size: 0.8rem; color: #374151; margin-bottom: 0.3rem; }
+  .fee-extra { font-size: 0.75rem; color: #6b7280; font-style: italic; }
+  .fee-saving { font-size: 0.9rem; font-weight: 700; color: #78350f; margin: 0; }
+
+  /* Scenario cards */
+  .scenario-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .scenario-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .fee-compare { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

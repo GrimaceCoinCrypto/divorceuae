@@ -1,0 +1,486 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Hindu Divorce in UAE: UAE Courts, Indian Recognition, and the Dual-Country Problem';
+const description =
+  'Hindu Marriage Act 1955 does not apply in UAE courts. A complete guide for Indian Hindu expats: how to divorce under Federal Decree-Law No. 41/2022, when to file in both countries, how to register a UAE divorce in India, and what happens to property, mahr, and children.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/hindu-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للهندوس-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Hindu Divorce UAE', url: 'https://divorceu.ae/en/hindu-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can Hindus get divorced in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Hindu expats who are non-Muslim file for divorce under Federal Decree-Law No. 41 of 2022, the UAE civil family law for non-Muslims. The Hindu Marriage Act 1955 has no legal force in UAE courts. UAE courts apply UAE law regardless of the parties\' religion, provided neither is Muslim. The process is no-fault, no religious requirement, and no mandatory reconciliation. A UAE divorce certificate is issued on completion.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will a UAE divorce be recognised in India for a Hindu marriage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally yes. Under Section 13 of the Code of Civil Procedure 1908, Indian courts recognise foreign judgments that are conclusive and not contrary to Indian public policy or natural justice. UAE no-fault divorces routinely meet this standard. However, recognition is not automatic -- the UAE divorce must be registered at the appropriate District Court in India (the court having jurisdiction over where the marriage was solemnised or where either party last resided). Cost: INR 10,000-30,000 plus lawyer fees, plus UAE divorce certificate attestation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to file for divorce in both UAE and India?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not necessarily. One UAE divorce, properly registered in India, is sufficient for most civil purposes (remarriage, name change, property transfer). Filing in both countries is advisable only if: (1) you have India-based assets that require a Hindu Marriage Act order for title transfer, (2) your spouse contests the Indian registration of the UAE divorce, or (3) you want a Section 13B HMA mutual consent decree for personal preference or family reasons. A dual filing adds cost and time but creates certainty in both jurisdictions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does Hindu divorce take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A mutual consent divorce under Federal Decree-Law No. 41 of 2022 in UAE takes approximately 1 to 4 months depending on the emirate. Abu Dhabi Civil Family Court is the fastest -- uncontested cases can conclude in 4 to 6 weeks. Dubai Personal Status Court typically takes 2 to 4 months. If your spouse is abroad and unresponsive, a contested UAE divorce for non-Muslims typically takes 6 to 12 months. Add 1 to 3 months for Indian registration of the UAE certificate.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to property in a Hindu divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts apply the separate property rule under Federal Decree-Law No. 41 of 2022: each spouse keeps assets registered in their name. There is no equivalent of Hindu Undivided Family (HUF) concepts or any community property in UAE law. For Dubai real estate, DLD title registration is conclusive. If you funded property in your spouse\'s name, you need a contribution claim with documentary evidence. India-based property is a separate matter -- an Indian court applying Hindu Succession Act 1956 handles those assets.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the Hindu Marriage Act applicable in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The Hindu Marriage Act 1955 is Indian domestic legislation and has no extraterritorial application in the UAE. UAE courts apply UAE federal law to all divorce proceedings within their jurisdiction. A Hindu marriage solemnised in India is a valid marriage recognised in UAE, but the grounds, procedures, and financial outcomes of dissolving it in UAE follow Federal Decree-Law No. 41 of 2022, not the HMA. The HMA becomes relevant again only when you seek to register or enforce the UAE divorce in India.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get alimony as a Hindu wife in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Article 9 of Federal Decree-Law No. 41 of 2022, a UAE court can award maintenance (alimony) based on six factors: the marriage duration, each spouse\'s financial capacity, the standard of living during marriage, the wife\'s health and employability, the reason for divorce, and the conduct of the parties. Mahr does not apply to non-Muslim Hindu marriages. Separately, the Hindu Adoptions and Maintenance Act 1956 (India) provides a parallel maintenance right in India for India-held assets and income. These are two distinct remedies in two jurisdictions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I register a UAE divorce in India?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Step 1: Obtain the UAE divorce certificate from the issuing court. Step 2: Get it attested -- UAE Ministry of Foreign Affairs (MOFA), then the Indian Embassy or Consulate in UAE (apostille if UAE has joined Hague Convention, otherwise consular attestation). Step 3: Have the document officially translated into the relevant Indian language if required by the state court. Step 4: File a petition for recognition/enforcement at the District Court in India that has jurisdiction (where the marriage was registered or where either party is domiciled). Step 5: The Indian court issues an order recognising the foreign decree. Total cost: INR 15,000-50,000 depending on lawyer fees and state.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my Hindu spouse refuses to participate in UAE court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your spouse is in India and refuses to appear in UAE court, the UAE court can proceed in absentia after proper service of process. Service on a respondent in India is made through diplomatic channels or the Indian consulate. Once the UAE court is satisfied that service was proper, it can proceed and issue a default divorce decree. The decree is valid even if the other party did not appear. It may be harder for the absent party to challenge the Indian registration of this decree, but it is possible if they can show they were not properly notified.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a UAE divorce affect my Indian inheritance rights as a Hindu?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally no for your own inheritance rights, but yes for spousal inheritance. Under the Hindu Succession Act 1956 (India), a divorced spouse loses the right to inherit from the other on intestacy. Once a UAE divorce is registered in India and recognised, the ex-spouse loses intestacy rights from that point. Your own Class I heir status (if you have children) and your rights from your own family are unaffected. For assets in UAE, succession is governed by UAE law -- and UAE law does not automatically give ex-spouses intestacy rights in any event.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'Can Hindus get divorced in UAE?',
+    answer: 'Yes. Hindu non-Muslim expats file under <a href="/en/non-muslim-divorce-uae/">Federal Decree-Law No. 41/2022</a>. The Hindu Marriage Act has no force in UAE courts. Divorce is no-fault and no religious requirements apply.',
+  },
+  {
+    question: 'Will a UAE divorce be recognised in India for a Hindu marriage?',
+    answer: 'Generally yes under Section 13 of the Civil Procedure Code 1908, once properly attested and registered at the relevant District Court in India. See our guide on <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation</a> for the attestation steps.',
+  },
+  {
+    question: 'Do I need to file for divorce in both UAE and India?',
+    answer: 'Usually not -- one UAE divorce registered in India suffices. Dual filing makes sense if you have India-based immovable property or if your spouse may contest Indian registration. Consult a lawyer on <a href="/en/divorce-cost-uae/">UAE divorce costs</a> before deciding on dual proceedings.',
+  },
+  {
+    question: 'How long does Hindu divorce take in UAE?',
+    answer: 'Mutual consent: 1 to 4 months in UAE. Add 1 to 3 months for Indian registration. Contested UAE divorce: 6 to 12 months. Abu Dhabi Civil Family Court is the fastest venue for non-Muslim cases.',
+  },
+  {
+    question: 'What happens to property in a Hindu divorce in UAE?',
+    answer: 'UAE separate property rule applies. Each spouse keeps assets in their name. No HUF equivalents exist in UAE law. See <a href="/en/divorce-cost-uae/">divorce costs UAE</a> and our property division guide for contribution claims if your money funded property in your spouse\'s name.',
+  },
+  {
+    question: 'Is the Hindu Marriage Act applicable in UAE?',
+    answer: 'No. HMA is Indian domestic law only. UAE courts apply Federal Decree-Law No. 41/2022 for non-Muslim divorces. HMA becomes relevant only when registering the UAE decree in India.',
+  },
+  {
+    question: 'Can I get alimony as a Hindu wife in UAE?',
+    answer: 'Yes, under Article 9 of Federal Decree-Law No. 41/2022. Six factors apply: marriage duration, financial capacity of each spouse, living standard, health, reason for divorce, and conduct. India-based maintenance under Hindu Adoptions and Maintenance Act 1956 is a separate parallel remedy.',
+  },
+  {
+    question: 'How do I register a UAE divorce in India?',
+    answer: 'Attest the UAE certificate via MOFA then Indian consulate. File a recognition petition at the competent District Court in India. See <a href="/en/divorce-certificate-attestation-uae/">our attestation guide</a> for the full document list and timeline.',
+  },
+  {
+    question: 'What if my Hindu spouse refuses to participate in UAE court?',
+    answer: 'UAE court can proceed in absentia after proper service through diplomatic channels. The decree is valid without the respondent\'s appearance. See our <a href="/en/indian-national-divorce-uae/">Indian national divorce UAE guide</a> for cross-border service details.',
+  },
+  {
+    question: 'Does a UAE divorce affect my Indian inheritance rights as a Hindu?',
+    answer: 'Yes for spousal intestacy rights -- a registered UAE divorce removes the ex-spouse\'s right to inherit from you in India on intestacy. Your own Class I heir rights and rights from your natal family are unaffected.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/hindu-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Indian Expat Divorce Guide -- UAE 2025</p>
+      <h1>Hindu Divorce in UAE: Courts, Indian Recognition, and the Dual-Country Reality</h1>
+      <p class="hero-desc">
+        You were married in India under the Hindu Marriage Act. You live in Dubai. Now you want a divorce. The uncomfortable truth that most guides skip: the Hindu Marriage Act has zero force in UAE courts. Your divorce here follows UAE civil law -- and then you have to deal with India separately. This guide walks you through both tracks and how they connect.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Six things every Hindu expat must know before filing</h2>
+        <ul class="key-facts">
+          <li><strong>Hindu Marriage Act 1955 does not apply in UAE courts.</strong> Your divorce in UAE follows Federal Decree-Law No. 41 of 2022 -- the civil family law for all non-Muslims.</li>
+          <li><strong>A UAE divorce is generally recognised in India</strong> under Section 13 of the Civil Procedure Code 1908, but it must be properly attested and registered at an Indian District Court.</li>
+          <li><strong>You do not automatically need to file in both countries.</strong> One UAE divorce, registered in India, is sufficient for most civil purposes including remarriage.</li>
+          <li><strong>UAE courts apply no-fault divorce for non-Muslims.</strong> No grounds, no mandatory reconciliation, no religious requirements. Either party can file alone.</li>
+          <li><strong>Mahr does not apply to Hindu marriages.</strong> Financial settlement follows UAE civil maintenance factors -- not Islamic financial rights.</li>
+          <li><strong>Child custody follows UAE law.</strong> FL 41/2022 applies a joint custody default regardless of the parents' religion.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: Which Law Governs -->
+      <section class="content-section">
+        <h2>Which Law Governs a Hindu Divorce in UAE?</h2>
+        <p>
+          The answer surprises many Indian expats: <strong>Federal Decree-Law No. 41 of 2022</strong> governs. This law, in force since 1 February 2023, created a comprehensive civil family law track for all non-Muslims residing in the UAE. It applies regardless of the spouses' nationality or religion, provided neither is Muslim. A Hindu couple, a Christian couple, a Jewish couple, an atheist couple -- all use the same law.
+        </p>
+        <p>
+          The <strong>Hindu Marriage Act 1955</strong> is Indian domestic legislation. It governs marriages and divorces within India's legal system. It has no extraterritorial application. When you step into a UAE court, that court applies UAE federal law. Your Indian marriage certificate is evidence of a valid marriage, but it does not import the HMA's grounds, procedures, or financial outcomes into UAE proceedings.
+        </p>
+        <p>
+          There is one important exception: if you are an Indian Muslim, your divorce in UAE is governed by <strong>Federal Decree-Law No. 41 of 2024</strong> (the Sharia-based Personal Status Law), not FL 41/2022. The Muslim Personal Law (Shariat) Application Act 1937 of India is similarly inapplicable in UAE courts, but UAE courts will apply the Islamic law track regardless. For Indian Muslim divorce, see our dedicated page on <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce UAE</a> and the Sharia divorce guide.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>The strategic option: electing Indian law in UAE court</h3>
+          <p>Article 13 of the UAE Civil Code permits non-citizen residents to request that their home country's law applies to personal status matters. In theory, a Hindu couple could elect the application of the HMA in a UAE court. In practice, very few UAE lawyers are familiar with HMA procedures, courts are unfamiliar with Indian law nuances, and the process becomes significantly more complex with no material advantage. The practical choice is: file under FL 41/2022 in UAE (faster, simpler) and then register the resulting decree in India.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: UAE Divorce Process -->
+      <section class="content-section">
+        <h2>The UAE Divorce Process for Hindu Expats</h2>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2022</strong>, divorce for non-Muslims in UAE is no-fault. Neither party needs to prove adultery, cruelty, or desertion. Either spouse can file alone. The court does not require both parties to agree -- though agreement speeds the process considerably.
+        </p>
+
+        <h3>Where to file</h3>
+        <p>
+          Venue depends on your emirate of residence. In Dubai, you file at the Dubai Personal Status Court using the non-Muslim civil track. In Abu Dhabi, you file at the <strong>Abu Dhabi Civil Family Court</strong>, which was established under <strong>Abu Dhabi Law No. 14 of 2021</strong> specifically to handle non-Muslim family matters. Abu Dhabi is consistently the fastest venue, with uncontested cases concluding in as little as four to six weeks. If you have a choice of emirate (you work in Abu Dhabi but live in Dubai), discuss venue strategy with your lawyer before filing.
+        </p>
+        <p>
+          For the parallel Indian route or comparisons between UAE and Indian filing, see our detailed guide on <a href="/en/where-to-divorce-uae-or-home-country/">where to divorce: UAE or home country</a>.
+        </p>
+
+        <h3>The process step by step</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Consult a UAE family lawyer and prepare documents</h3>
+              <p>You will need: passports of both parties, Emirates IDs, the original Indian marriage certificate (attested by the UAE Ministry of Foreign Affairs and translated into Arabic by a UAE-certified translator), and any prenuptial agreements or prior court orders. Indian marriage certificates must carry apostille (India joined the Hague Apostille Convention in 2005 -- check the state where your certificate was issued).</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>File the petition at the Personal Status Court</h3>
+              <p>Your lawyer files the divorce petition along with the marriage certificate and ID documents. Court fees vary by emirate: approximately AED 200 to 800. The court fixes a first hearing date, typically 3 to 6 weeks after filing. If both parties agree on all terms (children, finances), file a joint petition for faster processing.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Reconciliation attempt (90-day period -- can be waived)</h3>
+              <p>FL 41/2022 provides a 90-day reconciliation window. If both parties agree in writing that reconciliation is not possible, the court waives this period. In a mutual consent divorce, this waiver is almost always granted. In contested cases, the 90-day period runs, the court holds a reconciliation session, and if unsuccessful, proceeds to the substantive hearing.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Financial and custody orders</h3>
+              <p>The court issues orders on maintenance (Article 9 factors), child custody (Article 10 joint custody default), and any property-related claims. If both parties agree, a consent order is filed and approved. Contested financial issues are heard separately and can add 3 to 6 months. For a detailed breakdown of UAE divorce costs, see our <a href="/en/divorce-cost-uae/">divorce cost UAE guide</a>.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Divorce certificate issued</h3>
+              <p>The court issues a UAE divorce certificate (in Arabic). Get a certified Arabic-English translation immediately. This certificate is what you will use for UAE civil status purposes and what you will take to India for registration. Request multiple certified copies -- you will need them for attestation, the Indian court, and personal records.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Indian Recognition -->
+      <section class="content-section">
+        <h2>Indian Recognition of a UAE Hindu Divorce</h2>
+        <p>
+          This is the section most relevant to Indian nationals, and the most frequently misunderstood.
+        </p>
+        <p>
+          Under <strong>Section 13 of the Code of Civil Procedure 1908</strong>, a foreign judgment is conclusive in India unless it: (a) was pronounced by a court of no competent jurisdiction; (b) was not on the merits of the case; (c) was founded on an incorrect view of international law; (d) was opposed to natural justice (e.g. no notice given to the respondent); (e) was obtained by fraud; or (f) sustains a claim founded on a breach of Indian law.
+        </p>
+        <p>
+          A UAE divorce granted under FL 41/2022 is on the merits, by a competent court, with notice to both parties (if properly served). UAE no-fault divorce does not violate Indian public policy -- India itself permits no-fault dissolution under <strong>Section 13B of the Hindu Marriage Act 1955</strong> (mutual consent) and contested grounds under Section 13. The UAE decree meets the Section 13 CPC test in all ordinary cases.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>The important exception: service of process</h3>
+          <p>If your spouse was in India and was not properly served with the UAE divorce petition -- meaning the court proceeded in absentia without diplomatic notification -- the Indian court may find the UAE decree does not satisfy the natural justice requirement of Section 13 CPC. This is the most common ground on which Indian courts refuse to recognise a UAE divorce. Ensure that service is done properly through consular channels, even if it takes longer. A contested Indian recognition fight is far more expensive than getting service right from the start.</p>
+        </div>
+
+        <h3>Registering the UAE divorce in India</h3>
+        <p>
+          "Registration" here means filing a petition before the competent Indian District Court to have the UAE decree recognised and recorded. This is a judicial step, not an administrative one.
+        </p>
+        <ol class="numbered-list">
+          <li>Attest the UAE divorce certificate at the UAE Ministry of Foreign Affairs (MOFA) -- this takes 2 to 5 working days.</li>
+          <li>Attest at the Indian Embassy or Consulate in UAE (Abu Dhabi or Dubai). If the UAE has issued an apostille, consular attestation may not be required -- check with the Indian consulate.</li>
+          <li>Have the document translated into the relevant Indian regional language if required by the state court.</li>
+          <li>File a petition for recognition at the District Court of competent jurisdiction in India. Competent court: where the marriage was solemnised, or where either party was last domiciled.</li>
+          <li>The Indian court holds a hearing, typically one or two dates over 2 to 4 months. If unopposed, it is faster.</li>
+          <li>The court issues an order recognising the foreign decree. Cost: INR 10,000 to 30,000 plus lawyer fees (varies by state).</li>
+        </ol>
+        <p>
+          For detailed documentation steps, see our guide on <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation</a>.
+        </p>
+
+        <h3>Section 13B HMA mutual consent: should you file in India too?</h3>
+        <p>
+          <strong>Section 13B of the Hindu Marriage Act 1955</strong> allows mutual consent divorce in India. Both parties must have lived separately for one year, mutually agreed to dissolve the marriage, and be present (or now, via video conference under post-COVID court rules) for two hearings 6 to 18 months apart. A Section 13B decree is unambiguously valid in Indian civil law and requires no recognition procedure.
+        </p>
+        <p>
+          When is a dual filing worth it? If you have significant India-based immovable property (land, a flat in your name) and want a clean Indian court order for the title transfer. If your spouse is litigious and likely to challenge the UAE decree's Indian registration. If your family or you personally prefer the certainty of an Indian court decree for personal documentation. For most couples, the UAE-then-register route is cheaper and faster. See our <a href="/en/indian-national-divorce-uae/">complete guide for Indian nationals divorcing in UAE</a>.
+        </p>
+      </section>
+
+      <!-- Section 4: Financial Rights -->
+      <section class="content-section">
+        <h2>Financial Rights in a Hindu Divorce in UAE</h2>
+        <p>
+          This is where Hindu expats most often expect HMA rules and find UAE rules instead. Here is what actually applies.
+        </p>
+
+        <h3>Maintenance (alimony) under UAE law</h3>
+        <p>
+          There is no mahr in a Hindu marriage -- mahr is an Islamic financial obligation that does not apply to non-Muslim unions. Instead, maintenance for a Hindu wife in UAE is assessed under <strong>Article 9 of Federal Decree-Law No. 41 of 2022</strong>, which instructs the court to weigh six factors:
+        </p>
+        <ul>
+          <li>Duration of the marriage</li>
+          <li>Financial capacity of each spouse</li>
+          <li>Standard of living maintained during the marriage</li>
+          <li>Health and employability of the wife</li>
+          <li>The reason for the divorce and which party bears greater fault</li>
+          <li>Conduct of each party throughout the marriage</li>
+        </ul>
+        <p>
+          This is closer to the needs-based maintenance analysis in Indian courts under the <strong>Hindu Adoptions and Maintenance Act 1956</strong> than to any fixed formula. Unlike Islamic law, there is no fixed "three-month iddah" period -- maintenance duration and quantum are discretionary.
+        </p>
+
+        <h3>Property</h3>
+        <p>
+          UAE applies the separate property rule. Each spouse keeps assets registered in their name. For Dubai real estate, DLD title registration is decisive -- not who paid the mortgage. If you funded a property now registered in your spouse's name, a contribution claim under Article 9 of FL 41/2022 and Article 318 of the UAE Civil Code (unjust enrichment) is available, but requires documentary evidence. Bank transfer records are the strongest proof.
+        </p>
+        <p>
+          India-based property (land, flat under HMA jurisdiction) is a separate matter. A UAE court has no jurisdiction to order a transfer of Indian property. Those assets are governed by Indian law and must be dealt with in Indian proceedings.
+        </p>
+
+        <h3>India-based maintenance: a parallel track</h3>
+        <p>
+          If your spouse remains in India or holds income-generating assets in India, you can file for maintenance in India under the <strong>Hindu Adoptions and Maintenance Act 1956</strong>. This is a separate remedy, running in parallel to or after UAE proceedings. A UAE maintenance order does not automatically bind Indian courts, and vice versa. However, a UAE court order is strong evidence of the parties' financial arrangements and may influence the Indian court's assessment.
+        </p>
+      </section>
+
+      <!-- Section 5: Child Custody -->
+      <section class="content-section">
+        <h2>Child Custody for Hindu Families in UAE</h2>
+        <p>
+          Under <strong>Article 10 of Federal Decree-Law No. 41 of 2022</strong>, the default custody arrangement for non-Muslim children in UAE is joint custody: both parents share legal decision-making authority on major matters (education, healthcare, travel). Physical care arrangements (where the child lives day to day) are decided based on the child's best interests.
+        </p>
+        <p>
+          Religion is not a determining factor in UAE non-Muslim custody proceedings. The court does not apply Hindu law concepts of guardianship or religious upbringing rights. Both parents are treated as equal custodians by default, regardless of gender. This represents a significant departure from traditional HMA guardianship principles, where the father was typically the natural guardian.
+        </p>
+        <p>
+          If the child is an OCI (Overseas Citizen of India) or Indian national, and custody becomes contested in India, Indian courts apply the <strong>Guardians and Wards Act 1890</strong> (with HMA principles for Hindus). A UAE custody order is persuasive in Indian proceedings but is not automatically binding -- Indian courts conduct their own welfare assessment.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>International child abduction risk</h3>
+          <p>India is not a signatory to the Hague Convention on International Child Abduction. If your spouse takes your child to India without your consent during or after UAE divorce proceedings, recovery is significantly harder than in Hague Convention countries. If there is a risk of this, apply immediately to the UAE court for a travel restriction order on the child's UAE passport. Act before filing divorce papers if you have reason to believe the child may be moved.</p>
+        </div>
+      </section>
+
+      <!-- Section 6: The Hindu Marriage Certificate -->
+      <section class="content-section">
+        <h2>What Happens to Your Hindu Marriage Certificate?</h2>
+        <p>
+          A Hindu marriage solemnised in India and registered under the <strong>Hindu Marriage Act 1955</strong> creates a record in the Indian civil registry (the relevant state's registrar of marriages). A UAE divorce terminates the marriage legally in UAE but does not automatically update the Indian registry.
+        </p>
+        <p>
+          To update the Indian marriage registry, you must go through the Indian recognition process described above: attest the UAE divorce certificate, file the recognition petition in the competent District Court, obtain the recognition order, and then present that order to the original registrar of marriages or the state's relevant authority. The process varies slightly by state.
+        </p>
+        <p>
+          Practically, most Indian civil transactions that care about your marital status (remarriage, passport application, property transfer) will accept the attested UAE divorce certificate plus the Indian recognition order. A handful of state registrars may require the original marriage register to be updated. Your Indian lawyer will advise on the practice in your state.
+        </p>
+        <p>
+          For the attestation process in detail, see our guide on <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation</a>. For questions about the cost of the full UAE divorce process, see <a href="/en/divorce-cost-uae/">divorce cost UAE</a>.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/indian-national-divorce-uae/" class="related-card">
+            <strong>Indian National Divorce UAE</strong>
+            <span>Full guide for all Indian expats divorcing in UAE</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>FL 41/2022 explained: eligibility, process, outcomes</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>UAE Divorce Certificate Attestation</strong>
+            <span>How to legalise your UAE divorce for use in India</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and timeline by emirate</span>
+          </a>
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>Divorce in UAE or Home Country?</strong>
+            <span>Strategic comparison for expats with dual-country ties</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody default, international cases, travel restrictions</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+  .numbered-list { margin: 0.5rem 0 1rem 1.5rem; list-style-type: decimal; }
+  .numbered-list li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.5rem; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

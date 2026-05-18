@@ -1,0 +1,417 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق بالوساطة والتراضي في الإمارات — أسرع طريق وأقله تكلفة ٢٠٢٥';
+const description =
+  'وساطة الطلاق في الإمارات قد تُنهي قضيتك في شهرين إلى أربعة أشهر بتكلفة تبدأ من 3,000 درهم بدلاً من سنوات أمام المحكمة. دليل شامل يشرح الفرق بين الإرشاد الأسري الإلزامي والوساطة الخاصة وخطوات كل مسار.';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-بالوساطة-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/mediated-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق بالوساطة في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل الاتفاق المُبرم عبر الوساطة ملزم قانونياً في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الاتفاق المُبرم عبر الوساطة في حد ذاته ليس ملزماً تلقائياً. يجب تقديمه إلى محكمة الأحوال الشخصية للمصادقة عليه ليصبح أمراً قضائياً. بعد المصادقة يكون ملزماً كأي حكم قضائي آخر ويُنفَّذ بالآليات ذاتها.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن إجبار أحد الزوجين على الخضوع للوساطة في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. الوساطة الخاصة طوعية تماماً. جلسات الإرشاد الأسري في دائرة الإرشاد والتوافق الأسري إلزامية لكنها مختلفة. إذا رفض أحد الطرفين الوساطة الخاصة يُلجأ مباشرةً إلى المحكمة. لا تستطيع المحاكم إجبار أحد الطرفين على الوساطة الخاصة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الفرق بين الإرشاد الأسري الإجباري والوساطة الخاصة في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الإرشاد الأسري جزء من إجراءات المحكمة تُشرف عليه دائرة الإرشاد والتوافق الأسري بهدف المصالحة أو إثبات استحالتها. الوساطة الخاصة مستقلة تماماً عن المحكمة وطوعية وسرية بالكامل والهدف منها الوصول إلى تسوية عملية لا إنقاذ الزواج.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تعكس الوساطة الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. الوساطة في سياق الطلاق هدفها الوصول إلى شروط تسوية عملية لا إنقاذ الزواج. هي منفصلة عن جلسات الإرشاد التي تهدف إلى المصالحة. إذا كنت قد قررت الطلاق، الوساطة تُسرّع الوصول إلى شروط عادلة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجوز للطرفين الخضوع للوساطة عبر الفيديو إذا كان أحدهما خارج الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم في حالات كثيرة. بعض جلسات الوساطة تُعقد عبر مكالمة فيديو إذا كان أحد الطرفين في الخارج. يستلزم ذلك موافقة الطرفين والوسيط. المطلوب اتصال إنترنت جيد وترتيب مسبق للأوقات عبر المناطق الزمنية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الموضوعات التي يمكن معالجتها في وساطة الطلاق بالإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تقسيم الأصول، مبالغ النفقة ومدتها، جداول الحضانة، نفقة الأطفال، ترتيبات الرسوم الدراسية، بيع العقارات أو نقل ملكيتها، التعامل مع الحصص التجارية، المسؤولية عن الديون. كل ما يمكن للمحكمة الحكم به يمكن التوسط فيه.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث إذا فشلت الوساطة في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا تضر قضيتك القانونية في شيء. سرية الوساطة راسخة: لا يُشار إلى أي شيء قيل في الجلسات ولا يُستخدم دليلاً في إجراءات المحكمة اللاحقة. في كثير من الأحيان تُنتج حتى "الوساطات الفاشلة" اتفاقيات جزئية تُقلّص نطاق الخلاف أمام المحكمة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجب على الوسيط أن يكون مرخّصاً لتسوية طلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا يوجد سجل إلزامي موحّد للوسطاء في النزاعات الأسرية بالإمارات حالياً. يُستحسن البحث عن وسيط حاصل على تدريب وشهادة معتمدة، ولديه خبرة في النزاعات الأسرية تحديداً ومعرفة بقانون الأحوال الشخصية الإماراتي. مراكز التحكيم المعتمدة (DIAC) توفر قوائم بوسطاء مؤهلين.',
+      },
+    },
+  ],
+};
+
+const comparisonRows = [
+  { item: 'الأتعاب المهنية', mediation: '١,٠٠٠ - ٣,٠٠٠ درهم للجلسة (٣-٦ جلسات عادةً)', court: '١٥,٠٠٠ - ٦٠,٠٠٠ درهم لكل طرف' },
+  { item: 'مصادقة المحكمة', mediation: '٣٠٠ - ٦٠٠ درهم لتوثيق الاتفاق', court: '١,٠٠٠ - ٣,٠٠٠ درهم رسوم ومصاريف' },
+  { item: 'المدة الزمنية', mediation: '٢ - ٤ أشهر', court: '٦ - ٢٤ شهراً' },
+  { item: 'التكلفة العاطفية', mediation: 'أقل بكثير - إجراء تعاوني', court: 'مرتفعة - إجراء تنافسي' },
+  { item: 'المجموع التقديري', mediation: '٣,٠٠٠ - ١٥,٠٠٠ درهم', court: '٢٠,٠٠٠ - ٨٠,٠٠٠+ درهم' },
+];
+
+const steps = [
+  { n: 1, title: 'الجلسة الافتتاحية المشتركة', body: 'يلتقي الطرفان بالوسيط معاً لتحديد قواعد الجلسة (السرية، والاحترام، وعدم المقاطعة) ورسم خريطة المسائل الخلافية. لكل طرف فرصة لعرض موقفه باختصار.' },
+  { n: 2, title: 'الجلسات الفردية الخاصة', body: 'يلتقي الوسيط بكل طرف على حدة في جلسات خاصة. يتيح هذا المجال للحديث بصراحة عن المخاوف الحقيقية والأولويات والتنازلات الممكنة. لا يُفصح الوسيط عن مضمون هذه الجلسات دون إذن.' },
+  { n: 3, title: 'جلسات التفاوض', body: 'يجتمع الطرفان مجدداً والوسيط يُدير النقاش مسألةً مسألة. الأصول أولاً ثم الحضانة وترتيبات الأطفال ثم الدعم المالي. المحامون قد يحضرون هذه الجلسات للاستشارة الآنية.' },
+  { n: 4, title: 'صياغة محضر الاتفاق', body: 'بعد التوصل إلى شروط يُصاغ وثيقة تتضمن جميع البنود المتفق عليها بلغة واضحة ودقيقة. يراجعها الطرفان ويوقعانها. هذا المحضر هو الأساس غير الملزم الذي يُقدَّم للمحكمة.' },
+  { n: 5, title: 'المصادقة القضائية', body: 'يُقدَّم الاتفاق الموقّع إلى محكمة الأحوال الشخصية للمصادقة. تراجع المحكمة البنود للتأكد من عدم مخالفتها للقانون أو مصلحة الأطفال. بعد المصادقة يصبح أمراً قضائياً قابلاً للتنفيذ بالقوة القانونية ذاتها للأحكام القضائية.' },
+];
+
+const faqItems = [
+  {
+    question: 'هل الاتفاق المُبرم عبر الوساطة ملزم قانونياً في الإمارات؟',
+    answer: 'ليس ملزماً تلقائياً. يجب تقديمه للمحكمة للمصادقة عليه ليصبح أمراً قضائياً. بعد المصادقة يُنفَّذ بالآليات ذاتها لأي حكم قضائي.',
+  },
+  {
+    question: 'هل يمكن إجبار أحد الزوجين على الخضوع للوساطة في الإمارات؟',
+    answer: 'لا. الوساطة الخاصة طوعية تماماً. إذا رفض أحد الطرفين يُلجأ للمحكمة مباشرةً. جلسات الإرشاد الأسري في دائرة الإرشاد والتوافق إلزامية لكنها مختلفة.',
+  },
+  {
+    question: 'ما الفرق بين الإرشاد الأسري الإجباري والوساطة الخاصة في الإمارات؟',
+    answer: 'الإرشاد الأسري جزء من إجراءات المحكمة هدفه المصالحة. الوساطة الخاصة مستقلة وطوعية وسرية وهدفها الوصول إلى تسوية لا إنقاذ الزواج.',
+  },
+  {
+    question: 'هل تعكس الوساطة الطلاق في الإمارات؟',
+    answer: 'لا. الوساطة في الطلاق تهدف إلى شروط تسوية عملية لا إنقاذ الزواج. هي منفصلة عن جلسات الإرشاد.',
+  },
+  {
+    question: 'هل يجوز للطرفين الخضوع للوساطة عبر الفيديو؟',
+    answer: 'نعم في حالات كثيرة بشرط موافقة الطرفين والوسيط وترتيب مسبق للأوقات عبر المناطق الزمنية.',
+  },
+  {
+    question: 'ما الموضوعات التي يمكن معالجتها في وساطة الطلاق؟',
+    answer: 'تقسيم الأصول والنفقة والحضانة ونفقة الأطفال والرسوم الدراسية والعقارات والحصص التجارية والديون. كل ما يمكن للمحكمة الحكم به يمكن التوسط فيه.',
+  },
+  {
+    question: 'ماذا يحدث إذا فشلت الوساطة؟',
+    answer: 'لا تضر قضيتك القانونية. سرية الوساطة راسخة. كثيراً ما تُنتج حتى الوساطات الفاشلة اتفاقيات جزئية تُقلّص نطاق الخلاف أمام المحكمة.',
+  },
+  {
+    question: 'هل يجب على الوسيط أن يكون مرخّصاً لتسوية طلاق في الإمارات؟',
+    answer: 'لا يوجد سجل إلزامي موحّد حالياً. يُستحسن البحث عن وسيط حاصل على تدريب معتمد وخبرة في النزاعات الأسرية. مراكز DIAC توفر قوائم بوسطاء مؤهلين.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">الطلاق بالتراضي والوساطة · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        الطلاق عبر المحاكم في الإمارات قد يستغرق ستة أشهر إلى سنتين ويكلف 20,000 إلى 80,000 درهم أو أكثر في أتعاب المحامين وحدها. الوساطة الخاصة تقدم بديلاً منظماً: وسيط محايد يساعدك وزوجك على التوصل إلى اتفاق ملزم في شهرين إلى أربعة أشهر بجزء بسيط من التكلفة.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-grid-wrap">
+        <div class="summary-card">
+          <p class="s-label">تكلفة الوساطة</p>
+          <p class="s-value">٣,٠٠٠ - ١٥,٠٠٠ درهم</p>
+          <p class="s-note">مقابل ٢٠,٠٠٠ - ٨٠,٠٠٠+ أمام المحكمة</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">المدة الزمنية</p>
+          <p class="s-value">٢ - ٤ أشهر</p>
+          <p class="s-note">مقابل ٦ - ٢٤ شهراً في المحكمة</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">نسبة النجاح</p>
+          <p class="s-value">٦٠ - ٧٠٪</p>
+          <p class="s-note">حين يتعاون الطرفان بجدية</p>
+        </div>
+      </div>
+
+      <div class="answer-box">
+        <h2>ما الوساطة في الطلاق وكيف تعمل في الإمارات؟</h2>
+        <p>
+          وساطة الطلاق إجراء تفاوضي طوعي ومنظّم يُساعد فيه وسيط محايد الزوجَين على التوصل إلى اتفاق في المسائل العملية التي يُفرزها الانفصال. الوسيط لا يتخذ قرارات ولا يعمل حكماً؛ دوره تيسير التواصل ومساعدة كل طرف على فهم موقف الآخر والتوجيه نحو التسوية.
+        </p>
+        <p>
+          ميزة أساسية هي السرية التامة. ما يُقال في الوساطة من تنازلات ومقترحات لا يجوز الاستناد إليه دليلاً أمام المحكمة إذا فشلت الوساطة. هذه الحماية تُشجع على النقاش المفتوح والتسوية الصادقة.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>الإرشاد الأسري الإجباري مقابل الوساطة الخاصة: الفرق الجوهري</h2>
+        <p>
+          أكثر نقاط الالتباس شيوعاً لدى من يسلكون طريق الطلاق في الإمارات هو الخلط بين جلسات الإرشاد الأسري المقرّرة قانونياً والوساطة الخاصة الاختيارية. هما شيئان مختلفان كلياً.
+        </p>
+
+        <h3>الإرشاد والتوافق الأسري (إلزامي)</h3>
+        <p>
+          قبل أن تُصدر المحاكم الإماراتية حكماً في دعوى طلاق متنازع عليها، يُلزَم الطرفان بحضور جلسات في دائرة الإرشاد والتوافق الأسري. يُديرها أخصائيون اجتماعيون ومرشدون بهدف المصالحة وإعادة اللمّ. إذا تعذّرت المصالحة بعد جلسة إلى أربع جلسات يُصدر مرسوم إحالة وتستمر الدعوى القضائية.
+        </p>
+        <p>
+          هذه الجلسات ليست سرية بالمعنى المطلق للوساطة الخاصة، إذ قد يُرفع تقرير منها إلى المحكمة. المشاركة إلزامية وهي جزء من مسار المحكمة وليست بديلاً عن الوساطة الخاصة.
+        </p>
+
+        <h3>الوساطة الخاصة (اختيارية)</h3>
+        <p>
+          الوساطة الخاصة مستقلة تماماً عن مسار المحكمة. يُجريها وسيط مهني مستقل وهي سرية بالكامل وتُدخل إليها طوعاً من الطرفين. يمكن إجراؤها قبل رفع أي دعوى أو بالتوازي معها أو بعد الانتهاء من جلسات الإرشاد دون تحقيق مصالحة.
+        </p>
+        <p>
+          هدف الوساطة الخاصة في سياق الطلاق ليس إنقاذ الزواج بل الوصول إلى شروط تسوية عملية قابلة لتقديمها للمحكمة للمصادقة عليها.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>متى تنجح الوساطة ومتى لا تنجح</h2>
+
+        <h3>الوساطة تنجح حين:</h3>
+        <ul class="checklist">
+          <li>يرغب الطرفان في التفاعل والتفاوض بحسن نية</li>
+          <li>التواصل بينهما صعب لكن ليس مقطوعاً كلياً</li>
+          <li>مصلحة الأطفال أولوية لكليهما ويريدان علاقة تعاونية في التربية</li>
+          <li>ثمة شراكة تجارية أو مالية كبيرة يودّ كلاهما حلّها بعقلانية</li>
+          <li>كلاهما يريد تجنب التقاضي التنافسي العلني المرهق</li>
+          <li>التكلفة والسرعة مهمتان وكلاهما لا يريد قضاء سنوات في المحكمة</li>
+        </ul>
+
+        <h3>الوساطة لا تصلح في هذه الحالات:</h3>
+        <ul class="checklist">
+          <li>وجود عنف أسري أو إساءة: الوساطة تتطلب أمناً وتوازناً في القوى لا يتوفران في العلاقات المسيئة</li>
+          <li>اختلال حاد في موازين القوى يجعل أحد الطرفين عاجزاً عن الدفاع عن نفسه</li>
+          <li>إخفاء أصول أو رفض الإفصاح المالي من أحد الطرفين</li>
+          <li>عداوة حادة تجعل الجلسات المشتركة غير قابلة للعمل</li>
+          <li>استخدام الوساطة كتكتيك لكسب الوقت أثناء نقل الأصول</li>
+        </ul>
+
+        <div class="info-box info-box--warning">
+          <h3>في حالة وجود عنف أسري: لا للوساطة</h3>
+          <p>الوساطة تفترض التفاوض بين نِدَّين. إذا تعرّضتِ للعنف الأسري اتجهي مباشرةً إلى المحكمة. تمتلك محاكم الإمارات آليات حماية وإجراءات قضائية تنافسية توفر ضمانات لا تستطيع الوساطة توفيرها.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مقارنة التكلفة: الوساطة مقابل التقاضي الكامل</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>البند</th>
+                <th>مسار الوساطة</th>
+                <th>التقاضي الكامل</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.item}</td>
+                  <td>{row.mediation}</td>
+                  <td>{row.court}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          حتى لو فشلت الوساطة لا تُهدر الوقت والمال المُنفقَين. كثيراً ما تُحدث الوساطات اتفاقيات جزئية وتُضيّق دائرة الخلاف وتُقلّص نطاق ما يُعرض لاحقاً على المحكمة.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>خطوات الوساطة من البداية إلى المصادقة القضائية</h2>
+        <div class="step-list">
+          {steps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>ماذا يحدث إذا فشلت الوساطة؟</h2>
+        <p>
+          فشل الوساطة في التوصل إلى تسوية كاملة لا يضر موقفك القانوني. سرية الوساطة راسخة: لا يُشار إلى شيء قيل في الجلسات من تنازلات ومقترحات ولا يُستخدم دليلاً في أي إجراءات قضائية لاحقة. كل طرف يدخل المحكمة بسجل نظيف.
+        </p>
+        <p>
+          في الواقع العملي، حتى "الوساطات الفاشلة" تُنتج اتفاقيات جزئية في كثير من الأحيان. قد يتفق الطرفان على الحضانة دون الشروط المالية، أو على سعر بيع العقار دون اتفاق على كيفية توزيع العائد. هذه الاتفاقيات الجزئية تُقلّص نطاق الخلاف وتُقصّر إجراءات المحكمة اللاحقة.
+        </p>
+        <p>
+          الوقت المُقضى في الوساطة نادراً ما يكون هدراً من حيث الفهم. يخرج كلا الطرفين من الوساطة عادةً بصورة أوضح عن موقف الآخر والأدلة التي يمتلكها والنطاق الواقعي للنتائج التي قد تصدر عن المحكمة. هذا الوضوح يُساعد الطرفين ومحاميَيهما على اتخاذ قرارات أفضل بشأن التسوية أو الاستمرار في التقاضي.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <div class="cta-box">
+        <h2>احصل على استشارة متخصصة في قضيتك</h2>
+        <p>كل وضع مختلف. استشارة قصيرة توضح لك ما إذا كانت الوساطة مناسبة لظروفك وما هي النتائج التي يمكنك توقعها بواقعية.</p>
+        <LeadForm />
+      </div>
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل من البداية إلى الحكم النهائي</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>ما يمكن تسويته عبر الوساطة</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>ترتيبات الحضانة والزيارة</span>
+          </a>
+          <a href="/ar/قانون-الطلاق-في-الامارات/" class="related-card">
+            <strong>قانون الطلاق في الإمارات</strong>
+            <span>نص القانون الاتحادي وأبرز أحكامه</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-grid-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .summary-card { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .s-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .s-value { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .s-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0 0 0.5rem; font-size: 0.97rem; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid-wrap { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid-wrap { grid-template-columns: 1fr; }
+  }
+</style>

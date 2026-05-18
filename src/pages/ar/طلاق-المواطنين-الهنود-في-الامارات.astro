@@ -1,0 +1,447 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'طلاق المواطنين الهنود في الإمارات — الإجراءات والاعتراف القانوني في الهند ٢٠٢٥';
+const description =
+  'المواطنون الهنود في الإمارات أكبر جالية وافدة. هذا الدليل يشرح خيارات الطلاق في الإمارات، وكيفية الاعتراف بحكم الطلاق الإماراتي في الهند عبر المادة 13 من قانون الإجراءات المدنية.';
+
+const canonical = 'https://divorceu.ae/ar/طلاق-المواطنين-الهنود-في-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/indian-national-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'طلاق المواطنين الهنود في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع المواطن الهندي المقيم في الإمارات طلب الطلاق في الإمارات إذا كانت زوجته في الهند؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. تثبت الاختصاص القضائي لمحاكم الإمارات إذا كان أحد الزوجين مقيماً فيها. تُخطر الزوجة في الهند بالأوضاع الرسمية المعتمدة. إذا لم ترد بعد التبليغ الصحيح جاز للمحكمة إصدار حكم غيابي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تعترف الهند بأحكام الطلاق الصادرة من الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم بصفة عامة وبشروط. يحكم الاعتراف المادة 13 من قانون الإجراءات المدنية الهندي لسنة 1908. يُشترط أن يكون للمحكمة الإماراتية اختصاص مشروع، وأن يُتاح للطرف الآخر فرصة المشاركة، وألا يخالف الحكم النظام العام الهندي. أحكام الطلاق بالتراضي التي شارك فيها الطرفان لها أعلى فرص الاعتراف.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'تزوجنا في الهند. هل يمكننا الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. مكان انعقاد الزواج لا يحدد مكان الطلاق. المعيار هو مكان إقامتكما الحالي والاختصاص القضائي المترتب على ذلك. تتمتع محاكم الإمارات باختصاص إذا كان أحد الزوجين مقيماً فيها.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الوثائق المطلوبة للاعتراف بحكم الطلاق الإماراتي في الهند؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تحتاج إلى: نسخة مصدّقة من حكم الطلاق الإماراتي، شهادة أبوستيل من وزارة الخارجية الإماراتية، ترجمة معتمدة من العربية إلى الإنجليزية أو اللغة الإقليمية المعنية، ثم تُقدّم التماساً لدى المحكمة المختصة في الهند.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يسري قانون الزواج الهندوسي الهندي على الهندوس المقيمين في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. قانون الزواج الهندوسي لسنة 1955 تشريع إقليمي هندي لا يُطبّق خارج الهند. محاكم الإمارات تطبّق القانون الإماراتي لا القانون الهندي على الدعاوى المرفوعة أمامها. حكم الطلاق الصادر عن محاكم الإمارات يُعامَل في الهند باعتباره حكماً أجنبياً يستوجب الاعتراف.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الذي يحدث لتأشيرة إقامة زوجتي بعد الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تحصل على مهلة ثلاثين يوماً بعد حكم الطلاق لتغيير وضعها الإقامي إلى تأشيرة عمل خاصة بها أو كفالة أحد الأقارب أو مغادرة الإمارات مؤقتاً للحصول على تأشيرة جديدة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تُعترف بأوامر الحضانة الإماراتية في الهند؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تُحترم أوامر الحضانة الإماراتية عموماً في الهند، لكن كل قضية تعتمد على وقائعها. المحاكم الهندية تطبّق معيار مصلحة الطفل وقد تراجع أي أمر أجنبي إذا قدّم أحد الوالدين عريضة حبس لدى محكمة هندية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف أخطر زوجتي المقيمة في الهند بدعوى الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يمكن الإخطار عبر القنوات الدولية الرسمية. تستطيع محكمة الإمارات توجيه طلب تبليغ من خلال اتفاقيات التعاون القضائي مع الهند، أو يُنفَّذ التبليغ عبر محكمة هندية بموجب توكيل رسمي لمحامٍ هندي. وثّق كل خطوة تبليغ توثيقاً دقيقاً.',
+      },
+    },
+  ],
+};
+
+const costItems = [
+  { item: 'أتعاب المحامي في الإمارات', range: '٥,٠٠٠ - ١٥,٠٠٠ درهم', note: 'أقل في الطلاق غير المتنازع عليه، أعلى في الطلاق المتنازع عليه' },
+  { item: 'رسوم محاكم الإمارات', range: '٥٠٠ - ٢,٠٠٠ درهم', note: 'تقديم الدعوى وجلسات الوساطة وشهادة الطلاق' },
+  { item: 'الترجمة المعتمدة والأبوستيل', range: '٥٠٠ - ١,٥٠٠ درهم', note: 'ترجمة من العربية مع شهادة أبوستيل من وزارة الخارجية' },
+  { item: 'محامي الاعتراف في الهند', range: 'ما يعادل ٥٠٠ - ٢,٥٠٠ درهم', note: 'تقديم الالتماس والحضور أمام المحكمة المختصة' },
+  { item: 'المجموع التقديري', range: '٧,٠٠٠ - ٢٠,٠٠٠ درهم', note: 'من غير متنازع عليه إلى متنازع عليه متوسط' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يستطيع المواطن الهندي المقيم في الإمارات طلب الطلاق إذا كانت زوجته في الهند؟',
+    answer: 'نعم. تثبت الاختصاص القضائي لمحاكم الإمارات إذا كان أحد الزوجين مقيماً فيها. تُخطر الزوجة عبر القنوات الرسمية. إذا لم ترد بعد التبليغ الصحيح جاز إصدار حكم غيابي.',
+  },
+  {
+    question: 'هل تعترف الهند بأحكام الطلاق الصادرة من الإمارات؟',
+    answer: 'نعم بصفة عامة وبشروط. يحكم الاعتراف المادة 13 من قانون الإجراءات المدنية الهندي. أحكام الطلاق بالتراضي التي شارك فيها الطرفان لها أعلى فرص الاعتراف.',
+  },
+  {
+    question: 'تزوجنا في الهند. هل يمكننا الطلاق في الإمارات؟',
+    answer: 'نعم. مكان انعقاد الزواج لا يحدد مكان الطلاق. المعيار هو مكان الإقامة الحالي. تتمتع محاكم الإمارات باختصاص إذا كان أحد الزوجين مقيماً فيها.',
+  },
+  {
+    question: 'ما الوثائق المطلوبة للاعتراف بحكم الطلاق الإماراتي في الهند؟',
+    answer: 'نسخة مصدّقة من حكم الطلاق مع شهادة أبوستيل من وزارة الخارجية الإماراتية وترجمة معتمدة، ثم التماس لدى المحكمة الهندية المختصة.',
+  },
+  {
+    question: 'هل يسري قانون الزواج الهندوسي على الهندوس المقيمين في الإمارات؟',
+    answer: 'لا. قانون الزواج الهندوسي لسنة 1955 تشريع إقليمي لا يُطبّق في الإمارات. محاكم الإمارات تطبّق القانون الإماراتي على الدعاوى أمامها.',
+  },
+  {
+    question: 'ما الذي يحدث لتأشيرة إقامة زوجتي بعد الطلاق في الإمارات؟',
+    answer: 'تحصل على مهلة ثلاثين يوماً لتغيير وضعها الإقامي إلى تأشيرة عمل خاصة أو كفالة أحد الأقارب أو المغادرة مؤقتاً.',
+  },
+  {
+    question: 'هل تُعترف بأوامر الحضانة الإماراتية في الهند؟',
+    answer: 'تُحترم عموماً في الهند لكن كل قضية تعتمد على وقائعها. المحاكم الهندية تطبّق معيار مصلحة الطفل وقد تراجع أي أمر أجنبي.',
+  },
+  {
+    question: 'كيف أخطر زوجتي المقيمة في الهند بدعوى الطلاق في الإمارات؟',
+    answer: 'عبر القنوات الدولية الرسمية. تستطيع محكمة الإمارات توجيه طلب تبليغ عبر اتفاقيات التعاون القضائي مع الهند أو عبر توكيل محامٍ هندي. وثّق كل خطوة توثيقاً دقيقاً.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">المقيمون الهنود · الطلاق في الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        يُشكّل المواطنون الهنود أكبر جالية وافدة في الإمارات بما يتجاوز 2.8 مليون شخص. طلاقهم يتضمن منظومة قانونية مزدوجة: محاكم الإمارات للطلاق نفسه، والمحاكم الهندية إذا احتجت لاعتراف رسمي بالحكم في الهند. هذا الدليل يشرح المسارين وتكاليفهما والخطوات التي تربطهما.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-grid-wrap">
+        <div class="summary-card">
+          <p class="s-label">الجالية الهندية في الإمارات</p>
+          <p class="s-value">٢.٨ مليون+</p>
+          <p class="s-note">أكبر جالية وافدة</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">مدة الاعتراف في الهند</p>
+          <p class="s-value">٣ - ٢٤ شهراً</p>
+          <p class="s-note">غير متنازع عليه مقابل متنازع عليه</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">التكلفة الإجمالية التقديرية</p>
+          <p class="s-value">٧,٠٠٠ - ٢٠,٠٠٠ درهم</p>
+          <p class="s-note">في الاختصاصين مجتمعَين</p>
+        </div>
+      </div>
+
+      <div class="answer-box">
+        <h2>خيارات الطلاق المتاحة للمواطن الهندي المقيم في الإمارات</h2>
+        <p>
+          إذا كنت مواطناً هندياً مقيماً في الإمارات وانهار زواجك، أمامك مساران رئيسيان: رفع دعوى الطلاق في محاكم الإمارات إذا كان الزوجان مقيمَين فيها، أو رفع الدعوى في الهند إذا عاد أحدهما إليها أو كانت غالبية الأصول هناك.
+        </p>
+        <p>
+          رفع الدعوى في الإمارات هو الخيار العملي في الغالب حين يكون الزوجان في الإمارات معاً. الطلاق غير المتنازع عليه قد ينتهي في شهر إلى ثلاثة أشهر، والطرفان حاضران للمشاركة دون تعقيدات السفر الدولي.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>أي محكمة تنظر في طلاق المواطن الهندي في الإمارات؟</h2>
+
+        <h3>المواطنون الهنود المسلمون</h3>
+        <p>
+          المسلمون الهنود القادمون من كيرالا وهيدرباد وأوتار براديش وسائر الولايات تُنظر دعاوى طلاقهم في محكمة الأحوال الشخصية التي تطبّق أحكام الشريعة الإسلامية. تسري عليهم أحكام الطلاق والخلع والمهر والعدة والحضانة وفق المرسوم بقانون اتحادي رقم 41 لسنة 2024 (نافذ من 15 أبريل 2025).
+        </p>
+        <p>
+          المسلمون الهنود في الإمارات يجدون انسجاماً فقهياً كبيراً بين قانون الأحوال الشخصية الإسلامي في الهند وقانون الأحوال الشخصية الإماراتي إذ يشتركان في المصدر الفقهي ذاته، مما يُسهّل الاعتراف بالحكم الإماراتي في الهند لاحقاً.
+        </p>
+
+        <h3>الهنود غير المسلمين (هندوس ومسيحيون وسيخ وغيرهم)</h3>
+        <p>
+          يتاح لغير المسلمين الهنود خياران منذ صدور المرسوم بقانون اتحادي رقم 41 لسنة 2022. الأول اعتماد قانون مدني إماراتي علماني يُطبّق تقسيماً متساوياً للأصول بصفة افتراضية دون فترات انتظار دينية. الثاني معالجة الطلاق عبر الإجراءات القانونية الهندية حيث تسري قوانين الأحوال الشخصية الهندية (قانون الزواج الهندوسي لسنة 1955، وقانون الطلاق الهندي لسنة 1869 للمسيحيين).
+        </p>
+        <p>
+          خيار القانون المدني الإماراتي لسنة 2022 يكتسب شعبية متصاعدة بين الوافدين غير المسلمين لأنه أسرع وأبسط من التقاضي عبر محاكم هندية من الخارج.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>قانون الزواج الهندوسي لا يسري خارج الهند</h3>
+          <p>كثير من الهنود الهندوس يظنون أن قوانين الأحوال الشخصية الهندية تتبعهم إلى الخارج. لكن قانون الزواج الهندوسي لسنة 1955 تشريع إقليمي يسري داخل الهند فحسب. محاكم الإمارات تُطبّق القانون الإماراتي على الدعاوى المرفوعة أمامها بغض النظر عن جنسية الأطراف.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>هل تعترف الهند بأحكام الطلاق الإماراتية؟</h2>
+        <p>
+          الإجابة نعم بصفة عامة لكن بشروط محددة. يحكم الاعتراف بالأحكام القضائية الأجنبية في الهند المادة 13 من قانون الإجراءات المدنية الهندي لسنة 1908 التي تُحدد متى يُعدّ حكم المحكمة الأجنبية حكماً قاطعاً في الهند.
+        </p>
+        <p>شروط الاعتراف هي:</p>
+        <ul class="checklist">
+          <li>أن يكون للمحكمة الإماراتية اختصاص قضائي بالنظر في الدعوى</li>
+          <li>أن يُتاح لكلا الطرفين فرصة المشاركة والدفاع</li>
+          <li>ألا يخالف الحكم النظام العام الهندي</li>
+          <li>ألا تكون الإجراءات الإماراتية مبنية على احتيال</li>
+          <li>أن يكون الحكم باتاً غير قابل للطعن</li>
+        </ul>
+        <p>
+          أحكام الطلاق بالتراضي التي شارك فيها الطرفان وتراضيا على شروطها في الإمارات لها أعلى فرص الاعتراف في الهند. الأحكام الصادرة غيابياً حين كان أحد الطرفين في الهند طوال الوقت مع مشاركة محدودة أكثر عرضة للطعن.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>خطوات الاعتراف بحكم الطلاق الإماراتي في الهند</h2>
+        <p>
+          بعد الحصول على حكم الطلاق الإماراتي يستلزم الاعتراف به في الهند تقديم التماس رسمي لمحكمة هندية. هذا الاعتراف ليس تلقائياً، بل يجب التقدم به لمحكمة المديرية المختصة.
+        </p>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">١</div>
+            <div class="step-content">
+              <h3>استخراج نسخة رسمية مصدّقة من حكم الطلاق</h3>
+              <p>احصل على نسخة رسمية مصدّقة من المحكمة الإماراتية التي أصدرت الحكم. يجب أن تكون نسخة رسمية لا مجرد صورة.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٢</div>
+            <div class="step-content">
+              <h3>الحصول على شهادة أبوستيل من وزارة الخارجية الإماراتية</h3>
+              <p>يجب تصديق حكم الطلاق بشهادة أبوستيل من وزارة الخارجية والتعاون الدولي الإماراتية. الإمارات عضو في اتفاقية لاهاي للأبوستيل. تستغرق هذه الخطوة 3 إلى 7 أيام عمل وتكلف 150 إلى 300 درهم.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٣</div>
+            <div class="step-content">
+              <h3>إعداد ترجمة معتمدة</h3>
+              <p>إذا كان الحكم باللغة العربية احصل على ترجمة معتمدة إلى الإنجليزية أو اللغة الإقليمية الهندية المعنية من مترجم موثّق. سيُحدد محاميك الهندي المتطلبات الخاصة بالولاية التي ستتقدم فيها.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٤</div>
+            <div class="step-content">
+              <h3>رفع التماس الاعتراف في المحكمة الهندية</h3>
+              <p>يُقدّم محاميك الهندي التماساً لمحكمة المديرية في مكان إقامتك أو إقامة زوجك في الهند. يتضمن الالتماس شرح الإجراءات الإماراتية وتقديم الحكم المصدّق وطلب اعتراف المحكمة الهندية به.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٥</div>
+            <div class="step-content">
+              <h3>الجلسة وصدور قرار الاعتراف</h3>
+              <p>الاعتراف غير المتنازع عليه يستغرق عادةً 3 إلى 6 أشهر. إذا طعن الطرف الآخر في الاعتراف قد تمتد الإجراءات 12 إلى 24 شهراً. بعد الاعتراف يُستخدم الحكم في تحديث السجلات المدنية والجوازات ووثائق الممتلكات في الهند.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>تكاليف الطلاق في الإمارات للمواطن الهندي</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>البند</th>
+                <th>النطاق التقديري</th>
+                <th>ملاحظات</th>
+              </tr>
+            </thead>
+            <tbody>
+              {costItems.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.item}</td>
+                  <td>{row.range}</td>
+                  <td>{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          القضايا شديدة التنازع مع خلافات على الحضانة وتقسيم الأصول أو الزوج الموجود في الهند الذي يعترض على الطلاق الإماراتي والاعتراف الهندي قد تتجاوز هذه الأرقام بشكل ملحوظ.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>الزوج المقيم في الهند: التحديات العملية</h2>
+        <p>
+          حين يكون أحد الزوجين في الهند، خاصةً إذا عاد إليها تحديداً لتفادي الإجراءات الإماراتية، تستلزم اللوجستيات معالجة دقيقة.
+        </p>
+        <p>
+          لمحاكم الإمارات اختصاص قضائي طالما كان المدّعي مقيماً فيها. يجب تبليغ الزوج الغائب في الهند بالأصول الرسمية. يمكن لمحكمة الإمارات توجيه طلب تبليغ رسمي عبر اتفاقيات التعاون القضائي مع الهند، أو تنفيذ التبليغ عبر توكيل محامٍ هندي.
+        </p>
+        <p>
+          يستطيع الزوج الغائب المشاركة في الإجراءات الإماراتية عبر مكالمة فيديو أو من خلال محامٍ إماراتي بموجب توكيل رسمي. إذا أهمل الإجراءات كلياً رغم التبليغ الصحيح جاز للمحكمة إصدار حكم غيابي. هذا الحكم صالح قانوناً لكنه أكثر عرضة للطعن أثناء إجراءات الاعتراف في الهند.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>وثّق كل خطوة تبليغ بدقة</h3>
+          <p>إذا كان الزوج في الهند وتسير إجراءاتك في الإمارات دون تعاونه، فإن التوثيق الدقيق لكيفية تبليغه أمر بالغ الأهمية. ضعف التوثيق هو السبب الأكثر شيوعاً لرفض المحاكم الهندية الاعتراف بحكم الطلاق الإماراتي.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الفوارق الجوهرية بين القانون الهندي والقانون الإماراتي للمقيم الهندي</h2>
+        <p>
+          أهم ما يجب فهمه هو أن محاكم الإمارات تُطبّق القانون الإماراتي لا القانون الهندي على الدعاوى المرفوعة أمامها. هذا ينتج فوارق عملية:
+        </p>
+        <ul class="checklist">
+          <li>المسلمون الهنود: القانونان يتشاركان المصدر الفقهي فالنتائج متقاربة إلى حد كبير</li>
+          <li>الهندوس: قانون الزواج الهندوسي لسنة 1955 لا يُطبّق في محاكم الإمارات. محاكم الإمارات تُطبّق القانون الإماراتي والحكم الناتج يُعامَل في الهند باعتباره حكماً أجنبياً</li>
+          <li>المسيحيون: قانون الطلاق الهندي لسنة 1869 لا يسري في الإمارات. يوفر القانون المدني الإماراتي لسنة 2022 بديلاً علمانياً مناسباً</li>
+          <li>الحضانة: محاكم الإمارات تُطبّق القانون الإماراتي ومعيار مصلحة الطفل وفق المقاييس الإماراتية ولا تعتمد آلياً أطر الحضانة الهندية</li>
+        </ul>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <div class="cta-box">
+        <h2>احصل على استشارة متخصصة في قضيتك</h2>
+        <p>كل وضع مختلف. استشارة قصيرة توضح لك خياراتك وجدولك الزمني وخطواتك القادمة سواء كان زوجك في الإمارات أم في الهند.</p>
+        <LeadForm />
+      </div>
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل للمقيمين الأجانب</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة للمسلمين وغير المسلمين</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيفية المطالبة بها</span>
+          </a>
+          <a href="/ar/قانون-الطلاق-في-الامارات/" class="related-card">
+            <strong>قانون الطلاق في الإمارات</strong>
+            <span>نص القانون الاتحادي وأبرز أحكامه</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-grid-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .summary-card { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .s-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .s-value { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .s-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0 0 0.5rem; font-size: 0.97rem; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid-wrap { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid-wrap { grid-template-columns: 1fr; }
+  }
+</style>

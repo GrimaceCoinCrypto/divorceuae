@@ -1,0 +1,582 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Talaq in UAE: The Complete 2025 Guide (All Types, Court Rules, Rights)';
+const description =
+  'Everything you need to know about talaq in the UAE: the three types, why instant triple talaq has no legal effect, the 15-day court registration rule under Federal Decree-Law No. 41 of 2024, digital talaq via WhatsApp, and the wife\'s full financial rights.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/talaq-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمغتربين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Talaq UAE', url: 'https://divorceu.ae/en/talaq-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is talaq by WhatsApp valid in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A WhatsApp message containing a clear divorce declaration can constitute a valid talaq in UAE under Federal Law No. 5/1985 (Civil Code), which recognises digital communications as legal acts. However, it has no legal effect until the husband registers it at the Personal Status Court within 15 days under Article 58 of Federal Decree-Law No. 41 of 2024. An unregistered WhatsApp divorce leaves the marriage legally intact.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if I do not register my talaq in UAE within 15 days?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under Article 58 of Federal Decree-Law No. 41 of 2024, a talaq pronounced without court registration within 15 days has no legal effect. The marriage continues to exist in law. The wife can file for judicial registration if the husband refuses. Courts treat deliberate non-registration as an attempt to avoid maintenance and financial obligations, which carries adverse consequences at the enforcement stage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can triple talaq be reversed in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In UAE courts, pronouncing "talaq talaq talaq" in a single sitting is counted as one revocable talaq, not three. The court follows the Maliki and Hanbali majority position. This means the husband can revoke the divorce (raj\'i) during the iddah period without needing a new nikah. The marriage is only permanently dissolved if the iddah lapses without revocation, or if the parties divorce and remarry twice and the husband pronounces a third talaq on the third marriage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does talaq take in UAE courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A straightforward uncontested talaq typically takes 2-4 months from filing to final divorce certificate. The Family Guidance Section first attempts reconciliation, which adds 30-60 days. If reconciliation fails, the court schedules a hearing and issues the divorce certificate. Contested divorces -- where the wife disputes the talaq or financial rights are in dispute -- can take 6-18 months. See the full timeline guide at /en/divorce-timeline-uae/ for detailed stage-by-stage breakdowns.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "What are my wife's financial rights after talaq?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "After talaq, the wife is entitled to: (1) the full deferred mahr (mu'ajjal), which falls due immediately on divorce; (2) iddah maintenance -- housing and financial support for the iddah period (approximately three months, or until childbirth if pregnant); (3) mut'a -- a compensatory payment based on the husband's financial position and the length of the marriage; (4) child support (nafaqa) for children in her custody; and (5) housing for children until they reach the age of independence. These rights apply regardless of which party initiated the divorce.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I do talaq without a lawyer in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can file for talaq registration at the Personal Status Court without a lawyer. The court provides a standard form and the Family Guidance Section guides the process. However, if there are disputes about financial rights, child custody, property, or mahr, legal representation is strongly recommended. Errors in the initial filing -- particularly in how financial claims are stated -- can limit your options at the enforcement stage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is talaq valid if the wife does not know about it?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Under classical Islamic jurisprudence as applied in UAE courts, talaq is a unilateral act -- it does not require the wife's consent or knowledge to take effect as a religious matter. However, UAE courts require notification as part of the registration process under Federal Decree-Law No. 41 of 2024. The court serves official notice on the wife when the talaq is registered. A secret or concealed talaq that was never registered has no legal effect in UAE law.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "What's the difference between talaq and khula?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Talaq is a husband-initiated divorce: the husband pronounces the divorce and registers it at court. Khula is a wife-initiated divorce where she requests release from the marriage, typically by returning the mahr. Under Articles 65-68 of Federal Decree-Law No. 41 of 2024, a wife can file for khula at the Personal Status Court -- the husband does not need to consent if the court is satisfied the marriage has broken down. See the full khula guide at /en/khula-divorce-uae/.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does talaq affect children\'s custody in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Talaq itself does not determine custody -- custody is dealt with separately by the Personal Status Court. Under UAE Personal Status Law, mothers generally have physical custody (hadana) of younger children: boys until age 11, girls until age 13, after which children may express a preference. Fathers typically hold legal guardianship (wilaya). Custody arrangements can be agreed between the parties and confirmed by the court, or the court decides based on the child\'s best interests.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does talaq cost in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Court filing fees for talaq registration at the Personal Status Court are approximately AED 200-500 for the basic application. If the divorce is contested or financial disputes are added, lawyer fees range from AED 5,000 to AED 30,000 or more depending on complexity. Family Guidance Section fees are nominal (AED 50-100). Total cost for a straightforward uncontested talaq with no financial disputes: AED 500-2,000 in court fees. See the full cost breakdown at /en/divorce-cost-uae/.',
+      },
+    },
+  ],
+};
+
+const talaqTypes = [
+  {
+    type: 'Talaq Ahsan',
+    meaning: 'The Most Excellent / Best',
+    how: 'One single pronouncement during a period when the wife is in a state of purity (tuhr), with no sexual intercourse having occurred during that period',
+    revocable: 'Yes -- during the full iddah period',
+    detail: 'Widely considered the most appropriate form in Islamic jurisprudence. After the single pronouncement, the couple observes the iddah (approximately three months). The husband can revoke the divorce at any point before the iddah lapses simply by stating "I have revoked the divorce" or by resuming marital relations -- no new nikah required.',
+    flag: 'best',
+  },
+  {
+    type: 'Talaq Hasan',
+    meaning: 'The Good / Proper',
+    how: 'Three separate pronouncements -- one per month, one per tuhr cycle, with no intercourse between pronouncements',
+    revocable: 'Yes after first and second pronouncement; irrevocable after third',
+    detail: 'The husband pronounces talaq once during the first tuhr, revokes it (or it lapses at iddah end without revocation), then pronounces again in the second cycle, and a third in the third cycle. The divorce is final after the third pronouncement. This approach spreads the process over approximately three months and preserves a reconciliation window after each of the first two pronouncements.',
+    flag: 'good',
+  },
+  {
+    type: "Talaq Bid'ah (Ba'in)",
+    meaning: 'Innovated / Irregular',
+    how: 'Three pronouncements in one sitting, or one pronouncement during menstruation or a tuhr following intercourse',
+    revocable: 'Contested -- UAE courts treat it as one revocable talaq',
+    detail: "Pronounced simultaneously ('talaq talaq talaq' in one breath or one session) or outside the permitted timing. Historically some classical scholars held this produced an immediate final divorce. UAE courts follow the Maliki/Hanbali majority: even if the husband says 'talaq talaq talaq' three times in one sitting, courts count it as ONE revocable talaq. This is a critical distinction that most online sources get wrong.",
+    flag: 'warn',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'I said talaq three times in anger -- are we automatically divorced?',
+    answer: "No. Under UAE law, a triple talaq in one sitting is counted as a single revocable talaq following the Maliki and Hanbali position. The divorce is not final. You still have the iddah period to reconsider, and court registration is required within 15 days under Article 58 of Federal Decree-Law No. 41 of 2024. Additionally, UAE courts examine whether a statement made under extreme anger or coercion (ikrah) reflects genuine intent -- though this is a high bar to meet.",
+  },
+  {
+    question: 'My husband registered a talaq without telling me. What are my rights?',
+    answer: "The Personal Status Court is required to notify the wife when a talaq is registered. If you were not notified, you can challenge the procedural validity of the registration. More importantly: once you are aware of the registered talaq, your financial rights -- mahr, iddah maintenance, mut'a, and child support -- are immediately enforceable. File your financial claims at the same court as soon as possible. Do not wait. See our guide on <a href='/en/mahr-divorce-uae/'>mahr enforcement in UAE</a> for how to claim your dower.",
+  },
+  {
+    question: 'Can a non-Muslim use talaq in UAE?',
+    answer: "No. Talaq is a mechanism under Islamic personal status law and is governed by Federal Decree-Law No. 41 of 2024, which applies to Muslim residents. Non-Muslim residents are governed by Federal Decree-Law No. 41 of 2022, which provides a civil no-fault divorce mechanism. Non-Muslims file for divorce at the same Personal Status Court but use a different legal track. There is no talaq, khula, or mahr framework for non-Muslims under UAE law.",
+  },
+  {
+    question: "My husband pronounced talaq but the iddah has not finished. Are we still married?",
+    answer: "Yes, if it was a revocable talaq (raj'i) and the iddah has not lapsed. During the iddah following a revocable talaq, you remain legally married. The husband can revoke the divorce without a new nikah. If the iddah ends without revocation, the divorce becomes final. The iddah for a non-pregnant woman is three menstrual cycles (approximately three months). For a pregnant woman, iddah lasts until she gives birth.",
+  },
+  {
+    question: 'Can the husband revoke talaq without the wife knowing?',
+    answer: "In classical fiqh, a raj'i revocation can be effected by the husband's statement alone -- he does not need the wife's consent. UAE courts recognise this in principle but require the revocation to be documented and notified to the wife to prevent abuse. A husband who secretly revokes a talaq and then later claims the marriage continued throughout would face significant credibility issues before a court, particularly if the wife made financial arrangements based on the divorce.",
+  },
+  {
+    question: 'What happens if the husband refuses to register the talaq?',
+    answer: "If a husband pronounced talaq but refuses to register it at court within 15 days as required by Article 58 of Federal Decree-Law No. 41 of 2024, the wife can apply to the court for judicial registration of the talaq. She will need evidence that the pronouncement occurred -- witnesses, messages, or recordings. The court will examine the evidence and register the divorce if satisfied. Alternatively, the wife can file for judicial divorce (faskh) on the grounds of harm or abandonment, which does not require the husband's cooperation.",
+  },
+  {
+    question: 'Does talaq affect residence visa in UAE?',
+    answer: "If your UAE residence visa is sponsored by your husband, a registered divorce immediately affects your legal status. You have a grace period (typically 30-60 days) to arrange alternative visa sponsorship or leave the UAE after the divorce is finalised. You should begin consulting with an immigration specialist at the same time as the divorce proceedings, not after the divorce certificate is issued. Children's visas are handled separately -- the custodial parent typically maintains visa sponsorship for children.",
+  },
+  {
+    question: 'Is a talaq done abroad valid in UAE?',
+    answer: "A talaq pronounced and registered in another country (for example, in a Pakistani, Egyptian, or Jordanian court) can be recognised in UAE if it meets UAE recognition requirements: the foreign court had jurisdiction, due process was followed, and the divorce does not contradict UAE public policy. You will need to attest the foreign divorce certificate and have it translated into Arabic. Recognition is not automatic -- you must apply to the UAE courts or MOFA.",
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/talaq-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Talaq in UAE -- 2025 Law Guide</p>
+      <h1>Talaq in UAE: The Complete Guide to All Types, Court Rules, and Your Rights</h1>
+      <p class="hero-desc">
+        The UAE is among 19 countries that have effectively abolished instant triple talaq. Most people -- including many lawyers outside the UAE -- do not know this. A talaq pronounced without court registration has zero legal effect. Here is what UAE law actually says, what your rights are, and what happens step by step.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Six things you need to know right now</h2>
+        <ul class="key-facts">
+          <li><strong>Triple talaq in one sitting = ONE revocable talaq in UAE.</strong> Courts count it as a single pronouncement, following Maliki/Hanbali majority. Not final divorce.</li>
+          <li><strong>Court registration is mandatory within 15 days.</strong> Article 58, Federal Decree-Law No. 41 of 2024. Unregistered talaq has no legal effect.</li>
+          <li><strong>WhatsApp talaq can be valid</strong> -- but only after court registration. The message alone does not end the marriage.</li>
+          <li><strong>The wife's financial rights are triggered immediately</strong> on registration: mahr falls due, iddah maintenance starts, mut'a is owed.</li>
+          <li><strong>Non-Muslims cannot use talaq.</strong> A separate civil divorce track applies under Federal Decree-Law No. 41 of 2022.</li>
+          <li><strong>Revocation (raj'i) is possible during iddah</strong> without a new nikah -- for revocable talaq types.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: What Is Talaq -->
+      <section class="content-section">
+        <h2>What Is Talaq and Who Does It Apply To?</h2>
+        <p>
+          Talaq is the Islamic mechanism by which a husband dissolves a marriage by pronouncement. It is rooted in Quranic guidance (Surah Al-Talaq, 65:1-7) and classical fiqh, and it is given legal force in the UAE by <strong>Federal Decree-Law No. 41 of 2024</strong> on Personal Status (in force 15 April 2025), which replaced the former Federal Law No. 28 of 2005.
+        </p>
+        <p>
+          Talaq applies exclusively to Muslim marriages. If you are a non-Muslim resident of the UAE, see the <a href="/en/types-of-divorce-uae/">types of divorce in UAE guide</a> for the civil divorce track under Federal Decree-Law No. 41 of 2022. Non-Muslims have no talaq mechanism -- they file for no-fault civil dissolution at the Personal Status Court using a separate procedure.
+        </p>
+        <p>
+          Critically: UAE law does not simply defer to whatever form of talaq was pronounced. The law imposes its own conditions and procedures. A talaq that is Islamically valid under classical fiqh but was not registered with the court within the mandated window is legally unenforceable in the UAE. This is not a religious ruling -- it is civil law, and it applies to all Muslim residents including expatriates from Pakistan, India, Egypt, Jordan, and the wider Arab world.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Which courts handle talaq in UAE?</h3>
+          <p>Personal Status Courts in each emirate. In Dubai: the Dubai Personal Status Court at the Dubai Courts complex. In Abu Dhabi: the Abu Dhabi Family Court. In Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain, and Fujairah: emirate-level Personal Status Courts. All operate under the same federal law framework.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: The Three Types -->
+      <section class="content-section">
+        <h2>The Three Types of Talaq: What UAE Courts Actually Apply</h2>
+        <p>
+          Classical Islamic jurisprudence identifies two to three categories of talaq depending on the school of thought. UAE courts apply the following framework in practice.
+        </p>
+
+        <div class="type-grid">
+          {talaqTypes.map((t) => (
+            <div class={`type-card type-card--${t.flag}`}>
+              <div class="type-header">
+                <span class={`type-badge type-badge--${t.flag}`}>{t.type}</span>
+                <span class="type-meaning">{t.meaning}</span>
+              </div>
+              <div class="type-body">
+                <p class="type-how"><strong>How it is done:</strong> {t.how}</p>
+                <p class="type-rev"><strong>Revocable:</strong> {t.revocable}</p>
+                <p class="type-detail">{t.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3>The triple talaq question -- what UAE courts actually do</h3>
+        <p>
+          This is one of the most misunderstood points in UAE family law. When a husband says "talaq talaq talaq" three times in a single session, many people -- and many foreign lawyers -- assume the divorce is immediately and irrevocably final. This was the position of some classical Hanafi scholars and it is the approach that several South Asian jurisdictions historically followed (India, Bangladesh, and Pakistan have all legislated against it for this reason).
+        </p>
+        <p>
+          <strong>UAE courts do not follow this position.</strong> The UAE judiciary follows the Maliki and Hanbali majority opinion, which counts all three pronouncements in one sitting as a single revocable talaq. This position is supported by the hadith narrated in the Musnad of Ahmad ibn Hanbal and the jurisprudence of Ibn Qayyim al-Jawziyya. The practical effect: if your husband says "I divorce you, I divorce you, I divorce you" in one conversation -- by text, voice, or in person -- the marriage is not irrevocably dissolved. You are still in a revocable divorce state, with the iddah period ahead of you.
+        </p>
+        <p>
+          The only way to reach a permanent and irrevocable divorce in UAE law through talaq is: the couple divorced, reconciled (or the iddah lapsed and they remarried with a new nikah), divorced again, reconciled again, and then the husband pronounces talaq a third time on this third marriage. Three talaqs across three separate marriages to the same person. That is the standard required for an irrevocable divorce under the approach UAE courts apply.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Why this matters practically</h3>
+          <p>If you received a "triple talaq" by message or in person, you may have been told the divorce is final and you are free to remarry. Under UAE law, you are not. The marriage remains legally valid until court registration occurs and the iddah period runs its course without revocation. Acting on an unregistered triple talaq -- including attempting to remarry -- creates serious legal complications. Consult a UAE lawyer before taking any steps.</p>
+        </div>
+      </section>
+
+      <!-- Section 3: Article 58 Registration -->
+      <section class="content-section">
+        <h2>The 15-Day Court Registration Rule (Article 58, FL 41/2024)</h2>
+        <p>
+          <strong>Article 58 of Federal Decree-Law No. 41 of 2024</strong> is the single most important provision governing talaq in the UAE. It requires that any talaq -- regardless of how or where it was pronounced -- must be registered with the Personal Status Court within 15 days of pronouncement. An unregistered talaq "has no legal effect" in the language of the law.
+        </p>
+        <p>
+          This is a significant departure from the pre-2024 legal position, where registration was important but the consequences of non-registration were less categorical. The 2024 law makes the position unambiguous: the marriage legally continues until the talaq is registered.
+        </p>
+
+        <h3>What the registration process looks like</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>File at the Personal Status Court</h3>
+              <p>The husband (or his authorised representative with a notarised power of attorney) files a talaq registration application. Documents required: passport, Emirates ID, original marriage certificate (attested and Arabic-translated for foreign marriages), and the basic court filing fee (approximately AED 200-500).</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Family Guidance Section reconciliation attempt</h3>
+              <p>The court refers the matter to the Family Guidance Section (Idarat al-Irshad al-Usari). This section makes a genuine attempt at reconciliation, typically over one or two sessions lasting 30-60 days. If reconciliation succeeds, the talaq is revoked and proceedings end. If it fails, the section issues a report confirming the breakdown of the marriage.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Court hearing and talaq certificate</h3>
+              <p>After the Family Guidance report, the court schedules a hearing. If the talaq is uncontested, the judge issues the divorce certificate (Certificate of Talaq) at or shortly after the hearing. The certificate is signed by the judge and carries the court seal. This is the document that legally records the divorce in UAE civil records.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Registration in civil records</h3>
+              <p>The court registers the divorce in the civil status system. For non-UAE nationals, the relevant embassy or consulate is typically notified. For residents with UAE National ID cards or family books, the personal status register is updated. The divorce certificate can then be attested for use abroad.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>What if the husband refuses to register?</h3>
+        <p>
+          If a husband pronounced talaq verbally or in writing but refuses or fails to register it within 15 days, the wife has two routes. First, she can file an application for judicial registration of the talaq, submitting evidence of the pronouncement (witnesses, messages, audio). The court examines the evidence and, if satisfied, registers the divorce without the husband's active cooperation.
+        </p>
+        <p>
+          Second, and often more practically effective: the wife can file for judicial divorce (faskh) on the grounds of harm or abandonment under Articles 72-79 of Federal Decree-Law No. 41 of 2024. This is a woman-initiated dissolution that does not depend on proving the talaq was pronounced -- instead it proceeds on independent grounds. See the <a href="/en/khula-divorce-uae/">khula divorce guide</a> for woman-initiated options and the <a href="/en/how-to-file-for-divorce-in-dubai/">step-by-step filing guide</a> for the full process.
+        </p>
+      </section>
+
+      <!-- Section 4: Digital Talaq -->
+      <section class="content-section">
+        <h2>Digital Talaq: WhatsApp, SMS, Email, and Voice Notes</h2>
+        <p>
+          One of the most frequently asked questions in UAE family law is whether a divorce sent by WhatsApp or text message is valid. The short answer: it can be, but it does not automatically end the marriage.
+        </p>
+        <p>
+          The legal basis for digital talaq in UAE rests on <strong>Federal Law No. 5/1985 (the Civil Code)</strong>, which provides that a legal act can be performed by any means that communicates intention clearly, including written communication. The UAE Supreme Court has treated electronic communications as capable of being valid legal acts. A WhatsApp message saying "I divorce you" with clear intent, sent by a husband to his wife, satisfies the communication of intention requirement.
+        </p>
+        <p>
+          However, communication of intention is only the first step. The talaq still requires court registration within 15 days under Article 58. A WhatsApp divorce without registration has no legal effect in UAE civil law -- the marriage continues, the wife cannot remarry, and the husband cannot claim the divorce is final to avoid maintenance obligations.
+        </p>
+        <p>
+          Witness requirements for digital talaq follow the same Maliki/Hanbali position as regular talaq: no witnesses are required for the talaq itself to be valid as a pronouncement. A WhatsApp message sent to the wife alone -- without any witnesses -- can constitute a valid pronouncement. What matters is whether the court accepts the evidence of the pronouncement when the registration application is filed.
+        </p>
+        <p>
+          For more detail on the legal status of digital divorces and what to do if you received one, see the dedicated <a href="/en/whatsapp-divorce-uae/">WhatsApp divorce UAE guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: Iddah and Revocation -->
+      <section class="content-section">
+        <h2>The Iddah Period: What Happens After Talaq Is Registered</h2>
+        <p>
+          The iddah (waiting period) is the period that follows a revocable talaq during which the divorce is not yet final, the parties are still technically married, and reconciliation remains possible.
+        </p>
+
+        <h3>Duration of iddah</h3>
+        <ul>
+          <li><strong>Non-pregnant woman:</strong> Three complete menstrual cycles (quru'). Roughly 3 months. For post-menopausal women: three calendar months.</li>
+          <li><strong>Pregnant woman:</strong> Iddah lasts until childbirth, however long that takes.</li>
+          <li><strong>Wife whose marriage was not consummated:</strong> No iddah applies -- the divorce is immediate on pronouncement.</li>
+        </ul>
+
+        <h3>Wife's rights during iddah</h3>
+        <p>
+          During the iddah period, the husband is obligated to provide full maintenance (nafaqa): housing, food, clothing, and medical expenses at the standard of the marriage. This applies even if the husband initiated the talaq. The wife remains in the matrimonial home (or equivalent housing) during the iddah unless she chooses to leave.
+        </p>
+
+        <h3>Revocation (Raj'i) during iddah</h3>
+        <p>
+          For a revocable talaq (Talaq Ahsan or first/second pronouncement of Talaq Hasan), the husband can revoke the divorce during the iddah simply by stating "I have revoked the divorce" or by resuming marital relations. No new nikah contract is required, and the wife's consent is not required under classical fiqh -- though UAE courts require the revocation to be documented and communicated.
+        </p>
+        <p>
+          After the iddah period ends without revocation, the divorce becomes final (ba'in sughra). To remarry each other at this point, the parties need a new nikah contract. This is the first degree of ba'in divorce. After a second cycle of marriage and divorce, a third talaq produces a ba'in kubra -- permanent irrevocable divorce -- and the couple cannot remarry each other unless the wife marries someone else, that marriage is consummated, and that marriage ends naturally (not through a convenience marriage known as nikah al-tahlil, which is expressly prohibited in UAE law).
+        </p>
+      </section>
+
+      <!-- Section 6: Financial Rights -->
+      <section class="content-section">
+        <h2>The Wife's Financial Rights After Talaq</h2>
+        <p>
+          Regardless of who initiated the talaq, the wife has a set of financial rights that fall due on registration of the divorce. These are not negotiable gifts -- they are legally enforceable debts.
+        </p>
+
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="right-icon">M</div>
+            <div class="right-body">
+              <h3>Mahr (Dower)</h3>
+              <p>The deferred portion of the mahr (mu'ajjal) falls due immediately on divorce registration. It is enforceable as a privileged debt: if the husband refuses to pay, the wife can obtain a court order and proceed to the Execution Court for bank freeze, salary garnishment, or travel ban. See <a href="/en/mahr-divorce-uae/">mahr in UAE divorce</a> for enforcement steps.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">I</div>
+            <div class="right-body">
+              <h3>Iddah Maintenance (Nafaqat al-Idda)</h3>
+              <p>Full housing, food, clothing, and medical support for the duration of the iddah period. Payable regardless of the reason for divorce. Courts issue maintenance orders quickly -- interim orders are available within days in urgent cases.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">T</div>
+            <div class="right-body">
+              <h3>Mut'a (Consolation Payment)</h3>
+              <p>A payment ordered by the court after iddah maintenance ends. Amount determined by the husband's financial position, the length of the marriage, and whether the wife was harmed by the divorce. Courts have discretion on the amount but consider the marriage length and the parties' circumstances.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">N</div>
+            <div class="right-body">
+              <h3>Child Nafaqa</h3>
+              <p>If children are in the mother's custody (hadana), the father is obligated to pay monthly child support. UAE courts set this based on the father's income and the children's needs. The obligation continues until boys reach financial independence and girls marry.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">H</div>
+            <div class="right-body">
+              <h3>Housing for Children (Sukna)</h3>
+              <p>The father must provide housing suitable for the custodial mother and children during the hadana period. This is separate from mahr and iddah maintenance -- it is an ongoing obligation for as long as the children are in the mother's custody.</p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          For a detailed look at the <a href="/en/divorce-cost-uae/">full financial cost of divorce in UAE</a> including court fees, lawyer costs, and typical mahr enforcement timelines, see our dedicated cost guide. For specific information on the <a href="/en/divorce-timeline-uae/">timeline from filing to final certificate</a>, that guide covers each stage.
+        </p>
+      </section>
+
+      <!-- Section 7: Talaq in Anger -->
+      <section class="content-section">
+        <h2>Talaq Pronounced in Anger: The UAE Court Position</h2>
+        <p>
+          A husband who regrets having pronounced talaq sometimes argues that the words were spoken in anger and did not reflect genuine intent. UAE courts address this carefully but the standard for a successful "anger" defence is high.
+        </p>
+        <p>
+          Classical Islamic jurisprudence identifies three states of anger: mild anger (where the person knows what they are saying), moderate anger (where judgment is impaired but the person retains basic awareness), and extreme anger amounting to temporary insanity (where the person is completely unaware of their actions). UAE courts, following the majority scholarly opinion, hold that only the third category -- extreme coercion or total mental incapacity (ikrah tam) -- could potentially invalidate a talaq.
+        </p>
+        <p>
+          The practical bar is very high. Courts require medical evidence, contemporaneous witness accounts, or other objective evidence that the speaker was in a state equivalent to mental incapacity. "I was upset" or "I was drunk" does not meet this bar. "I was in the middle of a psychotic episode with documented hospitalisation on the same day" is closer, though still not guaranteed to succeed.
+        </p>
+        <p>
+          The more common outcome: a husband who pronounced talaq in anger and genuinely regrets it should focus on exercising the revocation (raj'i) right during the iddah period, not on challenging the validity of the pronouncement. That is the legally simpler and more reliable path.
+        </p>
+      </section>
+
+      <!-- Section 8: Non-Muslim Parallel -->
+      <section class="content-section">
+        <h2>Non-Muslims: No Talaq Mechanism Available</h2>
+        <p>
+          Federal Decree-Law No. 41 of 2022 created a completely separate civil personal status law for non-Muslims in the UAE. Under this law, there is no concept of talaq, khula, mahr, or iddah. Non-Muslim couples file for civil divorce using a no-fault dissolution procedure: the application is filed, the court waits 90 days, and the divorce is granted if neither party reconciles.
+        </p>
+        <p>
+          For information on <a href="/en/types-of-divorce-uae/">all divorce types available in UAE</a> -- including civil no-fault divorce, judicial faskh, and court-initiated dissolution -- see the overview guide. For non-Muslim expats specifically, the <a href="/en/how-to-file-for-divorce-in-dubai/">how to file guide</a> explains the practical steps at the Personal Status Court.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/khula-divorce-uae/" class="related-card">
+            <strong>Khula Divorce UAE</strong>
+            <span>Woman-initiated divorce: procedure and mahr return rules</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr in UAE Divorce</strong>
+            <span>How to claim and enforce unpaid dower</span>
+          </a>
+          <a href="/en/whatsapp-divorce-uae/" class="related-card">
+            <strong>WhatsApp Divorce UAE</strong>
+            <span>Is a digital divorce valid? Full legal analysis</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long each stage takes from filing to certificate</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer costs, and enforcement expenses</span>
+          </a>
+          <a href="/en/types-of-divorce-uae/" class="related-card">
+            <strong>Types of Divorce UAE</strong>
+            <span>Talaq, khula, faskh, civil no-fault -- all options explained</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step guide to the Personal Status Court process</span>
+          </a>
+          <a href="/en/divorce-absent-husband-uae/" class="related-card">
+            <strong>Absent Husband Divorce UAE</strong>
+            <span>How to divorce when your husband has disappeared or is abroad</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Talaq type grid */
+  .type-grid { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0 1.5rem; }
+  .type-card { border-radius: 10px; border: 1.5px solid #e5e7eb; overflow: hidden; }
+  .type-card--best { border-color: #6ee7b7; }
+  .type-card--good { border-color: #93c5fd; }
+  .type-card--warn { border-color: #fca5a5; }
+  .type-header { padding: 0.75rem 1.1rem; display: flex; align-items: center; gap: 0.75rem; background: #fafafa; }
+  .type-badge { font-size: 0.8rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; }
+  .type-badge--best { background: #d1fae5; color: #065f46; }
+  .type-badge--good { background: #dbeafe; color: #1e40af; }
+  .type-badge--warn { background: #fee2e2; color: #991b1b; }
+  .type-meaning { font-size: 0.85rem; color: #6b7280; font-style: italic; }
+  .type-body { padding: 0.9rem 1.1rem; }
+  .type-how, .type-rev { font-size: 0.88rem; color: #374151; line-height: 1.65; margin-bottom: 0.5rem; }
+  .type-detail { font-size: 0.85rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Rights grid */
+  .rights-grid { display: flex; flex-direction: column; gap: 0.85rem; margin: 1rem 0 1.25rem; }
+  .right-card { display: flex; gap: 1rem; padding: 1rem 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .right-icon { width: 2rem; height: 2rem; border-radius: 50%; background: #c9a84c; color: #fff; font-size: 0.9rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .right-body h3 { font-size: 0.93rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .right-body p { font-size: 0.86rem; color: #4b5563; line-height: 1.7; margin: 0; }
+  .right-body a { color: #c9a84c; text-decoration: underline; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

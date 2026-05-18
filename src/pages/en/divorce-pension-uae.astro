@@ -1,0 +1,519 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Pension and Divorce UAE: GPSSA, DEWS, and Foreign Pensions';
+const description =
+  'How pensions are treated in UAE divorce. GPSSA government pensions are inalienable. DEWS balances are increasingly treated as current assets. UK, US, Australian, and European pensions need separate court orders. Complete 2025 guide.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-pension-uae/',
+  ar: 'https://divorceu.ae/ar/نهاية-الخدمة-والطلاق-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Financial Rights', url: 'https://divorceu.ae/en/divorce-financial-planning-uae/' },
+  { name: 'Pension and Divorce UAE', url: 'https://divorceu.ae/en/divorce-pension-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can my wife claim my GPSSA pension in divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Government pensions under the GPSSA (Government Pension and Social Security Authority) are explicitly inalienable under Federal Decree-Law No. 57 of 2023. UAE courts cannot order any division, assignment, or attachment of a GPSSA pension. However, the pension\'s existence and monthly income value are factored into maintenance calculations -- a court setting alimony or child support will consider the GPSSA pensioner\'s income.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is DEWS divided in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'DEWS (DIFC Employee Workplace Savings) is not automatically divided. It is the employee\'s property held by an independent trustee (Equiom). However, unlike EOSB which is only payable on departure, DEWS has a current market value. UAE courts have increasingly treated DEWS balances as existing assets subject to equitable financial claims, particularly in non-Muslim divorce proceedings under FL 41/2022 where courts have broader discretion over financial orders.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I split a UK pension after UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts cannot issue pension sharing orders for UK pensions. To share a UK private or occupational pension after a UAE divorce, you need a UK court order. The mechanism is a Pension Sharing Order under the Matrimonial Causes Act 1973, applied for in UK court proceedings. You can apply to a UK court for financial relief after a foreign divorce under Part III of the Matrimonial and Family Proceedings Act 1984. The UAE divorce certificate is the starting document for this process.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a QDRO and why cannot UAE courts issue one?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Qualified Domestic Relations Order (QDRO) is a US court order that directs the administrator of a 401(k), IRA, or other US pension plan to pay a portion to the non-employee spouse. It must be issued by a US state court under US federal ERISA regulations. UAE courts have no jurisdiction over US pension plans and cannot issue QDROs. After a UAE divorce, a separate application to a US court is required to obtain a QDRO.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I negotiate my pension as part of a UAE divorce settlement?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, and this is often the most practical approach. Even if UAE courts cannot directly order a foreign pension to be split, the pension\'s estimated value can be used as a negotiating factor. "You keep your GPSSA pension (estimated present value X) and I receive equivalent compensation in cash or property" is a recognised approach. UAE courts will uphold negotiated financial settlements that are recorded in the divorce agreement and incorporated into the court order.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does UAE court know about my foreign pension?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if you disclose it. UAE courts do not automatically access overseas pension records. However, if the court orders financial disclosure schedules, a pension is a financial asset that must be declared. Concealing a significant pension from financial disclosure schedules is a form of non-disclosure that courts treat adversely -- and non-disclosure discovered later can result in the financial settlement being reopened.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to my private pension if I leave UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'DEWS balances are held by an independent trustee (Equiom) and are portable -- they are paid out to you upon leaving DIFC employment, regardless of where you go. Occupational pension schemes run by private UAE employers are more varied. If your employer has a defined contribution or defined benefit scheme separate from EOSB, the scheme rules govern what happens on departure. Most UAE-based private pension schemes allow the balance to be transferred to a pension in your home country on departure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the Abu Dhabi Retirement Pensions and Benefits Fund protected in divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The Abu Dhabi Retirement Pensions and Benefits Fund (ADRPF) applies the same inalienability principle as GPSSA. It covers Abu Dhabi emirate government employees. The fund\'s assets cannot be divided, assigned, or attached by a UAE court in divorce proceedings. The pension income is considered in maintenance calculations but the fund itself is beyond the reach of family court orders.',
+      },
+    },
+  ],
+};
+
+const foreignPensions = [
+  { country: 'United Kingdom', pension: 'State Pension', divisible: 'No', mechanism: 'Not divisible in UAE. UK DWP handles S2P/State Pension. For private/occupational: Pension Sharing Order via UK court under Part III MFPA 1984.' },
+  { country: 'United Kingdom', pension: 'Private / Occupational Pension', divisible: 'Via UK court', mechanism: 'UK court Pension Sharing Order under Matrimonial Causes Act 1973. Apply in UK under Part III MFPA 1984 after UAE divorce.' },
+  { country: 'United States', pension: '401(k) / IRA / DB Plans', divisible: 'Via US court', mechanism: 'Qualified Domestic Relations Order (QDRO) required from a US state court. UAE courts have no authority over ERISA-governed plans.' },
+  { country: 'Australia', pension: 'Superannuation', divisible: 'Via Australian court', mechanism: 'Australian Family Court order required under the Family Law (Superannuation) Regulations 2001. UAE divorce certificate is the starting point.' },
+  { country: 'Germany', pension: 'Rentenversicherung (State Pension)', divisible: 'Via German court', mechanism: 'Versorgungsausgleich (pension equalisation) is part of German divorce proceedings. Requires separate German court application after UAE divorce.' },
+  { country: 'India', pension: 'EPF / NPS / Gratuity', divisible: 'No (in UAE court)', mechanism: 'Employee Provident Fund and National Pension System cannot be divided by UAE court. Division requires Indian court order or mutual agreement.' },
+  { country: 'Canada', pension: 'CPP / RPP / RRSP', divisible: 'Via Canadian court', mechanism: 'Pension division under provincial family property legislation. Separate Canadian court application required after UAE divorce.' },
+  { country: 'France', pension: 'Retraite (State + Complementary)', divisible: 'Via French court', mechanism: 'Prestation compensatoire under French family law. French court proceedings required separately from UAE divorce.' },
+];
+
+const faqItems = [
+  {
+    question: 'My husband is a UAE government employee. Can I claim any part of his GPSSA pension?',
+    answer: 'Not directly. Federal Decree-Law No. 57 of 2023 makes GPSSA pensions inalienable. No UAE court can order a division or assignment of GPSSA benefits. However, the pension income feeds into maintenance calculations -- a husband receiving or entitled to a GPSSA pension has a financial resource that courts use when calculating alimony and child support. The bigger picture: use the GPSSA value as leverage in the overall financial settlement negotiation. See our guide on <a href="/en/alimony-uae/">alimony UAE</a> for how income affects maintenance orders.',
+  },
+  {
+    question: 'I work in DIFC and have a DEWS balance of AED 200,000. Is this at risk in my divorce?',
+    answer: 'It may be, particularly if you are divorcing under the non-Muslim track (FL 41/2022) where courts have broader equitable financial discretion. Under the Muslim personal status track, DEWS is the employee\'s property. Under the non-Muslim track, a spouse who can argue financial contribution to your career (for example, relocating for your DIFC role, supporting the household while you built your career) may have grounds for a financial claim. The value is a current asset held by Equiom -- it is more exposed than EOSB which is only paid on departure. See our <a href="/en/divorce-end-of-service-gratuity-uae/">EOSB divorce guide</a> for the distinction between EOSB and DEWS.',
+  },
+  {
+    question: 'I divorced in UAE but my main assets are UK pensions. What is my next step?',
+    answer: 'Apply for financial relief in UK court under Part III of the Matrimonial and Family Proceedings Act 1984. This allows a UK court to make financial orders -- including Pension Sharing Orders -- after a foreign divorce. You file in the UK Family Court with: the UAE divorce certificate (attested and certified), evidence of the UK connection (habitual residence, domicile, or pension located in UK), and an application for financial relief. UK solicitors specialising in international family law handle these applications routinely.',
+  },
+  {
+    question: 'How do I value a foreign pension for the UAE financial settlement negotiations?',
+    answer: 'Foreign pensions are typically valued at their transfer value (the amount that could be transferred to another pension scheme). UK pensions provide a Cash Equivalent Transfer Value (CETV) on request. US 401(k) plans have a current market value statement. Australian super funds provide a member statement with current balance. These figures are used as the basis for offset negotiations: "your pension is worth X, so I will take X in property or cash instead of a pension share."',
+  },
+  {
+    question: 'My ex-spouse is hiding pension assets. What can I do?',
+    answer: 'In UAE court, you can apply for a financial disclosure order requiring your spouse to produce all financial documents. Concealing pension assets in financial disclosure is a contempt risk. For foreign pensions, you can request that the court issue letters of request to foreign pension administrators (used in DIFC Court proceedings). Forensic accountants with cross-border experience can also trace pension entitlements through employment history records, P60s, tax returns, and payslips.',
+  },
+  {
+    question: 'Can I include pension values in a UAE marital settlement agreement?',
+    answer: 'Yes. A marital settlement agreement (wathiqat al-musalaha) can reference foreign pension values as the basis for agreed financial offsets. Even though UAE courts cannot directly order pension division, they can and do incorporate negotiated agreements that reference pension values as the basis for compensating financial payments. The settlement is then incorporated into the divorce order and is fully enforceable in UAE.',
+  },
+  {
+    question: 'I have both a GPSSA pension and a DEWS balance. Can my spouse claim the DEWS but not the GPSSA?',
+    answer: 'The GPSSA pension is protected regardless of what else you own. Your DEWS balance is a separate matter. If you are divorcing under the non-Muslim track, your spouse could potentially make a claim against the DEWS balance as a current asset while having no claim on the GPSSA pension. Under the Muslim personal status track, both are the employee\'s property with no automatic claim -- though both feed into maintenance calculations.',
+  },
+  {
+    question: 'What tax implications should I consider when negotiating pension offsets?',
+    answer: 'UAE has no income tax, but your home country may tax pension withdrawals. A UK pension sharing order creates a pension credit in the recipient\'s name -- the recipient pays UK income tax when they draw the pension. An Australian superannuation split is taxed differently depending on the preservation age and conditions of release. A US QDRO transfer to an IRA avoids immediate tax but future withdrawals are taxed as ordinary income. Factor these gross-to-net differences into the offset negotiation -- a AED 500,000 pension credit is not the same as AED 500,000 in cash after tax.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-pension-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Financial Rights Guide -- UAE 2025</p>
+      <h1>Pension and Divorce UAE: GPSSA, DEWS, and Foreign Pensions</h1>
+      <p class="hero-desc">
+        Government pensions in UAE cannot be touched in divorce. DEWS balances increasingly can. Your UK, US, or Australian pension sits in a different jurisdiction entirely -- UAE courts cannot divide it, but that does not mean it is off the table. This guide explains exactly what happens to each pension type and what your strategic options are.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Five things to know before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>GPSSA pensions are inalienable.</strong> Federal Decree-Law No. 57 of 2023. No UAE court can divide, assign, or attach them.</li>
+          <li><strong>DEWS is not the same as EOSB.</strong> DEWS has a current market value and is treated more like a current asset by courts. EOSB is only payable on departure. See our <a href="/en/divorce-end-of-service-gratuity-uae/">EOSB guide</a> for that topic.</li>
+          <li><strong>UAE courts cannot issue QDROs, Pension Sharing Orders, or versorgungsausgleich orders.</strong> Foreign pensions require foreign court orders.</li>
+          <li><strong>You can negotiate foreign pension values as offsets in the UAE settlement.</strong> "You keep your UK pension; I take the Dubai property" is a legally valid negotiated outcome.</li>
+          <li><strong>Undisclosed pensions can unravel a settlement.</strong> Financial disclosure obligations apply to pensions. Concealment is a contempt risk.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: UAE government pensions -->
+      <section class="content-section">
+        <h2>UAE Government Pensions: GPSSA and ADRPF</h2>
+
+        <h3>GPSSA: Federal government employees</h3>
+        <p>
+          The Government Pension and Social Security Authority (GPSSA) administers pension benefits for UAE national employees of federal government entities. <strong>Federal Decree-Law No. 57 of 2023</strong> (the Pensions and Social Security Law) explicitly provides that GPSSA pension entitlements are inalienable. Article 43 of that law states that pension benefits and the fund's assets cannot be subject to attachment, assignment, pledge, or any transfer that would benefit a third party.
+        </p>
+        <p>
+          This inalienability is absolute. A UAE Personal Status Court cannot order that a portion of a GPSSA pension be paid to a former spouse. It cannot order the pension to be valued and offset against other assets. The fund itself is statutory -- it does not respond to family court orders. A judge may express sympathy with a non-employed spouse's financial position but has no legal mechanism to reach into the GPSSA fund.
+        </p>
+        <p>
+          What courts <em>can</em> do is use the GPSSA pension income when calculating maintenance orders. If a husband is receiving or is entitled to receive a substantial GPSSA pension, that income is visible and relevant to a court determining alimony. A man with a GPSSA pension of AED 25,000 per month is in a significantly different financial position from one with no pension, and courts reflect this in maintenance orders. The pension cannot be divided but it influences what maintenance is set at.
+        </p>
+
+        <h3>ADRPF: Abu Dhabi emirate employees</h3>
+        <p>
+          The Abu Dhabi Retirement Pensions and Benefits Fund (ADRPF) applies the same inalienability principle for Abu Dhabi emirate government employees. The Abu Dhabi Retirement Pensions and Benefits Fund Law provides an equivalent protection to GPSSA -- the fund's assets and members' entitlements cannot be divided in family proceedings. The same analysis applies: inalienable in direct terms, but relevant to maintenance calibration.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>The GPSSA as a negotiating value</h3>
+          <p>Just because a GPSSA pension cannot be divided by court order does not mean it has no negotiating value. A UAE national husband entitled to a GPSSA pension with an estimated present value of AED 1.5 million has an asset that his spouse cannot receive directly -- but she can negotiate: "I release any claim to your GPSSA entitlement and in return I receive the Dubai apartment and the savings account." Courts uphold negotiated financial settlements that reflect an agreed-upon trade-off. The GPSSA's value frames the negotiation even if it cannot be directly ordered.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: DEWS -->
+      <section class="content-section">
+        <h2>DEWS: The DIFC Workplace Savings Plan</h2>
+        <p>
+          The DIFC Employee Workplace Savings Plan (DEWS) was introduced in 2020 as an alternative to the traditional end-of-service gratuity model for DIFC-based employers. Under DEWS, employers contribute a minimum of 5.83% of monthly basic salary (for employees with under 5 years' service) or 8.33% (for 5 or more years) into an investment account managed by Equiom as master trustee. Employees can also make voluntary contributions.
+        </p>
+        <p>
+          Unlike traditional EOSB -- which is only calculated and paid when employment ends -- DEWS contributions are invested and have a current market value at any moment. This distinction matters enormously in divorce proceedings.
+        </p>
+
+        <h3>How courts treat DEWS in divorce</h3>
+        <p>
+          Under the Muslim personal status track (FL 41/2024), DEWS is the employee's personal asset and is not automatically subject to division. It is analogous to a savings account in the employee's name. The non-employee spouse has no automatic claim.
+        </p>
+        <p>
+          Under the non-Muslim personal status track (FL 41/2022), courts have broader discretion in financial orders. DIFC-based and Dubai courts have increasingly taken the position that DEWS balances are current assets -- not future contingent entitlements like EOSB -- and therefore subject to equitable financial claims by a spouse who can demonstrate financial contribution to the employee's career. The argument runs: "I relocated from the UK for your DIFC role, managed our household while you built your career, and your DEWS balance exists partly because of that contribution."
+        </p>
+        <p>
+          This is an evolving area. There is no definitive Court of Appeal ruling as of 2025 directly addressing DEWS division in divorce. The safest assumption for non-Muslim expats with significant DEWS balances is that it is a contestable asset -- disclose it, value it, and factor it into the overall financial settlement.
+        </p>
+
+        <h3>DEWS and the DIFC Courts</h3>
+        <p>
+          The DIFC Courts have jurisdiction over non-Muslim personal status matters for DIFC residents and employees under Dubai Law No. 2 of 2025. Given that DEWS is administered within the DIFC regulatory framework (under DIFC Employment Law and the DEWS Regulations), a DIFC Court divorce proceeding may have stronger tools to address DEWS balances than a mainland court. If your divorce involves significant DEWS assets and you are eligible for DIFC Courts, this is worth specific legal advice.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>DEWS vs EOSB: the critical distinction</h3>
+          <p>EOSB (end-of-service benefit under Federal Decree-Law No. 33 of 2021) is a statutory entitlement that only crystallises when employment ends and is only paid to the employee. It has no current value during employment -- only a future contingent value. DEWS is an invested account with a real-time balance, held by a trustee independently of the employer. This is why courts increasingly treat them differently. For EOSB specifically, see our dedicated <a href="/en/divorce-end-of-service-gratuity-uae/">EOSB and divorce guide</a>.</p>
+        </div>
+      </section>
+
+      <!-- Section 3: Private pensions -->
+      <section class="content-section">
+        <h2>Private and Occupational Pension Schemes in UAE</h2>
+        <p>
+          Traditional occupational pension schemes -- defined benefit or defined contribution plans maintained by an employer separately from EOSB -- are less common in UAE than in Europe or Australia, but they exist. Multinationals, financial institutions, and some professional firms operating in UAE or DIFC maintain group pension plans for their UAE-based staff.
+        </p>
+
+        <h3>How they are treated in divorce</h3>
+        <p>
+          Private pension schemes maintained by UAE employers are private assets. They are not protected by the GPSSA or ADRPF inalienability rules -- those rules apply specifically to government social security funds. A privately administered defined contribution scheme is, in legal terms, a financial asset belonging to the employee.
+        </p>
+        <p>
+          Under the Muslim personal status track, it belongs to the employee and is not automatically divisible. A contribution claim is possible if the non-employee spouse can demonstrate financial contribution to the employee's ability to accumulate the pension.
+        </p>
+        <p>
+          Under the non-Muslim track, courts treat the pension as a financial asset subject to the court's equitable jurisdiction. The current transfer value (the amount the employee could take elsewhere if they left employment) is typically used as the valuation basis.
+        </p>
+
+        <h3>Employer schemes with investment choice</h3>
+        <p>
+          Many DIFC and financial sector employers run group personal pension plans where the employee directs investment among fund options. These are essentially defined contribution schemes with a live market value -- analogous to DEWS in terms of their divisibility exposure. The scheme documentation (available from the employer's HR) will show the current value, the vesting schedule, and the transfer options.
+        </p>
+      </section>
+
+      <!-- Section 4: Foreign pensions table -->
+      <section class="content-section">
+        <h2>Foreign Pensions: Why UAE Courts Cannot Help and What You Do Instead</h2>
+        <p>
+          The most significant pension question for expatriates is what happens to the pension they built up in their home country before or during the UAE posting. UAE courts have jurisdiction over property and assets in UAE. They do not have jurisdiction over a UK defined benefit scheme, a US 401(k), or an Australian superannuation fund.
+        </p>
+        <p>
+          This is not a gap in UAE law -- it is a fundamental principle of private international law: a court can only order what is within its jurisdiction. A UAE court ordering Aviva or Scottish Widows to divide a UK pension would have no legal effect in the UK. The order would be meaningless.
+        </p>
+        <p>
+          The practical consequence: foreign pension division requires a second set of proceedings in the relevant home country court, initiated after (or sometimes alongside) the UAE divorce. The UAE divorce certificate is typically the starting document for those foreign proceedings.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="pension-table">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Pension type</th>
+                <th>Divisible in UAE?</th>
+                <th>Mechanism for division</th>
+              </tr>
+            </thead>
+            <tbody>
+              {foreignPensions.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.country}</td>
+                  <td class="td-pension">{row.pension}</td>
+                  <td class={`td-divisible ${row.divisible === 'No' ? 'td-no' : 'td-via'}`}>{row.divisible}</td>
+                  <td class="td-mechanism">{row.mechanism}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">This table provides a general overview. Pension division rules are complex and vary by scheme type, residency, and individual circumstances. Obtain advice from a lawyer qualified in the relevant home country as well as UAE law.</p>
+      </section>
+
+      <!-- Section 5: UK pensions detail -->
+      <section class="content-section">
+        <h2>UK Pensions After UAE Divorce: Part III MFPA 1984</h2>
+        <p>
+          The United Kingdom has a well-developed mechanism for financial relief after foreign divorces: <strong>Part III of the Matrimonial and Family Proceedings Act 1984</strong>. This allows a person who has obtained a divorce abroad to apply to the UK Family Court for financial orders -- including Pension Sharing Orders, lump sum orders, and property orders -- in relation to UK assets.
+        </p>
+        <p>
+          To apply under Part III, you need to demonstrate a sufficient connection with England and Wales: either party was habitually resident there, either party was domiciled there, or either party has a beneficial interest in a UK property. Most British expatriates with a UK pension will meet at least one of these tests.
+        </p>
+        <p>
+          The UK court then applies English law to the financial relief question -- using the well-known "needs-based" approach under the Matrimonial Causes Act 1973 as interpreted in cases from White v White [2000] to Radmacher v Granatino [2010]. This approach is far more flexible for the financially weaker spouse than the UAE separate property regime. A wife who received nothing from the UAE proceedings on property (because all assets were in the husband's name) may receive substantial financial orders from a UK court operating on needs-based principles.
+        </p>
+        <p>
+          The key procedural point: file the Part III application promptly after the UAE divorce is finalised. Delay can count against you -- courts consider whether the application is being used tactically and whether the other party has detrimentally relied on the UAE settlement being final.
+        </p>
+      </section>
+
+      <!-- Section 6: US and Australian -->
+      <section class="content-section">
+        <h2>US 401(k) and Australian Superannuation: What You Actually Do</h2>
+
+        <h3>US pension plans: QDRO process</h3>
+        <p>
+          US pension plans governed by ERISA (the Employee Retirement Income Security Act) -- 401(k), 403(b), pension plans, profit-sharing plans -- can only be divided by a <strong>Qualified Domestic Relations Order (QDRO)</strong>. This is a specific form of court order that instructs the plan administrator to create a separate interest for the non-employee spouse.
+        </p>
+        <p>
+          QDROs must be issued by a US state court. After a UAE divorce, the practical route is: obtain the UAE divorce certificate (attested), engage a US family attorney in the relevant state, file for financial relief incorporating a QDRO application, and have the QDRO reviewed by the plan administrator before the court issues it. Many plan administrators provide model QDRO language. The process typically takes 3-6 months once US proceedings are initiated.
+        </p>
+        <p>
+          IRAs (Individual Retirement Accounts) are not ERISA plans and require a different order -- a "transfer incident to divorce" -- but the principle is the same: US court order required.
+        </p>
+
+        <h3>Australian superannuation</h3>
+        <p>
+          Australian superannuation is governed by the Superannuation Industry (Supervision) Act 1993 and the Family Law (Superannuation) Regulations 2001. Division requires either a superannuation agreement (binding financial agreement under Part VIIIB of the Family Law Act 1975) or a superannuation splitting order from the Australian Family Court or Federal Circuit Court.
+        </p>
+        <p>
+          After a UAE divorce, a spouse can apply to the Australian Family Court for financial relief including super splitting. The UAE divorce certificate is the initiating document. Super splitting orders are made in favour of the non-member spouse, who receives a proportion of the fund's "splittable payment" as it falls due (not necessarily immediately -- it may be deferred until the member spouse reaches preservation age).
+        </p>
+        <p>
+          Australia also has a concept of spouse contributions to super during the marriage, which can be the basis of a splitting claim even where the non-member spouse made no direct financial contributions.
+        </p>
+      </section>
+
+      <!-- Section 7: German versorgungsausgleich -->
+      <section class="content-section">
+        <h2>German Rentenversicherung: Versorgungsausgleich</h2>
+        <p>
+          Germany's pension equalisation system (Versorgungsausgleich) is automatically part of any German divorce proceedings under the Versorgungsausgleichsgesetz (VersAusglG) 2009. It operates differently from most other countries' systems in that it is integrated into the divorce itself -- the German court automatically divides the pension entitlements accumulated during the marriage as part of the divorce decree, rather than as a separate post-divorce step.
+        </p>
+        <p>
+          For a German national who divorces in UAE and holds German Rentenversicherung entitlements, the practical question is: do you also initiate German divorce proceedings (to access the automatic Versorgungsausgleich), or do you divorce in UAE and then apply to the German courts for financial relief?
+        </p>
+        <p>
+          If the German pension entitlements are significant, many German nationals in UAE choose to divorce in Germany specifically to benefit from the automatic Versorgungsausgleich. An alternative is to divorce in UAE and then apply for a German financial remedy proceeding. German family law specialists in both UAE and Germany can advise on which route is more advantageous based on the specific pension values.
+        </p>
+      </section>
+
+      <!-- Section 8: Strategy -->
+      <section class="content-section">
+        <h2>The Strategic Approach: Using Pensions in Negotiation</h2>
+        <p>
+          Even where UAE courts cannot directly divide foreign pensions or GPSSA entitlements, these assets have values -- and values create negotiating leverage. The most effective approach to pension assets in UAE divorce is to treat them as part of the overall financial settlement negotiation, not as a separate post-divorce fight.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Value all pension assets on both sides</h3>
+              <p>Request transfer values, CETV statements, or fund balance statements from all pension schemes. Include both spouses' pensions. The GPSSA pension can be valued at a notional present value using actuarial principles -- a UAE financial advisor or actuary can calculate this. You need numbers to negotiate from.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Calculate the post-tax values</h3>
+              <p>A UK pension worth AED 600,000 pre-tax may be worth AED 450,000 after UK income tax when drawn. A Dubai apartment worth AED 600,000 is worth AED 600,000 with no tax on sale or rental income. These are not equivalent values -- adjust all pension figures to a post-tax basis before comparing them to cash or property assets.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Propose an offset agreement</h3>
+              <p>Draft a marital settlement agreement (wathiqat al-musalaha) that records the values of each pension and the agreed offset. "Husband retains his GPSSA pension (agreed value AED X) and in consideration Wife receives the Dubai apartment." This agreement can be incorporated into the UAE divorce order and is fully enforceable.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Initiate home country proceedings if the pension cannot be offset</h3>
+              <p>If the foreign pension is large and cannot be offset against UAE assets (because UAE assets are insufficient), plan home country proceedings from the outset. Instruct a home country family lawyer before or immediately after the UAE divorce is final. Delay can result in the limitation period expiring or the other party relocating beyond reach.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-end-of-service-gratuity-uae/" class="related-card">
+            <strong>EOSB and Divorce UAE</strong>
+            <span>End-of-service gratuity: who gets it and how it is used</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division Divorce UAE</strong>
+            <span>Title deeds, DLD fees, contribution claims</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Nafaqa, mut'a, and iddah maintenance calculated</span>
+          </a>
+          <a href="/en/divorce-financial-planning-uae/" class="related-card">
+            <strong>Divorce Financial Planning UAE</strong>
+            <span>Protect your assets before proceedings begin</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Non-Muslim track, home country law election, and recognition abroad</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a UAE family lawyer</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+  .key-facts a { color: #c9a84c; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+  .info-box a { color: #c9a84c; text-decoration: underline; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .pension-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 620px; }
+  .pension-table thead tr { background: #0a1628; color: #fff; }
+  .pension-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .pension-table td { padding: 10px 14px; font-size: 0.83rem; border-top: 1px solid #f3f4f6; vertical-align: top; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-pension { color: #374151; }
+  .td-divisible { font-weight: 700; white-space: nowrap; }
+  .td-no { color: #dc2626; }
+  .td-via { color: #d97706; }
+  .td-mechanism { color: #4b5563; font-size: 0.8rem; line-height: 1.5; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .pension-table { min-width: unset; }
+  }
+</style>

@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Lawyer Ras Al Khaimah — RAK Family Court Guide 2025';
+const description =
+  'Looking for a divorce lawyer in Ras Al Khaimah? How RAK Personal Status Court works, court fees, the filing process, and what expats living in RAK but working in Dubai need to know.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-ras-al-khaimah/',
+  ar: 'https://divorceu.ae/ar/محامي-طلاق-رأس-الخيمة/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Lawyer Ras Al Khaimah', url: 'https://divorceu.ae/en/divorce-lawyer-ras-al-khaimah/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I file for divorce in Ras Al Khaimah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce in RAK is filed at the RAK Court of First Instance, family matters division, located in the main courts complex in Ras Al Khaimah city. Before the court accepts the case, most Muslim couples are directed to the Family Guidance and Reconciliation Centre for mandatory conciliation sessions. Your lawyer prepares the petition, translates all documents into Arabic, and files on your behalf.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use Dubai courts if I live in RAK?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. UAE personal status jurisdiction is based on your emirate of registered residence, not where you work or bank. If your Emirates ID shows a RAK address, your divorce must be filed in RAK courts. The fact that you commute to Dubai daily, hold a Dubai employment visa, or have a Dubai bank account does not give Dubai courts jurisdiction. If you move your residence registration to Dubai before filing, the jurisdiction changes accordingly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does divorce take in RAK?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested mutual consent divorce in RAK typically takes 1 to 3 months from filing to final decree. RAK courts have lower case volumes than Dubai, which generally means faster scheduling. A contested divorce involving custody, alimony, or asset disputes typically runs 6 to 15 months. The mandatory Family Guidance reconciliation sessions add 4 to 8 weeks at the start regardless of the divorce type.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a local lawyer in RAK, or can I use a Dubai lawyer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE advocates are licensed to appear in all UAE courts regardless of emirate. A Dubai-based family lawyer can represent you in RAK courts without restriction. What matters more is whether the lawyer has direct experience filing in RAK specifically, since procedural practice and the personalities of individual judges differ by emirate. Ask any lawyer you consider whether they have personally filed cases in RAK courts, not just in Dubai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get a divorce in RAK if my spouse is abroad?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. RAK courts can proceed with divorce if your spouse is abroad, provided they are properly served. Service on an overseas party follows the procedures in the UAE Civil Procedure Code: via the UAE embassy or consulate in the relevant country, or through diplomatic channels. If the overseas spouse fails to appear after proper service, the court can proceed in their absence. Your lawyer manages the service process.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much do divorce lawyers charge in RAK?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce lawyer fees in RAK are generally 10 to 20 percent lower than equivalent Dubai rates. Expect AED 2,500 to 5,000 for an uncontested mutual consent divorce, AED 5,000 to 18,000 for a contested case without children, and AED 15,000 to 40,000 or more for contested cases with custody disputes. Court filing fees in RAK are also lower than Dubai, typically AED 200 to 400 for basic filing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the RAK divorce process different for non-Muslims?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Non-Muslim residents in RAK are governed by Federal Decree-Law No. 41 of 2022, the UAE civil family law for non-Muslims. This provides no-fault divorce, no waiting period, equal joint custody as the starting point, and the option to apply home country law. The court is the same RAK Court of First Instance, but the legal rules and outcomes differ significantly from the Muslim personal status track. Non-Muslim expats in RAK can also consider the DIFC Courts in Dubai as an alternative forum.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will a RAK divorce decree be recognised in my home country?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, in most cases. A RAK court divorce decree is a valid UAE court order. To use it abroad, your lawyer obtains an apostille from the UAE Ministry of Foreign Affairs plus a certified translation. The vast majority of EU member states, UK, Commonwealth countries, and North American jurisdictions recognise UAE court decrees through this process. Check with your home country embassy or a local lawyer for specific registration requirements in your jurisdiction.',
+      },
+    },
+  ],
+};
+
+const differences = [
+  { factor: 'Governing law', rak: 'Federal Decree-Law No. 41/2024 (Muslims); No. 41/2022 (non-Muslims)', dubai: 'Same federal law' },
+  { factor: 'Filing court', rak: 'RAK Court of First Instance — family division', dubai: 'Dubai Personal Status Court (Dubai Courts building, Bur Dubai)' },
+  { factor: 'Case volume', rak: 'Low — among the smallest in UAE', dubai: 'Very high — largest court system in UAE' },
+  { factor: 'Typical timeline (uncontested)', rak: '1 to 3 months', dubai: '2 to 5 months' },
+  { factor: 'Court fees', rak: 'Lower — approximately AED 200 to 400 for basic filing', dubai: 'Higher — AED 400 to 800 for equivalent cases' },
+  { factor: 'Lawyer fees', rak: 'Typically 10 to 20 percent lower than Dubai equivalents', dubai: 'Higher due to demand and overhead' },
+  { factor: 'Non-Muslim alternative forum', rak: 'DIFC Courts (Dubai) available if preferred', dubai: 'DIFC Courts on-site — more accessible' },
+  { factor: 'Court language', rak: 'Arabic only — all documents must be translated', dubai: 'Arabic only — same requirement' },
+];
+
+const faqItems = [
+  {
+    question: 'How do I file for divorce in Ras Al Khaimah?',
+    answer: 'File at the RAK Court of First Instance, family matters division. Muslim couples first attend the Family Guidance and Reconciliation Centre. Your lawyer prepares the Arabic petition, attests your documents, and files on your behalf. RAK courts typically schedule first hearings within 2 to 4 weeks of filing, faster than Dubai.',
+  },
+  {
+    question: 'Can I use Dubai courts if I live in RAK but work in Dubai?',
+    answer: 'No. Jurisdiction follows your registered residence emirate, not your workplace. If your Emirates ID shows a RAK address, your divorce case belongs in RAK courts. Many RAK residents commute to Dubai for work but this has no effect on court jurisdiction. If your actual residence moves to Dubai before you file, you can update your Emirates ID and file in Dubai.',
+  },
+  {
+    question: 'How long does divorce take in RAK?',
+    answer: 'Uncontested divorces in RAK typically conclude in 1 to 3 months, including mandatory reconciliation sessions. Contested cases run 6 to 15 months depending on complexity. RAK courts carry less backlog than Dubai, which usually means hearings are scheduled faster after each filing.',
+  },
+  {
+    question: 'Do I need a RAK-specific lawyer?',
+    answer: 'Not necessarily. UAE advocates are licensed to appear in all UAE courts. A Dubai-based family law firm with RAK experience can represent you fully. The key factor is whether the lawyer has actually filed and appeared in RAK courts before, not where their office is located.',
+  },
+  {
+    question: 'Can I get a divorce in RAK if my spouse is abroad?',
+    answer: 'Yes. RAK courts proceed when the overseas spouse is properly served through UAE diplomatic channels. If they fail to appear after service, the court continues in their absence. Your lawyer handles all service logistics. Note that obtaining the final decree may still take longer when one party is overseas due to international notification timelines.',
+  },
+  {
+    question: 'Is the divorce process different for non-Muslims in RAK?',
+    answer: 'Yes. Non-Muslim residents use Federal Decree-Law No. 41 of 2022 — a secular no-fault civil law. No waiting period, joint custody as default, and the option to apply your home country law. Proceedings are at the same RAK Court of First Instance. Non-Muslim expats can also opt for the DIFC Courts in Dubai as an alternative forum if preferred.',
+  },
+  {
+    question: 'What documents do I need to file for divorce in RAK?',
+    answer: 'You need: a marriage certificate attested by your home country embassy and UAE Ministry of Foreign Affairs, with a certified Arabic translation; Emirates IDs for both spouses; proof of RAK residence; children\'s documents if custody is involved; and your passport. Foreign language documents must be translated by a UAE-accredited translator. Your lawyer compiles and verifies the full package.',
+  },
+  {
+    question: 'Will my RAK divorce decree be recognised abroad?',
+    answer: 'Yes. A RAK court divorce decree is an official UAE court order. For use abroad, your lawyer obtains a UAE Ministry of Foreign Affairs apostille plus a certified translation. Most EU countries, the UK, Commonwealth nations, and North American states recognise UAE divorce decrees through this process. Check your home country\'s specific registration requirements.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-lawyer-ras-al-khaimah/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · Ras Al Khaimah 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Divorce in Ras Al Khaimah follows the same UAE federal law as Dubai and Abu Dhabi, but RAK courts are smaller, move faster, and charge lower fees. If your Emirates ID shows a RAK address, you file in RAK regardless of where you work. This guide covers how RAK courts operate, what the process looks like step by step, and what expats living in RAK specifically need to know.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Quick summary — divorcing in Ras Al Khaimah</h2>
+        <p>
+          Governed by <strong>Federal Decree-Law No. 41 of 2024</strong> (Muslims) and <strong>No. 41 of 2022</strong> (non-Muslims).
+          File at the <strong>RAK Court of First Instance</strong>, family matters division.
+          Mandatory reconciliation at the Family Guidance Centre before the case proceeds.
+          Timeline: <strong>1 to 3 months</strong> uncontested; <strong>6 to 15 months</strong> contested.
+          Court fees lower than Dubai. Jurisdiction follows your registered residence, not your workplace.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>The Jurisdiction Question: RAK Residents Working in Dubai</h2>
+        <p>
+          This is the most common question from RAK residents: "I work in Dubai, my employer is in Dubai, my salary goes to a Dubai bank account. Do I file in Dubai or RAK?"
+        </p>
+        <p>
+          The answer is straightforward under UAE law. Personal status jurisdiction is determined by your registered residential emirate, meaning the emirate shown on your Emirates ID as your address. If you live in RAK and your Emirates ID shows a RAK address, your divorce case belongs in the RAK Court of First Instance. It does not matter where you work, where your visa was issued, or where your salary is paid.
+        </p>
+        <p>
+          RAK is one of the most cost-effective places to live within commuting distance of Dubai, and a significant portion of the RAK population commutes daily to Dubai jobs. These residents are sometimes surprised to learn they cannot simply file in a Dubai court for convenience. The good news: a UAE-wide family lawyer can represent you in RAK courts without any restriction, and RAK courts are generally faster than Dubai due to lower case volumes.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Changing your registered residence</h3>
+          <p>If you are planning to move from RAK to Dubai anyway, and you have not yet filed for divorce, updating your Emirates ID address to a Dubai address before filing will shift jurisdiction to Dubai courts. This is a legitimate step, but only if the move is genuine. Filing for divorce immediately after a paper address change invites scrutiny. Discuss timing with your lawyer.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>RAK Court of First Instance — Family Division</h2>
+        <p>
+          The RAK Court of First Instance handles all personal status matters for RAK residents, including divorce, custody, alimony, and guardianship. The court sits within the main RAK Courts complex in Ras Al Khaimah city. As of 2025, the family division operates under the supervision of the RAK Judicial Department.
+        </p>
+        <p>
+          Compared to the Dubai Personal Status Court, the RAK family court is significantly smaller in staff and case volume. This translates to practical advantages: hearings are typically scheduled faster, judges have more time per case, and administrative processing is less congested. For straightforward cases, this means a faster path to the final decree.
+        </p>
+        <p>
+          The trade-off is that RAK has fewer specialist family judges than Dubai, and for highly complex international cases involving large offshore assets or multi-jurisdictional complications, the RAK court may be less experienced than the Dubai or Abu Dhabi courts. That said, the substantive law is identical across all emirates and most family cases are not of that scale.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>RAK vs Dubai — Key Differences</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Factor</div>
+            <div>RAK</div>
+            <div>Dubai</div>
+          </div>
+          {differences.map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.factor}</div>
+              <div class="compare-col">{row.rak}</div>
+              <div class="compare-col">{row.dubai}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>RAK's Expat Population — Who Files Here</h2>
+        <p>
+          Ras Al Khaimah has a diverse expat population with several distinct communities that each bring specific considerations to divorce proceedings.
+        </p>
+        <h3>Russian nationals</h3>
+        <p>
+          RAK has one of the largest Russian expat communities in the UAE, concentrated in residential areas such as Al Hamra and Mina Al Arab. Russian nationals divorcing in RAK can elect Russian law as the applicable personal status law under Article 13 of the UAE Civil Code (non-Muslims electing home country law under Federal Decree-Law No. 41 of 2022). Russia and the UAE also have a bilateral legal assistance treaty which facilitates recognition of UAE court judgments in Russia and vice versa.
+        </p>
+        <h3>South Asian workers</h3>
+        <p>
+          Indian, Pakistani, and Bangladeshi workers make up a large portion of RAK's workforce. Muslim South Asian residents are subject to the Muslim personal status track under Federal Decree-Law No. 41 of 2024. A key practical issue is that spouses are often in different countries, with one partner back home and one in RAK. RAK courts handle overseas-party cases regularly and can proceed once service is complete.
+        </p>
+        <h3>European retirees and residents</h3>
+        <p>
+          RAK's lower cost of living and access to beaches has attracted a growing number of European long-term residents. These non-Muslim expats have the full range of options under Federal Decree-Law No. 41 of 2022: no-fault divorce, joint custody starting point, and the option to apply their home country law for asset division.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Muslim Divorce in RAK — The Two Tracks</h2>
+        <p>
+          Muslim residents in RAK have access to the standard UAE Muslim personal status track under Federal Decree-Law No. 41 of 2024 (which replaced Federal Law No. 28 of 2005 effective 15 April 2025). The three main divorce types are:
+        </p>
+        <ul>
+          <li><strong>Talaq:</strong> Husband-initiated divorce. The husband pronounces talaq before the court or files a talaq deed. The court registers the divorce and addresses the financial consequences: mahr, iddah maintenance, and child support.</li>
+          <li><strong>Khula:</strong> Wife-initiated divorce in exchange for returning the mahr. The wife petitions the court, reconciliation is attempted, and if it fails the court grants the khula. The wife forfeits the deferred mahr (or returns it if already received) in exchange for the divorce. Under Federal Decree-Law No. 41 of 2024, judicial khula is available without the husband's consent.</li>
+          <li><strong>Judicial divorce (Tafriq):</strong> Court-granted divorce where the wife proves grounds such as harm, failure to maintain, or prolonged absence of the husband. The court investigates the grounds and issues judgment.</li>
+        </ul>
+        <p>
+          All three types require a mandatory Family Guidance and Reconciliation Centre process in RAK before the court accepts the case. Typically 1 to 3 sessions are required.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Non-Muslim Divorce in RAK</h2>
+        <p>
+          Non-Muslim residents in RAK are governed by <strong>Federal Decree-Law No. 41 of 2022</strong>, the UAE's civil family law statute for non-Muslims. Key features:
+        </p>
+        <ul>
+          <li>No-fault divorce — neither party needs to prove grounds</li>
+          <li>No mandatory waiting period or reconciliation requirement (though conciliation is encouraged)</li>
+          <li>Joint custody as the starting point for children born of the marriage</li>
+          <li>Equal sharing of assets as a default in the absence of an agreement or other applicable law</li>
+          <li>Option to elect home country law under Article 13 of the UAE Civil Code</li>
+        </ul>
+        <p>
+          Non-Muslim expats in RAK also have the option to use the DIFC Courts in Dubai as an alternative forum under DIFC Law No. 3 of 2021. The DIFC applies English common law to non-Muslim personal status matters and can be a practical choice for those with significant assets, international business interests, or a preference for English-language proceedings. The DIFC Courts are approximately 130 km from RAK, but given that many RAK residents work in Dubai, this is often not a major obstacle.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Divorce Process in RAK — Step by Step</h2>
+        <ol class="steps">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Initial consultation and document preparation</h3>
+              <p>Your lawyer reviews the facts, advises on which divorce track applies to you, and compiles the required documents. Foreign marriage certificates must be attested by your home country embassy and the UAE Ministry of Foreign Affairs, and officially translated into Arabic by a UAE-accredited translator.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Family Guidance and Reconciliation Centre (Muslim cases)</h3>
+              <p>For Muslim couples, the case is referred to the RAK Family Guidance Centre before the court accepts the filing. Both spouses attend (or one if the other refuses). One to three sessions are typical. If reconciliation genuinely fails, the Centre issues a certificate enabling the court case to proceed.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Filing at the RAK Court of First Instance</h3>
+              <p>Your lawyer files the divorce petition with the family division. Filing fees of approximately AED 200 to 400 apply. The court registers the case and issues a hearing date. For uncontested cases, the first hearing is typically scheduled within 2 to 4 weeks.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Court hearings</h3>
+              <p>For an uncontested mutual consent divorce, a single hearing may be sufficient if all terms are agreed and documents are in order. For contested cases, multiple hearings address disputes over custody, alimony, and assets. Each hearing is typically scheduled 3 to 6 weeks apart.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Judgment and decree</h3>
+              <p>The court issues the final divorce judgment. For Muslim cases, the judgment specifies the type of divorce, mahr obligations, iddah maintenance, child custody, and access arrangements. For non-Muslim cases, the judgment reflects the agreed or court-determined terms under Federal Decree-Law No. 41 of 2022.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <h3>Apostille for international use</h3>
+              <p>To use your RAK divorce decree in your home country, your lawyer obtains a UAE Ministry of Foreign Affairs apostille and certified translation. The apostille package is recognised by the vast majority of countries worldwide.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>Documents Required for Divorce in RAK</h2>
+        <ul class="checklist">
+          <li>Marriage certificate — attested by your home country embassy and UAE Ministry of Foreign Affairs (MOFA), plus certified Arabic translation</li>
+          <li>Emirates IDs of both spouses</li>
+          <li>Passports of both spouses</li>
+          <li>Proof of RAK registered residence (Emirates ID address or tenancy contract)</li>
+          <li>Children's birth certificates if custody is involved — attested and translated</li>
+          <li>For Muslim marriages: original nikah certificate if issued separately from the civil marriage certificate</li>
+          <li>Evidence of any pre-nuptial or post-nuptial agreements</li>
+          <li>Financial disclosure documents if alimony or asset division is in dispute</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Divorce Lawyer Fees in RAK</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">Uncontested / Mutual Consent</p>
+            <p class="fee-amount">AED 2,500-5,000</p>
+            <p class="fee-detail">Both spouses agree on all terms. Lawyer prepares and files the settlement.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested (no children)</p>
+            <p class="fee-amount">AED 5,000-18,000</p>
+            <p class="fee-detail">Asset or alimony disputes. Multiple hearings required.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested with custody</p>
+            <p class="fee-amount">AED 15,000-40,000+</p>
+            <p class="fee-detail">Custody disputes are the most time-intensive cases.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Khula (wife-initiated)</p>
+            <p class="fee-amount">AED 3,500-10,000</p>
+            <p class="fee-detail">Includes reconciliation sessions and court filing. Mahr return may apply.</p>
+          </div>
+        </div>
+        <div class="info-box info-box--info">
+          <p><strong>Court filing fees:</strong> RAK court fees are among the lowest in the UAE. Basic divorce filing is approximately AED 200 to 400, compared to AED 400 to 800 for equivalent filings in Dubai. Additional fees apply per subsequent hearing.</p>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>Dubai Personal Status Court — full guide</span>
+          </a>
+          <a href="/en/divorce-lawyer-sharjah/" class="related-card">
+            <strong>Divorce Lawyer Sharjah</strong>
+            <span>Sharjah courts process and requirements</span>
+          </a>
+          <a href="/en/divorce-lawyer-ajman/" class="related-card">
+            <strong>Divorce Lawyer Ajman</strong>
+            <span>Ajman Personal Status Court guide</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>Federal Law 41/2022 complete guide for expats</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees and lawyer fees — real figures for 2025</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step Personal Status Court guide</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long divorce takes by case type across all emirates</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.88rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 480px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 480px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-factor { font-weight: 700; color: #0a1628; }
+  .compare-col { color: #374151; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .fee-grid, .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

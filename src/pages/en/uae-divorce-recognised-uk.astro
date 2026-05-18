@@ -1,0 +1,489 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Will My UAE Divorce Be Recognised in the UK?';
+const description =
+  'UAE divorces are recognised in England and Wales under the Family Law Act 1986 -- but talaq, financial orders, and the Scotland rules have critical differences. Full guide with the SA v FA [2022] EWFC 115 decision explained, apostille steps, and Part III MFPA 1984.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/uae-divorce-recognised-uk/',
+  ar: 'https://divorceu.ae/ar/اعتراف-بريطانيا-بالطلاق-الاماراتي/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'UAE Divorce Recognised UK', url: 'https://divorceu.ae/en/uae-divorce-recognised-uk/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is my UAE divorce automatically valid in the UK?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A UAE divorce obtained through judicial proceedings -- including the Abu Dhabi Civil Family Court and Dubai Personal Status Court -- is recognised in England and Wales under Part II of the Family Law Act 1986, provided that at least one party was habitually resident, domiciled, or a national of the UAE at the time. Recognition is not automatic for bare talaq declarations made without court proceedings. A judicial or registered UAE divorce does not require a UK court proceeding to be valid -- it is recognised by operation of law.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to register my UAE divorce in the UK?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no mandatory registration requirement for a valid overseas divorce in England and Wales. However, for practical purposes -- changing your name on a passport, registering a new marriage, dealing with financial institutions -- you will typically need to present your UAE divorce certificate with an official English translation and an apostille. The General Register Office (GRO) can record the divorce if needed. Getting the certificate apostilled in the UAE before travelling is strongly recommended.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use Part III MFPA 1984 to get more money after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, if you can satisfy the three-stage test. Stage 1: you must obtain leave (permission) from a UK court, showing there is substantial ground for the application. Stage 2: the court must find that England and Wales is an appropriate forum (considering connections to the UK, availability of UAE proceedings, and fairness). Stage 3: the court makes a financial provision order that is "just." Part III MFPA 1984 is particularly relevant when the UAE divorce produced a financial outcome that a UK court would regard as significantly inadequate -- for example, when one party has substantial UK assets but the UAE divorce applied strict separate-property rules.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will UK courts enforce my UAE financial settlement?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE financial orders are not automatically enforceable in England and Wales. The UK does not have a reciprocal enforcement treaty with the UAE for civil judgments (unlike some EU states which have Brussels Regulation enforcement mechanisms). To enforce a UAE financial order in the UK, you must apply to the English courts to recognise and enforce the foreign judgment as a new English judgment. The court will consider whether the UAE proceedings were fair, whether the order was obtained by fraud, and whether recognition would be contrary to English public policy.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my UAE divorce was done by talaq?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Bare talaq -- an oral or written declaration of divorce with no court involvement and no notification to the other party -- is not recognised in England and Wales under the Family Law Act 1986. However, talaq that was registered with UAE courts, completed through the reconciliation process at the Family Guidance Department, and resulted in a court-issued certificate qualifies as "proceedings" and is eligible for recognition. The distinction is between a bare extrajudicial talaq and a court-administered talaq process. The latter is recognisable; the former is not.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What did SA v FA [2022] EWFC 115 decide about UAE divorces?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SA v FA was a forum non conveniens case, not a recognition case. The English court stayed (paused) its own divorce proceedings in favour of the Abu Dhabi Civil Family Court, finding that Abu Dhabi was the natural and appropriate forum for the dispute. The judgment confirmed that the ADCFC, operating under Abu Dhabi Law No. 14/2021 with a civil, secular framework, is a legitimate forum for international family disputes. It established that English courts will not automatically assume jurisdiction just because one party prefers English courts -- UAE courts can be the appropriate forum.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Scotland recognise UAE divorces differently from England?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Scotland has separate private international law rules under the Domicile and Matrimonial Proceedings Act 1973. Scottish courts apply slightly different tests for recognition of overseas divorces. Crucially, domicile in Scots law is determined differently from English law -- a person can be domiciled in Scotland under Scots law but not necessarily under English law concepts. If you have connections to Scotland, you should take specific Scottish legal advice on whether your UAE divorce is recognised there and whether Scottish financial remedies are available.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I get my UAE divorce certificate apostilled for UK use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The UAE Ministry of Foreign Affairs (MOFA) is the competent authority for apostilling UAE court documents. Steps: (1) obtain the official UAE divorce certificate from the issuing court; (2) have it translated into English by a UAE-certified legal translator; (3) submit both the original Arabic certificate and the English translation to MOFA for attestation; (4) MOFA attests the document (apostille). Cost is approximately AED 150-200 per document plus translation fees. The apostilled certificate is then accepted in the UK. Processing time is typically 2-5 working days.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I remarry in the UK after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, provided your UAE divorce is recognised in the UK under the Family Law Act 1986. You will need to present your UAE divorce certificate (with apostille and English translation) to the UK register office or church before a new marriage can proceed. They will carry out their own check of the documentation. If there is any doubt about recognition, you can apply to the English courts under Section 55 of the Family Law Act 1986 for a declaration that the divorce is recognised -- this gives you a definitive English court order confirming the position.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does UK recognition mean UK financial courts have no further jurisdiction?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Recognition of the UAE divorce decree ends the marriage as a legal status in the UK. But it does not necessarily prevent further financial applications. Under Part III of the Matrimonial and Family Proceedings Act 1984, the financially weaker party can apply to an English court for financial provision after the overseas divorce. The court can make orders for periodical payments, lump sum, property transfer, and pension sharing -- even though the divorce itself was obtained in the UAE.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+
+const stepsData = [
+  { step: '01', title: 'Obtain the official UAE divorce certificate', detail: 'Get the original court-issued divorce certificate from the UAE court (Personal Status Court, Abu Dhabi Civil Family Court, or DIFC Court). This must be the final decree, not just the initial filing confirmation. In Dubai, this is the Book Extract from the Personal Status Court.' },
+  { step: '02', title: 'Official English translation', detail: 'Have the certificate translated into English by a UAE Ministry of Justice certified legal translator. Keep both the Arabic original and the certified English translation together. Courts and registries want to see both.' },
+  { step: '03', title: 'MOFA apostille', detail: 'Submit both documents (Arabic original and English translation) to the UAE Ministry of Foreign Affairs (MOFA) for apostille. The apostille certifies the authenticity of the signature, seal, and stamp on the document. Cost: approximately AED 150-200 per document. Processing: 2-5 working days. This step can be done online through the MOFA digital services portal.' },
+  { step: '04', title: 'Present to UK registry or financial institution', detail: 'The apostilled certificate with English translation is accepted by UK register offices for remarriage purposes, by HMRC and DWP for tax and benefit purposes, and by financial institutions for account updates. Keep certified copies rather than originals for routine submissions.' },
+  { step: '05', title: 'Optional: UK court declaration', detail: 'If there is any doubt about whether the divorce is recognised -- for example if it was a registered talaq -- you can apply to the Family Court in England and Wales for a declaration of recognition under Section 55 of the Family Law Act 1986. This produces a definitive English court order confirming the divorce is valid. Cost: court fee of approximately £365 plus legal costs.' },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/uae-divorce-recognised-uk/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Cross-Border Divorce Guide -- UAE to UK</p>
+      <h1>Will My UAE Divorce Be Recognised in the UK?</h1>
+      <p class="hero-desc">
+        You divorced in Abu Dhabi or Dubai. You are now back in the UK or planning to move there. You need to know whether the legal system you relied on actually counts. The answer depends on how you divorced, who was involved, and what financial questions remain open. This guide gives you the law, the SA v FA decision in plain English, and the practical steps to ensure your UAE divorce is properly recognised in England and Wales.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>The short answers</h2>
+        <ul class="key-facts">
+          <li><strong>Judicial UAE divorce + UK recognition:</strong> Yes, recognised under Family Law Act 1986 Part II -- no UK proceedings needed.</li>
+          <li><strong>Bare talaq (unregistered):</strong> Not recognised. Court-administered, registered talaq: recognised.</li>
+          <li><strong>UK financial orders:</strong> Not automatically recognised. Separate UK enforcement application required.</li>
+          <li><strong>Part III MFPA 1984:</strong> Allows UK financial claims even after an overseas divorce -- potentially significant for expats with UK assets.</li>
+          <li><strong>SA v FA [2022] EWFC 115:</strong> English court confirmed UAE (specifically Abu Dhabi Civil Family Court) is a legitimate forum. Forum stay granted.</li>
+          <li><strong>Scotland:</strong> Different rules from England. Take separate Scottish legal advice if relevant.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>The Legal Framework: Family Law Act 1986 Part II</h2>
+        <p>
+          The recognition of overseas divorces in England and Wales is governed by Part II of the <strong>Family Law Act 1986</strong>. An overseas divorce is recognised in England and Wales if it was obtained by means of judicial or other proceedings in a country where, at the time of the divorce, either party was habitually resident, domiciled, or a national.
+        </p>
+        <p>
+          Breaking that down for UAE divorces:
+        </p>
+        <ul>
+          <li><strong>Obtained by proceedings:</strong> The divorce must have been obtained through some form of proceedings -- a court process, an administrative registration, or a formal procedure. An informal oral statement of divorce with no official process does not qualify.</li>
+          <li><strong>Habitually resident, domiciled, or national:</strong> At the time of the UAE divorce, at least one of the parties must have been habitually resident in the UAE (which most expats living there will satisfy), domiciled in the UAE, or a UAE national. Most expat divorces in UAE easily satisfy the habitual residence test.</li>
+        </ul>
+        <p>
+          Provided both conditions are met, the UAE divorce is recognised in England and Wales automatically -- meaning you do not need to go to an English court to get the divorce "approved." The recognition happens by operation of law.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>What "habitual residence" means for UAE expats</h3>
+          <p>Habitual residence is where a person has their settled home. For an expat who has been living and working in Dubai or Abu Dhabi for more than a few months at the time of the divorce, habitual residence in the UAE will almost certainly be established. This is not the same as domicile (which involves an intention to remain permanently) -- most expats will be habitually resident in the UAE even if their legal domicile remains their home country.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>SA v FA [2022] EWFC 115: What the Decision Actually Said</h2>
+        <p>
+          SA v FA is frequently cited in discussions of UAE divorces and UK recognition, but it is important to understand precisely what it decided -- and what it did not.
+        </p>
+        <p>
+          The case involved a couple with connections to both England and Abu Dhabi. The wife issued divorce proceedings in England. The husband argued that Abu Dhabi, specifically the Abu Dhabi Civil Family Court (ADCFC), was the natural and appropriate forum for the dispute. The English court was asked to decide whether to stay (pause) its own proceedings in favour of the Abu Dhabi court.
+        </p>
+        <p>
+          Mr Justice Moor stayed the English proceedings in favour of the ADCFC. The key findings were:
+        </p>
+        <ul>
+          <li>The ADCFC, established under Abu Dhabi Law No. 14/2021, applies a civil, secular framework to family disputes. It is not a religious court.</li>
+          <li>The ADCFC is a legitimate and appropriate international forum for family disputes with UAE connections.</li>
+          <li>The mere fact that one party would receive more money in English proceedings was not sufficient reason to override the forum analysis.</li>
+          <li>Abu Dhabi had the stronger connection to the parties' lives and assets.</li>
+        </ul>
+        <div class="info-box info-box--warning">
+          <h3>What SA v FA did NOT decide</h3>
+          <p>SA v FA was a forum non conveniens case -- about which court should hear the case first. It was not a recognition case. It did not decide that UAE divorces are recognised in the UK (that is governed by the Family Law Act 1986). It did not decide that UAE financial orders are enforceable in the UK. What it confirmed is that English courts will not automatically assume they are the right forum simply because one party files there. UAE courts, including the ADCFC, are legitimate alternatives that English courts will respect.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Which UAE Divorce Routes Are Recognised in the UK?</h2>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>UAE divorce route</th>
+                <th>UK recognition status</th>
+                <th>Key condition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Non-Muslim civil divorce (FL 41/2022) -- Abu Dhabi Civil Family Court</td>
+                <td class="td-rule--yes">Recognised</td>
+                <td class="td-light">Judicial proceedings. Both parties notified. Meets FLA 1986 Part II test.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Non-Muslim civil divorce (FL 41/2022) -- Dubai Personal Status Court</td>
+                <td class="td-rule--yes">Recognised</td>
+                <td class="td-light">Same as above. Judicial proceedings with both parties.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Muslim divorce (FL 41/2024) through UAE Personal Status Court</td>
+                <td class="td-rule--yes">Recognised</td>
+                <td class="td-light">Court-administered. Reconciliation process completed. Court certificate issued.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Talaq registered with UAE courts + reconciliation process completed</td>
+                <td class="td-rule--maybe">Recognised (if properly processed)</td>
+                <td class="td-light">Must qualify as "proceedings." Registration and reconciliation steps are critical to recognition.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Bare talaq -- oral declaration, unregistered, no court process</td>
+                <td class="td-rule--no">Not recognised</td>
+                <td class="td-light">Not obtained by "proceedings." Fails FLA 1986 Part II test. Marriage still legally subsisting in England.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">DIFC Court divorce (non-Muslim, from 2025)</td>
+                <td class="td-rule--yes">Recognised</td>
+                <td class="td-light">Judicial proceedings in English. Common law procedural framework. Easily meets recognition test.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The talaq question in detail</h3>
+        <p>
+          Talaq is the most contested recognition issue for UAE divorces in UK courts. The key distinction is between extrajudicial talaq -- where a husband simply declares divorce without any official process -- and court-administered talaq -- where the declaration is made before or registered with the UAE courts, and the Family Guidance Department's reconciliation process (three attempts over approximately 90 days) is completed.
+        </p>
+        <p>
+          Under UAE law, even a Muslim talaq must now be administered through the Personal Status Court system. A husband cannot simply announce a divorce; he must file a talaq application, attend reconciliation sessions, and receive a court certificate. When this process is completed, the resulting certificate represents a judicial process sufficient to satisfy the FLA 1986 test.
+        </p>
+        <p>
+          An unregistered talaq -- which historically may have occurred -- does not satisfy the "proceedings" test in English law. If you received a divorce this way and have since returned to the UK, you may legally still be married under English law. This has significant consequences for inheritance, remarriage, and financial claims.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Financial Orders: UK Does NOT Automatically Recognise UAE Financial Settlements</h2>
+        <p>
+          This is the area where many expats are caught out. Recognising the UAE divorce decree -- meaning the marriage is ended -- is different from enforcing the financial provisions that accompanied it.
+        </p>
+        <p>
+          The United Kingdom does not have a bilateral civil judgment enforcement treaty with the UAE. This means a UAE financial order (maintenance, property transfer, lump sum payment) is not automatically enforceable in the UK. To enforce it, you must apply to an English court to recognise and enforce the UAE judgment as an English judgment. The court will scrutinise:
+        </p>
+        <ul>
+          <li>Whether the UAE court had proper jurisdiction</li>
+          <li>Whether the proceedings were procedurally fair</li>
+          <li>Whether the order was obtained by fraud or deception</li>
+          <li>Whether enforcement would be contrary to English public policy</li>
+        </ul>
+        <p>
+          If UAE financial proceedings were fair and the order is clear, enforcement in the UK is possible -- but it requires a separate court application and is not guaranteed.
+        </p>
+
+        <h3>Part III MFPA 1984: The Safety Net for Financially Weaker Parties</h3>
+        <p>
+          Part III of the <strong>Matrimonial and Family Proceedings Act 1984</strong> is one of the most important but least-understood provisions for international divorces. It allows a party to apply to an English court for financial provision after an overseas divorce, even where the divorce itself is fully recognised.
+        </p>
+        <p>
+          The three-stage test under Part III is:
+        </p>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Leave (permission)</h3>
+              <p>The applicant must obtain permission from the court to proceed. The test is whether there is "substantial ground" for the application. This is a low threshold -- the court is not deciding the case at this stage, merely whether it has a reasonable prospect of success. The key factor is whether England has a "substantial connection" to the parties: property here, a pension here, children here, employment here, prior residence here.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Appropriate forum</h3>
+              <p>The court must be satisfied that England and Wales is the appropriate forum. It considers the connection to England, whether any English financial order would be enforceable, the availability of financial relief from the UAE proceedings, and the interests of justice. If the UAE divorce produced an outcome that in English terms would be "grossly inequitable," this weighs towards England being appropriate.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>The order itself</h3>
+              <p>The court makes an order that is "just" in all the circumstances. It can order periodical payments (maintenance), lump sums, property transfers, and pension sharing. The court takes into account what financial provision was made in the UAE proceedings. A party who received a generous UAE settlement will find it difficult to extract more through Part III. A party who received nothing -- or very little relative to assets and standard of living -- may have a strong Part III claim.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box info-box--warning">
+          <h3>Part III time limit</h3>
+          <p>There is no fixed time limit for a Part III application, but delay weakens the case. Courts are more sympathetic when applications are made promptly after the overseas divorce. If you have been back in the UK for several years with no financial proceedings, a late Part III application will face additional scrutiny as to why you did not act sooner. Take UK legal advice within 12 months of your UAE divorce if you believe you have a Part III claim.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Practical Steps to Ensure UK Recognition</h2>
+
+        <div class="steps-list">
+          {stepsData.map((item) => (
+            <div class="step-card">
+              <div class="step-num">{item.step}</div>
+              <div class="step-body">
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Scotland: Different Rules Apply</h2>
+        <p>
+          Scotland has its own private international law rules for the recognition of overseas divorces. The relevant Scottish legislation is the <strong>Domicile and Matrimonial Proceedings Act 1973</strong>, as amended, and the Recognition of Divorces and Legal Separations Act 1971 (which applies with modifications in Scotland).
+        </p>
+        <p>
+          Key differences in Scotland include:
+        </p>
+        <ul>
+          <li><strong>Domicile test:</strong> Scotland applies the domicile concept differently from English law. A person can have a Scottish domicile even if they have been living abroad for many years, if Scotland was their domicile of origin and they have not acquired a new domicile of choice. This can affect whether a UAE divorce is recognised.</li>
+          <li><strong>Financial remedies:</strong> Section 28 of the Family Law (Scotland) Act 2006 provides a Scottish equivalent to Part III MFPA 1984, allowing financial provision applications after an overseas divorce.</li>
+          <li><strong>Separate legal system:</strong> Scotland is an entirely separate legal jurisdiction from England and Wales. A divorce recognised in England is not automatically recognised in Scotland, and vice versa, although in practice the outcomes are usually the same under the shared framework of UK recognition law.</li>
+        </ul>
+        <p>
+          If you have connections to Scotland -- property there, children living there, or a Scottish domicile -- you should take specific Scottish family law advice from a Scottish solicitor, not just English family law advice.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Common Situations and What They Mean</h2>
+
+        <div class="scenario-list">
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">You divorced in UAE using FL 41/2022 (non-Muslim) and now have UK property</p>
+            <p>Your UAE divorce is recognised. The UAE financial settlement dealt with UAE assets. Your UK property was not covered by the UAE order. Depending on whether the UK property was considered and dealt with in the UAE proceedings, there may be a residual claim under Part III MFPA 1984 or a straightforward agreement to transfer the UK property. The key is whether the UAE settlement addressed the UK property explicitly. If it did not, it remains in limbo and should be addressed either by consent or UK proceedings.</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">You want to remarry in the UK after a UAE talaq</p>
+            <p>If your talaq was registered with the UAE Personal Status Court and the full reconciliation process was completed, you have a court certificate that will be recognised in the UK. Take the apostilled certificate with English translation to the UK register office when giving notice of your new marriage. If any doubt arises, apply for a Section 55 FLA 1986 declaration first -- this resolves the question definitively before you schedule the new marriage.</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Your spouse divorced you in the UAE without telling you and you are now in the UK</p>
+            <p>If you were not given notice of the UAE divorce proceedings and did not participate, you may be able to challenge recognition of the UAE divorce in English courts on grounds that it was not obtained by proper "proceedings" that gave you notice. Under the Family Law Act 1986, Section 51, a court can refuse recognition if there was no official document serving notice on the respondent who did not take part. Apply to the English Family Court for a declaration under Section 55 of the FLA 1986 to clarify whether the marriage has legally ended in England.</p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>UAE or Home Country Divorce</strong>
+            <span>Jurisdiction choice and what it means financially</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>How Dubai real estate is handled in divorce</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Non-Muslim civil divorce, timelines, and law choices</span>
+          </a>
+          <a href="/en/dubai-vs-abu-dhabi-divorce/" class="related-card">
+            <strong>Dubai vs Abu Dhabi Divorce</strong>
+            <span>Which UAE court framework is right for you</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Maintenance amounts and enforcement</span>
+          </a>
+          <a href="/en/british-expat-divorce-uae/" class="related-card">
+            <strong>British Expat Divorce UAE</strong>
+            <span>UAE vs English courts: the financial difference explained</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>UAE Divorce Certificate Attestation</strong>
+            <span>How to apostille your UAE decree for use in the UK</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-rule--yes { color: #15803d; font-weight: 600; }
+  .td-rule--maybe { color: #d97706; font-weight: 600; }
+  .td-rule--no { color: #dc2626; font-weight: 600; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .scenario-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .scenario-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-card--numbered .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

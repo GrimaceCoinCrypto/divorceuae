@@ -1,0 +1,599 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'UAE Divorce Certificate Attestation: How to Get and Legalise Your Divorce Document';
+const description =
+  'Getting your UAE divorce judgment attested for use abroad involves a specific chain: Dubai Courts, MOFAIC apostille, and sometimes your country\'s embassy. This guide covers every step, country-specific requirements, apostille vs legalisation, talaq certificates, and how to use your UAE divorce in the UK, India, and Pakistan.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-certificate-attestation-uae/',
+  ar: 'https://divorceu.ae/ar/تصديق-وثيقة-الطلاق-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'UAE Divorce Certificate Attestation', url: 'https://divorceu.ae/en/divorce-certificate-attestation-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I get my UAE divorce certificate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The official divorce document in UAE is the court judgment (hakm al-talaq). Obtain a certified copy from the registry of the court that issued the divorce decree. In Dubai, this is the Dubai Personal Status Court registry. The fee is AED 50-100 and the copy is typically ready within 1 to 3 working days. Bring your passport, Emirates ID, and the case number from your divorce proceedings. This certified court copy is the starting point for all attestation processes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does attestation take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dubai Courts authentication takes 1 to 3 working days. MOFAIC apostille or attestation takes 3 to 7 working days through the online portal (mofa.gov.ae) or same-day for urgent service at the MOFAIC typing centres. Embassy attestation varies widely: UK and Australian embassies rarely require attestation beyond the apostille; Indian Embassy attestation takes 5 to 10 working days; Pakistani Embassy takes 5 to 7 working days. Total end-to-end for apostille countries: 1 to 2 weeks. For countries requiring full legalisation: 3 to 4 weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to apostille my UAE divorce certificate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The UAE joined the Hague Apostille Convention in 2021. For any country that is also a Hague Convention signatory (including the UK, USA, all EU members, Australia, and most of Europe), a MOFAIC apostille stamp is sufficient. You do not need further embassy attestation for apostille countries. For countries outside the Convention (some Middle East, South Asian, and African countries), the full legalisation chain -- Courts, MOFAIC, destination country embassy -- is required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I use my UAE divorce certificate in the UK?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The UAE joined the Hague Apostille Convention, so a MOFAIC-apostilled UAE divorce certificate is legally recognised in England and Wales. To update your civil status (for remarriage, benefits, or financial records), submit the apostilled certificate and an Arabic-to-English translation by a certified translator to the relevant UK authority. For remarriage in the UK, the register office accepts apostilled foreign divorce documents. No UK embassy attestation is separately needed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I use my UAE divorce certificate in India?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'India joined the Hague Apostille Convention. For most purposes, a MOFAIC apostille plus a translation into English (if the document is in Arabic only) is sufficient. However, some Indian authorities -- especially for remarriage or civil status updates -- additionally require attestation by the Indian Embassy in Abu Dhabi or the Indian Consulate in Dubai. Complete the MOFAIC apostille first, then take to the Indian Consulate for their additional endorsement if your specific registry requires it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I use my UAE divorce certificate in Pakistan?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pakistan is not a Hague Convention member, so the full legalisation chain applies: Dubai Courts authentication, then MOFAIC attestation, then Pakistan Embassy/High Commission attestation in the UAE. Take the attested document to NADRA in Pakistan for civil status registration. Some NADRA offices also require a certified Urdu or English translation. The Pakistani Embassy in Abu Dhabi and the Consulate in Dubai both process document attestation -- check their current appointment system as processing times vary.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if I did not go to court -- can I still get a divorce document for a talaq?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A bare talaq pronouncement (verbal or written outside of court) has no standalone attestable document. To obtain an official UAE divorce certificate for a talaq, you must register it with the Personal Status Court. The court issues a Talaq Registration Certificate once the talaq is verified and the iddah period is noted. This registered certificate can then be certified and attested through the normal chain. Without court registration, no attestable document exists.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where do I get a certified translation of my UAE divorce certificate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Translation must be done by a UAE Ministry of Justice-approved legal translator. A list of approved translators is available on the Ministry of Justice website (moj.gov.ae). Using a non-approved translator risks the attested translation being rejected by foreign authorities. MOJ-approved translators charge AED 150-400 per page depending on language and complexity. Avoid general translation agencies unless they are specifically MOJ-approved for legal documents.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my spouse has the original UAE divorce documents and will not share them?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You do not need the original. The UAE court registry holds the original judgment and issues certified copies to any party to the proceedings. Attend the court registry with your passport and Emirates ID (or a valid ID), provide the case number (or your full name and the approximate year of divorce), and request a certified copy. Both parties to a divorce are entitled to obtain certified copies from the court registry independently.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use the MOFAIC online portal for attestation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The UAE Ministry of Foreign Affairs and International Cooperation (MOFAIC) offers an online attestation service through mofa.gov.ae. You can submit documents for apostille or attestation, track status, and collect the attested document. The online portal is the most efficient route for MOFAIC apostille and typically takes 3 to 7 working days. An urgent in-person service is available at MOFAIC typing centres for same-day processing at a higher fee.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+
+const attestationChain = [
+  {
+    step: '01',
+    title: 'Obtain certified court copy',
+    where: 'UAE Personal Status Court registry',
+    cost: 'AED 50-100',
+    time: '1-3 working days',
+    notes: 'The hakm al-talaq. Both parties can request independently.',
+  },
+  {
+    step: '02',
+    title: 'MOJ-approved Arabic translation (if needed)',
+    where: 'UAE Ministry of Justice-approved translator',
+    cost: 'AED 150-400/page',
+    time: '1-2 working days',
+    notes: 'Required if destination country uses English, Urdu, Hindi, Russian etc.',
+  },
+  {
+    step: '03',
+    title: 'Dubai Courts / Issuing Court authentication',
+    where: 'Dubai Courts Document Clearing, or issuing emirate court',
+    cost: 'AED 50-150',
+    time: '1-3 working days',
+    notes: 'Certifies the document is genuine. Required before MOFAIC step.',
+  },
+  {
+    step: '04A',
+    title: 'MOFAIC Apostille (Hague Convention countries)',
+    where: 'mofa.gov.ae online or MOFAIC typing centres',
+    cost: 'AED 150-300',
+    time: '3-7 working days (online); same-day urgent available',
+    notes: 'Sufficient for UK, USA, EU, Australia, and all Hague signatories.',
+  },
+  {
+    step: '04B',
+    title: 'MOFAIC Attestation + Embassy legalisation (non-Hague countries)',
+    where: 'MOFAIC then destination country embassy in UAE',
+    cost: 'AED 150-300 (MOFAIC) + embassy fee',
+    time: '1-3 weeks total',
+    notes: 'Required for Pakistan, some Gulf states, and other non-Convention countries.',
+  },
+];
+
+const countryGuide = [
+  { country: 'United Kingdom', hague: 'Yes', steps: 'Courts auth + MOFAIC apostille + certified English translation', embassy: 'Not required', note: 'Submit apostilled docs to register office for remarriage' },
+  { country: 'India', hague: 'Yes (2005)', steps: 'Courts auth + MOFAIC apostille + English translation', embassy: 'Indian Consulate attestation sometimes required by local authorities', note: 'Check NADRA/civil registry requirements for your state' },
+  { country: 'Pakistan', hague: 'No', steps: 'Courts auth + MOFAIC attestation + Pakistan Embassy attestation', embassy: 'Pakistan Embassy/High Commission in UAE', note: 'Then register at NADRA Pakistan' },
+  { country: 'Philippines', hague: 'Yes', steps: 'Courts auth + MOFAIC apostille', embassy: 'Philippine Consulate authentication sometimes additionally required', note: 'Check PSA requirements' },
+  { country: 'Russia', hague: 'Yes', steps: 'Courts auth + MOFAIC apostille', embassy: 'Not required; but ZAGS registration needed in Russia', note: 'Take apostilled document to ZAGS for Russian civil registry update' },
+  { country: 'USA', hague: 'Yes', steps: 'Courts auth + MOFAIC apostille + English translation', embassy: 'Not required', note: 'Different states may have different record-updating procedures' },
+  { country: 'Australia', hague: 'Yes', steps: 'Courts auth + MOFAIC apostille + English translation', embassy: 'Not required', note: 'Submit to DIBP or Births Deaths Marriages registry' },
+  { country: 'Germany', hague: 'Yes', steps: 'Courts auth + MOFAIC apostille + German translation by sworn translator', embassy: 'Not required', note: 'Submit to Standesamt for civil registry update' },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-certificate-attestation-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Certificate -- UAE 2025</p>
+      <h1>UAE Divorce Certificate Attestation: How to Get and Legalise Your Divorce Document</h1>
+      <p class="hero-desc">
+        You have a UAE divorce decree. Now you need to use it abroad -- to remarry, update your passport, access a pension, or transfer property in your home country. The UAE has a specific attestation chain that must be followed precisely, or foreign authorities will reject the document. The UAE joined the Hague Apostille Convention in 2021, which simplifies this considerably for most countries.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>What you need to know from the start</h2>
+        <ul class="key-facts">
+          <li><strong>The UAE joined the Hague Apostille Convention in 2021.</strong> For most Western countries, a MOFAIC apostille is all you need beyond the court copy.</li>
+          <li><strong>The divorce document is the court judgment (hakm al-talaq).</strong> Not a separate "divorce certificate" -- the court judgment is the authoritative document.</li>
+          <li><strong>Both parties can get a certified copy independently.</strong> You do not need your ex-spouse's cooperation to obtain the court registry copy.</li>
+          <li><strong>Talaq without court registration has no attestable document.</strong> You must register the talaq at court first.</li>
+          <li><strong>MOJ-approved translators only.</strong> Random agencies will not be accepted.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: Why You Need It -->
+      <section class="content-section">
+        <h2>Why You Need an Attested UAE Divorce Certificate</h2>
+        <p>
+          An attested UAE divorce certificate is required in several common situations:
+        </p>
+        <ul>
+          <li><strong>Remarriage abroad:</strong> Most countries require proof that a previous marriage has legally ended before a new marriage can be registered. A UAE divorce decree needs to be authenticated to be accepted by foreign civil registries and religious authorities.</li>
+          <li><strong>Passport and nationality updates:</strong> Changing your marital status in your home country's passport or national registry requires documented proof of the divorce.</li>
+          <li><strong>Pension and benefits access:</strong> UK pensions, US Social Security survivor benefits, and similar schemes require proof of divorce to determine eligibility or access to former spouse benefits.</li>
+          <li><strong>Inheritance proceedings:</strong> In some countries, a surviving former spouse has rights in an estate unless a divorce has been legally recognised. An attested UAE decree clarifies your status.</li>
+          <li><strong>Property transfer abroad:</strong> If you hold property in your home country in joint names and are using a UAE divorce to establish sole ownership, the divorce decree must be legalised for the relevant land registry.</li>
+          <li><strong>Banking and financial accounts:</strong> Some banks in other countries require proof of divorce to update joint account arrangements or beneficiary designations.</li>
+        </ul>
+      </section>
+
+      <!-- Section 2: Step 1 -- Getting the Court Copy -->
+      <section class="content-section">
+        <h2>Step 1: Obtaining the Certified Court Copy</h2>
+        <p>
+          The official UAE divorce document is the court-issued judgment (hakm al-talaq or hukm al-tatliq). This is not a separate certificate issued by a government registry -- it is the actual court decision. You need a certified copy from the court registry.
+        </p>
+
+        <h3>What to bring to the court registry</h3>
+        <ul>
+          <li>Your passport (original)</li>
+          <li>Emirates ID (if still valid)</li>
+          <li>The case number from your divorce proceedings (on any previous court correspondence)</li>
+          <li>AED 50-100 in fees</li>
+        </ul>
+        <p>
+          If you do not have the case number, provide your full name, the ex-spouse's name, and the approximate year of divorce. The registry can locate the file. Processing takes 1 to 3 working days.
+        </p>
+        <p>
+          Each emirate's Personal Status Court maintains its own registry. If your divorce was handled by Abu Dhabi Courts, go to Abu Dhabi. If Dubai, the Dubai Personal Status Court in Deira. If your case was in Sharjah courts, the Sharjah Personal Status Court.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>If you are outside the UAE</h3>
+          <p>If you have already left the UAE, you can instruct a registered UAE law firm to obtain the certified copy on your behalf with a notarised power of attorney. Alternatively, you can appoint any UAE-based trusted person with a notarised POA to collect it from the court registry. The POA must specify the authority to collect court documents and the specific case details.</p>
+        </div>
+      </section>
+
+      <!-- Section 3: The Attestation Chain -->
+      <section class="content-section">
+        <h2>The Full Attestation Chain</h2>
+        <p>
+          UAE document attestation follows a fixed chain. Each step authenticates the previous step's signature or stamp. You cannot skip steps. The chain for a UAE divorce document is:
+        </p>
+
+        <div class="steps-list">
+          {attestationChain.map((s) => (
+            <div class="step-card">
+              <div class="step-num">{s.step}</div>
+              <div class="step-body">
+                <h3>{s.title}</h3>
+                <div class="step-meta">
+                  <span class="meta-label">Where:</span> {s.where}<br />
+                  <span class="meta-label">Cost:</span> {s.cost}<br />
+                  <span class="meta-label">Time:</span> {s.time}
+                </div>
+                <p>{s.notes}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p class="note-text">Steps 04A and 04B are alternatives, not sequential. Hague apostille countries need 04A only. Non-Hague countries need 04B (which includes both MOFAIC attestation and embassy legalisation).</p>
+      </section>
+
+      <!-- Section 4: Apostille vs Legalisation -->
+      <section class="content-section">
+        <h2>Apostille vs Full Legalisation: Which One Do You Need?</h2>
+        <p>
+          The Hague Apostille Convention (also called the Apostille Convention) is an international agreement that simplifies the authentication of public documents. Member countries agree to recognise an "apostille" stamp from the issuing country's designated authority as sufficient proof of authenticity, removing the need for embassy legalisation.
+        </p>
+        <p>
+          <strong>The UAE joined the Convention on 14 January 2021.</strong> UAE's designated apostille authority is the Ministry of Foreign Affairs and International Cooperation (MOFAIC). A MOFAIC apostille stamp on a UAE document is accepted by all other Convention member states without further embassy steps.
+        </p>
+
+        <div class="callout-box callout-box--gold">
+          <h3>Hague Convention members: apostille only</h3>
+          <p class="callout-body">All EU member states, UK, USA, Australia, New Zealand, Canada, India, Japan, South Korea, Brazil, Mexico, and most of Europe. Check the Hague Conference website (hcch.net) for the full current list of 125+ member states. For these countries: Courts authentication + MOFAIC apostille + certified translation = done.</p>
+        </div>
+
+        <div class="callout-box callout-box--blue">
+          <h3>Non-Hague countries: full legalisation required</h3>
+          <p class="callout-body">Pakistan, Bangladesh, Iraq, Yemen, Libya, Afghanistan, Ethiopia, Tanzania, and several others. For these countries: Courts authentication + MOFAIC attestation + destination country's embassy in UAE. Check your specific country's embassy in UAE for their current attestation fee and appointment process.</p>
+        </div>
+      </section>
+
+      <!-- Section 5: Country Guide -->
+      <section class="content-section">
+        <h2>Country-Specific Requirements</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Hague member?</th>
+                <th>Process</th>
+                <th>Embassy step?</th>
+              </tr>
+            </thead>
+            <tbody>
+              {countryGuide.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.country}</td>
+                  <td class={`td-rule ${row.hague === 'Yes' ? 'td-rule--yes' : 'td-rule--no'}`}>{row.hague}</td>
+                  <td class="td-light">{row.steps}</td>
+                  <td class="td-light">{row.embassy}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">Requirements change. Verify with the relevant embassy and the MOFAIC portal before submitting. Some countries' civil registry offices have additional requirements beyond what the embassy attestation covers.</p>
+
+        <h3>UK in detail</h3>
+        <p>
+          Since the UAE joined the Hague Convention, UK requirements for UAE divorce certificates have simplified substantially. A MOFAIC-apostilled copy of the UAE court judgment, together with a certified English translation, is accepted by:
+        </p>
+        <ul>
+          <li>England and Wales register offices for remarriage</li>
+          <li>General Register Office for civil status records</li>
+          <li>HMRC and DWP for benefits and pension purposes</li>
+          <li>UK courts if UAE divorce is being relied upon in UK proceedings</li>
+        </ul>
+        <p>
+          There is no requirement to obtain UK court recognition of a UAE divorce solely for civil status purposes. UK courts do not need to formally "recognise" a UAE divorce under the Family Law Act 1986 for it to have effect in England and Wales, provided the divorce was obtained by proceedings in the UAE and both parties were UAE residents at the time. The apostilled certificate serves as documentary proof.
+        </p>
+
+        <h3>India in detail</h3>
+        <p>
+          India joined the Hague Convention in 2005. MOFAIC apostille is technically sufficient for legal purposes. However, some Indian authorities -- particularly state Registrar of Marriages offices, some High Courts, and certain banks -- additionally ask for Indian Consulate attestation. This is technically not required under the Convention, but it is sometimes demanded in practice.
+        </p>
+        <p>
+          To cover both bases: obtain the MOFAIC apostille, then present the document at the Indian Consulate in Dubai (or Indian Embassy in Abu Dhabi) for their attestation stamp. This adds 5 to 10 working days and a consular fee of approximately USD 50-75 equivalent. The result is a document that will be accepted everywhere in India without question.
+        </p>
+
+        <h3>Pakistan in detail</h3>
+        <p>
+          Pakistan remains outside the Hague Convention. The full legalisation chain is required: Dubai Courts authentication, MOFAIC attestation (not apostille -- attestation for non-Hague countries), then Pakistan Embassy or High Commission in the UAE.
+        </p>
+        <p>
+          The Pakistan Embassy in Abu Dhabi and the Pakistan Consulate in Dubai both provide attestation services. Current fees and appointment booking are available on their websites. Processing takes 5 to 7 working days from appointment. After returning to Pakistan, the attested document must be registered at NADRA for the civil status update.
+        </p>
+        <p>
+          An Urdu translation by a NADRA-approved translator may also be required at the NADRA stage, depending on the registration office. Bring the original Arabic court judgment, its certified English translation, and its certified Urdu translation when attending NADRA.
+        </p>
+      </section>
+
+      <!-- Section 6: MOFAIC Online Portal -->
+      <section class="content-section">
+        <h2>Using the MOFAIC Online Portal</h2>
+        <p>
+          The UAE Ministry of Foreign Affairs and International Cooperation operates an online document attestation portal at <strong>mofa.gov.ae</strong>. This is the primary route for most applicants and is significantly faster than in-person attendance.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Create an account and log in</h3>
+              <p>Visit mofa.gov.ae and create a user account. UAE ID holders can use UAE Pass login. Enter the document type (court judgment), issuing emirate, and destination country.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Upload scanned documents</h3>
+              <p>Upload high-quality scans of the court-authenticated document. The portal will assess whether apostille or attestation applies based on your selected destination country.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Pay the fee and track status</h3>
+              <p>Fee is approximately AED 150-300 per document. Payment by card online. Processing status is trackable through the portal. Typical processing: 3 to 7 working days for standard service.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Collect or receive attested documents</h3>
+              <p>Collect from the designated MOFAIC office or request courier delivery. If you have already left the UAE, you can request a trusted person to collect on your behalf or use the courier delivery option.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Urgent same-day service</h3>
+        <p>
+          MOFAIC typing centres (in Abu Dhabi and Dubai, among other locations) offer urgent attestation for same-day or next-day processing at a higher fee. This is useful if you have a tight deadline for a foreign authority. Attend the typing centre in person with all documents for immediate processing.
+        </p>
+      </section>
+
+      <!-- Section 7: Talaq Registration -->
+      <section class="content-section">
+        <h2>Talaq Without a Court Proceeding: Getting an Official Document</h2>
+        <p>
+          Many Muslim divorces in the UAE begin with a talaq pronouncement outside of formal court proceedings -- in the home, via a registered notary, or at a religious authority. This is legally valid under UAE personal status law provided certain conditions are met. However, a verbal or informally recorded talaq has no standalone attestable document.
+        </p>
+
+        <h3>Why registration is essential</h3>
+        <p>
+          Article 105 of Federal Decree-Law No. 41 of 2024 requires that talaq pronouncements be registered with the Personal Status Court within one month of the pronouncement. Registration does not change the legal effectiveness of the talaq (which takes effect from pronouncement), but it creates the official court record that generates an attestable document.
+        </p>
+        <p>
+          Without court registration, the only "document" you have is whatever informal record exists of the pronouncement. Foreign civil registries, embassies, and government bodies will not accept an unregistered talaq. The UK Home Office, Indian civil registries, and Pakistani NADRA all require a court-issued document.
+        </p>
+
+        <h3>How to register a talaq</h3>
+        <p>
+          Attend the Personal Status Court with both parties (or one party with appropriate documentation of the talaq pronouncement). The court will verify the pronouncement, confirm the iddah period, and issue a Talaq Registration Certificate. Once registered, this certificate can be certified and attested through the normal chain described above.
+        </p>
+        <p>
+          If the talaq was pronounced some time ago and was not registered within the one-month window, late registration is still possible but requires more documentation and may require a judicial verification process. A UAE family lawyer can advise on the specific requirements for late registration.
+        </p>
+      </section>
+
+      <!-- Section 8: MOJ-Approved Translators -->
+      <section class="content-section">
+        <h2>Getting a Certified Translation</h2>
+        <p>
+          Most destination countries require a translation of the Arabic court judgment. Not all translations are equal in legal proceedings -- the UAE Ministry of Justice maintains a list of approved translators for legal documents, and translation by a non-approved party risks rejection by foreign authorities.
+        </p>
+
+        <h3>Finding an MOJ-approved translator</h3>
+        <p>
+          The Ministry of Justice (moj.gov.ae) publishes a searchable directory of accredited legal translators, organised by language. Translations for legal purposes (court documents, attestation chains) must be done by an accredited translator. The translator's stamp and credentials appear on the translated document.
+        </p>
+        <p>
+          Common destination languages and approximate translation costs:
+        </p>
+        <ul>
+          <li>Arabic to English: AED 150-300 per page</li>
+          <li>Arabic to Urdu: AED 200-350 per page</li>
+          <li>Arabic to Hindi: AED 200-350 per page</li>
+          <li>Arabic to Russian: AED 250-400 per page</li>
+          <li>Arabic to French/German/Spanish: AED 300-500 per page</li>
+        </ul>
+        <p>
+          The UAE divorce judgment is typically 2 to 5 pages. Allow 1 to 2 working days for translation. The translated document is then included in the attestation chain alongside the original Arabic.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Both the Arabic and translation should be attested</h3>
+          <p>For the strongest package, attest the original Arabic court judgment through the full chain and attach the certified translation to it. Some authorities want the translation itself to carry the apostille stamp (attested as a certified translation). This requires the translation to go through the attestation chain as well, adding some cost and time. Check what the specific receiving authority in your destination country requires before starting the process.</p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-in-uae/" class="related-card">
+            <strong>UAE Divorce Law Overview</strong>
+            <span>Full framework for residents and expats</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>UAE Divorce for Expats</strong>
+            <span>Jurisdiction, law choices, foreign decree recognition</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>DLD transfers and the separate property rule</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr in UAE Divorce</strong>
+            <span>Enforcing deferred dower payments</span>
+          </a>
+          <a href="/en/divorce-employer-visa-uae/" class="related-card">
+            <strong>Divorce and UAE Visa</strong>
+            <span>Residency options after divorce</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to choose a UAE family lawyer</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long the full process takes from filing to decree</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step court filing guide</span>
+          </a>
+          <a href="/en/documents-for-divorce-uae/" class="related-card">
+            <strong>Documents for Divorce UAE</strong>
+            <span>Complete checklist of documents needed for UAE courts</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #b45309; font-weight: 700; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+  .td-rule { font-weight: 600; }
+  .td-rule--yes { color: #15803d; }
+  .td-rule--no { color: #b91c1c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Callout boxes */
+  .callout-box { border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0; }
+  .callout-box--gold { background: #fef3c7; border: 2px solid #c9a84c; }
+  .callout-box--blue { background: #eaf4fb; border: 2px solid #a9cce3; }
+  .callout-box h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .callout-body { font-size: 0.88rem; color: #374151; line-height: 1.7; margin: 0; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.1rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0.4rem 0 0; }
+  .step-meta { font-size: 0.82rem; color: #6b7280; line-height: 1.7; margin-bottom: 0.3rem; }
+  .meta-label { font-weight: 700; color: #374151; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

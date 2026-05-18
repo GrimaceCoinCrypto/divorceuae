@@ -1,0 +1,443 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Lawyer Umm Al Quwain — UAQ Family Court Guide 2025';
+const description =
+  'Looking for a divorce lawyer in Umm Al Quwain? How UAQ Court of First Instance handles family matters, when residents file in Ajman or Sharjah instead, and what you need to know about divorce in the UAE\'s smallest emirate.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-umm-al-quwain/',
+  ar: 'https://divorceu.ae/ar/محامي-طلاق-أم-القيوين/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Lawyer Umm Al Quwain', url: 'https://divorceu.ae/en/divorce-lawyer-umm-al-quwain/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Where do I file for divorce in Umm Al Quwain?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce in Umm Al Quwain is filed at the UAQ Court of First Instance, family matters section, located in the UAQ Courts building in Umm Al Quwain city. If your Emirates ID shows a UAQ address, you must file here. Before the court accepts most Muslim couples\' filings, both parties are directed to the Family Guidance and Reconciliation Centre in UAQ for mandatory conciliation sessions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can UAQ residents file in Ajman or Sharjah courts instead?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No — not if your registered residence is in UAQ. UAE personal status jurisdiction is based on your emirate of registered residence as shown on your Emirates ID. If your Emirates ID shows a UAQ address, your divorce must be filed in UAQ courts regardless of proximity to Ajman or Sharjah. However, many people who physically live near the UAQ-Ajman border are actually registered residents of Ajman, in which case they genuinely file in Ajman courts. Check your Emirates ID address.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does divorce take in Umm Al Quwain?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAQ has the smallest court caseload in the UAE, which generally means fast scheduling of hearings. An uncontested mutual consent divorce typically takes 1 to 3 months including mandatory conciliation. A contested divorce with custody or asset disputes typically takes 6 to 14 months. The small court environment means less queue time, though there are also fewer specialist family judges for very complex cases.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a lawyer who is based in UAQ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. UAE advocates are licensed to appear in courts across all seven emirates without geographic restriction. A Dubai or Sharjah-based family law firm with UAE-wide experience can represent you fully in UAQ courts. The key is finding a lawyer who has direct experience filing in UAQ specifically, as procedural practice varies by court. UAQ\'s smaller court size means fewer local family law specialists, making a UAE-wide firm with UAQ experience the most practical choice.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the divorce process different for non-Muslims in UAQ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Non-Muslim residents in UAQ are governed by Federal Decree-Law No. 41 of 2022, the UAE civil family law for non-Muslims. This provides no-fault divorce, no waiting period, joint custody as the default, and the option to apply home country law. The court is the same UAQ Court of First Instance, but the legal rules differ significantly from the Muslim personal status track. Non-Muslim expats in UAQ can also consider the DIFC Courts in Dubai or the Abu Dhabi Civil Family Court as alternative forums.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the court fees for divorce in UAQ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAQ court fees for divorce filing are among the lowest in the UAE. Basic divorce petition filing is approximately AED 150 to 300. Additional fees apply for each subsequent hearing. These are lower than equivalent fees in Dubai and comparable to those in Ajman. Lawyer fees for UAQ cases are also generally lower than Dubai due to the smaller market, though the substantive complexity of the case still drives most of the cost.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What documents are required for divorce in UAQ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You need: a marriage certificate attested by your home country embassy and UAE Ministry of Foreign Affairs, with a certified Arabic translation; Emirates IDs of both spouses; passports of both spouses; proof of UAQ registered residence; children\'s documents if custody is involved; and the Family Guidance Centre certificate confirming failed reconciliation for Muslim cases. All foreign-language documents must be translated by a UAE-accredited court translator.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get a divorce in UAQ if my spouse refuses to cooperate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAQ courts can proceed even if your spouse refuses to attend hearings, provided they have been properly served with the court notice. If your spouse is in the UAE and ignores service, the court can proceed in their absence. If your spouse is abroad, they must be served through UAE diplomatic channels. For a wife seeking judicial divorce without the husband\'s consent, the court will investigate the grounds and issue judgment regardless of the husband\'s cooperation.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'Where do I file for divorce in Umm Al Quwain?',
+    answer: 'At the UAQ Court of First Instance, family matters section. Muslim couples first attend the Family Guidance and Reconciliation Centre in UAQ. Your lawyer prepares all Arabic documents and manages the filing. UAQ courts have the smallest caseload in the UAE, which typically means faster hearing scheduling than in Dubai or Sharjah.',
+  },
+  {
+    question: 'Can I file in Ajman or Sharjah courts if I live near the border?',
+    answer: 'No, not if your Emirates ID shows a UAQ address. UAE jurisdiction for personal status matters is fixed by registered residence. However, many people who live geographically near Ajman are actually registered as Ajman residents. Check your Emirates ID — if it shows an Ajman address, you file in Ajman courts.',
+  },
+  {
+    question: 'How long does divorce take in UAQ?',
+    answer: 'Uncontested divorces typically take 1 to 3 months. Contested cases with custody or asset disputes run 6 to 14 months. UAQ\'s small court caseload usually means faster hearing scheduling than larger emirates, though the substantive legal process follows the same federal timeline.',
+  },
+  {
+    question: 'Do I need a UAQ-based lawyer?',
+    answer: 'No. UAE advocates can appear in any emirate\'s courts. A Dubai or Sharjah-based family law firm with UAQ experience can represent you. UAQ has a small local legal market, so a UAE-wide firm is often the more practical and resource-rich choice.',
+  },
+  {
+    question: 'Is UAQ divorce different for non-Muslims?',
+    answer: 'Yes. Non-Muslim residents use Federal Decree-Law No. 41 of 2022: no-fault, no waiting period, joint custody default, and the option to apply home country law. The court is the same UAQ Court of First Instance but the applicable rules differ materially from the Muslim track.',
+  },
+  {
+    question: 'What are the court fees in UAQ?',
+    answer: 'UAQ court fees are among the lowest in the UAE. Basic divorce petition filing is approximately AED 150 to 300. Lawyer fees are also generally lower than Dubai due to the smaller market, though case complexity is still the main driver of overall cost.',
+  },
+  {
+    question: 'What documents do I need for divorce in UAQ?',
+    answer: 'Marriage certificate attested by home country embassy and UAE Ministry of Foreign Affairs (with certified Arabic translation), Emirates IDs, passports, proof of UAQ residence, children\'s documents if custody is relevant, and the Family Guidance Centre failed reconciliation certificate for Muslim cases. Your lawyer compiles the full package.',
+  },
+  {
+    question: 'Can UAQ courts handle cases where the spouse is abroad?',
+    answer: 'Yes. UAQ courts proceed where the overseas spouse is properly served through UAE diplomatic channels. Once service is confirmed, the court continues whether or not the overseas party appears. Your lawyer manages the international service process, which adds several weeks to the timeline.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-lawyer-umm-al-quwain/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · Umm Al Quwain 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Umm Al Quwain is the UAE's smallest emirate by population, and its court system reflects that scale: small, relatively uncongested, and applying the same UAE federal personal status law as every other emirate. This guide covers how the UAQ Court of First Instance handles family matters, when residents might file in neighbouring Ajman or Sharjah instead, and what to expect from the process.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Quick summary — divorcing in Umm Al Quwain</h2>
+        <p>
+          Governed by <strong>Federal Decree-Law No. 41 of 2024</strong> (Muslims) and <strong>No. 41 of 2022</strong> (non-Muslims).
+          File at the <strong>UAQ Court of First Instance</strong>, family matters section.
+          Mandatory Family Guidance conciliation before the court accepts Muslim cases.
+          Timeline: <strong>1 to 3 months</strong> uncontested; <strong>6 to 14 months</strong> contested.
+          UAE's smallest court — lowest caseload, fastest scheduling, lowest fees.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>UAQ Court of First Instance — Family Matters</h2>
+        <p>
+          The UAQ Court of First Instance is the primary court for all civil and personal status matters in Umm Al Quwain. The court operates under the UAQ Judicial Department and handles divorce, custody, alimony, guardianship, and inheritance for UAQ residents. The court building is located in Umm Al Quwain city, which serves as the emirate's administrative centre.
+        </p>
+        <p>
+          Umm Al Quwain has the smallest population of any UAE emirate, estimated at under 100,000 residents. This translates directly to the court: the UAQ family section has the lowest case volume in the UAE, fewer judges than larger courts, and a relatively streamlined administrative process. For residents with straightforward cases, this means faster scheduling and less waiting time between hearings.
+        </p>
+        <p>
+          The trade-off is limited specialisation. UAQ has fewer specialist family judges than Dubai, Abu Dhabi, or Sharjah, and for highly complex cases involving international assets, offshore structures, or unusual legal issues, the court may have less precedent experience. The substantive law is the same throughout the UAE, but practical handling of unusual situations varies by court.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>UAQ's Resident Profile — Who Files Here</h2>
+        <p>
+          Umm Al Quwain is one of the UAE's quieter residential emirates, with a character distinct from the commercial bustle of Dubai or Sharjah.
+        </p>
+        <h3>UAE national families</h3>
+        <p>
+          UAQ has a proportionally higher share of UAE national residents than most other emirates. UAE national families typically follow the Muslim personal status track under Federal Decree-Law No. 41 of 2024, with divorce proceedings handled at UAQ courts or, where applicable, by UAE national family courts.
+        </p>
+        <h3>Indian expat community</h3>
+        <p>
+          UAQ has a significant Indian expat community, many employed in trade, retail, and smaller industrial businesses. Muslim Indian residents are subject to the Muslim personal status track. Hindu, Christian, and other non-Muslim Indian residents can use the non-Muslim civil track under Federal Decree-Law No. 41 of 2022, with the option to elect Indian personal law (noting that Indian personal laws vary by religion: Hindu Marriage Act, Indian Christian Marriage Act, or Special Marriage Act).
+        </p>
+        <h3>Other Arab expatriates</h3>
+        <p>
+          Arab nationals from other countries — Egypt, Jordan, Lebanon, Syria, and others — make up part of UAQ's resident population. Muslim Arab nationals apply UAE federal personal status law for their divorce proceedings. Non-Muslim Arab Christians may elect their home country's law.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Ajman and Sharjah Question — When Neighbouring Courts Apply</h2>
+        <p>
+          Umm Al Quwain sits between Ajman and Ras Al Khaimah, and many residents are geographically close to Ajman. A common question is whether UAQ residents can choose to file in Ajman courts instead. The short answer: no, if your Emirates ID shows a UAQ address.
+        </p>
+        <p>
+          UAE personal status jurisdiction is determined by your registered residential emirate, which is the address recorded on your Emirates ID. If your Emirates ID address is in UAQ, your divorce case belongs in UAQ courts, regardless of physical proximity to Ajman or Sharjah courts.
+        </p>
+        <p>
+          However, there is an important practical nuance. The UAQ-Ajman border is not always obvious on the ground, and many people who live in areas near that border are actually registered as Ajman residents — not UAQ residents. If your Emirates ID address is in Ajman, you file in Ajman. This is worth confirming before engaging a lawyer, as it determines everything about where and how the case is filed.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Check your Emirates ID address</h3>
+          <p>The emirate shown on your Emirates ID address determines your court. If you are unsure whether your residence registration is UAQ or Ajman, check the emirate field on your Emirates ID card or your last residence renewal documents. Your lawyer can also verify this quickly before filing.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Muslim Divorce in UAQ</h2>
+        <p>
+          Muslim residents of UAQ are governed by <strong>Federal Decree-Law No. 41 of 2024</strong> (effective from 15 April 2025, replacing Federal Law No. 28 of 2005). The core divorce types are:
+        </p>
+        <ul>
+          <li><strong>Talaq:</strong> Husband-initiated divorce, pronounced before or registered with the court. The court sets the financial consequences: mahr, iddah maintenance for approximately three months, and child support.</li>
+          <li><strong>Khula:</strong> Wife-initiated divorce in exchange for returning the deferred mahr. Under Federal Decree-Law No. 41 of 2024, judicial khula is available through the court without requiring the husband's consent where reconciliation has genuinely failed.</li>
+          <li><strong>Judicial divorce (Tafriq):</strong> Court-granted divorce on statutory grounds such as harm, failure to maintain, or prolonged absence of the husband. The court investigates the grounds and issues judgment.</li>
+        </ul>
+        <p>
+          All three require the mandatory Family Guidance and Reconciliation Centre process in UAQ before the court accepts the case. One to three sessions are typical, adding approximately four to eight weeks to the beginning of the timeline.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Non-Muslim Divorce in UAQ</h2>
+        <p>
+          Non-Muslim residents in UAQ are governed by <strong>Federal Decree-Law No. 41 of 2022</strong>. Key features:
+        </p>
+        <ul>
+          <li>No-fault divorce — no grounds required</li>
+          <li>No mandatory waiting period or iddah requirement</li>
+          <li>Joint custody as the default starting point for children of the marriage</li>
+          <li>Asset division based on contribution and fairness rather than title alone</li>
+          <li>Option to elect home country law under Article 13 of the UAE Civil Code</li>
+        </ul>
+        <p>
+          Non-Muslim expats in UAQ who prefer an English common law forum or have significant international assets should also consider the DIFC Courts in Dubai (under Dubai Law No. 2 of 2025) or the Abu Dhabi Civil Family Court (ADCFC) at Hudayriyat Island. Both offer English-language proceedings and apply a civil family law framework for non-Muslims.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Divorce Process in UAQ — Step by Step</h2>
+        <ol class="steps">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Initial consultation and document preparation</h3>
+              <p>Your lawyer reviews your situation, confirms jurisdiction (UAQ Emirates ID address), advises on the applicable legal track, and compiles the required documents. Foreign marriage certificates must be attested by your home country embassy and UAE Ministry of Foreign Affairs, then translated into Arabic by a UAE-accredited court translator.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Family Guidance and Reconciliation Centre (Muslim cases)</h3>
+              <p>Both spouses attend the UAQ Family Guidance Centre for conciliation sessions. One to three sessions are typical. The Centre issues a certificate confirming failed reconciliation, which the court requires before accepting the divorce filing.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Filing at UAQ Court of First Instance</h3>
+              <p>Your lawyer files the petition with the family matters section. Court fees of approximately AED 150 to 300 apply. Given UAQ's low caseload, first hearings are often scheduled within 1 to 3 weeks of filing.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Court hearings</h3>
+              <p>For uncontested cases, one or two hearings are usually sufficient once all documents are in order. For contested matters involving custody, alimony, or asset disputes, hearings are held in sequence, typically 3 to 5 weeks apart.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Judgment</h3>
+              <p>The court issues the final divorce judgment specifying the divorce type, financial obligations, and custody arrangements. Your lawyer obtains a certified copy for your records and any international use.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <h3>Apostille for international use</h3>
+              <p>To use your UAQ divorce decree in your home country, your lawyer obtains a UAE Ministry of Foreign Affairs apostille plus a certified translation. Most countries worldwide accept UAE divorce decrees through this process.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>Documents Required for Divorce in UAQ</h2>
+        <ul class="checklist">
+          <li>Marriage certificate — attested by home country embassy and UAE MOFA, with certified Arabic translation</li>
+          <li>Emirates IDs of both spouses (confirming UAQ registered address)</li>
+          <li>Passports of both spouses</li>
+          <li>Proof of UAQ registered residence (Emirates ID address or tenancy contract)</li>
+          <li>Children's birth certificates if custody is involved — attested and Arabic-translated</li>
+          <li>Family Guidance Centre certificate of failed reconciliation (for Muslim cases)</li>
+          <li>Financial records if alimony or asset division is in dispute</li>
+          <li>Pre-nuptial or post-nuptial agreement if one exists</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Divorce Lawyer Fees for UAQ Cases</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">Uncontested / Mutual Consent</p>
+            <p class="fee-amount">AED 2,000-5,000</p>
+            <p class="fee-detail">Both parties agree on all terms. Lawyer prepares documents and files the petition.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested (no children)</p>
+            <p class="fee-amount">AED 5,000-18,000</p>
+            <p class="fee-detail">Alimony or asset disputes requiring multiple hearings.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested with custody</p>
+            <p class="fee-amount">AED 12,000-38,000+</p>
+            <p class="fee-detail">The most complex and time-intensive cases.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Khula (wife-initiated)</p>
+            <p class="fee-amount">AED 3,000-9,000</p>
+            <p class="fee-detail">Includes conciliation sessions and court filing.</p>
+          </div>
+        </div>
+        <div class="info-box info-box--info">
+          <p><strong>Court filing fees:</strong> UAQ court fees are the lowest in the UAE for divorce filings — approximately AED 150 to 300. Additional fees apply for subsequent hearings. The total cost of UAQ divorce proceedings is generally lower than equivalent cases in Dubai or Abu Dhabi.</p>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-lawyer-ajman/" class="related-card">
+            <strong>Divorce Lawyer Ajman</strong>
+            <span>Ajman Personal Status Court guide</span>
+          </a>
+          <a href="/en/divorce-lawyer-sharjah/" class="related-card">
+            <strong>Divorce Lawyer Sharjah</strong>
+            <span>Sharjah courts process and requirements</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>Federal Law 41/2022 complete guide</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>Dubai Personal Status Court guide</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees and lawyer fees — real figures for 2025</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in UAE</strong>
+            <span>Step-by-step court filing guide for all emirates</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long divorce takes by case type across all emirates</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.88rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .fee-grid, .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

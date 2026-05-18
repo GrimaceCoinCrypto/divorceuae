@@ -1,0 +1,460 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Name Change After Divorce UAE: Step-by-Step Guide 2025';
+const description =
+  'How to revert to your maiden name after divorce in UAE. Complete step-by-step guide: Emirates ID, passport, driving licence, Ejari, bank accounts, employer records. Fees, timelines, and what happens with children\'s names.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/name-change-after-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمغتربين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Name Change After Divorce UAE', url: 'https://divorceu.ae/en/name-change-after-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do I have to change my name after divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. There is no automatic name change on divorce in UAE and no legal obligation to revert to your maiden name. A name reversion is optional. Many women choose to keep their married name, particularly where children share that name. If you do wish to revert, you must actively apply to update your Emirates ID, passport, and other documents.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I revert to my maiden name in UAE after divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The process starts with your certified divorce judgment from the Personal Status Court, attested at the Ministry of Foreign Affairs (MOFAIC). You then apply to ICP (Federal Authority for Identity, Citizenship, Customs and Ports Security) to update your Emirates ID, then your home country embassy to update your passport, then the Roads and Transport Authority for your driving licence, and then update bank accounts, tenancy contracts, and employer records in sequence.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a name change take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Emirates ID update takes 3-7 working days after a successful ICP application. Driving licence can be updated same day at the RTA if you have the updated Emirates ID. Bank accounts typically take 1-5 business days per institution. Home country passport update timeline depends on your embassy -- European embassies typically take 4-8 weeks; South Asian embassies often 6-12 weeks. Allow 2-3 months to complete all records fully.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I keep my married name after divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. There is no requirement to revert your name after divorce in UAE. If you prefer to keep your married name -- for professional continuity, to match your children\'s surname, or for any other reason -- you are entitled to do so. Your existing Emirates ID and documents remain valid. No action is required if you choose to keep the married name.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I update my Emirates ID after divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Visit an ICP-authorised typing centre or apply via the ICP smart app. You will need: the original attested divorce judgment (Arabic or officially translated), your current Emirates ID, a recent passport photo, and the application fee of AED 100-200. Processing takes 3-7 working days. Your new Emirates ID will reflect your updated name and marital status.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to change my driving licence after divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if you change your name. If you keep your married name, your existing driving licence remains valid. If you revert to your maiden name, you should update your driving licence at the RTA (Dubai) or the relevant transport authority in your emirate. The process is straightforward: bring your updated Emirates ID and your divorce certificate. The fee is approximately AED 100. The update can typically be done in one visit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I change my children\'s surname after divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Changing a child\'s surname requires either both parents\' consent or a court order. UAE courts apply a very high threshold for ordering a child\'s surname change over a parent\'s objection, as continuity of name is considered to be in the child\'s interests. If both parents agree, the change can be processed through the relevant registry with an application supported by the divorce judgment and the joint consent.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What documents do I need to update after divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If reverting to maiden name: Emirates ID (ICP), home country passport (embassy), UAE driving licence (RTA), bank accounts (each bank separately), tenancy contract (Ejari in Dubai, Tawtheeq in Abu Dhabi), vehicle registration (RTA), employer HR records, children\'s school records, and health insurance. If keeping married name, only records showing marital status need updating -- Emirates ID (for marital status change), and any financial or tenancy records where your status is material.',
+      },
+    },
+  ],
+};
+
+const updateChecklist = [
+  { step: '01', institution: 'Personal Status Court', action: 'Obtain certified divorce judgment', fee: 'Included in proceedings', timeline: 'Day of / within 1 week', notes: 'Request multiple certified copies -- you will need originals for each institution' },
+  { step: '02', institution: 'MOFAIC', action: 'Attest divorce judgment', fee: 'AED 150 per document', timeline: '1-3 business days', notes: 'Apostille if sending documents abroad' },
+  { step: '03', institution: 'ICP (Federal Authority)', action: 'Update Emirates ID (name + marital status)', fee: 'AED 100-200', timeline: '3-7 working days', notes: 'Apply at typing centre or ICP smart app' },
+  { step: '04', institution: 'Home country embassy', action: 'Renew passport in maiden name', fee: 'Varies by country', timeline: '4-12 weeks typically', notes: 'Check embassy requirements -- some require apostilled UAE judgment' },
+  { step: '05', institution: 'GDRFA / ICA', action: 'Update UAE residence visa', fee: 'Usually auto-updated', timeline: 'Automatic in most cases after Emirates ID update', notes: 'Check your visa status if on an employer or family visa' },
+  { step: '06', institution: 'RTA (Dubai) / Transport authority', action: 'Update driving licence', fee: 'AED 100', timeline: 'Same day (walk-in)', notes: 'Bring updated Emirates ID + divorce certificate' },
+  { step: '07', institution: 'Bank(s)', action: 'Update account name and marital status', fee: 'Usually no fee', timeline: '1-5 business days per bank', notes: 'Each bank has its own form; expect to visit a branch' },
+  { step: '08', institution: 'Ejari / Tawtheeq', action: 'Update tenancy contract', fee: 'AED 100-200', timeline: '1-3 business days', notes: 'Required for Ejari re-registration in Dubai; Tawtheeq in Abu Dhabi' },
+  { step: '09', institution: 'RTA (vehicles)', action: 'Update vehicle registration', fee: 'AED 50-100', timeline: 'Same day', notes: 'Bring updated Emirates ID + updated driving licence' },
+  { step: '10', institution: 'Employer / HR', action: 'Update employment records', fee: 'None', timeline: 'Varies by employer', notes: 'May trigger need for new employment visa if name change is material' },
+  { step: '11', institution: 'Children\'s schools', action: 'Update parent/guardian records', fee: 'None', timeline: '1-5 business days', notes: 'Bring updated Emirates ID + divorce certificate for school files' },
+  { step: '12', institution: 'Health insurance provider', action: 'Update policy details', fee: 'None', timeline: '3-10 business days', notes: 'Ensure beneficiary records also updated' },
+];
+
+const faqItems = [
+  {
+    question: 'Do I have to change my name after divorce in UAE?',
+    answer: 'No. Name reversion is entirely optional. There is no UAE law requiring you to revert to your maiden name. Many women choose to keep their married name for professional or family reasons. See our <a href="/en/divorce-timeline-uae/">divorce timeline guide</a> for what the court process does and does not automatically change.',
+  },
+  {
+    question: 'I want to keep my married name but update my marital status. What do I need to update?',
+    answer: 'You still need to update your Emirates ID to reflect "divorced" rather than "married" -- this is the core document. Your residence visa status may also need attention depending on your sponsorship. Bank accounts and tenancy contracts may need to be updated if they list "married" as a condition. Your passport and driving licence do not need updating if the name is unchanged.',
+  },
+  {
+    question: 'My divorce was finalised abroad. Can I still update my UAE documents?',
+    answer: 'Yes, but the foreign divorce certificate must be attested. For a UAE-resident updating UAE documents on the basis of a foreign divorce: have the certificate attested by the relevant ministry in the country of issue, then by the UAE embassy in that country, then by MOFAIC in UAE. Once attested and translated into Arabic, the process is the same as for a UAE court judgment. See our <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation guide</a>.',
+  },
+  {
+    question: 'What happens to my UAE residence visa after divorce?',
+    answer: 'If your visa was sponsored by your spouse, you will need a new sponsorship once the divorce is finalised. Options include: employer sponsorship, a parent sponsorship, sponsoring yourself through a UAE freelance or company licence, or applying for the UAE Golden Visa if you qualify. You typically have 30 days after the sponsor cancels the visa to find new sponsorship or exit. See our <a href="/en/visa-after-divorce-uae/">visa after divorce UAE guide</a> for the full picture.',
+  },
+  {
+    question: 'I changed my name before the divorce was registered. Is the divorce certificate in my old name?',
+    answer: 'The divorce certificate will reference the name under which you were registered at marriage. If you changed your name by deed poll or other mechanism during the marriage, you may need additional documentation linking your two names. Consult your home country embassy as well as an Arabic-certified translator to ensure the documents are consistent.',
+  },
+  {
+    question: 'Can I change my children\'s surname to my maiden name?',
+    answer: 'Only with the father\'s consent or a court order. UAE courts require both parents\' agreement for a child\'s surname change and will not order a change against a parent\'s objection without compelling welfare grounds. This is a high threshold. If you and your ex-spouse agree, the change can be processed through the relevant registry with the divorce judgment and joint consent documentation.',
+  },
+  {
+    question: 'How do I update my Ejari tenancy contract after divorce?',
+    answer: 'In Dubai, Ejari is managed by the Dubai Land Department. You will need to re-register the tenancy contract in your updated name with an updated Emirates ID. If the lease was in your ex-spouse\'s name, you will need either a new lease agreement or an assignment of the existing lease -- both require the landlord\'s agreement. Allow AED 100-200 for re-registration fees.',
+  },
+  {
+    question: 'Is there a deadline for updating my documents after divorce in UAE?',
+    answer: 'There is no statutory deadline for name reversion. However, your Emirates ID should be updated promptly as it is the primary identity document in UAE -- driving with a different name on your licence than your Emirates ID can create complications. Insurance policies, bank accounts, and employment records should be updated within 30-60 days of the divorce to avoid discrepancies that may complicate future transactions.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/name-change-after-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Post-Divorce Admin Guide -- UAE 2025</p>
+      <h1>Name Change After Divorce UAE: Complete Step-by-Step Guide</h1>
+      <p class="hero-desc">
+        There is no automatic name change when you divorce in UAE. If you want to revert to your maiden name -- or simply update your marital status across 12 different institutions -- you need to work through each one in the right sequence. This guide gives you the exact steps, fees, timelines, and what each institution actually requires.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Before you start: four things to know</h2>
+        <ul class="key-facts">
+          <li><strong>Reverting to your maiden name is optional.</strong> There is no UAE law requiring it. You can keep your married name indefinitely.</li>
+          <li><strong>Start with the Emirates ID.</strong> Almost every other institution requires an updated Emirates ID before they will process your request.</li>
+          <li><strong>Get multiple certified copies of your divorce judgment.</strong> Banks, the RTA, and your landlord all want original copies -- not photocopies.</li>
+          <li><strong>Allow 2-3 months to complete everything.</strong> The Emirates ID itself is fast (3-7 days). Passport renewal through your home country embassy is the longest step.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: The legal framework -->
+      <section class="content-section">
+        <h2>The Legal Position: No Automatic Change</h2>
+        <p>
+          UAE law does not operate an automatic name change system on divorce. When a Personal Status Court issues a divorce judgment, it records the termination of the marriage -- it does not send notifications to the ICP, the RTA, your bank, or your landlord. Each institution you deal with in UAE holds its own record of your name and status, and each must be updated separately.
+        </p>
+        <p>
+          The core document for all subsequent updates is the <strong>certified divorce judgment</strong> from the Personal Status Court. Without this, no UAE authority will process a marital status or name change. Once you have this document -- attested and in some cases translated into Arabic -- it unlocks every subsequent step.
+        </p>
+        <p>
+          Whether you choose to revert to your maiden name or keep your married name after divorce is entirely your decision. There is no legal advantage or disadvantage to either choice in UAE law. Many women who share a surname with their children choose to keep the married name to avoid explaining discrepancies at schools, hospitals, and official appointments.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Non-UAE divorces: attestation is essential</h3>
+          <p>If your divorce was granted by a court outside the UAE -- in the UK, India, the Philippines, or elsewhere -- the foreign certificate must be attested before UAE institutions will accept it. The attestation chain is: ministry in the country of issue, then UAE embassy in that country, then MOFAIC in UAE. Only then is it accepted for Emirates ID and other document updates. See our <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation guide</a> for the full procedure.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Full checklist -->
+      <section class="content-section">
+        <h2>The Complete Update Sequence: All 12 Steps</h2>
+        <p>
+          Work through these in order. Steps 1-3 (divorce judgment, attestation, Emirates ID) are the foundation -- all other institutions require your updated Emirates ID before processing the change.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Institution</th>
+                <th>What to update</th>
+                <th>Fee</th>
+                <th>Timeline</th>
+              </tr>
+            </thead>
+            <tbody>
+              {updateChecklist.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-step">{row.step}</td>
+                  <td class="td-bold">{row.institution}</td>
+                  <td class="td-action">{row.action}</td>
+                  <td class="td-fee">{row.fee}</td>
+                  <td class="td-time">{row.timeline}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">Fees are indicative based on 2025 official schedules. Individual banks may have their own processes. Check with each institution before attending.</p>
+      </section>
+
+      <!-- Section 3: Step by step detail -->
+      <section class="content-section">
+        <h2>Key Steps in Detail</h2>
+
+        <h3>Step 1-2: Divorce Judgment and MOFAIC Attestation</h3>
+        <p>
+          Request a minimum of six certified copies of your divorce judgment from the Personal Status Court at the time of collection. Certified copies from the court are accepted by most UAE institutions. For foreign use (your home country embassy), you will additionally need MOFAIC attestation -- the UAE Ministry of Foreign Affairs' stamp that authenticates the court's signature.
+        </p>
+        <p>
+          MOFAIC attestation costs AED 150 per document and is processed in 1-3 business days at MOFAIC service centres or through their online portal. If the document is in Arabic only, you may need a certified English translation for your home country embassy -- UAE-certified translators typically charge AED 50-150 per page.
+        </p>
+
+        <h3>Step 3: Emirates ID Update (ICP)</h3>
+        <p>
+          The ICP (Federal Authority for Identity, Citizenship, Customs and Ports Security) is the single most important update. Your Emirates ID reflects your full name, marital status, and visa category. Once updated, it serves as the proof of identity and divorce status for almost all subsequent steps.
+        </p>
+        <p>
+          You can apply through an ICP-authorised typing centre (found in every mall and commercial area in UAE) or through the ICP smart app. You will need: the original or certified copy of the divorce judgment, your current Emirates ID card, a recent biometric passport photo, and the application fee of AED 100-200 depending on the card validity requested. Processing takes 3-7 working days after submission. You are notified by SMS when the new card is ready for collection.
+        </p>
+        <p>
+          If you are reverting to your maiden name, the name on your Emirates ID will change to match your passport name. If you are keeping your married name but updating marital status only, the name stays the same but the status field changes from "Married" to "Divorced."
+        </p>
+
+        <h3>Step 4: Home Country Passport Renewal</h3>
+        <p>
+          Name changes on passports are handled by your home country's embassy or consulate in UAE, not by UAE authorities. Each country has its own procedure. Common requirements across most embassies include: the original passport, the attested and translated divorce certificate, a completed application form, passport photos, and the relevant consular fee.
+        </p>
+        <p>
+          British nationals apply through the HM Passport Office online with the divorce certificate as evidence for reverting to a former name. Indian nationals apply through the Indian embassy in Abu Dhabi or consulate in Dubai for an ECR or non-ECR passport. Philippine nationals apply through the Philippine Overseas Labour Office or DFA accredited centres. Processing times vary significantly -- European embassies are typically faster (4-8 weeks) than South Asian embassies (6-12 weeks or more).
+        </p>
+        <p>
+          Once your new passport is issued, bring it to ICP for an update to your Emirates ID if the document number changes -- visa stamps are linked to your passport number.
+        </p>
+
+        <h3>Step 6: Driving Licence (RTA Dubai / Transport Authority)</h3>
+        <p>
+          The Roads and Transport Authority in Dubai updates driving licences efficiently. Bring your updated Emirates ID (reflecting the new name if you have changed it), the divorce certificate, and AED 100. The update is typically processed in a single visit at any RTA customer service centre. In Abu Dhabi, apply to Abu Dhabi Police Traffic Department. In Sharjah, to the Sharjah Roads and Transport Authority. Each emirate has its own transport authority but the process is similar.
+        </p>
+
+        <h3>Step 7: Bank Accounts</h3>
+        <p>
+          Each bank has its own internal procedure for processing a name change after divorce. There is no cross-bank notification system. You must visit each bank individually or submit through their mobile banking documentation upload (where available).
+        </p>
+        <p>
+          Typical requirements: your updated Emirates ID, the original attested divorce certificate or certified copy, and a completed bank form for customer detail amendments. Some banks require you to visit the branch where the account was opened. Processing takes 1-5 business days. If you have accounts at multiple banks -- Emirates NBD, FAB, ADCB, Mashreq, and others each have separate processes -- budget one business day per bank.
+        </p>
+        <p>
+          Do not forget joint accounts. Joint accounts opened during the marriage need to be reviewed: you may want to convert to a sole account, close the joint account, or formally remove your ex-spouse's access. This requires the bank's own process and in some cases both parties' presence or written instructions.
+        </p>
+
+        <h3>Step 8: Ejari (Tenancy Contract) in Dubai</h3>
+        <p>
+          If you have a tenancy registered under Ejari (Dubai's mandatory tenancy registration system), the tenant's name and Emirates ID on the contract must match your current ID. To update Ejari: visit a Dubai Land Department service centre or an Ejari-authorised typing centre with your updated Emirates ID, divorce certificate, and the existing Ejari registration certificate. Fee is approximately AED 100-200. Processing takes 1-3 business days.
+        </p>
+        <p>
+          In Abu Dhabi, the equivalent system is Tawtheeq (managed by Abu Dhabi Municipality). The process is similar. If the lease was in your ex-spouse's name only, you will need the landlord to issue a new lease agreement in your name or an assignment of the existing lease with the landlord's consent.
+        </p>
+
+        <h3>Step 10: Employer and Employment Visa</h3>
+        <p>
+          Notify your HR department of your change in marital status and name if applicable. Your employer may need to update their records and may need to amend your employment contract if your name changes. Depending on your visa category, your name change may require a visa amendment. Employment visas (sponsored by your employer) that include your name typically need the employer to initiate a visa amendment through the Ministry of Human Resources and Emiratisation (MOHRE). Your employer's PRO (public relations officer) will handle this.
+        </p>
+        <p>
+          This is also the time to check your sponsorship status if you were previously on a spouse visa. See our <a href="/en/visa-after-divorce-uae/">visa after divorce UAE guide</a> for the options available.
+        </p>
+      </section>
+
+      <!-- Section 4: Children's names -->
+      <section class="content-section">
+        <h2>Changing Children's Names After Divorce</h2>
+        <p>
+          Children's surnames are a separate and more complex matter. UAE law does not permit one parent to change a child's registered name without the other parent's consent or a court order. Courts apply a high threshold for ordering a name change against a parent's wishes, as stability of name is considered to be in the child's interests.
+        </p>
+        <p>
+          If both parents agree to change the child's surname, the process involves: a joint application to the Personal Status Court or relevant registry, supported by both parents' consent, the divorce judgment, and the child's birth certificate. The court or registry will process the change and issue updated documents.
+        </p>
+        <p>
+          If you want to hyphenate the child's surname or add your maiden name as an additional surname, this also requires the guardian's consent (see our guide on <a href="/en/guardianship-vs-custody-uae/">guardianship vs custody UAE</a>). For practical purposes, many custodial mothers find it simpler to keep their own married name matching the children's surname, avoiding this issue entirely.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Inconsistent documents: a frequent practical problem</h3>
+          <p>Many divorced women in UAE find themselves in a period where their Emirates ID has been updated but their passport, driving licence, and bank account still show the married name. This is normal during the transition period. For day-to-day transactions, the Emirates ID is the primary document in UAE and institutions will typically accept it as the current record. Keep a certified copy of the divorce judgment with you during this transition period to explain any name discrepancies if challenged.</p>
+        </div>
+      </section>
+
+      <!-- Section 5: Non-UAE nationals -->
+      <section class="content-section">
+        <h2>Non-UAE Nationals: Updating Home Country Records</h2>
+        <p>
+          Updating your UAE documents is only half the process for expatriates. Your home country records -- national identity card, voter registration, social security or equivalent, and tax records -- also need to reflect your new status if you reverted to your maiden name.
+        </p>
+
+        <h3>European nationals</h3>
+        <p>
+          British nationals: update the DVLA driving licence (UK), inform HMRC of the name change, update your UK bank accounts if you maintain them, and update the UK electoral roll if registered. French, German, and other EU nationals should contact their local municipality office (commune, Standesamt, commune administrative) via their embassy in UAE for guidance on updating national civil registry records from abroad.
+        </p>
+
+        <h3>South Asian nationals</h3>
+        <p>
+          Indian nationals should update their Aadhaar card, PAN card, and voter ID through the relevant Indian authorities. This can be initiated through the Indian embassy in UAE with the attested UAE divorce certificate as supporting documentation. Pakistani nationals should contact NADRA through the Pakistani consulate. Philippine nationals should contact the PSA (Philippine Statistics Authority) through the Philippine Overseas Labour Office in Dubai.
+        </p>
+
+        <h3>Australian and New Zealand nationals</h3>
+        <p>
+          Australian nationals can apply for a new Australian passport in their reverted name through the Australian embassy, using the UAE divorce certificate as evidence. Centrelink and Australian Tax Office records can be updated by contacting those agencies directly with the divorce documentation.
+        </p>
+        <p>
+          The key point is that your UAE divorce certificate, once properly attested and translated, is accepted evidence by almost all national authorities worldwide. The question is procedural: which authority in your home country processes the update, and what additional documentation they require alongside the divorce certificate.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>UAE Divorce Certificate Attestation</strong>
+            <span>How to legalise your UAE divorce for use abroad</span>
+          </a>
+          <a href="/en/documents-for-divorce-uae/" class="related-card">
+            <strong>Documents for Divorce UAE</strong>
+            <span>What you need to file and what the court requires</span>
+          </a>
+          <a href="/en/visa-after-divorce-uae/" class="related-card">
+            <strong>Visa After Divorce UAE</strong>
+            <span>Residence options when your spouse visa ends</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>UAE Divorce Timeline</strong>
+            <span>How long each stage of proceedings takes</span>
+          </a>
+          <a href="/en/guardianship-vs-custody-uae/" class="related-card">
+            <strong>Guardianship vs Custody UAE</strong>
+            <span>Why these are different rights and who holds each</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Nafaqa, mut'a, and iddah maintenance explained</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+  .info-box a { color: #c9a84c; text-decoration: underline; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 680px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.82rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-step { font-weight: 800; color: #c9a84c; font-size: 0.9rem; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-action { color: #374151; }
+  .td-fee { color: #b45309; font-weight: 600; white-space: nowrap; }
+  .td-time { color: #6b7280; font-size: 0.8rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

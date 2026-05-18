@@ -1,0 +1,438 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الأصول الخارجية في الطلاق الإماراتي — الإفصاح والتجميد والتنفيذ ٢٠٢٥';
+const description =
+  'محاكم الإمارات تستطيع الأمر بتقسيم الأصول الخارجية عند الطلاق. دليل شامل حول الإفصاح عن الأصول الأجنبية والشركات الأوفشور والعملات الرقمية وآليات الحجز عبر الحدود.';
+
+const canonical = 'https://divorceu.ae/ar/الأصول-الخارجية-في-الطلاق-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/offshore-assets-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الأصول الخارجية في الطلاق الإماراتي' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل تستطيع محاكم الإمارات تقسيم العقارات والأصول الموجودة خارج الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. تمتلك محاكم الإمارات الاختصاص القضائي للأمر بتقسيم مجمل الأصول الزوجية بما فيها الأصول الخارجية متى ثبت اختصاصها على الأطراف. الفارق العملي أن أوامر الإمارات لا تُنفَّذ تلقائياً في الخارج بل تستلزم إجراءات اعتراف محلية في كل دولة معنية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الأصول التي يجب الإفصاح عنها في دعوى الطلاق بالإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'جميع الحسابات البنكية في أي دولة، العقارات في أي مكان، حصص الشركات، صناديق المعاشات والتقاعد، العملات الرقمية، الديون المستحقة من الغير، والصناديق الاستئمانية التي أنت مستفيد منها. الإخفاء المتعمد للأصول احتقار للمحكمة وقد يُشكّل جريمة جزائية في الإمارات.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'يدّعي زوجي أن العقار الخارجي مسجّل باسم أمه. ماذا أفعل؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'المحاكم خبيرة بترتيبات "الملكية الاسمية". إذا أثبتتِ أن العقار اشتُري بأموال زوجية أو أن الزوج يُسيطر عليه رغم الملكية الاسمية تستطيع المحكمة النفاذ عبر هذا الترتيب. التحليل الجنائي المالي وكشوف الحسابات البنكية أدوات رئيسية لإثبات ذلك.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع زوجي تفريغ الحساب المشترك في الخارج أثناء دعوى الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يجب التحرك فوراً. طلب أمر تجميد الأصول من محكمة الإمارات على وجه الاستعجال، وبالتوازي مطالبة محاميك في الاختصاص الخارجي بطلب أمر تجميد مماثل. تصرّف خلال أيام لا أسابيع إذا كنت تشك في هذا الخطر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'لدي معاش تقاعدي في المملكة المتحدة من قبل الزواج في الإمارات. هل هو معرّض للتقسيم؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'المساهمات التقاعدية السابقة للزواج تُعدّ عموماً أصولاً ما قبل الزواج. المساهمات المتراكمة خلال الزواج قد تكون قابلة للتقسيم. يمكن تنفيذ أوامر تقسيم المعاشات البريطانية عبر إجراءات بريطانية مستقلة بصرف النظر عن حكم الطلاق الإماراتي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف يثبت الإخفاء المتعمد للعملات الرقمية في دعوى الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'البلوكشين سجل دائم وعلني. شركات تحليل البلوكشين تستطيع تتبع المعاملات عبر المحافظ والبورصات بدقة تفوق ما يمكن تحقيقه بالسجلات المصرفية التقليدية. المحاكم باتت تأمر بشكل متزايد بإجراء تحليل البلوكشين كممارسة معيارية في قضايا الاشتباه بإخفاء العملات الرقمية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الدول التي تعترف بأوامر الطلاق الإماراتية وتُنفّذها؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الإمارات لديها معاهدات مساعدة قانونية متبادلة مع أكثر من 30 دولة منها الهند وفرنسا والصين وغيرها. الاعتراف في المملكة المتحدة يستغرق 6 إلى 12 شهراً، وفي الهند 3 إلى 24 شهراً. لكل دولة آلية اعتراف خاصة بها تستلزم محامياً محلياً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم من أصولي الخارجية سأُضطر فعلاً إلى التنازل عنه؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تعتمد محاكم الإمارات تقييم "العدالة" لا قسمة تلقائية بالتساوي. تُوازن المحكمة بين المساهمات والاحتياجات وعوامل أخرى. الأصول الخارجية لغير المسلمين بموجب قانون 2022 أكثر ارتباطاً بوقائع كل قضية. لا نسبة ثابتة تنطبق على الجميع.',
+      },
+    },
+  ],
+};
+
+const discoverySteps = [
+  { n: 1, title: 'استدعاء البيانات البنكية', body: 'تستطيع المحاكم إلزام البنوك الإماراتية بالإفصاح عن تفاصيل الحسابات وتاريخ المعاملات. حتى الحسابات التي ادّعى الزوج أنها فارغة يمكن تتبعها لرصد التحويلات الخارجة إلى حسابات في الخارج.' },
+  { n: 2, title: 'البحث في سجلات الشركات', body: 'يستطيع محاميك البحث في سجلات الشركات الإماراتية (DED وDIFC وADGM) وعبر شبكات دولية في الاختصاصات القضائية الأوفشور الرئيسية. حصص الشركات الإماراتية مُفصَحة في السجلات العامة.' },
+  { n: 3, title: 'معاهدات المساعدة القانونية المتبادلة', body: 'تمتلك الإمارات اتفاقيات مساعدة قانونية متبادلة مع أكثر من 30 دولة منها الهند وفرنسا والصين وغيرها. تُتيح هذه الاتفاقيات التبادل الرسمي للمعلومات بين السلطات القضائية عبر الحدود في مسائل الإفصاح عن الأصول في دعاوى الطلاق.' },
+  { n: 4, title: 'المحاسبون الجنائيون', body: 'يمكن للمحاكم تعيين محاسبين جنائيين لفحص حسابات الشركات والمالية الشخصية. هؤلاء المتخصصون مهرة في رصد الثروات غير المبررة والتحركات غير الاعتيادية للأصول والهياكل التجارية المصممة لإخفاء القيمة.' },
+  { n: 5, title: 'دليل أسلوب الحياة', body: 'تُقارن المحاكم بين الدخل والأصول المُعلنة ونمط الحياة الفعلي: السيارات والسفر ورسوم المدارس الخاصة والعقارات المُدارة. الفجوة الكبيرة بين الدخل المُعلن ونمط الحياة دليل ظرفي قوي على أصول غير مُفصَح عنها.' },
+];
+
+const enforcementCountries = [
+  { country: 'المملكة المتحدة', mechanism: 'قانون الأحكام الأجنبية (التنفيذ المتبادل) أو الاعتراف بموجب القانون العام', timeline: '٦ - ١٢ شهراً' },
+  { country: 'الهند', mechanism: 'المادة 13 من قانون الإجراءات المدنية - التماس لمحكمة المديرية', timeline: '٣ - ٢٤ شهراً' },
+  { country: 'فرنسا / دول الاتحاد الأوروبي', mechanism: 'لائحة بروكسل الأولى أو معاهدة ثنائية', timeline: '٦ - ١٢ شهراً' },
+  { country: 'أستراليا', mechanism: 'قانون الأحكام الأجنبية لسنة 1991 أو القانون العام', timeline: '٦ - ١٨ شهراً' },
+  { country: 'الولايات المتحدة', mechanism: 'قانون عام - التماس اعتراف لدى محكمة الولاية', timeline: '٦ - ١٨ شهراً' },
+];
+
+const faqItems = [
+  {
+    question: 'هل تستطيع محاكم الإمارات تقسيم الأصول الموجودة خارج الإمارات؟',
+    answer: 'نعم. تمتلك المحاكم الاختصاص للأمر بتقسيم مجمل الأصول الزوجية بما فيها الخارجية. لكن التنفيذ يستلزم إجراءات اعتراف محلية في كل دولة معنية.',
+  },
+  {
+    question: 'ما الأصول التي يجب الإفصاح عنها في دعوى الطلاق؟',
+    answer: 'جميع الحسابات البنكية في أي دولة، العقارات، حصص الشركات، صناديق التقاعد، العملات الرقمية، الديون المستحقة من الغير، والصناديق الاستئمانية. الإخفاء المتعمد قد يُشكّل جريمة جزائية.',
+  },
+  {
+    question: 'يدّعي زوجي أن العقار الخارجي مسجّل باسم أمه. ماذا أفعل؟',
+    answer: 'المحاكم خبيرة بترتيبات الملكية الاسمية. إذا أثبتِ أن العقار اشتُري بأموال زوجية أو أن الزوج يُسيطر عليه تستطيع المحكمة النفاذ عبر هذا الترتيب.',
+  },
+  {
+    question: 'هل يستطيع زوجي تفريغ الحساب المشترك في الخارج أثناء الطلاق؟',
+    answer: 'يجب التحرك فوراً بطلب أمر تجميد من محكمة الإمارات والمحكمة الخارجية المعنية. تصرّف خلال أيام لا أسابيع.',
+  },
+  {
+    question: 'لدي معاش تقاعدي في المملكة المتحدة من قبل الزواج. هل هو معرّض للتقسيم؟',
+    answer: 'المساهمات السابقة للزواج أصول ما قبل الزواج عموماً. المساهمات خلال الزواج قد تكون قابلة للتقسيم.',
+  },
+  {
+    question: 'كيف يثبت الإخفاء المتعمد للعملات الرقمية في دعوى الطلاق؟',
+    answer: 'البلوكشين سجل دائم وعلني. شركات تحليل البلوكشين تتتبع المعاملات عبر المحافظ بدقة عالية. المحاكم باتت تأمر بهذا التحليل كممارسة معيارية.',
+  },
+  {
+    question: 'ما الدول التي تعترف بأوامر الطلاق الإماراتية؟',
+    answer: 'الإمارات لديها معاهدات مساعدة قانونية مع أكثر من 30 دولة. لكل دولة آلية اعتراف خاصة تستلزم محامياً محلياً ومدة زمنية تتراوح بين أشهر وسنوات.',
+  },
+  {
+    question: 'كم من أصولي الخارجية سأُضطر إلى التنازل عنه؟',
+    answer: 'تعتمد المحاكم تقييم العدالة لا قسمة تلقائية بالتساوي. لا نسبة ثابتة تنطبق على الجميع. المساهمات والاحتياجات وعوامل أخرى كلها في الحسبان.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">الأصول الخارجية · الطلاق في الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        كثير من المقيمين في الإمارات سواء أكانوا مواطنين أم وافدين يمتلكون أصولاً خارجية مهمة: عقارات في الخارج وحسابات بنكية أوفشور وحصص في شركات ومعاشات تقاعدية وبصورة متزايدة عملات رقمية. حين ينهار الزواج في الإمارات تُصبح هذه الأصول كلها ذات صلة. المحاكم الإماراتية تستطيع الأمر بتقسيمها. التحدي ليس الاختصاص القضائي بل الإفصاح والتنفيذ والاستراتيجية.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-grid-wrap">
+        <div class="summary-card">
+          <p class="s-label">تكلفة التقييم التجاري</p>
+          <p class="s-value">٥,٠٠٠ - ٢٠,٠٠٠ درهم</p>
+          <p class="s-note">خبير مُعيَّن من المحكمة</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">مدة التنفيذ في الخارج</p>
+          <p class="s-value">٦ - ١٨ شهراً</p>
+          <p class="s-note">الاعتراف في المحاكم الأجنبية</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">دول المساعدة القانونية المتبادلة</p>
+          <p class="s-value">٣٠+ مع الإمارات</p>
+          <p class="s-note">منها المملكة المتحدة والهند وفرنسا</p>
+        </div>
+      </div>
+
+      <div class="answer-box">
+        <h2>ما الذي يُعدّ "أصلاً زوجياً" في دعوى الطلاق بالإمارات؟</h2>
+        <p>
+          الإمارات ليست دولة ملكية مشتركة بالمفهوم الأمريكي الصارم. لا توجد قاعدة تلقائية بأن كل ما اكتسب خلال الزواج يعود بالتساوي للزوجين. المنهج في القانون الإماراتي للمسلمين (المرسوم بقانون 41/2024) وغير المسلمين (المرسوم بقانون 41/2022) هو تقييم قائم على العدالة يأخذ في الحسبان طبيعة الأصول وتوقيت اكتسابها ودور مساهمة كل طرف.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>الأصول الزوجية والأصول المستثناة من التقسيم</h2>
+
+        <h3>الأصول التي تدخل في الوعاء الزوجي عادةً:</h3>
+        <ul class="checklist">
+          <li>العقارات المشتراة خلال الزواج من الدخل أو المدخرات المشتركة</li>
+          <li>الحصص التجارية المُبنية خلال الزواج</li>
+          <li>الاستثمارات والمحافظ المالية المتراكمة خلال الزواج</li>
+          <li>الحسابات البنكية الخارجية الممولة بالدخل الزوجي حتى لو كانت باسم أحد الزوجين فقط</li>
+          <li>مساهمات صناديق المعاشات والتقاعد المُضافة خلال فترة الزواج</li>
+        </ul>
+
+        <h3>الأصول المستثناة عادةً من التقسيم:</h3>
+        <ul class="checklist">
+          <li>الممتلكات المملوكة قبل الزواج بشرط عدم الاختلاط الجوهري</li>
+          <li>الإرث الذي تلقّاه أحد الزوجين خلال الزواج</li>
+          <li>الهبات الممنوحة لأحد الزوجين من أطراف ثالثة</li>
+          <li>تعويضات الإصابة الجسدية الشخصية الواردة لأحد الزوجين</li>
+        </ul>
+
+        <div class="info-box info-box--warning">
+          <h3>الاختلاط يُضعف حماية الأصول السابقة للزواج</h3>
+          <p>إذا كنت تمتلك عقاراً قبل الزواج ثم أعدت تمويله بأموال مشتركة أو أضفت اسم زوجك على الصك أو استُخدم إيراده الإيجاري مصدراً رئيسياً للدخل العائلي، فقد تكون أدخلته جزئياً أو كلياً في الوعاء الزوجي. كلما طال الزواج وازداد تشابك الأموال صعُب الإبقاء على هذا الفصل.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الإفصاح الكامل: ما الذي يجب الإقرار به؟</h2>
+        <p>
+          تُلزم محاكم الإمارات كلا الطرفين بالإفصاح المالي الكامل والصادق. هذا الإلزام ليس اختيارياً وهو يمتد ليشمل الصورة المالية بأكملها لا الأصول الإماراتية وحدها.
+        </p>
+        <p>يشمل ما يجب الإفصاح عنه:</p>
+        <ul class="checklist">
+          <li>جميع الحسابات البنكية حول العالم: الجارية والتوفيرية والودائع الثابتة وحسابات الاستثمار</li>
+          <li>العقارات الخارجية: السكنية والتجارية والأراضي في أي مكان بالعالم</li>
+          <li>حصص الشركات ومصالح الأعمال بما فيها الحصص الأقلية في الشركات الخاصة</li>
+          <li>صناديق المعاشات: سواء أكانت مكافأة نهاية الخدمة الإماراتية (وفق قانون العمل رقم 33/2021) أم صناديق معاشات في دولة المنشأ أم خطط دولية</li>
+          <li>العملات الرقمية: باتت المحاكم تسأل عنها بشكل اعتيادي</li>
+          <li>الديون المستحقة لك لدى الغير والمبالغ التي أقرضتها لآخرين</li>
+          <li>الصناديق الاستئمانية التي أنت مستفيد منها ولو لم تكن أمينها</li>
+        </ul>
+        <p>
+          الإخفاء المتعمد للأصول احتقار للمحكمة وقد يُشكّل جريمة جزائية بموجب أحكام الغش والإعاقة عن العدالة في الإمارات. تمتلك المحاكم أدوات متطورة باطّراد لكشف عدم الإفصاح.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>كيف تكتشف الأصول المخفية</h2>
+        <p>إذا اشتبهت في إخفاء زوجك لأصول فأنت لستِ رهينة ما يُعلنه. للمحاكم ولمحاميك أدوات تحقيق متعددة:</p>
+        <div class="step-list">
+          {discoverySteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الشركات الأوفشور والحصص التجارية في الطلاق</h2>
+        <p>
+          الحصص التجارية من أكثر الأصول تعقيداً في دعاوى الطلاق. الأسئلة الجوهرية: متى أُسّست الشركة وكيف مُوّلت وكيف نما قيمتها؟
+        </p>
+        <ul class="checklist">
+          <li>شركة أُسّست قبل الزواج: تُعدّ عموماً أصلاً ما قبل الزواج مستثنى من التقسيم. لكن إذا نمت قيمتها بشكل ملحوظ خلال الزواج خاصةً بمساهمة مباشرة أو غير مباشرة من الطرف الآخر قد يكون هذا النمو قابلاً للتقسيم</li>
+          <li>شركة بُنيت خلال الزواج بأموال زوجية: أصل زوجي قابل للتقسيم بالكامل</li>
+          <li>حصة في شركة مُدرجة: تقييمها بسيط نسبياً بسعر السوق في التاريخ المعني</li>
+          <li>حصة في شركة خاصة: تستلزم تقييماً رسمياً من خبير مستقل تُعيّنه المحكمة بتكلفة 5,000 إلى 20,000 درهم حسب تعقيد الشركة</li>
+        </ul>
+        <p>
+          استراتيجية شائعة لحماية قيمة الأعمال هي أن يُقدّم الزوج صاحب الحصة التجارية دفعة نقدية أو عقاراً بديلاً عن المشاركة في الملكية. تقبل المحاكم عموماً التسويات النظيفة التي تُزيل الحاجة إلى الشراكة المستمرة في عمل تجاري بين زوجين مطلّقين.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>العملات الرقمية والأصول الرقمية في الطلاق</h2>
+        <p>
+          أصبحت العملات الرقمية سمة بارزة في قضايا الطلاق الإماراتية لا سيما بين المتخصصين في قطاع التقنية والمتداولين وأصحاب الثروات الكبيرة. تُعامل محاكم الإمارات الأصول الرقمية باعتبارها ممتلكات خاضعة لذات قواعد الإفصاح والتقسيم التي تسري على أي أصل آخر.
+        </p>
+        <p>للمحاكم أساليب متعددة للتعامل مع العملات الرقمية:</p>
+        <ul class="checklist">
+          <li>الأمر بنقل الحيازات إلى محفظة ضمان محايدة ريثما تُحسم التسوية</li>
+          <li>إلزام الطرفين بالإفصاح عن جميع عناوين المحافظ وحسابات البورصات والحيازات</li>
+          <li>الاستعانة بشركات تحليل البلوكشين لتتبع التحركات وكشف المحافظ غير المُعلنة</li>
+          <li>تعيين خبراء مستقلين لتقييم المحافظ في تاريخ محدد</li>
+        </ul>
+        <p>
+          تقلّبات العملات الرقمية تُفضي إلى تحديات في التقييم تعالجها المحاكم بصورة عملية. أغلب محاكم الإمارات تعتمد قيمة يوم المحاكمة لا يوم الانفصال وهو ما قد يُؤثر تأثيراً جوهرياً في النتائج بحسب تحركات السوق. إذا كانت عملاتك الرقمية ارتفعت أو انخفضت حدّة منذ الانفصال فإن توقيت التقييم مسألة استراتيجية تستحق التشاور مع محاميك.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>محاولة إخفاء العملات الرقمية خطر بالغ</h3>
+          <p>البلوكشين سجل دائم وعلني. شركات تحليل البلوكشين تتتبع المعاملات عبر المحافظ والبورصات بدقة تفوق ما يمكن تحقيقه بالسجلات المصرفية التقليدية. المحاكم باتت تأمر بإجراء تحليل البلوكشين كممارسة معيارية في قضايا الاشتباه بالإخفاء. المادة 318 من القانون المدني الإماراتي تُتيح كذلك استرداد الأصول المحوّلة بنية الإضرار بالدائنين أو أطراف الدعوى.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>التنفيذ عبر الحدود: إلزام الخارج بتنفيذ الحكم الإماراتي</h2>
+        <p>
+          بعد الحصول على حكم طلاق إماراتي نهائي يشمل الأصول الخارجية، يستلزم التنفيذ في الدولة المعنية مسار اعتراف رسمي. لكل دولة آليتها الخاصة لكن الخطوات العامة متشابهة.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الدولة</th>
+                <th>آلية الاعتراف</th>
+                <th>المدة المعتادة</th>
+              </tr>
+            </thead>
+            <tbody>
+              {enforcementCountries.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.country}</td>
+                  <td>{row.mechanism}</td>
+                  <td>{row.timeline}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          لكل دولة تحتاج إلى تنفيذ الحكم فيها تحتاج إلى محامٍ محلي. يجب تصديق الحكم الإماراتي بشهادة أبوستيل من وزارة الخارجية الإماراتية قبل تقديمه للمحكمة الأجنبية. توقّع مدد تنفيذ تتراوح بين ستة أشهر وثمانية عشر شهراً في أغلب الاختصاصات، وخصّص ميزانية للتكاليف القانونية المحلية في كل دولة.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <div class="cta-box">
+        <h2>احصل على استشارة متخصصة في قضيتك</h2>
+        <p>قضايا الأصول الخارجية تستلزم متخصصين يفهمون القانون الإماراتي والتنفيذ عبر الحدود معاً. استشارة قصيرة توضح لك ما هو على المحك وما يجب الإفصاح عنه وكيف تحمي مصالحك.</p>
+        <LeadForm />
+      </div>
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لأحكام الطلاق</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>الحقوق المالية للزوجة</span>
+          </a>
+          <a href="/ar/المهر-عند-الطلاق-الامارات/" class="related-card">
+            <strong>المهر عند الطلاق</strong>
+            <span>المهر المعجل والمؤجل وكيفية المطالبة</span>
+          </a>
+          <a href="/ar/قانون-الطلاق-في-الامارات/" class="related-card">
+            <strong>قانون الطلاق في الإمارات</strong>
+            <span>نص القانون الاتحادي وأبرز أحكامه</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-grid-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .summary-card { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .s-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .s-value { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .s-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0 0 0.5rem; font-size: 0.97rem; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid-wrap { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid-wrap { grid-template-columns: 1fr; }
+  }
+</style>

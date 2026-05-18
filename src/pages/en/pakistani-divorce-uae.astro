@@ -1,0 +1,394 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Pakistani Divorce in UAE: Talaq, NADRA Registration, and Mehr Enforcement';
+const description =
+  'Pakistani expats in Dubai divorcing under Federal Decree-Law No. 41 of 2024. How UAE talaq is registered in Pakistan via NADRA, mehr enforcement, which court has jurisdiction when spouses are in different countries, and the 90-day Union Council rule.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/pakistani-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمواطنين-الباكستانيين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Pakistani Divorce UAE', url: 'https://divorceu.ae/en/pakistani-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is a UAE talaq valid in Pakistan?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, provided it is registered with the Union Council in Pakistan within 90 days of the divorce being pronounced, as required by Section 7 of the Muslim Family Laws Ordinance 1961. The UAE court divorce certificate must be apostilled, translated, and accompanied by the nikah nama for registration. If registration is not completed within 90 days, the divorce is still valid but enforcement in Pakistan becomes significantly more complicated.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I register my UAE divorce with NADRA from Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'NADRA does not directly register divorces. The divorce must first be registered with the Union Council (UC) in the area where the nikah was registered in Pakistan. Once the UC issues the Divorce Certificate, NADRA updates the CNIC records accordingly. You can initiate the UC registration process through a Power of Attorney from Dubai, authorising a family member or lawyer in Pakistan to file on your behalf. NADRA Pakistan Online Services allows you to verify CNIC status once the UC process is complete.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my Pakistani wife get custody in Pakistan while I am in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Pakistani courts (family courts under the West Pakistan Family Courts Act 1964) can exercise jurisdiction over custody if the children are Pakistani nationals or resident in Pakistan. If the children are in Pakistan and the wife files there first, the Pakistani family court may issue custody orders that are difficult to challenge from UAE. UAE courts can issue parallel orders, but Pakistan will not automatically recognise them. The UAE is not a Hague Convention signatory, adding to the jurisdictional complexity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the mehr enforcement process in UAE courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mehr (dower) is enforceable as a debt under Federal Decree-Law No. 41 of 2024, Articles 45-48. Once a UAE court issues a judgment for unpaid deferred mehr, the wife can file at the UAE Execution Court with the original judgment and executory formula. The Execution Court can freeze the husband\'s UAE bank accounts, attach his UAE property, garnish up to 50% of his salary, and impose a travel ban preventing departure from the UAE. A travel ban for mehr can be obtained within days of the Execution Court order.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can talaq be given by WhatsApp or SMS in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under UAE law, talaq requires proper conditions including the husband being in a sound mental state and the pronouncement being intentional. Electronic talaq (WhatsApp or SMS) is technically possible if witnessed and meeting the conditions, but UAE courts scrutinise such cases carefully. In Pakistan, electronic talaq is also legally questionable under MFLO 1961 and courts have in some instances found it insufficiently evidenced. Oral or written talaq before a UAE court or notary, followed by formal court registration, is the reliable route.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which court has jurisdiction when the wife is in Pakistan and husband is in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Either court can have jurisdiction. The husband in Dubai can file for divorce in UAE courts, which have jurisdiction over residents. The wife in Pakistan can file in Pakistani family courts, which have jurisdiction based on the wife\'s residence or the location where the nikah was registered. Whichever court is approached first typically proceeds. The race to file is a real issue: the forum that proceeds will determine which law applies and what financial remedies are available.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Pakistani law enforce deferred mehr from a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Pakistani courts enforce deferred mehr as a contractual debt under the nikah nama. If the UAE court has issued a judgment for mehr, that judgment can be enforced in Pakistan through an application to the civil courts for enforcement of a foreign money judgment. Pakistan generally enforces foreign judgments from reciprocating territories, though UAE is not formally listed. An alternative is to file a fresh mehr claim in Pakistani family courts based on the nikah nama itself.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What documents do I need for a Pakistani divorce in UAE courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You will need: the original nikah nama (Islamic marriage contract) with an Arabic translation certified by a UAE-licensed translator; both parties\' passports; UAE residence visas or Emirates IDs; a UAE court filing fee (approximately AED 200-500 depending on the court and emirate); and if registered in Pakistan, the NADRA-verified CNIC of both parties. If the nikah was registered in Pakistan, the nikah nama must be apostilled by the Pakistan Ministry of Foreign Affairs before use in UAE courts.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens at the talaq arbitration/reconciliation stage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both UAE and Pakistan require reconciliation attempts before a talaq is finalised. Under Federal Decree-Law No. 41 of 2024, UAE courts will refer the parties to the Family Guidance and Reconciliation Centre before proceeding. In Pakistan, the Union Council appoints an arbitration council under MFLO Section 7 to attempt reconciliation within 90 days of notice. If reconciliation fails, the divorce proceeds. The reconciliation period is mandatory and cannot be waived, though it can be completed quickly if both parties clearly do not want to reconcile.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the cost of a Pakistani divorce in UAE courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested divorce (talaq) for Pakistani Muslims in UAE courts under Federal Decree-Law No. 41 of 2024 typically costs AED 8,000 to AED 15,000 in total (lawyer fees, court fees, translation, and attestation). A contested case involving custody, mehr disputes, or property claims can range from AED 20,000 to AED 50,000 or more. The Union Council registration in Pakistan adds minimal cost (typically PKR 5,000 to 20,000 in attorney fees) but requires a Power of Attorney from Dubai.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/pakistani-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Pakistani Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>Pakistani Divorce in UAE: Talaq Registration, NADRA, Mehr, and Jurisdiction</h1>
+      <p class="hero-desc">
+        Pakistani nationals are among the largest expat communities in the UAE. Most are Muslim, which means their divorce falls under Federal Decree-Law No. 41 of 2024. But the UAE proceedings are only half the story: to make the divorce legally effective in Pakistan, it must be registered with the Union Council within 90 days.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for Pakistani expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>Both parties Muslim:</strong> Federal Decree-Law No. 41 of 2024 applies to UAE proceedings.</li>
+          <li><strong>90-day registration rule:</strong> UAE talaq must be registered with the Pakistan Union Council within 90 days under MFLO 1961 Section 7.</li>
+          <li><strong>NADRA does not register divorces directly</strong> — the Union Council issues the Divorce Certificate first.</li>
+          <li><strong>Mehr is enforceable as a debt</strong> in UAE Execution Court: bank freeze, salary garnishment, travel ban.</li>
+          <li><strong>Race to file issue:</strong> if spouses are in different countries, the first to file determines the forum.</li>
+          <li><strong>No Hague Convention:</strong> UAE and Pakistan are not signatories — cross-border custody disputes are complex.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>Which Law Applies to Pakistani Expats in UAE</h2>
+        <p>
+          Pakistani nationals in the UAE are overwhelmingly Muslim, and their personal status matters including marriage and divorce are governed by Islamic law as applied through the UAE courts. Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the new Personal Status Law effective 15 April 2025), all Muslim residents in the UAE, regardless of nationality, have their divorce governed by this law.
+        </p>
+        <p>
+          This is broadly consistent with what Pakistani nationals are familiar with: both UAE and Pakistani divorce law for Muslims is rooted in Islamic jurisprudence, and many of the concepts overlap. However, there are procedural differences that matter. UAE courts process divorce through a formal court system with mandatory reconciliation. Pakistan has its own parallel system under the Muslim Family Laws Ordinance 1961 (MFLO). When a Pakistani national divorces in UAE, the question immediately becomes: is the divorce also effective in Pakistan?
+        </p>
+        <p>
+          The answer is yes, but only if the proper steps are taken to register it in Pakistan. A UAE court divorce that is not registered in Pakistan creates a situation where the person is divorced under UAE law but remains married under Pakistani law. This has consequences for remarriage, inheritance, and CNIC documentation.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Making UAE Talaq Valid in Pakistan: The MFLO Section 7 Process</h2>
+        <p>
+          Section 7 of the Muslim Family Laws Ordinance 1961 requires that any person who pronounces talaq must deliver a written notice to the Chairman of the Union Council, and must also serve a copy on the wife. The Union Council then constitutes an arbitration council to attempt reconciliation. If reconciliation fails, the talaq becomes effective after 90 days from the date of notice to the Union Council.
+        </p>
+        <p>
+          When the talaq has been pronounced in UAE (whether through formal court proceedings or otherwise), it must still be registered with the Union Council in Pakistan within 90 days. The Union Council is located in the tehsil where the nikah was originally registered. If you are in Dubai and your nikah was registered in Lahore, Karachi, Islamabad, or a rural district, that is the relevant Union Council.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Obtain the UAE court divorce certificate</h3>
+              <p>After the UAE court issues the final divorce judgment (Hukm al-Talaq), obtain a certified copy in Arabic. This must be apostilled by the UAE Ministry of Foreign Affairs and translated into Urdu or English by a certified translator for use in Pakistan.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Prepare a Power of Attorney for Pakistan</h3>
+              <p>If you are remaining in the UAE, you cannot personally attend the Union Council. Prepare a notarised Power of Attorney authorising a family member or lawyer in Pakistan to act on your behalf for divorce registration purposes. The POA must be attested by the Pakistani Consulate in Dubai and the Pakistan Ministry of Foreign Affairs.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>File notice with the Union Council</h3>
+              <p>Your authorised representative files the written notice of talaq with the Chairman of the Union Council in the relevant tehsil, together with the apostilled UAE divorce certificate and the nikah nama. The 90-day reconciliation period starts from the date this notice is delivered.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Reconciliation period and arbitration</h3>
+              <p>The Union Council constitutes an Arbitration Council to attempt reconciliation. If reconciliation fails (or is not pursued), the 90 days elapse and the divorce becomes effective under Pakistani law. The Union Council issues a Divorce Certificate.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Update NADRA records</h3>
+              <p>With the Divorce Certificate from the Union Council, apply to NADRA (National Database and Registration Authority) to update the marital status on the CNIC. NADRA online services allow you to initiate this process remotely. Updated CNIC reflecting divorced status is essential for all official purposes in Pakistan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box info-box--warning">
+          <h3>What happens if you miss the 90-day window?</h3>
+          <p>If the Union Council notice is not filed within 90 days of the UAE divorce, the talaq under MFLO 1961 is technically considered not to have taken effect in Pakistan. The divorce remains valid in UAE, but you face the risk that Pakistani authorities or courts treat you as still married. In practice, Pakistani courts often take a pragmatic view where there is clear evidence of genuine intent and a UAE court judgment, but the safer course is always to file within 90 days.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Mehr and Mahr: Enforcement in UAE and Pakistan</h2>
+        <p>
+          Mehr (also spelled mahr or mehr) is the obligatory gift specified in the nikah nama. Pakistani nikah names typically record two components: prompt mehr (mu'ajjal, due immediately on marriage) and deferred mehr (mu'akhkhar, due on divorce or the husband's death). The deferred mehr is the more significant sum and is frequently the subject of enforcement proceedings.
+        </p>
+
+        <h3>Enforcing mehr in UAE Execution Court</h3>
+        <p>
+          Once a UAE family court issues a judgment for unpaid deferred mehr, the wife has a clear enforcement route through the UAE Execution Court. Under <strong>Articles 45-48 of Federal Decree-Law No. 41 of 2024</strong>, mehr is treated as a privileged debt. The Execution Court tools include:
+        </p>
+        <ul>
+          <li>Freeze of the husband's UAE bank accounts within days of the order</li>
+          <li>Salary garnishment of up to 50% per month from his UAE employer</li>
+          <li>Travel ban preventing departure from UAE (particularly effective for the large number of Pakistani workers on UAE employment visas)</li>
+          <li>Attachment and auction of UAE assets including vehicles and property</li>
+        </ul>
+        <p>
+          A travel ban for mehr enforcement is one of the most effective tools available in UAE courts because many Pakistani expats in the UAE hold employment visas and cannot simply relocate without losing their position. The travel ban is typically obtained within 48 to 72 hours of the Execution Court application.
+        </p>
+
+        <h3>Pakistani courts and mehr</h3>
+        <p>
+          Pakistani family courts under the Family Courts Act 1964 also enforce mehr as a civil debt. If the husband is no longer in the UAE and has returned to Pakistan, the wife can file a separate mehr claim in Pakistani family courts based on the nikah nama. The Pakistani court does not need the UAE judgment, though it helps. The mehr amount specified in the nikah nama is the contractual amount, and Pakistani courts generally enforce it without reduction.
+        </p>
+        <p>
+          The question of currency arises when the nikah nama specifies the mehr in Pakistani Rupees: a nominal PKR amount written decades ago may have very little real value today. Where the mehr was specified in gold (a common practice), courts convert to current market value.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Jurisdiction: Wife in Pakistan, Husband in Dubai</h2>
+        <p>
+          One of the most common scenarios in Pakistani expat divorces is the geographical split: the husband is working in Dubai and the wife is in Pakistan, often with children. Both countries' courts can claim jurisdiction, and the outcome can differ significantly depending on where proceedings are first filed.
+        </p>
+
+        <h3>UAE jurisdiction basis</h3>
+        <p>
+          UAE courts have jurisdiction over any person resident in the UAE. A Pakistani husband on a UAE employment or residence visa can file for divorce in UAE courts, and the court will proceed even if the wife is in Pakistan. The court will require evidence that the wife was properly served with the divorce proceedings. Service on a party in Pakistan is done through the UAE Ministry of Foreign Affairs requesting service via Pakistan's Ministry of Foreign Affairs under bilateral judicial assistance arrangements, or through the wife's lawyer accepting service directly.
+        </p>
+
+        <h3>Pakistani court jurisdiction basis</h3>
+        <p>
+          Pakistani family courts have jurisdiction based on the wife's residence, the location of the matrimonial home, or the location where the nikah was registered. A wife in Lahore whose nikah was registered in Lahore can file in Lahore family courts even while the husband is in Dubai. Pakistani courts can proceed in the husband's absence if he is properly notified, and can issue custody orders and financial orders that are enforceable in Pakistan.
+        </p>
+
+        <h3>Race to file: who benefits from filing first</h3>
+        <p>
+          The party who files first typically sets the forum. The financially stronger party (often the husband in Dubai with UAE assets) typically prefers UAE courts for divorce (quick, lower financial exposure on property). The wife in Pakistan may prefer Pakistani courts where custody determinations are more accessible to her and where a Pakistani mehr enforcement is straightforward.
+        </p>
+        <p>
+          For custody, the situation is particularly acute: if the children are in Pakistan and the wife files in Pakistani family courts first, interim custody orders can be issued within days. The husband in Dubai may find that by the time he contests the jurisdiction, the children are firmly in the Pakistani court's jurisdiction. If the children are in the UAE with the husband, the reverse applies.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Electronic Talaq: WhatsApp, SMS, and Video Call</h2>
+        <p>
+          Given the geographic split in many Pakistani expat families, questions arise about the validity of talaq communicated electronically. This is an area where both UAE and Pakistani law require caution.
+        </p>
+        <p>
+          Under UAE law, talaq requires that the husband be of sound mind, that the pronouncement be intentional, and that it be properly witnessed and processed. Electronic communications can evidence a talaq pronouncement, but UAE courts will scrutinise the evidence and the circumstances. A WhatsApp message saying "I divorce you" is not the same as a formal talaq filed through UAE courts, and it creates significant evidential and procedural complications.
+        </p>
+        <p>
+          In Pakistan, the Lahore High Court and other courts have in several cases examined the validity of talaq by text message or electronic means. The consensus is that electronic talaq may be valid as to the pronouncement itself if properly witnessed, but the MFLO Section 7 requirement for written notice to the Union Council still applies. Without that notice, the talaq is procedurally incomplete under Pakistani law regardless of how it was communicated.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Practical advice</h3>
+          <p>If you are a Pakistani national and your spouse has communicated talaq electronically, preserve all evidence immediately (screenshots with timestamps, message metadata). Consult a UAE family lawyer to understand whether the electronic communication constitutes a legally effective talaq under UAE law, and separately consult a Pakistani lawyer about the MFLO Section 7 notice requirements. Acting quickly protects both the talaq's validity and your rights arising from it.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Children and Custody: Pakistan-UAE Cross-Border Issues</h2>
+        <p>
+          Custody disputes between Pakistani parents across UAE and Pakistan are among the most difficult cross-border family law matters in the region. The absence of Hague Convention protection (neither UAE nor Pakistan are signatories) means there is no automatic mechanism for the return of children who have been taken to or retained in either country without the other parent's consent.
+        </p>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong>, UAE courts determine custody based on the best interests of the child. For Pakistani Muslim families, the mother typically has physical custody of children up to a certain age (seven for boys, nine for girls under the traditional Hanafi school position applied in UAE courts), with the father retaining guardianship. Post-2022 reforms under Federal Decree-Law No. 41 of 2024 give courts more flexibility to depart from these default ages in the child's best interests.
+        </p>
+        <p>
+          If children are in the UAE when divorce proceedings begin, the UAE court can issue a travel ban on the children, preventing them from being taken to Pakistan pending a custody order. If children are already in Pakistan, Pakistani family courts have practical jurisdiction. A UAE parent who believes the other parent will take the children to Pakistan without consent should apply immediately to the UAE Court of Urgent Matters for a precautionary travel ban on the children.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>Title deed rules, contribution claims, DLD fees</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr in UAE Divorce</strong>
+            <span>How to claim and enforce unpaid dower</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Jurisdiction, law choices, recognition of foreign decrees</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Travel bans, guardianship, and relocation rules</span>
+          </a>
+          <a href="/en/types-of-divorce-uae/" class="related-card">
+            <strong>Types of Divorce in UAE</strong>
+            <span>Talaq, khul'a, tafreeq — all divorce types explained</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and what drives your total bill</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

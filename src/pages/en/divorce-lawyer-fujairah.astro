@@ -1,0 +1,449 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Lawyer Fujairah — East Coast UAE Family Court Guide 2025';
+const description =
+  'Need a divorce lawyer in Fujairah? How Fujairah Court of First Instance handles family cases, the mandatory conciliation process, document requirements, and what expats 130 km from Dubai need to know.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-fujairah/',
+  ar: 'https://divorceu.ae/ar/محامي-طلاق-الفجيرة/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Lawyer Fujairah', url: 'https://divorceu.ae/en/divorce-lawyer-fujairah/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Where do I file for divorce in Fujairah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divorce in Fujairah is filed at the Fujairah Court of First Instance, family section, located in the main Fujairah Courts complex in Fujairah city. If your Emirates ID shows a Fujairah address, you must file here regardless of where you work. Before the court accepts Muslim couples\' filings, both parties must attend the Family Guidance Centre in Fujairah for mandatory conciliation sessions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does divorce take in Fujairah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested mutual consent divorce in Fujairah typically takes 2 to 4 months, including the mandatory Family Guidance conciliation period. Fujairah courts carry a lower caseload than Dubai or Abu Dhabi, which generally means hearings are scheduled relatively quickly. A contested divorce involving custody, alimony, or asset disputes typically runs 8 to 18 months depending on complexity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to hire a lawyer who is based in Fujairah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. UAE advocates are licensed to appear in courts across all emirates. A Dubai or Abu Dhabi-based family law firm with UAE-wide experience can represent you fully in Fujairah. The more important question is whether the lawyer has specific experience in Fujairah courts, since procedural practice varies by emirate. Always ask directly whether a lawyer has personally filed and appeared in Fujairah family court.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the Family Guidance Centre in Fujairah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Family Guidance Centre in Fujairah operates under the Fujairah social affairs authority and is a mandatory conciliation step for Muslim divorce cases before the Court of First Instance accepts the filing. Both spouses are expected to attend sessions, typically one to three, aimed at reconciliation. If reconciliation fails, the Centre issues a certificate enabling the court case to proceed. Non-Muslim couples may also be referred to the Centre at the court\'s discretion.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my spouse be served divorce papers if they are outside the UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Fujairah courts can proceed when a spouse abroad is properly served under the UAE Civil Procedure Code, using UAE diplomatic channels or the relevant embassy in the other country. Once proper service is confirmed and if the overseas party fails to appear, the court continues in their absence. The service process adds time but does not permanently block proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do all documents need to be in Arabic for Fujairah courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Like all UAE courts, Fujairah Court of First Instance operates exclusively in Arabic. All foreign documents — marriage certificates, birth certificates, financial records — must be officially translated into Arabic by a UAE-accredited court translator before submission. Your lawyer arranges the translation. Using an uncertified translation is grounds for rejection of the filing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to custody of children in a Fujairah divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For Muslim families, Fujairah courts apply Federal Decree-Law No. 41 of 2024. Custody (hadana) of young children is typically awarded to the mother until the child reaches the age of maturity specified by the law, while the father retains guardianship (wilaya). For non-Muslim families under Federal Decree-Law No. 41 of 2022, joint custody is the default starting point. All custody decisions are subject to the best interests of the child.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is jurisdiction decided if I live partly in Fujairah and partly in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE personal status jurisdiction is based on your registered residential emirate as shown on your Emirates ID. If your Emirates ID address is in Fujairah, you file in Fujairah. If it shows a Dubai address, you file in Dubai. Having property or family in both emirates does not split jurisdiction. If you are in the process of moving, update your Emirates ID before filing to fix the jurisdiction where you want it.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'Where do I file for divorce in Fujairah?',
+    answer: 'At the Fujairah Court of First Instance, family section. Muslim couples first attend the Family Guidance Centre for conciliation. Your lawyer files the Arabic petition, attests documents, and manages the filing process. Fujairah\'s courts are less congested than Dubai, which usually means faster hearing dates.',
+  },
+  {
+    question: 'How long does divorce take in Fujairah?',
+    answer: 'Uncontested divorces typically conclude in 2 to 4 months including mandatory conciliation. Contested cases run 8 to 18 months. Fujairah courts have lower case volumes than Dubai or Sharjah, which can speed up scheduling, though the substantive process follows the same federal law.',
+  },
+  {
+    question: 'Do I need a Fujairah-based lawyer?',
+    answer: 'No. UAE advocates can appear in any emirate\'s courts. What matters is that your chosen lawyer has direct experience appearing in Fujairah courts, not just Dubai or Abu Dhabi. Ask specifically about their Fujairah filing history.',
+  },
+  {
+    question: 'What is the Family Guidance Centre in Fujairah?',
+    answer: 'A mandatory conciliation body for Muslim divorces before the Court of First Instance accepts the case. One to three sessions are typical. If the couple cannot reconcile, the Centre issues a certificate enabling the court filing to proceed.',
+  },
+  {
+    question: 'Do all documents need to be in Arabic?',
+    answer: 'Yes. Fujairah courts, like all UAE courts, operate entirely in Arabic. All foreign documents must be officially translated by a UAE-accredited court translator and properly attested before submission. Your lawyer arranges this.',
+  },
+  {
+    question: 'Can a Fujairah resident file in Dubai courts instead?',
+    answer: 'No. UAE personal status jurisdiction is fixed by your registered residence emirate. If your Emirates ID shows a Fujairah address, your case belongs in Fujairah courts. If you genuinely move to Dubai and update your Emirates ID before filing, jurisdiction shifts to Dubai.',
+  },
+  {
+    question: 'What are the divorce lawyer fees in Fujairah?',
+    answer: 'Lawyer fees in Fujairah are generally comparable to or slightly below Dubai rates. Uncontested mutual consent divorces: AED 2,500 to 5,500. Contested without children: AED 5,000 to 20,000. Contested with custody: AED 15,000 to 45,000 or more. Court filing fees in Fujairah are lower than Dubai.',
+  },
+  {
+    question: 'Is divorce procedure different for non-Muslims in Fujairah?',
+    answer: 'Yes. Non-Muslim residents use Federal Decree-Law No. 41 of 2022 — no-fault, no waiting period, joint custody default, with the option to apply home country law. The court is the same Fujairah Court of First Instance but the applicable rules and outcomes differ significantly from the Muslim track.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://divorceu.ae/en/divorce-lawyer-fujairah/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · Fujairah 2025</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Fujairah sits 130 km from Dubai on the UAE's east coast, and its residents face a specific challenge when divorcing: they are far from the major legal centres but still subject to the same UAE federal law. The Fujairah Court of First Instance handles all family matters for Fujairah residents. This guide covers how that court works, what the mandatory conciliation process involves, and what residents need to prepare.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Quick summary — divorcing in Fujairah</h2>
+        <p>
+          Governed by <strong>Federal Decree-Law No. 41 of 2024</strong> (Muslims) and <strong>No. 41 of 2022</strong> (non-Muslims).
+          File at the <strong>Fujairah Court of First Instance</strong>, family section.
+          Mandatory Family Guidance conciliation before the court accepts the case (Muslim couples).
+          Timeline: <strong>2 to 4 months</strong> uncontested; <strong>8 to 18 months</strong> contested.
+          All documents must be in Arabic. UAE-wide lawyers can represent you in Fujairah.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>Fujairah Court of First Instance — Family Section</h2>
+        <p>
+          The Fujairah Court of First Instance is the first-tier court for all civil, commercial, and personal status matters for Fujairah emirate residents. The family section handles divorce, custody, alimony, inheritance, and guardianship cases. The court sits within the main Fujairah Courts complex in Fujairah city, on the east coast of the UAE.
+        </p>
+        <p>
+          Fujairah is a port city with a significant maritime and fishing heritage, and its courts reflect the emirate's scale: smaller in total caseload than Dubai, Sharjah, or Abu Dhabi, with a more contained family section. For residents, this typically means faster scheduling of initial hearings after filing, and less overall congestion in the system.
+        </p>
+        <p>
+          Like all UAE courts, Fujairah courts operate entirely in Arabic. Judges apply UAE federal personal status law — there is no separate Fujairah-specific family law. The substantive law applied in Fujairah is identical to that applied in Dubai or Abu Dhabi.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Fujairah's Expat Communities — Who Files Here</h2>
+        <p>
+          Fujairah has a distinctive expat demographic shaped by its role as a major port and free trade zone. The Fujairah oil terminal is one of the largest bunkering hubs in the world, and the emirate hosts Fujairah Free Zone, supporting a significant trading and industrial workforce.
+        </p>
+        <h3>South Asian port and shipping workers</h3>
+        <p>
+          Indian, Pakistani, and Sri Lankan workers in the port, shipping, and oil industries make up a large portion of Fujairah's expat workforce. Many are Muslim and subject to the Muslim personal status track. A common scenario is a spouse working in Fujairah with their family based in their home country — Fujairah courts handle these overseas-party cases regularly through diplomatic service channels.
+        </p>
+        <h3>Filipino and Southeast Asian workers</h3>
+        <p>
+          Fujairah's hospitality and service sector employs significant numbers of Filipino and other Southeast Asian workers. Many are Christian and can elect their home country's personal status law under Article 13 of the UAE Civil Code, where applicable, through the non-Muslim track under Federal Decree-Law No. 41 of 2022.
+        </p>
+        <h3>European and Western expats</h3>
+        <p>
+          A smaller but growing European and Western expat population resides in Fujairah, attracted by lower costs of living compared to Dubai and Abu Dhabi. These non-Muslim residents have the full range of options under Federal Decree-Law No. 41 of 2022. While the DIFC Courts in Dubai are 130 km away, many Fujairah-based expats consider the DIFC route for complex cases involving significant assets.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Distance Factor: Why Hiring a UAE-Wide Firm Matters</h2>
+        <p>
+          Fujairah is geographically isolated from the UAE's main legal centres. Dubai is approximately 130 km by road — over an hour each way through the Hajar Mountains. Abu Dhabi is further still. This creates a practical problem for Fujairah residents: the local legal market is smaller, with fewer specialist family lawyers than in Dubai or Abu Dhabi, and fees can sometimes be higher in proportion to the service offered.
+        </p>
+        <p>
+          The practical solution is to use a UAE-wide family law firm based in Dubai or Abu Dhabi that has specific Fujairah court experience. UAE advocates are licensed without geographic restriction and can appear in Fujairah courts. A Dubai-based firm with Fujairah filing experience can handle your case with more resources, more specialist knowledge, and often at comparable or lower total cost than a smaller local practice.
+        </p>
+        <p>
+          What to confirm when engaging any lawyer for a Fujairah case: that they have personally filed petitions and appeared in hearings at Fujairah Court of First Instance, not simply that they are UAE-licensed. The procedural familiarity with a specific court matters for timing and practical outcomes.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Family Guidance Centre Fujairah — Mandatory Conciliation</h2>
+        <p>
+          For Muslim couples filing for divorce in Fujairah, the Family Guidance Centre process is mandatory before the Fujairah Court of First Instance accepts the case. The Centre operates under the Fujairah social affairs department and its role is to facilitate genuine reconciliation attempts between spouses before the divorce becomes a court matter.
+        </p>
+        <p>
+          Typically, one to three conciliation sessions are held. Both spouses are expected to attend, though the Centre can proceed with sessions even if one spouse is absent or refuses to participate. If the sessions produce reconciliation, the case does not proceed to court. If reconciliation genuinely fails, the Centre issues a formal certificate confirming this, and the court will then accept the divorce filing.
+        </p>
+        <p>
+          The conciliation process adds four to eight weeks at the beginning of the timeline. It cannot be bypassed. Non-Muslim couples are generally not subject to the same mandatory conciliation requirement, though the court retains discretion to encourage conciliation in all cases.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Muslim Divorce in Fujairah</h2>
+        <p>
+          Muslim residents of Fujairah are governed by <strong>Federal Decree-Law No. 41 of 2024</strong>, which replaced Federal Law No. 28 of 2005 from 15 April 2025. The three main divorce types are:
+        </p>
+        <ul>
+          <li><strong>Talaq:</strong> Husband-initiated. Pronounced before the court or via a registered talaq deed. The court addresses financial consequences: mahr, iddah maintenance (approximately three months), and child support.</li>
+          <li><strong>Khula:</strong> Wife-initiated divorce in exchange for returning the deferred mahr. Under Federal Decree-Law No. 41 of 2024, judicial khula is available through the court without requiring the husband's consent where reconciliation has genuinely failed.</li>
+          <li><strong>Judicial divorce (Tafriq):</strong> Court-granted divorce on grounds of harm, non-maintenance, prolonged absence, or other grounds under the law. The wife petitions and the court investigates the grounds before issuing judgment.</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Non-Muslim Divorce in Fujairah</h2>
+        <p>
+          Non-Muslim residents in Fujairah are governed by <strong>Federal Decree-Law No. 41 of 2022</strong>, the UAE's civil family law framework for non-Muslims. Key features:
+        </p>
+        <ul>
+          <li>No-fault divorce — neither party must prove grounds</li>
+          <li>No mandatory waiting period or idda requirement</li>
+          <li>Joint custody as the default starting point for children</li>
+          <li>Asset division based on contribution and the court's assessment of fairness</li>
+          <li>Option to elect home country law under Article 13 of the UAE Civil Code</li>
+        </ul>
+        <p>
+          For non-Muslim expats with significant assets or complex international matters, the DIFC Courts in Dubai are approximately 130 km from Fujairah by road. Despite the distance, the DIFC route is worth considering for cases involving offshore holdings, multi-jurisdictional assets, or a preference for English common law proceedings. Many Fujairah residents already commute to Dubai regularly, reducing the practical burden of attending DIFC hearings.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Divorce Process in Fujairah — Step by Step</h2>
+        <ol class="steps">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Document preparation and attestation</h3>
+              <p>Your lawyer compiles all required documents. Foreign marriage certificates must be attested by your home country embassy and the UAE Ministry of Foreign Affairs, then translated into Arabic by a UAE-accredited court translator. This step typically takes 2 to 4 weeks depending on embassy processing times.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Family Guidance Centre (Muslim cases)</h3>
+              <p>Both spouses attend conciliation sessions at the Fujairah Family Guidance Centre. One to three sessions are typical. Failure to appear without valid reason can result in the Centre deciding the case without that party's input. The Centre issues a certificate of failed reconciliation enabling the court filing.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Filing at Fujairah Court of First Instance</h3>
+              <p>Your lawyer files the divorce petition with the family section. Court fees apply. The court registers the case and schedules the first hearing date. Due to lower caseloads than Dubai, first hearings in Fujairah are often scheduled within 2 to 5 weeks of filing.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Hearings</h3>
+              <p>For uncontested cases, a single hearing where both parties' lawyers confirm the agreed terms may be sufficient. For contested matters, hearings on custody, alimony, and assets follow in sequence. Each hearing is typically 3 to 6 weeks apart.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Judgment</h3>
+              <p>The court issues the final divorce judgment specifying the type of divorce, financial obligations, and custody arrangements. The judgment is written in Arabic. Your lawyer obtains a certified copy for your records and for any international use.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <h3>Apostille for use abroad</h3>
+              <p>To use the Fujairah divorce decree internationally, your lawyer obtains a UAE Ministry of Foreign Affairs apostille and a certified translation. This package is accepted by most countries worldwide for registration purposes.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>Documents Required for Divorce in Fujairah</h2>
+        <ul class="checklist">
+          <li>Marriage certificate — attested by home country embassy and UAE Ministry of Foreign Affairs, with certified Arabic translation</li>
+          <li>Emirates IDs of both spouses</li>
+          <li>Passports of both spouses</li>
+          <li>Proof of Fujairah registered residence (Emirates ID address or tenancy contract)</li>
+          <li>Children's birth certificates if custody is involved — attested and Arabic-translated</li>
+          <li>Family Guidance Centre certificate of failed reconciliation (for Muslim cases)</li>
+          <li>Financial records if alimony or asset division is disputed</li>
+          <li>Pre-nuptial or post-nuptial agreement if applicable</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Divorce Lawyer Fees in Fujairah</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">Uncontested / Mutual Consent</p>
+            <p class="fee-amount">AED 2,500-5,500</p>
+            <p class="fee-detail">Both spouses agree on all terms. Lawyer files and manages the process end to end.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested (no children)</p>
+            <p class="fee-amount">AED 5,000-20,000</p>
+            <p class="fee-detail">Alimony or asset disputes. Multiple hearings required.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Contested with custody</p>
+            <p class="fee-amount">AED 15,000-45,000+</p>
+            <p class="fee-detail">Custody disputes are the most time-intensive and complex cases.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">Khula (wife-initiated)</p>
+            <p class="fee-amount">AED 3,500-10,000</p>
+            <p class="fee-detail">Includes conciliation sessions and court filing. Mahr return considered.</p>
+          </div>
+        </div>
+        <div class="info-box info-box--info">
+          <p><strong>Court filing fees:</strong> Fujairah court fees are lower than Dubai. Basic divorce filing is approximately AED 200 to 350. Additional fees apply per subsequent hearing. Translation and attestation costs for documents add AED 500 to 2,000 depending on the number of documents.</p>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>Dubai Personal Status Court — complete guide</span>
+          </a>
+          <a href="/en/divorce-lawyer-ras-al-khaimah/" class="related-card">
+            <strong>Divorce Lawyer RAK</strong>
+            <span>Ras Al Khaimah family court guide</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>Federal Law 41/2022 complete guide</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Jurisdiction, law choices, and recognition abroad</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees and lawyer fees — real figures for 2025</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in UAE</strong>
+            <span>Step-by-step court filing guide for all emirates</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long divorce takes by case type across all emirates</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.88rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-left: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .fee-grid, .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,598 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Pension and Gratuity in UAE Divorce: EOSB, DEWS, GPSSA, Foreign Pensions';
+const description =
+  'UAE has three distinct retirement benefit categories, each treated differently in divorce. Complete guide covering EOSB divisibility, DEWS as a current asset, GPSSA protection, foreign pension strategies, and timing tactics for capturing lump sums.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-pension-gratuity-uae/',
+  ar: 'https://divorceu.ae/ar/نهاية-الخدمة-والطلاق-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Pension and Gratuity in UAE Divorce', url: 'https://divorceu.ae/en/divorce-pension-gratuity-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is end-of-service gratuity divided in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No, not directly. End-of-service benefit (EOSB) under Federal Decree-Law No. 33 of 2021 is a personal entitlement of the employee. It cannot be directly divided because it is a contingent benefit that only becomes payable when employment ends. The other spouse has no automatic claim to it. However, UAE courts treat the value of accumulated EOSB as a significant factor when calculating alimony, nafaqa, and child support. A husband with AED 300,000 in unvested EOSB will typically face higher maintenance orders than one with none, even though the EOSB itself is not split.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can DEWS (workplace savings) be divided in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Unlike EOSB, DEWS (Dirhams Employee Workplace Savings Scheme) is a present asset held in an independently-managed trust (currently Equiom). It has a current real value that is disclosed in financial proceedings. UAE courts have treated DEWS balances as relevant assets in contribution and maintenance proceedings when the non-employee spouse can demonstrate they enabled the DEWS to accumulate by managing the household or contributing to shared finances. DEWS is not automatically divided, but its balance is disclosed, valued, and factored into the overall financial settlement more directly than a contingent EOSB entitlement.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a GPSSA government pension protected from divorce claims?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, completely. Federal Decree-Law No. 57 of 2023 (the Pension and Social Security Law) explicitly makes GPSSA pensions inalienable, non-attachable, and non-assignable in any legal proceedings including divorce. Courts cannot freeze, split, offset, or attach a GPSSA pension either in its accumulation phase or as a payment stream. However, the pension income is treated as the pension-holder\'s income for the purpose of setting maintenance levels -- a larger pension income means the court can justify a higher alimony or child support order.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a UAE court divide my UK pension in a divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. UAE courts have no jurisdiction over UK pension funds. A UK SIPP, NHS pension, or occupational pension can only be divided by an English court under Matrimonial Causes Act 1973 pension sharing orders or pension attachment orders. If you divorce in the UAE, the UK pension remains entirely outside the UAE court\'s reach. However, you can include the value of the UK pension in negotiating the overall UAE asset settlement -- by agreeing that the spouse keeping the pension offsets its value against other UAE assets (property, savings). For a formal pension sharing order over the UK pension, separate English court proceedings are required under Part III of the Matrimonial and Family Proceedings Act 1984.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a UAE court divide a US 401k or IRA in divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. US-registered retirement accounts require a Qualified Domestic Relations Order (QDRO) issued by a US state court. UAE courts cannot issue a QDRO and have no jurisdiction over US-registered retirement accounts. The strategy in UAE divorce proceedings involving a US 401k is identical to the UK pension approach: negotiate to have the value of the 401k or IRA reflected in the division of UAE-based assets, so that the spouse retaining the US retirement account compensates the other party through a larger share of UAE property or savings. For a formal division of the 401k itself, US domestic relations proceedings are necessary.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the EOSB calculation under UAE Labour Law?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under Federal Decree-Law No. 33 of 2021 (effective 2 February 2022), the EOSB formula is: 21 days\' basic salary per year of service for the first five years, then 30 days\' basic salary per year of service for each subsequent year. The calculation is based on basic salary only -- allowances (housing, transport, phone) are excluded unless the employment contract states otherwise. Example: an employee with 8 years\' service earning AED 25,000 basic monthly salary accrues: (21/30 x 25,000 x 5) + (30/30 x 25,000 x 3) = AED 87,500 + AED 75,000 = AED 162,500 total EOSB.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I find out how much DEWS my spouse has saved?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'DEWS account balances are held by Equiom (the scheme trustee for the UAE DEWS programme). The employee can access their balance via the Equiom online portal. If the balance is not voluntarily disclosed in divorce proceedings, a court order for financial disclosure can require the employee to produce DEWS statements. In contested proceedings, a subpoena addressed to Equiom requiring disclosure of the account balance as of a specific date is available as a procedural tool. DEWS statements show employer contribution history, investment returns, and current liquidation value.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I attach my spouse\'s EOSB if they are about to leave their job?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. When a spouse is on the verge of leaving employment -- whether through resignation, redundancy, or job change -- their EOSB transitions from a contingent future entitlement to an imminent cash payment. UAE courts can issue a precautionary attachment on "expected EOSB proceeds" in anticipation of the payment. The application is made to the Court of Urgent Matters and must show: (1) that the employment relationship is ending imminently; (2) a financial claim against the spouse that the EOSB proceeds could satisfy. Once the attachment is granted, the former employer is served and required to hold the EOSB payment pending the court\'s further order rather than paying it directly to the employee.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the non-working spouse have any claim on the earning spouse\'s EOSB?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not a direct claim. EOSB belongs exclusively to the employee under Federal Decree-Law No. 33 of 2021 and cannot be claimed by the other spouse as a property right. However, the non-working spouse\'s contribution to the marriage -- through childcare, household management, enabling the earning spouse to focus entirely on their career -- is recognised by UAE courts when setting the level of maintenance, mut\'a (divorce compensation), and iddah provision. Courts treat a large EOSB balance as evidence that the earning spouse has substantial financial resources, which directly affects the maintenance award. The indirect impact can be significant even when the direct claim is zero.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are Abu Dhabi government employee pensions protected from divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Abu Dhabi government employees in the UAE national workforce are covered by the GPSSA (General Pension and Social Security Authority) under Federal Decree-Law No. 57 of 2023. This law explicitly makes all GPSSA pension rights immune from attachment, transfer, assignment, or division in any legal proceedings including civil and family court proceedings. This protection applies to both the accumulated pension fund and the payment stream once pensions are in payment. Emirate-level schemes such as the Abu Dhabi Retirement Pensions and Benefits Fund operate under parallel protections established by Abu Dhabi Emiri Decree.',
+      },
+    },
+  ],
+};
+
+const benefitComparison = [
+  {
+    type: 'EOSB (End-of-Service Benefit)',
+    law: 'Federal Decree-Law No. 33 of 2021',
+    who: 'Private sector employees',
+    canBeDivided: 'No -- contingent entitlement',
+    relevanceToSettlement: 'Used to calibrate maintenance awards',
+    canBeAttached: 'Only when employment ends imminently',
+  },
+  {
+    type: 'DEWS (Workplace Savings)',
+    law: 'UAE DEWS Framework 2021',
+    who: 'Certain private sector employees (DIFC-linked employers)',
+    canBeDivided: 'Not automatically -- but current asset',
+    relevanceToSettlement: 'Disclosed and valued; courts factor into settlement',
+    canBeAttached: 'Yes, as a present asset via court order',
+  },
+  {
+    type: 'GPSSA Pension',
+    law: 'Federal Decree-Law No. 57 of 2023',
+    who: 'UAE national government employees',
+    canBeDivided: 'No -- explicitly inalienable',
+    relevanceToSettlement: 'Income considered for maintenance',
+    canBeAttached: 'Never',
+  },
+  {
+    type: 'UK SIPP / Occupational Pension',
+    law: 'UK Matrimonial Causes Act 1973',
+    who: 'UK-qualified employees',
+    canBeDivided: 'Only by English court',
+    relevanceToSettlement: 'Value used in UAE asset negotiations',
+    canBeAttached: 'Requires English court QDRO equivalent',
+  },
+  {
+    type: 'US 401k / IRA',
+    law: 'US ERISA / QDRO requirements',
+    who: 'US-qualified employees',
+    canBeDivided: 'Only by US state court QDRO',
+    relevanceToSettlement: 'Value used in UAE asset negotiations',
+    canBeAttached: 'Requires US domestic relations order',
+  },
+  {
+    type: 'Indian EPF / Gratuity',
+    law: 'Indian Payment of Gratuity Act 1972',
+    who: 'Indian employees',
+    canBeDivided: 'No UAE jurisdiction',
+    relevanceToSettlement: 'Value acknowledged in negotiations',
+    canBeAttached: 'Requires Indian court proceedings',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Is end-of-service gratuity divided in UAE divorce?',
+    answer: 'No, not directly. EOSB under Federal Decree-Law No. 33 of 2021 belongs to the employee and cannot be directly divided. However, courts use its value to set higher maintenance awards. See the <a href="/en/property-division-divorce-uae/">property division guide</a> for how EOSB interacts with overall asset settlements.',
+  },
+  {
+    question: 'Can DEWS (workplace savings) be divided in UAE divorce?',
+    answer: 'Not automatically, but DEWS has a current real value unlike contingent EOSB. Courts have treated DEWS balances as relevant in contribution and maintenance proceedings. The account balance can be subpoenaed from Equiom in contested proceedings.',
+  },
+  {
+    question: 'Is a GPSSA government pension protected from divorce claims?',
+    answer: 'Yes, completely. Federal Decree-Law No. 57 of 2023 makes GPSSA pensions explicitly inalienable, non-attachable, and non-divisible. Courts cannot touch them. Pension income is still considered when setting <a href="/en/alimony-uae/">alimony</a> levels.',
+  },
+  {
+    question: 'Can a UAE court divide my UK pension in a divorce?',
+    answer: 'No. UK pensions require English court proceedings. In UAE divorce, include the UK pension value in negotiating the overall asset settlement -- the spouse keeping the pension offsets its value against UAE assets. For a formal pension sharing order, you need separate UK proceedings under the Matrimonial and Family Proceedings Act 1984.',
+  },
+  {
+    question: 'Can a UAE court divide a US 401k or IRA in divorce?',
+    answer: 'No. A QDRO from a US state court is required. In UAE divorce proceedings, use the 401k value to negotiate a larger share of UAE assets for the other spouse. For formal division of the 401k itself, US domestic relations proceedings are necessary.',
+  },
+  {
+    question: 'What is the EOSB calculation under UAE Labour Law?',
+    answer: 'Under Federal Decree-Law No. 33 of 2021: 21 days\' basic salary per year for the first 5 years, then 30 days\' per year thereafter. Based on basic salary only. Example: 8 years\' service at AED 25,000 basic = AED 162,500.',
+  },
+  {
+    question: 'How do I find out how much DEWS my spouse has saved?',
+    answer: 'DEWS balances are held by Equiom. If not voluntarily disclosed, a court order for financial disclosure or a subpoena addressed to Equiom is available in contested proceedings. DEWS statements show employer contributions, investment returns, and current liquidation value.',
+  },
+  {
+    question: 'Can I attach my spouse\'s EOSB if they are about to leave their job?',
+    answer: 'Yes. When employment is ending imminently, EOSB transitions from contingent to imminent cash. Apply to the Court of Urgent Matters for a precautionary attachment on expected EOSB proceeds. The former employer is then served and holds the payment pending the court\'s further order. See our <a href="/en/emergency-orders-divorce-uae/">emergency orders guide</a> for the application process.',
+  },
+  {
+    question: 'Does the non-working spouse have any claim on the earning spouse\'s EOSB?',
+    answer: 'Not a direct property claim. EOSB belongs exclusively to the employee. However, a large EOSB balance is evidence of financial resources that courts use to justify higher <a href="/en/alimony-uae/">alimony and maintenance</a> orders. The indirect impact can be substantial.',
+  },
+  {
+    question: 'Are Abu Dhabi government employee pensions protected from divorce?',
+    answer: 'Yes. GPSSA under Federal Decree-Law No. 57 of 2023 makes all pension rights immune from attachment or division. The Abu Dhabi Retirement Pensions and Benefits Fund operates under parallel Emiri Decree protections. Neither pension fund nor payment stream can be touched.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-pension-gratuity-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Retirement Benefits and Divorce -- UAE 2025</p>
+      <h1>Pension and Gratuity in UAE Divorce: EOSB, DEWS, GPSSA, and Foreign Pensions</h1>
+      <p class="hero-desc">
+        UAE has three entirely distinct retirement benefit categories, each governed by different laws, each treated differently in divorce proceedings. Most expats have no idea whether their EOSB can be seized, whether their DEWS balance is at risk, or how to handle a UK pension or US 401k in a UAE divorce. This is the most detailed guide on this underserved topic published in the UAE.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Five core principles before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>EOSB cannot be directly divided:</strong> it is a contingent future entitlement belonging to the employee alone under Federal Decree-Law No. 33 of 2021.</li>
+          <li><strong>DEWS is a current asset</strong> held in an independent trust -- courts treat it differently and more directly than EOSB.</li>
+          <li><strong>GPSSA pensions are completely untouchable</strong> by any court, explicitly under Federal Decree-Law No. 57 of 2023.</li>
+          <li><strong>Foreign pensions (UK, US, India) are outside UAE jurisdiction</strong> -- but their value can be used in negotiating UAE asset splits.</li>
+          <li><strong>Timing matters:</strong> when a spouse is about to leave a job, their EOSB becomes attachable as an imminent lump sum payment.</li>
+        </ul>
+      </div>
+
+      <!-- Overview table -->
+      <section class="content-section">
+        <h2>Quick Reference: UAE Retirement Benefits in Divorce</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Benefit type</th>
+                <th>Governing law</th>
+                <th>Directly divisible?</th>
+                <th>Settlement relevance</th>
+                <th>Can be attached?</th>
+              </tr>
+            </thead>
+            <tbody>
+              {benefitComparison.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.type}</td>
+                  <td class="td-law">{row.law}</td>
+                  <td class={row.canBeDivided.startsWith('No') ? 'td-no' : 'td-partial'}>{row.canBeDivided}</td>
+                  <td class="td-light">{row.relevanceToSettlement}</td>
+                  <td class="td-light">{row.canBeAttached}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">This table summarises the default position under UAE law. Non-Muslim expats electing home country law may have different outcomes depending on the jurisdiction elected.</p>
+      </section>
+
+      <!-- Section 1: EOSB -->
+      <section class="content-section">
+        <h2>Category 1: End-of-Service Benefit (EOSB) -- Private Sector</h2>
+        <p>
+          End-of-service benefit (EOSB) is the UAE private sector's substitute for a pension system. Under <strong>Federal Decree-Law No. 33 of 2021</strong> (the Labour Law, effective 2 February 2022), every employee who completes at least one year of continuous service with a UAE-licensed employer is entitled to a gratuity payment on leaving that employment.
+        </p>
+
+        <h3>The calculation formula</h3>
+        <p>
+          The formula operates in two tiers based on length of service:
+        </p>
+        <ul>
+          <li><strong>First 5 years:</strong> 21 days' basic salary per year of service</li>
+          <li><strong>Year 6 onwards:</strong> 30 days' basic salary per year of service</li>
+        </ul>
+        <p>
+          The calculation is based on the employee's basic salary at the time of leaving -- housing allowances, transport allowances, and other benefits are excluded unless the employment contract expressly includes them in the gratuity calculation base. The total entitlement is capped at two years' basic salary.
+        </p>
+
+        <div class="callout-box callout-box--gold">
+          <h3>EOSB worked examples</h3>
+          <div class="examples-grid">
+            <div class="example-card">
+              <div class="example-label">3 years' service, AED 20,000/month basic</div>
+              <div class="example-calc">21 days x 3 years = 63 days x (AED 20,000 / 30)</div>
+              <div class="example-result">AED 42,000 total EOSB</div>
+            </div>
+            <div class="example-card">
+              <div class="example-label">8 years' service, AED 25,000/month basic</div>
+              <div class="example-calc">(21 x 5 x 833.33) + (30 x 3 x 833.33)</div>
+              <div class="example-result">AED 87,500 + AED 75,000 = AED 162,500</div>
+            </div>
+            <div class="example-card">
+              <div class="example-label">15 years' service, AED 40,000/month basic</div>
+              <div class="example-calc">(21 x 5 x 1,333.33) + (30 x 10 x 1,333.33)</div>
+              <div class="example-result">AED 140,000 + AED 400,000 = AED 540,000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Why EOSB cannot be directly divided</h3>
+        <p>
+          EOSB is not divisible in divorce for two related reasons. First, it is a personal entitlement of the employee under the Labour Law -- it belongs to the employee in the same way that their professional qualifications do, not to the marital estate. Second, it is a contingent entitlement: the money does not exist as a current asset while the employee is still employed. It only crystallises and becomes payable when the employment relationship ends. Courts cannot divide an asset that has no present value and may never arise in its full calculated amount if the employee voluntarily resigns (EOSB is reduced for voluntary resignations under certain conditions in the pre-2022 regime, though the 2021 law changed the calculation for new contracts).
+        </p>
+
+        <h3>How EOSB shapes the divorce settlement indirectly</h3>
+        <p>
+          While courts cannot divide EOSB, a skilled family lawyer will present the EOSB calculation to demonstrate the earning spouse's overall financial picture. A husband with 12 years of service at AED 35,000 per month basic who plans to leave the UAE in two years holds approximately AED 426,000 in unvested EOSB. This is not available to divide, but it is evidence that the husband has substantial financial resources and a significant liquidation event on the horizon.
+        </p>
+        <p>
+          Courts setting alimony (nafaqa), iddah maintenance, mut'a (divorce compensation), and child support under <strong>Federal Decree-Law No. 41 of 2024</strong> consider the earning spouse's overall financial capacity. A large EOSB entitlement is part of that picture. The practical effect: demonstrating a high EOSB can result in a higher maintenance order that the non-earning spouse receives now, as a substitute for the EOSB they cannot directly claim. See our <a href="/en/alimony-uae/">alimony and maintenance guide</a> for how courts calculate these figures.
+        </p>
+
+        <h3>When EOSB becomes directly attachable: the employment transition window</h3>
+        <p>
+          The EOSB picture changes completely when a spouse is about to leave their employment. Once employment ends, the EOSB ceases to be contingent -- it becomes a specific, quantifiable, imminent cash payment from the employer. UAE courts can issue a precautionary attachment on "expected EOSB proceeds" against the former employer at this moment.
+        </p>
+        <p>
+          Triggers that alert you to this window: your spouse resigns, your spouse is made redundant, your spouse changes jobs (the old EOSB crystallises at the date of the last employment ending), or your spouse announces an intention to leave the UAE. In any of these scenarios, apply immediately to the Court of Urgent Matters for an attachment order directed at the employer. The employer is then legally obligated to hold the EOSB payment pending the court's further order rather than releasing it directly to the employee. This window is narrow -- employers typically pay EOSB within 14 days of the final working day.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Watch for job change announcements</h3>
+          <p>A spouse who is planning to leave the UAE will often change jobs first in order to trigger their EOSB payment and accumulate cash. Monitor LinkedIn, visa renewal patterns, and any mentions of career changes. A job change announcement in the middle of divorce proceedings is a signal to act immediately on EOSB attachment.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: DEWS -->
+      <section class="content-section">
+        <h2>Category 2: DEWS (Dirhams Employee Workplace Savings Scheme)</h2>
+        <p>
+          DEWS is the voluntary alternative savings scheme introduced in 2021 as part of the UAE government's modernisation of end-of-service benefits. Unlike the traditional EOSB arrangement (where the employer simply owes a contractual debt to the employee), DEWS involves the employer making regular contributions into an independently managed trust account in the employee's name.
+        </p>
+
+        <h3>How DEWS works</h3>
+        <p>
+          Under the DEWS framework, participating employers contribute a percentage of each employee's monthly basic salary to a trust managed by Equiom (the designated scheme trustee). The contribution rates are:
+        </p>
+        <ul>
+          <li><strong>Employees with less than 5 years' service:</strong> 5.83% of monthly basic salary</li>
+          <li><strong>Employees with 5 or more years' service:</strong> 8.33% of monthly basic salary</li>
+        </ul>
+        <p>
+          The funds are invested in a range of asset classes (typically low-risk diversified portfolios) and grow over the employee's career. The employee can view their DEWS balance at any time via the Equiom online portal. When employment ends, the full vested balance is paid directly to the employee by Equiom -- independent of the employer.
+        </p>
+
+        <h3>Why DEWS is treated differently from EOSB in divorce</h3>
+        <p>
+          The crucial distinction is that DEWS is a present asset, not a contingent future entitlement. The money exists right now, sitting in a separately managed trust account with a real-time balance. This makes it fundamentally different from EOSB, which is simply a contractual promise to pay a future sum.
+        </p>
+        <p>
+          UAE courts in financial proceedings can treat DEWS as an existing asset. Where a non-employee spouse can demonstrate that they contributed to the household -- managing the home, raising children, enabling the employee spouse to focus on career advancement -- courts have used the DEWS balance as evidence of wealth that the household accumulated jointly, even if the legal entitlement rests with the employee. The non-employee spouse cannot claim the DEWS balance as a property right (it is not jointly registered), but the balance is disclosed as a financial resource and can influence the overall settlement quantum.
+        </p>
+
+        <h3>Obtaining DEWS disclosure</h3>
+        <p>
+          In voluntarily disclosed financial schedules, the employee provides DEWS statements from the Equiom portal. In contested proceedings where the DEWS balance is not voluntarily disclosed, a court order for financial disclosure can compel the employee to produce DEWS statements. Alternatively, a subpoena (court order) addressed directly to Equiom requesting disclosure of the account balance, contribution history, and investment returns as of a specified date is available as a procedural tool in UAE civil proceedings.
+        </p>
+        <p>
+          The DEWS balance can also be subject to a precautionary attachment order if you have a financial claim against the employee spouse. Because DEWS is a real present asset in a trust (not a contingent employer obligation), courts are more willing to attach it as security for a claim than they are to attach an unvested EOSB entitlement.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>DEWS vs. EOSB: the practical difference</h3>
+          <p>Think of it this way: EOSB is a promise on paper from your employer to pay you a certain sum when you leave. DEWS is actual money in an account with your name on it, growing right now. For divorce purposes, courts treat real money in accounts very differently from contractual promises of future payments. If your spouse has a DEWS scheme, request the Equiom statement as part of financial disclosure immediately.</p>
+        </div>
+      </section>
+
+      <!-- Section 3: GPSSA -->
+      <section class="content-section">
+        <h2>Category 3: GPSSA Pension -- UAE National Government Employees</h2>
+        <p>
+          The General Pension and Social Security Authority (GPSSA) manages the pension and social security system for UAE nationals employed in government entities. This is the most protected retirement benefit category in UAE law.
+        </p>
+
+        <h3>Federal Decree-Law No. 57 of 2023: total protection</h3>
+        <p>
+          <strong>Federal Decree-Law No. 57 of 2023</strong> (the Pension and Social Security Law) explicitly provides that GPSSA pension entitlements are inalienable, cannot be assigned, cannot be transferred, cannot be attached, and cannot be divided by any legal proceedings whatsoever, including divorce proceedings. This protection applies at every stage: the accruing pension entitlement during active service, the accumulated fund, and the ongoing pension payment stream after retirement begins.
+        </p>
+        <p>
+          No UAE court, whether the Personal Status Court, the Civil Court, or the Execution Court, can freeze, redirect, split, or offset a GPSSA pension. The pension is not available to satisfy a judgment debt of the pension holder. It cannot be used as security for a claim. A divorce court cannot order that pension payments be redirected to the other spouse. The protection is total and there are no exceptions in the legislation.
+        </p>
+
+        <h3>What GPSSA pension income does affect</h3>
+        <p>
+          While the GPSSA pension itself is untouchable, the income it generates for the pension-holder is very much relevant to divorce proceedings. A UAE national government employee receiving AED 45,000 per month in pension payments has significant financial resources. Courts setting alimony (nafaqa), iddah maintenance, and child support consider the pension holder's income in full when determining what level of maintenance is appropriate. A higher pension income results in higher maintenance obligations -- the GPSSA protection prevents the pension from being split, but it does not exempt the pensioner from supporting their former spouse and children at a level commensurate with their income.
+        </p>
+
+        <h3>Abu Dhabi-specific schemes</h3>
+        <p>
+          The Abu Dhabi Retirement Pensions and Benefits Fund (RPBF) manages pensions for Abu Dhabi government employees separately from the federal GPSSA. The RPBF operates under Abu Dhabi Emiri Decree No. 15 of 2004 and subsequent amendments, which include equivalent inalienability protections to the federal GPSSA legislation. Abu Dhabi-based government employees benefit from the same total protection from divorce claims as federal GPSSA members.
+        </p>
+      </section>
+
+      <!-- Section 4: Foreign pensions -->
+      <section class="content-section">
+        <h2>Category 4: Foreign Pensions -- UK, US, India, Europe</h2>
+        <p>
+          UAE expats are among the most internationally mobile professionals in the world. A 45-year-old British expat in Dubai may hold a UK workplace pension accumulated over ten years of UK employment, a US 401k from a stint in New York, and UAE EOSB from eight years in the Gulf. Their UAE divorce proceedings can address the UAE EOSB directly but have no jurisdiction over the foreign pension accounts.
+        </p>
+
+        <h3>UK pensions: SIPPs, workplace pensions, NHS schemes</h3>
+        <p>
+          UK pension funds operate under UK law and are governed by the Pensions Act 1995 and Matrimonial Causes Act 1973 as amended. A UAE court cannot issue a pension sharing order or pension attachment order over a UK pension. The correct procedural route is to file an application in England under <strong>Part III of the Matrimonial and Family Proceedings Act 1984</strong>, which allows English courts to make financial provision orders following a foreign divorce. This can include pension sharing orders over UK-registered pension funds.
+        </p>
+        <p>
+          The practical strategy for most couples is not to pursue separate English court proceedings (which add significant cost) but instead to negotiate the value of the UK pension into the UAE asset settlement. If the UK pension is worth GBP 150,000 (approximately AED 700,000 at current rates), the spouse retaining the UK pension might agree to take a smaller share of the Dubai apartment or accept lower alimony, effectively treating the pension value as a UAE-side offset.
+        </p>
+
+        <h3>US 401k and IRA accounts</h3>
+        <p>
+          US workplace retirement plans (401k, 403b, 457b) and individual retirement accounts (IRA, Roth IRA) require a Qualified Domestic Relations Order (QDRO) issued by a US state court before any plan administrator will divide or transfer the account. A UAE divorce decree is not a QDRO and has no legal effect on US retirement accounts. The same offset negotiation strategy applies: use the 401k or IRA value as a bargaining chip in the UAE property and savings settlement.
+        </p>
+
+        <h3>Indian EPF and gratuity</h3>
+        <p>
+          Indian employees are entitled to employer contributions to the Employees' Provident Fund (EPF) under Indian law, and to a statutory gratuity under the Payment of Gratuity Act 1972 on leaving Indian employment. Both are personal entitlements under Indian law that UAE courts have no jurisdiction over. In practice, for most Indian expats in the UAE, the more significant financial asset is UAE EOSB rather than EPF balances accumulated from earlier Indian careers.
+        </p>
+
+        <h3>European occupational pensions</h3>
+        <p>
+          Continental European occupational pension schemes (German Betriebsrente, French PERCO, Dutch occupational pension funds) each operate under their respective national pension laws. None of them can be divided by a UAE court order. Many European jurisdictions do have internal domestic rules for pension splitting on divorce, but those rules can only be activated by proceedings in the country where the pension is registered.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>The global asset negotiation principle</h3>
+          <p>In international divorces, the practical rule is: identify all retirement benefits across all jurisdictions, value each one approximately, and use those values as negotiating currency in whatever jurisdiction you are actually litigating in. If your spouse has a GBP 200,000 UK pension that your UAE proceedings cannot touch, that is not a reason to accept a worse deal on UAE property -- it is a reason to demand a better UAE deal to compensate for the pension you are effectively leaving on the table. Have the argument with numbers, not just assertions.</p>
+        </div>
+      </section>
+
+      <!-- Section 5: Strategy -->
+      <section class="content-section">
+        <h2>Strategic Use of Benefits in UAE Divorce Negotiations</h2>
+        <p>
+          Understanding the legal rules on EOSB, DEWS, and GPSSA is only the starting point. The more important skill in UAE divorce proceedings is using this knowledge strategically to either protect your benefits or leverage your spouse's benefits in negotiations.
+        </p>
+
+        <h3>If you are the earning spouse: protecting your EOSB</h3>
+        <p>
+          Because EOSB is a personal entitlement under Federal Decree-Law No. 33 of 2021, it is not directly divisible. Your main exposure is that a large EOSB balance influences maintenance calculations upward. The best protection is to ensure that maintenance negotiations are conducted based on your current income and expenses, not on hypothetical future EOSB lump sum values. Courts should set maintenance levels based on present income, not future contingent windfalls.
+        </p>
+        <p>
+          If you are planning to change jobs or leave the UAE, timing matters. EOSB crystallises when employment ends. If your divorce is not yet filed, you may have options to restructure your EOSB exposure (for example, by joining a DEWS scheme which distributes contributions over time rather than paying a large lump sum at end-of-service). Discuss the timing with both your employment lawyer and family lawyer before making any career decisions during divorce proceedings.
+        </p>
+
+        <h3>If you are the non-earning spouse: maximising benefit visibility</h3>
+        <p>
+          Request full financial disclosure including EOSB calculations, DEWS statements, and foreign pension valuations. Instruct your lawyer to include an EOSB schedule (calculating the current unvested value) in the financial evidence before the court. Present this as evidence of the earning spouse's overall financial resources. Argue for maintenance awards that reflect the earning spouse's total financial position, not just current take-home pay.
+        </p>
+        <p>
+          For DEWS: request the Equiom portal statement directly in the financial disclosure process. If your spouse participates in a DEWS scheme and has accumulated a meaningful balance, this is a current asset that must be disclosed and that courts have treated as relevant to overall settlement. It strengthens your position on <a href="/en/divorce-financial-planning-uae/">financial planning for divorce</a> considerably.
+        </p>
+
+        <h3>Timing the EOSB attachment</h3>
+        <p>
+          If you have reason to believe your spouse is about to leave their job -- through a resignation, redundancy notice, or announced career move -- the window for attaching the EOSB payment is narrow and valuable. Move immediately: instruct your lawyer to file a precautionary attachment application at the Court of Urgent Matters for the expected EOSB proceeds. The employer is then served and required to hold the payment. A 14-day payment window after employment ends means you have almost no margin for delay. This is one of the most time-critical actions in UAE divorce proceedings. For the full application process, see our <a href="/en/emergency-orders-divorce-uae/">emergency orders guide</a>.
+        </p>
+
+        <h3>Negotiating foreign pension offsets</h3>
+        <p>
+          Where one spouse holds significant foreign pension assets (UK pension, US 401k, Indian EPF), the correct negotiating position is to value the pension and treat that value as a credit in favour of the pension-holding spouse against UAE assets. Use a financial adviser familiar with cross-border valuations to produce an approximate present value for the foreign pension. This figure then enters the negotiation as a benchmark for what the pension-holding spouse should give up in UAE assets to achieve an equitable overall outcome. See our <a href="/en/property-division-divorce-uae/">property division guide</a> for how property values interact with this calculation.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>DLD rules, contribution claims, mortgage scenarios</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>How EOSB and DEWS affect maintenance calculations</span>
+          </a>
+          <a href="/en/divorce-financial-planning-uae/" class="related-card">
+            <strong>Divorce Financial Planning UAE</strong>
+            <span>Protecting all asset categories before proceedings begin</span>
+          </a>
+          <a href="/en/divorce-end-of-service-gratuity-uae/" class="related-card">
+            <strong>End-of-Service Gratuity Divorce UAE</strong>
+            <span>Deep dive on EOSB calculation and timing strategies</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Orders in UAE Divorce</strong>
+            <span>Attaching EOSB proceeds, freezing accounts</span>
+          </a>
+          <a href="/en/divorce-joint-account-uae/" class="related-card">
+            <strong>Joint Bank Account in UAE Divorce</strong>
+            <span>Protecting liquid assets alongside retirement benefits</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 600px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.82rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; font-size: 0.85rem; }
+  .td-law { color: #4b5563; font-size: 0.8rem; }
+  .td-no { color: #dc2626; font-weight: 600; }
+  .td-partial { color: #d97706; font-weight: 600; }
+  .td-light { color: #6b7280; font-size: 0.8rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Callout */
+  .callout-box { border-radius: 12px; padding: 1.5rem; margin: 1.25rem 0; }
+  .callout-box--gold { background: #fef3c7; border: 2px solid #c9a84c; }
+  .callout-box h3 { font-size: 1rem; font-weight: 700; color: #78350f; margin-bottom: 1rem; }
+  .examples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .example-card { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 0.9rem; }
+  .example-label { font-size: 0.75rem; font-weight: 700; color: #374151; margin-bottom: 0.4rem; }
+  .example-calc { font-size: 0.75rem; color: #6b7280; margin-bottom: 0.4rem; font-style: italic; }
+  .example-result { font-size: 1rem; font-weight: 800; color: #0a1628; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .examples-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

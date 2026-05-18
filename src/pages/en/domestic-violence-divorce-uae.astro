@@ -1,0 +1,629 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Domestic Violence and Divorce in UAE: Protection Orders, Evidence, and Your Rights';
+const description =
+  'Federal Law No. 15 of 2021 criminalises psychological, economic, and physical abuse. This guide covers emergency protection orders, the Dubai Foundation shelter, visa rights during proceedings, and how documented abuse affects custody and alimony in UAE divorce.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/domestic-violence-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/العنف-الأسري-والطلاق-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Domestic Violence Divorce UAE', url: 'https://divorceu.ae/en/domestic-violence-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the process to get a protection order in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'File a report at any UAE police station or contact the Public Prosecution directly. The Public Prosecution reviews the application and can issue an emergency protection order within 24 to 72 hours without prior notice to the respondent. The order typically runs for 30 days and is renewable. It can prohibit contact, remove the abuser from the shared home, and include child custody protection. You do not need a lawyer to initiate the process, but legal assistance speeds up subsequent divorce proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my husband cancel my UAE visa if I report him for abuse?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In theory a sponsoring spouse can request visa cancellation at any time, but once divorce proceedings are active UAE courts can issue interim orders preventing visa cancellation while the case is ongoing. Leaving the shared home to escape abuse does not automatically cancel your visa. If you have already filed or are about to file for divorce, ask your lawyer to immediately apply for an interim order protecting your residency status. The Dubai Foundation for Women and Children (hotline 800 DKMA / 800 3562) can also advise on shelter and visa support.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where can I go in Dubai if I need to escape my husband immediately?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "The Dubai Foundation for Women and Children (DFWAC) operates the UAE's largest domestic violence shelter. Call their 24/7 confidential hotline: 800 DKMA (800 3562). The shelter is open to all nationalities including undocumented residents. They provide emergency accommodation, legal guidance, children's services, and help with subsequent police and court processes. You do not need to have a police report before calling.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will domestic violence affect child custody in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, significantly. Under Federal Decree-Law No. 41 of 2024 and Federal Law No. 3 of 2016 (the Wadeema Law), the best interests of the child is the paramount standard. Documented domestic violence by a parent is treated as evidence that they pose a risk to the child. A parent with a criminal conviction or active protection order against them is very unlikely to be awarded primary custody and may have their visitation supervised or restricted. Courts consider psychological harm as well as physical harm.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can WhatsApp messages be used as evidence of abuse in UAE court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAE courts accept digital evidence including WhatsApp messages, voice notes, and call records. For maximum evidentiary weight, have the messages notarised by a UAE notary public (a notarised printout with the notary certifying the content). Screenshots alone are admissible but more easily challenged. Voice notes are particularly powerful as they carry the actual tone and words. Preserve all original messages on the device and do not delete or alter any thread.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does filing a domestic violence case mean my husband will be deported?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not automatically. A criminal conviction for domestic violence under Federal Law No. 15 of 2021 does not trigger automatic deportation, but the court has discretion to recommend deportation as part of sentencing, especially for repeat offenders or serious cases. Deportation decisions rest with immigration authorities. The primary outcomes of a criminal DV case are fines, imprisonment, and protection orders. The criminal case and the civil divorce proceed independently of each other.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does documented domestic violence affect alimony in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Documented abuse supports a divorce on grounds of harm (tatliq lil-darar) under Federal Decree-Law No. 41 of 2024. A wife divorcing on harm grounds is entitled to full mahr, iddah maintenance, child support, and may receive a compensatory payment (mut\'a). Courts may award more generous maintenance when the wife left the marriage because of documented abuse. For non-Muslim expats under Federal Decree-Law No. 41 of 2022, the abuse history directly informs the financial settlement.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is psychological or economic abuse covered by UAE domestic violence law?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Federal Law No. 15 of 2021 explicitly criminalises psychological abuse (humiliation, threats, persistent intimidation), sexual abuse within marriage, and economic abuse (controlling access to money, destroying property, preventing the victim from working). This is a broad definition that goes beyond physical violence. You do not need visible injuries to file a complaint. Threats by message, repeated humiliation, and preventing a spouse from accessing shared funds are all actionable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get a protection order against a spouse who lives in a different emirate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Federal Law No. 15 of 2021 applies across all seven emirates. You can file at any police station or Public Prosecution office in the emirate where you are located. The protection order is enforceable throughout the UAE once issued. If the abuser moves between emirates, the order remains valid.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to the shared apartment if I leave to escape abuse?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Leaving a shared home due to domestic violence does not constitute abandonment and does not forfeit your rights to maintenance or housing. A protection order can legally require the abuser to vacate the shared home even if they are the tenant or owner, leaving you in the property. If the abuser owns the home, the court may still order them to leave and continue paying housing costs during iddah. Document your departure with a police report or shelter referral to protect yourself from any later claim of voluntary abandonment.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/domestic-violence-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Domestic Violence &amp; Divorce -- UAE 2025</p>
+      <h1>Domestic Violence and Divorce in UAE: Protection Orders, Evidence, and Your Rights</h1>
+      <p class="hero-desc">
+        Federal Law No. 15 of 2021 goes well beyond physical assault. It criminalises psychological threats, economic control, and sexual abuse within marriage. If you are in an abusive relationship in the UAE, you have more legal tools available than most people realise -- including same-day emergency protection orders, shelter services for all nationalities, and visa protections during proceedings.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Six things to know before reading further</h2>
+        <ul class="key-facts">
+          <li><strong>Protection orders are ex-parte.</strong> The Public Prosecution can issue an emergency order within 24-72 hours without telling the abuser first.</li>
+          <li><strong>Abuse is not just physical.</strong> Federal Law No. 15 of 2021 criminalises psychological, economic, and sexual abuse within marriage.</li>
+          <li><strong>Leaving home does not cancel your visa.</strong> Departure from a shared home to escape abuse does not forfeit your UAE residency rights.</li>
+          <li><strong>WhatsApp messages are valid evidence.</strong> Notarised digital records are accepted by UAE courts.</li>
+          <li><strong>Dubai Foundation shelter serves all nationalities</strong> including undocumented residents. 24/7 hotline: 800 DKMA (800 3562).</li>
+          <li><strong>Criminal case and divorce run independently.</strong> Pursuing a protection order does not halt or prejudice your divorce proceedings.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: The Law -->
+      <section class="content-section">
+        <h2>Federal Law No. 15 of 2021: What It Actually Covers</h2>
+        <p>
+          The UAE Family Protection Law (Federal Law No. 15 of 2021) replaced earlier provisions on domestic violence and created a standalone legal framework. The law applies to all UAE residents regardless of nationality, religion, or visa status. Its scope is broader than most comparable legislation in the region.
+        </p>
+        <p>
+          The law defines domestic violence to include any act that causes or threatens physical, psychological, sexual, or financial harm committed by a family member against another. "Family member" covers spouses, ex-spouses, children, parents, siblings, and any person sharing the household. Critically, the offence does not require physical contact. The following all constitute domestic violence under the law:
+        </p>
+        <ul>
+          <li>Physical assault including hitting, pushing, or restraining</li>
+          <li>Psychological abuse: sustained humiliation, verbal threats, intimidation, monitoring movements, isolating the victim from family and friends</li>
+          <li>Sexual abuse including forced marital sexual acts</li>
+          <li>Economic abuse: withholding money the spouse is entitled to, destroying property, preventing the spouse from working, controlling all financial access</li>
+          <li>Threats of any of the above</li>
+        </ul>
+        <p>
+          Penalties under the law range from fines to imprisonment. Repeat offenders face harsher sentences. Courts also have discretion to recommend deportation for non-citizen offenders, though this is not automatic.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Economic abuse is frequently overlooked</h3>
+          <p>Many spouses experiencing economic control -- a husband who refuses to provide maintenance, who controls all bank access, who destroyed the wife's documents or phone -- do not realise this is a criminal offence under UAE law, not merely a civil matter. If your spouse has cut off your access to household funds, confiscated your passport (also illegal under UAE law), or prevented you from working, these are actionable under Federal Law No. 15 of 2021 alongside any divorce proceedings.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Protection Orders -->
+      <section class="content-section">
+        <h2>Emergency Protection Orders: How They Work</h2>
+        <p>
+          A protection order is a court-issued legal instruction directing the abuser to stop specified behaviour. In the UAE, emergency protection orders are issued by the Public Prosecution, not the family court. This is an important distinction: you do not need to wait for a family court hearing.
+        </p>
+
+        <h3>The ex-parte procedure</h3>
+        <p>
+          Emergency protection orders are granted ex-parte, meaning the respondent (the alleged abuser) receives no prior notice and has no opportunity to appear before the order is issued. The Public Prosecution reviews the application and supporting evidence and can issue the order within 24 to 72 hours. The speed is intentional: the law recognises that giving the abuser advance notice of a protection order application creates an immediate safety risk.
+        </p>
+
+        <h3>Duration and renewal</h3>
+        <p>
+          Emergency orders typically run for 30 days. They can be renewed by the Public Prosecution on application. Longer-term orders can be obtained through the family court as part of ongoing divorce or custody proceedings.
+        </p>
+
+        <h3>What a protection order can do</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Prohibition on contact and approach</h3>
+              <p>The abuser is prohibited from contacting you by any means -- phone, message, social media, through third parties -- and from coming within a specified distance of your home, workplace, or children's school.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Removal from the shared home</h3>
+              <p>Even if the abuser is the named tenant or property owner, the protection order can require them to vacate the shared home. The victim stays in the property. This is one of the most powerful tools in the law.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Child custody protection</h3>
+              <p>The order can grant the applicant interim physical custody of children and restrict or supervise the respondent's contact with the children during the order period.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Communication blackout</h3>
+              <p>All direct and indirect communication by the respondent is prohibited. Breach of a protection order is a separate criminal offence with immediate arrest consequences.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>How to apply</h3>
+        <p>
+          File a police report at any UAE police station. The police will refer the matter to the Public Prosecution. Alternatively, contact the Public Prosecution directly or go to the Family Guidance and Reconciliation Section attached to the local court. If you are in immediate danger, call 999. If you need shelter before taking legal steps, call the Dubai Foundation hotline (800 DKMA / 800 3562).
+        </p>
+        <p>
+          You do not need a lawyer to initiate a protection order application. The process is designed to be accessible to victims without legal representation. However, if you are simultaneously pursuing a divorce, having a lawyer co-ordinate the protection order application and the divorce filing is strongly advisable.
+        </p>
+      </section>
+
+      <!-- Section 3: Shelter and Support -->
+      <section class="content-section">
+        <h2>Dubai Foundation for Women and Children</h2>
+        <p>
+          The Dubai Foundation for Women and Children (DFWAC) is the UAE's largest domestic violence shelter and support organisation. It operates under the authority of the Dubai government and provides services to all nationalities including residents without valid UAE visas.
+        </p>
+
+        <div class="callout-box callout-box--gold">
+          <h3>Dubai Foundation for Women and Children</h3>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <div class="contact-label">24/7 Hotline</div>
+              <div class="contact-value">800 DKMA (800 3562)</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Available to</div>
+              <div class="contact-value">All nationalities, including undocumented residents</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Confidential</div>
+              <div class="contact-value">Identity and location are not disclosed to the abuser</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Services</div>
+              <div class="contact-value">Emergency shelter, legal guidance, children's support, court accompaniment</div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          The Foundation provides emergency accommodation, connects residents with legal aid, accompanies victims to police stations and court hearings, offers psychological counselling, and assists with school enrolment for children. If your situation prevents you from calling, you can walk in directly to their centre in Dubai.
+        </p>
+        <p>
+          Abu Dhabi has a parallel service through the Family Care Authority. Sharjah operates the Sharjah Social Services Department. All seven emirates have formal referral systems from police to support services.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>What about residents without valid visas?</h3>
+          <p>The Dubai Foundation explicitly serves undocumented residents. The organisation does not report immigration status to authorities. The UAE government has a specific policy of not deporting domestic violence victims during active cases. If visa status has kept you from seeking help, this barrier is effectively removed when you engage with DFWAC.</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Evidence -->
+      <section class="content-section">
+        <h2>Evidence That UAE Courts Accept</h2>
+        <p>
+          The strength of your domestic violence case depends heavily on the evidence you can present. UAE courts accept a range of evidence types for Family Protection Law matters. Gathering this evidence early -- before proceedings become adversarial -- is the most important practical step you can take.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Evidence type</th>
+                <th>Evidential value</th>
+                <th>Practical steps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Medical reports</td>
+                <td class="td-gold">Very high</td>
+                <td class="td-light">Attend any UAE hospital or clinic. Request a written report documenting injuries. The report is automatically forwarded to police in cases of suspected domestic violence.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Police report</td>
+                <td class="td-gold">Very high</td>
+                <td class="td-light">File at any police station. Not required for a protection order application but significantly strengthens civil divorce proceedings. Generates an official case number.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Photographs and videos</td>
+                <td class="td-gold">High</td>
+                <td class="td-light">Date-stamped photos of injuries, damaged property, or threatening behaviour. Store originals on a device the abuser cannot access. Back up to cloud storage immediately.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">WhatsApp messages (notarised)</td>
+                <td class="td-gold">High</td>
+                <td class="td-light">Notarise printed message threads at a UAE notary public. The notary certifies the authenticity of the printed record. Original device must be available if challenged.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Voice notes and call recordings</td>
+                <td class="td-gold">High</td>
+                <td class="td-light">Threatening voice notes sent via WhatsApp or saved call recordings. Notarise transcriptions if used as primary evidence. Audio files preserved on device are admissible.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Witness statements</td>
+                <td class="td-gold">Moderate to high</td>
+                <td class="td-light">Neighbours, household staff, family members who witnessed incidents. Statements must be made by the witness directly, not relayed second-hand.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Bank records showing economic abuse</td>
+                <td class="td-gold">High for economic abuse</td>
+                <td class="td-light">Statements showing the abuser controlled all funds, sudden withdrawal of maintenance, or destruction of financial access. Export 12 months of statements before accounts are contested.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Notarising digital evidence</h3>
+        <p>
+          To notarise WhatsApp conversations, take your phone to a UAE notary public office (present in all emirates). The notary will review the screen content and certify a printed copy with their official stamp. The fee is typically AED 100-300. This step converts screenshots into formally authenticated court documents, substantially raising their evidential weight.
+        </p>
+        <p>
+          Email threads, SMS messages, and screenshots from other platforms (Instagram, Telegram) can be notarised by the same process. The key requirement is that the original device must be available to verify the content if the court requires it.
+        </p>
+      </section>
+
+      <!-- Section 5: Impact on Divorce -->
+      <section class="content-section">
+        <h2>How Domestic Violence Affects Divorce Proceedings</h2>
+
+        <h3>Divorce on grounds of harm (tatliq lil-darar)</h3>
+        <p>
+          Under Federal Decree-Law No. 41 of 2024, a Muslim wife can file for divorce on grounds of harm (tatliq lil-darar) where she has experienced documented physical or psychological abuse. This is a fault-based divorce pathway. The court requires substantiated evidence of harm -- the police report, medical records, and protection order history are the core of this case.
+        </p>
+        <p>
+          On a successful harm-based divorce, the wife retains full entitlement to mahr (including any deferred portion), receives iddah maintenance for the three-month waiting period, receives child support, and may be awarded mut'a (a compensatory payment reflecting the harm suffered). The husband cannot claim the right to talaq al-raj'i (revocable divorce with reinstatement rights) in a harm-based judicial divorce.
+        </p>
+
+        <h3>Custody decisions and domestic violence</h3>
+        <p>
+          Federal Law No. 3 of 2016 (the Wadeema Law on child rights) and Federal Decree-Law No. 41 of 2024 both require courts to apply the best interests of the child standard. A parent with an active protection order against them, a criminal conviction for domestic violence, or a documented history of abusive behaviour toward the other parent is considered a risk factor.
+        </p>
+        <p>
+          In practice, courts in these circumstances typically award primary physical custody to the non-abusive parent and may impose supervised visitation on the abusive parent, restricting contact to approved locations (a family guidance centre, for example). In serious cases, the abusive parent may have contact suspended entirely pending a welfare assessment.
+        </p>
+
+        <h3>Alimony and financial consequences</h3>
+        <p>
+          Documented domestic violence has direct implications for financial orders. Courts assessing alimony under Federal Decree-Law No. 41 of 2024 take the circumstances of the divorce into account. A wife who left the marriage because of documented abuse is generally treated more generously in maintenance awards than one who was the initiating party in a no-fault divorce.
+        </p>
+        <p>
+          For non-Muslim expats proceeding under Federal Decree-Law No. 41 of 2022 or their home country law, the abuse history is directly relevant to financial settlement. English law, for example, gives courts broad discretion to adjust financial orders based on conduct, and documented UAE domestic violence is evidence of conduct.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Criminal case and divorce: independent tracks</h3>
+          <p>A criminal prosecution under Federal Law No. 15 of 2021 proceeds independently of your civil divorce. A criminal conviction is useful supporting evidence in family court proceedings but is not required before you can file for divorce. You can pursue both simultaneously, or file for divorce without any criminal complaint if you prefer. Many victims choose to obtain a protection order and file for divorce without pursuing criminal prosecution, which is their right.</p>
+        </div>
+      </section>
+
+      <!-- Section 6: Visa -->
+      <section class="content-section">
+        <h2>Visa Status: What Happens During Proceedings</h2>
+        <p>
+          Visa anxiety is one of the most common reasons abuse victims in the UAE delay seeking help. The picture is more protective than most people realise.
+        </p>
+
+        <h3>The sponsored spouse visa during divorce proceedings</h3>
+        <p>
+          If your UAE residency is on a spouse visa sponsored by the abuser, you are vulnerable to visa cancellation -- but not without recourse. Once divorce proceedings are formally active (a case number has been registered at court), UAE courts can and do issue interim orders preventing the sponsoring spouse from cancelling the victim's visa while proceedings are ongoing. Apply for this order through your lawyer at the earliest possible stage.
+        </p>
+        <p>
+          Leaving the shared home to escape abuse does not by itself cancel your visa. Your visa status is tied to your sponsor's cancellation action, not your physical location. An abuser cannot cancel your visa by reporting that you have abandoned the household -- they must formally apply for cancellation at GDRFA, and during active court proceedings that application can be blocked by court order.
+        </p>
+
+        <h3>What if my visa is cancelled anyway?</h3>
+        <p>
+          If visa cancellation happens before a court order prevents it, you enter a 30-day grace period during which you can arrange alternative status. Your options include:
+        </p>
+        <ul>
+          <li>Employer-sponsored visa if you work in the UAE</li>
+          <li>The 5-year divorced person residence permit (for those who were UAE residents for at least 3 years before divorce)</li>
+          <li>Child custody visa (introduced 2024 -- a custodial mother can obtain residence tied to the custody arrangement)</li>
+          <li>Freelance or free zone visa (AED 7,000-15,000, takes 2-4 weeks)</li>
+          <li>Investor visa if you own UAE property worth AED 750,000 or more</li>
+        </ul>
+        <p>
+          The Dubai Foundation for Women and Children has an established referral network for visa assistance and can connect victims with legal aid organisations that handle emergency visa applications.
+        </p>
+
+        <h3>Passport confiscation: an immediate crime</h3>
+        <p>
+          Confiscating a spouse's passport is illegal under UAE law regardless of any marital dispute. If your abuser has taken your passport, report this to the police immediately. It is an independent criminal offence from the domestic violence offences and can be acted on separately. The police can direct you to your country's consulate for an emergency travel document while the investigation proceeds.
+        </p>
+      </section>
+
+      <!-- Section 7: Steps to Take -->
+      <section class="content-section">
+        <h2>Practical Steps in Order</h2>
+        <p>
+          If you are currently in an unsafe situation, your safety comes before any legal process. Call 999 if in immediate danger. Call the Dubai Foundation (800 DKMA) to access shelter. Once you are safe, work through the following steps with legal support.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Secure your documents and evidence</h3>
+              <p>Gather your passport, Emirates ID, marriage certificate, children's passports and birth certificates, bank statements (printed or PDF), and any existing evidence of abuse. Store copies outside the shared home -- with a trusted person or in cloud storage the abuser cannot access.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>File a police report and apply for a protection order</h3>
+              <p>Go to any police station. Report the abuse. Request that the matter be referred to the Public Prosecution for a protection order. If you have medical records, photographs, or notarised messages, bring them. The police are required to refer domestic violence complaints to the prosecution under Federal Law No. 15 of 2021.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Engage a family lawyer</h3>
+              <p>Once you are safe and have a police case number, consult a UAE family lawyer. The lawyer can file for divorce, apply for interim custody orders, apply for an order preventing visa cancellation, and advise on financial preservation measures such as a precautionary attachment on shared assets.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Attend mandatory reconciliation cautiously</h3>
+              <p>UAE courts typically require one or more reconciliation sessions before a divorce is finalised. In domestic violence cases, your lawyer can request that reconciliation hearings be conducted with the parties in separate rooms or that the requirement be waived entirely on grounds of documented abuse. You are not obligated to attend the same room as an abuser.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Apply for interim financial orders</h3>
+              <p>Ask your lawyer to apply for interim maintenance immediately. You are entitled to housing and living expenses during the iddah period even before the divorce is finalised. Courts can issue interim financial orders within weeks of filing. Do not wait for the final divorce judgment to seek financial support.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Misconceptions -->
+      <section class="content-section">
+        <h2>4 Misconceptions That Delay Action</h2>
+        <div class="misconception-list">
+          <div class="misconception-card">
+            <div class="misconception-badge">FALSE</div>
+            <h3>"The abuse has to be physical and severe to count"</h3>
+            <p>Federal Law No. 15 of 2021 is explicit that psychological, economic, and sexual abuse within marriage are criminal offences. Sustained humiliation, threats, financial control, and isolation are all covered. You do not need hospital records or visible injuries to make a valid complaint.</p>
+          </div>
+          <div class="misconception-card">
+            <div class="misconception-badge">FALSE</div>
+            <h3>"Reporting will get me deported"</h3>
+            <p>There is no automatic deportation consequence for domestic violence victims in the UAE. The government's policy is to protect victims during active proceedings. The Dubai Foundation for Women and Children serves undocumented residents. Your immigration status is not a barrier to protection.</p>
+          </div>
+          <div class="misconception-card">
+            <div class="misconception-badge">FALSE</div>
+            <h3>"I have to go to family court first"</h3>
+            <p>Emergency protection orders come from the Public Prosecution, which can act within 24 to 72 hours. You do not need to file for divorce first. You do not need to wait for a family court hearing date. Protection is available immediately.</p>
+          </div>
+          <div class="misconception-card">
+            <div class="misconception-badge">FALSE</div>
+            <h3>"He will get full custody because he is the father and has UAE nationality"</h3>
+            <p>Nationality does not determine custody. The Wadeema Law (Federal Law No. 3 of 2016) and Federal Decree-Law No. 41 of 2024 require courts to apply the best interests of the child standard above all other considerations. A parent with documented abusive behaviour is disadvantaged in custody proceedings regardless of nationality.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody in UAE</strong>
+            <span>Age rules, habana, and custody disputes explained</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Nafaqa, mut'a, and iddah maintenance calculated</span>
+          </a>
+          <a href="/en/divorce-employer-visa-uae/" class="related-card">
+            <strong>Divorce and UAE Visa Status</strong>
+            <span>What happens to your residency during divorce</span>
+          </a>
+          <a href="/en/divorce-in-uae/" class="related-card">
+            <strong>Divorce in UAE Overview</strong>
+            <span>How the UAE divorce system works for residents</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr in UAE Divorce</strong>
+            <span>How to claim and enforce unpaid dower</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Court Orders UAE</strong>
+            <span>Travel bans, asset freezes, and urgent protective orders</span>
+          </a>
+          <a href="/en/divorce-for-harm-uae/" class="related-card">
+            <strong>Divorce for Harm UAE</strong>
+            <span>Tatliq lil-darar — grounds, evidence, and mahr rights</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #b45309; font-weight: 700; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+
+  /* Callout box */
+  .callout-box { border-radius: 12px; padding: 1.5rem; margin: 1.25rem 0; }
+  .callout-box--gold { background: #fef3c7; border: 2px solid #c9a84c; }
+  .callout-box h3 { font-size: 1rem; font-weight: 700; color: #78350f; margin-bottom: 1rem; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .contact-item { background: #fff; border-radius: 8px; padding: 0.75rem; border: 1px solid #e5e7eb; }
+  .contact-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.2rem; }
+  .contact-value { font-size: 0.9rem; font-weight: 600; color: #0a1628; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Misconception cards */
+  .misconception-list { display: flex; flex-direction: column; gap: 1.1rem; }
+  .misconception-card { padding: 1.1rem 1.25rem; border: 1.5px solid #fca5a5; border-radius: 10px; background: #fff; position: relative; }
+  .misconception-badge { display: inline-block; background: #dc2626; color: #fff; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 4px; margin-bottom: 0.5rem; }
+  .misconception-card h3 { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .misconception-card p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>

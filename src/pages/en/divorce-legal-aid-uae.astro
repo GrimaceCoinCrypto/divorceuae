@@ -1,0 +1,437 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Legal Aid in UAE: Free and Affordable Help for Dubai and Abu Dhabi';
+const description =
+  'Most expats do not know the UAE has a formal legal aid system for divorce. This guide covers the Shoor programme, ADJD Legal Aid Unit, Dubai Foundation for Women, government income thresholds, self-representation in UAE courts, fixed-fee divorce packages, and how to file for divorce online without a lawyer.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-legal-aid-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمغتربين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Legal Aid UAE', url: 'https://divorceu.ae/en/divorce-legal-aid-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is there free legal aid for divorce in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Dubai Courts operate the Shoor legal assistance programme, which provides free legal consultation for UAE nationals and low-income residents. Applicants must demonstrate financial hardship, typically by providing a salary certificate showing income below the relevant threshold. Applications are submitted at the Dubai Courts complex in Bur Dubai. Non-nationals who cannot afford legal representation may qualify depending on income and circumstances. Separately, the Federal Ministry of Justice operates legal aid centres in each emirate for civil and family matters for households typically earning under AED 5,000 per month.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get divorced in UAE without a lawyer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAE courts allow self-representation (known as pro se representation) in all civil and family matters. For a simple uncontested divorce between two non-Muslim expats under Federal Decree-Law No. 41 of 2022, it is legally permissible to file the divorce petition without legal representation. The court will provide an Arabic interpreter if requested. Court fees for a simple divorce petition are AED 200 to 500, compared to AED 5,000 to 15,000 or more with legal representation. Self-representation is most appropriate for straightforward uncontested cases with no children disputes, no property disputes, and where both parties agree on all terms.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the Shoor programme in Dubai Courts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Shoor is a legal assistance programme operated by Dubai Courts that provides free legal consultations and representation guidance for individuals who cannot afford private legal fees. The name refers to consultation and advisory services in Arabic. The programme is available at the Dubai Courts main complex in Bur Dubai. Applicants must bring proof of income (salary certificate or employer letter), their Emirates ID, and relevant case documents. UAE nationals and low-income residents of all nationalities are eligible to apply. The programme covers family matters including divorce, custody, and maintenance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does divorce cost without a lawyer in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If you represent yourself in an uncontested non-Muslim divorce under Federal Decree-Law No. 41 of 2022, your costs are largely limited to court filing fees of AED 200 to 500, translation costs for your documents (marriage certificate, passports) at AED 150 to 300 per document, and attestation fees if required. Total out-of-pocket costs for a self-represented uncontested divorce can be as low as AED 1,000 to 1,500. Compare this to AED 5,000 to 15,000 for a lawyer-assisted uncontested divorce and AED 20,000 to 50,000 for a contested one. For complex situations involving children, property, or Muslim personal status law, self-representation is not recommended regardless of cost.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Dubai Foundation for Women help with divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The Dubai Foundation for Women and Children (DFWAC) provides free legal consultation, case management support, and in some cases legal representation for women and children who are victims of domestic violence or abuse, including those going through divorce proceedings in that context. The Foundation serves all nationalities. Their hotline is 800 DKMA (3562), which operates 24 hours. The Foundation can provide shelter, legal referrals, and representation for qualifying cases. If your divorce situation involves domestic violence or abuse, DFWAC is one of the strongest free resources available in Dubai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I represent myself in UAE family court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, self-representation is permitted in UAE family courts. The court will conduct proceedings in Arabic but is required to provide interpretation services if you do not speak Arabic. For simple uncontested divorce cases under Federal Decree-Law No. 41 of 2022, the process is relatively straightforward: submit the petition with your documents, attend the hearing (which may be a single session for an agreed divorce), and receive the decree. The Dubai Courts website provides guidance on required documents. However, if your case involves contested custody, contested property, or if your spouse is represented by a lawyer, the procedural and substantive disadvantage of self-representation increases significantly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where do I get free legal advice for divorce in Abu Dhabi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Abu Dhabi Judicial Department (ADJD) operates a Legal Aid Unit that provides free legal representation in personal status matters including divorce for qualifying applicants. Applications are made in person at the ADJD main building in Abu Dhabi. UAE nationals are automatically eligible; non-nationals are assessed on income and financial circumstances. The Federal Ministry of Justice also operates legal aid centres in Abu Dhabi providing general civil and family law guidance. Additionally, the Abu Dhabi Civil Family Court (established under Abu Dhabi Law No. 14 of 2021) has court-appointed legal assistance for non-Muslim expats in certain circumstances.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are there cheap divorce lawyers in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Several approaches can reduce legal costs significantly. Fixed-fee divorce packages are offered by some Dubai law firms for simple uncontested non-Muslim divorces: these typically cost AED 3,000 to 5,000 flat, covering legal advice, document preparation, and court representation. Always ask specifically for a fixed-fee arrangement before engaging any firm. Document clearing services (not lawyers) can prepare divorce petition paperwork for AED 500 to 1,500, though they cannot represent you in court. Most Dubai law firms offer a free initial 30-minute consultation: use this to compare advice and fee estimates from at least three firms before committing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if I cannot afford a lawyer for custody proceedings?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contested custody proceedings are significantly more complex than uncontested divorce, and self-representation carries higher risks. If you cannot afford a lawyer for custody proceedings, the following options apply: the ADJD Legal Aid Unit in Abu Dhabi provides free representation for qualifying applicants in personal status matters including custody; the Shoor programme in Dubai may be able to provide guidance; the Dubai Foundation for Women and Children can provide legal support for DV-related custody cases; and some law firms accept instalment payment arrangements for custody cases. If your children are a specific nationality, your country\'s consulate in Dubai may be able to provide a list of pro bono or reduced-fee family lawyers from that community.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I file for divorce online in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, for non-Muslim couples in Dubai who both agree and have no children or property disputes. Dubai Courts offer an e-divorce digital application service that allows a fully online divorce process without physical court attendance. Both parties need to have authenticated their identities on the Dubai Courts digital platform. The service requires uploading scanned copies of required documents (passports, Emirates IDs, marriage certificate with translation). The e-divorce service is designed for simple agreed divorces. If there are any contested issues, or if children or property are involved, in-person proceedings are required.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-legal-aid-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">UAE Divorce Resources &middot; Legal Aid Guide 2025</p>
+      <h1>Divorce Legal Aid in UAE: Free Help, Low-Cost Options, and How to Represent Yourself</h1>
+      <p class="hero-desc">
+        The UAE has a functioning legal aid system for divorce that most expats have never heard of. Government programmes, NGO support, community resources, fixed-fee lawyer packages, and a fully online divorce option exist for people who cannot afford or do not want to pay standard legal rates. This guide covers everything available, from zero cost to reduced cost.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key resources at a glance</h2>
+        <ul class="key-facts">
+          <li><strong>Dubai Courts Shoor programme:</strong> free legal consultation, Bur Dubai. Proof of income required.</li>
+          <li><strong>ADJD Legal Aid Unit (Abu Dhabi):</strong> free representation in personal status matters for qualifying applicants.</li>
+          <li><strong>Federal Ministry of Justice:</strong> legal aid centres in each emirate, household income threshold typically AED 5,000/month.</li>
+          <li><strong>Dubai Foundation for Women and Children:</strong> free legal help for DV cases. Hotline 800 DKMA (3562).</li>
+          <li><strong>Self-representation:</strong> permitted in UAE courts. Uncontested divorce costs AED 1,000 to 1,500 in total without a lawyer.</li>
+          <li><strong>E-divorce:</strong> Dubai Courts online service for agreed non-Muslim divorces with no children or property disputes.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>Government Legal Aid: What the State Provides</h2>
+        <p>
+          The UAE federal and emirate-level governments maintain formal legal aid mechanisms for family law matters. These are underutilised, partly because they are not well publicised in English, and partly because many expats assume government legal aid does not apply to them. That assumption is wrong in several cases.
+        </p>
+
+        <h3>Dubai Courts: Shoor Programme</h3>
+        <p>
+          Dubai Courts operates the Shoor legal assistance programme, which provides free legal consultations and procedural guidance for individuals who cannot afford private legal fees. Shoor is not a legal representation service in the sense of a lawyer appearing in court for you, but it provides genuine free legal consultation from qualified legal professionals attached to the court, helping you understand your rights, the applicable law, and the documents you need to prepare.
+        </p>
+        <p>
+          Applications are made in person at the Dubai Courts main complex in Bur Dubai. You will need to bring your Emirates ID (or passport for non-residents), a salary certificate from your employer or a statement of financial hardship, and any relevant documents for your case. UAE nationals have automatic access; non-nationals are assessed on financial circumstances. Income thresholds are not publicly specified but a salary under AED 5,000 per month is generally likely to qualify.
+        </p>
+        <p>
+          The Shoor programme covers family law matters including divorce, child custody, maintenance, and property issues connected to family proceedings. It does not cover commercial or criminal matters. For a straightforward question about whether you qualify for no-fault divorce under <strong>Federal Decree-Law No. 41 of 2022</strong> and what documents you need to file, the Shoor consultation can give you exactly that guidance at no cost.
+        </p>
+
+        <h3>Abu Dhabi Judicial Department: Legal Aid Unit</h3>
+        <p>
+          The Abu Dhabi Judicial Department (ADJD) operates a dedicated Legal Aid Unit that goes further than Dubai's Shoor programme: it can provide free legal representation in court proceedings, not just consultations. The unit covers personal status matters including divorce, custody, and maintenance for qualifying applicants.
+        </p>
+        <p>
+          Applications are made in person at the ADJD main building on Corniche Road, Abu Dhabi. UAE nationals are automatically eligible for assistance. Non-nationals are assessed based on income, financial position, and the merits of the case. The ADJD Legal Aid Unit has particular experience handling cases involving the Abu Dhabi Civil Family Court, established under <strong>Abu Dhabi Law No. 14 of 2021</strong>, which applies civil family law to non-Muslim expatriate couples. If you are in Abu Dhabi and cannot afford legal representation, the ADJD Legal Aid Unit is the strongest government resource available.
+        </p>
+
+        <h3>Federal Ministry of Justice: Legal Aid Centres</h3>
+        <p>
+          The Federal Ministry of Justice operates legal aid centres in each emirate for civil and family law matters. The eligibility criteria are income-based: the general threshold is household income under AED 5,000 per month, though this is assessed on a case-by-case basis with consideration of family size, dependants, and other circumstances. The centres provide legal advice and can assist with document preparation and court applications.
+        </p>
+        <p>
+          Locations are available on the Ministry of Justice website. Each emirate has at least one centre, with Dubai and Abu Dhabi having multiple access points. These centres handle matters under both UAE federal personal status law (<strong>Federal Decree-Law No. 41 of 2024</strong> for Muslims and <strong>No. 41 of 2022</strong> for non-Muslims) and can guide applicants through the correct court and procedure for their situation.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>NGO and Community Support</h2>
+        <p>
+          Several non-government organisations operating in the UAE provide free or heavily subsidised legal support for divorce-related matters, with particular focus on vulnerable individuals and domestic violence situations.
+        </p>
+
+        <h3>Dubai Foundation for Women and Children (DFWAC)</h3>
+        <p>
+          The Dubai Foundation for Women and Children is the most significant NGO resource for divorce legal aid in Dubai. It provides a comprehensive range of services including shelter, case management, free legal consultation, and in appropriate cases legal representation for women and children who are victims of domestic violence or abuse.
+        </p>
+        <p>
+          The Foundation serves all nationalities resident in Dubai. Their primary hotline is <strong>800 DKMA (800 3562)</strong>, which operates 24 hours a day, seven days a week. Cases involving domestic violence are handled with confidentiality. Legal consultations can cover divorce proceedings, custody protection, maintenance enforcement, and protection orders. The Foundation works closely with Dubai Courts and other authorities to progress cases.
+        </p>
+        <p>
+          If your divorce situation involves or has involved domestic violence, abuse, or coercion, DFWAC is the first call to make. Their services are free and available regardless of your financial position. See our more detailed guide on <a href="/en/domestic-violence-divorce-uae/">domestic violence and divorce in UAE</a> for the broader legal protections available.
+        </p>
+
+        <h3>Community Development Authority Dubai</h3>
+        <p>
+          The Community Development Authority (CDA) in Dubai provides social welfare services including referrals to legal aid services for family matters. They operate social worker offices across Dubai and can connect individuals facing family crises, including divorce, with appropriate legal and social support services. The CDA also works with registered community organisations that may offer additional support for specific national communities.
+        </p>
+
+        <h3>Consulate Legal Assistance Cells</h3>
+        <p>
+          Several national consulates in Dubai maintain legal assistance resources specifically for their nationals:
+        </p>
+        <ul>
+          <li><strong>Philippine Overseas Labor Office (POLO) Dubai:</strong> provides free legal referrals, case assistance, and guidance for Filipino nationals involved in family law matters including divorce. POLO does not provide court representation but its referral network can connect you with pro bono or reduced-fee Filipino lawyers registered in UAE.</li>
+          <li><strong>Indian Consulate General Dubai:</strong> operates a legal assistance cell for distressed Indian nationals. The cell provides referrals, basic legal guidance, and consular support. It does not provide court representation but can be a starting point for Indian nationals unsure where to begin.</li>
+          <li><strong>Other consulates:</strong> most national consulates in Dubai will provide their citizens with a list of locally registered lawyers from their community, and many have informal pro bono arrangements with specific firms. Call your consulate's consular section to ask what family law assistance is available for nationals in financial difficulty.</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Self-Representation: How to Divorce in UAE Without a Lawyer</h2>
+        <p>
+          UAE courts permit self-representation in all civil and family proceedings. For non-Muslim expats, the introduction of <strong>Federal Decree-Law No. 41 of 2022</strong> significantly simplified the divorce process: the no-fault, no-grounds framework means the substance of what you need to establish in court is minimal for an uncontested case.
+        </p>
+        <p>
+          The court language is Arabic. If you do not speak Arabic, you can request an interpreter. The court is required to provide interpretation. You should not rely on an informal translator; always request the official court interpreter service.
+        </p>
+
+        <h3>When self-representation is a reasonable option</h3>
+        <p>
+          Self-representation is most appropriate where:
+        </p>
+        <ul>
+          <li>Both parties agree to the divorce and its terms</li>
+          <li>There are no minor children involved</li>
+          <li>There is no disputed UAE property</li>
+          <li>Both parties are non-Muslim and the divorce is filed under FL 41/2022</li>
+          <li>Neither party has complex financial claims</li>
+        </ul>
+        <p>
+          In these circumstances, the hearing for an agreed divorce may be completed in a single session. The judge will confirm the parties' agreement and issue the divorce decree.
+        </p>
+
+        <h3>When self-representation is high risk</h3>
+        <p>
+          Do not represent yourself if:
+        </p>
+        <ul>
+          <li>Custody of children is contested</li>
+          <li>Your spouse is represented by a lawyer</li>
+          <li>There is significant UAE property in dispute</li>
+          <li>The divorce involves Muslim personal status law (Sharia procedures are more complex)</li>
+          <li>There is a risk of a travel ban on children or yourself</li>
+          <li>Your spouse is uncooperative or you expect the proceedings to be contested</li>
+        </ul>
+        <p>
+          In these situations, even a fixed-fee or low-cost lawyer is far preferable to self-representation. The procedural and substantive disadvantage of appearing unrepresented against a legally represented spouse can result in significantly worse outcomes. See our overview of overall <a href="/en/divorce-cost-uae/">divorce costs in UAE</a> to weigh your options.
+        </p>
+
+        <h3>Documents needed for a self-represented divorce (non-Muslim FL 41/2022)</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Marriage certificate with apostille and Arabic translation</h3>
+              <p>Your original marriage certificate must be apostilled by the issuing country's relevant authority and translated into Arabic by a UAE Ministry of Justice-licensed translator. Both the apostilled original and the certified Arabic translation are submitted to the court.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Passport copies for both parties</h3>
+              <p>Copy of the bio-data page of both spouses' passports, plus Emirates ID copies if resident in UAE. If your spouse is not in the UAE, you will need to serve them with the court notice, which may require additional steps.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Divorce petition form</h3>
+              <p>Dubai Courts provides standard petition forms. Fill in the form in Arabic or request assistance from the court clerk at the filing counter. The form requires the names of parties, marriage details, grounds for divorce (under FL 41/2022 you simply state the desire to divorce without proving grounds), and any requests for child custody or maintenance if applicable.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Pay court fees and file</h3>
+              <p>Court fees for a simple divorce petition in Dubai are AED 200 to 500. Pay at the court cashier counter and retain your receipt. You will be given a case number and a hearing date. Hearings for uncontested agreed divorces are typically scheduled within two to four weeks.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Low-Cost Options: Fixed-Fee Lawyers and Document Services</h2>
+        <p>
+          Between free legal aid and full-price legal representation, there is a range of lower-cost options that can provide meaningful assistance at a fraction of standard legal fees.
+        </p>
+
+        <h3>Fixed-fee divorce packages</h3>
+        <p>
+          Several Dubai law firms offer fixed-fee packages specifically for uncontested non-Muslim divorce under Federal Decree-Law No. 41 of 2022. Typical pricing ranges from AED 3,000 to AED 5,000 for a complete service covering initial consultation, document review, petition preparation, translation coordination, court representation at the divorce hearing, and post-decree follow-up. Always confirm in writing what is included in the fixed fee before engaging.
+        </p>
+        <p>
+          When calling law firms, use the phrase "fixed fee uncontested divorce" and ask specifically what is included. If the firm quotes an open-ended retainer based on hours, that is not a fixed fee. Compare at least three firms. The range in the UAE market is wide.
+        </p>
+        <p>
+          Fixed-fee packages are appropriate only for genuinely uncontested divorces. If your situation becomes contested (spouse disputes terms, custody issues arise, property disputes emerge), the fixed fee will not cover the additional work and you will need a different fee arrangement.
+        </p>
+
+        <h3>Document clearing services</h3>
+        <p>
+          UAE document clearing companies (typing centres) can prepare the divorce petition paperwork and assist with translations and attestations. They are not lawyers, cannot provide legal advice, and cannot represent you in court. Their role is purely administrative: typing forms, coordinating translations, arranging MOFA attestations. Cost for divorce petition preparation: AED 500 to 1,500.
+        </p>
+        <p>
+          Document clearing services are most useful if you understand your legal position and simply need help with the administrative paperwork. If you are uncertain about your legal rights or whether the divorce is straightforward, use the Shoor programme or a free consultation at a law firm before committing to a document service.
+        </p>
+
+        <h3>Free initial consultations</h3>
+        <p>
+          The majority of UAE law firms with a family law practice offer a free initial consultation of 30 to 60 minutes. This consultation should give you a basic understanding of your legal position, what the procedure involves, and what fees would apply for representation. Call at least three firms and use the consultations to compare both the legal advice you receive and the fee proposals.
+        </p>
+        <p>
+          If you are an expat facing divorce in UAE and unsure where to begin, a series of free consultations is the most cost-effective starting point before committing to any paid legal service. For an overview of the full process, see our guide on <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a>.
+        </p>
+
+        <h3>UAE Bar Association referrals</h3>
+        <p>
+          The UAE Bar Association maintains a register of licensed lawyers in each emirate. They can provide referrals to lawyers registered for pro bono work, or to lawyers in specific practice areas including family law. The Bar Association does not itself provide legal advice but can help you identify appropriately qualified and registered practitioners.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Online Divorce: The Digital Option for Non-Muslims</h2>
+        <p>
+          Dubai Courts offers an electronic divorce service that allows a fully online divorce application for non-Muslim couples in Dubai who agree on all terms and have no children or property disputes to resolve. This is arguably the most accessible route available for qualifying couples: it eliminates the need to take time off work for court attendance and reduces the logistical complexity of the process.
+        </p>
+        <p>
+          Both parties must have verified digital identities on the Dubai Courts platform (UAE Pass is the standard verification mechanism for residents). Required documents including the apostilled marriage certificate, passport copies, and any agreements are uploaded through the portal. The court processes the application without requiring physical attendance for a straightforward agreed divorce.
+        </p>
+        <p>
+          The e-divorce service is only available for simple cases: both parties must be non-Muslim, must fully agree on the divorce and all its terms, and there must be no unresolved children or property matters. Any contested element requires in-person proceedings.
+        </p>
+        <p>
+          For couples considering the general process of filing for divorce in Dubai, our step-by-step guide at <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a> covers both the online and in-person routes. For a comparison of total costs across all routes, see <a href="/en/divorce-cost-uae/">divorce costs in UAE</a>.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>When legal aid is not enough</h3>
+          <p>Legal aid and self-representation work for simple cases. If your divorce involves contested custody, significant property, a Muslim personal status procedure, or a cross-border element involving another country's assets or children, the cost of inadequate representation can far exceed the cost of proper legal advice. Free consultation is available from multiple sources: use it before deciding whether to proceed without a lawyer. For expats with international financial complexity, see our guides on <a href="/en/divorce-for-expats-in-uae/">divorce for expats in UAE</a>.</p>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, legal fees, and what to budget for</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step guide to the Dubai Courts process</span>
+          </a>
+          <a href="/en/domestic-violence-divorce-uae/" class="related-card">
+            <strong>Domestic Violence and Divorce UAE</strong>
+            <span>Protection orders, DFWAC, and legal rights</span>
+          </a>
+          <a href="/en/divorce-for-expats-in-uae/" class="related-card">
+            <strong>Divorce for Expats in UAE</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+  .info-box a { color: #c9a84c; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

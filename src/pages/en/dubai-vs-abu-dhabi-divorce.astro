@@ -1,0 +1,511 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Dubai vs Abu Dhabi Divorce: Which Court Should You Use?';
+const description =
+  'Two completely different legal frameworks operate in the UAE for non-Muslims. Abu Dhabi Civil Family Court can conclude in under 1 month. Dubai requires counselling. DIFC courts handle HNW cases above AED 5M. Full comparison with timelines, costs, and which court favours which party.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/dubai-vs-abu-dhabi-divorce/',
+  ar: 'https://divorceu.ae/ar/طلاق-دبي-مقابل-أبوظبي/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Dubai vs Abu Dhabi Divorce', url: 'https://divorceu.ae/en/dubai-vs-abu-dhabi-divorce/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I choose between Dubai and Abu Dhabi courts for my divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Jurisdiction is generally determined by where the couple is habitually resident in the UAE. If you live in Dubai, you file in Dubai Personal Status Court. If you live in Abu Dhabi, you file in Abu Dhabi. However, if you have connections to both emirates -- or if your address registration is in a different emirate from where you actually reside -- there can be room to argue for the more favourable court. Parties who own property in Abu Dhabi but live in Dubai may have grounds to argue for ADCFC jurisdiction in some circumstances. Take legal advice before deciding where to file.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Abu Dhabi divorce faster than Dubai divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, for uncontested non-Muslim divorces. The Abu Dhabi Civil Family Court (ADCFC), under Abu Dhabi Law No. 14/2021, has no mandatory reconciliation or counselling requirement for uncontested cases. A straightforward uncontested civil divorce can be concluded in 3-6 weeks. Dubai\'s Personal Status Court requires family guidance counselling (typically 2-3 sessions over 4-6 weeks) before a case can proceed to a judge, making the minimum uncontested timeline 8-12 weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Abu Dhabi Civil Family Court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Abu Dhabi Civil Family Court (ADCFC) was established under Abu Dhabi Law No. 14/2021 as a specialist court for non-Muslim personal status matters. It operates under a civil, secular framework -- no religious considerations apply. It applies Federal Decree-Law No. 41 of 2022 for non-Muslim divorces and can also apply the home country law of the parties if they elect this under Article 13 of the UAE Civil Code. It is staffed by civil judges rather than religious judges, and proceedings can be conducted in Arabic with English translation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use DIFC courts for divorce in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Dubai Law No. 2 of 2025, the DIFC Courts (Dubai International Financial Centre Courts) have jurisdiction over non-Muslim personal status matters including divorce and financial proceedings. Proceedings are conducted in English. Judges are English-qualified. The DIFC Courts apply common law procedural frameworks and have access to disclosure tools like Mareva injunctions. Filing fees start at AED 5,000-10,000, and legal costs are substantially higher than mainland courts. The practical threshold for DIFC to make sense is approximately AED 5 million in disputed assets.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does it matter which emirate I live in for divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The emirate of habitual residence determines which court system you use. Dubai and Abu Dhabi have materially different procedures and timelines for non-Muslim divorces. Abu Dhabi has the ADCFC (faster, more civil framework) while Dubai uses the Personal Status Court with mandatory counselling. For Muslim divorces, both emirates apply Federal Decree-Law No. 41 of 2024 through their respective Personal Status Courts -- the differences are less significant, though Abu Dhabi tends to have faster processing times.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Abu Dhabi or Dubai better for the financially weaker spouse?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Abu Dhabi courts are generally considered more flexible and internationally-minded in their approach to financial orders for non-Muslim expats. The ADCFC in particular has been described by practitioners as more willing to consider needs-based and contribution-based arguments. Dubai Personal Status Court tends to apply the strict separate-property rule more consistently. For HNW cases with complex asset structures, the DIFC Courts offer the widest toolkit including common law financial disclosure and Mareva injunctions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the filing fees for divorce in Dubai vs Abu Dhabi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dubai Personal Status Court: filing fee is typically AED 200-400 for the initial application. Abu Dhabi Civil Family Court: filing fee is approximately AED 300-500. DIFC Courts: filing fee starts at AED 5,000 and increases with the value of financial claims (2% of claim value, capped). ADGM Courts: similar fee structure to DIFC. These are court fees only -- lawyer fees are separate and typically range from AED 10,000-50,000 for a straightforward uncontested case up to AED 200,000+ for complex contested proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between DIFC and ADGM courts for divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The DIFC Courts are located in Dubai\'s financial free zone and have non-Muslim personal status jurisdiction under Dubai Law No. 2 of 2025. ADGM Courts are in Abu Dhabi\'s Al Maryah Island financial free zone and have similar jurisdiction for Abu Dhabi-connected parties. Both apply English common law procedural frameworks, conduct proceedings in English, and have access to injunctive relief tools. DIFC is more established and has a larger pool of qualified practitioners. ADGM is newer but growing rapidly as Abu Dhabi\'s financial sector expands. Both are suitable for HNW international divorces; the choice between them is primarily driven by where the parties are based.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do Muslim couples have different options in Dubai vs Abu Dhabi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For Muslim couples, both emirates apply Federal Decree-Law No. 41 of 2024 (the new Personal Status Law effective April 15 2025) through their respective Personal Status Courts. The substantive law is the same. Procedurally, Abu Dhabi tends to have faster processing and more flexible scheduling. Dubai courts are well-resourced and experienced but can have longer waiting periods. The Family Guidance Department (for mediation and reconciliation) operates in both emirates. Both have specialist judges for personal status matters.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if we live in Sharjah, Ajman, or another emirate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Residents of the other five emirates (Sharjah, Ajman, Ras Al Khaimah, Fujairah, Umm Al Quwain) use their local emirate Personal Status Courts. Non-Muslims in these emirates can also file under Federal Decree-Law No. 41 of 2022 through the relevant local court. The ADCFC is specifically an Abu Dhabi institution and is not available to residents of other emirates unless they have Abu Dhabi connections. The DIFC is available to any UAE resident for non-Muslim matters as Dubai is the closest major financial centre.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+
+const comparisonRows = [
+  { criterion: 'Governing law (non-Muslim)', adcfc: 'Federal Decree-Law No. 41/2022 + civil framework under Abu Dhabi Law No. 14/2021', dubai: 'Federal Decree-Law No. 41/2022 (same substantive law)', difc: 'FL 41/2022 + common law procedure; home country law available' },
+  { criterion: 'Mandatory counselling', adcfc: 'No (not required for uncontested)', dubai: 'Yes -- 2-3 sessions at Family Guidance, adds 4-6 weeks minimum', difc: 'No' },
+  { criterion: 'Speed (uncontested)', adcfc: '3-6 weeks', dubai: '8-12 weeks', difc: '8-16 weeks (high procedural rigour)' },
+  { criterion: 'Language', adcfc: 'Arabic (English translation provided)', dubai: 'Arabic only (court translator for expats)', difc: 'English throughout' },
+  { criterion: 'Judge type', adcfc: 'Civil judges; secular framework', dubai: 'Personal Status judges; religious law background', difc: 'English common law judges' },
+  { criterion: 'Financial disclosure', adcfc: 'Court can order; growing use', dubai: 'Court can order; less routinely applied', difc: 'Full English-style financial disclosure; Mareva injunctions available' },
+  { criterion: 'Alimony approach', adcfc: 'Flexible; contribution and needs considered', dubai: 'Stricter separate-property approach', difc: 'Common law needs and sharing analysis' },
+  { criterion: 'Filing fees', adcfc: 'AED 300-500', dubai: 'AED 200-400', difc: 'AED 5,000+ (2% of claim value)' },
+  { criterion: 'Typical legal costs', adcfc: 'AED 15,000-60,000 for contested cases', dubai: 'AED 10,000-50,000 for contested cases', difc: 'AED 100,000-500,000+ for contested cases' },
+  { criterion: 'Best suited for', adcfc: 'Non-Muslim expats wanting fast, secular proceedings', dubai: 'Residents in Dubai; Muslim and non-Muslim', difc: 'HNW non-Muslim expats, AED 5M+ assets, English preferred' },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/dubai-vs-abu-dhabi-divorce/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">UAE Court Selection Guide -- 2025</p>
+      <h1>Dubai vs Abu Dhabi Divorce: Which Court Should You Use?</h1>
+      <p class="hero-desc">
+        Two entirely different legal frameworks operate in parallel in the UAE for non-Muslim divorces. Abu Dhabi's Civil Family Court can finalise an uncontested divorce in under four weeks with no mandatory counselling. Dubai requires family guidance sessions and takes at least three months. For high-value cases, the DIFC Courts run in English with common law financial tools. Choosing the right court is not just procedural -- it can change both your timeline and your financial outcome.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Quick orientation</h2>
+        <ul class="key-facts">
+          <li><strong>Abu Dhabi Civil Family Court (ADCFC):</strong> secular, fast, no mandatory reconciliation. Best for non-Muslims wanting speed.</li>
+          <li><strong>Dubai Personal Status Court:</strong> requires counselling, 8-12 weeks minimum for uncontested non-Muslim cases. Applies FL 41/2022.</li>
+          <li><strong>DIFC Courts (Dubai):</strong> English language, common law framework, high cost. For AED 5M+ disputed asset cases.</li>
+          <li><strong>ADGM Courts (Abu Dhabi):</strong> equivalent to DIFC but Abu Dhabi-based. Growing in use for HNW international cases.</li>
+          <li><strong>Muslim couples:</strong> both emirates apply FL 41/2024 through Personal Status Courts. Less procedural difference than for non-Muslims.</li>
+          <li><strong>Jurisdiction is determined by habitual residence</strong> -- but address registration and asset location can create arguments for an alternative court.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>Abu Dhabi Civil Family Court: The Secular Framework</h2>
+        <p>
+          The Abu Dhabi Civil Family Court was established under <strong>Abu Dhabi Law No. 14/2021</strong> as a specialist civil court for personal status matters involving non-Muslims. It is one of the most significant developments in UAE family law in recent decades.
+        </p>
+        <p>
+          The ADCFC operates under a completely secular, civil framework. There are no religious requirements, no religious judges, and no application of any religious law. It applies <strong>Federal Decree-Law No. 41 of 2022</strong> (the non-Muslim Civil Personal Status Law) directly, and it can also apply the home country law of the parties under Article 13 of the UAE Civil Code when parties make that election.
+        </p>
+
+        <h3>Key features of the ADCFC</h3>
+        <ul>
+          <li><strong>No mandatory reconciliation:</strong> for uncontested divorces, parties are not required to attend counselling or mediation sessions. If both parties agree to divorce, the court processes the application directly.</li>
+          <li><strong>Speed:</strong> uncontested cases can be finalised in 3-6 weeks. This is faster than almost any other court system for family matters in the Gulf region.</li>
+          <li><strong>Civil judges:</strong> judges are civil law practitioners with expertise in the non-Muslim personal status framework, not religious law specialists.</li>
+          <li><strong>International framework:</strong> the ADCFC has been specifically designed for the international expatriate population. It has English-language administrative staff and translation services, and its approach is described by practitioners as more internationally minded than traditional UAE Personal Status Courts.</li>
+        </ul>
+
+        <h3>SA v FA [2022] EWFC 115 and the ADCFC's international standing</h3>
+        <p>
+          The ADCFC's international credibility was confirmed in SA v FA [2022] EWFC 115, where the English High Court stayed its own proceedings in favour of the ADCFC, finding it a legitimate and appropriate forum for an international family dispute. This recognition by an English court gives the ADCFC standing that some other Gulf courts do not yet have in the eyes of Western legal systems.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Who should consider the ADCFC</h3>
+          <p>Non-Muslim expats who: (1) are habitually resident in Abu Dhabi or have Abu Dhabi connections; (2) want the fastest possible process for an uncontested divorce; (3) want a secular, civil framework without any religious elements; (4) want to elect their home country law for the financial aspects. The ADCFC is particularly well-suited for British, European, Australian, and American expats divorcing in Abu Dhabi.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Dubai Personal Status Court: The Established System</h2>
+        <p>
+          Dubai's Personal Status Court is the UAE's most established and highest-volume court for divorce matters. It handles both Muslim and non-Muslim personal status cases, applying different legal frameworks to each.
+        </p>
+        <p>
+          For non-Muslim expats, the Dubai PSC applies <strong>Federal Decree-Law No. 41 of 2022</strong>. For Muslim residents and UAE nationals, it applies <strong>Federal Decree-Law No. 41 of 2024</strong> (effective April 15 2025).
+        </p>
+
+        <h3>The mandatory counselling requirement</h3>
+        <p>
+          The most significant practical difference between Dubai PSC and the ADCFC for non-Muslim expats is the mandatory family guidance counselling. Before a divorce case can proceed to a judge in Dubai, the parties must attend the Family Guidance Department. The counsellors attempt reconciliation and mediation. There are typically 2-3 sessions scheduled over 4-6 weeks. If reconciliation fails -- which in a typical expat divorce it usually does -- the counsellor issues a certificate allowing the case to proceed to court.
+        </p>
+        <p>
+          For parties who are clearly committed to divorce and simply want the process completed, these sessions are a procedural hurdle rather than a genuine reconciliation opportunity. They add a minimum of 4-6 weeks to the timeline.
+        </p>
+
+        <h3>The Dubai PSC's approach to finances</h3>
+        <p>
+          Dubai courts tend to apply the strict separate-property rule of UAE Personal Status Law more consistently than Abu Dhabi courts. This means: what is in your name, you keep. What is in your spouse's name, they keep. Contribution claims (arguing that you funded an asset in the other person's name) are available but are assessed rigorously against the evidentiary standard.
+        </p>
+        <p>
+          For the financially weaker spouse in a case where assets are concentrated in the other party's name, Dubai PSC may produce a less favourable financial outcome than ADCFC, where judges have demonstrated more flexibility in applying the contribution and fairness provisions of FL 41/2022.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Full Court Comparison Table</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Criterion</th>
+                <th>Abu Dhabi Civil Family Court</th>
+                <th>Dubai Personal Status Court</th>
+                <th>DIFC Courts</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-criterion">{row.criterion}</td>
+                  <td class="td-cell">{row.adcfc}</td>
+                  <td class="td-cell">{row.dubai}</td>
+                  <td class="td-cell">{row.difc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">Costs are indicative for contested cases. Uncontested cases are significantly cheaper across all courts. Legal fees vary considerably by firm and case complexity.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>DIFC Courts: The High-Net-Worth Option</h2>
+        <p>
+          The DIFC Courts gained jurisdiction over non-Muslim personal status matters under <strong>Dubai Law No. 2 of 2025</strong>. This extends their existing role as Dubai's English-language common law commercial court into family matters for the first time.
+        </p>
+        <p>
+          The DIFC Courts offer something unique in the UAE: divorce proceedings conducted entirely in English, before judges trained in English common law, with access to common law procedural tools that are unavailable in the mainland court system.
+        </p>
+
+        <h3>What the DIFC Courts offer that mainland courts do not</h3>
+        <ul>
+          <li><strong>Mareva injunctions:</strong> a freezing injunction preventing a party from dissipating assets pending the financial proceedings. Mainland courts have precautionary attachments, which serve a similar function, but DIFC Mareva injunctions are immediately recognisable by courts in England, Australia, and other common law jurisdictions -- making them more effective against international assets.</li>
+          <li><strong>Anton Piller orders:</strong> search and seizure orders for evidence preservation. Available in DIFC; not standard in mainland proceedings.</li>
+          <li><strong>Full financial disclosure:</strong> the DIFC Courts can order comprehensive financial disclosure with the same rigour as English courts -- complete asset lists, bank statements, company structures, valuations. This is particularly useful where one party has complex structures or suspects undisclosed assets.</li>
+          <li><strong>English-language proceedings:</strong> for parties who are not Arabic speakers, conducting the entire case in English removes the communication barrier and the reliance on court interpreters.</li>
+          <li><strong>Common law precedent:</strong> DIFC judges can draw on a vast body of English and common law family law precedent in applying principles such as sharing, need, and fairness to financial division.</li>
+        </ul>
+
+        <h3>The cost barrier</h3>
+        <p>
+          DIFC proceedings are substantially more expensive than mainland court proceedings. Filing fees start at AED 5,000-10,000 for the initial application and increase with the value of financial claims (approximately 2% of the claim value, capped at certain levels). Legal fees are also higher -- practitioners in the DIFC tend to charge at international law firm rates rather than UAE local firm rates.
+        </p>
+        <p>
+          The practical threshold at which DIFC makes financial sense is approximately AED 5 million in disputed assets. Below that, the additional cost of DIFC proceedings is likely to exceed any additional financial recovery. Above that threshold -- particularly where assets include offshore structures, international holdings, or complex financial instruments -- the DIFC's procedural advantages can justify the premium.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>ADGM Courts: Abu Dhabi's equivalent</h3>
+          <p>Abu Dhabi Global Market (ADGM) Courts offer similar functionality to DIFC for Abu Dhabi-connected parties. Proceedings in English, common law framework, English-qualified judges. ADGM is newer and its family law jurisdiction is still developing, but for parties with Abu Dhabi-based international businesses or assets, ADGM may be the more natural forum than DIFC.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>How Jurisdiction Is Determined Between Emirates</h2>
+        <p>
+          The starting point is habitual residence: you file in the emirate where you habitually reside. A person who lives and works in Dubai, whose children attend school in Dubai, and whose family home is in Dubai -- that person files in Dubai courts.
+        </p>
+        <p>
+          However, the UAE does not have a rigid territorial rule that absolutely prevents arguments for another court. The following situations can create room for court selection:
+        </p>
+
+        <div class="scenario-list">
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Address registration vs actual residence</p>
+            <p>UAE visa and registration requirements mean that many residents have their official address registered at a location different from where they actually live. Someone registered in Abu Dhabi (for visa purposes) who actually lives in Dubai may have arguments for either court. Courts look at actual habitual residence -- where you actually spend your days -- rather than just address registration. But if there is genuine ambiguity, legal advice on which court to target can be valuable.</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Assets concentrated in a different emirate</p>
+            <p>A couple living in Dubai who own their primary residential property in Abu Dhabi (Abu Dhabi Law covers their property rights there) may have arguments for ADCFC jurisdiction, particularly if the main financial dispute centres on that Abu Dhabi property. Courts consider where the main subject matter of the dispute is located.</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Employment in a free zone</p>
+            <p>Employment in a DIFC-registered entity, or ADGM-registered entity, may support an argument for those courts' jurisdiction for financial proceedings, even if the couple lives in mainland Dubai or Abu Dhabi. The jurisdictional rules for DIFC personal status are still being developed under Dubai Law No. 2 of 2025 and will become clearer as cases are decided.</p>
+          </div>
+        </div>
+
+        <div class="info-box info-box--warning">
+          <h3>Forum shopping has limits</h3>
+          <p>Deliberately filing in a court with which you have minimal genuine connection, purely because its rules favour you, is forum shopping. UAE courts are aware of this practice. If you file in ADCFC without any real Abu Dhabi connection, the court can decline jurisdiction and refer you back to Dubai. Your jurisdiction choice must be based on genuine connecting factors, not just on which court you prefer.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Financial Implications: Which Court Is Better for You?</h2>
+        <p>
+          The financial implications of court choice depend entirely on your individual circumstances. There is no universally "better" court -- it depends on the asset mix, your role in the marriage, and what outcome you are seeking.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Your situation</th>
+                <th>Court likely to favour you</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Higher earner, assets in your name, want to keep them</td>
+                <td class="td-rule--gold">Dubai PSC or ADCFC</td>
+                <td class="td-light">Separate property rules protect titleholder. Less redistribution than DIFC or home country courts.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Financially weaker spouse, partner has assets in their name</td>
+                <td class="td-rule--gold">ADCFC (elect home country law) or DIFC</td>
+                <td class="td-light">ADCFC's flexibility and home-law election can bring contribution/needs analysis. DIFC applies common law sharing principles.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Complex assets, suspected hidden wealth, offshore structures</td>
+                <td class="td-rule--gold">DIFC Courts</td>
+                <td class="td-light">Full financial disclosure, Mareva injunctions, forensic tracing capabilities unavailable in mainland courts.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Uncontested divorce, want it done fast</td>
+                <td class="td-rule--gold">Abu Dhabi Civil Family Court</td>
+                <td class="td-light">No mandatory counselling. Fastest UAE route to final divorce decree for non-Muslims.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Muslim couple, standard divorce matters</td>
+                <td class="td-rule--gold">Local Personal Status Court (Dubai or Abu Dhabi)</td>
+                <td class="td-light">FL 41/2024 applies in both. Abu Dhabi slightly faster; Dubai more established. Choice driven by residence.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Muslim Couples: Dubai vs Abu Dhabi Personal Status Courts</h2>
+        <p>
+          For Muslim couples, both Dubai and Abu Dhabi Personal Status Courts apply <strong>Federal Decree-Law No. 41 of 2024</strong> (effective April 15 2025, replacing Federal Law No. 28 of 2005). The substantive law is the same in both emirates. The practical differences are procedural and administrative.
+        </p>
+
+        <h3>Dubai Personal Status Court</h3>
+        <p>
+          Dubai's PSC is the highest-volume court in the UAE for personal status matters. It has extensive experience with international Muslim divorces. The court has Arabic-only proceedings (court interpreters are available). The Family Guidance Department in Dubai is well-resourced and experienced. Average uncontested case timeline: 8-14 weeks including the mandatory reconciliation process.
+        </p>
+
+        <h3>Abu Dhabi Personal Status Court</h3>
+        <p>
+          Abu Dhabi's Personal Status Court has somewhat faster processing times than Dubai for Muslim divorces. The Family Guidance Department tends to schedule sessions more quickly. The court is known for efficient administration. Average uncontested case timeline: 6-10 weeks.
+        </p>
+
+        <h3>Mahr enforcement: no significant difference between emirates</h3>
+        <p>
+          The enforcement of mahr obligations is equally robust in both Dubai and Abu Dhabi. Under Articles 45-48 of Federal Decree-Law No. 41 of 2024, deferred mahr falls due immediately on divorce and is treated as a privileged debt. Both emirates' execution courts apply the same enforcement tools: bank freezes, salary garnishment, travel bans, and asset attachment. There is no strategic advantage between emirates specifically for mahr enforcement.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Residents of Sharjah and Other Emirates</h2>
+        <p>
+          Residents of the other five emirates -- Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain -- file for divorce in their respective emirate's Personal Status Courts. For non-Muslims, they apply Federal Decree-Law No. 41 of 2022 through the local court. For Muslims, Federal Decree-Law No. 41 of 2024 applies.
+        </p>
+        <p>
+          The ADCFC is specifically an Abu Dhabi institution. Residents of other emirates cannot access it unless they have Abu Dhabi connections that would support jurisdiction.
+        </p>
+        <p>
+          However, the DIFC Courts are potentially available to any UAE resident for non-Muslim personal status matters, as Dubai is the national financial centre and the DIFC's jurisdictional scope under Dubai Law No. 2 of 2025 is not geographically limited to Dubai residents alone. Practitioners are still working through the jurisdictional boundaries as cases are litigated under the new law.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>UAE or Home Country Divorce</strong>
+            <span>Jurisdiction choice and what it means financially</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>How Dubai real estate is handled in divorce</span>
+          </a>
+          <a href="/en/uae-divorce-recognised-uk/" class="related-card">
+            <strong>UAE Divorce Recognised in UK</strong>
+            <span>Recognition, apostille, and Part III MFPA</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Non-Muslim civil divorce, timelines, and law choices</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Maintenance amounts and enforcement</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and what drives your total bill</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long divorce takes by case type in each emirate</span>
+          </a>
+          <a href="/en/adgm-divorce-abu-dhabi/" class="related-card">
+            <strong>ADGM Divorce Abu Dhabi</strong>
+            <span>English common law divorce for HNW expats in Abu Dhabi</span>
+          </a>
+          <a href="/en/divorce-lawyer-abu-dhabi/" class="related-card">
+            <strong>Divorce Lawyer Abu Dhabi</strong>
+            <span>Find a qualified Abu Dhabi family lawyer</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 600px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 12px; font-size: 0.72rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 9px 12px; font-size: 0.83rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-criterion { font-weight: 700; color: #0a1628; font-size: 0.82rem; }
+  .td-cell { color: #374151; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-rule--gold { color: #b45309; font-weight: 600; }
+  .td-rule--yes { color: #15803d; font-weight: 600; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  .scenario-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .scenario-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-card--numbered .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

@@ -1,0 +1,453 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'المهر عند الطلاق في الإمارات — المهر المعجل والمؤجل وكيفية المطالبة به ٢٠٢٥';
+const description =
+  'المهر حق قانوني واجب النفاذ للمرأة المسلمة في الإمارات. تعرّفي على الفرق بين المهر المعجل والمؤجل، ومتى يسقط حق المرأة، وكيف تطالبين بالمهر غير المدفوع أمام محكمة التنفيذ.';
+
+const canonical = 'https://divorceu.ae/ar/المهر-عند-الطلاق-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/mahr-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'المهر عند الطلاق في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع الزوج تخفيض مبلغ المهر أثناء الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا يستطيع تخفيضه بشكل انفرادي. المهر المتفق عليه في عقد الزواج هو حق قانوني للزوجة وتُلزِم المحكمة به. يجوز التفاوض لكن لا يجوز الإلغاء من طرف واحد.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث إذا لم يُحدِّد عقد الزواج مبلغ المهر؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تُقدّر المحكمة "مهر المثل" وهو المبلغ المعتاد لنساء مماثلات من نفس البيئة الاجتماعية لأسرة الزوجة وفق ما درج في عائلتها. تستند المحكمة إلى وضع الزوج المادي ومستوى معيشته لتحديد المبلغ المناسب.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تستحق المرأة المهر في حالة الخلع؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'في الخلع ترد الزوجة عادةً المهر المعجل (المقدَّم) لأنها هي التي طلبت الفسخ. أما المهر المؤجل فحكمه في الخلع أكثر تعقيداً؛ إذا كان الزوج هو المتسبب في انهيار الزواج قد تحتفظ الزوجة بحق المهر المؤجل. يُنصح بالحصول على استشارة قانونية متخصصة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف أطالب بالمهر المؤجل غير المدفوع بعد الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يُقدَّم طلب إلى محكمة الأحوال الشخصية مرفقاً بعقد الزواج (النكاح) وشهادة الطلاق. تُصدر المحكمة حكماً بالمبلغ المستحق. إذا رفض الزوج الدفع يُلجأ إلى محكمة التنفيذ التي تملك صلاحية تجميد الحسابات والحجز على الراتب ومنع السفر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما مدة التقادم للمطالبة بالمهر المؤجل في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا يوجد تقادم صريح في قانون الأحوال الشخصية الإماراتي للمطالبة بالمهر، لكن المحاكم تتوقع المطالبة في وقت مناسب. الأجدر دمج مطالبة المهر مع دعوى الطلاق لتوفير الوقت والتكاليف بدلاً من رفع دعوى مستقلة لاحقاً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يؤثر إعادة زواج المرأة على حقها في المهر من زواجها السابق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. حق المرأة في المطالبة بالمهر غير المدفوع من زواج سابق لا يتأثر بزواجها من جديد. حتى لو تزوجت مرة أخرى يبقى لها الحق القانوني في مطابقة زوجها السابق على المهر المستحق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الفرق بين المهر والنفقة والمتعة في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ثلاثة حقوق مستقلة تماماً: المهر هو المبلغ المتفق عليه في عقد الزواج وهو ملك الزوجة الخالص. النفقة (نفقة العدة) مصاريف معيشية تُدفع طوال فترة العدة وتُحددها المحكمة بحسب دخل الزوج. المتعة دفعة تعويضية لمرة واحدة حين يكون الطلاق بإرادة الزوج دون سبب من الزوجة. يجوز المطالبة بالثلاثة في دعوى واحدة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تستطيع المحكمة تخفيض مبلغ المهر الذي تراه مبالغاً فيه؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'المحاكم تحترم المهر المتفق عليه بحرية وتوثيق. قد تتدخل فقط إذا كان المهر مفرطاً لدرجة تُفضي إلى الإفلاس بلا مبرر واقعي. عبء الإثبات على الزوج لإثبات الإكراه أو اختلاف الظروف. الصعوبة المالية اللاحقة وحدها لا تُسوّغ التخفيض.',
+      },
+    },
+  ],
+};
+
+const enforcementTools = [
+  { tool: 'تجميد الحساب البنكي', how: 'تُصدر المحكمة أمراً للبنوك بتجميد الحسابات ونقل المبالغ حتى قدر الحكم', timeline: '١ إلى ٣ أسابيع من أمر التنفيذ' },
+  { tool: 'الحجز على الراتب', how: 'يُوجَّه صاحب العمل لخصم ما يصل إلى ٥٠٪ من الراتب الشهري حتى سداد الدين', timeline: '١ إلى ٢ شهر' },
+  { tool: 'حظر السفر', how: 'يمنع الزوج من مغادرة الإمارات حتى السداد', timeline: 'يُطبّق سريعاً في أيام معدودة' },
+  { tool: 'الحجز على الأصول', how: 'يُصادر المنفذون القضائيون الأصول المنقولة (مركبات، مقتنيات ثمينة) للبيع في المزاد', timeline: '٢ إلى ٤ أشهر' },
+  { tool: 'التنفيذ على العقار', how: 'العقار المسجّل باسمه يمكن الحجز عليه وبيعه للوفاء بالدين', timeline: '٣ إلى ٦ أشهر' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يستطيع الزوج تخفيض مبلغ المهر أثناء الطلاق؟',
+    answer: 'لا يستطيع ذلك بشكل انفرادي. المهر المتفق عليه في عقد الزواج حق قانوني لك وتُلزِم به المحكمة. يجوز التفاوض لكن لا يجوز الإلغاء من طرف واحد.',
+  },
+  {
+    question: 'ماذا يحدث إذا لم يُحدِّد عقد الزواج مبلغ المهر؟',
+    answer: 'تُقدّر المحكمة مهر المثل وهو المبلغ المعتاد لنساء من نفس البيئة الاجتماعية لأسرة الزوجة. تستند المحكمة إلى وضع الزوج المادي ومستوى معيشته لتحديد المبلغ المناسب.',
+  },
+  {
+    question: 'هل تستحق المرأة المهر في حالة الخلع؟',
+    answer: 'في الخلع ترد الزوجة عادةً المهر المعجل. أما المهر المؤجل فحكمه أكثر تعقيداً؛ إذا كان الزوج متسبباً في انهيار الزواج قد تحتفظ الزوجة بحق المهر المؤجل. يُنصح بالحصول على استشارة متخصصة.',
+  },
+  {
+    question: 'كيف أطالب بالمهر المؤجل غير المدفوع بعد الطلاق؟',
+    answer: 'يُقدَّم طلب إلى محكمة الأحوال الشخصية مرفقاً بعقد الزواج وشهادة الطلاق. تُصدر المحكمة حكماً بالمبلغ المستحق. إذا رفض الزوج يُلجأ إلى محكمة التنفيذ.',
+  },
+  {
+    question: 'ما مدة التقادم للمطالبة بالمهر المؤجل في الإمارات؟',
+    answer: 'لا يوجد تقادم صريح لكن المحاكم تتوقع المطالبة في وقت مناسب. الأجدر دمج مطالبة المهر مع دعوى الطلاق لتوفير الوقت والتكاليف.',
+  },
+  {
+    question: 'هل يؤثر إعادة زواج المرأة على حقها في المهر من زواجها السابق؟',
+    answer: 'لا. حق المرأة في المطالبة بالمهر غير المدفوع لا يتأثر بزواجها الجديد. يبقى لها الحق في مطابعة زوجها السابق على المهر المستحق.',
+  },
+  {
+    question: 'ما الفرق بين المهر والنفقة والمتعة في الإمارات؟',
+    answer: 'ثلاثة حقوق مستقلة: المهر مبلغ عقد الزواج وملك الزوجة. النفقة مصاريف معيشية خلال العدة. المتعة تعويض لمرة واحدة عند الطلاق بإرادة الزوج. يجوز المطالبة بالثلاثة في دعوى واحدة.',
+  },
+  {
+    question: 'هل تستطيع المحكمة تخفيض مبلغ المهر الذي تراه مبالغاً فيه؟',
+    answer: 'المحاكم تحترم المهر المتفق عليه بحرية. قد تتدخل فقط إذا كان مفرطاً لدرجة الإفلاس بلا مبرر. الصعوبة المالية اللاحقة وحدها لا تُسوّغ التخفيض.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">المهر والحقوق المالية · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        المهر ليس هبةً يملك الزوج إهمالها، بل هو حق تعاقدي واجب النفاذ قانوناً. سواء دُفع المهر المعجل عند الزواج أو بقي المهر المؤجل معلّقاً، فإن كامل المبلغ المستحق يحلّ أجله فور صدور حكم الطلاق. تعامل محاكم الإمارات المهر غير المدفوع باعتباره ديناً ويُنفَّذ به بذات الآليات المعتمدة في أي حكم قضائي.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-grid-wrap">
+        <div class="summary-card">
+          <p class="s-label">مدة التنفيذ</p>
+          <p class="s-value">٢ - ٤ أشهر</p>
+          <p class="s-note">من الطلب إلى الاستيفاء</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">رسوم التقديم</p>
+          <p class="s-value">٣٠٠ - ٧٠٠ درهم</p>
+          <p class="s-note">محكمة الأحوال الشخصية</p>
+        </div>
+        <div class="summary-card">
+          <p class="s-label">أتعاب المحامي</p>
+          <p class="s-value">٢,٠٠٠ - ٥,٠٠٠ درهم</p>
+          <p class="s-note">طلب مهر نموذجي</p>
+        </div>
+      </div>
+
+      <div class="answer-box">
+        <h2>ما المهر وما أهميته عند الطلاق في الإمارات؟</h2>
+        <p>
+          المهر هو المبلغ الذي يُلتزم به الزوج لزوجته شرطاً في عقد الزواج الإسلامي. خلافاً للمهر في كثير من الثقافات، في الإسلام يدفع الزوج للزوجة لا العكس. هذا يعني قانونياً أن المهر ملك الزوجة الخالص لا يشاركها فيه أحد، كفلته المواد 45 إلى 48 من <strong>المرسوم بقانون اتحادي رقم 41 لسنة 2024</strong> (نافذ من 15 أبريل 2025).
+        </p>
+        <p>
+          تتعامل محاكم الإمارات مع شرط المهر في عقد الزواج باعتباره بنداً تعاقدياً ملزماً تماماً كأي بند في عقد تجاري.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>المهر المعجل والمهر المؤجل: الفرق الفقهي والقانوني</h2>
+        <p>
+          ينقسم المهر إلى نوعين: المهر المعجل (المقدَّم) ويُدفع عند إتمام العقد أو بُعيد حفل الزواج، والمهر المؤجل (المؤخَّر) يتفق عليه عند الزواج لكنه لا يستحق إلا عند وقوع حدث مستقبلي هو في الغالب الطلاق أو وفاة الزوج.
+        </p>
+        <p>
+          كثير من عقود الزواج في الإمارات تجمع بين النوعين: مهر معجل متواضع يُدفع في الحفل، ومهر مؤجل أكبر يُشكّل ضماناً مالياً للزوجة. هذه الحماية الثنائية منصوص عليها فقهاً وتعززها المادة 45 من المرسوم بقانون 41/2024.
+        </p>
+
+        <h3>المهر المعجل عند الطلاق</h3>
+        <p>
+          المهر المعجل مفترض دفعه عند الزواج. إذا لم يدفع الزوج المهر المعجل المتفق عليه، تراكم عليه ديناً من تاريخ استحقاقه. يمكن للزوجة المطالبة به في أي وقت، بما في ذلك أثناء دعوى الطلاق. أحكام المادتين 47 و48 من المرسوم بقانون 41/2024 تُعلي صراحةً من مكانة هذا الحق وتُشدد على أنه لا يسقط بالتقادم المعتاد.
+        </p>
+
+        <h3>المهر المؤجل عند الطلاق</h3>
+        <p>
+          يحلّ المهر المؤجل فور النطق بالطلاق سواء كان طلاقاً بإرادة الزوج أو خلعاً بطلب الزوجة أو طلاقاً قضائياً. لا يوجد مهلة سماح. لحظة صدور حكم الطلاق يُصبح كامل المبلغ المؤجل ديناً واجب الأداء في الحال.
+        </p>
+        <p>
+          لا تُجيز المحاكم للزوج تقسيط المبلغ إلا بموافقة الزوجة. إذا أرادت استيفاء المبلغ كاملاً فوراً فهذا حقها. وستعامل محكمة التنفيذ الرفض أو التأخير مثل أي حكم مالي آخر.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>المطالبة بالمهر ضمن دعوى الطلاق وليس بعدها</h3>
+          <p>لا يوجد تقادم صارم للمطالبة بالمهر، لكن دمج المطالبة في دعوى الطلاق الرئيسية أكثر كفاءة وأقل تكلفة بكثير. رفع دعوى مستقلة لاحقاً يتطلب إعادة تأسيس الملف القانوني من جديد.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>حالات سقوط حق المرأة في المهر كلياً أو جزئياً</h2>
+        <p>
+          قانون الأحوال الشخصية الإماراتي يحدد حالات يتأثر فيها حق المهر:
+        </p>
+        <ul class="checklist">
+          <li>الخلع: ترد الزوجة المهر المعجل لأنها هي التي طلبت إنهاء الرابطة الزوجية</li>
+          <li>النشوز الموثّق قضائياً: إذا ثبت نشوز الزوجة بحكم قضائي قد تسقط بعض حقوقها لكن هذا يُقيَّد بضوابط صارمة</li>
+          <li>الطلاق قبل الدخول: يكون للزوجة نصف المهر المعجل فقط إذا طُلِّقت قبل الدخول وقبل التخلي (المادة 46 من المرسوم بقانون 41/2024)</li>
+          <li>التنازل الحر: إذا تنازلت الزوجة عن المهر بإرادتها الحرة الكاملة وثبت ذلك بصورة قانونية</li>
+        </ul>
+        <p>
+          ادّعاء الزوج بأن الزوجة تنازلت غير كافٍ؛ يجب إثباته بدليل موثّق. ادعاء النشوز يستلزم حكماً قضائياً سابقاً لا مجرد قول.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>خطوات المطالبة بالمهر غير المدفوع أمام محاكم الإمارات</h2>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">١</div>
+            <div class="step-content">
+              <h3>جمع عقد الزواج والوثائق الثبوتية</h3>
+              <p>عقد الزواج الأصلي (النكاح) أو نسخة مصدّقة منه هو دليلك الأساسي. يجب أن يُحدد مبلغ المهر صراحةً. إذا تم الزواج في الخارج قد يستلزم الأمر توثيقه أو الحصول على شهادة أبوستيل لقبوله أمام محاكم الإمارات.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٢</div>
+            <div class="step-content">
+              <h3>توكيل محامٍ أسرة متخصص في الإمارات</h3>
+              <p>يُحضّر المحامي طلب المهر ويُقدّمه إلى محكمة الأحوال الشخصية في إمارة إقامتك. في دبي هي دائرة شؤون الأسرة في محاكم دبي. في أبوظبي هي الدائرة القضائية في جهاز القضاء الأبوظبي.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٣</div>
+            <div class="step-content">
+              <h3>تقديم الطلب ودفع الرسوم</h3>
+              <p>رسوم التقديم 300 إلى 700 درهم حسب الإمارة وقيمة المطالبة. يُقدّم محاميك الطلب مرفقاً بعقد الزواج والوثائق الشخصية وحكم الطلاق إن كان قد صدر.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٤</div>
+            <div class="step-content">
+              <h3>الجلسة ومراجعة عقد الزواج</h3>
+              <p>يفحص القاضي عقد الزواج ويُثبّت المبلغ المتفق عليه ويتحقق مما سُدِّد فعلاً. للزوج فرصة تقديم إثبات الدفع. إذا عجز عن ذلك صدر الحكم لصالحك.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٥</div>
+            <div class="step-content">
+              <h3>صدور الحكم ومرحلة التنفيذ</h3>
+              <p>تُصدر المحكمة حكماً بإلزام الزوج بالدفع خلال مهلة محددة. إذا دفع انتهى الأمر. إذا أبى أو تأخر تُحيل القضية إلى محكمة التنفيذ.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>آليات تنفيذ حكم المهر حين يمتنع الزوج عن الدفع</h2>
+        <p>
+          حكم المحكمة بالمهر غير المدفوع أمر نافذ لا مجرد توصية. تمتلك محكمة التنفيذ في الإمارات أدوات إلزامية قوية وراسخة:
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>أداة التنفيذ</th>
+                <th>آلية العمل</th>
+                <th>المدة المعتادة</th>
+              </tr>
+            </thead>
+            <tbody>
+              {enforcementTools.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.tool}</td>
+                  <td>{row.how}</td>
+                  <td>{row.timeline}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          تستغرق إجراءات محكمة التنفيذ في الغالب شهرين إلى أربعة أشهر من تقديم الطلب إلى الاستيفاء حين تُطبَّق الأدوات المعيارية. آليات التنفيذ في الإمارات تُعدّ من الأكثر فاعلية في المنطقة لهذا النوع من الأحكام المالية.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>المهر والنفقة والمتعة: ثلاثة حقوق مستقلة لا تتنافى</h2>
+        <p>
+          كثيرات من النساء لا يدركن أن المهر والنفقة والمتعة ثلاثة حقوق قانونية مستقلة تماماً. المطالبة بأحدها لا تُقلّص الآخرين. يجوز المطالبة بالثلاثة في دعوى واحدة وهو الأجدر:
+        </p>
+        <ul class="checklist">
+          <li><strong>المهر:</strong> حقك التعاقدي في عقد الزواج. ملكك الخالص فور استحقاقه. مبلغه مُحدَّد في العقد</li>
+          <li><strong>النفقة (نفقة العدة):</strong> مصروف معيشي يدفعه الزوج طوال مدة العدة (ثلاثة أشهر تقريباً). تُحدده المحكمة بحسب دخل الزوج</li>
+          <li><strong>المتعة:</strong> دفعة تعويضية لمرة واحدة تستحقها الزوجة التي طُلِّقت بإرادة الزوج دون سبب منها. لا صيغة ثابتة لها ويُقدّرها القاضي</li>
+        </ul>
+        <p>
+          عريضة الطلاق المُحكمة التي يُعدّها محامٍ كفء تتضمن جميع المطالبات المالية مجتمعةً مما يقلّل عدد الجلسات ويحول دون ادّعاء الزوج بأن تسوية إحدى المطالبات تُسقط الأخريات.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>حالات خاصة: الخلع ووفاة الزوج وإعادة الزواج</h2>
+
+        <h3>المهر في الخلع</h3>
+        <p>
+          في الخلع تُعيد الزوجة المهر المعجل مقابل حصولها على الفسخ. هذا هو الموقف الفقهي الكلاسيكي الذي تُطبّقه محاكم الإمارات. أما المهر المؤجل في الخلع فأكثر دقة: إذا كان الزوج متسبباً في انهيار الزواج قد تُتيح المحكمة للزوجة الاحتفاظ بالمهر المؤجل حتى في دعوى الخلع. احرصي على الحصول على استشارة قانونية متخصصة قبل سلوك طريق الخلع حين يكون المهر المؤجل كبيراً.
+        </p>
+
+        <h3>وفاة الزوج قبل دفع المهر</h3>
+        <p>
+          إذا توفي الزوج قبل دفع المهر المؤجل أصبح المبلغ ديناً على تركته يُقدَّم على حقوق الورثة. يعني ذلك وجوب تسوية المهر من أصول التركة قبل توزيع الميراث. قدّمي طلبك في التركة دون تأخير للحفاظ على هذا الحق.
+        </p>
+
+        <h3>إعادة زواج المرأة لا تُسقط مطالبة المهر</h3>
+        <p>
+          حق الزوجة في المطالبة بالمهر من زواج سابق لا يتأثر بزواجها الجديد. حتى لو تزوجت مرة أخرى يبقى لها الحق القانوني في متابعة زوجها السابق على المهر المستحق من ذلك الزواج.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <div class="cta-box">
+        <h2>احصلي على استشارة متخصصة في مطالبتك بالمهر</h2>
+        <p>كل وضع مختلف. مبلغ المهر وتاريخ السداد ونوع الطلاق ووجود أطفال كلها عوامل تؤثر في استراتيجيتك. استشارة قصيرة توفر لك وضوحاً في خياراتك وجدولك الزمني وخطواتك القادمة.</p>
+        <LeadForm />
+      </div>
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>نفقة العدة والأولاد والمتعة والمسكن</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>جميع الحقوق المالية في دليل واحد</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لأحكام الطلاق</span>
+          </a>
+          <a href="/ar/قانون-الطلاق-في-الامارات/" class="related-card">
+            <strong>قانون الطلاق في الإمارات</strong>
+            <span>نص القانون الاتحادي وأبرز أحكامه</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-grid-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .summary-card { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .s-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .s-value { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .s-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0 0 0.5rem; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.85rem; font-size: 0.95rem; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.5rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid-wrap { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .summary-grid-wrap { grid-template-columns: 1fr; }
+  }
+</style>

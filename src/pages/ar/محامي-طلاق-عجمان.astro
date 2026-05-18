@@ -1,0 +1,349 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'محامي طلاق عجمان — دليل محكمة الأحوال الشخصية في عجمان ٢٠٢٥';
+const description =
+  'دليل شامل للطلاق في عجمان: محكمة الأحوال الشخصية الاتحادية، إجراءات التقديم، أتعاب المحامين، مقارنة مع دبي، وما يجب البحث عنه في محامي الأسرة في عجمان.';
+
+const canonical = 'https://divorceu.ae/ar/محامي-طلاق-عجمان/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-ajman/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'محامي طلاق عجمان' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'أين أتقدم بدعوى الطلاق في عجمان؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تُقدَّم دعاوى الطلاق في عجمان أمام محكمة الأحوال الشخصية التابعة لمحاكم عجمان الاتحادية. إذا كنت مقيماً في عجمان فتتبع قضيتك لمحاكم عجمان بصرف النظر عن مكان إبرام عقد الزواج. يُحال المواطنون الإماراتيون عادةً إلى مركز توجيه الأسرة قبل قبول الدعوى.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تبلغ أتعاب محامي الطلاق في عجمان؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أتعاب محامي الطلاق في عجمان أقل عموماً بـ١٠-٢٠٪ من نظيرها في دبي. توقع: ٢٥٠٠-٦٠٠٠ درهم للطلاق الودي المتفق عليه، ٦٠٠٠-٢٠٠٠٠ درهم للقضايا المتنازع عليها دون أطفال، ١٥٠٠٠-٤٥٠٠٠ درهم أو أكثر للقضايا المتنازع عليها التي تتضمن نزاعات حضانة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم يستغرق الطلاق في عجمان؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق الودي المتفق عليه في عجمان يستغرق ١-٤ أشهر مع الأخذ بعين الاعتبار جلسات المصالحة الإلزامية. القضايا المتنازع عليها تستغرق عادةً ٦-١٨ شهراً. محاكم عجمان لديها حجم قضايا أقل من دبي مما قد يُعني تحديد مواعيد أسرع، لكن أيضاً قضاة أقل تخصصاً في القضايا الدولية المعقدة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يختلف طلاق المسلم عن غير المسلم في عجمان؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. المسلمون يتبعون قانون الأحوال الشخصية الاتحادي رقم ٢٨ لسنة ٢٠٠٥ وتعديلاته، الذي يشمل أحكام الطلاق والخلع والنفقة والحضانة وفق الشريعة الإسلامية. غير المسلمون يخضعون للمرسوم بقانون رقم ٤١ لسنة ٢٠٢٢ الإطار المدني العلماني: طلاق بلا إثبات ذنب، حضانة متساوية، لا فترة انتظار، وخيار تطبيق قانون الدولة الأصلية.',
+      },
+    },
+  ],
+};
+
+const differences = [
+  { factor: 'الإطار القانوني', ajman: 'قانون الأحوال الشخصية الاتحادي رقم ٢٨/٢٠٠٥ (ذاته في كل الإمارات)', dubai: 'نفس القانون الاتحادي' },
+  { factor: 'جلسات المصالحة', ajman: 'إلزامية عبر مركز توجيه الأسرة — ١-٣ جلسات عادةً', dubai: 'إلزامية لكن قد تُعالَج أسرع للمقيمين الأجانب' },
+  { factor: 'حجم القضايا', ajman: 'أقل — إمارة أصغر حجماً وعدد إيداعات أقل سنوياً', dubai: 'مرتفع جداً — أكبر منظومة قضائية في الإمارات' },
+  { factor: 'لغة الإجراءات', ajman: 'العربية فقط — جميع المستندات تُترجم رسمياً', dubai: 'العربية فقط — نفس الاشتراط' },
+  { factor: 'غير المسلمين', ajman: 'القانون الإماراتي يسري بصورة افتراضية أو القانون ٤١/٢٠٢٢', dubai: 'نفسه بالإضافة إلى محاكم DIFC كخيار بديل' },
+  { factor: 'أتعاب المحامين', ajman: 'أقل بـ١٠-٢٠٪ عموماً من نظيراتها في دبي', dubai: 'أعلى بسبب تكلفة المعيشة والطلب المرتفع' },
+];
+
+const lawyerChecklist = [
+  'مرخص من دائرة العدل في عجمان — تحقق من رقم قيده في نقابة المحامين',
+  'متخصص في الأحوال الشخصية وقانون الأسرة، وليس محامياً مدنياً أو تجارياً عاماً',
+  'لديه خبرة بقضايا محاكم عجمان تحديداً وليس دبي فقط',
+  'يتحدث لغتك أو يوفر مترجماً قضائياً معتمداً',
+  'هيكل أتعاب شفاف: أتعاب ثابتة أم تفرض على كل جلسة',
+  'يشرح أنواع الطلاق الثلاثة المتاحة لك: طلاق، خلع، أو فسخ قضائي',
+  'ينصحك بشأن القانون الإماراتي مقابل قانون دولتك الأصلية على أصولك',
+];
+
+const faqItems = [
+  {
+    question: 'هل أحتاج إلى محامٍ للطلاق في عجمان؟',
+    answer: 'من الناحية التقنية يمكنك التمثيل بنفسك، لكن ذلك صعب للغاية من الناحية العملية. جميع إجراءات محاكم عجمان تُجرى باللغة العربية، وقواعد الإجراءات في الأحوال الشخصية تستلزم معرفة دقيقة. لأي عنصر متنازع عليه، سواء كان الحضانة أو النفقة أو الأصول، يُعدّ توكيل محامٍ مرخص في عجمان ضرورةً لا خياراً. حتى في القضايا الودية، يُقلل المحامي من خطأ التقديم الذي يُؤخر الإجراءات.',
+  },
+  {
+    question: 'ما مركز توجيه الأسرة في عجمان وكيف يعمل؟',
+    answer: 'مركز توجيه الأسرة وإرشادها في عجمان (يُعرف أحياناً بمركز الإرشاد الأسري) خطوةٌ أولى إلزامية لمعظم دعاوى الطلاق في عجمان قبل قبول المحكمة للإيداع. مهمته محاولة الإصلاح بين الزوجين. للمواطنين الإماراتيين والمقيمين المسلمين تُعقد جلسات متعددة عادةً. إذا فشل الإصلاح فعلاً يُصدر المركز شهادةً تُتيح للمحكمة قبول القضية. المقيمون الأجانب وغير المسلمون قد يُحالون للمركز أيضاً بحسب نوع القضية.',
+  },
+  {
+    question: 'هل يُعترف بحكم طلاق عجمان في بلدي؟',
+    answer: 'نعم، في معظم الحالات. حكم طلاق صادر عن أي محكمة إماراتية في عجمان أو غيرها وثيقةٌ قانونية سارية. يستلزم الاعتراف به في الخارج: الحصول على تصديق الأبوستيل من وزارة الخارجية الإماراتية، وترجمة رسمية معتمدة إلى اللغة المطلوبة، وفي بعض الدول تسجيل عبر السفارة أو السجلات المدنية. تعترف معظم دول الاتحاد الأوروبي والمملكة المتحدة وكندا وأستراليا بأحكام الطلاق الإماراتية.',
+  },
+  {
+    question: 'هل يمكن للمقيم الأجنبي التقديم بدعوى طلاق في عجمان إذا تزوج في الخارج؟',
+    answer: 'نعم. إذا كنت مسجلاً كمقيم في عجمان فتُقدَّم دعواك في محاكم عجمان بصرف النظر عن مكان إبرام الزواج. عقد الزواج الأجنبي يجب أن يكون مُصدَّقاً ومُوثَّقاً ومترجماً رسمياً إلى العربية عبر السفارة ووزارة الخارجية الإماراتية. يُباشر محاميك هذا الإجراء نيابةً عنك.',
+  },
+  {
+    question: 'ما رسوم المحكمة في عجمان للطلاق؟',
+    answer: 'رسوم المحكمة في عجمان من بين الأقل تكلفةً في الإمارات: ٢٠٠-٥٠٠ درهم للإيداع الأساسي، مع رسوم إضافية على كل جلسة. رسوم محاكم عجمان أقل عموماً بنسبة ٣٠-٥٠٪ من رسوم محاكم دبي لأنواع القضايا المماثلة. هذا يجعل عجمان أكثر اقتصادية للقضايا البسيطة وغير المتنازع عليها.',
+  },
+  {
+    question: 'ماذا يحدث في جلسة الطلاق الأولى في عجمان؟',
+    answer: 'في الجلسة الأولى يراجع القاضي ملف القضية ويتحقق من استيفاء الإجراءات الأولية. في الطلاق الودي الذي يوافق فيه الزوجان على جميع البنود، يمكن للقاضي مراجعة اتفاق التسوية والمصادقة عليه في هذه الجلسة. القضايا المتنازع عليها تنتهي بتحديد موعد جلسة لاحقة لفحص الخلافات في الحضانة والنفقة والأصول.',
+  },
+  {
+    question: 'كيف تختلف حضانة الأطفال في عجمان عن دبي؟',
+    answer: 'الأحكام القانونية الجوهرية متطابقة لأن الإمارتين تطبقان القانون الاتحادي ذاته. في قضايا المسلمين: الحضانة للأم حتى سن الحضانة الشرعي (١١ للبنت و١٣ للولد) مع بقاء الولاية للأب. لغير المسلمين: الحضانة المشتركة المتساوية افتراضية بموجب القانون ٤١/٢٠٢٢. الفارق العملي: محاكم عجمان قد تُصدر أحكامها بوتيرة مختلفة بسبب حجم القضايا الأقل.',
+  },
+  {
+    question: 'هل أستطيع نقل قضية طلاقي من عجمان إلى دبي؟',
+    answer: 'الاختصاص القضائي في قضايا الأحوال الشخصية يُحدد بإمارة الإقامة المسجلة. إذا كنت مقيماً في عجمان فقضيتك تتبع لمحاكم عجمان ولا يمكنك نقلها لدبي بمحض إرادتك. إذا تغيرت إقامتك إلى دبي أثناء الإجراءات قد يكون هناك أساس قانوني لطلب النقل، ناقش ذلك مع محاميك. لغير المسلمين في عجمان الراغبين في إطار القانون الإنجليزي قد تكون محاكم DIFC خياراً بحسب الظروف.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · عجمان ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        الطلاق في عجمان يتبع قانون الأحوال الشخصية الاتحادي ذاته المطبّق في دبي والشارقة. يُقدَّم الطلب أمام محكمة الأحوال الشخصية في عجمان مع جلسات مصالحة إلزامية عبر مركز توجيه الأسرة أولاً. يشرح هذا الدليل كيفية عمل محاكم عجمان وما تبحث عنه في محامي الطلاق والأتعاب والفوارق الجوهرية عن دبي.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>ملخص سريع: الطلاق في عجمان</h2>
+        <p>
+          يحكمه <strong>قانون الأحوال الشخصية الاتحادي رقم ٢٨ لسنة ٢٠٠٥</strong> كسائر إمارات الدولة.<br />
+          تُقدَّم الدعوى في <strong>محكمة الأحوال الشخصية في عجمان</strong> إذا كنت مقيماً في الإمارة.<br />
+          مصالحة إلزامية عبر مركز توجيه الأسرة قبل قبول الدعوى.<br />
+          أتعاب المحامين: <strong>٢٥٠٠-٤٥٠٠٠ درهم+</strong> حسب نوع القضية.<br />
+          المدة الزمنية: <strong>١-٤ أشهر</strong> ودي، <strong>٦-١٨ شهراً</strong> متنازع عليه.<br />
+          غير المسلمين: يخضعون للقانون <strong>٤١/٢٠٢٢</strong> — لا إثبات ذنب، لا فترة انتظار.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>الفوارق بين محاكم عجمان ودبي للطلاق</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>العامل</div>
+            <div>عجمان</div>
+            <div>دبي</div>
+          </div>
+          {differences.map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.factor}</div>
+              <div class="compare-ajman">{row.ajman}</div>
+              <div class="compare-dubai">{row.dubai}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>إجراءات الطلاق في عجمان خطوةً بخطوة</h2>
+        <ol class="steps">
+          <li>
+            <div class="step-num">١</div>
+            <div class="step-body">
+              <h3>مركز توجيه الأسرة وإرشادها</h3>
+              <p>قبل قبول معظم دعاوى الطلاق في محكمة الأحوال الشخصية بعجمان، يُحال الزوجان إلى مركز توجيه الأسرة لجلسات مصالحة. عادةً ١-٣ جلسات. إذا فشلت المصالحة فعلاً يُصدر المركز شهادةً تُتيح المضي في الدعوى القضائية.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٢</div>
+            <div class="step-body">
+              <h3>تقديم عريضة الطلاق لمحكمة الأحوال الشخصية</h3>
+              <p>يُقدِّم محاميك عريضة الطلاق إلى المحكمة. المستندات المطلوبة: عقد الزواج مصدقاً ومترجماً للعربية، الهوية الإماراتية، إثبات الإقامة في عجمان، مستندات الأطفال إن وُجدوا. تُسدَّد رسوم الإيداع في هذه المرحلة.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٣</div>
+            <div class="step-body">
+              <h3>الجلسة الأولى</h3>
+              <p>تُحدد المحكمة موعداً للجلسة الأولى. في القضايا الودية التي يوافق فيه الزوجان على كل البنود، يراجع القاضي اتفاق التسوية ويُصادق عليه. القضايا المتنازع عليها تستلزم جلسات متعاقبة لمعالجة الخلافات.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٤</div>
+            <div class="step-body">
+              <h3>صدور الحكم</h3>
+              <p>تُصدر المحكمة حكم الطلاق النهائي. في قضايا المسلمين يتضمن الحكم نوع الطلاق والحضانة والنفقة وأي أوامر تتعلق بالأصول. لغير المسلمين بموجب القانون ٤١/٢٠٢٢ يسري الحكم فوراً دون فترة انتظار.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٥</div>
+            <div class="step-body">
+              <h3>الأبوستيل والتسجيل في الخارج</h3>
+              <p>لاستخدام حكم الطلاق في بلدك الأصلي، يُحضر محاميك تصديق الأبوستيل من وزارة الخارجية الإماراتية وترجمةً رسمية معتمدة. هذه الحزمة معترف بها في معظم دول العالم.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>ما تبحث عنه في محامي طلاق في عجمان</h2>
+        <ul class="checklist">
+          {lawyerChecklist.map(item => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>أتعاب محامي الطلاق في عجمان</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">طلاق ودي / بالتراضي</p>
+            <p class="fee-amount">٢٥٠٠-٦٠٠٠ درهم</p>
+            <p class="fee-detail">موافقة كلا الزوجين على جميع البنود. يُعدّ المحامي اتفاق التسوية ويُقدمه.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">متنازع عليه (بدون أطفال)</p>
+            <p class="fee-amount">٦٠٠٠-٢٠٠٠٠ درهم</p>
+            <p class="fee-detail">نزاعات أصول أو نفقة. جلسات متعددة مطلوبة.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">متنازع عليه مع حضانة</p>
+            <p class="fee-amount">١٥٠٠٠-٤٥٠٠٠ درهم+</p>
+            <p class="fee-detail">نزاعات الحضانة هي الأكثر تعقيداً واستنزافاً للوقت.</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">خلع (بطلب من الزوجة)</p>
+            <p class="fee-amount">٤٠٠٠-١٢٠٠٠ درهم</p>
+            <p class="fee-detail">يشمل جلسات المصالحة وإيداع المحكمة. قد يُطبَّق رد المهر.</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p><strong>رسوم المحكمة في عجمان:</strong> ٢٠٠-٥٠٠ درهم للإيداع الأساسي بالإضافة إلى رسوم على كل جلسة. رسوم عجمان القضائية من الأدنى في الإمارات، وأقل بـ٣٠-٥٠٪ من محاكم دبي لأنواع القضايا المماثلة.</p>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لإجراءات الطلاق الإماراتية</span>
+          </a>
+          <a href="/ar/طلاق-غير-المسلمين-الامارات/" class="related-card">
+            <strong>طلاق غير المسلمين في الإمارات</strong>
+            <span>القانون ٤١/٢٠٢٢ — دليل كامل للمقيمين الأجانب</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق في الإمارات</strong>
+            <span>أنواع النفقة وكيفية حسابها والمطالبة بها</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة والزيارة وكيف تبت المحاكم فيها</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 480px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 480px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-factor { font-weight: 700; color: #0a1628; }
+  .compare-ajman { color: #374151; }
+  .compare-dubai { color: #6b7280; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .info-box { background: #f8faff; border: 1.5px solid #e0e7ff; border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1rem; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .fee-grid, .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

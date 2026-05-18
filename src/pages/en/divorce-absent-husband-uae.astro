@@ -1,0 +1,643 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Absent Husband Divorce UAE: How to Divorce When He Has Disappeared or Is Abroad';
+const description =
+  'Your husband abandoned you, disappeared, or refuses to cooperate from abroad. UAE law gives you a path to divorce -- without his cooperation. Complete guide to Article 79 absence divorce, financial abandonment, service of process abroad, and your rights.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-absent-husband-uae/',
+  ar: 'https://divorceu.ae/ar/اختطاف-الأطفال-الدولي-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Absent Husband UAE', url: 'https://divorceu.ae/en/divorce-absent-husband-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I divorce my husband if he left UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. If your husband has left the UAE and is refusing to cooperate with divorce proceedings, you can file for judicial divorce (faskh) at the UAE Personal Status Court. For Muslim women: if he has been absent for 1 year or more without maintenance, Article 79 of Federal Decree-Law No. 41 of 2024 provides an absence-based divorce. For non-Muslim women: the civil no-fault dissolution under Federal Decree-Law No. 41 of 2022 does not require the husband\'s cooperation at all -- you file, the court waits 90 days, and the divorce is granted.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does absence divorce take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An absence-based judicial divorce under Article 79 of Federal Decree-Law No. 41 of 2024 takes approximately 6-18 months from filing. The investigation period is 30-90 days, followed by a public notice period (typically 30-60 days), then a court hearing and judgment. If the husband appears or responds during this period, the timeline extends. Non-Muslim civil no-fault dissolution is faster: approximately 3-6 months from filing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if I do not know where my husband is?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your husband\'s whereabouts are unknown, UAE courts can proceed by public notice. After the court makes reasonable attempts to locate the husband (including through last known address, email, WhatsApp, and relevant authorities), it publishes a notice in the official gazette and a widely-circulated Arabic newspaper. If the husband does not respond within the notice period, the court proceeds to judgment in his absence. You do not need to know his location to obtain a divorce in UAE.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get maintenance while waiting for divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. You can apply for an interim maintenance order at the Personal Status Court while divorce proceedings are pending. Courts can issue interim maintenance orders on an expedited basis -- in urgent cases where you have no income and the husband has abandoned the family, courts can issue an order within 48-72 hours. The interim order covers your living expenses and any children\'s expenses until the divorce is finalised. The husband\'s non-presence does not prevent an interim order being issued.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my husband refuses to respond to court notices?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If the husband has been properly served (by all available means including email, WhatsApp, last known address, and if necessary publication in the gazette) and still does not respond, UAE courts proceed to judgment in absentia. His non-response is treated as a failure to contest the proceedings, not as a bar to the divorce being granted. Courts are experienced with absent respondents in divorce cases and have a clear procedural framework for proceeding without the husband.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a lawyer for absence divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You are not legally required to use a lawyer for absence divorce proceedings in UAE. However, given the complexity of serving process on an absent or foreign respondent, navigating the publication requirements, and presenting the financial abandonment evidence correctly, legal representation significantly increases the efficiency and success rate of the proceedings. Lawyer fees for an absence divorce case typically range from AED 5,000 to AED 25,000 depending on complexity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What evidence do I need to file for absence divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For an Article 79 absence divorce: original marriage certificate (attested, Arabic-translated), Emirates ID, evidence of husband\'s last known address or contact details, bank statements showing no maintenance payments received, records of communication attempts (WhatsApp, email, phone records), and any records of his departure (flight booking if known, last UAE entry/exit stamp). For financial abandonment under Article 72: the same documents plus evidence of the 3-month maintenance gap and that the husband had capacity to pay.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my husband comes back after I filed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your husband returns and appears at court after you have filed for absence divorce, the proceedings continue -- they do not automatically stop. The husband has the right to contest the divorce and present his case. The court will then hear both sides and determine whether the grounds for divorce are established. If the husband pays the outstanding maintenance and can demonstrate a valid reason for his absence, the court may decline to grant the divorce. However, if you have suffered genuine abandonment, the court takes that into account.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my husband contest the divorce after disappearing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A husband who was absent during proceedings can apply to contest a judgment issued in absentia within the appeal period (typically 30 days from when he becomes aware of the judgment). He would need to demonstrate both a valid reason for his absence and grounds to contest the divorce. UAE courts apply a high standard for reopening absence judgments -- genuine emergency or inability to receive service is required. Deliberate avoidance of court notices does not qualify.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will I get mahr if he abandoned me?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Mahr is your legal right regardless of who initiated the divorce and regardless of your husband\'s abandonment. A judicial divorce obtained through absence proceedings (faskh) does not extinguish the wife\'s mahr rights. The deferred mahr falls due upon the divorce judgment. If the husband is absent and has no known assets in the UAE, collecting the mahr may require enforcement through international judicial cooperation -- which is possible but more complex than domestic enforcement. See the mahr enforcement guide for options.',
+      },
+    },
+  ],
+};
+
+const groundsRows = [
+  {
+    ground: 'Absence without maintenance -- 1 year+',
+    law: 'Article 79, FL 41/2024',
+    who: 'Muslim wives',
+    requirement: 'Husband absent 1 year or more. No maintenance paid. No acceptable reason for absence. Court investigation period.',
+    flag: 'primary',
+  },
+  {
+    ground: 'Financial abandonment (nafaqa refusal) -- 3 months+',
+    law: 'Article 72, FL 41/2024',
+    who: 'Muslim wives',
+    requirement: 'Husband is contactable but refuses to pay maintenance for 3+ consecutive months without acceptable reason. Husband present or abroad -- either applies.',
+    flag: 'primary',
+  },
+  {
+    ground: 'Imprisoned spouse -- 3+ years sentence',
+    law: 'Articles 73-74, FL 41/2024',
+    who: 'Muslim wives',
+    requirement: 'Husband sentenced to 3 or more years imprisonment. Wife can file after he has served 1 year of the sentence.',
+    flag: 'secondary',
+  },
+  {
+    ground: 'Harm (darar) / irreconcilable breakdown',
+    law: 'Articles 75-76, FL 41/2024',
+    who: 'Muslim wives',
+    requirement: 'Proved harm to the wife from continued marriage. Absence and abandonment itself can constitute harm sufficient for darar divorce.',
+    flag: 'secondary',
+  },
+  {
+    ground: 'Civil no-fault dissolution',
+    law: 'FL 41/2022',
+    who: 'Non-Muslim residents',
+    requirement: 'No grounds required. File the application, wait 90 days, divorce granted regardless of husband\'s cooperation or location.',
+    flag: 'nonmuslim',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'My husband has been gone for 8 months and sends no money. Can I file now?',
+    answer: "For the Article 79 absence-based judicial divorce, the standard waiting period is 1 year of absence without maintenance. At 8 months you are not yet at the threshold for that specific ground. However, you can file now on the financial abandonment ground under Article 72: if your husband has not paid maintenance for 3 or more consecutive months without acceptable reason, you can seek judicial divorce regardless of how long he has been absent. File as soon as the 3-month maintenance gap is established. Do not wait for the 1-year absence threshold if financial abandonment is already present.",
+  },
+  {
+    question: 'My husband is in prison abroad. Can I divorce him?',
+    answer: "Yes. Under Articles 73-74 of Federal Decree-Law No. 41 of 2024, if your husband has been sentenced to 3 or more years imprisonment anywhere, you can file for judicial divorce after he has served 1 year of that sentence. The imprisonment ground applies regardless of which country he is imprisoned in. You will need official documentation of the sentence -- typically an authenticated court judgment from the relevant country. Your UAE lawyer can assist with obtaining this through diplomatic channels if necessary.",
+  },
+  {
+    question: 'My husband left the UAE and cancelled my residence visa. What are my options?',
+    answer: "This is an acute emergency combining a legal status issue with a family law issue. Immediately: contact the GDRFA (General Directorate of Residency and Foreigners Affairs) for an emergency overstay grace period -- they have discretion in domestic abuse and abandonment cases. Contact a UAE family lawyer and the Personal Status Court for an urgent maintenance order. If you have children, the court can order the father to maintain the children's visa sponsorship. On the divorce side, financial abandonment and/or harm are immediate grounds for judicial divorce regardless of your current visa status.",
+  },
+  {
+    question: 'How does the court serve papers on my husband if he is abroad?',
+    answer: "UAE courts have a range of service methods for foreign-located respondents. Formally: (1) email service to the last known email address, which is considered valid if email is confirmed; (2) WhatsApp or SMS to the last known phone number (UAE courts accept this as valid service under digital communications frameworks); (3) service through the UAE Ministry of Justice's judicial cooperation channels to the relevant foreign court or authority; (4) service through the UAE embassy in the relevant country. If all these fail, the court publishes a public notice in the official gazette and an Arabic daily newspaper. Once publication is complete and the notice period expires, the court can proceed to judgment.",
+  },
+  {
+    question: 'Can I get child custody sorted at the same time?',
+    answer: "Yes. Custody (hadana) and child maintenance (nafaqat al-awlad) can be dealt with simultaneously or in connected proceedings at the Personal Status Court. If your husband is absent and unable to participate, the court can make custody orders without him based on the children's best interests. Physical custody of younger children (boys under 11, girls under 13) typically stays with the mother. Legal guardianship (wilaya) technically remains with the father but is practically exercised by the court-appointed representative if he is absent. Child maintenance can be ordered and enforced against the father even in absentia.",
+  },
+  {
+    question: 'What if my husband claims he had no way of knowing about the divorce proceedings?',
+    answer: "This is the standard defence for a husband who wants to contest a judgment made in absentia. For the defence to succeed, he must show that: (1) he never received any of the service attempts (all of email, WhatsApp, postal address, and publication), and (2) he had no reasonable way to know proceedings were underway, and (3) he has substantive grounds to contest the divorce. If the court followed proper service procedure including gazette publication, the 'I did not know' defence is very difficult to establish. Deliberate avoidance of known legal proceedings destroys this defence entirely.",
+  },
+  {
+    question: 'My husband is in another emirate, not abroad. Does this still apply?',
+    answer: "An absent husband in another UAE emirate is much easier to locate and serve than one abroad. UAE courts can serve process via all domestic channels, and the husband cannot claim he was outside UAE service reach. A husband who is physically in the UAE but refuses to participate in divorce proceedings will be served and can be subject to contempt proceedings for deliberate non-cooperation. For Muslim wives, financial abandonment under Article 72 does not require actual physical absence -- it applies when the husband is contactable but refuses to provide maintenance for 3+ months. See <a href='/en/how-to-file-for-divorce-in-dubai/'>how to file for divorce in Dubai</a> for the domestic filing process.",
+  },
+  {
+    question: 'Will I lose mahr rights by filing for absence divorce rather than waiting for talaq?',
+    answer: "No. A judicial divorce (faskh) on grounds of absence or financial abandonment does not forfeit the wife's mahr rights. Unlike khula -- where the wife typically returns the mahr as the price of the dissolution -- a faskh is granted because of the husband's wrongdoing or incapacity. The wife retains full mahr rights. The deferred mahr falls due on the divorce judgment. If the husband has been absent and has no known UAE assets, enforcing the mahr may require international cooperation, but the legal right to the mahr is entirely preserved.",
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-absent-husband-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Absent Husband Divorce UAE -- 2025 Legal Guide</p>
+      <h1>Divorced by Absence: How to End Your Marriage in UAE When Your Husband Has Disappeared or Is Abroad</h1>
+      <p class="hero-desc">
+        Your husband left. He may have abandoned you financially, disappeared without a word, or moved abroad and refuses to engage with any legal process. UAE law gives you a clear path to divorce without his cooperation. This guide explains exactly how -- the legal grounds, the evidence you need, the process, and your full financial rights.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Your situation in brief: what the law gives you</h2>
+        <ul class="key-facts">
+          <li><strong>You can divorce an absent husband in UAE.</strong> His cooperation is not required. Courts have a full procedure for absent respondents.</li>
+          <li><strong>Article 79 (FL 41/2024):</strong> Absence + no maintenance for 1 year = grounds for judicial divorce. Investigation period, public notice, judgment.</li>
+          <li><strong>Article 72 (FL 41/2024):</strong> No maintenance for 3 months = financial abandonment divorce, whether he is present or abroad.</li>
+          <li><strong>Non-Muslims:</strong> Civil no-fault dissolution requires no grounds and no husband cooperation. File and wait 90 days.</li>
+          <li><strong>Interim maintenance available</strong> during proceedings -- courts can order it in 48-72 hours in urgent cases.</li>
+          <li><strong>Mahr rights are fully preserved</strong> in an absence-based judicial divorce. You do not forfeit mahr by filing.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: The Two Situations -->
+      <section class="content-section">
+        <h2>Two Distinct Situations -- and Why the Distinction Matters</h2>
+        <p>
+          When we talk about divorcing an absent husband in UAE, we are actually dealing with two different factual scenarios that have different legal solutions, though they often overlap.
+        </p>
+        <p>
+          <strong>Situation 1: Physical absence.</strong> Your husband has left the UAE (or was never in the UAE), is uncontactable or refuses contact, and you do not know where he is or cannot reach him. This is true abandonment in the physical sense.
+        </p>
+        <p>
+          <strong>Situation 2: Financial abandonment.</strong> Your husband may be physically present in the UAE or contactable abroad, but he has stopped providing maintenance entirely. He may be reachable by phone but refuses to engage with divorce proceedings.
+        </p>
+        <p>
+          UAE law provides separate grounds for each situation, and both can be pursued simultaneously if both apply to your case. For the full spectrum of <a href="/en/types-of-divorce-uae/">divorce types available in UAE</a>, see that overview guide. The two absence-related grounds described here are judicial faskh -- a court-ordered dissolution of the marriage on grounds of the husband's failure.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Faskh vs. Khula -- the key difference</h3>
+          <p>Khula is a woman-initiated divorce where the wife typically returns the mahr. Faskh (judicial dissolution) is court-ordered on the basis of the husband's fault or incapacity. In an absence divorce, you are seeking faskh -- not khula. This distinction matters because faskh preserves your full financial rights including mahr, while khula involves a financial trade-off. See the <a href="/en/khula-divorce-uae/">khula divorce guide</a> if you are considering that route instead.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Legal Grounds -->
+      <section class="content-section">
+        <h2>Legal Grounds for Divorce When the Husband Is Absent</h2>
+        <p>
+          Federal Decree-Law No. 41 of 2024 (Muslim personal status law, in force 15 April 2025) provides several grounds for judicial divorce relevant to absent or abandoning husbands. Here is a summary of all relevant grounds.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Ground</th>
+                <th>Legal basis</th>
+                <th>Applies to</th>
+                <th>Key requirement</th>
+              </tr>
+            </thead>
+            <tbody>
+              {groundsRows.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class={`td-ground td-ground--${row.flag}`}>{row.ground}</td>
+                  <td class="td-law">{row.law}</td>
+                  <td class="td-who">{row.who}</td>
+                  <td class="td-light">{row.requirement}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">Multiple grounds can be pleaded simultaneously. A wife whose husband has been absent for 2 years without maintenance can plead both Article 79 and Article 72 in the same application.</p>
+      </section>
+
+      <!-- Section 3: Article 79 in Detail -->
+      <section class="content-section">
+        <h2>Article 79 Absence Divorce: The Full Process</h2>
+        <p>
+          Article 79 of Federal Decree-Law No. 41 of 2024 provides the primary route for divorce when the husband has genuinely disappeared or abandoned the family. The article requires that the absence be for at least one year, that maintenance has not been paid during that period, and that the husband has no acceptable reason for his absence.
+        </p>
+        <p>
+          "Acceptable reason" in UAE case law includes: documented medical emergency, imprisonment, or circumstances of force majeure beyond the husband's control. Working abroad and sending some (but not full) maintenance has been found by courts to be a partial defence. Simple preference to avoid the marriage is not an acceptable reason.
+        </p>
+
+        <h3>The investigation period</h3>
+        <p>
+          Once the application is filed, the court does not immediately proceed to judgment. It initiates an investigation period of 30-90 days during which it makes genuine efforts to locate and contact the husband. This investigation includes: enquiries through the UAE civil status authority (to check last registered address and any local records), requests to the GDRFA for travel movement records, service attempts at all known addresses and contact points, and correspondence with other UAE government bodies that may have the husband's last known information.
+        </p>
+        <p>
+          This investigation period is not optional -- it is a procedural safeguard to ensure that the court has genuinely tried to bring the husband into the proceedings before issuing a judgment in his absence.
+        </p>
+
+        <h3>Public notice publication</h3>
+        <p>
+          If the investigation period yields no response, the court orders publication of a public notice. The notice is published in the UAE Official Gazette and in at least one widely-circulated Arabic-language newspaper. The notice period is typically 30-60 days. This is the legal mechanism by which the world is formally put on notice that proceedings are underway -- analogous to service by publication in common law jurisdictions.
+        </p>
+        <p>
+          After the publication period expires without the husband appearing or responding, the court is authorised to proceed to judgment.
+        </p>
+
+        <h3>The hearing and judgment</h3>
+        <p>
+          The court schedules a hearing at which the wife presents her evidence. If the grounds are established -- absence of 1 year or more, no maintenance, no acceptable reason, proper service attempts made -- the court issues a judicial divorce decree. The decree has the same legal effect as any other divorce judgment: it dissolves the marriage, records the divorce in civil status records, and establishes the wife's financial rights.
+        </p>
+        <p>
+          See the <a href="/en/divorce-timeline-uae/">divorce timeline UAE guide</a> for realistic timelines at each stage, and <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a> for the step-by-step filing process.
+        </p>
+      </section>
+
+      <!-- Section 4: Financial Abandonment -->
+      <section class="content-section">
+        <h2>Financial Abandonment (Article 72): Divorce Without Physical Absence</h2>
+        <p>
+          Article 72 of Federal Decree-Law No. 41 of 2024 addresses a situation that many women face but do not realise constitutes grounds for judicial divorce: the husband is physically present or contactable, but he has completely stopped providing maintenance.
+        </p>
+        <p>
+          Under Article 72, if a husband refuses to pay maintenance (nafaqa) for three consecutive months or more without an acceptable reason, the wife can apply for judicial divorce even if the husband is reachable. The three-month period is measured from the date the husband last paid maintenance. "Without acceptable reason" means absence of documented financial hardship, illness, or circumstances beyond his control. "I choose not to pay" does not qualify as an acceptable reason.
+        </p>
+        <p>
+          This ground is often faster than the Article 79 absence route because it does not require the 1-year waiting period. If your husband stopped paying maintenance three months ago, you can file today.
+        </p>
+        <p>
+          Evidence needed for an Article 72 application: bank statements showing no maintenance payments received from the husband for 3+ months, any payment platform records (bank transfers, cash payment receipts), WhatsApp or other communication records showing you requested maintenance and were refused, and your Emirates ID and marriage certificate.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Document the maintenance gap now</h3>
+          <p>Start downloading your bank statements immediately, covering the period before the maintenance stopped and the period of non-payment. Screenshot any WhatsApp, email, or text messages where you asked for maintenance and received no response or a refusal. If your husband paid maintenance in cash, write down the dates and amounts while your memory is fresh and seek any corroborating records. This evidence is the foundation of your Article 72 application.</p>
+        </div>
+      </section>
+
+      <!-- Section 5: Serving Process Abroad -->
+      <section class="content-section">
+        <h2>Serving Court Proceedings on a Husband Who Is Abroad</h2>
+        <p>
+          One of the most practically complex aspects of absence divorce is how the court formally notifies a husband who is outside the UAE. UAE courts have developed a multi-step service framework for foreign-located respondents.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Email service to last known address</h3>
+              <p>UAE courts accept email as a valid service method if the email address is confirmed. Your application should include the husband's last known email address. The court sends official notice via email. Read receipt or delivery confirmation strengthens the record, but UAE courts do not require proof of actual reading -- only proof that the email was sent to the correct address.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>WhatsApp and SMS to last known number</h3>
+              <p>Following the UAE courts' recognition of digital communications as valid legal acts, WhatsApp messages and SMS from the court (or the court-authorised lawyer) to the last known phone number constitute valid service. Message delivery confirmation and read receipts are logged as part of the service record. This is increasingly the first-resort service method for foreign respondents.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>UAE Ministry of Justice to foreign judicial authorities</h3>
+              <p>The UAE Ministry of Justice has judicial cooperation agreements with many countries. Under these agreements, the UAE MoJ can request that the relevant foreign court or judicial authority formally serve the proceedings on the husband. This route is more formal and typically adds 4-8 weeks but provides the strongest service record for a contested absence judgment.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>UAE embassy service</h3>
+              <p>The UAE embassy or consulate in the country where the husband is located can be engaged to attempt service. This is particularly used for countries without strong judicial cooperation frameworks with the UAE. Embassy service is less reliable than MoJ cooperation but is available as an intermediate step.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Publication in the Official Gazette as last resort</h3>
+              <p>When all other service methods have been attempted without success, the court orders publication of notice in the UAE Official Gazette and an Arabic newspaper. This is the legal equivalent of service -- after the publication period (30-60 days), the court can proceed regardless of whether the husband actually read the notice. This is the last resort but it is legally sufficient for the court to proceed to judgment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Practical Steps to File -->
+      <section class="content-section">
+        <h2>What You Need to File: Practical Checklist</h2>
+        <p>
+          When you attend the Personal Status Court to file for absence-based judicial divorce, bring the following. Missing documents cause delays -- assemble everything before your first visit.
+        </p>
+
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-icon">1</div>
+            <div class="check-body">
+              <strong>Original marriage certificate</strong>
+              <p>If married outside UAE: must be attested by the UAE Ministry of Foreign Affairs (MOFA attestation) and accompanied by a certified Arabic translation by a UAE-licensed translator. If married in UAE: the court can access records directly.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">2</div>
+            <div class="check-body">
+              <strong>Your Emirates ID and passport</strong>
+              <p>Both original and copies. The court registers your identity details as the applicant.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">3</div>
+            <div class="check-body">
+              <strong>Husband's last known contact information</strong>
+              <p>Phone number(s), email address(es), last known physical address (UAE and abroad), employer if known, any social media profiles. The court uses this for service attempts. The more information you provide, the faster the service stage proceeds.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">4</div>
+            <div class="check-body">
+              <strong>Bank statements showing no maintenance received</strong>
+              <p>3-6 months minimum, ideally the full period of non-payment. Highlight the relevant period. Include statements from all accounts to which the husband previously paid maintenance.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">5</div>
+            <div class="check-body">
+              <strong>Communication records showing abandonment</strong>
+              <p>WhatsApp history showing unanswered messages or refusals to maintain contact. Email correspondence. Phone call records showing no contact. Screenshot and notarise the most important messages.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">6</div>
+            <div class="check-body">
+              <strong>Evidence of husband's departure (if available)</strong>
+              <p>If you know when he left: any flight booking confirmation, his last UAE entry/exit date (GDRFA records -- your lawyer can obtain this), or records of him notifying employer of departure.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">7</div>
+            <div class="check-body">
+              <strong>Children's documents (if applicable)</strong>
+              <p>Birth certificates, Emirates IDs, and school records if you are also applying for custody and child maintenance orders simultaneously.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Interim Maintenance -->
+      <section class="content-section">
+        <h2>Getting Interim Maintenance While Proceedings Are Pending</h2>
+        <p>
+          One of the most urgent practical concerns for a wife whose husband has abandoned the family is financial: how do you pay rent, school fees, and daily expenses while the divorce proceedings run their course over 6-18 months?
+        </p>
+        <p>
+          UAE Personal Status Courts can issue interim maintenance orders (nafaqa mu'ajjala) while divorce proceedings are pending. These are provisional orders that require the husband to pay a set monthly amount for the applicant's living expenses and, separately, for the children's expenses. The orders can be obtained on an expedited basis -- in urgent cases where the wife has no income, courts have issued interim maintenance orders within 48-72 hours of the application.
+        </p>
+        <p>
+          The interim maintenance application is filed simultaneously with or shortly after the main divorce application. You do not need the divorce to be finalised to enforce an interim maintenance order. If the husband is abroad and has UAE bank accounts or assets, the Execution Court can freeze accounts and enforce the interim maintenance order against those UAE-based assets.
+        </p>
+        <p>
+          For the complete picture of <a href="/en/divorce-cost-uae/">divorce costs and financial rights in UAE</a>, see that dedicated guide.
+          For the financial rights that attach to your divorce regardless of the husband's absence — including iddah maintenance, mahr, and mut'a — see our guide on <a href="/en/alimony-uae/">alimony in UAE</a>.
+          Where the husband's absence constitutes harm, abandonment or non-provision, the judicial divorce for harm route may be available: see our <a href="/en/divorce-for-harm-uae/">divorce for harm UAE guide</a> for the specific grounds and evidence requirements.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Urgent case threshold: what qualifies</h3>
+          <p>Courts treat cases as urgent for interim maintenance purposes when: the wife and children have no independent income, the husband has been absent for more than 30 days without payment, there are young children with ongoing educational or medical expenses, or there is evidence that the husband is deliberately dissipating assets. Submit a declaration of your current financial position with the interim maintenance application to assist the court in assessing urgency.</p>
+        </div>
+      </section>
+
+      <!-- Section 8: After the Divorce -->
+      <section class="content-section">
+        <h2>After the Divorce: Your Rights and Enforcement</h2>
+        <p>
+          Once the court issues the judicial divorce decree, your rights crystallise in exactly the same way as any other UAE divorce. The absence of the husband does not reduce what you are entitled to -- and his absence does not prevent you from enforcing those rights against any UAE-based assets he has.
+        </p>
+
+        <h3>Mahr: your full right is preserved</h3>
+        <p>
+          As this guide has noted: faskh on grounds of absence or abandonment fully preserves your mahr rights. The deferred mahr (mu'ajjal) falls due on the divorce judgment. The prompt mahr (muqaddam) should already have been paid. See the <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a> for the enforcement process if the husband refuses to pay from abroad.
+        </p>
+
+        <h3>Iddah maintenance</h3>
+        <p>
+          Even following an absence-based divorce, iddah maintenance for approximately three months is owed by the husband. If he has no UAE assets and is abroad, collecting iddah maintenance in practice may require international enforcement. However, the legal obligation exists and can be pursued through UAE courts with international judicial cooperation channels.
+        </p>
+
+        <h3>Child maintenance and custody</h3>
+        <p>
+          The court can determine child custody and maintenance in the absence proceedings simultaneously. Physical custody of younger children typically remains with the mother. Child maintenance is set by the court based on the father's known income and financial position. If the father's financial position is unknown, the court makes a reasonable estimate. The obligation to pay child maintenance can be enforced against the father's future UAE assets or through the UAE's international judicial cooperation framework.
+        </p>
+
+        <h3>Enforcement against UAE assets</h3>
+        <p>
+          If your absent husband has any assets in the UAE -- bank accounts, property registered with the DLD, business interests, or a pending EOSB gratuity from a former employer -- these can be attached and enforced against through the UAE Execution Court. File the divorce decree at the Execution Court with a list of all known UAE assets. The Execution Court has authority to freeze bank accounts, attach real estate, and garnish the husband's future earnings if he returns to the UAE.
+        </p>
+        <p>
+          For cases where the husband has returned to UAE after the divorce was granted in absentia: enforce immediately through the Execution Court. His return to UAE gives you direct access to all domestic enforcement mechanisms including travel ban, which will prevent him from leaving again until outstanding obligations are settled.
+        </p>
+      </section>
+
+      <!-- Section 9: Non-Muslim Absent Spouse -->
+      <section class="content-section">
+        <h2>Non-Muslim Residents: The Simpler Route</h2>
+        <p>
+          For non-Muslim residents of the UAE, the absence of a spouse is far less complicated legally. Federal Decree-Law No. 41 of 2022 provides a civil no-fault dissolution that does not require the other spouse's presence, consent, or cooperation.
+        </p>
+        <p>
+          A non-Muslim wife simply files the dissolution application at the Personal Status Court. The court waits 90 days. If neither party reconciles the marriage within those 90 days, the divorce is granted regardless of whether the husband responded, appeared, or was located. There is no requirement to prove abandonment, no investigation period, and no public notice publication requirement.
+        </p>
+        <p>
+          This makes the absent spouse situation substantially simpler for non-Muslims: the civil no-fault route achieves the divorce without engaging the complex service-of-process questions that apply to the Muslim judicial divorce track. The non-Muslim route also allows the wife to elect her home country law for the financial aspects of the divorce, which in many jurisdictions (England, Germany, France, Australia) provides more generous financial outcomes than UAE separate property law. See the <a href="/en/types-of-divorce-uae/">divorce types overview</a> for more on this election.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/khula-divorce-uae/" class="related-card">
+            <strong>Khula Divorce UAE</strong>
+            <span>Woman-initiated divorce: when and how to use it</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr in UAE Divorce</strong>
+            <span>Enforcing unpaid mahr against an absent husband</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step Personal Status Court guide</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>Realistic timelines from filing to final certificate</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, maintenance orders, and enforcement costs</span>
+          </a>
+          <a href="/en/types-of-divorce-uae/" class="related-card">
+            <strong>Types of Divorce UAE</strong>
+            <span>All mechanisms: talaq, khula, faskh, civil no-fault</span>
+          </a>
+          <a href="/en/talaq-uae/" class="related-card">
+            <strong>Talaq in UAE</strong>
+            <span>Complete guide to husband-initiated divorce law</span>
+          </a>
+          <a href="/en/whatsapp-divorce-uae/" class="related-card">
+            <strong>WhatsApp Divorce UAE</strong>
+            <span>Is a digital divorce valid? Evidence and registration rules</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+  .info-box a { color: #c9a84c; text-decoration: underline; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 600px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-ground { font-weight: 700; font-size: 0.85rem; }
+  .td-ground--primary { color: #065f46; }
+  .td-ground--secondary { color: #1e40af; }
+  .td-ground--nonmuslim { color: #7c3aed; }
+  .td-law { font-size: 0.82rem; color: #374151; white-space: nowrap; }
+  .td-who { font-size: 0.82rem; color: #6b7280; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Checklist */
+  .checklist { display: flex; flex-direction: column; gap: 0.85rem; margin: 1rem 0; }
+  .check-item { display: flex; gap: 1rem; padding: 1rem 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .check-icon { width: 1.8rem; height: 1.8rem; border-radius: 50%; background: #0a1628; color: #c9a84c; font-size: 0.82rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check-body strong { font-size: 0.93rem; color: #0a1628; display: block; margin-bottom: 4px; }
+  .check-body p { font-size: 0.85rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

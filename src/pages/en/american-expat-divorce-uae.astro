@@ -1,0 +1,394 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'American Expat Divorce in UAE: 401(k), QDRO, US Property, and State Law';
+const description =
+  'US citizens divorcing in Dubai face issues that UAE courts cannot resolve: 401(k) and IRA division requires a US court QDRO, US property needs a separate US order, and Social Security spousal benefits depend on marriage duration. Full guide covering community property states, TCJA alimony changes, and green card implications.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/american-expat-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمواطنين-الأمريكيين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'American Expat Divorce UAE', url: 'https://divorceu.ae/en/american-expat-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Will my UAE divorce be recognised in my US state?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally yes, provided both parties received proper notice of the UAE proceedings and had an opportunity to participate. US courts extend comity to foreign divorce decrees when due process requirements were met. However, specific financial orders (property division, retirement account division) made by UAE courts do not automatically apply to US assets. You may need to domesticate the UAE decree in your state of domicile and obtain separate US court orders for US-sited assets.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can UAE courts divide my 401(k) or IRA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. UAE courts have no jurisdiction over US retirement accounts governed by ERISA (401k, 403b, pension plans) or the Internal Revenue Code (IRA). Dividing these accounts requires a Qualified Domestic Relations Order (QDRO) issued by a US court. A QDRO is a specific US court order directing the plan administrator to pay a portion of the account to the alternate payee (the divorcing spouse). Without a QDRO, the plan administrator will not split the account, and any direct withdrawal by the account holder to pay the other spouse triggers tax consequences and penalties.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to file for divorce in both UAE and the USA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'One divorce decree is sufficient to dissolve the marriage. If you divorce in UAE, you do not need to divorce again in the US. However, you may need separate US court proceedings to (1) obtain a QDRO dividing US retirement accounts, (2) obtain orders dealing with US real estate, and (3) if one party is in the US, to have the UAE decree recognised ("domesticated") in the relevant US state. Think of the UAE divorce as the marriage dissolution and the US proceedings as the mechanism to implement specific financial settlements on US assets.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to US property during a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts cannot divide US real estate. Under Article 18 of the UAE Civil Code, property located outside the UAE is governed by the law of its location. US real estate is governed by the law of the US state where it is located. A UAE court can order a lump sum payment or offset reflecting the value of US property, but it cannot transfer title. To actually transfer US real estate, you need either voluntary cooperation from both parties or a US court order enforceable through the title system in that state.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will I lose my US visa or green card if I divorce my US-citizen spouse?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If you are in the US on a spousal visa (CR-1, IR-1, or K-1 converted to a green card) and your green card is conditional (2-year conditional permanent resident status), divorce significantly complicates your status. You cannot file a joint I-751 petition to remove conditions. You must file I-751 individually and demonstrate the marriage was entered in good faith. If you are already a permanent resident (10-year green card), divorce after receiving permanent status generally does not affect your green card. If you are in the UAE on a UAE spousal residence visa, that visa depends on spousal sponsorship and will need to change after divorce.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does it matter if my home state is a community property state?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, significantly. Community property states (California, Texas, Arizona, Washington, Nevada, Idaho, Louisiana, New Mexico, Wisconsin) treat most assets acquired during marriage as equally owned by both spouses. In an equitable distribution state (New York, Florida, and most others), courts divide assets "fairly" which does not necessarily mean equally. For US assets, which law applies depends primarily on the state of domicile at the time the asset was acquired and at the time of divorce. If you lived in California before moving to Dubai, California community property rules may apply to assets acquired during that California period.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the Social Security spousal benefit implications of divorce timing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A divorced spouse can claim Social Security benefits based on an ex-spouse\'s work record if the marriage lasted at least 10 years. If you divorce before the 10-year mark, you lose this entitlement entirely. The benefit is up to 50% of the ex-spouse\'s full retirement benefit (or 100% of their benefit as a survivor if they die). This is a significant financial consideration that sometimes affects the timing of divorce filing for long-term marriages approaching the 10-year threshold.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How did the Tax Cuts and Jobs Act 2017 change alimony tax treatment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For divorce or separation agreements executed after December 31, 2018, alimony payments are no longer deductible by the payer and no longer includible as income by the recipient. This is the opposite of the pre-TCJA treatment. For US taxpayers, this change affects the economics of spousal support settlements significantly. The after-tax cost of alimony is now higher for the payer (no deduction), and the after-tax value is higher for the recipient (no tax owed). Pre-TCJA agreements (executed before 2019) are grandfathered under the old rules unless specifically modified.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a US embassy in Dubai authenticate divorce documents?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The US Embassy and Consulate General in the UAE provide notarial services for US citizens, including authentication of documents for use in the US. They can notarise affidavits, certify copies of documents, and authenticate signatures. For UAE court documents to be used in the US, the standard process involves UAE apostille (under the Hague Apostille Convention, both countries are signatories) rather than embassy authentication. The embassy is more relevant for US documents to be used in UAE proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does an American expat divorce in UAE typically cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE divorce proceedings cost AED 8,000 to AED 15,000 for an uncontested case and AED 20,000 to AED 50,000+ for a contested one. Additional US proceedings for QDRO and US asset division add US attorney fees on top: a straightforward QDRO preparation costs USD 1,500 to USD 5,000; full US state court proceedings for asset division start at USD 10,000 and go significantly higher for complex cases. Budget for both sets of proceedings when planning financially.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/american-expat-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">American Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>American Expat Divorce in UAE: 401(k)s, US Property, and the QDRO Gap</h1>
+      <p class="hero-desc">
+        A UAE court can dissolve your marriage. It cannot divide your 401(k), issue a QDRO, transfer your Texas ranch, or issue a pension sharing order on your federal government pension. American expats divorcing in Dubai need two tracks: UAE proceedings to end the marriage, and in many cases separate US proceedings to handle US-sited assets.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for American expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>UAE divorce is generally recognised in the US</strong> if both parties had notice and opportunity to be heard.</li>
+          <li><strong>401(k), 403(b), pension plans:</strong> require a QDRO from a US court. UAE courts cannot divide these.</li>
+          <li><strong>US real estate</strong> cannot be transferred by UAE court order. A US court order or voluntary cooperation is needed.</li>
+          <li><strong>Social Security spousal benefit:</strong> requires 10-year marriage. Divorce timing can be financially significant.</li>
+          <li><strong>TCJA 2017:</strong> alimony is no longer deductible by the payer for agreements after December 31, 2018.</li>
+          <li><strong>Community property states</strong> (CA, TX, AZ, WA, NV, etc.) apply equal ownership rules to marital assets.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>Which US State Law Applies and Why It Matters</h2>
+        <p>
+          The United States has 50 different state family law regimes. There is no federal divorce law. For American expats who have lived in multiple states before moving to Dubai, or who have assets in different states, the question of which state law governs is not trivial.
+        </p>
+
+        <h3>Community property states versus equitable distribution states</h3>
+        <p>
+          Nine states follow community property rules: California, Texas, Arizona, Washington, Nevada, Idaho, Louisiana, New Mexico, and Wisconsin. In these states, most assets acquired during the marriage (regardless of whose name they are in) are treated as equally owned by both spouses. On divorce, each spouse is entitled to half the community property.
+        </p>
+        <p>
+          All other states follow equitable distribution (sometimes called common law property states). Courts divide marital property "equitably," which typically means fairly but not necessarily 50/50. Courts consider factors including the length of the marriage, each spouse's earning capacity, contributions to the marriage (including homemaking and child-rearing), and the overall financial circumstances of each party.
+        </p>
+        <p>
+          For an American expat in Dubai, the relevant state is usually: (1) the last state where you were domiciled before moving to UAE, (2) the state where the marriage occurred if you have not established domicile elsewhere, or (3) the state where most US assets are located. If you last lived in California and have a California house and a California-based 401(k), California community property rules likely apply to those assets. If your last state was New York, equitable distribution applies.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Quasi-community property: the California trap</h3>
+          <p>California's quasi-community property doctrine treats assets acquired while living in another state (or country) as community property upon divorce in California, if those assets would have been community property had they been acquired in California. This means a couple who lived in Dubai for 10 years, acquired a Dubai apartment in the husband's name, and then divorce in California could find that California treats the Dubai apartment as quasi-community property subject to equal division. This is a serious strategic consideration for long-term UAE residents who may eventually return to California.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>401(k), IRA, and Pension Division: Why You Need a QDRO</h2>
+        <p>
+          Retirement accounts are often the largest financial asset an American family holds. For US citizens in the UAE, these accounts (maintained with US financial institutions, governed by US law) are completely outside the jurisdiction of UAE courts. Understanding the QDRO requirement is essential to not leaving money on the table.
+        </p>
+
+        <h3>What is a QDRO?</h3>
+        <p>
+          A Qualified Domestic Relations Order (QDRO) is a specific legal order issued by a US state court, recognising the right of a non-account-holder spouse (the "alternate payee") to receive a portion of a retirement plan benefit. QDROs are authorised by the Employee Retirement Income Security Act (ERISA) for employer-sponsored plans (401(k), 403(b), defined benefit pension plans). IRAs are divided by a different mechanism (transfer incident to divorce) but the practical effect is similar.
+        </p>
+        <p>
+          Without a QDRO, a plan administrator cannot pay any portion of a 401(k) or pension plan to the divorcing spouse. If the account holder simply withdraws funds to pay their spouse, they owe income tax plus a 10% early withdrawal penalty on the entire amount. A properly structured QDRO transfers the funds to the alternate payee's own retirement account without tax consequences to the account holder at the time of transfer.
+        </p>
+
+        <h3>The two-track process for American expats</h3>
+        <p>
+          American expats divorcing in UAE typically need to follow two separate processes:
+        </p>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>UAE court proceedings: dissolve the marriage</h3>
+              <p>File for divorce in UAE courts under Federal Decree-Law No. 41 of 2022 (for non-Muslims) or No. 41 of 2024 (for Muslims). The UAE court handles the divorce itself, UAE assets, child custody in UAE, and maintenance. Cost: AED 8,000 to AED 50,000+ depending on complexity.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>US state court proceedings: divide US assets</h3>
+              <p>File a petition in the relevant US state court to have the UAE decree recognised ("domesticated") and to obtain orders regarding US assets. The QDRO is drafted, reviewed by the plan administrator (many plans have their own QDRO forms and approval processes), and then submitted to the court for signature. US attorney fees for QDRO preparation range from USD 1,500 to USD 5,000 for standard accounts; complex defined benefit pensions with actuarial calculations cost more.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Federal government pensions: Thrift Savings Plan (TSP)</h3>
+        <p>
+          Federal employees (military, civilian) who participate in the Thrift Savings Plan have a different process. TSP is governed by the Federal Employees Retirement System Act (FERSA) and requires a "Retirement Benefits Court Order" (RBCO) rather than a standard QDRO. The TSP has its own approval procedures and specific form requirements. If your spouse is a current or former US federal employee or military member, consult a US attorney familiar with federal retirement division.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>US Real Estate: What UAE Courts Can and Cannot Do</h2>
+        <p>
+          If you own a house in Florida, an investment property in Texas, or any other US real estate, UAE courts have no authority to transfer title to that property. Under <strong>Article 18 of the UAE Civil Code</strong>, immovable property located in another country is governed by that country's law. A UAE court can order a cash payment or financial offset reflecting the value of the US property, but cannot actually transfer the deed.
+        </p>
+        <p>
+          To deal with US real estate in a divorce, you have several options:
+        </p>
+        <ul>
+          <li><strong>Voluntary transfer:</strong> Both parties sign a deed transferring the US property to the agreed owner. This must be done under the law of the US state where the property is located and recorded with the relevant county recorder or register of deeds. This is the fastest route if both parties cooperate.</li>
+          <li><strong>Sale and division of proceeds:</strong> Sell the US property, repay any mortgage, and divide the net proceeds per the divorce settlement. Proceeds can be transferred internationally once the sale closes.</li>
+          <li><strong>US court order:</strong> If the other party refuses to cooperate, you file in the US state where the property is located (or where you can establish jurisdiction over the other party) and seek a court order transferring or ordering the sale of the property.</li>
+        </ul>
+        <p>
+          US capital gains tax applies to the sale of US real estate. The primary residence exclusion (up to USD 250,000 gain for a single filer, USD 500,000 for a married couple, under IRC Section 121) may be available if the property was your primary residence for at least 2 of the 5 years before the sale. Expats living in Dubai may have difficulty qualifying for this exclusion if they have not lived in the property for the required period.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Social Security Spousal Benefits: The 10-Year Rule</h2>
+        <p>
+          A divorced spouse can receive Social Security benefits based on an ex-spouse's work record under specific conditions set by the Social Security Administration (SSA). The key requirements:
+        </p>
+        <ul>
+          <li>The marriage must have lasted at least 10 years</li>
+          <li>The claimant must be at least 62 years old</li>
+          <li>The claimant must be currently unmarried</li>
+          <li>The benefit must be at least as large as what the claimant would receive on their own work record</li>
+          <li>If the ex-spouse has not yet claimed Social Security, the divorce must have been in effect for at least 2 years before the claim</li>
+        </ul>
+        <p>
+          The benefit is up to 50% of the ex-spouse's Primary Insurance Amount (PIA) — the full retirement benefit at full retirement age. As a divorced spouse survivor, you can receive up to 100% of the deceased ex-spouse's benefit.
+        </p>
+        <p>
+          The practical significance: if your marriage is in its 9th year and you are considering divorce, waiting until the 10-year mark could be worth tens of thousands of dollars in Social Security benefits over your lifetime. Conversely, if you are the higher earner, your spouse has a strong financial incentive to wait. This calculation should be part of any settlement discussion in a long-term marriage approaching the 10-year mark.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>US Tax Implications of UAE Divorce</h2>
+
+        <h3>Alimony: TCJA 2017 changes</h3>
+        <p>
+          Before the Tax Cuts and Jobs Act 2017, alimony payments were deductible by the payer and taxable income for the recipient under the US Internal Revenue Code. For divorce or separation agreements executed after December 31, 2018, this treatment reversed entirely: alimony is no longer deductible by the payer and is no longer includible in the recipient's gross income.
+        </p>
+        <p>
+          The economic effect on settlements is significant. Under the old rules, a payer in the 37% tax bracket paying USD 50,000 per year in alimony had a net after-tax cost of USD 31,500 (the deduction offset 37% of the payment). Under current law, the full USD 50,000 is after-tax dollars. This makes high alimony settlements more expensive for the payer and requires re-pricing in negotiations. The recipient no longer needs to worry about tax on alimony received.
+        </p>
+        <p>
+          Pre-TCJA agreements (signed before 2019) keep the old rules unless the parties specifically modify the agreement and elect the new rules.
+        </p>
+
+        <h3>Foreign bank account reporting (FBAR)</h3>
+        <p>
+          US citizens with UAE bank accounts exceeding USD 10,000 at any point during the year must file an FBAR (FinCEN Form 114) annually. During divorce proceedings, where the other party may be monitoring your financial moves or where asset disclosure is required, be aware that your UAE accounts are reportable to the IRS. Conversely, if your spouse has undisclosed UAE accounts, FBAR filings (which are public record in certain enforcement contexts) may provide a route to trace hidden assets.
+        </p>
+
+        <h3>Passive foreign investment company (PFIC) issues</h3>
+        <p>
+          Some UAE-based investments (including certain funds and investment accounts held outside the US) may qualify as PFICs under the US tax code, with punitive tax treatment on gains. If retirement assets or investment portfolios are being divided in the divorce, both parties should obtain US tax advice on the character and tax treatment of those assets before agreeing to any division.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Immigration and Visa Consequences</h2>
+        <p>
+          Immigration consequences of divorce depend on the specific visa status of each party and the stage of any pending immigration applications.
+        </p>
+
+        <h3>US spousal visas and green cards</h3>
+        <p>
+          If one party is in the US on a K-1 fiance visa (which requires marriage within 90 days) or has a conditional green card (2-year period for marriages less than 2 years old at the time of permanent residence approval), divorce has direct immigration consequences. The conditional permanent resident must file Form I-751 to remove conditions. After divorce, this filing must be done individually (not jointly) and requires evidence the marriage was entered in good faith. USCIS denial of an I-751 can lead to removal proceedings.
+        </p>
+        <p>
+          If the conditional green card holder is in the UAE at the time of divorce proceedings and the marriage ends before the I-751 is filed, they should consult an immigration attorney immediately. Presence outside the US for extended periods also affects green card maintenance.
+        </p>
+
+        <h3>UAE residence visas post-divorce</h3>
+        <p>
+          In the UAE, a residence visa sponsored by a spouse cancels upon divorce. The non-sponsoring spouse typically has 30 days from the visa cancellation to either obtain a new residence visa (through employment, investment, or other means) or depart the UAE. Children's UAE visas may also be affected depending on who holds custody and who holds the sponsorship.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>DLD fees, title deed rules, contribution claims</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Maintenance, mut'a, and iddah calculated</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>Where to Divorce: UAE or Home Country?</strong>
+            <span>5-jurisdiction comparison and the race-to-file strategy</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody, travel bans, and relocation rules for expats</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and what drives your total bill</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

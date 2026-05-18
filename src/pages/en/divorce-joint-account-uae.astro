@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Joint Bank Account in UAE Divorce: Who Gets the Money?';
+const description =
+  'UAE has no automatic account freeze on divorce filing. Learn how to protect a joint account, apply for a court freeze, prove contribution, and handle credit card debt, salary accounts, and offshore transfers in a UAE divorce.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-joint-account-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-وتأشيرة-الإقامة-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Joint Bank Account Divorce UAE', url: 'https://divorceu.ae/en/divorce-joint-account-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can my spouse empty our joint account before divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAE law does not automatically freeze any bank account when a divorce is filed. If the account is jointly held, either party can withdraw the full balance at any time unless a court precautionary attachment order has been granted. If you suspect your spouse intends to drain the account, apply to the Court of Urgent Matters for a freeze order before serving divorce papers. Acting after the money is gone gives you a legal claim but no guarantee of recovery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I freeze a bank account in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Apply to the Court of Urgent Matters (Mahkama al-Umur al-Musta\'jila) for a precautionary attachment (Hajz Ihtiyati) order. You file on an ex-parte basis (without notifying your spouse) and must demonstrate: (1) a financial claim exceeding AED 10,000; (2) a real risk that funds will be dissipated before your case is heard. The court typically decides within 48 hours. If granted, the freeze runs for up to three months while you pursue the substantive claim. You must file the main case within 8 days of the attachment order or it lapses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who owns the money in a joint UAE account after divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In a genuine joint account (both names on the account mandate), each party owns their proportionate contribution to the balance. In practice, UAE courts look at who deposited which funds and in what amounts. If one spouse contributed 100% of the deposits (salary, transfers), they have the strongest claim to the full balance even if both names are on the account. If contributions were genuinely shared, the court splits the balance accordingly. Without a freeze order in place, whoever withdraws first typically controls the outcome.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a court order a bank account freeze in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under the UAE Civil Procedure Code (Federal Law No. 11 of 1992 as amended), courts can issue precautionary attachment orders over bank accounts. All UAE-licensed banks, including Emirates NBD, ADCB, FAB, Mashreq, HSBC, Dubai Islamic Bank, and Abu Dhabi Islamic Bank, are legally required to comply with court freeze orders within 24 hours and must issue a confirmation letter to the court. The freeze blocks all transactions including standing orders and direct debits.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to credit card debt in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If both spouses are primary cardholders on a joint credit card, both are jointly and severally liable to the bank for the full outstanding balance, regardless of who made the purchases. The bank does not recognise divorce proceedings as a reason to release either party from the debt. If your spouse is only an authorised supplementary user on your card, contact the bank immediately and cancel the supplementary card. For joint credit cards, your only relief is to agree with your spouse which party repays the balance, enforce that through your settlement agreement, and request the bank close the joint account once cleared.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I access my own salary account during divorce proceedings?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A sole salary account in your own name is your personal property and cannot be frozen without a specific court order naming that account. Your spouse has no automatic right to access your salary account and cannot instruct the bank to restrict it. The only scenario in which your salary account is at risk is if your spouse successfully obtains a precautionary attachment order against your assets as part of their financial claim, or if the Execution Court garnishes your salary to satisfy a judgment debt. Outside of those court orders, your salary account remains under your full control.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my spouse transferred money abroad before filing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pre-filing overseas transfers are the most difficult asset recovery scenario in UAE divorce. Once money leaves UAE banking jurisdiction, UAE courts cannot directly recover it. Your options are: (1) file a civil claim for the value of funds transferred without your knowledge or consent, arguing unjust enrichment under Article 318 of the Civil Code; (2) use IBAN records and bank statements to prove the transfer occurred and the amount; (3) if the receiving jurisdiction is a common law country (UK, Australia, Canada), engage local lawyers to pursue the funds there. For transfers to a DIFC-regulated entity, DIFC Courts may have jurisdiction to assist via their cross-border enforcement framework.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I prove I contributed to a joint account?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The strongest evidence is bank transfer records showing your salary or personal funds depositing into the account on a regular basis. Request a full 36-month statement from the bank. IBAN transfer confirmations, wage transfer slips (WPS records for employment), and bank-stamped statements are all admissible in UAE courts. WhatsApp or email conversations in which your spouse acknowledges that money in the account belongs to you, or that you paid for specific expenses from the account, also carry evidential weight. Under Article 318 of the Civil Code, the burden is on you to prove the contribution rather than on your spouse to disprove it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can banks refuse a UAE court freeze order?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. UAE-licensed banks are legally obligated to comply with court-issued precautionary attachment orders. Non-compliance exposes the bank to contempt of court liability. In practice, all major UAE banks have compliance teams that process freeze orders within 24 hours and issue a written confirmation to the court confirming the account balance at the time of freezing. The freeze applies to all transactions including scheduled payments, standing orders, and direct debits. The account holder is notified by the bank after the freeze is implemented.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to mortgage payments from a joint account during divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If mortgage repayments are drawn from a joint account by standing order and the account is frozen, the standing order will also be blocked. This risks a mortgage payment default, which harms both parties\' credit standing and may trigger default provisions in the loan agreement. If a joint account freeze is necessary, inform the bank in advance about the mortgage obligation and request that the court carve out the mortgage standing order from the freeze, or ensure the keeping spouse sets up an independent repayment arrangement before the freeze is applied. Mortgage default during divorce is one of the most damaging outcomes to avoid.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'Can my spouse empty our joint account before divorce?',
+    answer: 'Yes, unless a court freeze is in place. There is no automatic account protection on filing. Apply to the Court of Urgent Matters for a precautionary attachment before serving papers if you believe this is a risk. See our guide on <a href="/en/emergency-orders-divorce-uae/">emergency orders in UAE divorce</a> for the full process.',
+  },
+  {
+    question: 'How do I freeze a bank account in UAE divorce?',
+    answer: 'Apply to the Court of Urgent Matters for a precautionary attachment (Hajz Ihtiyati). File ex-parte, show a financial claim over AED 10,000 and risk of dissipation. Decision within 48 hours; freeze lasts up to three months. You must file the main case within 8 days or the order lapses.',
+  },
+  {
+    question: 'Who owns the money in a joint UAE account after divorce?',
+    answer: 'Each party owns their proportionate contribution. Courts examine deposit records. If one spouse deposited all funds, they have the stronger claim regardless of both names appearing on the account mandate.',
+  },
+  {
+    question: 'Can a court order a bank account freeze in UAE?',
+    answer: 'Yes. All UAE-licensed banks must comply with court freeze orders within 24 hours. The freeze blocks all transactions including standing orders. Banks issue written confirmation of the frozen balance to the court.',
+  },
+  {
+    question: 'What happens to credit card debt in UAE divorce?',
+    answer: 'Joint primary cardholders remain jointly and severally liable to the bank. Cancel supplementary authorised users immediately. For joint credit cards, agree repayment allocation in your settlement agreement and close the account once cleared.',
+  },
+  {
+    question: 'Can I access my own salary account during divorce proceedings?',
+    answer: 'Yes. A sole salary account cannot be frozen without a specific court order. Your spouse has no automatic right to access or restrict it. Only a court-issued garnishment or precautionary attachment can limit your access.',
+  },
+  {
+    question: 'What if my spouse transferred money abroad before filing?',
+    answer: 'Pre-filing overseas transfers are the hardest recovery scenario. UAE courts cannot directly recover funds held abroad. File a civil claim for the value under Article 318 of the Civil Code and consider parallel proceedings in the receiving jurisdiction. See our <a href="/en/offshore-assets-divorce-uae/">offshore assets guide</a> for cross-border strategies.',
+  },
+  {
+    question: 'How do I prove I contributed to a joint account?',
+    answer: 'Bank transfer records, salary IBAN statements, WPS wage slips, and written communications acknowledging your contribution are all admissible. Request 36 months of bank statements. Under Article 318 of the Civil Code, you bear the burden of proving your contribution.',
+  },
+  {
+    question: 'Can banks refuse a UAE court freeze order?',
+    answer: 'No. UAE-licensed banks are legally obligated to comply within 24 hours. Non-compliance is contempt of court. All major banks have dedicated compliance teams handling court orders.',
+  },
+  {
+    question: 'What happens to mortgage payments from a joint account during divorce?',
+    answer: 'A freeze blocks all transactions including mortgage standing orders. Inform the bank of the mortgage obligation before applying for the freeze and request a carve-out or have the keeping spouse establish independent repayment before the freeze takes effect. Mortgage default during divorce damages both parties.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-joint-account-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Banking and Asset Protection -- UAE 2025</p>
+      <h1>Joint Bank Account in UAE Divorce: Who Gets the Money?</h1>
+      <p class="hero-desc">
+        UAE law does not automatically freeze a single dirham when you file for divorce. Your spouse can legally withdraw every penny from your joint account the morning after you serve papers, unless you act first. This guide explains exactly how joint accounts work in UAE divorce, how to apply for a court freeze, and what banks are legally required to do when one arrives.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Five things to understand before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>No automatic freeze.</strong> Filing for divorce does not protect any bank account. Court action is required separately.</li>
+          <li><strong>Joint account rule:</strong> each party owns their proportionate contribution. Whoever withdraws first often wins practically.</li>
+          <li><strong>Court freeze available in 48 hours</strong> via the Court of Urgent Matters, ex-parte, on financial claims over AED 10,000.</li>
+          <li><strong>Solo accounts are untouchable</strong> without a specific court order -- your salary account is yours throughout proceedings.</li>
+          <li><strong>Joint credit card:</strong> both primary cardholders remain jointly liable to the bank regardless of divorce.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: The rule -->
+      <section class="content-section">
+        <h2>UAE's Starting Point: Title Rules, Not Marriage</h2>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the Personal Status Law governing Muslim families, which replaced Federal Law No. 28 of 2005) and <strong>Federal Decree-Law No. 41 of 2022</strong> (the civil family law for non-Muslims), the UAE operates a strict separate property regime. A bank account belongs to whoever's name the account is registered under. Marriage does not convert individually-owned financial accounts into shared marital property.
+        </p>
+        <p>
+          This principle mirrors the position on real estate covered in our <a href="/en/property-division-divorce-uae/">property division guide</a>: title -- whether on a DLD deed or a bank account mandate -- controls who owns the asset. For a solo account, the position is simple. For a joint account, the question shifts to proportionate contribution.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>The critical timing gap</h3>
+          <p>The most dangerous moment for joint account funds is the period between deciding to divorce and filing papers. Once your spouse suspects divorce is imminent, they may transfer or withdraw funds before any court can intervene. The correct sequence is: consult a lawyer, decide on strategy, apply for protective orders, and only then serve papers -- not the other way around.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Joint account mechanics -->
+      <section class="content-section">
+        <h2>How Joint Accounts Actually Work in UAE Divorce</h2>
+        <p>
+          A UAE joint account with two names on the mandate gives each account holder independent access to the full balance. Either party can withdraw, transfer, or close the account at any time without the other's consent, unless the account terms specify "both to sign" for transactions (rare in retail banking). In practice, the bank's only obligation before a court order is to follow the account's signing mandate.
+        </p>
+
+        <h3>Ownership by contribution</h3>
+        <p>
+          UAE courts determine ownership of joint account funds by examining who deposited what. If one spouse's salary was the sole source of deposits for years, that spouse has the stronger ownership claim even if both names appear on the account. The other spouse's name on the mandate gives them access rights to the account, but not an automatic 50% ownership claim.
+        </p>
+        <p>
+          If contributions were genuinely shared -- both spouses deposited regularly from separate income sources -- the court can apportion the balance in proportion to proven deposits. The burden of proof lies with the party asserting a contribution claim. Under <strong>Article 318 of the UAE Civil Code (Federal Law No. 5 of 1985)</strong>, a person cannot retain wealth belonging to another without legal cause: this unjust enrichment doctrine supports a spouse's claim to funds they demonstrably deposited but the other spouse withdrew.
+        </p>
+
+        <h3>Solo accounts in the other spouse's name</h3>
+        <p>
+          If your spouse maintains a solo account in their own name only, you have no automatic right to those funds. A separate civil claim is required, either through a contribution argument (you regularly transferred your own funds into their solo account to pay household expenses) or through unjust enrichment under <strong>Article 319 of the Civil Code</strong> (recovery of property transferred by mistake or without legal basis). These claims require documentary evidence and are not automatically available simply because you were married.
+        </p>
+
+        <h3>Joint investment accounts and brokerage accounts</h3>
+        <p>
+          A court precautionary attachment applies equally to joint stock or bond brokerage accounts. The freeze order names the financial institution and account number, which covers all holdings within the account including equities, bonds, and cash. If the value of the investment account is disputed, the court may appoint a financial expert for independent valuation before the main hearing.
+        </p>
+      </section>
+
+      <!-- Section 3: Applying for freeze -->
+      <section class="content-section">
+        <h2>How to Freeze a Joint Account: The Court Process</h2>
+        <p>
+          A bank account freeze in UAE divorce proceedings is a precautionary attachment (Hajz Ihtiyati) under the UAE Civil Procedure Code. Here is the process step by step.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Prepare the application and supporting evidence</h3>
+              <p>Your application must show: (1) a legitimate financial claim exceeding AED 10,000 against the other party; (2) clear evidence that there is a real risk the funds will be dissipated before the court can hear the main case. Evidence includes bank statements showing joint account balance, records of recent unusual withdrawals, and any communications suggesting the other party intends to move money. Your lawyer drafts the application in Arabic for submission to the Court of Urgent Matters.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>File ex-parte at the Court of Urgent Matters</h3>
+              <p>The application is filed without notice to your spouse (ex-parte). This is critical: if your spouse is alerted before the order is granted, they have time to withdraw funds. The Court of Urgent Matters is specifically designed for time-sensitive applications and typically issues a decision within 48 hours. The application fee is relatively modest at approximately AED 500-1,000 depending on the claim amount.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Order served on the bank</h3>
+              <p>If the order is granted, the court serves it directly on the bank. All major UAE banks, including Emirates NBD, ADCB, FAB, Mashreq, HSBC UAE, Dubai Islamic Bank, and Abu Dhabi Islamic Bank, maintain dedicated compliance units that process court orders within 24 hours and issue a written confirmation of the frozen balance. Islamic banks operating under Sharia-compliant structures are subject to exactly the same civil court compliance obligations for UAE-licensed accounts.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>File the main case within 8 days</h3>
+              <p>The precautionary attachment is a holding measure only. UAE Civil Procedure law requires you to file the substantive case within 8 days of the attachment order or the freeze is automatically lifted. The main case will be the divorce proceedings or the separate civil contribution claim, whichever is appropriate. Missing this deadline means the account is unfrozen and the other party is alerted -- do not miss it.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Freeze duration and extension</h3>
+              <p>An initial freeze lasts up to three months pending the substantive case hearing. Extensions are available if the court is satisfied the main proceedings are genuinely progressing. Once the court issues a judgment on the main case, the attachment is replaced either by an enforcement order (transferring funds to you) or by a release order (if your claim failed).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: What banks do -->
+      <section class="content-section">
+        <h2>What Banks Do When They Receive a Freeze Order</h2>
+        <p>
+          Many clients ask whether UAE banks actually comply with court freeze orders quickly. The answer is yes, without exception. UAE-licensed banks operate under Central Bank of the UAE supervision and cannot refuse a court order without facing regulatory consequences. The compliance process is standardised across all major institutions.
+        </p>
+        <p>
+          On receipt of a freeze order, the bank: (a) immediately suspends all debit transactions on the named account; (b) issues a balance confirmation letter to the court stating the exact balance at the time the order was received; (c) continues to receive incoming credits (salary transfers, standing credit instructions) but blocks all outgoing payments; (d) notifies the account holder that the account has been frozen pursuant to a court order, without disclosing the details of the applicant's case.
+        </p>
+        <p>
+          The block applies to standing orders and direct debits, which can cause secondary problems. A mortgage payment, school fee direct debit, or utility standing order drawing from the frozen account will be declined. If the joint account is the household's primary payment account, the freeze has cascading effects on shared obligations. Plan for this before applying: either set up alternative payment methods for essential outgoings, or request a carve-out in the freeze order for specific named standing orders.
+        </p>
+
+        <h3>Joint accounts with international banks</h3>
+        <p>
+          HSBC UAE, Standard Chartered UAE, and other international banks operating UAE banking licenses are subject to the same compliance obligations as locally headquartered banks. The freeze applies to the UAE-based account even if the bank's head office is in London or Singapore. The UAE branch operates under UAE law for all locally-held accounts.
+        </p>
+      </section>
+
+      <!-- Section 5: Offshore accounts -->
+      <section class="content-section">
+        <h2>Offshore and Overseas Accounts</h2>
+        <p>
+          Many UAE expats hold accounts in their home country or in financial centres like the UK, Switzerland, or Singapore alongside their UAE accounts. The position for offshore accounts is substantially different from UAE-held accounts.
+        </p>
+
+        <h3>UAE court jurisdiction over offshore accounts</h3>
+        <p>
+          UAE courts can order a party to disclose the existence and value of all financial accounts worldwide. Failure to disclose is contempt of court and may result in adverse inferences being drawn in the proceedings. However, UAE courts cannot directly freeze a bank account held at a UK or Swiss institution -- that requires proceedings in the relevant jurisdiction.
+        </p>
+
+        <h3>DIFC Courts and common law jurisdictions</h3>
+        <p>
+          For accounts held in common law jurisdictions (UK, Australia, Singapore, Hong Kong), the most effective route is to use the DIFC Courts to issue a Mareva injunction (a freezing order that common law courts worldwide will recognise and assist with). The DIFC Courts have jurisdiction over complex cross-border financial disputes, and their injunctions are enforceable in 43 countries that are signatories to the New York Convention and through bilateral enforcement treaties. This route requires significant legal budget but is the most effective tool for trapping overseas funds.
+        </p>
+
+        <h3>IBAN transfer records as evidence</h3>
+        <p>
+          Even where direct freezing of offshore accounts is not possible, IBAN transfer records from UAE banks are admissible evidence in UAE proceedings. A UAE court seeing a bank statement showing AED 2 million transferred to a UK account one week before the divorce was filed can draw adverse inferences about dissipation of marital assets. This record can support a larger maintenance or compensation award in the UAE proceedings as a counterbalance to the transferred funds. See our <a href="/en/divorce-financial-planning-uae/">divorce financial planning guide</a> for pre-filing asset protection steps.
+        </p>
+      </section>
+
+      <!-- Section 6: Credit cards and overdrafts -->
+      <section class="content-section">
+        <h2>Joint Credit Cards and Overdrafts</h2>
+        <p>
+          Credit products create specific problems in UAE divorce that bank accounts do not.
+        </p>
+
+        <h3>Joint credit cards</h3>
+        <p>
+          Where both spouses are primary cardholders on a joint credit card (not supplementary), both are jointly and severally liable to the bank for the full outstanding balance. This means the bank can pursue either of you for 100% of the debt regardless of any divorce settlement agreement dividing it between you. The bank does not become a party to your settlement.
+        </p>
+        <p>
+          The practical steps: agree with your lawyer which party will be responsible for repaying the balance, build this obligation into the settlement agreement with specific timelines and consequences for default, and close the joint credit card account as soon as the balance is cleared. If your spouse is only a supplementary user (authorised user) on your primary card, contact the bank and cancel the supplementary card immediately. You will not need a court order for this.
+        </p>
+
+        <h3>Joint overdraft facilities</h3>
+        <p>
+          An overdraft on a joint current account makes both spouses jointly liable to the bank for the entire overdraft balance, regardless of who spent it. The bank can pursue either party for repayment. This becomes particularly unfair when one spouse runs up an overdraft in the joint account knowing the other will remain liable. Document any unusual overdraft usage as soon as you suspect divorce proceedings are likely -- this evidence supports an unjust enrichment claim against the spending spouse.
+        </p>
+
+        <h3>Salary protection during proceedings</h3>
+        <p>
+          Your salary account in your name alone remains yours throughout divorce proceedings. Your employer cannot be directed to redirect your salary without a court salary garnishment order, which is only available as an <a href="/en/emergency-orders-divorce-uae/">enforcement tool</a> after a judgment is issued against you -- not as a pre-judgment measure in favour of your spouse. If your employer pays salary into a joint account and you want to protect future salary deposits, instruct your employer's HR or payroll department in writing to direct salary to a solo account in your name only. This is a legitimate protective step that requires no court order.
+        </p>
+      </section>
+
+      <!-- Section 7: Proving contribution -->
+      <section class="content-section">
+        <h2>Proving Your Contribution: The Evidence That Works</h2>
+        <p>
+          Both a contribution claim on a joint account and an unjust enrichment claim on a solo account require documented evidence. UAE courts do not award financial claims based on testimony alone in banking disputes -- paper trails are essential.
+        </p>
+
+        <h3>Bank transfer records</h3>
+        <p>
+          IBAN transfer records showing regular transfers from your personal or salary account into the joint account are the strongest evidence of contribution. Request at minimum 36 months of statements from both your personal account and the joint account. The court can compare inflows and outflows to establish the proportionate contribution of each party.
+        </p>
+
+        <h3>Wage Protection System (WPS) records</h3>
+        <p>
+          Private sector salaries in the UAE are paid through the Wage Protection System (WPS) under <strong>Federal Decree-Law No. 33 of 2021</strong> (the Labour Law). WPS records are maintained by the Ministry of Human Resources and Emiratisation and show every salary payment made to your WPS account number. These records are admissible as independent third-party evidence of your income and payment history.
+        </p>
+
+        <h3>Written communications</h3>
+        <p>
+          WhatsApp, SMS, and email messages in which your spouse acknowledges that money in the joint account belongs to you, or that you paid for specific household expenses from the account, are admissible in UAE courts. Screenshot and preserve these before they can be deleted. Cloud backup records may also be retrievable through third-party disclosure applications if your spouse has deleted messages.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Get the statements now, not later</h3>
+          <p>Banks in UAE maintain account statements for a minimum of five years. Requesting statements through the courts takes longer and may alert your spouse to your strategy. Request your own account statements directly through internet banking or at a branch immediately. You do not need a lawyer to do this. Save them as PDF with timestamps before any proceedings begin.</p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>DLD rules, contribution claims, mortgage scenarios</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Orders in UAE Divorce</strong>
+            <span>Account freezes, travel bans, urgent injunctions</span>
+          </a>
+          <a href="/en/divorce-financial-planning-uae/" class="related-card">
+            <strong>Divorce Financial Planning UAE</strong>
+            <span>Protect assets before proceedings begin</span>
+          </a>
+          <a href="/en/offshore-assets-divorce-uae/" class="related-card">
+            <strong>Offshore Assets in UAE Divorce</strong>
+            <span>BVI companies, overseas accounts, cross-border enforcement</span>
+          </a>
+          <a href="/en/divorce-end-of-service-gratuity-uae/" class="related-card">
+            <strong>EOSB and Gratuity in UAE Divorce</strong>
+            <span>How end-of-service benefits factor into settlements</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Nafaqa, mut'a, and iddah maintenance calculated</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

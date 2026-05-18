@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Australian Expat Divorce in UAE: Superannuation, Property Orders, and the 12-Month Comparison';
+const description =
+  'Australian expats divorcing in Dubai can skip the 12-month separation rule that applies in Australia. UAE divorce under FL 41/2022 is faster, but Australian superannuation cannot be divided by UAE courts. This guide covers Family Law Act 1975 recognition, super splitting orders, property time limits, and what to do next.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/australian-expat-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمقيمين-البريطانيين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Australian Expat Divorce UAE', url: 'https://divorceu.ae/en/australian-expat-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Will Australia recognise my UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, in most circumstances. Section 104 of the Family Law Act 1975 (Cth) provides that an overseas divorce will be recognised in Australia if it was obtained by judicial or other proceedings in a foreign country and at least one party was ordinarily resident, domiciled, or a national of that country at the time the proceedings were instituted. Australian citizens who have lived in UAE for 12 or more months before filing for divorce will satisfy the ordinarily resident test. The UAE divorce decree, once apostilled by the UAE Ministry of Foreign Affairs and officially translated, is accepted by Australian courts and authorities as proof that the marriage has ended.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I split Australian superannuation after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You cannot split Australian superannuation through UAE court proceedings. UAE courts have no jurisdiction over Australian superannuation funds. After your UAE divorce is recognised in Australia, you have two options: enter into a binding financial agreement under Section 90MJ of the Family Law Act 1975, which can include superannuation splitting provisions, or apply to the Federal Circuit and Family Court of Australia for a superannuation splitting order. The Australian court can make such an order even after a foreign divorce. The time limit for applying for superannuation splitting is 12 months from the date of the foreign divorce. Do not let this deadline pass.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to go back to Australia to get divorced?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. If you are ordinarily resident in the UAE, you have jurisdiction to divorce in UAE courts under Federal Decree-Law No. 41 of 2022. You do not need to fly back to Australia to file. UAE courts can grant the divorce, and Australia will recognise it under Section 104 of the Family Law Act 1975. You will need an apostilled and translated UAE divorce certificate for Australian administrative purposes (Centrelink, superannuation fund notifications, remarriage applications). However, you may need to engage an Australian family lawyer remotely to handle the superannuation and property aspects of the financial settlement.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is UAE divorce faster than Australian divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, considerably. The Australian Family Law Act 1975 Section 48 requires that the parties have been separated for 12 months before a divorce order can be made. This separation period is absolute: there are no exceptions for adultery or fault. The earliest an Australian divorce can be finalised is roughly 15 months after separation, once you account for court processing times. UAE divorce under Federal Decree-Law No. 41 of 2022 for non-Muslim couples requires no separation period, no grounds, and no fault element. An uncontested UAE divorce typically concludes in one to six months from filing. For Australian expats who are both based in UAE, this is a significant practical advantage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the 12-month separation rule and does it apply to UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The 12-month separation requirement applies only to divorces filed in Australian courts under the Australian Family Law Act 1975. It does not apply to a divorce filed in UAE courts. Under Federal Decree-Law No. 41 of 2022, non-Muslim couples in the UAE can obtain a no-fault divorce without any separation period. However, note that the 12-month rule has a different but important role after a UAE divorce: you have only 12 months from the date of a foreign divorce to apply to Australian courts for property settlement or superannuation splitting orders. This is a strict time limit under Section 44 of the Family Law Act.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can Australian courts handle our property after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Australian courts retain jurisdiction to make property settlement orders even after a foreign divorce. Section 44(3) of the Family Law Act 1975 requires that property applications be filed within 12 months of the foreign divorce becoming absolute. If you miss this deadline you will need leave (permission) from the court to apply out of time. The Federal Circuit and Family Court of Australia can make orders in relation to Australian property, superannuation, spousal maintenance, and financial agreements regardless of where the divorce was granted, provided Australian law applies and the court has jurisdiction.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if my spouse takes our children to Australia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The UAE is not a signatory to the Hague Convention on the Civil Aspects of International Child Abduction. Australia is a signatory. If a parent takes children from UAE to Australia without the consent of the other parent and without a UAE court order authorising the move, the left-behind parent in UAE cannot use Hague mechanisms to secure the children\'s return, because UAE is not bound by the Convention. The parent in Australia would need to apply to the Federal Circuit and Family Court of Australia for parenting orders. Australian courts apply the best interests of the child test under the Family Law Act and may or may not order a return to UAE depending on all the circumstances. To prevent this scenario, apply for a travel restriction on the children\'s passports at the start of UAE divorce proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I file for Australian property orders after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. After a UAE divorce that is recognised in Australia under Section 104 of the Family Law Act 1975, you can apply to the Federal Circuit and Family Court of Australia for property orders covering Australian assets. The critical time limit is 12 months from the date the foreign divorce became absolute. For Australian real estate, bank accounts, investment portfolios, and superannuation, you must either enter a binding financial agreement with your former spouse or file a court application within this window. If the deadline passes, you need leave from the court, which is not automatic and requires you to show you have a reasonable prospect of success.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a UAE divorce certificate to divide super in Australia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The UAE divorce certificate, apostilled by the UAE Ministry of Foreign Affairs and accompanied by an official English translation, is required to prove to the Australian family court and to superannuation fund trustees that the marriage has ended. The superannuation fund trustee must be served with any superannuation splitting order. The apostille process for a UAE divorce certificate involves obtaining the court-issued decree, having it stamped by the UAE Ministry of Justice, then by the Ministry of Foreign Affairs, and then having it translated by an NAATI-accredited translator (for official Australian use). See our guide on divorce certificate attestation in UAE for the full process.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What Australian court handles property after a foreign divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Federal Circuit and Family Court of Australia (FCFCA) is the primary court for property settlement, superannuation splitting, and spousal maintenance matters after a foreign divorce. There are two divisions: Division 1 handles more complex or high-value cases; Division 2 handles straightforward matters. The court has registries in all capital cities and major regional centres. Filing can be done electronically through the Commonwealth Courts Portal. For high-value cases or complex superannuation splitting involving defined benefit schemes, legal representation is strongly recommended.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/australian-expat-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Australian Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>Australian Expat Divorce in UAE: Skip the 12 Months, But Don't Skip the Super</h1>
+      <p class="hero-desc">
+        Divorcing in Dubai means bypassing Australia's mandatory 12-month separation requirement and getting your divorce finalised in a fraction of the time. But Australian superannuation, one of the most valuable assets in any Australian family's financial position, is completely beyond the reach of UAE courts. This guide tells you what UAE does well, what Australia still needs to handle, and the critical 12-month deadline you cannot miss.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for Australian expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>Australia recognises UAE divorce</strong> under Family Law Act 1975 s.104 if either party was ordinarily resident, domiciled, or a national of UAE at the time of proceedings.</li>
+          <li><strong>No 12-month separation needed in UAE.</strong> Australian Family Law Act requires it; UAE FL 41/2022 does not.</li>
+          <li><strong>Australian superannuation cannot be divided by UAE courts.</strong> A separate Australian binding financial agreement or court order is required.</li>
+          <li><strong>12-month deadline:</strong> You have 12 months from the foreign divorce to apply for Australian property orders under s.44 Family Law Act.</li>
+          <li><strong>UAE courts cover UAE assets only.</strong> Australian property, bank accounts, and investments need Australian proceedings.</li>
+          <li><strong>UAE is not a Hague signatory.</strong> Australian custody orders have no automatic enforcement in UAE.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>UAE Divorce Under FL 41/2022: What It Offers Australian Expats</h2>
+        <p>
+          <strong>Federal Decree-Law No. 41 of 2022</strong> transformed the divorce experience for non-Muslim expat couples in the UAE. For Australians, the most significant feature is the complete absence of a mandatory separation period. Under Australian law, the Family Law Act 1975 Section 48 requires 12 months of separation before a divorce order can be granted. This is an absolute requirement under Australian law with no exceptions based on fault or conduct. It means the fastest possible Australian divorce takes 12 to 15 months from the date of separation.
+        </p>
+        <p>
+          UAE law imposes no such requirement. Either spouse can apply to the UAE court for a no-fault divorce and the court will grant it. There is no grounds requirement and no mandatory mediation requirement for non-Muslim couples under FL 41/2022. An uncontested divorce in Dubai courts typically concludes within one to six months from filing.
+        </p>
+        <p>
+          In Abu Dhabi, Australian expats have an additional option: the Abu Dhabi Civil Family Court established under <strong>Abu Dhabi Law No. 14 of 2021</strong>. This court applies civil family law to non-Muslim couples and can handle both the divorce and financial matters including maintenance and property within its jurisdiction. For Australian expats resident in Abu Dhabi, this is generally the preferred venue for divorce proceedings.
+        </p>
+        <p>
+          The jurisdiction to divorce in UAE arises from ordinary residence, not from citizenship or where you married. An Australian couple who married in Sydney but are both living and working in Dubai can divorce in Dubai courts. For a comprehensive overview of how expat jurisdiction works, see our guide on <a href="/en/divorce-for-expats-in-uae/">divorce for expats in UAE</a>.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Australian Recognition: Section 104 Family Law Act 1975</h2>
+        <p>
+          Australian law has a clear statutory framework for recognising overseas divorces. <strong>Section 104 of the Family Law Act 1975 (Cth)</strong> provides that an overseas divorce is recognised in Australia as valid if it was obtained by judicial or other proceedings in an overseas jurisdiction and at the time those proceedings were instituted, at least one party was ordinarily resident in, domiciled in, or a national of that foreign country.
+        </p>
+        <p>
+          Australian citizens resident in UAE who have lived there for 12 or more months before filing for divorce will satisfy the ordinarily resident test without difficulty. The test is whether the UAE is the place where the party had their settled home, their regular occupational routine, and their usual pattern of living. For a working professional on a UAE residence visa with an established life in Dubai, ordinary residence in UAE is clear.
+        </p>
+        <p>
+          The recognition under Section 104 is automatic: there is no separate application to make in Australia to have the UAE divorce recognised. The divorce is simply valid in Australia by operation of law once the UAE decree is issued and meets the criteria. The practical requirement is obtaining an apostilled and officially translated UAE divorce certificate to present to Australian authorities, financial institutions, and courts as needed.
+        </p>
+
+        <div class="compare-grid">
+          <div class="compare-col compare-col--uae">
+            <h3>UAE Divorce (FL 41/2022)</h3>
+            <ul>
+              <li>No separation period</li>
+              <li>No grounds requirement</li>
+              <li>No fault element</li>
+              <li>No mandatory mediation</li>
+              <li>Timeline: 1 to 6 months</li>
+              <li>Covers UAE assets and UAE maintenance</li>
+              <li>Court fees AED 200 to 500</li>
+              <li>Recognised in Australia under s.104 FLA</li>
+            </ul>
+          </div>
+          <div class="compare-col compare-col--aus">
+            <h3>Australian Divorce (Family Law Act 1975)</h3>
+            <ul>
+              <li>12-month separation: absolute requirement</li>
+              <li>Single ground: irretrievable breakdown</li>
+              <li>No fault element</li>
+              <li>Mediation recommended, not mandatory for divorce</li>
+              <li>Timeline: 15 months minimum</li>
+              <li>Covers all Australian assets and support</li>
+              <li>Filing fee AUD 1,060 (approximate)</li>
+              <li>Full access to super splitting and property orders</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          The comparison is stark. For a couple whose financial life is primarily in the UAE and who want to finalise their separation quickly, UAE is the logical venue for the divorce itself. The Australian financial steps can follow after the UAE divorce is in hand.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Australian Superannuation: The Asset UAE Courts Cannot Touch</h2>
+        <p>
+          Superannuation is often the largest or second-largest asset in an Australian family's financial position. For Australians who have spent years building super before moving to UAE, the accumulated balance can be substantial. UAE courts have absolutely no jurisdiction over Australian superannuation funds and no mechanism to issue superannuation splitting orders.
+        </p>
+        <p>
+          Under Australian law, superannuation is treated as property of the marriage and subject to division on divorce under the Family Law Act 1975. The mechanism is a superannuation splitting order, which instructs the trustee of the superannuation fund to split the member's interest and create or pay into a new interest for the non-member spouse. This can be done either by consent through a binding financial agreement under <strong>Section 90MJ of the Family Law Act 1975</strong>, or by applying to the Federal Circuit and Family Court of Australia for a court order.
+        </p>
+        <p>
+          Crucially, the Australian court retains jurisdiction to make superannuation splitting orders even after a foreign divorce. The UAE divorce recognised under Section 104 ends the marriage; the Australian court then handles the financial division. But the time limit for applying is strict.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Critical deadline: 12 months from foreign divorce</h3>
+          <p>Under Section 44(3) of the Family Law Act 1975, property settlement and superannuation splitting applications must be filed in Australian courts within 12 months of the date a foreign divorce becomes absolute. If you miss this deadline, you need leave from the court to apply out of time, which requires demonstrating a reasonable prospect of success and explaining the delay. Do not assume you have unlimited time after your UAE divorce to address Australian superannuation.</p>
+        </div>
+
+        <h3>Defined benefit schemes</h3>
+        <p>
+          Australian public sector employees in particular may have defined benefit superannuation interests, which are more complex to split than accumulation funds. The value of a defined benefit interest for splitting purposes is calculated using a formula set out in the superannuation fund's trust deed and the Family Law (Superannuation) Regulations 2001. An actuary may be needed to value the interest accurately. Engage an Australian family lawyer with superannuation experience well before the 12-month deadline.
+        </p>
+
+        <h3>Superannuation fund notification</h3>
+        <p>
+          When a superannuation splitting order is made or a binding financial agreement is executed, the trustee of the fund must be notified and served with the relevant documents. The trustee then implements the split. This process is governed by the Superannuation Industry (Supervision) Act 1993 and relevant fund deed. Your Australian family lawyer manages this process, but they will need the apostilled UAE divorce certificate as part of the documentation package. See our guide on <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation in UAE</a> for the authentication steps.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Australian Property Orders After UAE Divorce</h2>
+        <p>
+          Beyond superannuation, any Australian real estate, investment accounts, business interests, or other Australian assets accumulated during the marriage are subject to division under the Family Law Act 1975. UAE courts do not have jurisdiction over these assets and a UAE divorce decree does not divide them.
+        </p>
+        <p>
+          After your UAE divorce is recognised in Australia, you can apply to the Federal Circuit and Family Court of Australia for property orders. The Australian court applies the four-step process under the Family Law Act: identifying and valuing the property pool, assessing contributions (financial and non-financial), assessing future needs (income, age, health, care of children), and determining whether the proposed division is just and equitable overall.
+        </p>
+        <p>
+          The filing fee for property proceedings in the Federal Circuit and Family Court of Australia ranges from AUD 1,600 (for applications up to AUD 500,000) to AUD 4,500 (for applications over AUD 500,000). These fees are in addition to legal costs.
+        </p>
+        <p>
+          Couples who agree on the division of Australian property can formalise the agreement through a consent order (submitted to the court for approval without a full hearing) or through a binding financial agreement. Consent orders are generally preferable because they have the same enforceability as a court order and can be sought relatively quickly and cost-effectively where the parties agree. See our detailed analysis of the property division question at <a href="/en/property-division-divorce-uae/">property division in UAE divorce</a>.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Obtain and apostille your UAE divorce certificate</h3>
+              <p>After the UAE court issues the divorce decree, have it stamped by the UAE Ministry of Justice and Ministry of Foreign Affairs (apostille). Have it translated by an NAATI-accredited translator for Australian use. This document is your proof of foreign divorce for all Australian purposes.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Engage an Australian family lawyer within weeks of the UAE divorce</h3>
+              <p>The 12-month clock starts running from the date the UAE divorce is absolute. Engage an Australian family lawyer immediately after the UAE decree is issued. Do not wait until you return to Australia. Many Australian family lawyers handle cross-border matters remotely.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>File for property orders or enter a binding financial agreement</h3>
+              <p>Either negotiate a binding financial agreement covering Australian assets (including super) with your Australian lawyer's advice, or apply to the Federal Circuit and Family Court of Australia for consent orders or contested property orders. The application must be filed within 12 months of the foreign divorce.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Notify superannuation fund trustees</h3>
+              <p>Once a superannuation splitting order or financial agreement is made, notify the relevant superannuation fund trustees with certified copies of the order or agreement and the divorce certificate. The trustee implements the split and creates the non-member spouse's interest.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Costs: UAE vs Australia</h2>
+        <p>
+          The cost advantage of UAE divorce over Australian proceedings is substantial, particularly for the divorce itself. Court fees in UAE for a non-Muslim divorce application are AED 200 to 500. Legal fees for an uncontested UAE divorce run from AED 5,000 to 15,000. A contested UAE divorce with custody and property disputes may reach AED 30,000 to 60,000.
+        </p>
+        <p>
+          By contrast, a contested property settlement in the Federal Circuit and Family Court of Australia can cost AUD 50,000 to 200,000 in legal fees including counsel, expert valuation reports, and hearing preparation. Even consent order applications for property involve preparation costs of AUD 3,000 to 8,000. Filing fees alone are AUD 1,060 for the divorce application and AUD 1,600 to 4,500 for property applications.
+        </p>
+        <p>
+          The optimal strategy for most Australian expats in Dubai with straightforward UAE finances is: obtain the UAE divorce quickly and at low cost, then handle the Australian financial matters by consent order or binding financial agreement without contested court proceedings. For full detail on the UAE side costs, see our guide on <a href="/en/divorce-cost-uae/">divorce costs in UAE</a>.
+        </p>
+        <p>
+          For a comprehensive guide on choosing where to file, see <a href="/en/where-to-divorce-uae-or-home-country/">where to divorce: UAE or home country</a>.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Children: Custody, Travel Bans, and the Hague Gap</h2>
+        <p>
+          For Australian parents in the UAE, child custody and the risk of one parent taking children across the border is one of the most critical issues in any divorce. The absence of Hague Convention protection creates real asymmetry.
+        </p>
+
+        <h3>The Hague Convention asymmetry</h3>
+        <p>
+          Australia is a contracting state to the Hague Convention on the Civil Aspects of International Child Abduction. The UAE is not. This means that where a child is wrongfully removed from Australia to UAE, Australia can use Hague mechanisms to seek the child's return from another Hague country, but the UAE is not obligated under the Convention. Conversely, if an Australian parent removes children from UAE to Australia, the UAE parent cannot use the Hague mechanism against Australia, but Australia's own family law process will apply.
+        </p>
+        <p>
+          Under the Australian Family Law Act 1975, Australian courts apply the best interests of the child as the paramount consideration in all parenting matters. A UAE court order for custody or for the child to be returned to UAE has no automatic enforcement in Australian courts. The Australian court will conduct its own assessment.
+        </p>
+
+        <h3>Protecting your children during UAE proceedings</h3>
+        <p>
+          At the start of UAE divorce proceedings involving children, apply to the UAE court for a travel ban on the children's passports if there is any risk of the other parent taking them to Australia without consent. This is a standard precaution and UAE courts grant travel bans readily in family matters. The UAE immigration authorities enforce these bans at the border. For the detailed process, see our guide on <a href="/en/child-custody-uae/">child custody in UAE</a>.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-for-expats-in-uae/" class="related-card">
+            <strong>Divorce for Expats in UAE</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>Where to Divorce: UAE or Home Country?</strong>
+            <span>5-jurisdiction comparison and the race-to-file strategy</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody, travel bans, and relocation rules</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>Divorce Certificate Attestation UAE</strong>
+            <span>Apostille process, MOFA stamps, and international use</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>DLD fees, contribution claims, and joint mortgages</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box--warning { background: #fff8e1; border: 1px solid #f5c518; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .compare-col { border-radius: 10px; padding: 1.25rem; }
+  .compare-col--uae { background: #fef9ec; border: 1.5px solid #c9a84c; }
+  .compare-col--aus { background: #eff6ff; border: 1.5px solid #93c5fd; }
+  .compare-col h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.75rem; }
+  .compare-col ul { margin: 0; padding-left: 1.1rem; }
+  .compare-col li { font-size: 0.85rem; color: #374151; line-height: 1.7; margin-bottom: 0.3rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

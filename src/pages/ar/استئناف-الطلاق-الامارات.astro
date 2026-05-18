@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'استئناف حكم الطلاق في الإمارات — مهلة ٣٠ يوماً والأسباب المقبولة ٢٠٢٥';
+const description =
+  'كيف تطعن في حكم الطلاق أمام محكمة الاستئناف في الإمارات: مهلة ٣٠ يوماً، الأسباب المقبولة وغير المقبولة، الفرق بين الاستئناف وتعديل الحكم، وتكلفة الإجراءات.';
+
+const canonical = 'https://divorceu.ae/ar/استئناف-الطلاق-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-appeal-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'استئناف حكم الطلاق في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'كم المهلة المتاحة لاستئناف حكم الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ثلاثون يوماً من تاريخ استلام الحكم المكتوب. هذه المهلة مطلقة — فواتها يُغلق باب الاستئناف في الغالب. ساعة الصفر تبدأ من استلامك الحكم المكتوب لا من صدوره شفهياً في الجلسة. إذا لم تستلم الحكم بعد فاطلب من محاميك المطالبة به فوراً كتابةً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يتوقف تنفيذ حكم الطلاق خلال فترة الاستئناف؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الحكم الابتدائي يبقى نافذاً أثناء الاستئناف ما لم تنجح في استصدار أمر وقف التنفيذ. الوقف يستلزم طلباً مستقلاً لمحكمة الاستئناف مع إثبات أن تنفيذ الحكم خلال فترة الاستئناف سيُلحق بك ضرراً جسيماً لا يمكن إصلاحه. لا تُمنح أوامر الوقف تلقائياً، بل تُوازن المحكمة بين أضرار الطرفين.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تنظر محكمة الاستئناف في أدلة جديدة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'بوجه عام لا. محكمة الاستئناف هيئة مراجعة قانونية لا محاكمة من جديد. تفحص ما إذا كانت المحكمة الابتدائية قد طبّقت القانون تطبيقاً صحيحاً على الأدلة المعروضة أمامها. الأدلة الجديدة لا تُقبل عادةً في مرحلة الاستئناف. إذا كانت لديك أدلة جديدة حقيقية لم تكن موجودة وقت الحكم الابتدائي، فقد يكون طلب مراجعة الحكم (التماس إعادة النظر) هو الآلية المناسبة.',
+      },
+    },
+  ],
+};
+
+const grounds = [
+  { ground: 'خطأ قانوني', detail: 'أخطأت المحكمة في تطبيق القانون الإماراتي أو أحكام الشريعة الإسلامية أو تفسيرها في الحكم. هذا أقوى أسباب الاستئناف.' },
+  { ground: 'إخلال إجرائي جوهري', detail: 'انتُهكت قاعدة إجرائية جوهرية خلال الجلسات الابتدائية، كعدم إخطارك على النحو الصحيح، أو استبعاد دليل أساسي دون مسوّغ، أو إغفال المحكمة خطوةً إلزامية.' },
+  { ground: 'دليل جديد لم يكن بالإمكان كشفه', detail: 'دليل لم يكن موجوداً أو لم يكن بالإمكان اكتشافه قبل صدور الحكم الابتدائي. ملاحظة: محاكم الاستئناف لا تقبل أدلةً جديدةً في الغالب، وهذا الأمر يستلزم طلباً مستقلاً عادةً.' },
+  { ground: 'ظلم صارخ', detail: 'النتيجة مجحفةٌ لدرجة لا يمكن لأي محكمة تطبق القانون تطبيقاً صحيحاً أن تبلغها. معيارٌ رفيع يستلزم توثيقاً واضحاً.' },
+];
+
+const appealSteps = [
+  { n: 1, title: 'استلام الحكم المكتوب ومراجعته', body: 'مهلة الثلاثين يوماً تبدأ من استلامك الحكم المكتوب لا من صدوره الشفهي. اطلب من محاميك المطالبة بأسباب الحكم فوراً إذا لم تُسلَّم تلقائياً.' },
+  { n: 2, title: 'تعيين محامٍ استئنافي', body: 'الاستئناف يتطلب مهارات مختلفة عن المحاكمة الابتدائية. محاميك الاستئنافي يراجع محضر الجلسة والأدلة والمسوّغات القانونية. وكّله في أقرب وقت لأن المهلة مطلقة.' },
+  { n: 3, title: 'تقديم عريضة الاستئناف', body: 'يُودع محاميك عريضة الاستئناف لدى محكمة الاستئناف في الإمارة المختصة. تُسدَّد رسوم الإيداع (٥٠٠-٢٠٠٠ درهم حسب الإمارة ونوع الطلب).' },
+  { n: 4, title: 'تقديم مذكرة الأسباب', body: 'مذكرة قانونية تفصيلية تُحدد أسباب الاستئناف بالرجوع إلى سجل المحاكمة الابتدائية. الطرف الآخر يُقدم مذكرة رد. تبادل المذكرات يستغرق عادةً ٤-٨ أسابيع.' },
+  { n: 5, title: 'حضور الجلسة الشفهية', body: 'تُحدد محكمة الاستئناف موعداً لجلسة الاستماع. يُقدم كلا المحاميين حججهما. قد تطرح المحكمة أسئلةً على المحامين. الإجراءات تُجرى باللغة العربية ولا تُستدعى شهود عادةً في مرحلة الاستئناف.' },
+  { n: 6, title: 'صدور الحكم', body: 'تُصدر محكمة الاستئناف حكمها عادةً في غضون ٦٠-٩٠ يوماً من الجلسة. تستطيع المحكمة: تأييد الحكم الابتدائي، أو تعديله جزئياً، أو إلغاؤه كلياً. الإلغاء الكلي يُحيل القضية إلى محكمة أول درجة أو تُفصل مباشرةً.' },
+];
+
+const comparisonRows = [
+  { aspect: 'الغرض', appeal: 'الطعن في خطأ قانوني أو إخلال إجرائي في الحكم الصادر', modification: 'تعديل حكم قائم بسبب تغيّر الظروف بعد صدوره' },
+  { aspect: 'السبب', appeal: 'الاستياء من النتيجة مع وجود خطأ قانوني أو إجرائي محدد', modification: 'فقدان العمل، السفر للخارج، تغيّر الحالة الصحية، بلوغ الطفل سناً مختلفة' },
+  { aspect: 'المهلة', appeal: '٣٠ يوماً من استلام الحكم المكتوب', modification: 'لا مهلة محددة؛ يمكن التقديم في أي وقت تتغيّر فيه الظروف' },
+  { aspect: 'المحكمة', appeal: 'محكمة الاستئناف (الدرجة الثانية)', modification: 'المحكمة الابتدائية ذاتها التي أصدرت الحكم الأصلي' },
+  { aspect: 'النتيجة', appeal: 'تأييد الحكم أو تعديله أو إلغاؤه', modification: 'تعديل الحكم القائم بأثر مستقبلي' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يمكن استئناف حكم الحضانة إذا كانت الأم تعزم السفر للخارج مع الأطفال؟',
+    answer: 'نعم، وقد تستطيعين أيضاً التقدم بطلب عاجل لمنع السفر بأمر وقتي ريثما يُفصَل في الاستئناف. نقل الأطفال للخارج أحد أسباب الطعن الاستئنافي العاجل. إذا لم يتناول الحكم الابتدائي خطر النقل فهذا مسوّغ قوي للاستئناف. السرعة حاسمة: متى غادر الأطفال الإمارات يصعب التنفيذ ويُطوّل الأمد. وكّل محامياً فور علمك بنية الطرف الآخر في السفر.',
+  },
+  {
+    question: 'هل يمكن استئناف مقدار نفقة الأطفال أو المرأة؟',
+    answer: 'نعم. الطعن في مقدار النفقة مقبول في محاكم الاستئناف. الأسباب الشائعة: اعتمدت المحكمة رقماً خاطئاً للدخل، لم تُراعِ قدرة الزوجة على الكسب، أو طبّقت مدةً خاطئة. محاكم الاستئناف تُعدّل مقادير النفقة بصورة شائعة، وهو من أكثر حالات التعديل الجزئي شيوعاً. أما إذا تغيّرت الظروف فعلاً بعد صدور الحكم فالآلية الصحيحة هي طلب تعديل الحكم لا الاستئناف.',
+  },
+  {
+    question: 'متى لا ينبغي رفع استئناف حكم الطلاق؟',
+    answer: 'لا ينبغي رفع الاستئناف في الحالات التالية: إذا لم يستطع محاميك تحديد خطأ قانوني واضح، إذا كان الاستياء من وقائع لا من تطبيق القانون، إذا كانت تكلفة الاستئناف تفوق ما قد تسترديه عند النجاح، إذا كنت تُريدين الاستئناف بسبب تغيّر الظروف بعد صدور الحكم (فالتعديل هو الأنسب)، وإذا كان مواصلة التقاضي يُلحق ضرراً نفسياً وعملياً بالأطفال.',
+  },
+  {
+    question: 'هل هناك طعن آخر بعد محكمة الاستئناف؟',
+    answer: 'نعم. محكمة التمييز (المحكمة الاتحادية العليا) تنظر في الطعون المحدودة على مسائل قانونية بحتة، لا على الوقائع. هذا يعني أن المحكمة تفحص هل طبّقت محكمة الاستئناف القانون تطبيقاً صحيحاً، لا هل توصلت إلى النتيجة الصحيحة من حيث الوقائع. قضايا الأسرة نادراً ما تصل إلى التمييز في الممارسة؛ الحاجز مرتفع والإجراءات تُضيف تكلفةً ووقتاً إضافيَّين. يُقدّر محاميك ما إذا كان التمييز جديراً بالمسعى في قضيتك.',
+  },
+  {
+    question: 'هل يمكن الاستئناف باللغة العربية والإنجليزية معاً؟',
+    answer: 'جميع إجراءات المحاكم الإماراتية تُجرى باللغة العربية. يُقدم محاميك عريضة الاستئناف والمذكرات ووثائق المحكمة بالعربية. إذا أردت المشاركة مباشرةً يُترجم لك محاميك. لا توجد إجراءات إنجليزية في المحاكم الاتحادية أو محاكم الأحوال الشخصية. محاكم DIFC استثناء: تُجرى إجراءاتها بالإنجليزية ولها آليات استئناف مستقلة.',
+  },
+  {
+    question: 'ما الفرق بين استئناف حكم الحضانة وطلب تعديله؟',
+    answer: 'الاستئناف: طعن في الحكم الأصلي خلال ٣٠ يوماً بدعوى وجود خطأ في تطبيق القانون وقت صدور الحكم. التعديل: تغيير حكم قائم بسبب تغيّر ظروف جوهرية بعد صدوره (انتقال للخارج، زواج جديد، تغيّر الظروف الصحية أو الاقتصادية). إذا مرّت مهلة الثلاثين يوماً دون استئناف لكن ثمة تغيّر في الظروف فالآلية الصحيحة هي طلب التعديل لا الاستئناف.',
+  },
+  {
+    question: 'كيف تعرف إذا كانت قضيتك مناسبة للاستئناف؟',
+    answer: 'القضايا المناسبة للاستئناف تتسم بما يلي: وجود خطأ قانوني محدد في الحكم (كتطبيق المادة القانونية الخاطئة أو سوء تفسير نص القانون)، أو إخلال إجرائي جوهري، أو نتيجة شاذة لا تتوافق مع الأحكام المعتادة في قضايا مماثلة. مجرد عدم الرضا عن الحكم ليس أساساً كافياً. ابدأ باستشارة محامٍ استئنافي قبل اتخاذ أي قرار.',
+  },
+  {
+    question: 'ما تكلفة الاستئناف الواقعية في الإمارات؟',
+    answer: 'رسوم إيداع المحكمة: ٥٠٠-٢٠٠٠ درهم حسب الإمارة. أتعاب المحامي: ٨٠٠٠-٢٠٠٠٠ درهم (إعداد مذكرة الاستئناف والحضور والمراسلات). الميزانية الإجمالية الواقعية: ١٠٠٠٠-٢٥٠٠٠ درهم. نسبة الإلغاء الكلي للأحكام الابتدائية: ١٥-٢٥٪، والتعديل الجزئي يحدث في ٤٠-٦٠٪ من قضايا الاستئناف. محامٌ صادق سيُقيّم أسباب قضيتك قبل أن ينصحك بالمضي.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">استئناف أحكام الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        حكم الطلاق ليس بالضرورة الكلمة الفصل. منظومة الطعن في المحاكم الإماراتية متاحة لكن النافذة ضيّقة والأسباب المقبولة محددة. يشرح هذا الدليل مهلة الثلاثين يوماً، وما تقبله المحاكم من أسباب وما ترفضه، والفرق الجوهري بين الاستئناف وطلب تعديل الحكم — وهو فارق كثيراً ما يُقرّر مآل قضيتك.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="summary-box">
+        <h2>أرقام رئيسية</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <p class="summary-label">مهلة الاستئناف</p>
+            <p class="summary-value">٣٠ يوماً</p>
+            <p class="summary-note">من استلام الحكم المكتوب</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">التكلفة الإجمالية</p>
+            <p class="summary-value">١٠٠٠٠-٢٥٠٠٠ درهم</p>
+            <p class="summary-note">أتعاب المحامي ورسوم المحكمة</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">نسبة الإلغاء الكلي</p>
+            <p class="summary-value">١٥-٢٥٪</p>
+            <p class="summary-note">التعديل الجزئي أكثر شيوعاً</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>هل يمكن الطعن في حكم الطلاق بالإمارات؟</h2>
+        <p>
+          نعم. جميع أحكام الطلاق الابتدائية في الإمارات، سواء صدرت من محاكم الأحوال الشخصية أو محاكم الأسرة أو الأقسام المدنية، قابلة للطعن أمام محكمة الاستئناف. هذه المحكمة مختصة بمراجعة حكم الدرجة الأولى بحثاً عن أخطاء قانونية وإخلالات إجرائية وظلم صارخ.
+        </p>
+        <p>
+          المهلة الحاسمة هي <strong>ثلاثون يوماً من استلام الحكم المكتوب</strong>. فواتها يُغلق باب الاستئناف في الغالب، فالمحاكم الإماراتية نادراً ما تمنح تمديداً لهذه المهلة لأنها مسألة نظام عام. المهلة تبدأ من استلام الحكم المكتوب لا من صدوره شفهياً في الجلسة.
+        </p>
+        <p>
+          لقضايا الحضانة مسار استئناف معجَّل: تُنظر الاستئنافات في غضون ٦٠-٩٠ يوماً عادةً نظراً لأن التأخر يُلحق الضرر مباشرةً بالأطفال. تولي المحاكم هذه القضايا الأولوية في التحديد.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>لا تتأخر عن مهلة الثلاثين يوماً</h3>
+          <p>إذا اعتقدت أن لديك أسباباً للاستئناف وكّل محامياً فور استلامك الحكم المكتوب. الانتظار لمعرفة ما إذا يمكن التسوية ودياً يُضيّع وقتاً لا تستطيع استرداده. حتى لو كانت مفاوضات جارية قدِّم عريضة الاستئناف في المهلة للحفاظ على حقك.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الأسباب المقبولة للاستئناف في المحاكم الإماراتية</h2>
+        <p>
+          الاستئناف ليس فرصة ثانية للتجادل بالوقائع ذاتها. محكمة الاستئناف تراجع الحكم الابتدائي بحثاً عن أنواع بعينها من الأخطاء. يجب عليك تحديد سبب قانوني معترف به لأن مجرد عدم الرضا عن النتيجة لا يكفي.
+        </p>
+        <div class="grounds-list">
+          {grounds.map((item) => (
+            <div class="ground-card">
+              <h3>{item.ground}</h3>
+              <p>{item.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p>
+          أكثر أسباب الاستئناف نجاحاً في قضايا الأسرة هو <strong>الخطأ في تطبيق القانون</strong>، كأن تُحسب المحكمة مدة العدة خطأً أو تُطبق قواعد النفقة بشكل مغلوط أو تُغفل معيار الحضانة الصحيح. الخلاف الوقائعي البحت أصعب بكثير في الاستئناف ما لم تكن النتيجة الوقائعية شاذةً تماماً.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>استئناف أحكام الحضانة والنفقة</h2>
+        <h3>استئناف أحكام الحضانة</h3>
+        <p>
+          تتعامل المحاكم الإماراتية مع استئنافات الحضانة بأولوية قصوى لأن التأخير يُلحق ضرراً مباشراً بالأطفال. المسار المعجَّل ٦٠-٩٠ يوماً ينطبق على النزاعات التي تُتنازع فيها الحضانة مع قاصر. إذا كان الحكم الابتدائي يُعرّض الطفل للخطر يمكنك طلب أمر وقتي عاجل أثناء الاستئناف.
+        </p>
+        <p>
+          تغيّر الظروف بعد الحكم يُعالج بطريقة مختلفة: إذا انتقل الطرف الآخر للخارج أو تزوج من جديد أو بلغ الطفل سناً يجعل رغبته مؤثرةً، فالآلية الصحيحة هي <strong>طلب تعديل الحكم</strong> لا استئنافه.
+        </p>
+        <h3>استئناف أحكام النفقة</h3>
+        <p>
+          استئناف مقدار النفقة مألوف. الأسباب الشائعة: اعتمدت المحكمة رقماً خاطئاً للدخل، لم تُراعِ قدرة الزوجة على الكسب، أو طبّقت مدةً مغلوطة. محاكم الاستئناف كثيراً ما تُعدّل مقادير النفقة، وهذا من أكثر حالات التعديل الجزئي شيوعاً في قضايا الأسرة.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>إجراءات الاستئناف خطوةً بخطوة</h2>
+        <div class="step-list">
+          {appealSteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الاستئناف مقابل تعديل الحكم — فارق جوهري</h2>
+        <p>
+          كثيرون يتصلون بالمحامين طالبين "استئناف" قرار في حين أن ما يحتاجونه فعلاً هو طلب تعديل. هذان إجراءان مختلفان جوهرياً:
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>العامل</th>
+                <th>الاستئناف</th>
+                <th>طلب التعديل</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.aspect}</td>
+                  <td>{row.appeal}</td>
+                  <td>{row.modification}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          تقديم استئناف وأنت تحتاج تعديلاً يُضيّع مهلة الثلاثين يوماً ويُكلّفك مالاً دون جدوى. وتفويت المهلة بحجة أنك تنتظر تعديلاً يُغلق بابها نهائياً. استشارة محامٍ متخصص ستُحدد بسرعة أيّ المسارين مناسب لوضعك.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>تكلفة الاستئناف في الإمارات</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-label">رسوم إيداع المحكمة</p>
+            <p class="fee-amount">٥٠٠-٢٠٠٠ درهم</p>
+            <p class="fee-note">تتفاوت حسب الإمارة ونوع الطلب</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">أتعاب المحامي</p>
+            <p class="fee-amount">٨٠٠٠-٢٠٠٠٠ درهم</p>
+            <p class="fee-note">مذكرة الاستئناف والحضور والمراسلات</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">الميزانية الواقعية الإجمالية</p>
+            <p class="fee-amount">١٠٠٠٠-٢٥٠٠٠ درهم</p>
+            <p class="fee-note">أكثر للقضايا المالية أو الدولية المعقدة</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-label">نسبة الإلغاء الكلي</p>
+            <p class="fee-amount">١٥-٢٥٪</p>
+            <p class="fee-note">التعديل الجزئي في ٤٠-٦٠٪ من القضايا</p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <div class="cta-box">
+        <h2>احصل على رأي متخصص في استئنافك</h2>
+        <p>مهلة الثلاثين يوماً تنقضي سريعاً. إذا استلمت حكماً تعتقد أنه خاطئ احصل على تقييم قانوني متخصص لأسباب الطعن قبل فوات الأوان.</p>
+        <LeadForm source="divorce-appeal-uae-ar" />
+      </div>
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>كيف تُقرر المحاكم الحضانة وحق الزيارة</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيفية تقديرها وإنفاذها</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل للإجراءات من التقديم حتى الحكم</span>
+          </a>
+          <a href="/ar/التخطيط-المالي-للطلاق-الامارات/" class="related-card">
+            <strong>التخطيط المالي للطلاق</strong>
+            <span>حماية حقوقك المالية خلال الإجراءات</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .summary-box { background: #f9f4e8; border: 1px solid #e8d89a; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  .summary-box h2 { font-size: 1rem; font-weight: 800; color: #0a1628; margin-bottom: 1rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .summary-card { background: #fff; border: 1px solid #e3d68f; border-radius: 0.75rem; padding: 1.1rem; text-align: center; }
+  .summary-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #7a6a30; margin-bottom: 0.4rem; }
+  .summary-value { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .summary-note { font-size: 0.75rem; color: #665; margin: 0; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .grounds-list { display: flex; flex-direction: column; gap: 0.875rem; margin: 1rem 0 1.25rem; }
+  .ground-card { background: #f8f9fa; border-right: 3px solid #c9a84c; border-left: none; border-radius: 0 0.5rem 0.5rem 0; padding: 1rem 1.25rem; }
+  .ground-card h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.35rem; }
+  .ground-card p { font-size: 0.87rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.5rem; }
+  .info-box p { font-size: 0.87rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .step-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .step-content h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.85rem; color: #374151; line-height: 1.65; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: right; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) td { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
+
+  .fee-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+  .fee-card { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.1rem; }
+  .fee-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.4rem; }
+  .fee-amount { font-size: 1.1rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .fee-note { font-size: 0.78rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 2.5rem; }
+  .cta-box h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .cta-box p { color: #b0bec5; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .fee-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,414 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'مكافأة نهاية الخدمة والطلاق في الإمارات — هل تُقسَّم؟';
+const description =
+  'مكافأة نهاية الخدمة ونظام DEWS والمعاشات الحكومية في الطلاق الإماراتي: هل تُقسَّم، كيف تُحتسب في النفقة، الفرق بين مدخرات القطاع الخاص والمعاشات الحكومية، وكيف تتفاوض على هذه الأصول في التسوية.';
+
+const canonical = 'https://divorceu.ae/ar/نهاية-الخدمة-والطلاق-في-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-end-of-service-gratuity-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'نهاية الخدمة والطلاق في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل تُقسَّم مكافأة نهاية الخدمة عند الطلاق في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا، بموجب القانون الإماراتي لا تُقسَّم مكافأة نهاية الخدمة تلقائياً. القانون يعتمد مبدأ الملكية المنفصلة؛ الاستحقاقات في اسم الزوج تبقى له. لكنها تُؤخذ في الاعتبار عند تقدير النفقة والمتعة: كلما كان دخل الزوج ومستحقاته أعلى، كان الحكم بالنفقة أعلى. يمكن أيضاً التفاوض على جزء منها ضمن التسوية الودية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الفرق بين مكافأة نهاية الخدمة التقليدية ونظام DEWS؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'مكافأة نهاية الخدمة التقليدية: تُدفع من صاحب العمل مباشرةً عند انتهاء الخدمة، وتُحسب بنسبة من الراتب الأساسي بحسب عدد سنوات الخدمة. نظام DEWS (Dubai Employee Workplace Savings): برنامج للمناطق الحرة الإماراتية يُحوِّل اشتراكات شهرية لصالح الموظف لدى مدير أصول مثل Equiom؛ تُراكَم في حساب مستقل. DEWS يشبه أكثر صندوق توفير شخصي له قيمة سوقية قابلة للتقييم الفوري.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل المعاش الحكومي الإماراتي (أبوظبي للمعاشات) قابل للتقسيم عند الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. معاشات المواطنين الإماراتيين المدارة من مؤسسة أبوظبي للمعاشات (ADRPF) وهيئة الاستثمار الحكومية لا يمكن تقسيمها بأمر قضائي. هي حق شخصي غير قابل للتنازل. لكن حجم المعاش ودخل الزوج الإجمالي يُؤخذ في تقدير مبالغ النفقة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف تُحسب مكافأة نهاية الخدمة بموجب قانون العمل الاتحادي الجديد (قانون 33/2021)؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'بموجب المرسوم بقانون اتحادي رقم 33 لسنة 2021 (سارٍ منذ فبراير 2022): 21 يوماً من الراتب الأساسي عن كل سنة خدمة من السنوات الخمس الأولى، و30 يوماً عن كل سنة بعد ذلك. الحد الأقصى الإجمالي سنتان من الراتب الأساسي. تُحسب على الراتب الأساسي وليس على الراتب الكامل شاملاً البدلات.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن اعتبار DEWS أصلاً في التفاوض على التسوية؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. على عكس المكافأة التقليدية التي ليست مستحقة إلا عند انتهاء الخدمة، تُراكم DEWS قيمةً سوقية جارية قابلة للتقييم في أي وقت. هذا يجعله أصلاً ملموساً يمكن التفاوض عليه في إطار التسوية الكاملة. الإفصاح عن رصيد DEWS أمام المحكمة أو في جلسات التفاوض إلزامي إذا طُولب به.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تُؤثر مكافأة نهاية الخدمة على حساب نفقة الأطفال؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، بشكل غير مباشر. نفقة الأطفال تُحدَّد بناءً على دخل الأب واحتياجات الأطفال. الأب الذي يُخفي جزءاً من دخله أو مستحقاته (بما فيها المكافأة) يُعرِّض نفسه لتقدير قضائي يتجاوز ما أعلنه. المحاكم الإماراتية يمكنها تقدير الدخل الحقيقي إذا اشتُبه في إخفائه.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث لمكافأة نهاية الخدمة إذا غادر الزوج الإمارات قبل تنفيذ الحكم؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا قبض الزوج مكافأة نهاية خدمته وغادر قبل تنفيذ أحكام النفقة، يُصعب استرداد المبلغ. الإجراء الوقائي: تقديم طلب تجميد احتياطي على حسابات الزوج قبل صدور الحكم إذا كانت هناك أسباب جدية للخشية من الهروب. حكم النفقة الصادر في الإمارات قابل للتنفيذ في دول عديدة عبر اتفاقيات التعاون القضائي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تُحتسب إعانة الإسكان والسيارة ضمن دخل الزوج لتقدير النفقة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'القضاة الإماراتيون يتمتعون بصلاحية تقديرية واسعة في تحديد الدخل "الفعلي". البدلات الثابتة مثل إعانة الإسكان وبدل السيارة وبدل التعليم تُؤخذ في الاعتبار كجزء من القدرة المالية الكلية للزوج، حتى لو لم تُحتسب رسمياً ضمن الراتب الأساسي لحساب المكافأة. تقديم سجل الراتب الكامل مع جميع البدلات ضروري في دعاوى النفقة.',
+      },
+    },
+  ],
+};
+
+const assets = [
+  {
+    name: 'مكافأة نهاية الخدمة التقليدية',
+    icon: '💼',
+    divisible: 'لا تُقسَّم تلقائياً',
+    inNafaqa: 'تُؤثر في تقدير النفقة',
+    basis: 'المرسوم بقانون رقم 33/2021 — قانون العمل الاتحادي',
+    detail: '21 يوماً/سنة (الخمس الأولى) ثم 30 يوماً/سنة. تُحسب على الراتب الأساسي وليس الإجمالي. الحد الأقصى سنتان.',
+  },
+  {
+    name: 'نظام DEWS (المناطق الحرة)',
+    icon: '📊',
+    divisible: 'قابل للتفاوض عليه',
+    inNafaqa: 'تُؤثر في تقدير النفقة',
+    basis: 'لوائح المناطق الحرة — إدارة Equiom وغيرها',
+    detail: 'يُراكَم شهرياً ويُستثمَر. له قيمة سوقية جارية قابلة للتقييم الفوري. الإفصاح عنه إلزامي.',
+  },
+  {
+    name: 'المعاش الحكومي (مؤسسة أبوظبي / GPSSA)',
+    icon: '🏛️',
+    divisible: 'غير قابل للتقسيم قانوناً',
+    inNafaqa: 'يُؤثر في تقدير النفقة',
+    basis: 'قانون الضمان الاجتماعي الإماراتي',
+    detail: 'حق شخصي غير قابل للتنازل. لا توجد أوامر مشاركة في المعاش في القانون الإماراتي. دخل الزوج الكلي يُؤثر على مبالغ النفقة.',
+  },
+  {
+    name: 'المكافأة التأخيرية (Deferred Bonus)',
+    icon: '⏳',
+    divisible: 'قابل للتفاوض إذا كان مستحقاً',
+    inNafaqa: 'تُؤثر في تقدير النفقة',
+    basis: 'عقد العمل',
+    detail: 'مكافأة مشروطة بالاستمرار في الخدمة. إذا كانت مكتسبة جزئياً وقت الطلاق، تُدرج في الإفصاح المالي. القضاة يتعاملون معها بتحفظ أكثر مما يُعامَل به الدخل الجاري.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'هل يجب على الزوج الإفصاح عن رصيد DEWS أمام المحكمة؟',
+    answer: 'نعم، إذا طُولب به الإفصاح. في دعاوى النفقة والتسوية المالية، يُلزَم الطرفان بتقديم صورة كاملة لوضعهما المالي. رصيد DEWS أصل مالي ملموس؛ إخفاؤه يُعدّ إخلالاً بواجب الإفصاح. إذا اكتشف القاضي لاحقاً إخفاء أصول، يُؤثر ذلك سلباً على مصداقية الطرف في جميع جوانب القضية.',
+  },
+  {
+    question: 'ماذا يحدث إذا فصل الزوج من عمله أثناء إجراءات الطلاق؟',
+    answer: 'إذا فُصل الزوج من عمله وقبض مكافأة نهاية خدمته، هذا يغيّر الصورة المالية أمام المحكمة. إذا كان ذلك أثناء سريان طلب نفقة: المحكمة تنظر في قدرته الكاملة (مدخراته وما قبضه وإمكانياته المستقبلية). إذا كانت هناك قناعة بأن الفصل كان مدبَّراً للتهرب من النفقة، يجوز للقاضي تقدير الدخل الافتراضي وليس الحقيقي.',
+  },
+  {
+    question: 'كيف يتعامل القانون الإماراتي مع معاش صاحب العمل الغربي (pension) للموظف في الإمارات؟',
+    answer: 'المعاشات الأجنبية (مثل معاشات بريطانية أو أوروبية) للموظف في الإمارات هي أصول خارجية. القانون الإماراتي لا يُصدر أوامر مشاركة في المعاش. لكن القانون الإنجليزي يفعل — وهنا تكمن أهمية مسألة الموطن القانوني والاختصاص القضائي. الزوج الذي يمتلك معاشاً بريطانياً كبيراً قد يُفضَّل له إنجاز الطلاق الإماراتي سريعاً قبل أن يتقدم الطرف الآخر بدعوى في إنجلترا.',
+  },
+  {
+    question: 'هل يمكن توظيف مكافأة نهاية الخدمة في تسوية بديلة بدلاً من النفقة الشهرية؟',
+    answer: 'نعم، في التسوية الودية. يمكن التفاوض على أن يدفع الزوج مبلغاً إجمالياً من مكافأة نهاية الخدمة بدلاً من نفقة شهرية مستمرة. هذا النوع من التسوية يُريح الطرفَين من الارتباط المالي المطوَّل ويُقلِّل احتمالات النزاعات المستقبلية. يجب توثيقه في وثيقة تسوية رسمية موثَّقة أمام المحكمة.',
+  },
+  {
+    question: 'كيف أتحقق من المكافأة والمستحقات الحقيقية للزوج إذا اشتُبه في إخفائها؟',
+    answer: 'عبر محاميك، يمكن تقديم طلب للمحكمة بإلزام صاحب عمل الزوج بتقديم كشف الراتب والعقد ومستحقات نهاية الخدمة. يمكن أيضاً طلب كشف حسابات بنكية من المحكمة. إذا كان الزوج يعمل لحسابه الخاص أو في شركة يملكها، يُعيَّن محاسب قضائي معتمد لتقييم الدخل الفعلي. المحاكم الإماراتية تمتلك صلاحية تقدير الدخل الحقيقي.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        مكافأة نهاية الخدمة لا تُقسَّم — هذه الإجابة المختصرة صحيحة لكنها غير كاملة. هي تُؤثر بشكل غير مباشر على النفقة والتسوية، وفهم الفرق بين المكافأة التقليدية ونظام DEWS والمعاشات الحكومية ضروري لكل من يُفاوض على تسوية طلاق في الإمارات.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>الإجابة الموجزة الكاملة</h2>
+        <ul>
+          <li><strong>مكافأة نهاية الخدمة:</strong> لا تُقسَّم تلقائياً — لكنها تُؤثر مباشرةً على تقدير النفقة.</li>
+          <li><strong>نظام DEWS:</strong> له قيمة سوقية جارية ويمكن التفاوض عليه في التسوية الودية.</li>
+          <li><strong>المعاش الحكومي:</strong> غير قابل للتقسيم قانوناً بأي أمر قضائي.</li>
+          <li><strong>الإفصاح إلزامي:</strong> إخفاء هذه الأصول أمام المحكمة يُضرّ بمصداقيتك.</li>
+          <li><strong>التسوية الودية:</strong> يمكن التفاوض على مبلغ مقطوع بديلاً عن النفقة المستمرة.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>أنواع الأصول المتعلقة بالعمل وكيف تُعامَل عند الطلاق</h2>
+
+        <div class="types-list">
+          {assets.map(a => (
+            <div class="type-card">
+              <div class="type-header">
+                <span class="type-icon">{a.icon}</span>
+                <div>
+                  <h3 class="type-name">{a.name}</h3>
+                  <div class="type-meta">
+                    <span class="meta-tag amount">{a.divisible}</span>
+                    <span class="meta-tag duration">{a.inNafaqa}</span>
+                  </div>
+                </div>
+              </div>
+              <p class="type-detail">{a.detail}</p>
+              <p class="type-basis">{a.basis}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مكافأة نهاية الخدمة وفق قانون العمل الاتحادي الجديد</h2>
+
+        <p>
+          المرسوم بقانون اتحادي رقم 33 لسنة 2021 (الذي حلَّ محل قانون العمل رقم 8 لعام 1980) دخل حيز التنفيذ في فبراير 2022. يحدد طريقة حساب مكافأة نهاية الخدمة كما يلي:
+        </p>
+
+        <div class="factors-list">
+          <div class="factor-item">
+            <h3>السنوات الخمس الأولى</h3>
+            <p>21 يوماً من الراتب الأساسي عن كل سنة خدمة كاملة. سنة ناقصة تُحسب بالتناسب.</p>
+          </div>
+          <div class="factor-item">
+            <h3>بعد خمس سنوات</h3>
+            <p>30 يوماً من الراتب الأساسي عن كل سنة خدمة إضافية. الحد الأقصى الإجمالي: مجموع لا يتجاوز سنتَي راتب أساسي.</p>
+          </div>
+          <div class="factor-item">
+            <h3>الراتب الأساسي — وليس الإجمالي</h3>
+            <p>تُحسب المكافأة على الراتب الأساسي فحسب، لا على مجموع الراتب مع البدلات (إسكان، سيارة، انتقال). هذا فارق مهم في الشركات التي تُشكِّل البدلات جزءاً كبيراً من الحزمة الراتبية.</p>
+          </div>
+          <div class="factor-item">
+            <h3>موعد الاستحقاق</h3>
+            <p>تستحق المكافأة عند انتهاء عقد العمل لأي سبب (انتهاء العقد، الاستقالة، الفصل). قبل انتهاء الخدمة: المكافأة مستحقة أدبياً لكنها لم تُدفع بعد — تُدرج كالتزام مستقبلي في الإفصاح المالي.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>نظام DEWS — التفاصيل التي يجهلها كثيرون</h2>
+
+        <p>
+          نظام المدخرات في بيئة العمل بدبي (DEWS — Dubai Employee Workplace Savings) هو نظام لمناطق حرة محددة في الإمارات يُحوِّل ما يجب أن يكون مكافأة نهاية خدمة إلى اشتراكات شهرية تُحوَّل إلى حساب استثماري باسم الموظف لدى مدير أصول مثل Equiom.
+        </p>
+
+        <p>
+          الفرق الجوهري: المكافأة التقليدية لا يمكن رؤية قيمتها إلا عند الاستحقاق. رصيد DEWS ظاهر ومتداول وله قيمة سوقية في أي لحظة. هذا يجعله أكثر خضوعاً للتقييم والتفاوض في سياق الطلاق.
+        </p>
+
+        <div class="info-box">
+          <p><strong>نصيحة التفاوض:</strong> إذا كان الزوج يمتلك رصيداً كبيراً في DEWS، يمكن للطرف الآخر المطالبة بإدراجه صراحةً في الإفصاح المالي وتقديمه للمحكمة كمؤشر على القدرة المالية الفعلية. في التسوية الودية، يمكن التفاوض على حصة منه أو مبلغ معادل.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>المعاشات الحكومية — الأصل الذي لا يُقسَّم</h2>
+
+        <p>
+          المواطنون الإماراتيون العاملون في القطاع الحكومي يُشتركون في نظام معاشات الدولة (مؤسسة أبوظبي للتقاعد ADRPF أو هيئة معاشات الموظفين الاتحادية GPSSA). هذه المعاشات هي حق شخصي لا يمكن تحويله أو تقسيمه بموجب القانون الإماراتي.
+        </p>
+
+        <p>
+          لا يوجد في الإمارات ما يُعادل "أمر مشاركة في المعاش" (Pension Sharing Order) المعروف في القانون الإنجليزي. محاكم الأحوال الشخصية لا تستطيع إصدار أمر بتحويل جزء من المعاش إلى اسم الزوج الآخر.
+        </p>
+
+        <p>
+          لكن: حجم المعاش المتوقع يُدخل ضمن تقييم القدرة المالية الإجمالية عند تحديد النفقة. الزوج الذي سيتقاضى معاشاً حكومياً سخياً يُنظر إليه على أنه قادر مالياً على الوفاء بالتزامات نفقة أعلى.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>الفرق بين المعاش ونهاية الخدمة والمكافأة التأخيرية</h2>
+
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>النوع</div>
+            <div>متى يُستحق؟</div>
+            <div>التعامل في الطلاق</div>
+          </div>
+          {[
+            { type: 'مكافأة نهاية الخدمة', when: 'عند انتهاء عقد العمل', treatment: 'لا تُقسَّم — تؤثر في النفقة' },
+            { type: 'رصيد DEWS', when: 'متراكم شهرياً ومتاح دائماً', treatment: 'قابل للتفاوض — يُفصح عنه' },
+            { type: 'معاش حكومي', when: 'عند التقاعد', treatment: 'لا يُقسَّم قانوناً' },
+            { type: 'مكافأة تأخيرية (Deferred Bonus)', when: 'مشروطة — بعد فترة', treatment: 'تُدرج في الإفصاح — قابلة للتفاوض' },
+            { type: 'أسهم أو خيارات أسهم', when: 'مشروطة بالاستمرار', treatment: 'تُقيَّم وتُفصح عنها' },
+          ].map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.type}</div>
+              <div>{row.when}</div>
+              <div>{row.treatment}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>استراتيجيات التفاوض حول هذه الأصول</h2>
+
+        <div class="factors-list">
+          <div class="factor-item">
+            <h3>الإفصاح الكامل — أفضل استراتيجية دفاعية</h3>
+            <p>الطرف الذي يُفصح أولاً وبالكامل يتحكم في السردية. إخفاء الأصول يُعرِّضك للتهديد بإعادة فتح القضية لاحقاً إذا اكتُشف. المحكمة تُشدِّد العقوبات على من يثبت إخفاؤه للأصول.</p>
+          </div>
+          <div class="factor-item">
+            <h3>المبلغ المقطوع بدلاً من النفقة الشهرية</h3>
+            <p>في التسوية الودية، يمكن للزوج عرض جزء من مكافأة نهاية خدمته أو رصيد DEWS مبلغاً مقطوعاً واحداً بدلاً من التزام بنفقة شهرية مستمرة. هذا يُنهي الارتباط المالي ويُجنِّب الجميع نزاعات مستقبلية.</p>
+          </div>
+          <div class="factor-item">
+            <h3>توثيق مستوى معيشة الأسرة</h3>
+            <p>المحكمة تُراعي مستوى المعيشة الذي اعتادت عليه الأسرة. الفواتير ومصاريف التعليم والسفر والترفيه تُساعد في إثبات أن دخل الزوج الفعلي أعلى مما يُعلن.</p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيفية حسابها</span>
+          </a>
+          <a href="/ar/تقسيم-الممتلكات-عند-الطلاق-الامارات/" class="related-card">
+            <strong>تقسيم الممتلكات</strong>
+            <span>القواعد الكاملة للأصول</span>
+          </a>
+          <a href="/ar/تسوية-الطلاق-الامارات/" class="related-card">
+            <strong>تسوية الطلاق</strong>
+            <span>التفاوض على شروط التسوية</span>
+          </a>
+          <a href="/ar/الطلاق-للمقيمين-البريطانيين-في-الامارات/" class="related-card">
+            <strong>الطلاق للبريطانيين</strong>
+            <span>المعاشات والقانون الإنجليزي</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box ul { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .answer-box li { color: #1f2937; line-height: 1.9; font-size: 0.97rem; margin-bottom: 0.25rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.9; font-size: 0.95rem; margin-bottom: 0.75rem; }
+
+  .types-list { display: flex; flex-direction: column; gap: 1rem; }
+  .type-card { border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; background: #fff; }
+  .type-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+  .type-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .type-name { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0 0 6px; }
+  .type-meta { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .meta-tag { font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+  .meta-tag.amount { background: #fef3c7; color: #92400e; }
+  .meta-tag.duration { background: #e0f2fe; color: #075985; }
+  .type-detail { font-size: 0.87rem; color: #374151; line-height: 1.8; margin: 0 0 0.4rem; }
+  .type-basis { font-size: 0.75rem; color: #9ca3af; margin: 0; font-style: italic; }
+
+  .factors-list { display: flex; flex-direction: column; gap: 1rem; }
+  .factor-item { border-right: 4px solid #c9a84c; padding: 1rem 1rem 1rem 0.75rem; background: #fffbeb; border-radius: 0 10px 10px 0; }
+  .factor-item h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin: 0 0 0.35rem; }
+  .factor-item p { font-size: 0.85rem; color: #4b5563; line-height: 1.75; margin: 0; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
+  .compare-header { display: grid; grid-template-columns: 1.5fr 1fr 1fr; background: #0a1628; color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.75rem 1rem; gap: 0.5rem; }
+  .compare-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; padding: 0.6rem 1rem; gap: 0.5rem; font-size: 0.83rem; color: #374151; background: #fff; }
+  .compare-row.alt { background: #f9fafb; }
+  .compare-factor { font-weight: 600; color: #0a1628; }
+
+  .info-box { background: #eff6ff; border-right: 4px solid #3b82f6; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+  .info-box p { font-size: 0.87rem; color: #1e3a5f; line-height: 1.8; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

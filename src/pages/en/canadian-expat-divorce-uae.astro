@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Canadian Expat Divorce in UAE: Recognition, CPP, RRSPs, and What Happens to Canadian Assets';
+const description =
+  'Canadian expats divorcing in Dubai face a unique cross-border puzzle: UAE divorce is valid in Canada under the Divorce Act but leaves RRSPs, pensions, and Canadian property entirely untouched. This guide covers the Divorce Act Section 22 test, CPP credit splitting, provincial family property rules, and children custody risks.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/canadian-expat-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمقيمين-البريطانيين-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Canadian Expat Divorce UAE', url: 'https://divorceu.ae/en/canadian-expat-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Will Canada recognise my UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, in most cases. Section 22 of the Divorce Act (Canada) recognises a foreign divorce as valid in Canada if either spouse was ordinarily resident in that country for at least one year before the divorce proceedings were commenced. Most Canadian expats in Dubai easily satisfy this test. Quebec adds a domicile requirement under Article 3167 of the Civil Code of Quebec, but UAE residence for employment purposes is generally treated as domicile in Quebec courts. An apostilled and officially translated UAE divorce certificate is the document required to prove the foreign divorce.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I split CPP credits after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Canada Pension Plan credit splitting is available regardless of where the divorce was granted. A valid UAE divorce certificate (apostilled, translated, and accepted by Service Canada) is sufficient to trigger a CPP credit split application. The credits accumulated during the period of cohabitation in the marriage are divided equally between the former spouses. You apply directly to Service Canada using Form ISP-1901. The divorce does not need to have been granted in Canada for CPP splitting to apply.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does UAE divorce take compared to a Canadian divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE divorce under Federal Decree-Law No. 41 of 2022 (for non-Muslim couples) is significantly faster. There is no separation period requirement and no mandatory mediation. An uncontested non-Muslim divorce in Dubai courts typically concludes in one to six months. By contrast, the Canadian Divorce Act requires a one-year period of separation before a divorce order can be granted on the ground of breakdown of marriage, which is the only ground available in Canada. This means the minimum Canadian divorce timeline is 12 to 15 months. UAE is the substantially faster option for Canadian expats who are both in Dubai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a Canadian divorce as well as a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not necessarily. If Canada recognises your UAE divorce under Section 22 of the Divorce Act, you do not need to obtain a separate Canadian divorce. However, you may need to file separate Canadian legal proceedings for matters that UAE courts cannot handle: division of Canadian property, division of RRSPs and pensions, and CPP credit splitting. These are financial proceedings, not a second divorce. A Canadian family lawyer can advise whether any Canadian court applications are needed given your specific asset profile.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to my RRSP in a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts cannot divide Canadian Registered Retirement Savings Plans. RRSPs are provincial family property under Canadian law and can only be divided by a Canadian court order or a negotiated financial agreement that is recognised by the relevant province. After a UAE divorce is granted, you (or your Canadian family lawyer) would apply to the appropriate provincial family court for a property order covering Canadian assets including RRSPs. Under Section 22 of the Divorce Act, the UAE divorce is recognised in Canada, so the Canadian court is not granting a divorce but is handling the financial aspects that remain unresolved.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my Canadian spouse take our children to Canada without my consent?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'This is a serious risk. The UAE is not a signatory to the Hague Convention on the Civil Aspects of International Child Abduction. Canada is a Hague signatory. If a UAE-resident spouse removes children who are Canadian citizens to Canada without a UAE court order authorising the move, Canadian courts would typically treat this as wrongful removal under their domestic family law framework. However, the UAE cannot enforce a return order in Canada through the Hague mechanism because the UAE is not bound by it. To protect against the children being taken to Canada without consent, apply for a UAE court travel restriction on the children\'s passports at the outset of divorce proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I divide Canadian property after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts do not have jurisdiction over Canadian real estate, bank accounts, or investments. After obtaining your UAE divorce, you have two options for Canadian property: negotiate a written separation agreement that is enforceable under the relevant provincial family law (for example, the Ontario Family Law Act), or apply to the provincial family court for a property division order. In Ontario, the equalization of net family property regime applies to property accumulated during the marriage regardless of where the divorce was obtained. Engage a Canadian family lawyer with experience in cross-border divorces to handle the Canadian property side in parallel with your UAE proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is UAE divorce faster than Canadian divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, considerably. Canada\'s Divorce Act allows a divorce only on the ground of breakdown of marriage, which requires one year of separation in almost all cases (adultery and physical or mental cruelty are rarely used grounds). The mandatory separation period alone is 12 months, and court processing adds further time. UAE divorce under Federal Decree-Law No. 41 of 2022 for non-Muslim couples has no separation requirement, no mandatory mediation, and no grounds requirement. An uncontested divorce in Dubai can be completed in one to six months from filing. For Canadian expats who are both based in UAE, UAE is clearly the faster venue.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to be separated for one year for a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Under Federal Decree-Law No. 41 of 2022, non-Muslim expat couples divorcing in the UAE are not required to demonstrate a separation period, prove grounds for divorce, or undergo mandatory mediation. The law adopts a no-fault approach: either spouse can file for divorce and the court will grant it. This is one of the most significant advantages of the UAE venue for Canadian expats, who would otherwise face a mandatory 12-month separation period under the Canadian Divorce Act.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get divorced in UAE even if we married in Canada?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAE courts have jurisdiction to grant a divorce based on the couple\'s residence in the UAE, not on where they were married. A Canadian marriage certificate, apostilled by the relevant provincial authority and translated into Arabic by a UAE Ministry of Justice-licensed translator, is accepted by UAE courts as proof of marriage. The UAE and Canada are both party to the Hague Apostille Convention, making the authentication process straightforward. Marriage in Canada does not prevent divorce in UAE, provided at least one spouse is ordinarily resident in the UAE.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/canadian-expat-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Canadian Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>Canadian Expat Divorce in UAE: Recognition, CPP Splitting, RRSPs, and the Canadian Property Problem</h1>
+      <p class="hero-desc">
+        Divorcing in Dubai is fast and straightforward under Federal Decree-Law No. 41 of 2022. Canada will recognise the divorce. But your RRSPs, pensions, and Canadian property will still be sitting there, entirely untouched by UAE courts, waiting for a separate Canadian legal process. This guide tells you exactly what UAE can do and where you still need Canadian proceedings.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for Canadian expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>Canada recognises UAE divorce</strong> under Divorce Act Section 22 if either spouse was ordinarily resident in UAE for at least one year before proceedings.</li>
+          <li><strong>No separation period in UAE.</strong> Canadian Divorce Act requires 12 months separation. UAE requires none for non-Muslim couples under FL 41/2022.</li>
+          <li><strong>CPP credit splitting</strong> is available after a UAE divorce. Apply to Service Canada with your UAE divorce certificate.</li>
+          <li><strong>RRSPs and pensions cannot be divided by UAE courts.</strong> A separate Canadian agreement or court order is needed.</li>
+          <li><strong>Canadian property is not affected by UAE divorce.</strong> Provincial family court application or negotiated agreement required.</li>
+          <li><strong>UAE is not a Hague Convention signatory.</strong> Child abduction risks differ from Canada, which is a signatory.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>UAE Divorce for Non-Muslim Canadian Expats: What the Law Actually Provides</h2>
+        <p>
+          <strong>Federal Decree-Law No. 41 of 2022</strong> fundamentally changed the landscape for non-Muslim expat couples in the UAE. For Canadian expats who are non-Muslim, this law creates one of the most accessible divorce regimes anywhere. There are no grounds requirements, no mandatory separation period, no mandatory mediation, and no fault element. Either spouse can apply to the relevant UAE court and the divorce will be granted.
+        </p>
+        <p>
+          In Dubai, non-Muslim divorce applications are handled by the Personal Status Court. In Abu Dhabi, non-Muslim expats can use the Abu Dhabi Civil Family Court established under <strong>Abu Dhabi Law No. 14 of 2021</strong>, which applies civil family law rather than Sharia and handles both the divorce and related financial and custody matters under a framework specifically designed for expatriates.
+        </p>
+        <p>
+          For a Canadian expat couple both resident in Dubai, a joint no-fault divorce application is the most efficient route. The court fees are modest, legal fees for an uncontested divorce run from AED 5,000 to 15,000 depending on complexity, and the entire process typically concludes within one to six months. Compare this to the minimum 12-month separation period required under Canada's Divorce Act, and the efficiency advantage of the UAE venue is significant.
+        </p>
+        <p>
+          The limitation is scope. UAE courts under FL 41/2022 will dissolve the marriage and can address matters that are within UAE jurisdiction: UAE property (registered with Dubai Land Department), UAE bank accounts, maintenance for spouses and children in the UAE. What they cannot touch is your Canadian financial life. For more on how jurisdiction works generally, see our guide on <a href="/en/divorce-for-expats-in-uae/">divorce for expats in UAE</a>.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Will Canada Recognise Your UAE Divorce?</h2>
+        <p>
+          For most Canadian expats in Dubai, the answer is yes. The governing provision is <strong>Section 22 of the Divorce Act (Canada)</strong>, which provides that a divorce granted under the law of another country is recognised in Canada as valid if either spouse was ordinarily resident in that country for at least one year before the commencement of divorce proceedings.
+        </p>
+        <p>
+          Most Canadian professionals in Dubai will have been resident for considerably more than one year before any divorce proceedings begin. The "ordinarily resident" test is practical: it asks where your settled routine of life is based, which is clearly the UAE for someone working in Dubai on a UAE residence visa with a life established there. The one-year requirement is a low threshold that protects against divorces of convenience by people with no real connection to the granting country.
+        </p>
+
+        <div class="compare-grid">
+          <div class="compare-col compare-col--uae">
+            <h3>UAE Divorce (FL 41/2022)</h3>
+            <ul>
+              <li>No grounds requirement</li>
+              <li>No separation period</li>
+              <li>No fault element</li>
+              <li>No mandatory mediation</li>
+              <li>1 to 6 months typical timeline</li>
+              <li>Covers UAE assets and UAE maintenance</li>
+              <li>Court fees AED 200 to 500</li>
+              <li>Recognised in Canada under Divorce Act s.22</li>
+            </ul>
+          </div>
+          <div class="compare-col compare-col--can">
+            <h3>Canadian Divorce (Divorce Act)</h3>
+            <ul>
+              <li>Only ground: breakdown of marriage</li>
+              <li>12 months separation required in most cases</li>
+              <li>No fault element (separation-based)</li>
+              <li>Mediation encouraged but not mandatory</li>
+              <li>Minimum 12 to 15 months timeline</li>
+              <li>Covers all Canadian assets and support</li>
+              <li>Filing fee CAD 280 (Ontario)</li>
+              <li>Full division of Canadian property and pensions</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Quebec: Civil Code Article 3167</h3>
+        <p>
+          For Canadians domiciled in Quebec, the relevant recognition rule is <strong>Article 3167 of the Civil Code of Quebec</strong>, which recognises foreign divorces where at least one party was domiciled in the foreign country at the time of the divorce. The definition of "domicile" in Quebec private international law matters here: it requires both physical presence and the intention to remain there indefinitely. For a Canadian professional on a fixed-term employment contract in Dubai, UAE domicile may be arguable. However, Quebec courts have generally been flexible in treating long-term foreign residence for work purposes as establishing domicile, particularly where the party has established a settled home and daily life in the UAE.
+        </p>
+        <p>
+          If you are from Quebec and have any doubt about whether the UAE domicile test will be satisfied, take Canadian family law advice before finalising your UAE divorce proceedings. The consequences of a divorce that is not recognised in Quebec would require a separate Quebec divorce proceeding.
+        </p>
+
+        <h3>Ontario: Net Family Property Equalisation</h3>
+        <p>
+          Ontario couples face a particular financial consideration. The <strong>Ontario Family Law Act</strong> provides that on separation or divorce, each spouse is entitled to an equalization of net family property accumulated during the marriage. This equalisation applies regardless of where the divorce is granted: if the divorce is recognised in Ontario, Ontario courts can still hear financial claims for Ontario assets even after a UAE divorce. A UAE divorce that resolves the marriage but leaves Ontario property undivided does not prevent an Ontario court application for equalization. The time limit for such applications is two years from the date of divorce.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>CPP Credit Splitting: What You Need to Know</h2>
+        <p>
+          Canada Pension Plan credit splitting allows the CPP credits accumulated by each spouse during the period of their cohabitation to be divided equally between them. This is entirely separate from any UAE financial proceedings and is administered by Service Canada, not by any court.
+        </p>
+        <p>
+          To apply for CPP credit splitting after a UAE divorce, you will need your UAE divorce certificate, apostilled by the UAE Ministry of Foreign Affairs and officially translated into English or French. You submit Form ISP-1901 (or Form ISP-1901(Q) for Quebec) to Service Canada. The application can be made by either former spouse and does not require the consent of the other once the divorce is confirmed.
+        </p>
+        <p>
+          The credits are split based on the period during which both parties cohabited as spouses. Credits accumulated before the marriage or after separation are not included. This is a straightforward administrative process once the UAE divorce is finalised and the documentation is in order. See our guide on <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation in UAE</a> for the full apostille process.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>CPP splitting does not require a Canadian court order</h3>
+          <p>Unlike RRSP division and pension splitting, CPP credit splitting is purely administrative. You apply directly to Service Canada with your divorce certificate. No Canadian court application is needed. The time limit for applying is three years from the date the divorce becomes absolute. Apply promptly to preserve this entitlement.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>RRSPs, Workplace Pensions, and Canadian Retirement Assets</h2>
+        <p>
+          This is where UAE divorce hits its hard limits. Canadian Registered Retirement Savings Plans (RRSPs), Tax-Free Savings Accounts (TFSAs), employer pension plans, and defined benefit pension schemes are all assets governed by Canadian provincial family law or Canadian federal pension legislation. UAE courts have no jurisdiction over these accounts and no mechanism to order their division.
+        </p>
+        <p>
+          If your spouse has significant RRSP savings or a workplace pension accumulated during the marriage, those assets will remain entirely intact and in their sole name unless you take separate Canadian legal steps. After obtaining your UAE divorce, you can pursue these assets through:
+        </p>
+        <ul>
+          <li><strong>A negotiated separation agreement</strong> that specifically addresses Canadian assets and is signed by both parties. This agreement should be drafted by a Canadian family lawyer and reviewed for enforceability under the applicable provincial law.</li>
+          <li><strong>A provincial family court application</strong> for property division orders covering RRSP accounts and pension assets. The application is made in the province where the assets are held, or where the relevant spouse is ordinarily resident.</li>
+          <li><strong>Pension division orders under the Pension Benefits Standards Act 1985</strong> (for federally regulated pension plans) or provincial pension legislation. The UAE divorce certificate establishes that the marriage has ended and triggers the entitlement to apply for pension division.</li>
+        </ul>
+        <p>
+          There is no time to lose. Most provinces impose a two-year limitation period for spousal property claims following divorce. Ontario's two-year period runs from the date of divorce. If you obtain a UAE divorce in March 2025 and do not take Canadian steps until April 2027, you may be statute-barred from claiming your share of Ontario assets.
+        </p>
+        <p>
+          For the UAE assets side of the financial settlement, see our guide on <a href="/en/divorce-cost-uae/">divorce costs in UAE</a>.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Canadian Property: What UAE Courts Cannot Touch</h2>
+        <p>
+          UAE divorce proceedings under FL 41/2022 will not divide your Canadian home, Canadian investment accounts, Canadian bank accounts, or any other property located in Canada. The UAE court's jurisdiction over property is limited to assets registered or held in the UAE. Canadian real estate registered in one spouse's name stays in that name after a UAE divorce unless a Canadian court orders otherwise or the parties agree.
+        </p>
+        <p>
+          After your UAE divorce is recognised in Canada, you can apply to the relevant provincial family court for orders covering Canadian property. In Ontario, this is an equalization of net family property application under the Family Law Act. The court calculates each spouse's net family property (assets minus debts, subject to excluded property rules) and orders the spouse with the larger net family property to pay the other an equalization payment. This process is available after the UAE divorce is recognised.
+        </p>
+        <p>
+          For more on how to choose the right jurisdiction for your overall situation, see our analysis at <a href="/en/where-to-divorce-uae-or-home-country/">where to divorce: UAE or home country</a>.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Children: The Hague Convention Gap and Canadian Custody</h2>
+        <p>
+          Child custody across the Canada-UAE border is one of the most serious risk areas for Canadian expat families. The asymmetry in treaty obligations creates real practical danger.
+        </p>
+
+        <h3>UAE is not a Hague Convention signatory</h3>
+        <p>
+          Canada is a contracting state to the Hague Convention on the Civil Aspects of International Child Abduction (1980), which creates an obligation to return wrongfully removed children to their country of habitual residence. The UAE has not ratified this Convention. This means there is no automatic return mechanism for a parent in Canada seeking the return of a child taken to (or retained in) the UAE without consent, and no automatic return mechanism in the other direction through Hague channels.
+        </p>
+        <p>
+          If one parent takes children who are Canadian citizens from the UAE to Canada without a UAE court order authorising the move, Canadian courts will apply Canadian family law and the best interests of the child test. Canadian courts may decline to return the children to the UAE if they find it is in the children's best interests to remain in Canada. This is a very different outcome from what would happen between two Hague contracting states.
+        </p>
+
+        <h3>Protecting children during UAE divorce proceedings</h3>
+        <p>
+          If you are concerned about a risk of the other parent taking your children to Canada without consent during divorce proceedings, apply to the UAE court at the earliest stage for a travel ban on the children's travel documents. UAE courts can impose travel bans preventing children from leaving the UAE pending custody determination. This is a standard protective measure in contested UAE divorce cases. See our detailed guide on <a href="/en/child-custody-uae/">child custody in UAE</a> for the full procedure.
+        </p>
+        <p>
+          For children who are Canadian citizens, the Canadian parent's consulate (Global Affairs Canada, Dubai) should be informed of any custody dispute and travel concerns. They cannot intervene in court proceedings but can provide consular assistance and information.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Practical Checklist for Canadian Expats Starting Divorce Proceedings in UAE</h2>
+        <ul>
+          <li><strong>Verify your ordinary residence in UAE.</strong> Have you been in the UAE for at least one year? If yes, Section 22 of the Divorce Act will apply and Canada will recognise your UAE divorce.</li>
+          <li><strong>Engage a Canadian family lawyer at the same time as your UAE lawyer.</strong> The Canadian financial pieces (RRSPs, pensions, property) need to be addressed in parallel, not as an afterthought.</li>
+          <li><strong>Inventory all Canadian assets.</strong> RRSP statements, TFSA balances, pension plan member statements, property valuations. Take copies of all documents before proceedings begin.</li>
+          <li><strong>Note the two-year limitation period</strong> for Canadian property claims after divorce. Do not delay Canadian proceedings after the UAE divorce is finalised.</li>
+          <li><strong>Apostille your UAE divorce certificate</strong> promptly after it is issued. You need this for CPP splitting, Canadian property proceedings, and any Canadian authority that asks for proof of divorce.</li>
+          <li><strong>If children are involved,</strong> decide on travel restriction applications before filing the divorce. Discuss the custody framework with both your UAE lawyer and a Canadian family lawyer simultaneously.</li>
+        </ul>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/divorce-for-expats-in-uae/" class="related-card">
+            <strong>Divorce for Expats in UAE</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>Where to Divorce: UAE or Home Country?</strong>
+            <span>5-jurisdiction comparison and the race-to-file strategy</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Joint custody, travel bans, and relocation rules</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>Divorce Certificate Attestation UAE</strong>
+            <span>Apostille process, MOFA stamps, and international use</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, legal fees, and what to budget for</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .compare-col { border-radius: 10px; padding: 1.25rem; }
+  .compare-col--uae { background: #fef9ec; border: 1.5px solid #c9a84c; }
+  .compare-col--can { background: #eff6ff; border: 1.5px solid #93c5fd; }
+  .compare-col h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.75rem; }
+  .compare-col ul { margin: 0; padding-left: 1.1rem; }
+  .compare-col li { font-size: 0.85rem; color: #374151; line-height: 1.7; margin-bottom: 0.3rem; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

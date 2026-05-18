@@ -1,0 +1,531 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Social Media and Child Custody UAE: What Parents Must Know';
+const description =
+  'Can your ex post photos of your children on Instagram without your consent in UAE? Under Federal Decree-Law No. 26 of 2025 and joint custody rules, both parents must agree on digital identity decisions. This guide covers court orders, evidence, and enforcement.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/social-media-child-custody-uae/',
+  ar: 'https://divorceu.ae/ar/وسائل-التواصل-الاجتماعي-والحضانة-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Social Media Child Custody UAE', url: 'https://divorceu.ae/en/social-media-child-custody-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I stop my ex posting photos of our child in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Federal Decree-Law No. 26 of 2025 (Child Digital Safety Law, in force January 2026), parents must protect their children\'s digital footprint. Under joint custody rules in Federal Decree-Law No. 41 of 2024, major decisions about a child\'s identity and welfare -- including digital identity -- require both parents to agree. You can apply to the UAE Family Court for an order restricting the other parent from posting identifiable images of your child without your written consent.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What law covers child social media rights in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The primary law is Federal Decree-Law No. 26 of 2025 (the Child Digital Safety Law), which entered into force in January 2026. It requires parents and guardians to actively protect children from harmful digital exposure. Supporting legislation includes Federal Decree-Law No. 45 of 2021 (Personal Data Protection Law), which gives children privacy rights over their personal data including photographs. Under Federal Decree-Law No. 41 of 2022 and No. 41 of 2024, joint custody parents must agree on major decisions -- courts are extending this to digital identity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use social media posts as evidence in custody hearings in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Screenshots of social media posts are admissible in UAE courts when properly authenticated. The standard method is notarisation: you take a screenshot showing the post, the timestamp, the poster\'s username, and visible profile information, then have it notarised by a UAE notary public or attested by the relevant authority. This creates an official record of the digital evidence that courts will accept. WhatsApp conversations and other digital messages are treated the same way.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my ex uses Instagram posts to reveal our child\'s school location?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'This is a serious concern that UAE courts treat as a safety matter. Under Federal Decree-Law No. 26 of 2025, exposing a child\'s location information -- including school details visible in tagged posts -- can constitute a breach of the child\'s digital safety. You can apply for an emergency protective order under Federal Law No. 15 of 2021 if you believe the exposure creates a safety risk. Even without an emergency order, you can apply to the family court for a specific order requiring deletion of the posts and prohibiting future location disclosure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can the court change custody if social media rules are violated?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, if the violations are persistent and demonstrate that the parent is not acting in the child\'s best interests. UAE courts will not modify custody for a single Instagram post. But a documented pattern of violating court orders about digital safety -- especially if the posts expose the child to harm, reveal sensitive location information, or breach the child\'s privacy rights -- can be presented as evidence that the parent\'s custody arrangement should be reviewed. The threshold is repeated, documented breaches after a court order has been made.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does joint custody in UAE mean both parents must agree on social media posts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Courts are moving in this direction. Under Federal Decree-Law No. 41 of 2022 and No. 41 of 2024, joint custody requires both parents to agree on major decisions: education, medical treatment, travel, and religious upbringing. Abu Dhabi Family Court has been considering whether digital identity -- including the public posting of identifiable images -- falls into the same category. Federal Decree-Law No. 26 of 2025 strengthens this argument by creating an explicit obligation to protect children\'s digital identity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What consequences can a parent face for violating a social media court order in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Consequences escalate depending on severity. First breach: court warning and mandatory deletion order. Repeated breaches: fines (amounts determined by the court, typically AED 1,000-5,000 per incident). Persistent violations that demonstrate disregard for the court\'s authority or the child\'s welfare can lead to a custody review. Under Federal Law No. 15 of 2021, if the posts constitute harassment or a safety threat, a protection order can also be sought.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I apply for a court order about social media in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'File an application at the UAE Family Guidance Department in the emirate where your custody case is registered (or where the child habitually resides). Submit: (1) notarised screenshots of the offending posts with timestamps, (2) a written statement explaining why the posts breach your child\'s rights or the joint custody agreement, (3) a copy of your existing custody order. A family counsellor will attempt mediation first. If no agreement is reached, the matter proceeds to a family court judge who can issue a specific injunction against the social media activity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Federal Decree-Law No. 26 of 2025 apply to all emirates?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Federal Decree-Law No. 26 of 2025 is a federal law that applies across all seven emirates of the UAE. It entered into force in January 2026 and applies to all parents and guardians, regardless of nationality or religion, who are resident in the UAE or who are subject to UAE courts for child custody matters.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my ex\'s social media activity abroad affect the UAE custody order?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If the content is posted from abroad but relates to your UAE-based child and the UAE custody order, UAE courts can still consider it as evidence of the parent\'s conduct. The digital content itself does not have a physical location -- what matters is whether it breaches UAE law, the custody order terms, or the child\'s rights under UAE law. A parent who moves abroad but continues posting identifiable images of the UAE-based child in breach of a court order can face enforcement consequences when they next enter the UAE.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/social-media-child-custody-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Child Custody Guide -- UAE 2025/2026</p>
+      <h1>Social Media and Child Custody UAE: What Both Parents Must Agree On</h1>
+      <p class="hero-desc">
+        Your ex just posted a photo of your daughter at her school sports day on Instagram. Location tag included. Five hundred followers can now identify where she studies. Under UAE law as it stands in 2026, you have grounds to act. This guide tells you exactly what the law says, what a court can order, and how to protect your child's digital identity after separation.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key points before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>Federal Decree-Law No. 26 of 2025</strong> (Child Digital Safety Law, in force January 2026) creates an explicit obligation for parents to protect their children's digital footprint.</li>
+          <li><strong>Joint custody means joint decisions.</strong> Under FL 41/2022 and FL 41/2024, both parents must agree on major decisions -- courts are extending this to digital identity.</li>
+          <li><strong>Screenshots can be used as evidence</strong> in UAE courts when notarised with timestamps and profile information visible.</li>
+          <li><strong>Court orders can require deletion</strong> of existing posts and prohibit future identifiable posts without mutual consent.</li>
+          <li><strong>Children have privacy rights</strong> under Federal Decree-Law No. 45 of 2021 (Personal Data Protection Law) -- photographs of children are personal data.</li>
+          <li><strong>Persistent violations</strong> of a court order about digital safety can be used as grounds for a custody review.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>The New Law: Federal Decree-Law No. 26 of 2025</h2>
+        <p>
+          Federal Decree-Law No. 26 of 2025, the Child Digital Safety Law, entered into force in January 2026. It is the UAE's first law specifically addressing children's digital rights and the responsibilities of parents and guardians in the digital environment.
+        </p>
+        <p>
+          The law places an affirmative obligation on parents to actively protect their children from harmful digital content and exposure. It does not frame this as a choice: it is a parental duty. Critically, the law explicitly addresses the protection of a child's digital identity and footprint -- meaning the accumulation of data, images, and information about the child that exists in digital form across the internet.
+        </p>
+        <p>
+          For divorcing and divorced parents, this creates a clear legal framework. Posting identifiable images of your child on social media without considering the risks is no longer just a matter of parenting preference. Under Federal Decree-Law No. 26 of 2025, it is a question of whether you are fulfilling your legal duty to protect your child's digital safety.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Why this matters more after separation</h3>
+          <p>During an intact marriage, parents typically make shared decisions about their children's public digital presence. After separation, one parent may post freely while the other has no knowledge or control. The information asymmetry is particularly acute: a parent who posts your child's school uniform, name, and location is creating a permanent public record that you cannot delete and may not even know exists without checking regularly. Federal Decree-Law No. 26 of 2025 gives the non-posting parent legal tools to address this.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Joint Custody and the Digital Identity Question</h2>
+        <p>
+          UAE family courts -- particularly in Abu Dhabi -- have been examining whether decisions about a child's digital identity fall within the scope of joint parental decision-making under the custody framework.
+        </p>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong> (governing Muslim divorces, effective April 15 2025) and <strong>Federal Decree-Law No. 41 of 2022</strong> (governing non-Muslim civil divorces), joint custody means that both parents must agree on major decisions affecting the child's welfare. These laws explicitly list education, medical treatment, travel outside the UAE, and religious upbringing as categories requiring joint consent.
+        </p>
+        <p>
+          Abu Dhabi Family Court has been considering placing the posting of identifiable images of a child on public social media platforms in the same category. The reasoning is straightforward: a public post with your child's name, face, and location creates a permanent digital record that affects the child's identity, privacy, and potentially safety. That is no less significant than choosing their school.
+        </p>
+
+        <h3>What "major decision" means in practice</h3>
+        <p>
+          Not every mention of a child on social media requires joint consent. A post that says "my children make me proud" with no identifiable information is different from a post that shows your daughter in school uniform, names her, tags her school, and identifies her city. The test that courts apply is whether the post creates information about the child that is identifiable, permanent, and potentially harmful if accessed by strangers.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type of post</th>
+                <th>Joint consent likely required?</th>
+                <th>Reasoning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Named child, school uniform, location tag</td>
+                <td class="td-rule--no">Yes -- high risk</td>
+                <td class="td-light">Identifies child's school, location, and name publicly. Safety and privacy concern under FL 26/2025.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Child's face, birthday party photo, name in caption</td>
+                <td class="td-rule--maybe">Likely yes</td>
+                <td class="td-light">Identifiable image with personal data (name, approximate age). Personal Data Protection Law (FL 45/2021) applies.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Generic "family time" photo, no names, no location</td>
+                <td class="td-rule--yes">Probably not</td>
+                <td class="td-light">Low identification risk. Difficult to argue joint consent required absent a specific court order.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Vacation photos showing foreign country, school-age child</td>
+                <td class="td-rule--maybe">Context-dependent</td>
+                <td class="td-light">If child is identifiable and location reveals information the other parent would reasonably want to control, consent advisable.</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Video of child's sports match, published publicly</td>
+                <td class="td-rule--no">Yes -- if identifiable</td>
+                <td class="td-light">Sports teams often display school names. Video is more identifying than photographs.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Children's Privacy Rights Under UAE Law</h2>
+        <p>
+          Independent of the custody framework, children in the UAE have privacy rights under <strong>Federal Decree-Law No. 45 of 2021</strong>, the Personal Data Protection Law (PDPL). Photographs of a child are personal data. Sharing that data publicly without the consent of the person responsible for the child -- which, after divorce, means both joint custody parents -- engages the PDPL framework.
+        </p>
+        <p>
+          Under Article 4 of the PDPL, personal data of minors requires the consent of a legal guardian. In a joint custody situation, both parents hold guardianship rights. One parent posting the child's identifiable images publicly without the other's consent may technically be processing the child's personal data without adequate authority.
+        </p>
+        <p>
+          This is an emerging area of UAE law and has not been extensively litigated in the family courts. However, practitioners are already citing the PDPL in applications to restrict social media activity about children, and courts have shown willingness to consider the argument.
+        </p>
+
+        <h3>Location data and specific safety risks</h3>
+        <p>
+          A photograph taken on a modern smartphone contains embedded EXIF data including precise GPS coordinates. Most social media platforms strip EXIF data on upload -- but the visible content of the post (school uniforms, recognisable buildings, sports team names) can be just as locating. Under Federal Decree-Law No. 26 of 2025, exposing a child's location information through digital channels is specifically identified as a risk that parents must guard against.
+        </p>
+        <p>
+          If you believe that your ex's social media activity is revealing your child's location in a way that creates a specific safety risk -- for example, if there are concerns about the other parent's associates, or if there has been a history of threatening behaviour -- you can apply for an emergency protective order under <strong>Federal Law No. 15 of 2021</strong> (the Protection from Domestic Violence Law) in addition to the standard family court application.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Practical Scenarios</h2>
+
+        <div class="scenario-list">
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Scenario 1: Your ex posts vacation photos of the children without telling you</p>
+            <p>Your custody order gives both parents joint decision-making. Your ex takes the children for their summer visit and posts daily Instagram stories of their location in a foreign country, named with the children's faces visible. You had no idea they were travelling internationally and you never gave travel consent. This is a breach of two separate obligations: the joint custody rule on travel consent, and potentially FL 26/2025 on digital safety. Document the posts with notarised screenshots. File an urgent application to the Family Guidance Department. The court can issue an order requiring deletion and prohibiting future posts without your consent, and the travel aspect may independently constitute a custody breach.</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Scenario 2: Photos reveal the child's school location to your ex's new partner's circle</p>
+            <p>Your ex is in a new relationship and their new partner has a large social media following. Your child appears in posts that identify the school by uniform and badge. Hundreds of strangers now know where your child attends school. Under FL 26/2025, you can argue that the digital safety duty has been breached. Under the PDPL, identifiable school information is sensitive personal data for a minor. Apply to the family court for an order requiring the posts to be deleted and prohibiting future school-identifying posts. If the court grants it, any future breach is immediately actionable.</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Scenario 3: Your ex shares child custody content that antagonises your child in front of their followers</p>
+            <p>Your ex posts content on social media that involves the children in the divorce dispute -- showing them looking unhappy, using them as emotional props, or making statements about the other parent's failings where the children's faces are visible. This goes beyond digital safety into child welfare. Courts treat parental alienation and the use of children in adult disputes very seriously. Document everything. Apply under the custody framework arguing that this conduct is contrary to the child's best interests and constitutes a breach of the parent's duties under Federal Decree-Law No. 41 of 2024, Article 117 (child welfare) and Article 119 (joint parental responsibility).</p>
+          </div>
+          <div class="scenario-card scenario-card--numbered">
+            <p class="scenario-title">Scenario 4: You want to post photos of your children but your ex has applied for a restriction order</p>
+            <p>You have shared many family photos during the marriage and want to continue. Your ex has filed a court application claiming all photos require joint consent. Until the court rules, you should pause public identifiable posts to avoid any order being made against you for a breach that occurred while proceedings were pending. In the hearing, you can argue for a proportionate order -- for example, that non-identifying photos are permitted but school-identifying or location-tagged posts require advance consent. Courts generally try to find balanced solutions that respect both parents' rights and the child's best interests.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>How to Apply for a Court Order Restricting Social Media Posts</h2>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Gather and authenticate your evidence</h3>
+              <p>Take screenshots of every post you intend to use as evidence. Each screenshot must show: the post content, the timestamp, the poster's username/profile name, and any visible location tags or mentions. Take these screenshots to a UAE notary public for notarisation. This creates an official authenticated record. Keep copies in both digital and printed form.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Write a statement explaining the harm or risk</h3>
+              <p>UAE courts do not automatically assume that social media posts are harmful. You must explain specifically what harm you are concerned about: safety risk from location disclosure, privacy breach under FL 45/2021, violation of the joint custody agreement on digital identity, or breach of FL 26/2025. Be specific about the child's age, the nature of the information revealed, and why it causes harm.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>File at the Family Guidance Department</h3>
+              <p>Submit your application, authenticated screenshots, statement, and a copy of your existing custody order to the Family Guidance Department in the emirate where the custody case was registered (or where the child habitually resides). A family counsellor will attempt to mediate between the parents. If mediation produces a consent agreement, that agreement can be ratified by the court and becomes enforceable as a court order.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Court hearing and order</h3>
+              <p>If mediation fails, the matter proceeds to a family court judge. The judge has the power to: order specific posts deleted; prohibit future identifiable posts without written consent from both parents; set out categories of permitted and prohibited content; impose fines for breach; and in serious cases refer the matter for a custody welfare review. A typical timeline from filing to first hearing in Dubai and Abu Dhabi is 4-6 weeks for non-urgent matters, and within days for urgent safety applications.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Enforce a breach</h3>
+              <p>If the other parent breaches the court order, return to court immediately. Bring fresh notarised screenshots showing the breach date. Courts take non-compliance with their orders seriously. The first breach typically results in a formal warning and costs order. Repeated breaches escalate to fines and potential custody consequences. Keep records of every breach from the moment the order is made.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Using Social Media Posts as Evidence in Custody Hearings</h2>
+        <p>
+          Social media evidence is regularly admitted in UAE family court proceedings. The courts have handled cases involving Facebook posts, Instagram stories, TikTok videos, and WhatsApp messages. The key requirement is authentication.
+        </p>
+
+        <h3>How to authenticate digital evidence in UAE courts</h3>
+        <p>
+          Authentication means establishing that the screenshot accurately represents what was posted, when it was posted, and by whom. The standard method in UAE practice is notarisation. You print the screenshot (or present it on a device) to a UAE notary public, who records that the content was verified at a specific date and time and stamps the document. The notarised copy is then submitted as an exhibit to your court application.
+        </p>
+        <p>
+          For particularly important posts, or where there is any concern the content may be deleted, you can also engage a UAE-certified digital forensics expert to capture and certify the content. This is more expensive but provides stronger authentication. Some family lawyers now routinely use screen recording software to capture live sessions rather than static screenshots, providing additional evidence of authenticity.
+        </p>
+
+        <h3>What social media evidence can prove</h3>
+        <ul>
+          <li>That a parent violated a court order about posting restrictions</li>
+          <li>That a parent was in a particular country during a period relevant to travel consent</li>
+          <li>That a parent was present at a specific event while claiming to be unavailable for custody handover</li>
+          <li>That a parent is in a new relationship (relevant to certain custody and maintenance issues)</li>
+          <li>That a parent is engaging in conduct contrary to the child's welfare (alcohol, parties, hostile statements about the other parent)</li>
+          <li>Lifestyle and financial circumstances relevant to maintenance assessments</li>
+        </ul>
+
+        <div class="info-box info-box--info">
+          <h3>Practical tip: monitor but do not screenshot obsessively</h3>
+          <p>Courts are aware of the difference between a parent who has identified a genuine safety concern and one who is monitoring an ex-spouse's every move for tactical advantage. Present focused, relevant evidence about specific concerns. A 200-page bundle of screenshots from three years of social media activity is less persuasive than six authenticated screenshots that clearly show the specific concern you are raising. Quality and relevance of evidence matters more than volume.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Consequences for Violating a Social Media Court Order</h2>
+        <p>
+          Once a court has made an order about social media activity and a parent breaches it, the consequences are determined by the court and can escalate. UAE courts take non-compliance with their orders seriously -- particularly where children's welfare is involved.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Breach type</th>
+                <th>Typical consequence</th>
+                <th>Legal basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Single post in breach of order</td>
+                <td>Formal warning from court; deletion order; cost award</td>
+                <td class="td-light">Court's inherent contempt jurisdiction; UAE Civil Procedure Code</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Repeated posts in breach of order</td>
+                <td>Fine (AED 1,000-5,000 per incident at court's discretion); stronger injunction</td>
+                <td class="td-light">UAE Civil Procedure Code; Federal Law No. 15 of 2021 if safety risk</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Posts revealing child's location creating safety risk</td>
+                <td>Urgent protection order application; potential arrest warrant in extreme cases</td>
+                <td class="td-light">Federal Law No. 15 of 2021; Federal Decree-Law No. 26 of 2025</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Persistent pattern of violations demonstrating disregard for child's welfare</td>
+                <td>Welfare review; possible custody modification hearing</td>
+                <td class="td-light">FL 41/2024 Article 117 (best interests of child); FL 41/2022 Article 8</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Posts constituting parental alienation or psychological harm to child</td>
+                <td>Immediate custody review; possible supervised contact</td>
+                <td class="td-light">Best interests doctrine; FL 41/2024; child welfare jurisdiction of UAE courts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          One clarification that is worth stating: deleting a post after it has been ordered is compliance, but it does not undo a breach. The court records the breach regardless of whether the post is subsequently deleted. Deletion after the fact is treated as mitigation, not as curing the breach.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Drafting a Social Media Agreement as Part of Your Custody Order</h2>
+        <p>
+          The most effective way to avoid future disputes is to include specific social media provisions in your custody agreement or court order at the time of divorce. Vague provisions ("both parties shall respect the child's privacy") are difficult to enforce. Specific provisions ("neither party shall post identifiable images of the child including school uniform, school name, or location data to any public social media platform without the prior written consent of the other party") are directly actionable.
+        </p>
+
+        <h3>Provisions worth including</h3>
+        <ul>
+          <li>Definition of "identifiable image" (face visible, school uniform, name in caption, tagged location)</li>
+          <li>Distinction between public posts and private sharing with family members</li>
+          <li>Consent mechanism (WhatsApp message prior to posting counts as written consent)</li>
+          <li>Handling of existing posts (agree which stay and which are deleted)</li>
+          <li>What happens when the child creates their own social media accounts at older ages</li>
+          <li>Review mechanism as the child ages and their own preferences become relevant</li>
+        </ul>
+        <p>
+          Courts in Abu Dhabi and Dubai have shown willingness to incorporate detailed social media provisions into custody orders when both parties agree to them, or when there is evidence that the issue requires specific judicial management. Bringing a draft provision to the Family Guidance Department mediation is the most efficient way to get it into the final order.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody in UAE</strong>
+            <span>Hadana, joint custody, and how courts decide</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>What each spouse keeps on divorce</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Non-Muslim civil divorce, timelines, and law choices</span>
+          </a>
+          <a href="/en/international-child-abduction-uae/" class="related-card">
+            <strong>International Child Abduction UAE</strong>
+            <span>What to do if your child is taken abroad</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Maintenance amounts and enforcement</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Court Orders UAE</strong>
+            <span>Travel bans, asset freezes, and urgent protective orders</span>
+          </a>
+          <a href="/en/divorce-for-harm-uae/" class="related-card">
+            <strong>Divorce for Harm UAE</strong>
+            <span>Judicial divorce on grounds of abuse or harm</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-rule--no { color: #dc2626; font-weight: 600; }
+  .td-rule--maybe { color: #d97706; font-weight: 600; }
+  .td-rule--yes { color: #15803d; font-weight: 600; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .scenario-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .scenario-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-card--numbered .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

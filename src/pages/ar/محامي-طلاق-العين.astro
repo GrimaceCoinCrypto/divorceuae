@@ -1,0 +1,453 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'محامي طلاق العين — محكمة الأسرة والإجراءات والتكاليف ٢٠٢٥';
+const description =
+  'العين تتبع إمارة أبوظبي — وهذا يمنح غير المسلمين أسرع إجراءات طلاق في الإمارات (قد تنتهي في شهر واحد). دليل شامل لمحكمة العين الاتحادية الابتدائية، دائرة الإرشاد الأسري، مقارنة بأبوظبي ودبي.';
+
+const canonical = 'https://divorceu.ae/ar/محامي-طلاق-العين/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-al-ain/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'محامي طلاق العين' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'أين تقع محكمة الأسرة في العين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تقع محكمة العين الاتحادية الابتدائية في وسط مدينة العين وتنظر في جميع مسائل الأحوال الشخصية وقانون الأسرة شاملةً الطلاق والحضانة والنفقة. تعمل تحت إشراف دائرة القضاء في أبوظبي (أدق). يجب على الأزواج المسلمين حضور مركز الإرشاد الأسري في العين (منطقة المدينة القديمة) قبل تقديم الدعوى. وبإمكان غير المسلمين التقديم في محكمة العين مباشرةً أو في محكمة الأسرة المدنية في أبوظبي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تستغرق إجراءات الطلاق في العين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق غير المتنازع عليه للمسلمين: من ٢ إلى ٤ أشهر من مركز الإرشاد الأسري حتى صدور الحكم. القضايا المتنازع عليها: من ٦ إلى ١٥ شهراً. لغير المسلمين بموجب قانون أبوظبي رقم ١٤ لسنة ٢٠٢١: قد ينتهي الطلاق غير المتنازع عليه في شهر واحد. هذه أوقات تقريبية تتباين بحسب القضية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل أستطيع الطلاق في العين إن كنت أقيم فيها وأعمل في دبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. يتحدد الاختصاص القضائي للطلاق في الإمارات بمكان الإقامة لا مكان العمل. إن كنت مقيماً في العين (إمارة أبوظبي) فبإمكانك التقديم في محكمة العين الاتحادية الابتدائية. مكان عمل صاحب العمل في دبي لا صلة له باختصاص المحكمة في الطلاق.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل محكمة العين أسرع من دبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'في الغالب نعم. تحمل محكمة العين الاتحادية عبئاً أقل من محكمة الأحوال الشخصية في دبي أو محاكم الأسرة في مدينة أبوظبي. الجلسات الأولى تُدرج عادةً في غضون ٣ إلى ٦ أسابيع من التقديم مقابل ٦ إلى ١٠ أسابيع في دبي. الميزة في السرعة تعود إلى قِصَر قائمة الانتظار لا إلى اختلاف الإجراءات القانونية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن لغير المسلمين التقديم في محكمة العين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. العين تتبع إمارة أبوظبي التي تتيح لغير المسلمين الاستفادة من قانون أبوظبي رقم ١٤ لسنة ٢٠٢١ الأكثر تطوراً بين قوانين الأسرة غير الإسلامية في الإمارات. بإمكانهم التقديم مباشرةً في محكمة العين أو في محكمة الأسرة المدنية في أبوظبي. في كلتا الحالتين طلاق غير متنازع عليه بلا أسباب يمكن إنهاؤه في شهر واحد.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل أحتاج إلى محامٍ مرخَّص في أبوظبي لطلاق العين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'للمثول أمام محكمة العين يشترط أن يحمل المحامي ترخيص المحاماة من دائرة القضاء في أبوظبي (أدق). المحامي المرخَّص في دبي فقط لا يستطيع المثول نيابةً عنك في محكمة العين دون الحصول على ترخيص أبوظبي. كثير من مكاتب المحاماة الإماراتية الكبرى تحمل تراخيص دبي وأبوظبي معاً. تحقق من ترخيص المحامي قبل توقيع عقد الوكالة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما تكاليف الطلاق في العين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'رسوم التقديم في محكمة العين ٦٠٠ إلى ١٥٠٠ درهم. مركز الإرشاد الأسري بلا رسوم للمسلمين. ترجمة الوثائق وتصديقها ٥٠٠ إلى ٢٠٠٠ درهم. أتعاب المحامي في الطلاق غير المتنازع عليه ٥٠٠٠ إلى ١٥٠٠٠ درهم. المتنازع عليه ١٥٠٠٠ إلى ٥٠٠٠٠ درهم فأكثر. التكلفة الإجمالية لطلاق متفق عليه في العين مع محامٍ تتراوح عادةً بين ٧٠٠٠ و١٨٠٠٠ درهم.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الفرق بين إجراءات الطلاق في العين وأبوظبي ودبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'القوانين المطبَّقة في العين وأبوظبي متطابقة لأنهما تتبعان إمارة أبوظبي. الاختلافات العملية: محكمة العين أقل ازدحاماً وجلساتها أسرع. مركز الإرشاد الأسري في العين أصغر لكنه ينجز القضايا بوتيرة أسرع عموماً. غير المسلمون في العين يحصلون على مزايا قانون أبوظبي الفريد لعام ٢٠٢١ بينما دبي لا تملك ما يعادله.',
+      },
+    },
+  ],
+};
+
+const compareRows = [
+  { aspect: 'الإمارة', alain: 'أبوظبي', abudhabi: 'أبوظبي', dubai: 'دبي' },
+  { aspect: 'المحكمة', alain: 'محكمة العين الاتحادية (أدق)', abudhabi: 'محكمة الأحوال الشخصية في أبوظبي (أدق)', dubai: 'محكمة الأحوال الشخصية في دبي' },
+  { aspect: 'قانون الأسرة لغير المسلمين', alain: 'نعم — قانون أبوظبي ١٤/٢٠٢١', abudhabi: 'نعم — قانون أبوظبي ١٤/٢٠٢١', dubai: 'لا — يستخدم ديفك أو محاكم الأحوال الشخصية العادية' },
+  { aspect: 'انتظار الجلسة الأولى المعتاد', alain: '٣ إلى ٦ أسابيع', abudhabi: '٤ إلى ٨ أسابيع', dubai: '٦ إلى ١٠ أسابيع' },
+  { aspect: 'الطلاق الإسلامي غير المتنازع عليه', alain: '٢ إلى ٤ أشهر', abudhabi: '٢ إلى ٥ أشهر', dubai: '٣ إلى ٦ أشهر' },
+  { aspect: 'القضايا المتنازع عليها (معتاد)', alain: '٦ إلى ١٥ شهراً', abudhabi: '٨ إلى ١٨ شهراً', dubai: '١٠ إلى ٢٤ شهراً' },
+  { aspect: 'الطلاق المدني غير المتنازع عليه لغير المسلمين', alain: 'شهر واحد في أحسن الأحوال', abudhabi: 'شهر واحد في أحسن الأحوال', dubai: 'لا يسري الإطار ذاته' },
+  { aspect: 'ترخيص المحامي المطلوب', alain: 'ترخيص أدق (نقابة أبوظبي)', abudhabi: 'ترخيص أدق (نقابة أبوظبي)', dubai: 'ترخيص محاكم دبي' },
+];
+
+const faqItems = [
+  {
+    question: 'أقيم في العين — أيّ محكمة تختص بطلاقي؟',
+    answer: 'محكمة العين الاتحادية الابتدائية العاملة تحت إشراف دائرة القضاء في أبوظبي (أدق). للأزواج المسلمين يجب حضور مركز الإرشاد الأسري في العين قبل التقديم. لغير المسلمين بإمكانهم التقديم مباشرةً في محكمة العين أو في محكمة الأسرة المدنية في أبوظبي. كلتاهما تُطبّق قوانين أبوظبي ذاتها.',
+  },
+  {
+    question: 'ما الوثائق الضرورية لتقديم دعوى الطلاق في العين؟',
+    answer: 'للأزواج المسلمين: وثيقة الزواج (معتمدة ومترجمة إن كانت أجنبية)، جوازا سفر الطرفين وبطاقتا الهوية الإماراتية، وثائق الإقامة، سفرة الأسرة لمواطني الإمارات، وأي اتفاق مسبق على الحضانة أو الأموال. لغير المسلمين الوثائق ذاتها إضافةً إلى الاختيار الصريح للقانون المطبَّق (إماراتي أو قانون البلد الأصلي) إن طُلب تطبيق قانون أجنبي. جميع الوثائق الأجنبية اللغة تُترجم بمترجم معتمد وتُصدَّق من وزارة الخارجية.',
+  },
+  {
+    question: 'هل أستطيع الاستعانة بمحامٍ دبي لطلاق العين؟',
+    answer: 'فقط إن كان المحامي يحمل أيضاً ترخيص المحاماة من دائرة القضاء في أبوظبي (أدق). ترخيص المحاماة في الإمارات مُقيَّد بالإمارة فيما يخص المثول أمام المحاكم. يمكن للمحامي الدبي تقديم المشورة القانونية وصياغة الوثائق والتفاوض على التسويات لكنه لا يستطيع المثول في محكمة العين دون ترخيص أبوظبي. كثير من المكاتب الإماراتية الكبرى تحمل تراخيص الإمارتين. تحقق من الترخيص قبل توقيع الوكالة.',
+  },
+  {
+    question: 'هل يستحق الطلاق غير المتنازع عليه لغير المسلمين في العين الإنجاز فعلاً في شهر؟',
+    answer: 'لقضية نظيفة فعلاً حيث يتفق الطرفان على الشروط كاملةً وجميع الوثائق مستوفاة: نعم. قانون أبوظبي رقم ١٤ لسنة ٢٠٢١ يُتيح مساراً سريعاً بلا أسباب لغير المسلمين. الإجراء: تقديم الطلب المشترك، حضور جلسة واحدة، استلام الحكم. شهر واحد واقعي في القضايا المستوفية الشروط. أي نزاع على الحضانة أو الأموال أو الممتلكات يُطيل الأمر بصورة ملحوظة.',
+  },
+  {
+    question: 'كيف يعمل مركز الإرشاد الأسري في العين؟',
+    answer: 'يجب على الأزواج المسلمين حضور مركز الإرشاد الأسري في العين قبل قبول المحكمة لأي دعوى طلاق. يُجري المركز جلسة إلى ثلاث جلسات وساطة يتباعد بينها أسبوعان إلى ثلاثة. إن أخفقت الوساطة أصدر المركز خطاب إحالة يُتيح التقديم في المحكمة. مركز العين أصغر من مراكز مدينة أبوظبي وينجز القضايا بوتيرة أسرع عموماً. اسمح بأربعة إلى ثمانية أسابيع للمرور بهذه المرحلة.',
+  },
+  {
+    question: 'هل تُعالَج قضايا حضانة الأطفال في طلاق العين؟',
+    answer: 'نعم. تنظر محكمة العين في الحضانة جنباً إلى جنب مع الطلاق أو في دعاوى مرتبطة. للمسلمين تسري قواعد المرسوم بقانون ٤١/٢٠٢٤ (الأم لها الأولوية في حضانة الصغار، الأب الولي الشرعي دائماً، الحضانة تمتد لسن ١٨). لغير المسلمين تسري قواعد المرسوم بقانون ٤١/٢٠٢٢ (الحضانة المشتركة كأصل). تُعيّن محكمة العين أخصائياً اجتماعياً عند التنازع على الحضانة.',
+  },
+  {
+    question: 'هل تستطيع المرأة الحصول على نفقة في طلاق العين؟',
+    answer: 'نعم. النفقة في العين تُقدَّر بالمعايير القانونية الإماراتية ذاتها المعمول بها في سائر الإمارات. للمسلمين: نفقة العدة مضمونة، والمتعة مستحقة حين لا يكون الطلاق بسبب من جهة الزوجة (الحد الأدنى سنة نفقة معيشية بموجب قانون ٢٠٢٤). لغير المسلمين: تتمتع المحكمة بسلطة تقديرية بموجب قانون أبوظبي ٢٠٢١. وتُحدد محكمة العين مبالغ النفقة بالقواعد المعمول بها في أبوظبي لا بقواعد دبي.',
+  },
+  {
+    question: 'كيف أجد محامي طلاق في العين؟',
+    answer: 'ابحث عن مكتب يحمل ترخيص المحاماة من دائرة القضاء في أبوظبي وله خبرة أمام محاكم الأسرة في أبوظبي. معظم مكاتب المحاماة الإماراتية الكبرى تُغطي العين انطلاقاً من مكاتبها في أبوظبي. بعض المكاتب تُجري استشارات حضورية في مدينة العين مباشرةً. استشارتنا تشمل قضايا العين — استخدم النموذج في هذه الصفحة لترتيب مكالمة سرية.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل طلاق العين · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        العين تتبع إمارة أبوظبي — ما يعني أن غير المسلمين يستفيدون من أسرع إجراءات طلاق في الإمارات. طلاق غير متنازع عليه قد ينتهي في شهر واحد. والطلاق الإسلامي يتم هنا أسرع من دبي. هذا دليل منظومة المحاكم في العين والإجراءات خطوة بخطوة وما يحتاجه المحامي لتمثيلك.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>ستة أمور يجب على كل مقيم في العين معرفتها</h2>
+        <ul class="key-facts">
+          <li><strong>العين تتبع إمارة أبوظبي.</strong> دائرة القضاء في أبوظبي (أدق) تُشرف على جميع إجراءات الأسرة في العين.</li>
+          <li><strong>غير المسلمون يستفيدون من قانون أبوظبي ١٤/٢٠٢١</strong> وهو أكثر قوانين الأسرة المدنية تطوراً في الإمارات. طلاق غير متنازع عليه ممكن في شهر واحد.</li>
+          <li><strong>محكمة العين أقل ازدحاماً من دبي.</strong> الجلسات الأولى تُدرج عادةً في ٣ إلى ٦ أسابيع.</li>
+          <li><strong>الأزواج المسلمون يحضرون مركز الإرشاد الأسري في العين أولاً.</strong> يُضيف ٤ إلى ٨ أسابيع قبل التقديم.</li>
+          <li><strong>المحامي يحتاج ترخيص أدق.</strong> المحامي المرخَّص في دبي فقط لا يستطيع المثول في محاكم العين.</li>
+          <li><strong>جميع الوثائق الأجنبية تُترجم وتُصدَّق</strong> من وزارة الخارجية قبل تقديمها.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>العين ومنظومتها القضائية</h2>
+        <p>
+          العين رابع أكبر مدن الإمارات ويقطنها نحو ٥٠٠٠٠٠ شخص. تقع في إمارة أبوظبي في المنطقة الداخلية قرب الحدود العُمانية، على بُعد نحو ١٦٠ كيلومتراً من مدينة أبوظبي و١٣٠ كيلومتراً من دبي. وبحكم انتمائها لإمارة أبوظبي تخضع جميع الإجراءات القضائية في العين لإشراف <strong>دائرة القضاء في أبوظبي (أدق)</strong>.
+        </p>
+        <p>
+          تنظر <strong>محكمة العين الاتحادية الابتدائية</strong> في مسائل الأحوال الشخصية وقانون الأسرة شاملةً الطلاق والحضانة والنفقة والإرث والمسائل المرتبطة. وهي محكمة كاملة الاختصاص لا محكمة مبسَّطة، وأحكامها قابلة للطعن في محكمة استئناف أبوظبي.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>ميزة أبوظبي لغير المسلمين</h3>
+          <p>أبرز ما يميز الطلاق في العين أنها تتبع إمارة أبوظبي. أصدرت أبوظبي القانون رقم ١٤ لسنة ٢٠٢١ (الأحوال الشخصية للمقيمين غير المسلمين في إمارة أبوظبي) الذي ينطبق على جميع المقيمين غير المسلمين في كامل الإمارة بما يشمل العين. دبي لا تملك ما يعادله؛ فغير المسلمون في دبي يلجؤون إلى محاكم ديفك أو إطار الأحوال الشخصية العادي، وكلاهما أبطأ وأعقد للقضايا البسيطة.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>إجراءات الطلاق في العين خطوة بخطوة</h2>
+
+        <h3>للأزواج المسلمين: البداية من مركز الإرشاد الأسري</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">٠١</div>
+            <div class="step-body">
+              <h3>حضور مركز الإرشاد الأسري في العين</h3>
+              <p>يقع المركز في منطقة المدينة القديمة بالعين. حضوره إلزامي للأزواج المسلمين قبل قبول أي دعوى طلاق. يُجري المركز جلسة إلى ثلاث جلسات وساطة على مدى ٤ إلى ٨ أسابيع في محاولة للتوفيق. مركز العين أصغر من نظيره في مدينة أبوظبي وينجز القضايا عموماً بوتيرة أسرع.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٢</div>
+            <div class="step-body">
+              <h3>استلام خطاب الإحالة</h3>
+              <p>إن تعذّرت المصالحة أصدر المركز خطاب إحالة (خطاب إحالة) يُجيز التقديم في المحكمة. بدون هذا الخطاب لا يقبل قلم المحكمة صحيفة الدعوى. احتفظ بالأصل فالنسخة لا تُقبَل.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٣</div>
+            <div class="step-body">
+              <h3>إعداد الوثائق وتصديقها</h3>
+              <p>الوثائق المطلوبة: وثيقة الزواج (معتمدة من وزارة الخارجية مع ترجمة معتمدة إن كانت أجنبية)، جوازا سفر الطرفين وبطاقتا الهوية الإماراتية، وثائق الإقامة، وأي اتفاق مسبق على الشروط. ترجمة الوثائق وتصديقها يستغرق أسبوعاً إلى أسبوعين.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٤</div>
+            <div class="step-body">
+              <h3>تقديم صحيفة الدعوى في محكمة العين</h3>
+              <p>تُقدَّم الصحيفة في قلم محكمة العين الاتحادية الابتدائية. رسوم التقديم ٦٠٠ إلى ١٥٠٠ درهم بحسب نوع الدعوى والطلبات التبعية (الحضانة والنفقة والممتلكات). تُعطى رقماً للقضية وموعداً للجلسة الأولى عادةً في غضون ٣ إلى ٦ أسابيع وهو أسرع من دبي.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٥</div>
+            <div class="step-body">
+              <h3>حضور الجلسات والحصول على الحكم</h3>
+              <p>الطلاق غير المتنازع عليه: عادةً ١ إلى ٢ جلسات في ٢ إلى ٤ أشهر. المتنازع عليه: جلسات متعددة وربما تقرير أخصائي اجتماعي للحضانة وأوامر الكشف المالي. المدة الإجمالية للمتنازع عليه ٦ إلى ١٥ شهراً. يصدر الحكم النهائي بالعربية ويمكن تصديقه للاستخدام خارج الإمارات.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>لغير المسلمين: التقديم مباشرةً في العين أو أبوظبي</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">٠١</div>
+            <div class="step-body">
+              <h3>اختيار جهة التقديم: محكمة العين أو محكمة الأسرة المدنية في أبوظبي</h3>
+              <p>بإمكان غير المسلمين في إمارة أبوظبي التقديم في محكمة العين الاتحادية أو في محكمة الأسرة المدنية في أبوظبي (أدكف). محكمة أبوظبي المدنية أكثر خبرةً بقضايا الأسرة المدنية وأنسب للقضايا المعقدة ذات العناصر الدولية. وفي القضايا البسيطة المتفق عليها محكمة العين الأقرب ذات نتيجة قانونية متطابقة.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٢</div>
+            <div class="step-body">
+              <h3>لا إرشاد أسري إلزامي</h3>
+              <p>لا يشترط قانون أبوظبي ٢٠٢١ على غير المسلمين حضور الإرشاد الأسري قبل التقديم. هذا يُلغي تأخير ٤ إلى ٨ أسابيع الذي يُعانيه الأزواج المسلمون. يمكن لطلب الطلاق المشترك المتفق عليه المضي مباشرةً للتقديم في المحكمة.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٣</div>
+            <div class="step-body">
+              <h3>تقديم الطلب المشترك (للمتفق عليه)</h3>
+              <p>بموجب قانون أبوظبي رقم ١٤ لسنة ٢٠٢١ الطلاق غير المتنازع عليه يُقدَّم طلباً مشتركاً. يُؤكد كلا الزوجين رغبتهما في الطلاق ويُحددان الشروط المتفقة عليها للحضانة والمال ثم يُقدمان الوثائق المطلوبة.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">٠٤</div>
+            <div class="step-body">
+              <h3>جلسة واحدة والحكم (للمتفق عليه)</h3>
+              <p>الطلاق غير المتنازع عليه لغير المسلمين بموجب قانون أبوظبي ٢٠٢١ قد يُنجز في جلسة واحدة. المدة الإجمالية من التقديم إلى الحكم نحو ٣ إلى ٥ أسابيع في القضايا المستوفية الشروط. اكتمال الوثائق هو المتغير الرئيسي؛ أي نقص في الشهادات أو الترجمات يُؤخّر المسار.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>مقارنة: العين مقابل أبوظبي مقابل دبي</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>العامل</th>
+                <th>العين</th>
+                <th>أبوظبي (المدينة)</th>
+                <th>دبي</th>
+              </tr>
+            </thead>
+            <tbody>
+              {compareRows.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.aspect}</td>
+                  <td class="td-cell">{row.alain}</td>
+                  <td class="td-cell">{row.abudhabi}</td>
+                  <td class="td-cell">{row.dubai}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">الأوقات تقديرية مبنية على متوسطات تطور القضايا. تتباين القضايا الفردية تبايناً كبيراً بحسب التعقيد وتعاون الأطراف.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>اشتراط ترخيص المحامي</h2>
+        <p>
+          هذه نقطة عملية يُغفل عنها كثيرون حتى تتسبب في مشكلات. تراخيص المحاماة في الإمارات مُقيَّدة بالإمارة فيما يخص المثول أمام المحاكم. المحامي المرخَّص في محاكم دبي لا يستطيع المثول محامياً عنك في محكمة العين أو أي محكمة أخرى خاضعة لأدق دون الحصول على ترخيص مستقل من دائرة القضاء في أبوظبي.
+        </p>
+        <p>
+          ما يعنيه ذلك عملياً:
+        </p>
+        <ul>
+          <li>حين تبحثين عن محامٍ لطلاق العين تحققي من رقم رخصة المحاماة من أدق قبل توقيع الوكالة.</li>
+          <li>كثير من مكاتب المحاماة الإماراتية الكبرى تحمل تراخيص دبي وأبوظبي معاً وبإمكانها تمثيلك في العين.</li>
+          <li>المحامي المرخَّص في دبي فقط يستطيع تقديم المشورة وصياغة الوثائق والتفاوض على التسويات لكن لا يستطيع المثول في قاعة المحكمة في العين.</li>
+          <li>المستشارون القانونيون (غير المحامين) يقدمون المشورة لكنهم لا يمثّلون موكلاً أمام أي محكمة إماراتية.</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>تكاليف الطلاق في العين</h2>
+
+        <div class="cost-grid">
+          <div class="cost-card">
+            <div class="cost-label">رسوم التقديم</div>
+            <div class="cost-amount">٦٠٠ إلى ١٥٠٠ درهم</div>
+            <div class="cost-note">بحسب نوع الدعوى والطلبات التبعية</div>
+          </div>
+          <div class="cost-card">
+            <div class="cost-label">مركز الإرشاد الأسري</div>
+            <div class="cost-amount">مجاناً</div>
+            <div class="cost-note">للمسلمين فقط. الحضور بلا رسوم.</div>
+          </div>
+          <div class="cost-card">
+            <div class="cost-label">الترجمة والتصديق</div>
+            <div class="cost-amount">٥٠٠ إلى ٢٠٠٠ درهم</div>
+            <div class="cost-note">بحسب عدد الوثائق الأجنبية وأنواعها</div>
+          </div>
+          <div class="cost-card">
+            <div class="cost-label">أتعاب المحامي (غير متنازع عليه)</div>
+            <div class="cost-amount">٥٠٠٠ إلى ١٥٠٠٠ درهم</div>
+            <div class="cost-note">محامٍ مرخَّص في أدق؛ تتباين بحسب المكتب</div>
+          </div>
+          <div class="cost-card">
+            <div class="cost-label">أتعاب المحامي (متنازع عليه)</div>
+            <div class="cost-amount">١٥٠٠٠ إلى ٥٠٠٠٠ درهم فأكثر</div>
+            <div class="cost-note">بحسب التعقيد وعدد الجلسات والاستئناف</div>
+          </div>
+          <div class="cost-card">
+            <div class="cost-label">الإجمالي (متفق عليه مع محامٍ)</div>
+            <div class="cost-amount">٧٠٠٠ إلى ١٨٠٠٠ درهم</div>
+            <div class="cost-note">التكلفة الشاملة المعتادة لطلاق عيني نظيف</div>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/محكمة-الأسرة-في-دبي/" class="related-card">
+            <strong>محكمة الأسرة في دبي</strong>
+            <span>دليل شامل لمحكمة الأحوال الشخصية في دبي</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة لجميع الإمارات</span>
+          </a>
+          <a href="/ar/حساب-النفقة-في-الامارات/" class="related-card">
+            <strong>حساب النفقة في الإمارات</strong>
+            <span>مبالغ واقعية بالدرهم وكيف تُحدَّد</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لجميع مسالك الطلاق</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-right: 4px solid #c9a84c; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.9; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem; padding-right: 1.5rem; padding-left: 0; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: right; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-cell { color: #374151; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-right: 3px solid #c9a84c; padding-right: 0.75rem; margin-top: 0.75rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+  .cost-card { padding: 1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .cost-label { font-size: 0.75rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+  .cost-amount { font-size: 1.05rem; font-weight: 800; color: #0a1628; margin-bottom: 0.3rem; }
+  .cost-note { font-size: 0.78rem; color: #6b7280; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .cost-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .cost-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

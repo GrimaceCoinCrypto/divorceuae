@@ -1,0 +1,390 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق عبر واتساب في الإمارات — هل هو صحيح؟ الحكم القانوني الكامل ٢٠٢٥';
+const description =
+  'هل رسالة واتساب التي تقول "أنتِ طالق" تُعدّ طلاقاً في الإمارات؟ الأساس القانوني، اشتراط التسجيل وفق المادة ٥٨، كيفية توثيق الرسائل الإلكترونية كدليل، ومخاطر التصرف على أساس طلاق رقمي غير مسجَّل.';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-عبر-واتساب-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/whatsapp-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق عبر واتساب في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل يقع الطلاق عبر واتساب في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يمكن أن تُشكّل رسالة واتساب الصريحة في التعبير عن إرادة الطلاق إيقاعاً للطلاق في الإمارات استناداً إلى المرسوم بقانون رقم ٥ لسنة ١٩٨٥ (القانون المدني) والمرسوم بقانون رقم ١ لسنة ٢٠٠٦ (قانون المعاملات الإلكترونية). بيد أن هذا الطلاق لا يُنهي الزواج قانوناً إلا بعد تسجيله لدى محكمة الأحوال الشخصية خلال ١٥ يوماً وفق المادة ٥٨ من المرسوم بقانون ٤١/٢٠٢٤.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجوز الاستناد إلى لقطات شاشة واتساب كدليل أمام القضاء الإماراتي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. تُقبَل لقطات شاشة واتساب دليلاً في محاكم الأحوال الشخصية الإماراتية. لتعزيز قوتها الإثباتية ينبغي توثيقها أمام كاتب عدل مع إظهار بيانات المُرسِل والختم الزمني وإشعار القراءة. وقد أصدرت محاكم دبي في ٢٠٢٥ إرشادات للأدلة الرقمية تُقنّن قبول البيانات الوصفية للرسائل دليلاً موثوقاً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا أفعل إن تلقيت طلاقاً عبر واتساب؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'أولاً: لا تتصرفي كأن الزواج انتهى قبل تسجيل الطلاق رسمياً. ثانياً: احتفظي بالرسالة فوراً بلقطة شاشة تظهر البيانات الوصفية ووثّقيها أمام كاتب عدل. ثالثاً: إن لم يُسجّل الزوج الطلاق خلال ١٥ يوماً بإمكانك التقدم للمحكمة إما لطلب التسجيل القضائي أو لرفع دعوى طلاق مستقلة. رابعاً: استشيري محامياً متخصصاً في شؤون الأسرة قبل اتخاذ أي قرار يتعلق بالسكن أو الأموال أو السفر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل الطلاق الثلاثي عبر واتساب نافذ كطلاق ثلاث؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. تعدّ المحاكم الإماراتية الطلاق الثلاثي في مجلس واحد أو في رسالة واحدة طلقةً رجعيةً واحدة وفق مذهب جمهور المالكية والحنابلة. حتى لو كتب "أنتِ طالق طالق طالق" في رسالة واتساب واحدة، فهذا طلاق رجعي واحد لا بائن.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تؤثر رسالة الطلاق عبر واتساب على تأشيرة إقامتي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا، لا يؤثر الطلاق غير المسجَّل على وضع الإقامة. الآثار القانونية المتعلقة بالإقامة لا تترتب إلا على الطلاق المسجَّل رسمياً. وعند التسجيل تُمنح مهلة عادةً ٣٠ إلى ٦٠ يوماً لاستيفاء متطلبات الإقامة الجديدة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجوز للزوجة طلب الطلاق عبر واتساب؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا يُعدّ ذلك آلية شرعية لإيقاع الطلاق؛ إذ الطلاق حق للزوج وحده في الشريعة الإسلامية. أما الزوجة فتلجأ إلى الخلع أمام محكمة الأحوال الشخصية وفق المواد ٦٥-٦٨ من المرسوم بقانون ٤١/٢٠٢٤، وذلك دون اشتراط موافقة الزوج. يمكن أن تستخدم رسائل واتساب دليلاً على انهيار الزواج في دعوى الخلع أو التطليق للضرر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يسري حكم الطلاق الرقمي على غير المسلمين؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. لا يعرف المرسوم بقانون ٤١/٢٠٢٢ الخاص بالأحوال الشخصية للمقيمين غير المسلمين مفهوم الطلاق الشرعي ولا الإيقاع الرقمي. رسائل واتساب بين زوجين غير مسلمين ليست طلاقاً، بل قد تُستخدم دليلاً على النية في دعوى الطلاق المدني أمام المحكمة المختصة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يُشترط وجود شهود على رسالة الطلاق عبر واتساب؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا يُشترط لصحة الإيقاع وجود شهود على الرسالة ذاتها في مذهب الجمهور. ما يهم هو الدليل على الإيقاع عند التقدم بطلب التسجيل. ويُعزَّز الدليل بلقطات الشاشة الموثَّقة أو الاستخراج القضائي من الجهاز، لا باشتراط حضور شهود عند إرسال الرسالة.',
+      },
+    },
+  ],
+};
+
+const evidenceTypes = [
+  { method: 'لقطة شاشة موثَّقة أمام كاتب عدل', strength: 'قوي', notes: 'لقطة تظهر اسم المُرسِل والوقت وإشعار القراءة. الخطوة الأولى المعيارية.', admissible: true },
+  { method: 'استخراج قضائي من الجهاز', strength: 'الأقوى', notes: 'خبير تقني تعيّنه المحكمة يستخرج الرسائل من الجهاز نفسه. يصعب الطعن فيه.', admissible: true },
+  { method: 'تصدير بيانات واتساب للأعمال', strength: 'قوي', notes: 'تصدير رسمي من حسابات واتساب للأعمال يتضمن البيانات الوصفية ومنسَّق لتقديمه للمحكمة.', admissible: true },
+  { method: 'سجلات شركة الاتصالات (الرسائل النصية)', strength: 'متوسط', notes: 'تُقدّم بأمر قضائي. لا تتضمن محتوى الرسائل بل البيانات الوصفية فحسب.', admissible: true },
+  { method: 'شهادة شهود', strength: 'متوسط', notes: 'شخص اطلع على الرسالة أو سمع بها. تعزّز الدليل لكنها نادراً ما تكفي وحدها.', admissible: true },
+  { method: 'لقطة شاشة غير موثَّقة', strength: 'ضعيف', notes: 'مقبولة لكن يسهل الطعن فيها. احرصي دائماً على التوثيق مع إظهار البيانات الوصفية.', admissible: true },
+  { method: 'وصف شفهي للرسالة', strength: 'ضعيف جداً', notes: 'ستطلب المحكمة الرسالة الأصلية قبل قبول الوصف الشفهي.', admissible: false },
+];
+
+const faqItems = [
+  {
+    question: 'أرسل زوجي "أنتِ طالق" ثلاث مرات عبر واتساب — هل انتهى الزواج نهائياً؟',
+    answer: 'ليس بالضرورة وليس تلقائياً. بموجب القانون الإماراتي يُحسب إرسال "طالق طالق طالق" ثلاث مرات في مجلس واحد طلقةً رجعيةً واحدة، لا طلاقاً بائناً. تأخذ المحاكم الإماراتية بمذهب المالكية والحنابلة في هذه المسألة. ويظل الطلاق عديم الأثر القانوني حتى تسجيله خلال ١٥ يوماً وفق المادة ٥٨.',
+  },
+  {
+    question: 'أرسلت رسالة طلاق لزوجتي في لحظة غضب — هل أستطيع التراجع؟',
+    answer: 'إن لم يُسجَّل الطلاق في المحكمة بعد فلا يوجد من الناحية القانونية المدنية ما يستوجب التراجع، لأن الإيقاع غير المسجَّل لا أثر له. غير أن ثمة بُعداً شرعياً قد يكون الطلاق بموجبه واقعاً. الأسلم: استشارة محامٍ إماراتياً فوراً، وعدم تسجيل الطلاق إن لم تكن تنوي الطلاق فعلاً، وإن أردت المراجعة فوثّقها كتابةً لزوجتك بأسرع وقت.',
+  },
+  {
+    question: 'سجّل زوجي طلاق واتساب في المحكمة دون علمي — ما حقوقي؟',
+    answer: 'تلتزم محكمة الأحوال الشخصية بإخطارك عند تسجيل الطلاق. إن لم تُبلَّغي فبإمكانك الطعن في الإجراء. والأهم: من لحظة علمك بالطلاق المسجَّل تنشأ حقوقك فوراً وهي المهر المؤجل ونفقة العدة والمتعة ونفقة الأولاد. بادري بالمطالبة بهذه الحقوق دون إبطاء.',
+  },
+  {
+    question: 'هل للزوجة حق الطلاق بإرسال رسالة واتساب للزوج؟',
+    answer: 'الطلاق آلية يملكها الزوج وحده في الشريعة الإسلامية، لا تملكها الزوجة. بيد أن الزوجة تستطيع رفع دعوى الخلع أمام محكمة الأحوال الشخصية وفق المواد ٦٥-٦٨ من المرسوم بقانون ٤١/٢٠٢٤، وتستطيع الاستغناء عن موافقة الزوج. ورسائل واتساب قد تُستخدم دليلاً على انهيار الزواج في دعوى الخلع.',
+  },
+  {
+    question: 'ما الذي لا تُحقّقه رسالة الطلاق عبر واتساب؟',
+    answer: 'لا تُنهي رسالة الطلاق عبر واتساب الزواج قانونياً، ولا تُجيز للزوجة الزواج من آخر، ولا تُسقط التزامات الزوج بالنفقة، ولا تُحرّك آثار المهر، ولا تؤثر على وضع الإقامة. جميع هذه الآثار لا تترتب إلا على الطلاق المسجَّل رسمياً. التصرف على أساس طلاق واتساب غير مسجَّل قد يُعرّضك لعواقب قانونية وخيمة.',
+  },
+  {
+    question: 'كيف أُوثّق لقطات شاشة واتساب تصلح دليلاً قضائياً في الإمارات؟',
+    answer: 'خذي اللقطة من الهاتف الذي استقبل الرسالة دون إعادة توجيهها. احرصي على إظهار رقم المُرسِل أو اسمه، ومضمون الرسالة، والختم الزمني، وإشعار القراءة. توجّهي بها إلى كاتب عدل في الإمارات ليُصادق عليها نسخةً طبق الأصل لسجل إلكتروني مع التاريخ. هذه الخطوة البسيطة ترفع قوتها الإثباتية أمام المحكمة رفعاً ملموساً.',
+  },
+  {
+    question: 'ماذا لو أرسل الزوج رسالة الطلاق إلى رقم خطأ؟',
+    answer: 'هذه من الحالات الواضحة التي لا يقع فيها الطلاق. الرسالة المرسلة إلى رقم خطأ تفقد عنصر التوجيه والإيصال، فلا تُشكّل إيقاعاً للطلاق. في المقابل، الرسالة المرسلة إلى الرقم الصحيح حيث يدّعي الزوج لاحقاً أنه لم يقصد الإرسال أو حدث خطأ في الكتابة يصعب جداً نقض أثرها، إذ ينبئ فعل الإرسال بالقصد.',
+  },
+  {
+    question: 'هل يصح الطلاق الصوتي أو المصوَّر عبر واتساب؟',
+    answer: 'تخضع رسائل الصوت والمرئيات عبر واتساب للإطار القانوني ذاته: يمكن أن تُشكّل إيقاعاً للطلاق إن كانت صريحة الدلالة على إرادة الطلاق. التحقق من هوية المتكلم أكثر تعقيداً في الصوتيات، وقد يُؤمَر بتحليل الصوت. وكل هذا يستلزم بعدئذٍ التسجيل لدى المحكمة خلال ١٥ يوماً.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">الطلاق الرقمي · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        نعم، قد تُشكّل رسالة واتساب التي تقول "أنتِ طالق" إيقاعاً للطلاق في الإمارات. بيد أنها وحدها لا تُنهي الزواج. فيما يلي ما يشترطه القانون فعلاً قبل أن يترتب على الطلاق الرقمي أي أثر قانوني.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>الإجابة المختصرة</h2>
+        <ul class="key-facts">
+          <li><strong>الطلاق عبر واتساب قد يكون صحيحاً.</strong> تعترف المحاكم بالتواصل الإلكتروني عملاً قانونياً بموجب القانون المدني وقانون المعاملات الإلكترونية.</li>
+          <li><strong>لا ينهي الزواج تلقائياً.</strong> يستوجب التسجيل لدى المحكمة خلال ١٥ يوماً (المادة ٥٨، المرسوم بقانون ٤١/٢٠٢٤).</li>
+          <li><strong>لقطات الشاشة دليل مقبول</strong> بعد التوثيق أمام كاتب عدل مع إظهار البيانات الوصفية.</li>
+          <li><strong>لا يُشترط وجود شهود</strong> على الرسالة ذاتها. يكفي وضوح إرادة الطلاق من المحتوى.</li>
+          <li><strong>الطلاق الثلاثي عبر واتساب = طلقة رجعية واحدة</strong> وفق مذهب الجمهور الذي تأخذ به المحاكم الإماراتية.</li>
+          <li><strong>غير المسلمين لا تسري عليهم هذه الآلية.</strong> لهم مسار الطلاق المدني وفق المرسوم بقانون ٤١/٢٠٢٢.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>الأساس القانوني: لماذا قد تُعدّ الرسالة الإلكترونية إيقاعاً للطلاق</h2>
+        <p>
+          يرتكز اعتبار الطلاق الرقمي صحيحاً في الإمارات على نصّين تشريعيّين. أولهما <strong>المرسوم بقانون رقم ٥ لسنة ١٩٨٥ (القانون المدني الإماراتي)</strong> الذي ينص على جواز التعبير عن الإرادة القانونية بأي وسيلة توصلها بوضوح، سواء أكانت مكتوبة أم شفهية. وثانيهما <strong>المرسوم بقانون رقم ١ لسنة ٢٠٠٦ (قانون المعاملات الإلكترونية)</strong> الذي يُساوي المستندات والمراسلات الإلكترونية بالمراسلات المكتوبة في الحجية القانونية. فرسالة واتساب بذلك مستند إلكتروني ينتج حكمه القانوني.
+        </p>
+        <p>
+          اعترف القضاء الإماراتي في أحكام عدة بمبدأ أن الرسالة الرقمية الصريحة في إفادة إرادة الطلاق يمكن أن تُشكّل إيقاعاً صحيحاً. ومعيار الصحة هو وضوح إرادة الطلاق في الصياغة، بصرف النظر عن الوسيلة.
+        </p>
+        <p>
+          بيد أن الإيقاع مجرّده ليس إلا الخطوة الأولى. إذ لا يزال الطلاق مشروطاً بالتسجيل خلال ١٥ يوماً وفق المادة ٥٨. والطلاق عبر واتساب دون تسجيل ليس له أثر قانوني في القانون المدني الإماراتي، ويبقى الزواج قائماً.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>إرشادات الأدلة الرقمية لمحاكم دبي ٢٠٢٥</h3>
+          <p>أصدرت محاكم دبي في ٢٠٢٥ إرشادات محدَّثة للأدلة الرقمية تُقنّن التعامل مع البيانات الوصفية للرسائل الإلكترونية من ختم زمني ومعلومات جغرافية وحالة قراءة كأدلة موثوقة ومعيارية. وتُعدّ رسالة واتساب ذات ختم زمني وإشعار قراءة واضح سجلاً عالي الموثوقية يُثبت وقت الإرسال والاستقبال.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الفجوة الزمنية: لماذا الرسالة وحدها لا تُفيد قانوناً</h2>
+        <p>
+          هذه النقطة هي ما يُخطئ فيه أكثر الناس. حتى الإيقاع الصحيح للطلاق سواء أكان وجاهاً أم بالهاتف أم بواتساب لا يُنتج أثراً قانونياً في القانون المدني الإماراتي إلا بعد تسجيله في محكمة الأحوال الشخصية. هذا ما تنص عليه <strong>المادة ٥٨ من المرسوم بقانون رقم ٤١ لسنة ٢٠٢٤</strong> الذي دخل حيز التنفيذ في ١٥ أبريل ٢٠٢٥.
+        </p>
+        <p>
+          ومن الآثار العملية لعدم التسجيل:
+        </p>
+        <ul>
+          <li>يبقى الزواج قائماً قانوناً.</li>
+          <li>لا تستطيع الزوجة الزواج من آخر استناداً إلى الرسالة وحدها.</li>
+          <li>لا يجوز للزوج التذرع بالطلاق الرقمي لإسقاط نفقة الزوجة.</li>
+          <li>لا تنشأ حقوق المهر ونفقة العدة قبل التسجيل.</li>
+          <li>لا يترتب أي أثر على وضع إقامة الزوجة.</li>
+        </ul>
+
+        <h3>ماذا تفعل الزوجة إن امتنع الزوج عن التسجيل؟</h3>
+        <p>
+          إن أرسل الزوج رسالة طلاق لكنه امتنع عن حضور المحكمة للتسجيل خلال ١٥ يوماً، أمام الزوجة مساران فعّالان: الأول التقدم بطلب التسجيل القضائي مع تقديم أدلة واتساب الموثَّقة وطلب المحكمة تسجيل الطلاق دون اشتراط تعاون الزوج. والثاني رفع دعوى خلع أو تطليق للضرر، وهو مسار مستقل لا يستلزم إثبات وقوع الطلاق.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>مقبولية الأدلة الرقمية أمام المحاكم الإماراتية</h2>
+        <p>
+          تقبل المحاكم الإماراتية لقطات واتساب والرسائل النصية ورسائل البريد الإلكتروني والمقاطع الصوتية أدلةً في قضايا قانون الأسرة. والطريقة التي تُقدَّم بها هذه الأدلة تحدد قيمتها الإثباتية تحديداً بالغاً.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>نوع الدليل</th>
+                <th>القوة الإثباتية</th>
+                <th>طريقة الاستخدام</th>
+                <th>مقبول</th>
+              </tr>
+            </thead>
+            <tbody>
+              {evidenceTypes.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.method}</td>
+                  <td class={`td-strength ${row.strength === 'الأقوى' ? 'td-strength--best' : row.strength === 'قوي' ? 'td-strength--good' : row.strength === 'ضعيف جداً' ? 'td-strength--weak' : ''}`}>{row.strength}</td>
+                  <td class="td-light">{row.notes}</td>
+                  <td class={row.admissible ? 'td-yes' : 'td-no'}>{row.admissible ? 'نعم' : 'عموماً لا'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3>كيف توثّقين لقطات واتساب توثيقاً سليماً</h3>
+        <p>
+          خذي اللقطة من الهاتف الذي استقبل الرسالة دون إعادة توجيهها، إذ يُغيّر التوجيه البيانات الوصفية. تأكدي من ظهور رقم المُرسِل أو اسمه، ومحتوى الرسالة، والختم الزمني، وإشعار القراءة (العلامتان الزرقاوان إن وُجدتا). ثم توجّهي بها إلى كاتب عدل إماراتي ليُصادق عليها كنسخة طبق الأصل لسجل إلكتروني. هذه الخطوة البسيطة ترفع قيمتها الإثباتية أمام المحكمة رفعاً ملموساً.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>ما لا يُحقّقه الطلاق عبر واتساب</h2>
+
+        <div class="not-list">
+          <div class="not-card">
+            <div class="not-badge">لا</div>
+            <div class="not-body">
+              <h3>لا ينهي الزواج قانوناً</h3>
+              <p>يبقى الزواج قائماً قانوناً حتى تسجيل الطلاق في محكمة الأحوال الشخصية. لا تسجيل = لا طلاق في القانون المدني الإماراتي.</p>
+            </div>
+          </div>
+          <div class="not-card">
+            <div class="not-badge">لا</div>
+            <div class="not-body">
+              <h3>لا يُجيز الزواج من آخر</h3>
+              <p>الزوجة التي تتصرف على أساس طلاق واتساب غير مسجَّل وتتزوج من آخر تقع من الناحية القانونية في جريمة بقاء الزيجة الأولى قائمة. العواقب في القانون الإماراتي بالغة الخطورة.</p>
+            </div>
+          </div>
+          <div class="not-card">
+            <div class="not-badge">لا</div>
+            <div class="not-body">
+              <h3>لا يُسقط النفقة عن الزوج</h3>
+              <p>الزوج الذي يرسل رسالة طلاق ثم يتوقف عن الإنفاق ما زال ملزماً بالنفقة شرعاً وقانوناً. الإمتناع عنها مع استمرار الزواج يُعدّ جريمة مستقلة يُعاقب عليها القانون.</p>
+            </div>
+          </div>
+          <div class="not-card">
+            <div class="not-badge">لا</div>
+            <div class="not-body">
+              <h3>لا يُحرّك استحقاق المهر</h3>
+              <p>يستحق المهر المؤجل فور التسجيل لا فور الرسالة. لا توافقي على قبض المهر جزئياً مقابل التنازل دون التحقق من اكتمال إجراءات التسجيل وحقوقك المالية الكاملة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/الطلاق-الشرعي-في-الإمارات/" class="related-card">
+            <strong>الطلاق الشرعي في الإمارات</strong>
+            <span>أنواع الطلاق وقواعد التسجيل وحقوق المطلّقة</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق في الإمارات</strong>
+            <span>أنواع النفقة وكيفية المطالبة بها</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لأحكام الطلاق</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة للمسلمين وغير المسلمين</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-right: 4px solid #c9a84c; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.9; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem; padding-right: 1.5rem; padding-left: 0; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: right; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+  .td-strength { font-weight: 700; }
+  .td-strength--best { color: #065f46; }
+  .td-strength--good { color: #1e40af; }
+  .td-strength--weak { color: #991b1b; }
+  .td-yes { color: #15803d; font-weight: 700; }
+  .td-no { color: #dc2626; font-weight: 700; }
+
+  .not-list { display: flex; flex-direction: column; gap: 0.85rem; margin: 1rem 0; }
+  .not-card { display: flex; gap: 1rem; padding: 1rem 1.1rem; border: 1.5px solid #fca5a5; border-radius: 10px; background: #fff9f9; }
+  .not-badge { background: #dc2626; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; flex-shrink: 0; height: fit-content; margin-top: 2px; }
+  .not-body h3 { font-size: 0.93rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .not-body p { font-size: 0.86rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

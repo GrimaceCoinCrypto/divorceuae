@@ -1,0 +1,542 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Alimony in UAE: Realistic AED Amounts, How Courts Calculate, and How to Enforce';
+const description =
+  'UAE has no fixed alimony formula. Courts exercise discretion. This guide gives realistic AED ranges by income bracket, explains nafaqa vs mut\'a, and covers how to maximise your claim and enforce non-payment through the Execution Court.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/alimony-calculator-uae/',
+  ar: 'https://divorceu.ae/ar/نفقة-بعد-الطلاق-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Alimony Calculator UAE', url: 'https://divorceu.ae/en/alimony-calculator-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is alimony calculated in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts have no fixed formula. Judges exercise discretion based on six main factors: duration of the marriage, age of the wife, financial position of both parties, who caused the marriage breakdown, compensation for harm suffered, and child custody expenses. The most useful rough guide for the Muslim framework is 15 to 20 percent of the husband\'s monthly income, but this varies significantly by judge, emirate, and circumstances. Non-Muslim alimony under Federal Decree-Law No. 41 of 2022 uses a similar best-interests analysis and can result in zero alimony for financially independent wives.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is there a standard alimony amount in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. There is no statutory minimum or schedule. Each case is decided individually. The AED ranges published on this page are based on reported Dubai court cases and legal practice. They are indicative only -- your actual award will depend on your specific circumstances, the judge, and the quality of the evidence presented.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does alimony last in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For Muslim women, iddah maintenance (nafaqa al-idda) covers the three-month waiting period after divorce and is guaranteed regardless of fault. Mut\'a (consolation payment) is a one-time payment, not an ongoing obligation. Longer-term periodic alimony is primarily a non-Muslim concept under Federal Decree-Law No. 41 of 2022, where courts can order ongoing payments for a set period based on the wife\'s needs and the husband\'s ability to pay. Muslim wives do not automatically receive ongoing post-iddah maintenance unless a specific maintenance obligation (such as a custody-related housing allowance) applies.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a working wife get alimony in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, but a wife\'s own income reduces the award proportionally. If the wife earns AED 15,000 per month and the husband earns AED 25,000, the court may award reduced nafaqa or no ongoing maintenance at all, while still awarding the guaranteed iddah maintenance. Mut\'a (for Muslim women) is not reduced by the wife\'s income -- it compensates for the harm of divorce, not financial need.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "What is the difference between nafaqa and mut'a?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Nafaqa is ongoing maintenance covering housing, food, clothing, and medical needs. Nafaqa al-idda is the guaranteed maintenance during the three-month iddah period after divorce. Mut'a is a one-time consolation payment awarded when the divorce was not the wife's fault -- it compensates for the distress of an unwanted divorce. Under Federal Decree-Law No. 41 of 2024, the minimum mut'a is one year of living expenses. These are separate financial rights and a wife can claim both.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my husband stop paying alimony?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A court-ordered alimony payment can only be reduced or terminated by a new court order. The husband cannot unilaterally stop payments. Grounds to reduce or terminate include: the wife remarrying (terminates maintenance obligations), the wife becoming financially self-sufficient (reduces award), or a genuine and severe change in the husband\'s financial circumstances (may reduce the award but does not automatically terminate it). Any change requires a formal application to the family court.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "How do I enforce alimony if my husband doesn't pay?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'File an enforcement application at the UAE Execution Court with the original judgment (with executory formula) and evidence of non-payment. The Execution Court can freeze the husband\'s bank accounts, garnish up to 50 percent of his salary at source, place a travel ban preventing him from leaving the UAE, and seize and auction assets. Alimony enforcement through the Execution Court typically produces results within 4-8 weeks for salary garnishment and bank freezes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does alimony stop if the wife remarries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes. Under both Federal Decree-Law No. 41 of 2024 (Muslim) and Federal Decree-Law No. 41 of 2022 (non-Muslim), the wife's remarriage terminates the former husband's maintenance obligation. The husband must apply to the court to formally end the payments -- they do not stop automatically on the remarriage date. Once the court order is obtained, any arrears accrued before the application are still owed. Mut'a (the one-time consolation payment) is not affected -- it is a past debt, not ongoing maintenance.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can men claim alimony from wives in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under the Muslim framework (Federal Decree-Law No. 41 of 2024), men have no right to maintenance from their wives. The obligation runs one way. Under the non-Muslim framework (Federal Decree-Law No. 41 of 2022), Article 9 gives courts broader discretion and does not explicitly limit maintenance to wives. In practice, non-Muslim husband maintenance claims are rare and largely untested in UAE courts, but the legal architecture does not expressly prohibit them.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much is alimony for a 10-year marriage in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "A 10-year marriage is treated as a long-term marriage by UAE courts and typically results in a more generous alimony award than a 1-2 year marriage. Using the reported case ranges: for a husband earning AED 20,000/month, a realistic range after a 10-year marriage is AED 3,000-5,000/month for ongoing maintenance, plus the guaranteed iddah maintenance and mut'a. Each case is different -- the wife's age, her own income, the number of children in her custody, and the standard of living during the marriage all affect the actual award.",
+      },
+    },
+  ],
+};
+
+const alimonyRanges = [
+  { bracket: 'AED 5,000 to 10,000/month', range: 'AED 700 to 1,500/month', notes: 'Low-income bracket. Court limits award to proportionate share. Iddah maintenance and mut\'a still apply.' },
+  { bracket: 'AED 10,000 to 25,000/month', range: 'AED 1,500 to 4,000/month', notes: 'Most common bracket in UAE expat cases. Rough guide: 15 to 20% of income.' },
+  { bracket: 'AED 25,000 to 50,000/month', range: 'AED 4,000 to 8,000/month', notes: 'Professional and management level. Standard of living during marriage is key factor.' },
+  { bracket: 'AED 50,000 to 100,000/month', range: 'AED 8,000 to 20,000/month', notes: 'Senior management and executive level. Wife\'s own income and lifestyle standard weighed.' },
+  { bracket: 'AED 100,000+/month', range: 'AED 20,000 to 50,000+/month', notes: 'HNW cases. Courts examine actual lifestyle standard, household staff, travel, schools. Forensic accounting common.' },
+];
+
+const faqItems = [
+  {
+    question: 'How much alimony will I actually receive?',
+    answer: "There is no guarantee. Courts vary. The ranges on this page are based on reported Dubai cases and legal practice. Your actual award depends on the marriage duration, your own income, how well the claim is documented, and the judge. A lawyer with recent family court experience can give you a realistic range for your specific circumstances. See our <a href=\"/en/alimony-uae/\">alimony overview</a> for the full legal framework.",
+  },
+  {
+    question: "My husband is self-employed. How do courts calculate alimony when income is hidden?",
+    answer: "Courts can order the husband to produce tax filings, bank statements, corporate accounts, and salary certificates. If he is uncooperative, his advocate can be required to produce documents or the court can draw adverse inferences. A forensic accountant (cost: AED 5,000 to 15,000) can establish true income from business records, lifestyle evidence, and asset ownership. Lifestyle evidence -- the house, car, school fees paid, holidays taken -- is admissible and often more persuasive than contested financial statements.",
+  },
+  {
+    question: "What is the iddah maintenance and is it guaranteed?",
+    answer: "Nafaqa al-idda is the maintenance obligation covering the three-month iddah period after a Muslim divorce. It covers housing, food, clothing, and medical costs at the standard maintained during the marriage. It is guaranteed regardless of fault -- even if the divorce was the wife's fault (except in cases of khul', where the wife initiates divorce in exchange for returning the mahr, which may affect iddah entitlement). The husband cannot waive this obligation.",
+  },
+  {
+    question: "My husband refuses to pay the alimony ordered by the court. What are my options?",
+    answer: "File at the Execution Court immediately. The court can freeze his UAE bank accounts (implemented within 1-3 weeks), garnish up to 50% of his salary at source, place a travel ban, and seize assets. For salary garnishment, you need to know his employer. For a bank freeze, the court serves all major UAE banks simultaneously. Arrears accumulate with interest. A travel ban is available if the debt exceeds AED 10,000. See our <a href=\"/en/divorce-cost-uae/\">divorce cost guide</a> for enforcement filing fees.",
+  },
+  {
+    question: "Does the standard of living during the marriage affect the alimony amount?",
+    answer: "Yes, significantly. Courts set the maintenance amount to reflect the standard of living established during the marriage. If you lived in a AED 25,000/month villa, travelled business class, and employed a live-in housekeeper, those are your reference points for the maintenance claim. Document this standard before proceedings: bank statements, credit card records, rental agreements, school fees paid, travel bookings. This evidence is the foundation of a strong alimony claim.",
+  },
+  {
+    question: "How is non-Muslim alimony different from Muslim alimony?",
+    answer: "Under Federal Decree-Law No. 41 of 2022 (non-Muslim), alimony is not automatic. Article 9 gives courts wide discretion. A financially independent wife may receive nothing. A wife who made career sacrifices for the marriage may receive periodic payments for a set transition period. Non-Muslim alimony is closer to the English law concept of maintenance than the Islamic nafaqa framework. There is no guaranteed iddah equivalent and no mut'a. See our full <a href=\"/en/alimony-uae/\">alimony guide</a> for the comparison.",
+  },
+  {
+    question: "How is child support different from alimony?",
+    answer: "Child support (nafaqa al-awlad) covers the children's expenses: education, housing, medical, clothing, extracurricular activities. It is calculated separately from spousal maintenance and paid regardless of the custody arrangement. Spousal maintenance covers the wife's personal living expenses. Both can be claimed simultaneously. See our <a href=\"/en/child-support-uae/\">child support guide</a> for full details on what the father must cover.",
+  },
+  {
+    question: "How long does it take to get an alimony order?",
+    answer: "An uncontested alimony amount agreed between parties can be incorporated into the divorce decree within the normal divorce timeline. A contested alimony hearing -- where both parties present evidence and the judge makes a determination -- typically adds 2-4 months to the process. Enforcement after a judgment is issued typically produces results within 4-8 weeks through the Execution Court. See our <a href=\"/en/divorce-timeline-uae/\">divorce timeline guide</a> for full stage-by-stage estimates.",
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/alimony-calculator-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Alimony Guide -- UAE 2025</p>
+      <h1>Alimony in UAE: Realistic AED Amounts and How Courts Actually Decide</h1>
+      <p class="hero-desc">
+        There is no alimony calculator in UAE law. Judges exercise discretion. But informed by reported cases and legal practice, we can give you the realistic AED ranges by income bracket, the six factors courts use, and what you can do to maximise or defend against a claim.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Five things to know before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>UAE has no fixed alimony formula.</strong> Courts exercise discretion. The ranges below are based on reported cases -- they are not guaranteed outcomes.</li>
+          <li><strong>The rough guide for Muslim cases is 15 to 20% of the husband's income</strong>, adjusted by the wife's own income, marriage length, and harm suffered.</li>
+          <li><strong>Nafaqa al-idda (iddah maintenance) is guaranteed for Muslim women</strong> regardless of fault. It covers the three-month waiting period.</li>
+          <li><strong>Mut'a (consolation payment) is a one-time payment</strong> when divorce is not the wife's fault. Minimum one year of living expenses under the 2024 law.</li>
+          <li><strong>Non-Muslim alimony is not automatic.</strong> Federal Decree-Law No. 41 of 2022 gives courts wide discretion and a financially independent wife may receive nothing.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: No calculator -->
+      <section class="content-section">
+        <h2>Why There Is No UAE Alimony Calculator</h2>
+        <p>
+          Searches for "alimony calculator UAE" return results that either redirect to generic Middle East advice or cite fixed percentages that do not reflect how UAE courts actually work. The reason there is no reliable calculator is that UAE law explicitly does not provide one.
+        </p>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong> (for Muslim families) and <strong>Federal Decree-Law No. 41 of 2022</strong> (for non-Muslim families), alimony is determined by judicial discretion applied to the specific circumstances of each case. There is no statutory formula, no percentage schedule, and no grid. A judge hearing two cases with identical husband incomes may reach different awards because of differences in the wife's age, the marriage duration, the standard of living, or the evidence presented.
+        </p>
+        <p>
+          What we can offer is more useful than a theoretical calculator: the six factors courts consistently rely on, realistic AED ranges based on reported Dubai case outcomes, and a practical guide to building the strongest possible claim.
+        </p>
+      </section>
+
+      <!-- Section 2: The 6 factors -->
+      <section class="content-section">
+        <h2>The Six Factors UAE Courts Apply</h2>
+        <p>
+          These factors are drawn from Article 9 of Federal Decree-Law No. 41 of 2022 (non-Muslim) and the equivalent provisions under Federal Decree-Law No. 41 of 2024 (Muslim). Courts do not mechanically weight them -- they are considered holistically.
+        </p>
+
+        <div class="factors-list">
+          <div class="factor-card">
+            <div class="factor-num">01</div>
+            <div class="factor-body">
+              <h3>Duration of the marriage</h3>
+              <p>Longer marriages produce larger awards. A 15-year marriage involving significant career sacrifice by the wife is treated very differently from a 2-year marriage where both parties were working. Courts draw a rough line: under 2 years typically results in minimal or zero ongoing alimony; 5 to 10 years is a significant factor; 15-plus years is the strongest position for a wife claiming alimony.</p>
+            </div>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">02</div>
+            <div class="factor-body">
+              <h3>Age of the wife</h3>
+              <p>An older wife who has been out of the workforce for years faces greater difficulty re-establishing financial independence. Courts are more generous to wives in their 40s or 50s who cannot easily return to equivalent employment. A 30-year-old with current professional qualifications will receive a less generous award than a 52-year-old who left her career to raise children.</p>
+            </div>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">03</div>
+            <div class="factor-body">
+              <h3>Financial position and income of both parties</h3>
+              <p>The husband's income is the primary driver of the amount. His income is assessed from salary certificates, employment contracts, business accounts, and lifestyle evidence. The wife's own income reduces the award proportionally. A wife earning AED 12,000 per month claiming against a husband earning AED 20,000 will receive significantly less than a non-earning wife in the same situation.</p>
+            </div>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">04</div>
+            <div class="factor-body">
+              <h3>Contribution to the marriage breakdown</h3>
+              <p>Under the Muslim framework, fault matters. A wife who was divorced without cause (unilateral talaq) has a stronger claim to mut'a than a wife who was divorced following her own infidelity or misconduct. Under the non-Muslim framework, Article 9 of Federal Decree-Law No. 41 of 2022 allows courts to consider contribution to breakdown but this is one factor among several, not determinative.</p>
+            </div>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">05</div>
+            <div class="factor-body">
+              <h3>Compensation for harm suffered</h3>
+              <p>This is the basis for the mut'a award. Documented harm -- medical reports, psychological assessments, evidence of domestic abuse, evidence that the husband's conduct caused the wife to leave employment or suffer loss of career opportunity -- all increase the compensation element of the overall financial settlement.</p>
+            </div>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">06</div>
+            <div class="factor-body">
+              <h3>Child custody expenses if she has custody</h3>
+              <p>If the wife has physical custody of the children, courts factor in the financial burden of primary caregiving when setting her personal maintenance. This is separate from child support (which the father pays directly). But a custodial mother's greater financial burden is recognised in the maintenance calculation. See our <a href="/en/child-support-uae/">child support guide</a> for how child expenses are calculated separately.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: AED ranges -->
+      <section class="content-section">
+        <h2>Realistic AED Alimony Ranges by Income Bracket</h2>
+        <p>
+          These ranges are based on reported Dubai court cases and established legal practice in UAE family proceedings. They are indicative only. Your actual award depends on all six factors above. A wife with strong documentation and an experienced lawyer at the higher end of these ranges; a wife with minimal documentation or significant personal income at the lower end or below it.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Husband's monthly income</th>
+                <th>Typical spousal nafaqa range</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {alimonyRanges.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.bracket}</td>
+                  <td class="td-gold">{row.range}</td>
+                  <td class="td-light">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note-text">Source: reported Dubai family court case outcomes and UAE family law practice. These figures are indicative only. Individual outcomes vary significantly based on the specific facts and evidence presented.</p>
+
+        <div class="info-box info-box--warning">
+          <h3>Important caveats</h3>
+          <p>These are ranges from reported cases -- not guaranteed outcomes. Courts vary considerably by judge and emirate. Wife's own income reduces the award proportionally. Marriages under two years often result in minimal ongoing alimony. Non-Muslim cases under Federal Decree-Law No. 41 of 2022 can result in zero alimony for a financially independent wife even in a long marriage.</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Types of support -->
+      <section class="content-section">
+        <h2>Types of Financial Support in UAE Divorce</h2>
+
+        <h3>Nafaqa al-idda: Iddah maintenance (guaranteed)</h3>
+        <p>
+          Every Muslim woman is entitled to maintenance during the three-month iddah period following divorce, regardless of fault and regardless of her own income. This covers housing at the marital standard, food, clothing, and medical expenses. The husband provides this by maintaining the wife in the matrimonial home (or equivalent housing) for three months, or by paying a monthly cash equivalent. Courts calculate the amount with reference to the actual standard of living during the marriage.
+        </p>
+        <p>
+          Iddah maintenance is a privileged debt under UAE law. It ranks ahead of most other creditors in enforcement proceedings and cannot be waived in the divorce agreement (a waiver would be unenforceable). Even in a khul' divorce (wife-initiated divorce against return of mahr), the iddah maintenance question is assessed separately.
+        </p>
+
+        <h3>Mut'a: Consolation payment (one-time, fault-based)</h3>
+        <p>
+          Mut'a is a lump sum or equivalent payment awarded to a Muslim wife when the divorce was not her fault. It is not maintenance -- it compensates for the harm and disruption of an unwanted divorce. Under <strong>Federal Decree-Law No. 41 of 2024</strong>, the minimum mut'a is one year of living expenses. Courts frequently award more than the minimum in long marriages or where the wife suffered documented harm.
+        </p>
+        <p>
+          The mut'a calculation uses the same standard-of-living reference as iddah maintenance. A wife who lived on AED 15,000 per month has a minimum mut'a claim of approximately AED 180,000. Courts can award more -- up to two or three years of expenses in cases involving long marriages or serious harm -- but AED 180,000 is the statutory floor. This is enforceable as a judgment debt through the Execution Court.
+        </p>
+
+        <h3>Non-Muslim alimony: periodic payments or lump sum (FL 41/2022)</h3>
+        <p>
+          The non-Muslim civil family law does not use the concepts of nafaqa or mut'a. Courts apply a general maintenance framework under Article 9 of Federal Decree-Law No. 41 of 2022 that considers both parties' financial circumstances and the court's broad discretion. Awards can be: periodic monthly payments for a defined period (common for wives who need transition time to rebuild careers), lump sum capitalisation (a single payment equivalent to the present value of future maintenance), or zero (for financially independent wives in shorter marriages).
+        </p>
+        <p>
+          Non-Muslim alimony can also include consideration of pension and savings contributions -- for example, if the wife contributed to the household by not working while the husband accumulated EOSB, the court may take this into account. This is closer to English law needs-based reasoning than the Islamic nafaqa framework.
+        </p>
+
+        <h3>Mahr (dower): separate from alimony</h3>
+        <p>
+          Mahr is not alimony -- it is a separate contractual obligation from the marriage contract. Deferred mahr falls due immediately on divorce and is enforceable as a privileged debt independent of any maintenance order. A wife can simultaneously claim her mahr, her iddah maintenance, her mut'a, and ongoing child support. These are four separate financial rights that can all be pursued. For details on mahr enforcement, see our <a href="/en/alimony-uae/">alimony overview</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: How to maximise -->
+      <section class="content-section">
+        <h2>How to Build a Strong Alimony Claim</h2>
+        <p>
+          The gap between the floor and ceiling of the ranges above is largely determined by the quality of the evidence presented. These are the practical steps that produce stronger outcomes.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Document the standard of living in detail</h3>
+              <p>Pull credit card statements, bank statements, and receipts for at least the last 24 months. Itemise: monthly rent or mortgage, school fees, household staff wages, car running costs, clothing budget, restaurant and entertainment spending, annual holiday costs. This establishes the lifestyle baseline the court uses to calculate maintenance. Without this documentation, the court makes a conservative estimate.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Obtain the husband's salary certificate</h3>
+              <p>If the husband is an employee, a salary certificate from his employer is the primary income evidence. If he refuses to provide one, your lawyer can request the court to order disclosure or subpoena the employer directly. UAE courts can and do compel employers to produce salary information in family proceedings. Do not accept verbal assurances about income -- get the document.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Break down childcare costs in detail</h3>
+              <p>If you have custody of the children, itemise every child-related expense: school fees (AED amount per term), uniform and stationery costs, after-school activities, tutoring, summer camps, medical expenses, clothing, and your share of housing costs attributed to having the children with you. This feeds both the child support calculation and the court's assessment of your ongoing financial needs.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>For self-employed husbands: use a forensic accountant</h3>
+              <p>A self-employed husband or business owner can understate income by routing it through the business. A forensic accountant (typical cost: AED 5,000 to 15,000) can reconstruct actual income from corporate accounts, bank records, asset holdings, and lifestyle evidence. The forensic report is admissible as expert evidence in UAE family proceedings and is often more persuasive than the husband's self-reported income figures.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Document harm for the mut'a claim</h3>
+              <p>Mut'a awards are increased by documented harm. Medical records showing stress-related illness, psychological assessment reports, and evidence of the husband's conduct (domestic abuse records, police reports, WhatsApp messages) all strengthen the compensation element. For non-Muslim cases, this evidence also supports a higher periodic maintenance award. Obtain these records before filing -- access becomes more difficult after proceedings begin.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Enforcement -->
+      <section class="content-section">
+        <h2>Enforcing Alimony Non-Payment</h2>
+        <p>
+          A court-ordered alimony payment that goes unpaid is enforceable through the UAE Execution Court. The husband has no legal right to simply stop paying because he disagrees with the amount or is going through financial difficulty -- only a new court order can reduce or terminate the obligation.
+        </p>
+
+        <h3>How the Execution Court works</h3>
+        <p>
+          File an enforcement application at the Execution Court in the emirate where the original judgment was issued. Attach the original judgment with executory formula, evidence of non-payment (bank statements showing no deposits, screenshot of payment absence), and your Emirates ID. The filing fee is approximately AED 500 to 1,000.
+        </p>
+        <p>
+          Available enforcement tools:
+        </p>
+        <ul>
+          <li><strong>Bank account freeze:</strong> The court instructs all UAE banks to freeze accounts and transfer funds up to the judgment amount. Typically implemented within 1 to 3 weeks.</li>
+          <li><strong>Salary garnishment:</strong> Up to 50% of monthly salary deducted at source. The employer is served directly and bears liability if they fail to comply. Implemented within 2 to 4 weeks of the order.</li>
+          <li><strong>Travel ban:</strong> Prevents the husband from leaving the UAE. Available when the debt exceeds AED 10,000. Applied within days of the Execution Court order. Particularly effective for husbands with international business travel.</li>
+          <li><strong>Asset seizure:</strong> Court bailiffs can seize vehicles, valuables, and movable assets for auction. Timeline: 2 to 4 months to auction proceeds.</li>
+          <li><strong>Real estate attachment:</strong> A charge placed on UAE property registered in the husband's name. Blocks further sale or transfer and can lead to forced sale.</li>
+        </ul>
+
+        <div class="info-box info-box--info">
+          <h3>Arrears accumulate during enforcement proceedings</h3>
+          <p>Every month the husband fails to pay, the arrears grow. Enforcement proceedings do not reset or waive the debt. By the time a travel ban and bank freeze are implemented, the husband may owe several months of accumulated arrears. Courts treat alimony arrears as a serious contempt of a family law obligation -- the enforcement machinery is well-developed and regularly used.</p>
+        </div>
+
+        <h3>Variation of alimony: when the husband can apply to reduce it</h3>
+        <p>
+          A husband who has genuinely lost his job or suffered a severe income reduction can apply to the family court for a downward variation of the alimony order. He must show the change in circumstances is genuine and not self-induced (deliberately quitting to avoid payment does not qualify). The court will investigate his financial position before granting any reduction. Until a new court order is issued, the original obligation remains in full force -- partial payment does not prevent the Execution Court from enforcing the balance.
+        </p>
+        <p>
+          For the full <a href="/en/divorce-cost-uae/">cost of divorce proceedings</a>, including enforcement fees, see our dedicated guide. For how long alimony proceedings typically take by emirate, see our <a href="/en/divorce-timeline-uae/">divorce timeline guide</a>.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony UAE Overview</strong>
+            <span>Full legal framework for nafaqa and mut'a</span>
+          </a>
+          <a href="/en/child-support-uae/" class="related-card">
+            <strong>Child Support UAE</strong>
+            <span>What the father must pay for the children</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>How custody is decided and modified</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division UAE</strong>
+            <span>Who keeps the apartment and assets</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Filing fees, lawyer costs, and enforcement fees</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long each stage takes by emirate</span>
+          </a>
+          <a href="/en/how-to-file-for-divorce-in-dubai/" class="related-card">
+            <strong>How to File for Divorce in Dubai</strong>
+            <span>Step-by-step process from first filing to decree</span>
+          </a>
+          <a href="/en/divorce-lawyer-abu-dhabi/" class="related-card">
+            <strong>Divorce Lawyer Abu Dhabi</strong>
+            <span>Abu Dhabi-specific proceedings and ADJD rules</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #b45309; font-weight: 700; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+
+  /* Factor cards */
+  .factors-list { display: flex; flex-direction: column; gap: 1rem; }
+  .factor-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .factor-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .factor-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .factor-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'محامي طلاق رأس الخيمة — دليل إجراءات الطلاق في رأس الخيمة ٢٠٢٥';
+const description =
+  'دليل عملي شامل للطلاق في رأس الخيمة: محكمة الأحوال الشخصية، الإجراءات للمسلمين وغير المسلمين، الوثائق المطلوبة، الرسوم، والمقارنة مع محاكم دبي. كيف تختار محامي طلاق في رأس الخيمة.';
+
+const canonical = 'https://divorceu.ae/ar/محامي-طلاق-رأس-الخيمة/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-ras-al-khaimah/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'محامي طلاق رأس الخيمة' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'أين تقع محكمة الأحوال الشخصية في رأس الخيمة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'تقع محكمة رأس الخيمة الاتحادية الابتدائية — قسم الأحوال الشخصية — في مجمع المحاكم الاتحادية بمدينة رأس الخيمة. يمكن الوصول إليها عبر المبنى الرئيسي لمحاكم الاتحاد في المنطقة القضائية. مركز الإرشاد الأسري ملاصق للمحكمة ويُزار أولاً في قضايا الطلاق للمسلمين.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل الطلاق في رأس الخيمة أسرع من دبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، بشكل عام. محاكم رأس الخيمة أقل ازدحاماً من محاكم دبي التي تعالج كميات أكبر بكثير من القضايا. الطلاق غير المتنازع عليه في رأس الخيمة يُنجز في 2–4 أشهر عادةً، مقارنةً بـ3–6 أشهر في دبي. لكن أبوظبي تبقى الأسرع بفضل محكمة الأسرة المدنية المتخصصة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الوثائق المطلوبة لتقديم دعوى الطلاق في رأس الخيمة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'للمسلمين: بطاقة هوية إماراتية لكلا الطرفَين، جوازات السفر، عقد الزواج الموثَّق وترجمته العربية إن كان بلغة أجنبية، شهادات ميلاد الأطفال، وثيقة المهر. لغير المسلمين: ما سبق مضافاً إليه شهادة الزواج المدنية المُصدَّقة، وثائق الإقامة، وإن اخترت قانون بلدك أضف ترجمةً معتمدةً للقانون المختار. جميع الوثائق تحتاج إلى ترجمة عربية معتمدة إذا كانت بلغة أجنبية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم تكلفة رسوم محكمة الطلاق في رأس الخيمة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'رسوم المحكمة في رأس الخيمة للطلاق الابتدائي: 2,000–3,500 درهم للقضايا غير المتنازع عليها. تزداد الرسوم في القضايا الخلافية التي تتضمن جلسات متعددة. أتعاب المحامي في رأس الخيمة أقل عموماً مما هي عليه في دبي أو أبوظبي، مما يجعل التكلفة الإجمالية أقل.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن لغير المسلمين الطلاق في محاكم رأس الخيمة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. المرسوم بقانون اتحادي رقم 41 لسنة 2022 ينطبق على جميع الإمارات بما فيها رأس الخيمة. غير المسلمين يتقدمون للجناح المدني في محكمة الأحوال الشخصية برأس الخيمة. لكن يجب الإشارة إلى أن رأس الخيمة لا تمتلك بنية تحتية متخصصة مثل محكمة الأسرة المدنية في أبوظبي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجب الحضور الشخصي في جلسات محكمة رأس الخيمة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'عادةً نعم. حضور المدعي مطلوب في الجلسة الأولى على الأقل. في الحالات التي يكون فيها أحد الطرفَين خارج الإمارات، يمكن التمثيل بوكالة رسمية موثَّقة. لجلسات لاحقة، تتعامل المحاكم بمرونة أكبر تجاه الغياب عبر التوكيل في القضايا غير المتنازع عليها.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل حكم الطلاق الصادر من محاكم رأس الخيمة معترف به في دبي وأبوظبي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، تماماً. جميع الأحكام القضائية الصادرة عن المحاكم الاتحادية في الإمارات — بما فيها رأس الخيمة — لها حجية قانونية موحَّدة في جميع أنحاء الدولة. لا تحتاج لإجراءات اعتراف داخلية إضافية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما دور مركز الإرشاد الأسري في رأس الخيمة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'مركز الإرشاد الأسري في رأس الخيمة هو المحطة الإلزامية الأولى لجميع طلبات الطلاق للمسلمين. يُحاول الوسطاء فيه الإصلاح بين الطرفَين خلال جلسة أو أكثر. إذا تعذَّر الإصلاح، يُصدر المركز إحالةً للمحكمة تُمكِّن من تقديم دعوى الطلاق الرسمية. لغير المسلمين: لا يُشترط المرور بالمركز.',
+      },
+    },
+  ],
+};
+
+const steps = [
+  {
+    n: 1,
+    title: 'مركز الإرشاد الأسري (للمسلمين — إلزامي)',
+    body: 'أول خطوة لأي مسلم يريد الطلاق في رأس الخيمة. قدِّم طلبك للمركز مع الوثائق الأساسية. ستُعقد جلسة أو أكثر لمحاولة الإصلاح. عند فشل الإصلاح تصدر إحالة للمحكمة.',
+  },
+  {
+    n: 2,
+    title: 'تجميع الوثائق',
+    body: 'جهِّز: بطاقات الهوية وجوازات السفر، عقد الزواج بترجمته العربية المعتمدة، شهادات ميلاد الأطفال، وثائق الإقامة، وأي وثائق مالية ذات صلة. التحقق من اعتماد الترجمة ضروري — الوثائق بلغات أجنبية دون ترجمة معتمدة تُوقف الإجراءات.',
+  },
+  {
+    n: 3,
+    title: 'توكيل محامٍ محلي',
+    body: 'يُفضَّل توكيل محامٍ مسجَّل في رأس الخيمة أو مرخَّص فيها. المحامي يتحقق من إيداع الطلب بشكل صحيح، ويُمثِّلك في جلسات الاستماع، ويُتابع جدول المحكمة. يمكن توكيل محامٍ مقيم في دبي أو أبوظبي إذا كان مرخَّصاً للعمل أمام المحاكم الاتحادية.',
+  },
+  {
+    n: 4,
+    title: 'تقديم الدعوى',
+    body: 'يُودَع الطلب في محكمة الأحوال الشخصية الاتحادية برأس الخيمة عبر نافذة الإيداع (أو مركز خدمة محاكم مُعتمَد). تُدفع الرسوم وتُستلم ورقة القضية بتاريخ أول جلسة.',
+  },
+  {
+    n: 5,
+    title: 'الجلسات',
+    body: 'في القضايا المتفق عليها: جلسة أو اثنتان عادةً كافيتان. القاضي يراجع وثيقة التسوية ويُقر الطلاق. في القضايا المتنازع عليها: جلسات متعددة لسماع الطرفَين وتقييم الأدلة.',
+  },
+  {
+    n: 6,
+    title: 'استلام الحكم',
+    body: 'يصدر الحكم ويكون نافذاً فور إصداره. احصل على نسخ رسمية موثَّقة من ديوان المحكمة لاستخدامها في تحديث وثائق الإقامة والسجلات المدنية وأي إجراءات خارجية.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'كيف أختار محامي طلاق في رأس الخيمة؟',
+    answer: 'ابحث عن محامٍ مرخَّص أمام المحاكم الاتحادية في رأس الخيمة وله خبرة موثَّقة في قضايا الأحوال الشخصية. اطرح هذه الأسئلة: كم قضيةً من نوعك تولَّى؟ ما متوسط مدة إنجاز قضية مماثلة؟ ما هيكل الأتعاب (ثابتة أم حسب الجلسة)؟ هل يمتلك علاقة عمل مع مركز الإرشاد الأسري المحلي؟ المحامي الذي يُقلِّل من تعقيد قضيتك ويُعطيك توقعات واقعية خير من الذي يعدك بنتائج مضمونة.',
+  },
+  {
+    question: 'هل يمكن لمواطن سعودي أو أجنبي يسكن في رأس الخيمة رفع دعوى طلاق هناك؟',
+    answer: 'نعم. الاختصاص القضائي في الإمارات يُحدَّد بالإقامة الاعتيادية في معظم الأحيان. المقيم في رأس الخيمة — بغض النظر عن جنسيته — يتقدم لمحاكم رأس الخيمة. المواطن الأجنبي المسلم يخضع لقانون 2024؛ غير المسلم يخضع لقانون 2022 مع خيار تطبيق قانون بلده.',
+  },
+  {
+    question: 'هل يختلف التسجيل المدني للطلاق في رأس الخيمة عن دبي؟',
+    answer: 'الإجراءات تتشابه لكن الجهات المختصة تختلف. في رأس الخيمة: يُسجَّل الطلاق في ديوان المحكمة الاتحادية وتُحدَّث السجلات المدنية في الجهات المختصة بالإمارة. لتحديث الوثائق الأجنبية (جوازات السفر، شهادات الأحوال المدنية): تحتاج لشهادة الطلاق مُصدَّقةً من وزارة العدل ومن ثم الأبوستيل من وزارة الخارجية قبل رفعها لسفارة بلدك.',
+  },
+  {
+    question: 'هل تقبل محاكم رأس الخيمة قضايا الحضانة التي بدأت في دبي؟',
+    answer: 'إذا كانت قضية الحضانة قائمة بالفعل أمام محاكم دبي، فمحاكم رأس الخيمة لا تتدخل في نفس القضية. التنقل بين الإمارات لا يُغيِّر محكمة الاختصاص بمجرده. لكن إذا انتقل الأطفال للإقامة الاعتيادية في رأس الخيمة وتم تغيير وضع الإقامة رسمياً، يمكن طلب نقل الاختصاص لمحكمة رأس الخيمة عبر طلب رسمي.',
+  },
+  {
+    question: 'ما الذي يُميز الطلاق في رأس الخيمة عن غيرها من إمارات الشمال؟',
+    answer: 'رأس الخيمة هي أكبر إمارات الشمال وتمتلك بنية قضائية اتحادية أكثر تطوراً مقارنةً بعجمان وأم القيوين والفجيرة. محكمة الأحوال الشخصية فيها أكثر خبرةً في القضايا الدولية ولديها إمكانية التعامل مع المستجدات القانونية الاتحادية. القضايا المعقدة — كالزوجَين من جنسيات مختلفة أو التي تتضمن أصولاً متعددة الدول — قد تجد في رأس الخيمة محكمةً أكثر استعداداً من نظيراتها في الإمارات الأصغر.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · رأس الخيمة ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        الطلاق في رأس الخيمة يسير وفق نفس الإطار القانوني الاتحادي المعمول به في دبي وأبوظبي، لكن مع ميزة قلة الازدحام وسرعة أعلى في إنجاز القضايا غير المتنازع عليها. هذا الدليل يشرح كل ما تحتاج معرفته قبل رفع دعواك في رأس الخيمة.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>ما يجب معرفته قبل كل شيء</h2>
+        <ul>
+          <li><strong>القانون الاتحادي ينطبق كاملاً:</strong> قانون 2024 للمسلمين وقانون 2022 لغير المسلمين — نفس الأحكام في جميع الإمارات.</li>
+          <li><strong>أسرع من دبي:</strong> الطلاق غير المتنازع عليه في رأس الخيمة ينجز في 2–4 أشهر عادةً.</li>
+          <li><strong>أقل تكلفةً:</strong> رسوم المحكمة والمحامي أدنى من دبي في المتوسط.</li>
+          <li><strong>نفس الحجية القانونية:</strong> الحكم الصادر من رأس الخيمة معترف به في كل الإمارات والخارج.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>المحكمة المختصة في رأس الخيمة</h2>
+
+        <p>
+          محكمة رأس الخيمة الاتحادية الابتدائية — قسم الأحوال الشخصية — هي الجهة القضائية المختصة بجميع قضايا الطلاق والحضانة والنفقة للمقيمين في إمارة رأس الخيمة. هي جزء من المنظومة القضائية الاتحادية وليست محكمة محلية مستقلة كما في دبي وأبوظبي.
+        </p>
+
+        <p>
+          مركز الإرشاد الأسري بالإمارة يعمل بالتوازي مع المحكمة ويُشكِّل المحطة الأولى الإلزامية في قضايا طلاق المسلمين قبل اللجوء للقضاء.
+        </p>
+
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>المعيار</div>
+            <div>رأس الخيمة</div>
+            <div>دبي</div>
+            <div>أبوظبي</div>
+          </div>
+          {[
+            { f: 'طلاق غير متنازع (مسلمون)', rak: '2–4 أشهر', dxb: '3–6 أشهر', adh: '2–5 أشهر' },
+            { f: 'طلاق غير متنازع (غير مسلمين)', rak: '1–3 أشهر', dxb: '2–4 أشهر', adh: 'أقل من شهر' },
+            { f: 'رسوم المحكمة (تقريباً)', rak: '2,000–3,500 درهم', dxb: '2,500–4,000 درهم', adh: '2,000–3,500 درهم' },
+            { f: 'أتعاب المحامي (تقريباً)', rak: 'أقل من المتوسط', dxb: 'مرتفعة نسبياً', adh: 'متوسطة إلى مرتفعة' },
+            { f: 'ازدحام المحاكم', rak: 'منخفض', dxb: 'مرتفع جداً', adh: 'متوسط' },
+            { f: 'محكمة مدنية متخصصة لغير المسلمين', rak: 'لا', dxb: 'جناح مدني فقط', adh: 'نعم — متخصصة' },
+          ].map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.f}</div>
+              <div>{row.rak}</div>
+              <div>{row.dxb}</div>
+              <div>{row.adh}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>الإجراءات خطوةً بخطوة</h2>
+
+        <ol class="steps-list">
+          {steps.map(s => (
+            <li class="step-item">
+              <div class="step-num">{s.n}</div>
+              <div class="step-body">
+                <strong class="step-title">{s.title}</strong>
+                <p>{s.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>الوثائق المطلوبة — قائمة تفصيلية</h2>
+
+        <div class="regimes-list">
+          <div class="regime-card">
+            <h3>للمسلمين</h3>
+            <ul class="regime-features">
+              <li>بطاقة الهوية الإماراتية لكلا الطرفَين (أصل وصورة)</li>
+              <li>جوازات السفر الأصلية لكلا الطرفَين</li>
+              <li>عقد الزواج (كتاب النكاح) الأصلي</li>
+              <li>ترجمة عربية معتمدة لعقد الزواج إن كان بلغة أجنبية</li>
+              <li>شهادات ميلاد الأطفال إن وجدوا</li>
+              <li>وثيقة المهر (المقدَّم والمؤخَّر)</li>
+              <li>وثائق الإقامة (عقد الإيجار أو فاتورة خدمة)</li>
+            </ul>
+          </div>
+          <div class="regime-card">
+            <h3>لغير المسلمين</h3>
+            <ul class="regime-features">
+              <li>كل ما سبق للمسلمين</li>
+              <li>شهادة الزواج المدنية (إن كانت الزيجة مدنية) بالتصديق المطلوب</li>
+              <li>تصريح إقامة ساري المفعول</li>
+              <li>إذا اخترت قانون بلدك: ترجمة معتمدة لنصوص القانون المعني</li>
+              <li>وثائق مالية إضافية إذا كانت هناك مطالبات بالنفقة أو الأصول</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p><strong>تنبيه التصديق:</strong> الوثائق الصادرة خارج الإمارات تحتاج عادةً لتصديق قنصلي ثم تصديق وزارة الخارجية الإماراتية. تجهيز هذه الوثائق يستغرق أسابيع — ابدأ مبكراً.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>رسوم المحكمة في رأس الخيمة</h2>
+
+        <div class="types-list">
+          {[
+            { name: 'رسوم إيداع دعوى الطلاق (غير متنازع)', icon: '📋', detail: '2,000–3,000 درهم. تُدفع عند تقديم الطلب. تشمل رسوم إصدار ورقة الدعوى.' },
+            { name: 'رسوم الطلاق الخلافي', icon: '⚖️', detail: '3,500–7,000 درهم وما فوق، تُحدَّد بحسب طبيعة الطلبات وعدد الجلسات. كل جلسة إضافية قد تُضاف لها رسوم.' },
+            { name: 'رسوم إصدار نسخ من الحكم', icon: '📄', detail: '100–300 درهم للنسخة الواحدة. احصل على 3–4 نسخ عند صدور الحكم للاستخدامات المختلفة.' },
+            { name: 'رسوم التصديق للاستخدام الخارجي', icon: '🌐', detail: '200–500 درهم للتصديق الأول من وزارة العدل. تُضاف رسوم الخارجية والسفارة لاحقاً.' },
+          ].map(f => (
+            <div class="type-card">
+              <div class="type-header">
+                <span class="type-icon">{f.icon}</span>
+                <div>
+                  <h3 class="type-name">{f.name}</h3>
+                </div>
+              </div>
+              <p class="type-detail">{f.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/محامي-طلاق-دبي/" class="related-card">
+            <strong>محامي طلاق دبي</strong>
+            <span>الإجراءات والرسوم في دبي</span>
+          </a>
+          <a href="/ar/محامي-طلاق-ابوظبي/" class="related-card">
+            <strong>محامي طلاق أبوظبي</strong>
+            <span>المحكمة المدنية المتخصصة</span>
+          </a>
+          <a href="/ar/تكلفة-الطلاق-في-الامارات/" class="related-card">
+            <strong>تكلفة الطلاق في الإمارات</strong>
+            <span>مقارنة شاملة للرسوم</span>
+          </a>
+          <a href="/ar/كيفية-تقديم-الطلاق-في-الامارات/" class="related-card">
+            <strong>كيفية تقديم الطلاق</strong>
+            <span>دليل الخطوات التفصيلي</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box ul { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .answer-box li { color: #1f2937; line-height: 1.9; font-size: 0.97rem; margin-bottom: 0.25rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.9; font-size: 0.95rem; margin-bottom: 0.75rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
+  .compare-header { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; background: #0a1628; color: #fff; font-weight: 700; font-size: 0.8rem; padding: 0.75rem 1rem; gap: 0.5rem; }
+  .compare-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; padding: 0.6rem 1rem; gap: 0.5rem; font-size: 0.82rem; color: #374151; background: #fff; }
+  .compare-row.alt { background: #f9fafb; }
+  .compare-factor { font-weight: 600; color: #0a1628; }
+
+  .steps-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num { background: #0a1628; color: #c9a84c; font-weight: 800; font-size: 1rem; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.8; margin: 0.25rem 0 0; }
+  .step-title { font-size: 0.97rem; font-weight: 700; color: #0a1628; }
+
+  .regimes-list { display: flex; flex-direction: column; gap: 1rem; }
+  .regime-card { border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; background: #fff; }
+  .regime-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .regime-features { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .regime-features li { font-size: 0.88rem; color: #374151; line-height: 1.8; margin-bottom: 0.25rem; }
+
+  .info-box { background: #eff6ff; border-right: 4px solid #3b82f6; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+  .info-box p { font-size: 0.87rem; color: #1e3a5f; line-height: 1.8; margin: 0; }
+
+  .types-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .type-card { border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 1rem 1.25rem; background: #fff; }
+  .type-header { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+  .type-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .type-name { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .type-detail { font-size: 0.85rem; color: #374151; line-height: 1.8; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .compare-header, .compare-row { grid-template-columns: 1fr 1fr 1fr; }
+    .compare-header > div:last-child, .compare-row > div:last-child { display: none; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,578 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Guardianship vs Custody in UAE: The Critical Difference';
+const description =
+  'Custody (hadana) and guardianship (wilaya) are legally distinct in UAE divorce law. A complete guide covering who holds each right, what requires guardian consent, how FL 41/2024 changed custody age, and what happens when parents conflict.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/guardianship-vs-custody-uae/',
+  ar: 'https://divorceu.ae/ar/حضانة-الاطفال-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Child Custody UAE', url: 'https://divorceu.ae/en/child-custody-uae/' },
+  { name: 'Guardianship vs Custody UAE', url: 'https://divorceu.ae/en/guardianship-vs-custody-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between custody and guardianship in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Custody (hadana) is physical care -- who the child lives with day to day. Guardianship (wilaya) is legal authority over major decisions: school choice, medical consent, passport renewal, and international travel. Under Federal Decree-Law No. 41 of 2024, these rights are held by different people. The mother typically holds custody; the father always retains guardianship unless a court removes it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the father always have guardianship in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, for Muslim families under Federal Decree-Law No. 41 of 2024. Guardianship (wilaya) is paternal by default and cannot be removed simply because the mother has physical custody. The father retains guardianship rights regardless of who the child lives with. A court can only remove guardianship in exceptional circumstances such as the father being legally incapacitated, convicted of abuse, or absent.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a mother have both custody and guardianship in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For Muslim families under FL 41/2024, it is very rare. Guardianship is paternal by default. However, if the father dies or is legally removed as guardian, the court can appoint the mother as guardian. For non-Muslim families under Federal Decree-Law No. 41 of 2022, both parents share guardianship equally by default and either parent can hold sole guardianship by court order.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to guardianship if the father dies?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under UAE Personal Status Law, the paternal grandfather is the next in line for guardianship. If neither grandfather is available or suitable, the court appoints a guardian. The mother can apply to the Personal Status Court to be appointed as both custodian and guardian. Courts in this scenario typically appoint the mother, particularly for young children, unless there are specific welfare concerns.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a custodial mother renew her child\'s passport alone?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Passport renewal for a minor requires the guardian\'s consent and signature. Even if the mother has full physical custody, the father (as guardian) must co-sign or provide written consent for the passport application. If the father is absent, uncooperative, or cannot be located, the mother can apply to the Personal Status Court for an emergency guardianship order authorising her to complete the renewal.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'At what age does custody end in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under Federal Decree-Law No. 41 of 2024, which replaced the 2005 Personal Status Law, custody now continues until the child reaches 18 years of age. The previous law transferred custody from the mother at age 11 for boys and 13 for girls. Courts now maintain the primary custodial arrangement until adulthood. From age 15, the child\'s own preference is a significant factor in custody decisions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can guardianship be transferred to the mother in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For Muslim families, guardianship can only be transferred to the mother by court order in exceptional circumstances: the father\'s death, legal incapacity, prolonged absence, or judicial removal for gross unfitness. It is not transferred simply because the parents divorce or because the mother has custody. For non-Muslim families under FL 41/2022, either parent can apply for sole guardianship and the court will decide based on the child\'s best interests.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What decisions require guardian consent in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Major decisions requiring guardian (father\'s) consent include: changing the child\'s school or education system, consenting to non-emergency surgery, renewing or applying for the child\'s passport, travelling internationally with the child, changing the child\'s religion, and making significant financial decisions on behalf of the child. Routine daily decisions (school pick-up, GP visits, extracurricular activities) are made by the custodial parent without guardian sign-off.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does joint custody affect guardianship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Joint custody under FL 41/2024 means both parents share physical time with the child. It does not automatically mean joint guardianship for Muslim families -- the father retains sole guardianship even in a joint custody arrangement. For non-Muslim families under FL 41/2022, joint custody typically comes with joint guardianship, and both parents must agree on major decisions or return to court for a decision-making order.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a non-Muslim father lose guardianship in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Federal Decree-Law No. 41 of 2022 (the non-Muslim civil family law), guardianship is shared equally and can be adjusted by the court based on the child\'s best interests. If a non-Muslim father is found unfit, abusive, or chronically absent, the court can award sole guardianship to the mother. The non-Muslim track gives courts considerably more flexibility in allocating both custody and guardianship than the Muslim track.',
+      },
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'What is the difference between custody and guardianship in UAE?',
+    answer: 'Custody (hadana) is physical care -- who the child lives with. Guardianship (wilaya) is legal authority over major life decisions. The mother typically holds custody; the father always holds guardianship under the Muslim personal status track. See our <a href="/en/child-custody-uae/">child custody UAE guide</a> for the full framework.',
+  },
+  {
+    question: 'Does the father always have guardianship even after divorce?',
+    answer: 'Yes, under Federal Decree-Law No. 41 of 2024 for Muslim families. Divorce ends the marriage -- it does not remove the father\'s wilaya. Even if the mother has full physical custody, the father must consent to passport renewal, school changes, and international travel.',
+  },
+  {
+    question: 'Can a mother have both custody and guardianship?',
+    answer: 'For Muslim families, only in exceptional cases (father deceased, legally incapacitated, or court-removed). For non-Muslim families under FL 41/2022, the mother can apply for sole guardianship and the court decides on best interests. See our <a href="/en/father-custody-rights-uae/">father custody rights guide</a> for the father\'s perspective.',
+  },
+  {
+    question: 'What if the father refuses to consent to a passport renewal?',
+    answer: 'The custodial mother can file an emergency guardianship application at the Personal Status Court. Courts can authorise a specific act -- such as a passport renewal -- without permanently transferring guardianship. If the father is wilfully obstructing without reason, courts treat this as a welfare concern. See our guide on <a href="/en/emergency-orders-divorce-uae/">emergency orders in UAE divorce</a>.',
+  },
+  {
+    question: 'At what age can a child choose who to live with in UAE?',
+    answer: 'From age 15 under Federal Decree-Law No. 41 of 2024, the child\'s preference becomes a significant factor in court decisions. The court is not bound by the child\'s preference but must give it serious weight. Before 15, the court considers the child\'s maturity and best interests without being bound by a stated preference.',
+  },
+  {
+    question: 'Can the father take the child abroad without the mother\'s consent?',
+    answer: 'The father as guardian has the legal authority to travel internationally with the child, but courts routinely impose travel restrictions as part of custody orders to protect the custodial arrangement. If a custody order is in place that does not specifically authorise international travel without consent, the father would need the mother\'s agreement or a separate court order.',
+  },
+  {
+    question: 'What does guardianship mean for school enrolment practically?',
+    answer: 'The guardian must sign enrolment forms, consent to changing schools, and is listed on the child\'s school record as the decision-maker for educational matters. Schools in UAE are obligated to give the guardian access to the child\'s academic records, reports, and attend parent meetings -- the custodial parent cannot exclude the guardian from school communications.',
+  },
+  {
+    question: 'How long does a custody case take in UAE?',
+    answer: 'Uncontested custody arrangements (agreed between both parents) can be formalised within the divorce proceedings in 2-4 months. Contested custody cases can take 6-18 months depending on complexity, expert welfare reports, and appeals. See our <a href="/en/divorce-timeline-uae/">UAE divorce timeline guide</a> for full details.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/guardianship-vs-custody-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Child Law Guide -- UAE 2025</p>
+      <h1>Guardianship vs Custody in UAE: The Critical Difference Expats Miss</h1>
+      <p class="hero-desc">
+        Your divorce settled and your children live with you. You assume you are in control. Then your ex refuses to sign the school re-enrolment form, and you discover he does not need to cooperate -- he has guardianship and you cannot override it. This guide explains why custody and guardianship are different legal concepts under UAE law, who holds each right, and what you can do when the two come into conflict.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Five things to know before you read further</h2>
+        <ul class="key-facts">
+          <li><strong>Custody (hadana) and guardianship (wilaya) are separate legal rights held by different people.</strong> Winning one does not give you the other.</li>
+          <li><strong>Under FL 41/2024, the father always holds guardianship</strong> even when the mother has full physical custody. This is not negotiable in divorce proceedings.</li>
+          <li><strong>Custody now runs to age 18</strong> under the 2024 law. The old ages (11 for boys, 13 for girls) no longer apply.</li>
+          <li><strong>Non-Muslim expats operate under a different track.</strong> Under FL 41/2022, both parents share guardianship equally by default.</li>
+          <li><strong>Emergency guardianship orders exist</strong> for genuine urgent situations where the guardian cannot be reached or is deliberately obstructing.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: Two Concepts -->
+      <section class="content-section">
+        <h2>Two Concepts, Two Laws, Two People</h2>
+        <p>
+          Most expatriate parents approaching a UAE divorce understand that there will be a decision about "who gets the kids." What they do not understand until much later -- sometimes at school registration time, sometimes at the passport counter -- is that this single question actually contains two entirely separate legal questions under UAE law.
+        </p>
+        <p>
+          <strong>Custody (hadana / حضانة)</strong> governs who the child lives with and who provides day-to-day physical care. It covers: the home the child sleeps in, who picks them up from school, who takes them to the GP for a cough, who supervises homework, who books extracurricular activities. Custody is about the daily fabric of a child's life.
+        </p>
+        <p>
+          <strong>Guardianship (wilaya / ولاية)</strong> governs legal authority over the child's major life decisions. It covers: which school the child attends, consent to non-emergency surgery, passport applications, the right to take the child abroad, religious upbringing, and management of any financial assets belonging to the child.
+        </p>
+        <p>
+          Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the Personal Status Law that replaced the 2005 law and took effect 15 April 2025), custody and guardianship are always held separately for Muslim families. The mother is the default primary custodian. The father is always the guardian. These are concurrent, not competing, rights -- and the conflict between them is the most common source of post-divorce friction in UAE family courts.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>The real-world conflict: passport renewal</h3>
+          <p>The most frequently litigated guardianship-custody conflict: the custodial mother wants to renew her child's UAE or home country passport. She takes the child to the embassy. The embassy requires the guardian's co-signature. The father refuses -- sometimes as leverage in an ongoing financial dispute, sometimes out of spite. Without his signature or a court order, the passport cannot be renewed. The child is stuck. This scenario plays out dozens of times a year in UAE personal status courts.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Muslim families FL 41/2024 -->
+      <section class="content-section">
+        <h2>Muslim Families: Federal Decree-Law No. 41 of 2024</h2>
+
+        <h3>Who holds custody</h3>
+        <p>
+          Article 143 of Federal Decree-Law No. 41 of 2024 establishes the mother as the default primary custodian. She retains custody for children of any age up to 18 -- a significant departure from the old law's gender-based age thresholds (boys transferred to the father at 11, girls at 13). The 2024 law abolished those age limits entirely.
+        </p>
+        <p>
+          The mother can lose custody if she: remarries a man who is not the child's mahram (close male relative), relocates outside the UAE without court consent, is found unfit by a welfare assessment, or is convicted of serious misconduct. Losing custody under any of these grounds is a judicial process -- it does not happen automatically.
+        </p>
+        <p>
+          Courts may award joint custody -- alternating periods with each parent -- though this remains less common under the Muslim track than under the non-Muslim track. Joint custody under FL 41/2024 means shared physical time, not shared guardianship.
+        </p>
+
+        <h3>Who holds guardianship</h3>
+        <p>
+          Guardianship is paternal by default under Islamic personal status law. Article 184 of Federal Decree-Law No. 41 of 2024 confirms that the father is the natural guardian of his children. This right persists through and after the divorce. It cannot be removed by negotiation, settlement agreement, or a mother's preference. The only mechanism for removal is a court order on specific grounds (incapacity, criminal conviction related to the child's welfare, prolonged absence beyond court-defined thresholds, or death).
+        </p>
+        <p>
+          The father's guardianship is not symbolic. It gives him a concrete veto over the decisions listed below -- and exercising that veto is entirely lawful unless a court has specifically ordered otherwise.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Decision type</th>
+                <th>Who decides</th>
+                <th>Legal basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Daily care, meals, school routine</td>
+                <td>Custodial parent (mother)</td>
+                <td>Hadana rights, Art. 143 FL 41/2024</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">GP visits, minor medical care</td>
+                <td>Custodial parent</td>
+                <td>Day-to-day care falls under hadana</td>
+              </tr>
+              <tr>
+                <td class="td-bold">School enrolment / school change</td>
+                <td>Guardian (father)</td>
+                <td>Major decision under wilaya</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Non-emergency surgery</td>
+                <td>Guardian (father)</td>
+                <td>Medical consent for major procedures</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Passport renewal / application</td>
+                <td>Guardian (father)</td>
+                <td>Document authority under wilaya</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">International travel</td>
+                <td>Guardian (father)</td>
+                <td>Exit permit requirement</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Child's financial assets</td>
+                <td>Guardian (father)</td>
+                <td>Financial guardianship, wilaya al-mal</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Religious upbringing</td>
+                <td>Guardian (father)</td>
+                <td>Under Islamic personal status default</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Child's preference from age 15</h3>
+        <p>
+          Under Article 147 of Federal Decree-Law No. 41 of 2024, a child who has reached 15 years of age may express a preference regarding their custodial arrangement. Courts are required to give this preference significant weight without being bound by it. If the child's stated preference conflicts with the assessed welfare, the welfare assessment takes precedence. Before age 15, courts consider the child's expressed views according to maturity but do not treat them as determinative.
+        </p>
+      </section>
+
+      <!-- Section 3: Non-Muslim track -->
+      <section class="content-section">
+        <h2>Non-Muslim Expats: Federal Decree-Law No. 41 of 2022</h2>
+        <p>
+          Non-Muslim expatriates in the UAE have a separate legal track under Federal Decree-Law No. 41 of 2022. This law was specifically designed to bring UAE family law in line with internationally accepted norms and is used by the majority of Western, Asian, and African Christian expats.
+        </p>
+
+        <h3>Joint guardianship by default</h3>
+        <p>
+          The most important difference: under FL 41/2022, both parents hold joint guardianship by default. Neither parent has an automatic legal superiority over the other for major decisions. This mirrors the approach taken in England, Australia, and most Western European legal systems. If the parents cannot agree on a major decision, either parent can apply to the court for a specific issue order, and the court will decide based on the child's best interests.
+        </p>
+
+        <h3>Joint custody as the starting point</h3>
+        <p>
+          Article 9 of Federal Decree-Law No. 41 of 2022 establishes that both parents should be involved in the child's upbringing after divorce. Courts operating under this track start from a presumption of shared parenting and set detailed parenting plans covering time allocation, holiday schedules, and decision-making protocols. Sole custody is available but requires demonstrating that shared arrangements are contrary to the child's welfare.
+        </p>
+
+        <h3>Electing home country law</h3>
+        <p>
+          Non-Muslim expats also have the option to elect their home country's law for personal status matters under Article 13 of the UAE Civil Code. English law, Australian family law, French law, and others can apply if correctly elected at filing. Each of these systems handles guardianship somewhat differently. English law uses "parental responsibility" as its equivalent concept; Australian law uses "parental responsibility." Both default to equal shared responsibility unless a court orders otherwise -- consistent with the FL 41/2022 approach.
+        </p>
+
+        <div class="info-box info-box--info">
+          <h3>Which track applies to you?</h3>
+          <p>Religion, not nationality, determines which personal status track applies in UAE courts. A Muslim British national is governed by FL 41/2024 (Muslim track). A Christian Lebanese national is eligible for the FL 41/2022 (non-Muslim) track. A UAE national who has converted out of Islam in their home country remains subject to the Muslim track for UAE court purposes unless they successfully apply under the non-Muslim law. If your religious status is ambiguous or contested, legal advice before filing is essential.</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Practical implications for custodial mother -->
+      <section class="content-section">
+        <h2>What Custody Without Guardianship Means in Practice (Mothers)</h2>
+        <p>
+          If you are the custodial mother under the Muslim personal status track, here is the practical reality of holding custody but not guardianship:
+        </p>
+
+        <div class="scenario-list">
+          <div class="scenario-card">
+            <p class="scenario-title">You cannot change your child's school without guardian consent</p>
+            <p>Even if the current school is unsuitable, expensive, or too far from your new residence, you need the guardian's agreement or a court order to change schools. Courts will issue specific guardianship orders for school changes if you can demonstrate that the proposed new school is in the child's interests and the father's refusal is unreasonable.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">You cannot renew the child's passport alone</p>
+            <p>This is the most practically disruptive limitation. Both UAE resident ID and home country passport renewals require the guardian's signature. Build this into your planning: renew any expiring passports before the divorce proceedings begin, when both parents can still sign jointly without it becoming a leverage point.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">You cannot consent to major surgery alone</p>
+            <p>For elective or non-emergency surgery, the guardian must consent. For genuine medical emergencies where the child's life or health is at immediate risk, medical providers in UAE can and do proceed without guardian consent. Post-emergency, courts will review. The concern arises in the grey zone: significant but non-emergency procedures like tonsillectomy, orthopaedic surgery, or dental procedures under general anaesthesia.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">The father cannot be excluded from school records or medical records</p>
+            <p>The guardian has the right to access the child's school records, attend parent evenings, and be listed on school emergency contacts. Instructing a school to exclude the father from communications would breach his guardianship rights and could result in a court order compelling you to cooperate.</p>
+          </div>
+        </div>
+
+        <h3>Emergency guardianship orders</h3>
+        <p>
+          Where the guardian is unreachable, has disappeared from the UAE, or is deliberately obstructing a legitimate necessity, the Personal Status Court can issue an emergency guardianship order authorising a specific act. These applications are heard urgently -- typically within days. You will need to demonstrate: the specific action required, evidence that the guardian's consent was sought and refused or is unobtainable, and that the action is in the child's interests.
+        </p>
+        <p>
+          Emergency orders are act-specific. An emergency order allowing you to renew the child's passport does not transfer guardianship generally -- the father retains all other guardianship rights. For broader obstructive behaviour, a contempt application or a full guardianship review may be more appropriate. Consult our guide on <a href="/en/emergency-orders-divorce-uae/">emergency orders in UAE divorce</a> for the procedure.
+        </p>
+      </section>
+
+      <!-- Section 5: Practical implications for fathers -->
+      <section class="content-section">
+        <h2>What Guardianship Without Custody Means in Practice (Fathers)</h2>
+        <p>
+          If the mother has physical custody of your children and you hold guardianship, your practical position is different from what many fathers expect:
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>You cannot be excluded from educational decisions</h3>
+              <p>The mother cannot change the child's school without your consent. You have the right to be consulted on and to veto major educational decisions, including international school changes, curriculum changes, and decisions about educational therapy or support.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>You must consent to international travel</h3>
+              <p>The custodial mother cannot take the children abroad -- not even on holiday -- without your written consent or a court order. UAE exit procedures require evidence of guardian consent for minors travelling with one parent. This is a firm legal requirement, not a suggestion.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>You can apply to court if your guardianship rights are ignored</h3>
+              <p>If the custodial parent consistently makes major decisions without your consent -- enrolling the child in a new school, consenting to significant medical procedures, applying for documents -- you can file a guardianship enforcement application. Courts take breaches of guardianship rights seriously and can attach conditions to custody orders requiring the mother to seek consent.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>You should proactively communicate rather than use guardianship as leverage</h3>
+              <p>Courts in UAE increasingly take a welfare-first approach under FL 41/2024. A father who withholds guardianship consent for tactical rather than welfare reasons risks adverse judicial commentary in subsequent proceedings and may find courts issuing specific guardianship orders that override his consent for defined categories of decision. Guardianship is a parental responsibility, not a weapon.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Guardianship after father dies -->
+      <section class="content-section">
+        <h2>Guardianship When the Father Dies or Is Removed</h2>
+        <p>
+          Islamic personal status law has a clear hierarchy for guardianship succession. If the father dies or is legally removed, the order of guardianship under UAE Personal Status Law is:
+        </p>
+        <ol class="ordered-list">
+          <li>The paternal grandfather</li>
+          <li>A court-appointed guardian from the paternal family</li>
+          <li>The mother, upon application to the Personal Status Court</li>
+        </ol>
+        <p>
+          The mother does not automatically become the guardian when the father dies. She must apply to the court. In practice, courts very frequently appoint the custodial mother as guardian when the father has died and she is a fit parent, but this requires a formal court application rather than an assumption.
+        </p>
+        <p>
+          If you are a custodial mother and your children's father has died, the immediate priorities are: obtain the death certificate (attested and Arabic-translated if issued outside UAE), file a guardianship application at the Personal Status Court, and contact your children's school and any financial institutions holding the children's accounts to notify them of the change in status. Do not wait -- financial accounts held in the child's name technically require a guardian's authority to manage.
+        </p>
+
+        <h3>Guardianship removal during the father's lifetime</h3>
+        <p>
+          A living father can only be removed as guardian by court order. The grounds under FL 41/2024 are narrow: legal incapacity (mental health adjudication), conviction of an offence demonstrating unfitness, prolonged unexplained absence, or a court determination that his continued guardianship is actively harmful to the child's welfare. Financial difficulty, remarriage, or having a contentious relationship with the mother are not grounds for guardianship removal.
+        </p>
+      </section>
+
+      <!-- Section 7: 2024 Law Changes -->
+      <section class="content-section">
+        <h2>What Federal Decree-Law No. 41 of 2024 Changed</h2>
+        <p>
+          Federal Decree-Law No. 41 of 2024 came into force on 15 April 2025, replacing the 2005 Personal Status Law (Federal Law No. 28 of 2005). For custody and guardianship, the most significant changes were:
+        </p>
+
+        <div class="misconception-list">
+          <div class="misconception-card">
+            <div class="misconception-badge change-badge">CHANGED</div>
+            <h3>Custody age extended to 18 for all children</h3>
+            <p>The old law transferred custody of boys to the father at 11 and girls at 13. Federal Decree-Law No. 41 of 2024 abolished these age thresholds entirely. Custody now runs until the child's 18th birthday for both genders. This is one of the most significant practical changes for expatriate mothers who feared losing custody of older children under the old law.</p>
+          </div>
+          <div class="misconception-card">
+            <div class="misconception-badge change-badge">CHANGED</div>
+            <h3>Child's preference from age 15 is formally recognised</h3>
+            <p>The new law explicitly requires courts to hear and give significant weight to the views of children aged 15 and above. Previously, child preference was considered informally at judicial discretion. Now it is a codified procedural requirement.</p>
+          </div>
+          <div class="misconception-card">
+            <div class="misconception-badge change-badge">CHANGED</div>
+            <h3>Joint custody more explicitly available</h3>
+            <p>Federal Decree-Law No. 41 of 2024 provides clearer statutory authority for joint custody arrangements -- shared physical time with both parents. Under the 2005 law, joint custody was possible but less clearly provided for. The 2024 law makes it an available outcome that courts can order when it serves the child's interests.</p>
+          </div>
+          <div class="misconception-card">
+            <div class="misconception-badge unchanged-badge">UNCHANGED</div>
+            <h3>Father's guardianship remains exclusive</h3>
+            <p>Despite the significant changes to custody, the 2024 law did not alter the guardianship structure. The father remains the sole guardian of Muslim children, retaining wilaya regardless of custodial arrangements. This aspect of Islamic personal status law remains consistent with the 2005 position.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Full guide to hadana, visitation, and relocation</span>
+          </a>
+          <a href="/en/father-custody-rights-uae/" class="related-card">
+            <strong>Father Custody Rights UAE</strong>
+            <span>What fathers can claim and how to enforce it</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Orders UAE Divorce</strong>
+            <span>Travel bans, asset freezes, and urgent custody orders</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>UAE Divorce Timeline</strong>
+            <span>How long each stage of proceedings takes</span>
+          </a>
+          <a href="/en/divorce-in-uae/" class="related-card">
+            <strong>Divorce in UAE Overview</strong>
+            <span>Jurisdiction, grounds, and the full legal framework</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Non-Muslim track, law choices, and recognition abroad</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul, .content-section ol { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+  .ordered-list { margin: 0.5rem 0 1rem 1.5rem; }
+  .ordered-list li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+
+  /* Scenario cards */
+  .scenario-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.75rem; }
+  .scenario-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-card .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Change/unchanged cards */
+  .misconception-list { display: flex; flex-direction: column; gap: 1.1rem; }
+  .misconception-card { padding: 1.1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .misconception-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 4px; margin-bottom: 0.5rem; }
+  .change-badge { background: #2563eb; color: #fff; }
+  .unchanged-badge { background: #6b7280; color: #fff; }
+  .misconception-card h3 { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0 0 0.5rem; }
+  .misconception-card p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
+  }
+</style>

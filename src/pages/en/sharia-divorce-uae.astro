@@ -1,0 +1,585 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Sharia Divorce in UAE 2025: Talaq, Khula, Financial Rights, and the New Law';
+const description =
+  'Federal Decree-Law No. 41 of 2024 replaced UAE divorce law for Muslims from 15 April 2025. Complete guide covering all four types of Sharia divorce, mandatory Family Guidance Section, mahr, nafaqa, iddah, and recognition in Muslim-majority countries.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/sharia-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-الشرعي-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Sharia Divorce UAE', url: 'https://divorceu.ae/en/sharia-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Sharia divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sharia divorce in UAE refers to the dissolution of a Muslim marriage under Islamic law as applied by UAE courts. It is governed by Federal Decree-Law No. 41 of 2024, which came into force on 15 April 2025 and replaced the previous Federal Law No. 28 of 2005. The law recognises four types of Islamic divorce: talaq (husband-initiated unilateral declaration), khula\' (wife-initiated with mahr return), tatliq lil-darar (judicial divorce for harm), and faskh (judicial annulment equivalent for fundamental defects in the marriage).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How has UAE divorce law changed in 2024 and 2025?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Federal Decree-Law No. 41 of 2024 replaced the 20-year-old Federal Law No. 28 of 2005 and came into force on 15 April 2025. Key changes include: digital talaq is now valid if court-registered; triple talaq is treated as one revocable talaq (not three irrevocable ones) under UAE\'s Maliki majority interpretation; khula\' can be granted without the husband\'s consent if the wife agrees to return her mahr; maintenance formulas have been updated; and the judicial divorce for harm (tatliq lil-darar) grounds have been clarified to include psychological abuse and prolonged financial abandonment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a Muslim woman divorce without her husband\'s consent in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Under Articles 65 to 68 of Federal Decree-Law No. 41 of 2024, a wife can obtain a khula\' divorce without her husband\'s consent, provided she agrees to return her mahr (or the court-determined equivalent). The court grants the divorce against the husband\'s will once the wife\'s agreement to return mahr is confirmed. Additionally, a wife can obtain a judicial divorce (tatliq lil-darar) without consent if she proves grounds such as harm, abandonment, imprisonment, or incurable disease.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between talaq and khula?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Talaq is a husband-initiated unilateral divorce declaration. In UAE, it must be registered with the court within 15 days of pronouncement (Article 58 of Federal Decree-Law No. 41 of 2024). Triple talaq is treated as one revocable talaq under UAE\'s Maliki interpretation. The wife does not need to agree and does not return mahr. Khula\' is a wife-initiated divorce where the wife requests dissolution and agrees to return the mahr to the husband. Under the 2024 law, khula\' can be granted without the husband\'s consent -- the court grants it against his will if the wife agrees to the mahr return. Khula\' is irrevocable; standard talaq in the first or second instance is revocable within the iddah period.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does Islamic divorce take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Family Guidance Section mandatory sessions take approximately 30 days (three sessions). After the non-reconciliation certificate is issued, a straightforward mutual consent or registered talaq typically completes within 1 to 3 months total. A contested khula\' where the husband disputes the mahr amount: 3 to 6 months. A judicial divorce for harm (tatliq lil-darar) with evidence gathering: 6 to 18 months. These are Emirates-of-Dubai estimates; Abu Dhabi Sharia courts may be faster for straightforward cases.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What financial rights does a Muslim wife have after Sharia divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under Federal Decree-Law No. 41 of 2024, a Muslim wife\'s financial rights on divorce are: (1) Mahr -- the prompt mahr if not yet paid is immediately due; deferred mahr falls due immediately on divorce regardless of any original deferral agreement. (2) Nafaqa al-iddah -- maintenance during the iddah period (3 lunar months or until childbirth if pregnant). (3) Mut\'a -- consolation payment of minimum one year\'s maintenance if the wife was not at fault and did not ask for the divorce. (4) Child support -- the father pays regardless of which parent has physical custody. (5) Housing during iddah. Khula\' divorce (wife-initiated) forfeits the mut\'a right since the wife initiated the separation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a UAE Sharia divorce valid in other Muslim countries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes in most Muslim-majority countries. UAE Sharia divorces issued by the Personal Status Court are recognised in Egypt, Jordan, Lebanon, Saudi Arabia, Pakistan, Bangladesh, Malaysia, Indonesia, and most other Muslim-majority jurisdictions, provided the divorce is properly documented, apostilled or attested, and issued by a competent court. The recognition is based on mutual respect for Islamic jurisprudence. However, each country has its own personal status registry procedures -- an Egyptian national, for example, must register the UAE Sharia divorce at the Egyptian civil registry after attestation by the Egyptian consulate.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a non-Muslim use UAE Personal Status Court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not for Sharia divorce. UAE Personal Status Courts applying Federal Decree-Law No. 41 of 2024 have jurisdiction over Muslim divorce cases. Non-Muslims have their own dedicated track under Federal Decree-Law No. 41 of 2022. If one spouse is Muslim and the other is not, the Muslim personal status law typically applies. A non-Muslim who converted to Islam after marriage would bring the case under the Muslim personal status track. Non-Muslims who want civil divorce file at the Dubai Personal Status Court non-Muslim division or Abu Dhabi Civil Family Court.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the Family Guidance Section in UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Family Guidance Section (Dar al-Tawjeh al-Asari) is a mandatory pre-litigation step for Muslim couples under Federal Decree-Law No. 41 of 2024. Before filing a divorce petition with the Personal Status Court, both spouses must attend the Family Guidance Section (attached to the court) for counselling and reconciliation attempts. Sessions are held over approximately 30 days, typically three sessions. If reconciliation fails, the Family Guidance Section issues a non-reconciliation certificate, which is required to file the court petition. The non-reconciliation certificate has a validity period -- typically 3 months -- after which the divorce petition must be filed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is child custody decided in Sharia divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under Federal Decree-Law No. 41 of 2024, the child\'s best interest is the primary standard. The hadhana (physical care) default for young children typically grants the mother care of boys until age 11 and girls until age 13, after which the court may transfer care to the father or let the child choose. Legal guardianship (wilaya) remains with the father. Both parents have defined visitation rights. The father pays child support (nafaqa al-awlad) regardless of which parent has hadhana. Courts can modify these defaults if the child\'s interests require it -- for example, if the mother is relocating abroad or the father is unfit.',
+      },
+    },
+  ],
+};
+
+const divorceTypes = [
+  {
+    type: 'Talaq',
+    who: 'Husband-initiated',
+    consent: 'Wife consent not required',
+    mahr: 'Wife keeps full mahr',
+    notes: 'Must be registered within 15 days (Art. 58 FL 41/2024). Triple talaq = one revocable talaq. Digital talaq valid if court-registered. First and second talaq are revocable within iddah.',
+    flag: 'talaq',
+  },
+  {
+    type: "Khul'a",
+    who: 'Wife-initiated',
+    consent: 'Husband consent NOT required under 2024 law',
+    mahr: 'Wife returns mahr',
+    notes: "Court grants against husband's will if wife agrees to mahr return (Arts. 65-68). Irrevocable. Mut'a forfeited since wife initiated. Most common route for women seeking divorce.",
+    flag: 'khula',
+  },
+  {
+    type: 'Tatliq lil-darar',
+    who: 'Court-granted on wife petition',
+    consent: 'No husband consent needed',
+    mahr: 'Wife keeps full mahr + mut\'a',
+    notes: "Grounds: physical harm, psychological abuse, financial abandonment 3+ months, imprisonment 3+ years, incurable disease. Standard: harm making marriage 'impossible for a woman of similar standing.'",
+    flag: 'judicial',
+  },
+  {
+    type: 'Faskh',
+    who: 'Court-granted annulment-equivalent',
+    consent: 'No',
+    mahr: 'Depends on ground',
+    notes: 'Grounds: deception at marriage, fraud, impotence (if not disclosed), incurable disease, fundamental defect in the marriage contract. Must be filed promptly after discovery of the defect.',
+    flag: 'faskh',
+  },
+];
+
+const financialRights = [
+  { right: 'Prompt mahr (mu\'ajjal)', timing: 'Due at marriage / already due', notes: 'Enforceable immediately. Unpaid prompt mahr becomes a debt from day of divorce.' },
+  { right: 'Deferred mahr (mu\'ajjal)', timing: 'Due immediately on divorce', notes: 'Falls due in full on pronouncement of divorce, regardless of any original deferral. Enforced as privileged debt.' },
+  { right: "Nafaqa al-iddah (iddah maintenance)", timing: 'During iddah period', notes: "3 lunar months (if not pregnant) or until childbirth. Father's obligation even if wife is working." },
+  { right: "Mut'a (consolation)", timing: 'One-time payment post-divorce', notes: "Minimum 1 year's maintenance. Only if wife did not initiate divorce (khula'). Amount determined by court based on husband's means and marriage duration." },
+  { right: 'Child support (nafaqa al-awlad)', timing: "Until child's majority / marriage", notes: "Father's obligation regardless of custody arrangement. Continues for daughter until she marries." },
+  { right: 'Hadhana housing (iddah period)', timing: 'During iddah', notes: 'Husband must provide suitable accommodation for wife during iddah period unless she moves out voluntarily.' },
+];
+
+const faqItems = [
+  {
+    question: 'What is Sharia divorce in UAE?',
+    answer: 'Islamic divorce for Muslims in UAE governed by Federal Decree-Law No. 41 of 2024 (in force 15 April 2025). Four recognised types: talaq, khula\', tatliq lil-darar, and faskh. See our dedicated guides on <a href="/en/talaq-uae/">talaq UAE</a> and <a href="/en/khula-divorce-uae/">khula divorce UAE</a>.',
+  },
+  {
+    question: 'How has UAE divorce law changed in 2024 and 2025?',
+    answer: 'FL 41/2024 replaced the 20-year-old Law 28/2005 from 15 April 2025. Key changes: digital talaq valid if court-registered; triple talaq = one revocable talaq; khula\' granted without husband consent; updated maintenance formulas; clarified harm grounds. See <a href="/en/divorce-cost-uae/">divorce cost UAE</a> for updated fee information.',
+  },
+  {
+    question: 'Can a Muslim woman divorce without her husband\'s consent in UAE?',
+    answer: "Yes. Khula' under Articles 65-68 of FL 41/2024 is granted by court without husband's consent if wife agrees to return mahr. Tatliq lil-darar (judicial divorce for harm) is also available without consent on proven grounds.",
+  },
+  {
+    question: "What is the difference between talaq and khula'?",
+    answer: "Talaq is husband-initiated, wife keeps mahr, revocable in first/second instance. Khula' is wife-initiated, wife returns mahr, irrevocable, granted without husband's consent under 2024 law. For full details, see our <a href=\"/en/khula-divorce-uae/\">khula' divorce UAE guide</a>.",
+  },
+  {
+    question: 'How long does Islamic divorce take in UAE?',
+    answer: 'Family Guidance Section: ~30 days. Simple registered talaq or mutual consent: 1 to 3 months total. Contested khula\': 3 to 6 months. Judicial divorce for harm: 6 to 18 months. For a cost breakdown, see <a href="/en/divorce-cost-uae/">divorce cost UAE</a>.',
+  },
+  {
+    question: 'What financial rights does a Muslim wife have after Sharia divorce in UAE?',
+    answer: "Full mahr, nafaqa al-iddah (3 months), mut'a (minimum 1 year, unless wife initiated via khula'), child support from father, housing during iddah. See our guides on <a href=\"/en/mahr-divorce-uae/\">mahr enforcement UAE</a> and <a href=\"/en/iddah-waiting-period-uae/\">iddah UAE</a>.",
+  },
+  {
+    question: 'Is a UAE Sharia divorce valid in other Muslim countries?',
+    answer: 'Yes in most Muslim-majority countries. Must be properly attested and registered in the home country civil registry. Egyptian, Jordanian, Pakistani, and Malaysian nationals must register the UAE decree at the relevant consulate and domestic registry.',
+  },
+  {
+    question: 'Can a non-Muslim use UAE Personal Status Court?',
+    answer: 'No. The Sharia Personal Status Court under FL 41/2024 is for Muslims. Non-Muslims use the FL 41/2022 civil track at Dubai Personal Status Court or Abu Dhabi Civil Family Court. See our <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce UAE</a> guide.',
+  },
+  {
+    question: 'What is the Family Guidance Section?',
+    answer: 'Mandatory pre-court counselling for Muslim couples under FL 41/2024. Approximately 30 days, three sessions. Issues a non-reconciliation certificate required to file the divorce petition. Cannot be skipped. Valid for 3 months after issuance.',
+  },
+  {
+    question: 'How is child custody decided in Sharia divorce in UAE?',
+    answer: "Hadhana (physical care) default: mother keeps boys to age 11, girls to age 13. Legal guardianship (wilaya) stays with father. Father pays child support regardless. See our <a href=\"/en/child-custody-uae/\">child custody UAE guide</a> for relocation and international cases.",
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/sharia-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Islamic Divorce Guide -- UAE 2025</p>
+      <h1>Sharia Divorce in UAE 2025: Talaq, Khula', Financial Rights, and the New Law</h1>
+      <p class="hero-desc">
+        Federal Decree-Law No. 41 of 2024 replaced the old UAE Personal Status Law from 15 April 2025. If you are a Muslim in UAE contemplating divorce -- whether you are the husband, the wife, or both -- you need to understand the new rules: talaq registration, the revised khula' procedure that works without husband consent, the harm grounds that have been clarified, and what financial rights a wife now has. This guide covers all four types of Sharia divorce and every financial obligation that flows from them.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Six things to know about Sharia divorce in UAE from 2025</h2>
+        <ul class="key-facts">
+          <li><strong>New law in force 15 April 2025.</strong> Federal Decree-Law No. 41 of 2024 replaces Law 28/2005. All new divorce filings follow the new law.</li>
+          <li><strong>Khula' is now granted without husband consent.</strong> Under Articles 65-68, the court grants khula' against the husband's will if the wife agrees to return her mahr. This is the most significant change for Muslim women.</li>
+          <li><strong>Triple talaq = one revocable talaq.</strong> UAE courts apply the Maliki majority view: three talaq pronouncements in one session are treated as a single revocable talaq, not three irrevocable ones.</li>
+          <li><strong>Family Guidance Section is mandatory</strong> before filing. No exceptions. Approximately 30 days for three sessions. A non-reconciliation certificate is required to file in court.</li>
+          <li><strong>Deferred mahr falls due immediately on divorce.</strong> Any deferral period agreed at the time of marriage is extinguished on divorce. The full deferred amount is payable immediately.</li>
+          <li><strong>Child support is the father's obligation regardless of custody.</strong> It continues until majority for sons and until marriage for daughters.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: Which Law -->
+      <section class="content-section">
+        <h2>The 2024 Law: What Changed and Who It Covers</h2>
+        <p>
+          <strong>Federal Decree-Law No. 41 of 2024</strong> is the new Personal Status Law for Muslims in the UAE. It came into force on 15 April 2025, replacing <strong>Federal Law No. 28 of 2005</strong> which had governed Muslim family matters in UAE for two decades. All divorce petitions filed on or after 15 April 2025 are governed by the new law. Cases pending before that date continue under Law 28/2005.
+        </p>
+        <p>
+          Who does it cover? All Muslims in UAE, regardless of nationality. A British Muslim, an Egyptian Muslim, a Pakistani Muslim, a UAE national -- all are subject to the new law when divorcing in UAE courts. Non-Muslims are not covered by this law; they use the parallel civil track under <a href="/en/non-muslim-divorce-uae/">Federal Decree-Law No. 41 of 2022</a>.
+        </p>
+
+        <h3>The five most important changes from Law 28/2005</h3>
+        <div class="change-list">
+          <div class="change-card">
+            <div class="change-num">1</div>
+            <div class="change-body">
+              <p class="change-title">Khula' without husband consent (Articles 65-68)</p>
+              <p>Under the old law, khula' theoretically required the husband's cooperation or an extended court process to compel it. The new law removes this barrier: if the wife agrees to return her mahr and the court is satisfied the marriage has irretrievably broken down, the court grants the khula' against the husband's explicit objection. This is a fundamental shift in the wife's ability to exit a marriage.</p>
+            </div>
+          </div>
+          <div class="change-card">
+            <div class="change-num">2</div>
+            <div class="change-body">
+              <p class="change-title">Digital talaq registration valid (Article 58)</p>
+              <p>Talaq pronounced via video call, voice message, or digital communication is valid in UAE, provided it is registered with the court within 15 days of pronouncement. This modernisation removes the requirement of in-person registration and addresses the realities of geographically dispersed families.</p>
+            </div>
+          </div>
+          <div class="change-card">
+            <div class="change-num">3</div>
+            <div class="change-body">
+              <p class="change-title">Triple talaq equals one revocable talaq</p>
+              <p>The Maliki school interpretation (dominant in UAE) treats three talaq pronouncements uttered in one sitting as a single revocable talaq, not three irrevocable ones. This was already the prevailing practice in UAE courts, but the 2024 law codifies it expressly. A husband who utters triple talaq does not irrevocably divorce his wife -- the marriage can still be revived within the iddah period.</p>
+            </div>
+          </div>
+          <div class="change-card">
+            <div class="change-num">4</div>
+            <div class="change-body">
+              <p class="change-title">Harm grounds clarified (tatliq lil-darar)</p>
+              <p>The new law expressly includes psychological abuse (not just physical harm) and financial abandonment of three or more months as recognised grounds for judicial divorce. The standard for proving harm is: conduct making continued cohabitation "impossible for a woman of similar standing" -- a context-sensitive test that courts apply with discretion.</p>
+            </div>
+          </div>
+          <div class="change-card">
+            <div class="change-num">5</div>
+            <div class="change-body">
+              <p class="change-title">Updated maintenance formulas</p>
+              <p>The new law revises the factors and calculation methodology for nafaqa (maintenance) and mut'a (consolation payment). Minimum mut'a is now expressly set at one year's maintenance, with the court having discretion to increase this based on the husband's means, the marriage duration, and the circumstances of divorce.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Four Types -->
+      <section class="content-section">
+        <h2>The Four Types of Sharia Divorce Recognised in UAE</h2>
+        <p>
+          UAE courts recognise four distinct forms of Islamic divorce. Each has different triggers, different consent requirements, and different financial consequences. Understanding which type applies to your situation determines your strategy.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="divorce-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Who initiates</th>
+                <th>Husband consent</th>
+                <th>Mahr outcome</th>
+                <th>Key notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {divorceTypes.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class={`td-type td-type--${row.flag}`}>{row.type}</td>
+                  <td class="td-sm">{row.who}</td>
+                  <td class="td-sm">{row.consent}</td>
+                  <td class="td-sm">{row.mahr}</td>
+                  <td class="td-notes">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Talaq in detail</h3>
+        <p>
+          Talaq is the husband's unilateral right to divorce. Under <strong>Article 58 of Federal Decree-Law No. 41 of 2024</strong>, a talaq pronounced in any form -- in-person, written, or digitally -- must be registered with the Personal Status Court within 15 days. Registration does not create the talaq; it records an already-effective talaq. An unregistered talaq is still valid between the parties under Islamic law, but its legal effects (iddah period, maintenance obligations, property consequences) are dated from registration for court enforcement purposes.
+        </p>
+        <p>
+          The first and second talaqs are revocable (raj'i) -- the husband can take the wife back within the iddah period without any new marriage contract. This can be done verbally or by deed. The third talaq is irrevocable (ba'in kubra) and requires a new marriage contract after the ex-wife has married and divorced another man (tahleel) -- a rare and socially complex situation that rarely arises in practice. For full details, see our dedicated <a href="/en/talaq-uae/">talaq UAE guide</a>.
+        </p>
+
+        <h3>Khula' in detail</h3>
+        <p>
+          Khula' is the wife's route to divorce. Classically, it required the husband's agreement to accept the mahr in exchange for releasing the wife from the marriage. The 2024 law changes this: under <strong>Articles 65-68 of Federal Decree-Law No. 41 of 2024</strong>, the court grants khula' without the husband's consent if the wife agrees to return her mahr and the court is satisfied the marriage cannot be salvaged. This is a significant expansion of women's divorce rights.
+        </p>
+        <p>
+          The wife may not always have the mahr in hand. If the mahr was never paid (a surprisingly common situation where the mahr amount was agreed but the husband never transferred it), the court can offset the mahr obligation against the khula' award, resulting in a net-zero financial outcome. If the mahr was already paid and spent, the wife must either return it, agree a payment schedule, or the court may take other assets as equivalent. For detailed guidance on mahr enforcement, see our <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a>.
+        </p>
+
+        <h3>Tatliq lil-darar: judicial divorce for harm</h3>
+        <p>
+          This is the route available to wives who cannot use khula' (because returning the mahr would cause hardship) and whose husbands will not grant talaq. Grounds under the 2024 law include:
+        </p>
+        <ul>
+          <li>Physical harm or violence</li>
+          <li>Psychological abuse (expressly included in the 2024 law)</li>
+          <li>Financial abandonment (failure to provide nafaqa for three or more consecutive months)</li>
+          <li>Husband's imprisonment for three years or more (with no prospect of early release)</li>
+          <li>Incurable or transmissible disease that poses a risk to the wife's health</li>
+          <li>Absence without justification for one year or more (with no maintenance payments)</li>
+        </ul>
+        <p>
+          Evidence requirements: police reports, medical records, witness testimony, and bank records showing no maintenance payments. Psychological abuse cases often require expert psychiatric or psychological testimony. Courts apply a contextual test: would a woman of comparable background and standing consider this harm sufficient to make continued marriage impossible? The standard is fact-sensitive and courts have discretion. For full guidance on this route, see our <a href="/en/divorce-for-harm-uae/">divorce for harm UAE guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 3: Family Guidance Section -->
+      <section class="content-section">
+        <h2>The Family Guidance Section: Mandatory and Non-Skippable</h2>
+        <p>
+          Before any Muslim couple can file a divorce petition with the Personal Status Court, both spouses must attend the <strong>Family Guidance Section</strong> (Dar al-Tawjeh al-Asari), attached to the court complex. This is a mandatory pre-litigation step under Federal Decree-Law No. 41 of 2024. There are no exceptions: uncontested, contested, mutual consent -- all Muslim divorce cases must go through the Family Guidance Section first.
+        </p>
+        <p>
+          The process: three counselling sessions over approximately 30 days. Court-appointed family counsellors meet with the spouses (together or separately) and attempt to identify and resolve the underlying issues. The goal is reconciliation. In cases involving clear harm, the counsellors may issue the non-reconciliation certificate more quickly, but the process cannot be truncated below the minimum session requirement.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>What happens at Family Guidance sessions</h3>
+          <p>A trained family counsellor meets the couple. You will be asked about the marriage history, the reasons for seeking divorce, whether children are involved, and whether there are financial disputes. You are not in court -- these sessions are confidential and not adversarial. The counsellor does not decide anything. At the end of the process, if reconciliation has failed, a non-reconciliation certificate is issued. This certificate is valid for three months; you must file your court petition before it expires.</p>
+        </div>
+        <p>
+          If your spouse refuses to attend the Family Guidance Section, you can apply to the court for assistance in compelling attendance. Courts take non-attendance seriously. An obstinate spouse who repeatedly fails to appear can result in the Family Guidance Section issuing a default non-reconciliation certificate, allowing the case to proceed.
+        </p>
+      </section>
+
+      <!-- Section 4: Financial Rights -->
+      <section class="content-section">
+        <h2>Financial Rights in Sharia Divorce: What the Wife is Owed</h2>
+        <p>
+          Islamic law provides the wife with structured financial protections on divorce. These are not discretionary -- they are legal obligations that the husband owes and that UAE courts enforce through the Execution Court if necessary.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Financial right</th>
+                <th>When it falls due</th>
+                <th>Key rules</th>
+              </tr>
+            </thead>
+            <tbody>
+              {financialRights.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-bold">{row.right}</td>
+                  <td class="td-sm">{row.timing}</td>
+                  <td class="td-notes">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Mahr: the most commonly litigated financial right</h3>
+        <p>
+          Mahr is the gift specified in the marriage contract. It has two components: prompt mahr (mu'ajjal), which falls due on consummation of the marriage or at divorce if not yet paid, and deferred mahr (mu'ajjal), traditionally payable on death or divorce. Under <strong>Articles 45-48 of Federal Decree-Law No. 41 of 2024</strong>, deferred mahr falls due immediately and in full upon pronouncement of divorce -- any original deferral agreement is extinguished. The amount is fixed in the nikah contract and is enforced as a privileged debt.
+        </p>
+        <p>
+          If the husband has dissipated assets to avoid mahr payment, the Execution Court has a full toolkit: bank account freeze, salary garnishment up to 50%, travel ban, and attachment of real estate. A travel ban for mahr enforcement is available within days of an Execution Court order once the judgment is final. For full mahr enforcement strategy, see our <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a>.
+        </p>
+
+        <h3>Iddah: what it means and what it costs the husband</h3>
+        <p>
+          The iddah is the mandatory waiting period after divorce. For a divorced woman (not pregnant): three lunar months. For a pregnant divorcee: until she gives birth (however long that takes). For a widow: four months and ten days. The iddah serves as the determination period for paternity of any child born after divorce. During the iddah period, the husband must maintain the wife (nafaqa al-iddah) and provide suitable housing. He cannot force her to leave the marital home.
+        </p>
+        <p>
+          For a revocable talaq (first or second): the husband can retract the divorce during iddah and resume the marriage. For an irrevocable talaq or khula': no retraction is possible. The iddah maintenance obligation applies in all cases regardless of revocability. See our dedicated <a href="/en/iddah-waiting-period-uae/">iddah waiting period UAE guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: Custody -->
+      <section class="content-section">
+        <h2>Child Custody in Sharia Divorce</h2>
+        <p>
+          Islamic law distinguishes between hadhana (physical care and upbringing) and wilaya (legal guardianship). These are separate concepts that the 2024 law preserves.
+        </p>
+        <p>
+          <strong>Hadhana</strong> default under Federal Decree-Law No. 41 of 2024: the mother has priority for physical care of young children. Boys are typically with the mother until age 11, girls until age 13. After these ages, the court may assess the child's preference and best interests, and may transfer care to the father or allow the child to choose. The mother loses hadhana if she remarries (a new husband who is not the child's father), becomes unfit, or relocates in a way that is contrary to the child's interests.
+        </p>
+        <p>
+          <strong>Wilaya</strong> (legal guardianship) remains with the father. This means major decisions about education, travel, medical procedures, and property are made by the father even if the mother has physical care. This creates practical tensions in international cases -- a mother with hadhana cannot take the child abroad without the father's consent as wilaya-holder.
+        </p>
+        <p>
+          <strong>Child support (nafaqa al-awlad)</strong> is the father's obligation regardless of which parent has hadhana. It continues until the son reaches majority (typically 21 under UAE law for education purposes) and until the daughter marries. The amount is determined by the court based on the father's income and the child's reasonable needs. For complex custody situations including relocation and international cases, see our <a href="/en/child-custody-uae/">child custody UAE guide</a>.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>If you fear your spouse will take the children abroad</h3>
+          <p>If you are in divorce proceedings and believe your spouse may take your children to another country without your consent, apply immediately to the Personal Status Court for a travel restriction order on the children's passports. UAE courts act quickly on these applications. Once a travel restriction is in place, UAE immigration will not allow the children to depart without a court order lifting the restriction. Act before serving divorce papers if the risk is imminent -- once your spouse knows you are filing, they may act quickly.</p>
+        </div>
+      </section>
+
+      <!-- Section 6: Recognition -->
+      <section class="content-section">
+        <h2>Recognition of UAE Sharia Divorces Abroad</h2>
+        <p>
+          UAE Sharia divorces are generally well-recognised in Muslim-majority countries. Most Arab states (Egypt, Jordan, Saudi Arabia, Lebanon, Morocco, Tunisia) have reciprocal recognition frameworks or apply Islamic jurisprudence principles that render UAE Sharia decrees readily accepted. South Asian Muslim countries (Pakistan, Bangladesh) similarly recognise UAE Islamic divorces through their foreign judgment frameworks.
+        </p>
+        <p>
+          The practical step for each country is: obtain the UAE divorce certificate, attest it at UAE Ministry of Foreign Affairs (MOFA), attest at the relevant country's embassy or consulate in UAE, then file for registration with the relevant domestic authority. For Egyptian nationals: the Niyaba (public prosecutor) must be notified. For Jordanian nationals: registration at the Jordanian Personal Status Court. Your UAE lawyer should provide country-specific guidance on the home country registration step.
+        </p>
+        <p>
+          Western countries (UK, US, Germany, France) recognise UAE Sharia divorces if the procedural requirements are met: both parties were notified, the court had proper jurisdiction, and the divorce was not obtained by fraud. The main complication in Western recognition is the "natural justice" requirement -- specifically, whether the respondent had adequate notice and opportunity to participate. A UAE Sharia divorce obtained properly (with service on the respondent and their opportunity to attend, even if they chose not to) will be recognised. For attestation steps, see our <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation guide</a>.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/talaq-uae/" class="related-card">
+            <strong>Talaq in UAE</strong>
+            <span>Registration, revocability, and the triple talaq rule</span>
+          </a>
+          <a href="/en/khula-divorce-uae/" class="related-card">
+            <strong>Khula' Divorce UAE</strong>
+            <span>How a wife obtains divorce without husband consent</span>
+          </a>
+          <a href="/en/divorce-for-harm-uae/" class="related-card">
+            <strong>Divorce for Harm UAE</strong>
+            <span>Grounds, evidence, and the judicial divorce process</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr in UAE Divorce</strong>
+            <span>Enforcement, deferred mahr, and the Execution Court</span>
+          </a>
+          <a href="/en/iddah-waiting-period-uae/" class="related-card">
+            <strong>Iddah Waiting Period UAE</strong>
+            <span>Rules, maintenance obligations, and practical questions</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and realistic timelines</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Hadhana, wilaya, child support, and international cases</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>UAE Divorce Certificate Attestation</strong>
+            <span>Legalise your Sharia divorce for use abroad</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-sm { font-size: 0.82rem; color: #374151; }
+  .td-notes { font-size: 0.82rem; color: #6b7280; }
+
+  .divorce-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 640px; }
+  .divorce-table thead tr { background: #0a1628; color: #fff; }
+  .divorce-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .divorce-table td { padding: 10px 14px; font-size: 0.83rem; border-top: 1px solid #f3f4f6; vertical-align: top; }
+  .td-type { font-weight: 800; font-size: 0.9rem; white-space: nowrap; }
+  .td-type--talaq { color: #1d4ed8; }
+  .td-type--khula { color: #15803d; }
+  .td-type--judicial { color: #b45309; }
+  .td-type--faskh { color: #7c3aed; }
+
+  /* Change cards */
+  .change-list { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 0.75rem; }
+  .change-card { display: flex; gap: 1rem; padding: 1rem 1.15rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .change-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; min-width: 1.75rem; line-height: 1.3; }
+  .change-body { flex: 1; }
+  .change-title { font-weight: 700; color: #0a1628; font-size: 0.93rem; margin: 0 0 0.4rem; }
+  .change-body p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table, .divorce-table { min-width: unset; }
+  }
+</style>

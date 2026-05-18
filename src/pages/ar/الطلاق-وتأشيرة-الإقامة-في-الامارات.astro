@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق وتأشيرة الإقامة في الإمارات — ٦ مسارات للبقاء بعد الطلاق';
+const description =
+  'ماذا يحدث لإقامتك في الإمارات عند الطلاق إذا كنت على فيزا الزوج؟ فترة السماح 30 يوماً، ستة مسارات للإقامة بعد الطلاق، وهل يستطيع الزوج إلغاء فيزا الزوجة أثناء الإجراءات؟';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-وتأشيرة-الإقامة-في-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-employer-visa-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق وتأشيرة الإقامة في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'ماذا يحدث لإقامتي في الإمارات عند الطلاق إذا كنت على فيزا الزوج؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'عند صدور حكم الطلاق تنتهي فيزا الزوجة التابعة لزوجها. لكن القانون الإماراتي يُتيح للمرأة المطلَّقة الحصول على تصريح إقامة لمدة عام واحد قابل للتجديد مرة (تصريح المطلَّقة). هذا التصريح ليس تلقائياً ويجب التقدم له بنشاط لدى هيئة الهوية والجنسية والجمارك وأمن المنافذ. يوجد هامش سماح قصير (30 يوماً تقريباً) للتحول إلى وضع قانوني آخر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع الزوج إلغاء فيزا الزوجة أثناء إجراءات الطلاق قبل صدور الحكم؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'من الناحية التقنية، الزوج كفيل للزوجة يملك صلاحية طلب إلغاء الفيزا. لكن إلغاء الفيزا أثناء إجراءات قضائية قائمة يُشكِّل حجةً ضده في المحكمة. المحاكم الإماراتية تنظر بسلبية إلى هذه الخطوة وتعتبرها محاولة للضغط والإكراه. يمكن للزوجة طلب أمر قضائي مؤقت يمنع إلغاء إقامتها ريثما تُحسَم القضية.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما هي فيزا المطلَّقة في الإمارات وكيف أتقدم للحصول عليها؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'فيزا المطلَّقة هي تصريح إقامة لمدة عام واحد يُمنح للمرأة التي كانت على فيزا زوجها وصدر بحقها حكم طلاق. تُقدِّم الطلب لدى هيئة الهوية والجنسية (ICP) مع: أصل حكم الطلاق، جواز السفر الساري، بطاقة الهوية الإماراتية السابقة. الفيزا مجانية أو برسوم رمزية. قابلة للتجديد مرة واحدة فقط.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل تشمل فيزا المطلَّقة الأطفال الذين كانوا على فيزا الأب؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، الأطفال الذين كانوا على فيزا الأب يمكن تضمينهم في تصريح الإقامة الخاص بالأم المطلقة. بعد انتهاء تصريح العام، إذا كانت الأم تعمل أو تمتلك فيزا مستقلة يمكنها كفالة أطفالها. إذا كانت الحضانة مشتركة، يتفق الطرفان ضمن التسوية على من يكفل الأطفال رسمياً.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما الفيزا الخضراء وكيف تكون خياراً بعد الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الفيزا الخضراء (Green Visa) هي إقامة 5 سنوات مكتفية ذاتياً لا تستلزم كفيلاً. تُمنح للعمال المهرة والمهنيين والمستقلين الذين يُثبتون: راتباً أدنى 15,000 درهم شهرياً أو مؤهلاً مهنياً معتمداً. تمنح صاحبها صلاحية تأشيرة للمعالين (الأطفال). هي خيار مثالي للمطلقة العاملة في مجال متخصص.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكن للمطلقة الحصول على فيزا الاستثمار (الذهبية) بعد الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. إذا امتلكت المطلقة عقاراً بقيمة 2 مليون درهم أو أكثر — سواء كانت تملكه مسبقاً أو انتقل إليها ضمن التسوية — يمكنها التقدم للفيزا الذهبية لمدة 10 سنوات. يُلاحَظ أنه إذا تم نقل ملكية عقار إليها ضمن التسوية قبل صدور حكم الطلاق (حين ما زال الزواج سارياً)، تكون رسوم نقل الملكية 0.125% بدلاً من 4% — فارق مالي ضخم.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ما فترة السماح بعد إلغاء الفيزا؟ هل هي 30 يوماً دائماً؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'فترة السماح الرسمية عادةً 30 يوماً من تاريخ إلغاء الفيزا أو انتهائها. يجب خلال هذه الفترة إما: مغادرة الإمارات، التحول لوضع إقامة جديد، أو تفعيل تصريح المطلقة. التأخر يستوجب غرامات مالية يومية. في بعض الحالات قد تُمنح فترة أطول بقرار إداري، لكن لا يُفترض ذلك.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يستطيع الزوج إلغاء فيزا الأطفال لإجبار الأم على المغادرة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'إذا كانت هناك إجراءات حضانة قائمة أو أمر حضانة مؤقت، لا يستطيع الأب إلغاء فيزا الأطفال من جانب واحد. المحاكم الإماراتية تُصدر أحياناً أوامر مؤقتة لحماية الوضع القانوني للأطفال ريثما يُحسَم أمر الحضانة. هذا الموضوع يجب رفعه فوراً مع محاميك إذا كان هناك تهديد.',
+      },
+    },
+  ],
+};
+
+const visaPaths = [
+  {
+    num: '١',
+    name: 'تصريح المطلَّقة (عام واحد)',
+    icon: '📋',
+    forWho: 'النساء على فيزا الزوج',
+    duration: 'عام قابل للتجديد مرة',
+    detail: 'يُمنح تلقائياً عند تقديم الطلب. يشمل الأطفال. لا يستلزم عملاً أو دخلاً. التقديم لدى هيئة الهوية والجنسية (ICP) مع حكم الطلاق وجواز السفر.',
+    note: 'ليس تلقائياً — يجب التقدم بنشاط',
+  },
+  {
+    num: '٢',
+    name: 'فيزا العمل',
+    icon: '💼',
+    forWho: 'من لديه صاحب عمل في الإمارات',
+    duration: '1–3 سنوات (قابلة للتجديد)',
+    detail: 'صاحب العمل يرعى الفيزا الجديدة. إجراءات قياسية. يمكن البدء فيها قبل صدور حكم الطلاق للتحضير للانتقال السلس.',
+    note: 'الخيار الأبسط لمن يعمل بالفعل',
+  },
+  {
+    num: '٣',
+    name: 'الفيزا الخضراء (5 سنوات)',
+    icon: '🌱',
+    forWho: 'العمال المهرة والمهنيون',
+    duration: '5 سنوات قابلة للتجديد',
+    detail: 'لا تستلزم كفيلاً. شرط الراتب: 15,000 درهم شهرياً أو ما يعادله من مؤهل مهني. تتيح كفالة المعالين. مثالية للمطلقة المهنية.',
+    note: 'يجب إثبات المؤهل أو الدخل',
+  },
+  {
+    num: '٤',
+    name: 'فيزا فري زون / المستقل',
+    icon: '🔓',
+    forWho: 'أصحاب المشاريع المستقلة',
+    duration: '1–2 سنة (قابلة للتجديد)',
+    detail: 'رخصة عمل حر من منطقة حرة أو وزارة الموارد البشرية. تستلزم إثبات نشاط أو دخل. رسوم الترخيص تتراوح بين 5,000–15,000 درهم سنوياً حسب المنطقة الحرة.',
+    note: 'تُقدَّم في أي وقت قبل انتهاء الفيزا الحالية',
+  },
+  {
+    num: '٥',
+    name: 'فيزا الحضانة',
+    icon: '👶',
+    forWho: 'الوالد الحاضن (مع فيزا سارية)',
+    duration: 'بحسب فيزا الوالد',
+    detail: 'ولي الأمر الحاضن يمكنه كفالة الأطفال بعد انتقال الفيزا إليه. يشترط أن يكون الوالد الحاضن حاملاً لفيزا مستقلة سارية المفعول.',
+    note: 'يحتاج لقرار حضانة سابق من المحكمة',
+  },
+  {
+    num: '٦',
+    name: 'فيزا الاستثمار / الذهبية',
+    icon: '🏆',
+    forWho: 'مالكو العقارات والمستثمرون',
+    duration: '10 سنوات (قابلة للتجديد)',
+    detail: 'عقار بقيمة 2 مليون درهم أو أكثر باسمك — سواء كنت تملكه مسبقاً أو انتقل إليك ضمن التسوية — يؤهلك للفيزا الذهبية. مكتفية ذاتياً تماماً، لا تستلزم كفيلاً.',
+    note: 'نقل العقار قبل حكم الطلاق يوفِّر رسوم دائرة الأراضي (0.125% بدلاً من 4%)',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'ما الخطوات الفورية التي يجب اتخاذها لحماية إقامتي عند بدء إجراءات الطلاق؟',
+    answer: 'أولاً: لا تنتظر حتى صدور الحكم — ابدأ التخطيط للوضع البديل فوراً. ثانياً: تحقق من تاريخ انتهاء فيزتك الحالية وهل ستنتهي قبل صدور الحكم. ثالثاً: إذا كان لديك صاحب عمل، أخبر قسم الموارد البشرية بالأمر لاتخاذ إجراءات النقل مبكراً. رابعاً: إذا لم يكن لديك عمل، استشر محاميك حول الخيار الأنسب (فيزا حرة، استثمار، أو غيرها). خامساً: قدِّم طلب تصريح المطلقة فور صدور الحكم دون تأخير.',
+  },
+  {
+    question: 'هل يمكن للزوج استخدام تهديد إلغاء الفيزا كأداة ضغط في التفاوض؟',
+    answer: 'هذا النمط موثَّق في بعض قضايا الطلاق. المحاكم الإماراتية تُصدر حماية مؤقتة للوضع القانوني في مثل هذه الحالات. يمكنك طلب أمر قضائي مؤقت يمنع الزوج من إلغاء إقامتك ريثما تُحسَم القضية. وثِّق أي تهديدات بالإلغاء وقدِّمها لمحاميك لتضمينها في طلب الحماية المؤقتة.',
+  },
+  {
+    question: 'إذا انتهت فيزتي أثناء إجراءات الطلاق، ماذا أفعل؟',
+    answer: 'تواصل فوراً مع محاميك وهيئة الهوية والجنسية. في كثير من الحالات، يمكن تمديد الفيزا لأسباب إنسانية مرتبطة بإجراءات قضائية قائمة. قدِّم طلباً مكتوباً للهيئة يوضح أنك في منتصف إجراءات قضائية، مرفقاً برقم القضية وشهادة من المحكمة بسريان الإجراءات.',
+  },
+  {
+    question: 'هل تؤثر فيزتي على حضانة الأطفال في المحكمة؟',
+    answer: 'لا تُؤثر الفيزا مباشرةً على قرار الحضانة. معيار الحضانة هو مصلحة الطفل الفضلى. لكن عدم القدرة على إثبات استقرار الإقامة قد يُستخدَم كحجة ضدك من الطرف الآخر. لذا فإن تأمين وضع إقامة مستقر قبل جلسات الحضانة يُعزِّز مركزك القانوني.',
+  },
+  {
+    question: 'ماذا يحدث لفيزا الخادمة إذا كانت مسجَّلةً في فيزا الزوج؟',
+    answer: 'إذا كانت العمالة المنزلية مسجَّلةً في كفالة الزوج، تنتهي كفالتهم بانتهاء الزواج القانوني. يمكن نقل كفالة العمالة المنزلية إلى الزوجة ضمن بنود التسوية — خاصةً إذا كانت هي الحاضنة للأطفال. هذا البند يجب تضمينه صراحةً في وثيقة التسوية.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        إذا كانت إقامتك في الإمارات مرتبطةً بفيزا زوجك، فالطلاق يُخلِق مسألة إقامة فورية وجدية. هذا الدليل يشرح ما يحدث لإقامتك خطوةً بخطوة، والمسارات الست المتاحة للبقاء في الإمارات بعد الطلاق، وما يجب فعله لحماية وضعك القانوني منذ الآن.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>ما يجب معرفته فوراً</h2>
+        <ul>
+          <li><strong>فيزا الزوج تنتهي بانتهاء الزواج</strong> — لكن هناك تصريح عام للمطلَّقة.</li>
+          <li><strong>التصريح ليس تلقائياً</strong> — يجب التقدم له بنشاط لدى هيئة الهوية والجنسية.</li>
+          <li><strong>فترة السماح 30 يوماً</strong> — لا تُرجئ الإجراءات حتى اللحظة الأخيرة.</li>
+          <li><strong>إلغاء الفيزا أثناء الإجراءات</strong> — يمكن منعه بأمر قضائي مؤقت.</li>
+          <li><strong>ست مسارات للبقاء</strong> — واحدة منها تناسبك حتماً.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>ماذا يحدث لإقامتك خطوةً بخطوة</h2>
+
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">١</div>
+            <div class="step-body">
+              <strong class="step-title">أثناء إجراءات الطلاق</strong>
+              <p>فيزتك لا تزال سارية. لكن إذا أقدم الزوج على إلغائها أثناء سريان الإجراءات، قدِّم طلب أمر مؤقت للمحكمة لمنعه. المحاكم تُصدر هذه الأوامر لحماية وضع الطرف الأضعف حتى صدور الحكم النهائي.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٢</div>
+            <div class="step-body">
+              <strong class="step-title">صدور حكم الطلاق</strong>
+              <p>تنتهي رسمياً فيزة الزوجة التابعة لفيزا الزوج. تبدأ فترة السماح (30 يوماً تقريباً). خلال هذه الفترة يجب اتخاذ إجراء: التقدم لتصريح المطلَّقة، أو الانتقال لفيزا جديدة، أو المغادرة.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٣</div>
+            <div class="step-body">
+              <strong class="step-title">التقدم لتصريح المطلَّقة</strong>
+              <p>توجَّهي إلى مركز هيئة الهوية والجنسية والجمارك وأمن المنافذ (ICP) بحكم الطلاق الأصلي وجواز السفر. يُمنح التصريح لمدة عام قابل للتجديد مرة. الأطفال يمكن تضمينهم.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">٤</div>
+            <div class="step-body">
+              <strong class="step-title">اتخاذ قرار الإقامة الدائمة</strong>
+              <p>خلال العام أو السنتَين التاليَتَين، تحتاجين لبناء وضع إقامة مستقل ومستدام — إما عبر العمل أو الاستثمار أو الفيزا الخضراء. هذا القرار يجب اتخاذه قبل انتهاء تصريح المطلَّقة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>المسارات الست للإقامة بعد الطلاق</h2>
+
+        <div class="visa-list">
+          {visaPaths.map(v => (
+            <div class="visa-card">
+              <div class="visa-header">
+                <div class="visa-num">{v.num}</div>
+                <div class="visa-icon">{v.icon}</div>
+                <div>
+                  <h3 class="visa-name">{v.name}</h3>
+                  <div class="visa-meta">
+                    <span class="meta-tag blue">{v.forWho}</span>
+                    <span class="meta-tag gold">{v.duration}</span>
+                  </div>
+                </div>
+              </div>
+              <p class="visa-detail">{v.detail}</p>
+              <p class="visa-note">{v.note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>تصريح المطلَّقة — التفاصيل الكاملة</h2>
+
+        <p>
+          تصريح الإقامة المخصص للمطلَّقات هو نظام استثنائي أُقرَّ في الإمارات لحماية الزوجات اللواتي يفقدن إقامتهن بسبب الطلاق. إليك تفاصيله:
+        </p>
+
+        <div class="factors-list">
+          <div class="factor-item">
+            <h3>مدة التصريح</h3>
+            <p>عام واحد ميلادي من تاريخ صدور الحكم. قابل للتجديد مرة واحدة فقط — أي الحد الأقصى سنتان. بعدها يجب الانتقال لوضع إقامة مستقل.</p>
+          </div>
+          <div class="factor-item">
+            <h3>الوثائق المطلوبة</h3>
+            <p>حكم الطلاق الأصلي أو نسخة موثَّقة، جواز السفر الساري، بيانات بيومترية جديدة (إذا كانت القديمة منتهية)، صور شخصية. الإجراء نفسه يتم في مراكز هيئة الهوية والجنسية.</p>
+          </div>
+          <div class="factor-item">
+            <h3>ماذا يُغطي التصريح</h3>
+            <p>إقامة قانونية في الإمارات. العمل غير مشمول تلقائياً — يجب الحصول على تصريح عمل منفصل. الأطفال يمكن تضمينهم. لا يُلزِم بكفيل.</p>
+          </div>
+          <div class="factor-item">
+            <h3>ماذا لا يُغطي</h3>
+            <p>لا يُتيح فتح حساب بنكي تجاري باسم الشركة. لا يُفيد في بعض إجراءات الإقامة طويلة الأمد. لا يمكن تجديده لمرة ثالثة.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>فيزا الأطفال بعد انتقال الحضانة</h2>
+
+        <p>
+          مسألة فيزا الأطفال من أكثر المسائل تعقيداً في الطلاق الإماراتي — خاصةً حين تتغيَّر الحضانة من الأب إلى الأم.
+        </p>
+
+        <div class="types-list">
+          <div class="type-card">
+            <div class="type-header">
+              <span class="type-icon">📋</span>
+              <div>
+                <h3 class="type-name">نقل كفالة الأطفال للأم</h3>
+              </div>
+            </div>
+            <p class="type-detail">إذا حصلت الأم على حكم حضانة وكانت تحمل فيزا مستقلة سارية، يمكنها نقل كفالة الأطفال إليها. تتطلب العملية: حكم الحضانة، وثيقة إثبات فيزا الأم، وموافقة الأب الرسمية (أو أمر المحكمة في حالة رفضه).</p>
+          </div>
+          <div class="type-card">
+            <div class="type-header">
+              <span class="type-icon">⚖️</span>
+              <div>
+                <h3 class="type-name">الحضانة المشتركة وكفالة الأطفال</h3>
+              </div>
+            </div>
+            <p class="type-detail">في الحضانة المشتركة لغير المسلمين (قانون 2022)، يتفق الطرفان في التسوية على من يكفل الأطفال رسمياً. الكفالة الرسمية لا تُساوي الحضانة — يمكن أن يكفلهم الأب إدارياً مع وجود حضانة متساوية فعلياً.</p>
+          </div>
+          <div class="type-card">
+            <div class="type-header">
+              <span class="type-icon">🚨</span>
+              <div>
+                <h3 class="type-name">تهديد إلغاء فيزا الأطفال</h3>
+              </div>
+            </div>
+            <p class="type-detail">إذا هدَّد الأب بإلغاء فيزا الأطفال كورقة ضغط، تقدَّمي فوراً لمحكمة الأحوال الشخصية بطلب أمر مؤقت بحظر أي تغيير في وضع إقامة الأطفال ريثما يُحسَم أمر الحضانة. المحاكم تستجيب بجدية لهذه الطلبات.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>التوقيت الأمثل: ما تفعله قبل صدور الحكم</h2>
+
+        <div class="info-box">
+          <p><strong>أهم نصيحة عملية:</strong> لا تنتظر حكم الطلاق لبدء التخطيط لوضع إقامتك. ابدئي من اليوم الذي تقرِّرين فيه المضي بالطلاق. استشيري محامياً في مرحلة مبكرة حول أي مسار إقامة يناسبك، وجهِّزي الوثائق المطلوبة، وإذا كان لديك عمل فتحدثي مع صاحب العمل مسبقاً. الإقامة غير المستقرة تُضعِف مركزك في مفاوضات الحضانة والتسوية.</p>
+        </div>
+
+        <div class="factors-list">
+          <div class="factor-item">
+            <h3>قبل رفع الدعوى</h3>
+            <p>ابحثي عن الخيار البديل للإقامة المناسب لك. تحققي من صلاحية جواز سفرك وبطاقة هويتك. إذا كنت تعملين، تأكدي من أن عقد العمل ساري وقابل للتحويل كفيزا عمل مستقلة.</p>
+          </div>
+          <div class="factor-item">
+            <h3>أثناء الإجراءات</h3>
+            <p>ضمِّني في التسوية بنوداً صريحة عن: كفالة الأطفال، نقل أي عقار يؤهل للفيزا الذهبية، وعدم الاعتراض على طلبات الإقامة المستقلة. الصياغة القانونية لهذه البنود لا تقل أهميةً عن بنود النفقة.</p>
+          </div>
+          <div class="factor-item">
+            <h3>بعد صدور الحكم فوراً</h3>
+            <p>تقدَّمي لتصريح المطلَّقة في أسرع وقت. لا تنتظري حتى اليوم الأخير من فترة السماح. إذا كنت تنتقلين لفيزا عمل أو فيزا خضراء، ابدئي الإجراءات الموازية قبل انتهاء فيزتك الحالية.</p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/تأشيرة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>التأشيرة بعد الطلاق</strong>
+            <span>دليل شامل للإقامة</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>جميع الحقوق القانونية</span>
+          </a>
+          <a href="/ar/الطلاق-للمغتربين-في-الامارات/" class="related-card">
+            <strong>الطلاق للمغتربين</strong>
+            <span>دليل المقيمين الأجانب</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل للإجراءات</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box ul { margin: 0; padding-right: 1.25rem; padding-left: 0; }
+  .answer-box li { color: #1f2937; line-height: 1.9; font-size: 0.97rem; margin-bottom: 0.25rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.9; font-size: 0.95rem; margin-bottom: 0.75rem; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num { background: #0a1628; color: #c9a84c; font-weight: 800; font-size: 0.9rem; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.8; margin: 0.25rem 0 0; }
+  .step-title { font-size: 0.97rem; font-weight: 700; color: #0a1628; }
+
+  .visa-list { display: flex; flex-direction: column; gap: 1rem; }
+  .visa-card { border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; background: #fff; }
+  .visa-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+  .visa-num { background: #0a1628; color: #c9a84c; font-weight: 800; font-size: 0.82rem; min-width: 1.6rem; height: 1.6rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+  .visa-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .visa-name { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 0 0 6px; }
+  .visa-meta { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .meta-tag { font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+  .meta-tag.blue { background: #e0f2fe; color: #075985; }
+  .meta-tag.gold { background: #fef3c7; color: #92400e; }
+  .visa-detail { font-size: 0.87rem; color: #374151; line-height: 1.8; margin: 0 0 0.4rem; }
+  .visa-note { font-size: 0.75rem; color: #9ca3af; margin: 0; font-style: italic; }
+
+  .factors-list { display: flex; flex-direction: column; gap: 1rem; }
+  .factor-item { border-right: 4px solid #c9a84c; padding: 1rem 1rem 1rem 0.75rem; background: #fffbeb; border-radius: 0 10px 10px 0; }
+  .factor-item h3 { font-size: 0.92rem; font-weight: 700; color: #0a1628; margin: 0 0 0.35rem; }
+  .factor-item p { font-size: 0.85rem; color: #4b5563; line-height: 1.75; margin: 0; }
+
+  .types-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .type-card { border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 1rem 1.25rem; background: #fff; }
+  .type-header { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+  .type-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .type-name { font-size: 0.97rem; font-weight: 700; color: #0a1628; margin: 0; }
+  .type-detail { font-size: 0.85rem; color: #374151; line-height: 1.8; margin: 0; }
+
+  .info-box { background: #eff6ff; border-right: 4px solid #3b82f6; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+  .info-box p { font-size: 0.87rem; color: #1e3a5f; line-height: 1.8; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

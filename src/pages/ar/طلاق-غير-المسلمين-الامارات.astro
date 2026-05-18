@@ -1,0 +1,411 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'طلاق غير المسلمين في الإمارات — دليل شامل للمقيمين الأجانب ٢٠٢٥';
+const description =
+  'طلاق غير المسلمين في الإمارات بموجب المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢: طلاق بلا إثبات خطأ، حضانة مشتركة متساوية، لا فترة عدة، خيار تطبيق قانون الدولة الأصلية. دليل كامل للمقيمين الأجانب.';
+
+const canonical = 'https://divorceu.ae/ar/طلاق-غير-المسلمين-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/non-muslim-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'طلاق غير المسلمين في الإمارات' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'هل ينطبق المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢ على جميع إمارات الدولة؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٢ قانون اتحادي يسري على جميع الإمارات السبع، وليس على أبوظبي وحدها. دخل حيز التنفيذ في الأول من فبراير ٢٠٢٣. وتتميز أبوظبي بوجود محكمة شؤون الأسرة المدنية المخصصة للغير مسلمين والمُنشأة بموجب قانون رقم ١٤ لسنة ٢٠٢١.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يمكنني تطبيق قانون بلدي الأصلي بدلاً من القانون الإماراتي في دعوى الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. تتيح المادة الأولى من المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢ لغير المسلمين صراحةً اختيار تطبيق قانون دولتهم الأصلية على الطلاق والحضانة والميراث وتقسيم الممتلكات. يجب إعلان هذا الاختيار أمام المحكمة وتقديم نسخ رسمية مترجمة من القانون الأجنبي المختار، على ألا يتعارض مع النظام العام الإماراتي.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل الحضانة المشتركة المتساوية تلقائية لغير المسلمين بموجب القانون الجديد؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم. بموجب المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢، الحضانة المشتركة المتساوية للأطفال حتى سن الثامنة عشرة هي الحكم الافتراضي لوالدين غير مسلمين. كلا الوالدين يتمتعان بحقوق متساوية في الحضانة واتخاذ القرارات، ما لم تُقرر المحكمة خلاف ذلك لمصلحة الطفل.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كم يستغرق طلاق غير المسلمين في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'الطلاق الودي غير المتنازع عليه لغير المسلمين يستغرق ١ إلى ٢ شهر من تقديم الطلب حتى صدور الحكم. الجلسة الأولى تُحدد في موعد لا يقل عن ٣٠ يوماً من تاريخ التقديم؛ وإذا قُبل اتفاق التسوية صدر حكم الطلاق في تلك الجلسة. القضايا المتنازع عليها تستغرق عادةً ٦ إلى ٩ أشهر.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يجب الذهاب إلى مركز توجيه الأسرة قبل تقديم دعوى الطلاق؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'لا. غير المسلمين معفيون صراحةً من الإحالة الإلزامية إلى لجنة التوجيه والإصلاح الأسري بموجب المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢. هذا يُوفر وقتاً كبيراً مقارنةً بإجراءات الطلاق للمسلمين التي تشترط جلسات مصالحة قبل المضي أمام المحكمة.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'كيف تُقسَّم الأصول لغير المسلمين في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'يطبق المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢ نظام الملكية المنفصلة: كل زوج يحتفظ بالأصول المسجلة باسمه. لا يوجد تقسيم تلقائي بالنصف. لكن يمكن لغير المسلمين اختيار تطبيق قانون دولتهم الأصلية الذي قد يتيح مشاركة أوسع للأصول. يُستحسن استشارة محامٍ لمعرفة أيّ النظامين أفضل لوضعك.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'هل يُعترف بحكم الطلاق الإماراتي في بلدي الأصلي؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'نعم، في معظم الحالات. لاستخدام حكم الطلاق الإماراتي في بلدك الأصلي، احصل على تصديق الأبوستيل من وزارة الخارجية الإماراتية وترجمة رسمية معتمدة. تعترف معظم دول الاتحاد الأوروبي والمملكة المتحدة وكندا وأستراليا بأحكام الطلاق الإماراتية عبر هذا المسار.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ماذا تغيّر قانون ٤١/٢٠٢٢ بالنسبة للمسيحيين والدروز والعرب العلمانيين في الإمارات؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'قبل عام ٢٠٢٢، كان غير المسلمين يخضعون في الغالب لأحكام مستمدة من الشريعة الإسلامية تشمل إثبات الضرر والمصالحة الإلزامية وفترة العدة. القانون الجديد ألغى هذه المتطلبات وأرسى إطاراً مدنياً علمانياً: طلاق بلا إثبات ذنب، حضانة متساوية، لا فترة انتظار، وحق اختيار قانون الدولة الأصلية.',
+      },
+    },
+  ],
+};
+
+const comparison = [
+  { aspect: 'اشتراط الخطأ', before: 'يجب إثبات الضرر أو الخطأ للحصول على الطلاق', after: 'لا يُشترط — يجوز لأي زوج رفع الدعوى دون ذكر سبب' },
+  { aspect: 'المصالحة الإلزامية', before: 'الإحالة الإلزامية إلى لجنة التوجيه الأسري', after: 'معفيون — غير المسلمين لا يلزمهم المرور باللجنة' },
+  { aspect: 'فترة الانتظار', before: 'فترة العدة الشرعية الإلزامية', after: 'لا توجد — يسري الطلاق فور صدور الحكم' },
+  { aspect: 'تقسيم الأصول', before: 'قواعد الشريعة مطبقة على غير المسلمين', after: 'نظام الملكية المنفصلة أو قانون الدولة الأصلية بالاختيار' },
+  { aspect: 'حضانة الأطفال', before: 'قواعد تُرجِّح الأم بشكل افتراضي', after: 'حضانة مشتركة متساوية حتى ١٨ سنة — افتراضية لكلا الوالدين' },
+  { aspect: 'الميراث', before: 'حصص جنسية وفق الشريعة', after: 'حصص متساوية بصرف النظر عن الجنس' },
+  { aspect: 'اختيار القانون', before: 'خيارات محدودة وغير واضحة', after: 'حق صريح في تطبيق قانون الدولة الأصلية (المادة ١)' },
+  { aspect: 'أول جلسة', before: 'لا توجد مهلة زمنية محددة', after: 'لا تقل عن ٣٠ يوماً من تاريخ التقديم' },
+];
+
+const faqItems = [
+  {
+    question: 'على من يسري المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢؟',
+    answer: 'يسري القانون على غير المسلمين من المواطنين الإماراتيين، والمقيمين الأجانب غير المسلمين في الإمارات. يشترط أن يكون كلا الزوجين أو أحدهما على الأقل مقيماً في الإمارات وقت رفع الدعوى. إذا كان أحد الزوجين مسلماً تطبق قواعد مختلفة. تُرفع الدعوى في الإمارة التي يكون فيها مقيداً إقامتك.',
+  },
+  {
+    question: 'ما المستندات المطلوبة لدعوى طلاق غير المسلمين؟',
+    answer: 'المستندات الأساسية: عقد الزواج مصدقاً ومترجماً رسمياً إلى العربية، جوازا السفر وبطاقتا الهوية الإماراتية لكلا الزوجين، إثبات الإقامة في الإمارات (عقد إيجار أو فاتورة)، شهادات ميلاد الأطفال إن وُجدوا، كشوفات بنكية ووثائق الأصول. إذا اخترت تطبيق قانون دولتك الأصلية أضف نسخاً مترجمة رسمياً من التشريع الأجنبي المختار.',
+  },
+  {
+    question: 'هل يمكن لعربي غير مسلم (مسيحي، درزي) الاستفادة من هذا القانون؟',
+    answer: 'نعم. القانون يسري على جميع غير المسلمين المقيمين في الإمارات بصرف النظر عن الجنسية أو القومية. المسيحيون والدروز والملحدون والعلمانيون من العرب وغيرهم، إذا كانوا مقيمين في الإمارات وغير مسلمين، يستفيدون جميعاً من هذا الإطار المدني الجديد. لا يشترط القانون جنسية معينة.',
+  },
+  {
+    question: 'ما خيارات محاكم مركز دبي المالي العالمي DIFC لغير المسلمين؟',
+    answer: 'محاكم DIFC تعمل وفق القانون الإنجليزي (القانون العام) وتُجري إجراءاتها باللغة الإنجليزية. هي خيار مناسب للمقيمين في دبي ممن لديهم صلة بـ DIFC من خلال عقد عمل أو أصول مسجلة فيه. تُعدّ الأنسب لمن يأتون من دول القانون العام (المملكة المتحدة، أستراليا، كندا). تتميز بعدم وجود مصالحة إلزامية وبأسرع في القضايا المتنازع عليها مقارنةً بمحاكم الدولة الاتحادية.',
+  },
+  {
+    question: 'كيف أختار بين محكمة الأسرة الاتحادية ومحاكم DIFC؟',
+    answer: 'المحكمة الاتحادية: رسوم أقل، متاحة لجميع المقيمين، إجراءات باللغة العربية. محاكم DIFC: رسوم أعلى (٥٠٠٠-١٠٠٠٠ درهم)، إجراءات بالإنجليزية، أسرع في القضايا المعقدة، تطبق مبدأ التقاسم الإنجليزي لتوزيع الأصول. إذا كانت أصولك الكبرى مسجلة بالنظام الاتحادي الإماراتي فالمحكمة الاتحادية أوفر تكلفةً وأكثر مباشرةً.',
+  },
+  {
+    question: 'ماذا يحدث لأصولي في الإمارات إذا اخترت تطبيق قانون بلدي الأصلي؟',
+    answer: 'إذا اخترت تطبيق قانون دولتك الأصلية (كالقانون البريطاني مثلاً)، قد تحق لك مطالبة بأصول مسجلة باسم الزوج الآخر إذا كان قانونك الأصلي يتيح التوزيع العادل. هذا يختلف جوهرياً عن النظام الإماراتي الذي يعتمد الملكية المنفصلة. لكن انتبه: قد يستلزم تنفيذ الحكم على الأصول الإماراتية إجراءات إضافية لدى المحاكم الإماراتية.',
+  },
+  {
+    question: 'هل يمكن للزوج الذي يعيش خارج الإمارات تقديم دعوى الطلاق هنا؟',
+    answer: 'يشترط القانون أن يكون أحد الزوجين على الأقل مقيماً في الإمارات وقت رفع الدعوى. إذا كان أحدهما خارج الإمارات يمكن تبليغه رسمياً عبر الطرق الدبلوماسية والقنوات القانونية المعتمدة. محكمة DIFC بإمكانها أيضاً قبول القضية إذا توافرت صلة كافية بـ DIFC حتى لو كان أحد الزوجين خارج الدولة.',
+  },
+  {
+    question: 'هل يختلف طلاق غير المسلمين عن طلاق المسلمين في نفقة ما بعد الطلاق؟',
+    answer: 'نعم. في طلاق المسلمين تُطبق أحكام النفقة الشرعية (نفقة العدة والمتعة ونفقة الأولاد) بموجب قانون الأحوال الشخصية الاتحادي. في طلاق غير المسلمين يطبق القانون نظام الملكية المنفصلة بشكل افتراضي دون نفقة عدة، وتُحدد المحكمة النفقة إن وُجدت وفق الظروف وليس وفق أحكام فقهية. اختيار قانون الدولة الأصلية قد يُوفر تغطية نفقة أوسع.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">طلاق غير المسلمين · الإمارات ٢٠٢٥</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٢ غيّر قواعد الطلاق للمقيمين الأجانب غير المسلمين في الإمارات تغييراً جوهرياً. طلاق بلا إثبات ذنب، حضانة مشتركة متساوية، لا فترة انتظار، وحق تطبيق قانون دولتك الأصلية. كثيرون لا يعرفون هذه الحقوق. هذا الدليل يشرح ما تغيّر وكيف تسير الإجراءات وأي محكمة تختار.
+      </p>
+      <p class="hero-author">بقلم <strong>ألكسي سوونينن</strong> · مستشار قانوني ومقيم في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>أبرز الحقائق: طلاق غير المسلمين في الإمارات</h2>
+        <p>
+          <strong>القانون المطبّق:</strong> المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٢ (ساري منذ ١ فبراير ٢٠٢٣) — يشمل جميع الإمارات السبع.<br />
+          <strong>طلاق بلا ذنب:</strong> يجوز لأي زوج رفع الدعوى منفرداً دون إثبات خطأ.<br />
+          <strong>لا مصالحة إلزامية:</strong> غير المسلمين معفيون من لجنة التوجيه الأسري.<br />
+          <strong>لا فترة انتظار:</strong> يسري الطلاق فور صدور الحكم.<br />
+          <strong>الحضانة:</strong> مشتركة ومتساوية حتى ١٨ سنة — الحكم الافتراضي للوالدين.<br />
+          <strong>المدة الزمنية:</strong> ١-٢ شهر (غير متنازع عليه)، ٦-٩ أشهر (متنازع عليه).<br />
+          <strong>رسوم التقديم:</strong> ٢٠٠٠-٣٠٠٠ درهم.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>ما الذي غيّره المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢؟</h2>
+        <p>
+          قبل أكتوبر ٢٠٢٢، كان غير المسلمين المقيمون في الإمارات يضطرون للتعامل مع محاكم الأحوال الشخصية التي طبّقت في أغلب الأحيان مبادئ مستمدة من الشريعة الإسلامية، تشمل وجوب إثبات الضرر والمصالحة الإلزامية وفترة العدة. المرسوم بقانون رقم ٤١ لسنة ٢٠٢٢ أزاح هذا الإطار كلياً واستبدله بنظام مدني علماني.
+        </p>
+        <p>
+          يتضمن القانون ١٨ حكماً تُغطي الطلاق والزواج المدني وحضانة الأطفال والنفقة والميراث. ويسري على جميع غير المسلمين من المواطنين الإماراتيين والمقيمين الأجانب في الإمارات السبع دون استثناء.
+        </p>
+
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>الجانب</div>
+            <div>قبل ٢٠٢٢</div>
+            <div>بموجب القانون ٤١/٢٠٢٢</div>
+          </div>
+          {comparison.map((row, i) => (
+            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
+              <div class="compare-factor">{row.aspect}</div>
+              <div class="compare-before">{row.before}</div>
+              <div class="compare-after">{row.after}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>على من يسري القانون؟</h2>
+        <ul class="checklist">
+          <li>المقيمون الأجانب غير المسلمون في الإمارات بصرف النظر عن الجنسية</li>
+          <li>غير المسلمين من المواطنين الإماراتيين</li>
+          <li>يجب أن يكون كلا الزوجين غير مسلمين؛ إذا كان أحدهما مسلماً تُطبق قواعد مختلفة</li>
+          <li>يجب أن يكون أحد الزوجين على الأقل مقيماً في الإمارات وقت رفع الدعوى</li>
+          <li>تُرفع الدعوى في الإمارة التي تكون فيها مُسجَّلاً كمقيم</li>
+        </ul>
+        <div class="info-box">
+          <p><strong>المقيمون في أبوظبي:</strong> يستخدمون <strong>محكمة أبوظبي للأسرة المدنية</strong> المُنشأة بموجب القانون رقم ١٤ لسنة ٢٠٢١. هذه المحكمة مخصصة لقضايا غير المسلمين وقد يكون بعض قضاتها من غير المسلمين.</p>
+          <p style="margin-bottom:0"><strong>المقيمون في دبي وسائر الإمارات:</strong> يتقدمون لمحكمة الأسرة في قسمها المدني. يُتاح للمقيمين في دبي أيضاً خيار <strong>محاكم مركز دبي المالي العالمي DIFC</strong> كبديل وفق القانون الإنجليزي (انظر أدناه).</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>إجراءات الطلاق خطوةً بخطوة</h2>
+        <ol class="steps">
+          <li>
+            <div class="step-num">١</div>
+            <div class="step-body">
+              <h3>التأكد من الاختصاص القضائي</h3>
+              <p>يجب أن تكون مقيماً في الإمارات. قدِّم الدعوى في الإمارة التي تتوفر فيها إقامتك المسجلة. يمكن لأي من الزوجين بدء الإجراءات.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٢</div>
+            <div class="step-body">
+              <h3>تعيين محامٍ متخصص في شؤون الأسرة</h3>
+              <p>وكِّل محامياً إماراتياً مرخصاً متخصصاً في قضايا الأحوال الشخصية لغير المسلمين. لا تحتاج إلى المرور بمركز التوجيه الأسري. اتفق مع محاميك مسبقاً هل ستسير وفق القانون ٤١/٢٠٢٢ أم ستختار قانون دولتك الأصلية.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٣</div>
+            <div class="step-body">
+              <h3>تجهيز المستندات وتقديم الطلب</h3>
+              <p>تشمل المستندات: عقد الزواج مصدقاً ومترجماً رسمياً للعربية، جوازا السفر وبطاقتا الهوية الإماراتية، إثبات الإقامة في الإمارات، شهادات ميلاد الأطفال إن وُجدوا، وثائق مالية وبنكية. إذا اخترت قانون دولتك الأصلية أضف نسخاً مُعلَّقةً ومترجمة من التشريع الأجنبي.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٤</div>
+            <div class="step-body">
+              <h3>حضور الجلسة الأولى</h3>
+              <p>تُحدد الجلسة بعد مرور ٣٠ يوماً على الأقل من تاريخ التقديم. في الطلاق الودي الذي يوافق فيه الزوجان على كل البنود، يراجع القاضي اتفاق التسوية ويُصدر الطلاق في هذه الجلسة. القضايا المتنازع عليها تتطلب جلسات إضافية.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٥</div>
+            <div class="step-body">
+              <h3>صدور حكم الطلاق</h3>
+              <p>تُصدر المحكمة حكم الطلاق. بموجب القانون ٤١/٢٠٢٢ يسري الحكم فوراً دون فترة انتظار أو عدة. يتضمن الحكم: الطلاق، الحضانة، النفقة، وتوزيع الأصول وفق ما تم الاتفاق عليه أو الأمر به.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">٦</div>
+            <div class="step-body">
+              <h3>الأبوستيل والتسجيل في الخارج</h3>
+              <p>لاستخدام حكم الطلاق في بلدك الأصلي احصل على تصديق الأبوستيل من وزارة الخارجية الإماراتية وترجمة رسمية معتمدة. يُعترف بأحكام الطلاق الإماراتية في معظم دول الاتحاد الأوروبي والمملكة المتحدة وكندا وأستراليا من خلال هذا المسار.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>حق تطبيق قانون دولتك الأصلية</h2>
+        <p>
+          تمنح المادة الأولى من القانون ٤١/٢٠٢٢ غير المسلمين حق اختيار تطبيق قانون دولتهم الأصلية بدلاً من القانون الإماراتي على الطلاق وتقسيم الأصول والحضانة والميراث.
+        </p>
+        <h3>لماذا هذا مهم في توزيع الأصول؟</h3>
+        <p>
+          القانون الإماراتي يعتمد نظام الملكية المنفصلة: كل زوج يحتفظ بالأصول المسجلة باسمه. لكن إذا كنت بريطانياً وطلبت تطبيق القانون الإنجليزي مثلاً، قد تحق لك مطالبة بحصة من الأصول المسجلة باسم زوجك وفق مبدأ التوزيع العادل. هذا يمكن أن يُغير النتيجة المالية للطلاق تغييراً جوهرياً.
+        </p>
+        <h3>كيف تستخدم هذا الحق؟</h3>
+        <ul class="checklist">
+          <li>أعلن الاختيار صراحةً أمام المحكمة (يُباشر ذلك محاميك)</li>
+          <li>قدِّم نسخاً مُصادَقاً عليها ومترجمة رسمياً من التشريع الأجنبي المختار</li>
+          <li>قد يُطلب تقديم تقارير خبراء في القانون الأجنبي</li>
+          <li>يجب ألا يتعارض القانون المختار مع النظام العام الإماراتي</li>
+          <li>إذا وُجدت ثغرات إجرائية في القانون الأجنبي يُطبَّق القانون الإماراتي بديلاً</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>الرسوم والجدول الزمني</h2>
+        <div class="fee-grid">
+          <div class="fee-card">
+            <p class="fee-type">رسوم التقديم للمحكمة</p>
+            <p class="fee-amount">٢٠٠٠-٣٠٠٠ درهم</p>
+            <p class="fee-detail">تتفاوت بحسب الإمارة وتعقيد القضية</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">أتعاب المحامي (غير متنازع)</p>
+            <p class="fee-amount">٨٠٠٠-٢٠٠٠٠ درهم</p>
+            <p class="fee-detail">إعداد اتفاق التسوية وتقديمه</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">أتعاب المحامي (متنازع)</p>
+            <p class="fee-amount">٢٠٠٠٠-٨٠٠٠٠ درهم+</p>
+            <p class="fee-detail">جلسات متعددة، نزاعات أصول وحضانة</p>
+          </div>
+          <div class="fee-card">
+            <p class="fee-type">المدة (غير متنازع)</p>
+            <p class="fee-amount">١-٢ شهر</p>
+            <p class="fee-detail">من التقديم حتى صدور الحكم النهائي</p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>دليل شامل لإجراءات الطلاق في الإمارات</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة للمسلمين وغير المسلمين</span>
+          </a>
+          <a href="/ar/الطلاق-في-محكمة-دبي-المالية-الدولية/" class="related-card">
+            <strong>الطلاق في محكمة DIFC دبي</strong>
+            <span>القانون الإنجليزي كخيار لغير المسلمين في دبي</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيفية المطالبة بها</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: #0a1628; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.9; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-right: 4px solid #16a34a; border-left: none; padding: 1.25rem 1.5rem; border-radius: 12px 0 0 12px; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin: 1.25rem 0 0.4rem; }
+  .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-top: 1.25rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-factor { font-weight: 700; color: #0a1628; }
+  .compare-before { color: #6b7280; }
+  .compare-after { color: #16a34a; font-weight: 600; }
+
+  .checklist { list-style: none; padding: 0; margin: 0.75rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li { font-size: 0.9rem; color: #374151; line-height: 1.65; padding-right: 1.4rem; position: relative; }
+  .checklist li::before { content: '✓'; position: absolute; right: 0; color: #c9a84c; font-weight: 700; }
+
+  .info-box { background: #f8faff; border: 1.5px solid #e0e7ff; border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1rem; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin-bottom: 0.5rem; line-height: 1.7; }
+
+  .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
+  .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
+
+  .fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .fee-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .fee-type { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .fee-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .fee-detail { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .fee-grid { grid-template-columns: 1fr; }
+  }
+</style>

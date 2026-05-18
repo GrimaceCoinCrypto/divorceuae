@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Russian Expat Divorce in UAE: Community Property vs UAE Separate Property';
+const description =
+  'Russian Family Code defaults to equal split of all marital assets. UAE defaults to separate property. For Russian nationals divorcing in Dubai, the choice of applicable law can mean the difference of half the marital estate. Guide covering Russian recognition of UAE divorce, ZAGS registration, sanctions, and Dubai property division.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/russian-expat-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-للمواطنين-الروس-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Russian Expat Divorce UAE', url: 'https://divorceu.ae/en/russian-expat-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Does Russia recognise a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, subject to proper documentation. Under Article 415 of the Russian Code of Civil Procedure, Russian courts recognise foreign court judgments including divorce decrees without a requirement for re-litigation, provided: the UAE court had jurisdiction, the judgment is final, proper notice was given to both parties, and the judgment does not violate Russian public order. The UAE divorce certificate must be apostilled (both UAE and Russia are Hague Convention signatories) and translated into Russian by a certified translator. Registration is then made at the ZAGS (civil registry office) in Russia.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does my Russian wife get half our Dubai apartment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under UAE law, no. UAE applies separate property rules: the person whose name is on the DLD title deed keeps the property. Under Russian Family Code (Article 34), yes: property acquired during the marriage is joint marital property belonging equally to both spouses, regardless of who paid for it or whose name it is in. The applicable law depends on which court processes the divorce. If UAE courts process the divorce and apply UAE law, the title deed holder keeps the apartment. If Russian courts claim jurisdiction and apply Russian law, the apartment is treated as joint property subject to equal division.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I divorce in UAE while my spouse is in Russia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UAE courts can process a divorce even when one spouse is outside the UAE, provided service of process is completed. Service on a party in Russia is done through bilateral legal assistance channels: the UAE Ministry of Foreign Affairs routes the service request through the Russian Ministry of Justice or Foreign Ministry. The process takes several weeks. Alternatively, if the Russian-based spouse engages a UAE lawyer who accepts service on their behalf, the process is much faster. The UAE court will not proceed to judgment without confirmation that the absent spouse was properly served.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I register a UAE divorce in Russia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To register a UAE divorce in Russia: (1) obtain the UAE court divorce decree; (2) have it apostilled by the UAE Ministry of Foreign Affairs; (3) obtain a certified Russian translation from a Russian-certified translator (either in UAE or in Russia); (4) submit the apostilled and translated documents to the ZAGS (Registry Office) at the last place of residence in Russia, or through the Russian consulate in Dubai if you are remaining in the UAE. The ZAGS issues a Russian divorce certificate. This is the document that updates your Russian civil status records and enables remarriage in Russia.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to our Dubai property in a Russian court divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Russian courts can and do assert jurisdiction over Russian nationals\' property disputes, including assets located abroad. Under Article 34 of the Russian Family Code, a Dubai apartment purchased during the marriage is joint property regardless of whose name it is registered in. A Russian court could issue an order declaring each spouse\'s share in the Dubai apartment to be 50/50. However, enforcing that Russian court order against the DLD-registered title in Dubai requires UAE court recognition of the Russian judgment, which is not guaranteed and is a separate step.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the Russia-UAE Double Taxation Treaty affect divorce asset transfers?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Russia-UAE Agreement for the Avoidance of Double Taxation (signed 2011, in force from 2013) addresses income and capital taxation. It does not directly regulate divorce-related asset transfers. However, if assets are being transferred between countries in connection with a divorce settlement, the treaty\'s provisions on capital gains, dividends, and income may reduce withholding tax on certain transfers. Russian nationals should consult a tax advisor in both countries before structuring any settlement that involves moving significant assets between Russia and UAE.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do 2022 sanctions affect Russian expats divorcing in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Western sanctions on Russia (EU, US, UK) do not directly apply in the UAE, which has not joined the sanctions regime. However, Russian nationals face practical banking constraints: many UAE banks have de-risked their exposure to Russian clients and may decline to process transfers to Russian bank accounts. Money transfers from UAE to Russia face delays and routing complications. For divorce settlements involving a cash payment from UAE to Russia, the mechanics of the actual transfer need careful planning. UAE-based assets (real estate, local bank deposits) remain freely transactable within UAE.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a Russian spouse ignore UAE divorce proceedings?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Russian spouse in Russia who ignores UAE divorce proceedings complicates but does not prevent the UAE divorce proceeding. If service of process cannot be achieved through direct service, UAE courts use substituted service procedures (court notice boards, publication). The UAE court can issue a default judgment if the spouse fails to appear after proper service. That default judgment is then subject to the Russian recognition process. Russia may scrutinise default judgments more carefully on the "proper notice" requirement, so ensuring the service documentation is thorough is important if you expect your spouse in Russia to ignore proceedings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does an Orthodox church marriage need to be registered for UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UAE courts require a civil marriage certificate for divorce proceedings. A Russian Orthodox church marriage (venechanie) alone is not a legally registered civil marriage for UAE purposes. In Russia, the church marriage must be accompanied by civil registration at the ZAGS to be legally effective. If both parties were civilly registered at ZAGS (which is standard practice in Russia even for religious marriages), the ZAGS certificate is the document to use for UAE divorce proceedings, apostilled and translated into Arabic.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the cost of a Russian expat divorce in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested divorce for Russian nationals in UAE courts typically costs AED 8,000 to AED 15,000 (lawyer fees, court fees, translation, attestation). A contested case with property disputes under Russian community property claims can cost AED 20,000 to AED 50,000 or more. If parallel Russian court proceedings are initiated for property division, Russian attorney fees add to this. Translation and apostille for all documents adds AED 500 to AED 2,000 depending on the volume of paperwork.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/russian-expat-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Russian Expats in UAE &middot; Divorce Guide 2025</p>
+      <h1>Russian Expat Divorce in UAE: When Community Property Meets Separate Property</h1>
+      <p class="hero-desc">
+        Russian Family Code says marital assets are owned equally. UAE law says each spouse keeps what is in their name. Russian nationals divorcing in Dubai face a direct clash between these two systems, and the applicable law can determine whether your spouse receives half of everything you acquired during the marriage or nothing at all.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <div class="answer-box">
+        <h2>Key facts for Russian expats divorcing in UAE</h2>
+        <ul class="key-facts">
+          <li><strong>Russian Family Code (RF IC Article 34):</strong> equal split of all marital assets regardless of title or who paid.</li>
+          <li><strong>UAE law:</strong> separate property. Title deed controls. No automatic community property.</li>
+          <li><strong>Recognition in Russia:</strong> UAE divorce valid if apostilled, translated, and registered at ZAGS.</li>
+          <li><strong>Spouse in Russia:</strong> can ignore UAE proceedings but default judgment is still possible with thorough service documentation.</li>
+          <li><strong>Sanctions context:</strong> UAE has not joined Western sanctions. UAE assets transact normally; Russia-to-UAE fund transfers have practical complications.</li>
+          <li><strong>Costs:</strong> uncontested AED 8,000 to 15,000; contested AED 20,000 to 50,000+.</li>
+        </ul>
+      </div>
+
+      <section class="content-section">
+        <h2>The Core Legal Conflict: Russian Community Property vs UAE Separate Property</h2>
+        <p>
+          The Russian Family Code (Semeynyy Kodeks Rossiyskoy Federatsii, RF IC) establishes community property as the default regime for married couples. Under <strong>Article 34 of RF IC</strong>, all property acquired by spouses during the marriage is their joint marital property regardless of which spouse acquired it and in whose name it is registered or who contributed the money. Shares, deposits, income, and real estate acquired during the marriage all fall into the marital estate.
+        </p>
+        <p>
+          On divorce, the default split is 50/50 under <strong>Article 38 of RF IC</strong>. Russian courts can depart from equal division in limited circumstances (protecting minor children's interests, one spouse's misconduct depleting marital assets), but the starting point is always equal. For a Russian couple who have spent years in Dubai acquiring a property portfolio, savings, and business interests, this means the non-working spouse or the lower-earning spouse has an automatic claim to half of everything acquired since the wedding.
+        </p>
+        <p>
+          UAE law is the direct opposite. Under <strong>Federal Decree-Law No. 41 of 2024</strong>, each spouse has an independent financial personality throughout the marriage. Assets acquired in one spouse's name remain that spouse's separate property. There is no moment at which separate property becomes joint marital property under UAE law. The DLD title deed is conclusive for real estate ownership.
+        </p>
+        <p>
+          The collision between these two systems is the central issue in Russian expat divorces in the UAE. Which law applies determines who gets what.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Which Law Applies: The Jurisdiction Decision</h2>
+        <p>
+          For Russian nationals in the UAE, the applicable law depends on which court processes the divorce and which law that court applies.
+        </p>
+
+        <h3>UAE court applying UAE law</h3>
+        <p>
+          If the divorce proceeds in UAE courts under UAE law, the separate property regime applies. The person whose name is on the title deed keeps the property. The other spouse has a contribution claim only if they can prove financial involvement in specific assets. For a Russian husband who holds all Dubai properties in his own name, UAE court proceedings applying UAE law produce the best outcome for him: he keeps everything. For the wife, it is the worst outcome under both legal systems.
+        </p>
+
+        <h3>UAE court applying Russian law by election</h3>
+        <p>
+          Non-Muslim expats in UAE have an important option under <strong>Article 13 of the UAE Civil Code</strong>: they can elect to have their home country law apply to personal status matters including property division. If both parties are Russian nationals and they elect Russian law, the UAE court would apply the community property rules of the Russian Family Code to the marital estate. This is the option that potentially gives the financially weaker spouse access to half of all marital assets, including Dubai property.
+        </p>
+        <p>
+          The election of home country law must be made at the time of filing and stated in the divorce petition. The court then applies Russian law on the merits, though the actual transfer of Dubai property still requires the UAE DLD process.
+        </p>
+
+        <h3>Russian court asserting jurisdiction</h3>
+        <p>
+          Russian courts can claim jurisdiction over divorce proceedings involving Russian nationals, particularly where the spouse is in Russia, where the marriage was registered in Russia, or where significant assets are in Russia. Under Russian civil procedure, Russian courts have jurisdiction over cases against defendants in Russia, and over property disputes involving Russian nationals regardless of where the property is located.
+        </p>
+        <p>
+          If the wife is in Russia and files in Russian court first, the Russian court can apply RF IC community property rules to all marital assets including the Dubai apartment. The Russian court cannot directly transfer the DLD title, but can issue a judgment declaring the wife's 50% share in the Dubai property. Enforcing that judgment in UAE would then require UAE court recognition of the Russian judgment, and UAE courts would need to accept that the Russian court had jurisdiction and that the judgment does not violate UAE public order.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>The race to file</h3>
+          <p>The party who files first in the jurisdiction that favours them has a significant advantage. The financially stronger spouse (who holds assets in their own name) benefits from UAE separate property rules and should consider filing in UAE courts immediately. The financially weaker spouse may benefit from Russian community property rules and should consider whether Russian court jurisdiction is available before the other party files in UAE. Once proceedings are substantively underway in one jurisdiction, the other court will typically decline to exercise parallel jurisdiction.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Recognising a UAE Divorce in Russia</h2>
+        <p>
+          Russian law recognises foreign court judgments including divorce decrees under <strong>Article 415 of the Code of Civil Procedure of the Russian Federation</strong>. The recognition does not require a new court proceeding in Russia for a divorce decree itself (as opposed to a property division order), but does require registration at ZAGS (Zapis Aktov Grazhdanskogo Sostoyaniya, the civil registry office).
+        </p>
+
+        <h3>Requirements for recognition</h3>
+        <ul>
+          <li>The UAE court had proper jurisdiction over the parties</li>
+          <li>Both parties received proper notice and had opportunity to participate in UAE proceedings</li>
+          <li>The UAE divorce decree is final and not subject to further appeal</li>
+          <li>Recognition does not violate Russian public order (ordre public)</li>
+          <li>The UAE divorce does not conflict with an earlier Russian court judgment between the same parties</li>
+        </ul>
+
+        <h3>ZAGS registration process</h3>
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Apostille the UAE divorce decree</h3>
+              <p>Obtain a certified copy of the UAE court divorce decree. Have it apostilled by the UAE Ministry of Foreign Affairs (MOFA). Both UAE and Russia are parties to the Hague Apostille Convention, so no further embassy legalisation is required between UAE and Russia.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Certified Russian translation</h3>
+              <p>The apostilled UAE decree must be translated into Russian by a translator certified in Russia (notarially certified translation). Translation can be done in the UAE at a certified translation bureau if the translator holds Russian certification, or in Russia. The translation must cover the full text of the decree including the court's reasoning.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Submit to ZAGS or Russian Consulate</h3>
+              <p>If you are in Russia: submit to the ZAGS at your last registered address in Russia. If you are in UAE and not travelling to Russia: submit through the Russian Consulate General in Dubai, which accepts applications for civil registry acts from Russian nationals abroad. Processing time at the consulate is typically 4 to 8 weeks.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Obtain Russian divorce certificate</h3>
+              <p>ZAGS issues a Russian-format divorce certificate (Svidetelstvo o rastorzhenii braka). This document confirms your divorced status in Russian civil records, enables remarriage in Russia, and updates your internal passport records at the next passport renewal.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Dubai Property: The DLD Process for Russian Nationals</h2>
+        <p>
+          Russian nationals are among the largest foreign buyers of Dubai real estate. During a divorce, the DLD process for property transfers applies to Russian nationals exactly as it does to other nationalities. The questions unique to Russian nationals concern the applicable law for the division decision, not the mechanics of the DLD transfer itself.
+        </p>
+
+        <h3>If UAE law applies (separate property)</h3>
+        <p>
+          The title deed holder keeps the property. If both parties agree that the non-title-holder spouse receives compensation, they can execute a voluntary DLD transfer at the gift rate (0.125% DLD fee if still married, 4% after divorce). If they disagree, the title-holder retains ownership unless the other party can prove a financial contribution claim under <strong>Article 51 of Federal Decree-Law No. 41 of 2024</strong>.
+        </p>
+
+        <h3>If Russian law applies (community property)</h3>
+        <p>
+          The court treats all marital property acquired during the marriage as jointly owned 50/50. For the Dubai apartment, this means a court-declared 50% share for each spouse, even if only one is on the title deed. The non-title-holder spouse can then demand either a buyout (payment for their 50% share) or a court-ordered sale with proceeds split equally.
+        </p>
+        <p>
+          The DLD transfer following such a judgment requires both parties to attend (or a notarised POA for an absent party). If the UAE court is applying Russian law and declares joint ownership, the resulting transfer order can be used at the DLD Registration Trustee to effect the title change.
+        </p>
+
+        <h3>Prenuptial agreement (brachny dogovor) under Russian law</h3>
+        <p>
+          Russian law (RF IC Articles 40-44) permits prenuptial agreements (brachny dogovor) that can alter the default community property regime. A valid Russian prenuptial agreement can specify that certain assets remain one spouse's separate property. A Russian prenuptial agreement must be notarially certified in Russia to be effective. UAE courts may give effect to a valid Russian prenuptial agreement if it is properly authenticated and translated.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Sanctions Context: Practical Realities for Russian Expats in UAE (2022+)</h2>
+        <p>
+          The UAE has not joined the Western sanctions regime imposed on Russia following the 2022 invasion of Ukraine. UAE is not a sanctioned jurisdiction, and UAE-based assets of Russian nationals can be bought, sold, transferred, and traded normally within UAE. Dubai real estate transactions involving Russian buyers and sellers proceed through normal DLD channels.
+        </p>
+        <p>
+          However, practical banking constraints have emerged. Many UAE banks, particularly those with significant correspondent banking relationships with Western financial institutions, have chosen to de-risk their exposure to Russian national clients. Account openings for Russian passport holders have become more difficult, and transfers to Russian bank accounts face delays, questioning, and in some cases refusal.
+        </p>
+        <p>
+          For a divorce settlement that requires transferring funds from UAE to Russia, the mechanics need careful planning. Options include:
+        </p>
+        <ul>
+          <li>Transferring UAE-based assets (property, investment accounts) directly rather than converting to cash and wiring to Russia</li>
+          <li>Using UAE-based Russian community banks or payment service providers that maintain Russia-UAE transfer corridors</li>
+          <li>Structuring settlement payments in stages within the UAE rather than requiring a single large international transfer</li>
+          <li>Using gold, which trades freely in both markets, as a settlement medium (relevant where mehr or asset compensation is paid in kind)</li>
+        </ul>
+        <p>
+          These constraints do not affect the legal validity of the divorce or settlement itself. They affect the practical execution of money movements, and both parties' lawyers should address this upfront rather than discovering the problem when a settlement agreement is already signed.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Church Marriage and Civil Registration: What UAE Courts Require</h2>
+        <p>
+          Many Russian Orthodox Christians are married in a church ceremony (venechanie, or "crowning" ceremony in the Orthodox tradition). UAE courts do not recognise religious marriage ceremonies as the basis for divorce proceedings. UAE requires civil marriage documentation.
+        </p>
+        <p>
+          In Russia, a church marriage is legally effective for civil purposes only if it was also registered at the ZAGS. Under Russian law, civil registration is mandatory for a marriage to have legal effect. In practice, Russian Orthodox couples typically register at ZAGS on the same day as or shortly after the church ceremony. The ZAGS certificate (Svidetelstvo o zaklyuchenii braka) is the civil marriage certificate recognised by UAE courts.
+        </p>
+        <p>
+          To use a Russian civil marriage certificate in UAE divorce proceedings, it must be apostilled by the Russian Ministry of Foreign Affairs (or the Registry Office that issued it, as Russia has varying apostille authorities depending on the document) and translated into Arabic by a UAE-certified translator. This process is straightforward and takes 1 to 2 weeks.
+        </p>
+        <p>
+          If a couple was married only in a church ceremony without ZAGS registration, they are not legally married under Russian civil law and therefore not married for UAE divorce purposes. In that case, no divorce is needed (or possible) because the marriage has no legal existence. This is an uncommon situation but does arise.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Spouse in Russia: Service of Process and Default Proceedings</h2>
+        <p>
+          A common scenario for Russian expats in the UAE: the husband works in Dubai while the wife and children are in Russia. When the husband initiates divorce in UAE courts, serving the wife in Russia requires cross-border judicial assistance.
+        </p>
+        <p>
+          The UAE and Russia have a bilateral agreement on legal assistance in civil and criminal matters. Under this agreement, the UAE Ministry of Foreign Affairs can request that the Russian Ministry of Justice serve UAE court documents on the Russian-based party. The process involves: the UAE court issues the service request, the MOFA forwards it through diplomatic channels, the Russian Ministry of Justice routes it to the appropriate regional court for execution, and service is reported back to UAE.
+        </p>
+        <p>
+          This diplomatic service process is reliable but slow, typically taking 3 to 5 months. During this time, the UAE divorce proceedings are effectively paused pending confirmation of service. Alternatively, if the Russian-based spouse engages a UAE family lawyer who accepts service on their behalf, the proceedings can continue at normal speed.
+        </p>
+        <p>
+          If the Russian spouse ignores UAE proceedings after proper service is confirmed, the UAE court will proceed to a default judgment. A default divorce decree is issued, and the property/financial orders can be made based on the evidence of the petitioning spouse. The Russian court recognition process (ZAGS registration) will then scrutinise whether the service was properly conducted and whether the Russian spouse truly had the opportunity to participate.
+        </p>
+      </section>
+
+      <FAQSection items={faqItems} />
+
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>DLD fees, title deed rules, contribution claims</span>
+          </a>
+          <a href="/en/divorce-in-uae-for-expats/" class="related-card">
+            <strong>Divorce in UAE for Expats</strong>
+            <span>Jurisdiction, law choices, and recognition of foreign decrees</span>
+          </a>
+          <a href="/en/prenuptial-agreement-uae/" class="related-card">
+            <strong>Prenuptial Agreements UAE</strong>
+            <span>Validity, enforceability, and home country law</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to find and choose a family lawyer</span>
+          </a>
+          <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
+            <strong>UAE Divorce Certificate Attestation</strong>
+            <span>How to apostille your UAE decree for ZAGS registration in Russia</span>
+          </a>
+          <a href="/en/divorce-cost-uae/" class="related-card">
+            <strong>Divorce Cost UAE</strong>
+            <span>Court fees, lawyer fees, and what drives your total bill</span>
+          </a>
+          <a href="/en/where-to-divorce-uae-or-home-country/" class="related-card">
+            <strong>Where to Divorce: UAE or Home Country?</strong>
+            <span>5-jurisdiction comparison and the race-to-file strategy</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,573 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Child Relocation After Divorce UAE: How to Get a Relocation Order';
+const description =
+  'Taking a child abroad after UAE divorce without a court relocation order is a criminal offence. This guide covers what courts require, the best-interests test, mirror orders, visa expiry scenarios, and what counts as child abduction under UAE law.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/child-relocation-after-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/انتقال-الطفل-بعد-الطلاق-في-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Child Relocation After Divorce UAE', url: 'https://divorceu.ae/en/child-relocation-after-divorce-uae/' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I move back to the UK with my child after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only with a UAE court relocation order. If your child is under a UAE custody order, you cannot permanently relocate abroad without court permission. This applies even to custodial parents. You must file a relocation application in the same court that issued the custody order and satisfy the court that the move serves the best interests of the child. If approved, a mirror order from the UK courts is typically required before the child leaves the UAE.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I apply for a relocation order in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'File a relocation application at the court that issued the original custody order. The application must set out the specific reasons for the move, the destination, proposed arrangements for the non-custodial parent\'s continued contact, and why the relocation serves the child\'s best interests. The court will typically appoint a social welfare expert to prepare a report. Hearings are usually completed within 3 to 6 months, though contested cases take longer.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my UAE visa expires and I have custody of my children?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Visa expiry is one of the circumstances UAE courts treat as a genuine reason for relocation. If you cannot remain in the UAE lawfully and have custody, the court will consider whether relocation to your home country serves the child\'s interests, including maintaining contact with both parents. Apply for a relocation order before your visa expires -- do not wait until you are overstaying. Courts look unfavourably on applicants who created an emergency by delaying. Also consider the 2024 custodial parent visa, which allows a custodial mother to obtain UAE residency tied to her custody arrangement.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can the UAE court stop me from moving abroad?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. If your relocation application is refused, you are legally prohibited from removing the child from the UAE permanently. The non-custodial parent can also apply for a travel ban preventing the custodial parent from leaving with the child if they have grounds to believe relocation is being planned without permission. Attempting to leave with the child after a refusal, or without applying at all, is child abduction under UAE law regardless of whether you hold the custody order.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a relocation order take in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An uncontested relocation application (the non-custodial parent agrees or does not contest) can be resolved in 2 to 3 months. A contested relocation -- where the non-custodial parent opposes the move -- involves a social welfare report, multiple hearings, and potentially expert evidence on the destination country\'s legal system. Contested relocation cases commonly take 6 to 12 months. Build this timeline into any employment offer or school enrollment deadline you are working toward.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is child abduction under UAE law and what are the consequences?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Removing a child from the UAE without a court relocation order when a UAE custody order is in place is child abduction under UAE law, even if you are the custodial parent. The non-custodial parent can file a criminal complaint immediately. UAE can request Interpol assistance for the return of the child if the destination country is a signatory to relevant agreements. Criminal penalties include imprisonment. The abducting parent also risks losing custody entirely on return.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a mirror order and why does UAE require one?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A mirror order is a custody order issued by the courts of the destination country that reflects the terms of the UAE custody order. UAE courts require a mirror order before allowing relocation because once the child leaves the UAE, the UAE order cannot be directly enforced abroad. The mirror order provides an immediately enforceable legal document in the destination country if the custodial parent breaches the UAE terms -- for example, by denying the non-custodial parent\'s contact rights.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can the child express a preference about relocation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Article 122 of Federal Decree-Law No. 41 of 2024 provides that a child who has reached the age of 15 can express a preference to the court. The court is not bound by the preference but must take it into account as part of the best interests analysis. For younger children, a court-appointed welfare expert will assess what the child wants and what environment is in their best interests.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What arrangements must I offer the non-custodial parent if I want to relocate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The court expects a credible contact plan before it will approve relocation. Typical orders include: regular video contact on a fixed schedule (weekly calls), extended visits in the UAE or the destination country during school holidays, contribution to travel costs for the visiting parent, and undertakings not to change the child\'s school or move the child\'s residence within the destination country without further notification. The more concrete and generous the contact plan you propose, the stronger your relocation application.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does domestic violence history affect my relocation application?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Documented domestic violence substantially changes the analysis. If the non-custodial parent has a history of abuse, a protection order, or a criminal DV conviction, the court may approve relocation on safety grounds even if the contact plan would be significantly reduced. Courts applying the Wadeema Law (Federal Law No. 3 of 2016) treat safety from a violent parent as a core component of the child\'s best interests. Present all protection order and police report documentation in your relocation application.',
+      },
+    },
+  ],
+};
+
+const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/child-relocation-after-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Child Relocation -- UAE 2025</p>
+      <h1>Child Relocation After Divorce UAE: How to Get a Relocation Order</h1>
+      <p class="hero-desc">
+        You have custody of your children in the UAE and want to move abroad -- back to the UK, India, Europe, or your home country. The UAE court custody order follows your children wherever they go. Leaving with them without a relocation order is not a grey area: it is child abduction under UAE law. This guide tells you exactly how to apply, what courts look for, and what happens when the non-custodial parent objects.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Key facts box -->
+      <div class="answer-box">
+        <h2>Five things to know before reading further</h2>
+        <ul class="key-facts">
+          <li><strong>UAE custody orders are jurisdiction-specific.</strong> You cannot permanently relocate a child without a court-granted relocation order, even as the custodial parent.</li>
+          <li><strong>Leaving without permission is criminal.</strong> Removal without a relocation order is child abduction under UAE law, regardless of which parent holds custody.</li>
+          <li><strong>Visa expiry is a recognised reason to relocate.</strong> Courts treat it as a genuine need, not an excuse.</li>
+          <li><strong>Mirror orders are usually required.</strong> The destination country's courts must issue a matching order before the child leaves UAE.</li>
+          <li><strong>The child's preference matters at age 15.</strong> Article 122, Federal Decree-Law No. 41 of 2024.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1: Core Rule -->
+      <section class="content-section">
+        <h2>The Core Rule: You Need a Relocation Order</h2>
+        <p>
+          When a UAE court issues a custody order, it creates a jurisdiction-specific legal obligation. The custody arrangement -- who the child lives with, how contact is managed, what school the child attends -- is subject to the ongoing supervision of the UAE court until the child reaches adulthood or the order is formally varied.
+        </p>
+        <p>
+          A custodial parent who wants to relocate permanently abroad must obtain a relocation order from the same court that issued the custody order. "Permanently" is the key qualifier: taking the child for a holiday, for school half-term, or for a summer visit does not require a relocation order. A permanent move -- defined as one where the custodial parent intends to establish a new primary residence abroad and the child would attend school in the destination country -- always requires court approval.
+        </p>
+        <p>
+          This rule applies under Federal Decree-Law No. 41 of 2024 (Muslim personal status law) and equally to non-Muslim expat proceedings. The origin of the custody order makes no practical difference: UAE court order means UAE permission is required to relocate.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>Holidays and school breaks</h3>
+          <p>Taking your child abroad for a summer holiday or school break is not the same as relocation. Most UAE custody orders contain provisions for international travel. Check your specific order for travel notification requirements -- many orders require you to give the non-custodial parent advance written notice of international travel and passport details. Failing to follow these provisions, even for a holiday, can be used against you in later proceedings.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: What Courts Consider -->
+      <section class="content-section">
+        <h2>What UAE Courts Consider When Deciding Relocation</h2>
+        <p>
+          The standard across all UAE child proceedings is the best interests of the child, as mandated by Federal Decree-Law No. 41 of 2024 and Federal Law No. 3 of 2016 (the Wadeema Law on child rights). In relocation cases, courts apply this standard across several specific factors.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>What courts look at</th>
+                <th>Weight in practice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">Genuine reason to relocate</td>
+                <td class="td-light">New confirmed employment, family support network, visa expiry, second marriage, medical needs</td>
+                <td class="td-gold">High</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Impact on non-custodial parent's contact</td>
+                <td class="td-light">How relocation reduces or complicates the other parent's access to the child</td>
+                <td class="td-gold">High</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Proposed contact plan</td>
+                <td class="td-light">Video contact schedule, holiday visits, travel cost arrangements</td>
+                <td class="td-gold">Very high</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Quality of life in destination country</td>
+                <td class="td-light">Education, healthcare, housing, family support, safety</td>
+                <td class="td-gold">Moderate</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Child's existing connections</td>
+                <td class="td-light">School relationships, friendships, extended family in UAE</td>
+                <td class="td-gold">Moderate</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Child's preference (age 15+)</td>
+                <td class="td-light">Expressed preference under Article 122, Federal Decree-Law No. 41 of 2024</td>
+                <td class="td-gold">High at 15+, advisory below</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Enforceability of contact orders abroad</td>
+                <td class="td-light">Whether the destination country will recognise UAE orders and enforce contact</td>
+                <td class="td-gold">High</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">History of domestic violence</td>
+                <td class="td-light">Any risk the non-custodial parent poses to the child if contact is maintained</td>
+                <td class="td-gold">High when present</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The contact plan is the pivotal element</h3>
+        <p>
+          In practice, the quality of the contact plan you propose is often the deciding factor in a contested relocation case. Courts want to see that the custodial parent has genuinely considered the non-custodial parent's position and has proposed a workable arrangement for maintaining the parent-child relationship across distance. A vague commitment to "regular video calls" is not enough. Courts expect:
+        </p>
+        <ul>
+          <li>A specific video call schedule (days, times, platform)</li>
+          <li>A defined school holiday visit schedule specifying which holidays, durations, and which country the visits occur in</li>
+          <li>Clarity on who bears travel costs (some orders require the custodial parent to fund the non-custodial parent's annual visit)</li>
+          <li>An undertaking on school choice, medical decisions, and notification obligations</li>
+          <li>Agreement on the child's travel document handling</li>
+        </ul>
+      </section>
+
+      <!-- Section 3: When Courts Allow / Refuse -->
+      <section class="content-section">
+        <h2>When Courts Allow Relocation and When They Refuse</h2>
+
+        <h3>Scenarios courts commonly approve</h3>
+        <div class="scenario-list">
+          <div class="scenario-card">
+            <p class="scenario-title">Visa expiry with no pathway to remain</p>
+            <p>The custodial parent's UAE residency visa expires and they have no independent employment, investor visa, or child custody visa available. The court treats this as a genuine necessity rather than a choice. However, you must show the court you took steps to explore visa alternatives before concluding relocation was unavoidable.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Confirmed employment offer in another country</p>
+            <p>A genuine, confirmed job offer with a start date and salary documentation. Courts distinguish between speculative employment discussions and an actual offer. The employment must be in the destination country and represent a meaningful career reason, not merely a preference to live elsewhere.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Return to extended family after divorce</p>
+            <p>The custodial parent's entire support network (parents, siblings) is in the home country and they have no remaining family ties in the UAE. Courts accept that a single parent raising children without family support in the UAE faces real hardship.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Death of the UAE-resident non-custodial parent</p>
+            <p>If the non-custodial parent has died, the principal reason for keeping the child in UAE is removed. Courts will still examine whether the child has other significant relationships in the UAE, but relocation is typically approved in these circumstances.</p>
+          </div>
+          <div class="scenario-card">
+            <p class="scenario-title">Documented domestic violence</p>
+            <p>Where relocation moves the child and custodial parent away from a documented abusive non-custodial parent, courts treating the child's safety as paramount under the Wadeema Law typically approve relocation with appropriate supervised or virtual contact provisions.</p>
+          </div>
+        </div>
+
+        <h3>Scenarios courts commonly refuse</h3>
+        <div class="scenario-list">
+          <div class="scenario-card scenario-card--refuse">
+            <p class="scenario-title">Reducing the non-custodial parent's contact</p>
+            <p>An application that appears motivated by a desire to limit the other parent's access rather than a genuine personal need will be refused. Courts are experienced at identifying this. Present only genuine reasons and a generous contact plan.</p>
+          </div>
+          <div class="scenario-card scenario-card--refuse">
+            <p class="scenario-title">Moving shortly after the divorce finalises without good reason</p>
+            <p>An immediate relocation application filed within weeks of the divorce decree, without a compelling reason, looks opportunistic. Courts want to see that the child has had time to settle into the post-divorce arrangement before it is disrupted by relocation.</p>
+          </div>
+          <div class="scenario-card scenario-card--refuse">
+            <p class="scenario-title">Destination country where UAE orders cannot be enforced</p>
+            <p>If the destination country has no reciprocal enforcement agreement with the UAE and the court cannot get a workable mirror order, the application faces serious difficulty. The court cannot approve relocation that would effectively eliminate the non-custodial parent's legal ability to enforce contact.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: The Process -->
+      <section class="content-section">
+        <h2>The Relocation Application Process</h2>
+        <p>
+          Relocation applications follow the same court structure as other custody applications. The court with jurisdiction is the same court that issued the original custody order.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>File the application with supporting documents</h3>
+              <p>Submit the relocation application to the court registry. Include: the specific destination and reason for the move, employment offer or visa expiry documentation, proposed school in the destination country, your proposed contact plan in writing, and any welfare reports or statements from the child (if age-appropriate). The non-custodial parent is formally served with the application.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Social welfare expert report</h3>
+              <p>The court typically appoints a social welfare expert (from the Ministry of Social Affairs or a court-approved expert) to assess the application. The expert meets with both parents and often the child, visits the home, and prepares a report for the court. This process takes 4 to 8 weeks. The expert's recommendation carries significant weight with the judge.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Court hearings</h3>
+              <p>The judge hears from both parties and reviews the expert report. Contested applications involve multiple hearings. The non-custodial parent presents their objections and proposed alternative arrangements. Your lawyer presents the relocation case, the contact plan, and the evidence of genuine need.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Mirror order requirement</h3>
+              <p>If the court approves relocation, it will usually condition the order on a mirror order being obtained from the courts of the destination country before the child departs the UAE. You must initiate proceedings in the destination country's courts (or instruct a local lawyer to do so) and obtain an order that reflects the UAE custody and contact terms.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3>Child departs UAE with certified copies of both orders</h3>
+              <p>Once the mirror order is in place and any conditions of the UAE order are met, the child may depart. Carry certified copies of the UAE relocation order and the mirror order during travel. Airport authorities in the UAE and destination country may ask for documentation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Mirror Orders -->
+      <section class="content-section">
+        <h2>Mirror Orders Explained</h2>
+        <p>
+          A mirror order is not an administrative formality -- it is a genuine legal protection for the non-custodial parent. Once a child is outside UAE, UAE courts have no direct enforcement power. The non-custodial parent's only recourse if their contact rights are breached is the courts of the destination country. A mirror order gives them an immediately enforceable instrument in that jurisdiction.
+        </p>
+
+        <h3>Getting a mirror order: country-specific considerations</h3>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Process</th>
+                <th>Typical timeline</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">United Kingdom</td>
+                <td class="td-light">Apply to Family Court in England/Wales or Sheriff Court in Scotland. The court registers the UAE order as a mirror order. Solicitors in the UK can handle this remotely.</td>
+                <td class="td-gold">6-10 weeks</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">India</td>
+                <td class="td-light">Application to the High Court in the relevant state. India is not a Hague Convention signatory but courts will recognise UAE orders in the child's interests. Process is more variable.</td>
+                <td class="td-gold">3-6 months</td>
+              </tr>
+              <tr>
+                <td class="td-bold">Australia</td>
+                <td class="td-light">Apply to the Family Court of Australia or Federal Circuit Court. Australia recognises UAE orders and can register them as mirror orders efficiently.</td>
+                <td class="td-gold">6-12 weeks</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-bold">Canada</td>
+                <td class="td-light">Varies by province. Ontario and BC have efficient registration processes for foreign custody orders. Instruct local family counsel.</td>
+                <td class="td-gold">8-12 weeks</td>
+              </tr>
+              <tr>
+                <td class="td-bold">EU member states</td>
+                <td class="td-light">Brussels IIa/IIb regulations apply within the EU. Registration of foreign custody orders is a standardised process in most EU jurisdictions.</td>
+                <td class="td-gold">4-8 weeks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Start the mirror order application as soon as the UAE relocation order is granted -- do not wait until you are about to depart. The mirror order process can run in parallel with any departure preparations, but the UAE order usually requires the mirror order to be in place before departure.
+        </p>
+      </section>
+
+      <!-- Section 6: Non-Custodial Parent Rights -->
+      <section class="content-section">
+        <h2>Non-Custodial Parent Rights in Relocation Cases</h2>
+        <p>
+          If you are the non-custodial parent and believe the custodial parent is planning to relocate without court approval, you have several immediate legal tools available.
+        </p>
+
+        <h3>Preventative measures</h3>
+        <ul>
+          <li><strong>Travel ban application:</strong> Apply to the court for an order preventing the child from being removed from the UAE. Requires evidence that relocation is being planned without permission. The application is urgent and can be heard within days.</li>
+          <li><strong>Passport retention order:</strong> Request that the child's passport be held by the court or a neutral party during proceedings to physically prevent departure.</li>
+          <li><strong>Regular status check:</strong> Maintain visibility of your child's school enrolment and address. Sudden school deregistration or apartment vacating are warning signs to act on immediately.</li>
+        </ul>
+
+        <h3>Contact rights if relocation is approved</h3>
+        <p>
+          If the court approves the custodial parent's relocation application, your contact rights do not disappear -- they are restructured. Courts routinely order:
+        </p>
+        <ul>
+          <li>Weekly video calls on a fixed schedule that both parties must commit to</li>
+          <li>Extended holiday contact in the UAE (typically 4-6 weeks per year), with the custodial parent contributing to travel costs</li>
+          <li>A specific contact address in the destination country where you can visit</li>
+          <li>First right of refusal if the custodial parent cannot care for the child temporarily (the child comes to you, not a third party)</li>
+          <li>Annual notification obligations regarding school performance, health, and significant life events</li>
+        </ul>
+        <p>
+          Breach of contact orders is enforceable through the destination country's courts via the mirror order. If the custodial parent consistently refuses video calls or blocks holiday visits after relocation, apply for enforcement in the destination jurisdiction using the mirror order.
+        </p>
+      </section>
+
+      <!-- Section 7: What Counts as Child Abduction -->
+      <section class="content-section">
+        <h2>Child Abduction Under UAE Law</h2>
+        <p>
+          This section exists because a significant number of UAE parents take their child abroad without permission in the belief that, as the custodial parent, they have the right to do so. They do not.
+        </p>
+        <p>
+          UAE Penal Code provisions on child abduction apply to any person -- including a custodial parent -- who removes a child from UAE in breach of a custody or access order. The elements of the offence are straightforward: a valid UAE custody order exists, the child was removed from the UAE, and no relocation order authorising the removal was obtained.
+        </p>
+        <p>
+          The non-custodial parent can file a criminal complaint the moment they become aware the child has been taken abroad without permission. UAE police will issue an Interpol notice in cases where the child is believed to be in another country. The custodial parent faces criminal charges on return to the UAE -- and may find themselves the subject of an Interpol red notice making international travel complicated.
+        </p>
+        <p>
+          The UAE is a party to several bilateral agreements on child return with Arab League member states. Return proceedings in Hague Convention countries (including the UK, Germany, France, Australia, and Canada) are available to the left-behind parent, with a legal presumption in favour of return.
+        </p>
+
+        <div class="info-box info-box--warning">
+          <h3>There is no "I am the primary carer" exception</h3>
+          <p>This misconception leads to genuinely serious consequences. Being the parent the child lives with does not give you the right to leave the UAE with the child permanently without a court order. The custody order that gives you physical custody of the child is the same document that subjects the custody arrangement to ongoing UAE court supervision. You cannot benefit from the custody order's protections while disregarding its jurisdictional constraints.</p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Related links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody in UAE</strong>
+            <span>Age rules, habana, and how custody is determined</span>
+          </a>
+          <a href="/en/domestic-violence-divorce-uae/" class="related-card">
+            <strong>Domestic Violence and Divorce UAE</strong>
+            <span>Protection orders and impact on custody</span>
+          </a>
+          <a href="/en/divorce-employer-visa-uae/" class="related-card">
+            <strong>Divorce and UAE Visa Status</strong>
+            <span>What happens to residency after divorce</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony in UAE</strong>
+            <span>Maintenance amounts and enforcement</span>
+          </a>
+          <a href="/en/divorce-in-uae/" class="related-card">
+            <strong>UAE Divorce Law Overview</strong>
+            <span>How the system works for expats and nationals</span>
+          </a>
+          <a href="/en/divorce-lawyer-dubai/" class="related-card">
+            <strong>Divorce Lawyer Dubai</strong>
+            <span>How to choose the right family lawyer</span>
+          </a>
+          <a href="/en/international-child-abduction-uae/" class="related-card">
+            <strong>International Child Abduction UAE</strong>
+            <span>Hague gap, Riyadh Convention, and protective steps</span>
+          </a>
+          <a href="/en/visa-after-divorce-uae/" class="related-card">
+            <strong>Visa After Divorce UAE</strong>
+            <span>Residency options for custodial parents after divorce</span>
+          </a>
+          <a href="/en/divorce-timeline-uae/" class="related-card">
+            <strong>Divorce Timeline UAE</strong>
+            <span>How long proceedings take by case type</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.74), rgba(10,22,40,0.74)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3.5rem 1.5rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #b0bec5; line-height: 1.75; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  /* Layout */
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  /* Answer box */
+  .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.05rem; font-weight: 700; color: #78350f; margin: 0 0 0.75rem; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
+
+  /* Content sections */
+  .content-section { margin-bottom: 2.75rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800; color: #0a1628; margin-bottom: 0.9rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 1.4rem 0 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #c9a84c; text-decoration: underline; }
+
+  /* Info boxes */
+  .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0 1.25rem; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box p { font-size: 0.86rem; line-height: 1.65; color: #374151; margin: 0; }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-bottom: 0.75rem; }
+  .data-table { width: 100%; border-collapse: collapse; border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; min-width: 560px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 10px 14px; font-size: 0.75rem; font-weight: 700; text-align: left; }
+  .data-table td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; vertical-align: top; color: #374151; }
+  .row-alt { background: #fafafa; }
+  .td-bold { font-weight: 700; color: #0a1628; }
+  .td-gold { color: #b45309; font-weight: 700; }
+  .td-light { color: #6b7280; font-size: 0.82rem; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.2rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; min-width: 2.5rem; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Scenario cards */
+  .scenario-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem; }
+  .scenario-card { padding: 1rem 1.25rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .scenario-card--refuse { border-color: #fca5a5; background: #fff5f5; }
+  .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.95rem; margin: 0 0 0.4rem; }
+  .scenario-card p:last-child { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  /* Related grid */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>
