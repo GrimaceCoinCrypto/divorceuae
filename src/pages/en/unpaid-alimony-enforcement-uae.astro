@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Unpaid Alimony in the UAE: How to Enforce It';
+const description =
+  'Ex husband not paying alimony in the UAE? Learn how to enforce a maintenance order: execution court, salary garnishment, travel ban, asset seizure, fees, timelines.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/unpaid-alimony-enforcement-uae/',
+  ar: 'https://divorceu.ae/ar/تنفيذ-حكم-النفقة-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Unpaid Alimony Enforcement UAE', url: 'https://divorceu.ae/en/unpaid-alimony-enforcement-uae/' },
+];
+
+const steps = [
+  { num: '01', title: 'Confirm the judgment is final', detail: 'You can only enforce a maintenance order once the judgment is final, meaning the appeal period has expired or appeals are exhausted. Interim maintenance ordered during the case is immediately enforceable. Get a stamped, executable copy from the court that issued it.' },
+  { num: '02', title: 'Open an execution file', detail: 'File an execution case at the Execution Court (mahkamat al-tanfeedh) in the emirate where the judgment was issued, citing the final judgment and the amount owed. In Dubai you typically attach an IBAN letter for your account and the debtor\'s Makani number so the court can locate and pay you.' },
+  { num: '03', title: 'Service and the compliance window', detail: 'The court notifies the debtor and gives a short window to pay voluntarily. Sources differ on the exact length, with reports ranging from 7 to 15 days. If he pays, the file closes; if he ignores it, you can request enforcement measures.' },
+  { num: '04', title: 'Request enforcement measures', detail: 'Ask the Execution Court to garnish his salary, freeze and attach his bank accounts, seize vehicles or property, and impose a travel ban. Maintenance is collected as a priority debt, so ongoing monthly amounts are paid before most other creditors.' },
+  { num: '05', title: 'Escalate if he still refuses', detail: 'If asset measures do not recover the money and he is hiding funds, the court can apply further pressure, including civil detention as a last resort. The aim is to force payment, not to punish, and he can avoid it by paying or agreeing an instalment plan.' },
+];
+
+const faqItems = [
+  {
+    question: 'What can I do if my ex stops paying alimony in the UAE?',
+    answer: 'Once your maintenance judgment is final, you file an execution case at the Execution Court citing the judgment and the amount owed. The court can then garnish his salary, freeze his bank accounts, seize his assets, and impose a travel ban until he pays. Interim maintenance ordered during a live case is immediately enforceable. You generally do not need to prove anything new at this stage, you are simply enforcing an order the court already made.',
+  },
+  {
+    question: 'How does the execution court work in the UAE?',
+    answer: 'The Execution Court (mahkamat al-tanfeedh) enforces final judgments. You open an execution file referencing the maintenance order, and in Dubai you usually attach an IBAN letter and the debtor\'s Makani number. The court serves notice and gives a short voluntary-payment window, with reported timelines of 7 to 15 days. If he does not pay, you request enforcement measures such as garnishment, account freezes, asset seizure, and a travel ban.',
+  },
+  {
+    question: 'Can his salary be garnished for unpaid maintenance?',
+    answer: 'Yes. Under Labour Law Article 25 (Federal Decree-Law No. 33 of 2021), court-ordered debts can be deducted from wages up to 25 percent, except for awarded alimony, where more than a quarter of the wage may be deducted. There is no fixed maximum percentage for alimony, so the court can order a larger share to be sent directly to you each month.',
+  },
+  {
+    question: 'Can a travel ban be placed for unpaid maintenance in the UAE?',
+    answer: 'Yes. The Execution Court can impose a travel ban on a debtor who is not paying maintenance. The AED 10,000 minimum-debt threshold that applies to ordinary financial travel bans does not apply to maintenance, so a ban can attach for any unpaid amount. The ban is lifted once he pays the outstanding maintenance or otherwise satisfies the court.',
+  },
+  {
+    question: 'Can he be jailed for not paying alimony in the UAE?',
+    answer: 'Civil detention is possible but it is a last resort used to coerce payment, not to punish. The court orders it only after asset measures have been tried, and the debtor can avoid it by proving genuine inability to pay, unless he is concealing assets. In Dubai, Circular No. 2 of 2024 bars arrest unless the creditor proves the debtor has funds and refuses to pay, and any arrest is cancelled if an instalment plan is accepted. Reports of "up to 6 months" jail and a separate criminal non-support penalty are unverified, so treat those figures with caution.',
+  },
+  {
+    question: 'How far back can I claim arrears of maintenance?',
+    answer: 'Spousal-maintenance arrears claims are capped at the last 2 years under Article 99 of Federal Decree-Law No. 41 of 2024. Backdated maintenance from the date a claim arose may also be available for a limited period, reportedly up to 6 months under Article 97, though that figure rests on a single source. A final judgment itself stays enforceable for up to 15 years, so an existing order does not simply expire if your ex stops paying.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/unpaid-alimony-enforcement-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Alimony &amp; Maintenance · UAE 2026</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        If your ex husband is not paying alimony in the UAE, a final maintenance (nafaqah) order is not just a piece of paper. The Execution Court can garnish his salary, freeze his accounts, seize his assets, and stop him leaving the country until he pays.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>How do you enforce a maintenance order in the UAE?</h2>
+        <p>
+          File an <strong>execution case at the Execution Court</strong> (mahkamat al-tanfeedh) citing the final maintenance judgment and the amount owed.
+          The court can then <strong>garnish his salary</strong>, <strong>freeze his bank accounts</strong>, <strong>impose a travel ban</strong>, and <strong>seize assets</strong> such as vehicles, property, and shares.
+          The travel-ban <strong>AED 10,000 threshold does not apply to maintenance</strong>, and alimony can be deducted from wages above the usual 25 percent cap. Civil detention is a <strong>last resort</strong> used to force payment, not to punish.
+        </p>
+      </div>
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="UAE legal documents for enforcing an unpaid alimony maintenance order"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Execution court process -->
+      <section class="content-section">
+        <h2>The Execution Court Process Step by Step</h2>
+        <p>
+          Enforcement runs through the Execution Court, which exists specifically to collect on final judgments. A judgment is final once the appeal period has expired or appeals are exhausted, while interim maintenance ordered during a live case is immediately enforceable. You file an execution case referencing the order and the unpaid amount. In Dubai you usually attach an IBAN letter for your bank account and the debtor's Makani number so the court can locate him and route payments to you. Once the file is open, the court serves notice and gives a short voluntary-payment window. Reports of its length vary from 7 to 15 days, so confirm the current period with the court or your lawyer.
+        </p>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">Keep two separate timelines in mind: the execution-court voluntary-compliance window of roughly 7 to 15 days is different from the substantive 30-day refusal route below. For an overview of how the amount itself is set, see our guide to <a href="/en/alimony-uae/">alimony in the UAE</a>.</p>
+      </section>
+
+      <!-- Article 77 refusal route -->
+      <section class="content-section">
+        <h2>The Maintenance-Refusal Route Under Article 77</h2>
+        <p>
+          There is also a substantive route in the personal status law. Under Article 77 of Federal Decree-Law No. 41 of 2024, a husband who refuses to provide maintenance is given <strong>30 days</strong> to comply. That period can extend to <strong>up to 90 days</strong> if he proves insolvency. If he persists in refusing despite having the means, the court can treat the refusal as a ground to <strong>impose a divorce</strong>. This is separate from the execution file: the execution case collects on money already awarded, while the Article 77 step addresses an ongoing refusal to support and can change your marital status. Many people pursue both, enforcing the existing arrears while the refusal itself is put before the court.
+        </p>
+      </section>
+
+      <!-- Enforcement tools -->
+      <section class="content-section">
+        <h2>What the Execution Court Can Do to a Non-Paying Ex</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Measure</div>
+            <div>Legal basis</div>
+            <div>How it works</div>
+            <div>Lifted when</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Salary garnishment</div>
+            <div>Labour Law Art. 25 (33/2021)</div>
+            <div>Deductions sent to you each month; alimony can exceed the 25% cap</div>
+            <div>Debt cleared</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type khula">Travel ban</div>
+            <div>Execution Court order</div>
+            <div>AED 10,000 threshold does not apply to maintenance</div>
+            <div>Full payment</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Asset seizure</div>
+            <div>Execution Court order</div>
+            <div>Freeze bank accounts; seize vehicles, property, shares, trade licences</div>
+            <div>Debt satisfied</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type">Civil detention</div>
+            <div>Art. 319 CPL (Law 42/2022)</div>
+            <div>Last resort, coercive not punitive, after asset measures fail</div>
+            <div>Payment or instalment plan</div>
+          </div>
+        </div>
+        <p class="note-text">Ongoing monthly maintenance is collected as a priority debt, ahead of most other creditors and behind unpaid judicial fees. Older arrears rank as ordinary civil debt.</p>
+      </section>
+
+      <!-- Salary garnishment + travel ban + assets detail -->
+      <section class="content-section">
+        <h2>Salary, Travel Bans, and Asset Seizure in Detail</h2>
+        <p>
+          <strong>Salary garnishment</strong> is often the fastest result. Under Labour Law Article 25 (Federal Decree-Law No. 33 of 2021), court-ordered debts are normally capped at 25 percent of wages, but awarded alimony is the exception: more than a quarter may be deducted, with no fixed maximum percentage. The Execution Court directs the employer to pay a share of his salary to you each month.
+        </p>
+        <p>
+          A <strong>travel ban</strong> is one of the strongest levers, because it touches a working expat's ability to leave for business or family. The AED 10,000 minimum-debt threshold that applies to ordinary financial travel bans does not apply to maintenance, so a ban can attach for any unpaid amount. It lifts once he pays.
+        </p>
+        <p>
+          <strong>Asset seizure</strong> reaches what he owns. The court can freeze and attach bank accounts through the Central Bank, seize and auction vehicles and property, attach shares and trade licences, and block transactions at the RTA, the Land Department, and the Economic Department. These measures matter most where he has savings or assets but is simply choosing not to pay.
+        </p>
+      </section>
+
+      <!-- Civil detention -->
+      <section class="content-section">
+        <h2>Civil Detention: A Last Resort, Not a First Step</h2>
+        <p>
+          The Execution Court can order <strong>civil detention</strong>, but it is coercive rather than punitive: the point is to pressure a debtor who can pay into paying, not to punish him. Under Article 319 of the Civil Procedure Law (Federal Decree-Law No. 42 of 2022), the court turns to detention only after asset measures are exhausted, and the debtor can avoid it by proving a genuine inability to pay, unless he is concealing assets. Whether the civil-debt detention rules apply identically to maintenance is, according to UAE legal practitioners, not fully settled.
+        </p>
+        <p>
+          The rules have tightened in Dubai. <strong>Dubai Circular No. 2 of 2024</strong> bars arrest unless the creditor proves the debtor has funds and is refusing to pay, and any arrest is cancelled once an instalment plan is accepted. You may also see references to "up to 6 months" jail for wilful non-payment and a separate criminal family-non-support penalty (reportedly Article 254, with a fine of AED 5,000 to 100,000). Those figures are unverified and rest on single sources, so treat them as reported rather than settled, and do not rely on them when planning your case.
+        </p>
+      </section>
+
+      <!-- Arrears + fees -->
+      <section class="content-section">
+        <h2>Arrears Limits, Fees, and Timelines</h2>
+        <p>
+          You cannot claim unlimited back maintenance. Spousal-maintenance <strong>arrears are capped at the last 2 years</strong> under Article 99 of Federal Decree-Law No. 41 of 2024. Backdated maintenance from when a claim arose may also be available for a limited period, reportedly up to 6 months under Article 97, although that figure comes from a single source. The upside is durability: a final judgment stays <strong>enforceable for up to 15 years</strong>, so an existing order does not lapse just because your ex stalls.
+        </p>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">Dubai execution fee</p>
+            <p class="cost-amount">2% of amount due</p>
+            <p class="cost-detail">Min AED 200, max AED 5,000 (Law 21/2015, amended by 2/2019, Art. 35)</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Abu Dhabi court fee</p>
+            <p class="cost-amount">5% of claim</p>
+            <p class="cost-detail">Min AED 100, max AED 40,000 (Law 13/2017)</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Voluntary-payment window</p>
+            <p class="cost-amount">7 to 15 days</p>
+            <p class="cost-detail">Reported range; confirm the current period with the court</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Judgment enforceable</p>
+            <p class="cost-amount">Up to 15 years</p>
+            <p class="cost-detail">A final order does not expire if your ex stops paying</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony UAE</strong>
+            <span>Types of maintenance, how amounts are calculated, and enforcement</span>
+          </a>
+          <a href="/en/alimony-calculator-uae/" class="related-card">
+            <strong>Alimony Calculator UAE</strong>
+            <span>Estimate spousal and child maintenance before you file</span>
+          </a>
+          <a href="/en/child-support-uae/" class="related-card">
+            <strong>Child Support UAE</strong>
+            <span>Child maintenance rules, amounts, and how to collect it</span>
+          </a>
+          <a href="/en/divorce-settlement-uae/" class="related-card">
+            <strong>Divorce Settlement UAE</strong>
+            <span>Dividing finances, property, and ongoing support</span>
+          </a>
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Orders UAE</strong>
+            <span>Urgent interim maintenance and protective court orders</span>
+          </a>
+          <a href="/en/wife-rights-after-divorce-uae/" class="related-card">
+            <strong>Wife Rights After Divorce UAE</strong>
+            <span>Mahr, alimony, housing, custody, and visa rights</span>
+          </a>
+          <a href="/en/divorce-financial-planning-uae/" class="related-card">
+            <strong>Divorce Financial Planning UAE</strong>
+            <span>Budgeting around support payments and enforcement</span>
+          </a>
+        </div>
+        <p class="note-text">Planning around unreliable payments is its own task. Our guide to <a href="/en/divorce-financial-planning-uae/">divorce financial planning in the UAE</a> covers how to budget while you enforce an order.</p>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p + p { margin-top: 1rem; }
+  .content-section a { color: #2563eb; text-decoration: none; }
+  .content-section a:hover { text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+  .note-text a { color: #2563eb; font-style: normal; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

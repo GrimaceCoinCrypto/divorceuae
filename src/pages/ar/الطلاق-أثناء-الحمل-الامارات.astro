@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'الطلاق أثناء الحمل في الإمارات: حقوقك وعدّتك ونفقتك';
+const description =
+  'الطلاق أثناء الحمل في الإمارات: العدّة حتى الوضع، النفقة والسكن طوال الحمل، إثبات النسب، حضانة المولود، وأجرة الرضاعة وفق قانون الأحوال الشخصية الاتحادي ٢٠٢٤.';
+
+const canonical = 'https://divorceu.ae/ar/الطلاق-أثناء-الحمل-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-while-pregnant-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'الطلاق أثناء الحمل في الإمارات' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يجوز للزوج تطليق زوجته الحامل؟',
+    answer:
+      'نعم. لا يمنع القانون الإماراتي الزوج من إيقاع الطلاق وزوجته حامل. غير أن الطلاق لا ينهي التزاماته المالية: تستمر النفقة والسكن، وتمتد العدة حتى الوضع لا حتى انقضاء ثلاثة قروء. وبموجب قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤، تحتفظ الزوجة الحامل بحقها في النفقة طوال مدة الحمل بصرف النظر عمن بادر بالطلاق.',
+  },
+  {
+    question: 'كم تبلغ عدة الحامل في الإمارات؟',
+    answer:
+      'عدة الحامل تمتد حتى تضع حملها (أو حتى الإجهاض)، وفق المادة ٨٥ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤. وهذا بديل عن العدة المعتادة وهي ثلاثة قروء، أو ثلاثة أشهر قمرية لمن لا تحيض، المنصوص عليها في المادة ٨٤. فقد تكون العدة أسابيع قليلة أو عدة أشهر بحسب مدى تقدّم الحمل عند وقوع الطلاق.',
+  },
+  {
+    question: 'من يدفع النفقة أثناء الحمل في الإمارات؟',
+    answer:
+      'الزوج هو من يدفعها. وفق المادة ١٠١ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤، تستحق الزوجة المطلقة الحامل النفقة طوال الحمل حتى الوضع، حتى بعد الطلاق البائن. وتشمل النفقة الطعام والكسوة والسكن المناسب والرعاية الطبية. وللمطلقة بغير سبب من جانبها أن تطالب بالمتعة وقد تبلغ نفقة سنة كاملة.',
+  },
+  {
+    question: 'لمن حضانة المولود بعد الطلاق في الإمارات؟',
+    answer:
+      'يبقى المولود مع أمه أولاً. ترتيب الحضانة في المادة ١١٤ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ يبدأ بالأم، ثم الأب، ثم أم الأم، ثم أم الأب، مع مراعاة المحكمة لمصلحة المحضون الفضلى. والحضانة الفعلية والولاية شأنان منفصلان، ويمكن بحثهما أمام المحكمة ذاتها.',
+  },
+  {
+    question: 'ماذا عن غير المسلمين الذين يتطلّقون أثناء الحمل؟',
+    answer:
+      'يجوز أن يخضع المقيمون غير المسلمين لقانون الأحوال الشخصية المدني الاتحادي رقم ٤١ لسنة ٢٠٢٢، الساري منذ ١ فبراير ٢٠٢٣. يجيز هذا القانون الطلاق دون إثبات خطأ ودون صلح إلزامي، ويجعل الحضانة المشتركة هي الأصل حتى سن ١٨. وتُقدَّر النفقة وفق عوامل متعددة في المادة ٩، وتسقط بزواج الزوجة. ولا تُطبَّق أحكام عدة الحامل وأجرة الرضاعة الشرعية بالصورة نفسها في هذا النظام.',
+  },
+  {
+    question: 'هل يدفع الأب أجرة الرضاعة بعد الطلاق؟',
+    answer:
+      'إذا لم ترضع الأم طفلها أو تعذّر عليها ذلك، تقع أجرة الرضاعة على الأب إلى جانب نفقة الطفل المعتادة. وهذا الالتزام معترف به في قانون الأحوال الشخصية الإماراتي ويُعدّ جزءاً من واجب الأب في الإنفاق على الطفل. ويستطيع محامي الأسرة أن يبيّن لك كيف تطبّقه محكمة بعينها على حالتك.',
+  },
+];
+
+const continues = [
+  { item: 'الطعام والكسوة', detail: 'تستمر النفقة اليومية للزوجة طوال مدة الحمل.' },
+  { item: 'السكن المناسب', detail: 'سكن في بيت الزوجية أو مسكن مناسب طوال الحمل والعدة.' },
+  { item: 'الرعاية الطبية', detail: 'علاج ما يتعلق بالحمل ونفقات الوضع كجزء من النفقة.' },
+  { item: 'نفقة الطفل', detail: 'تبدأ نفقة الطفل عند الولادة وتستمر بعدها.' },
+  { item: 'أجرة الرضاعة', detail: 'تقع أجرة الرضاعة على الأب حين لا ترضع الأم.' },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} lang="ar" />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٦</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        قد يقع الطلاق والزوجة حامل، ويبقي القانون الإماراتي حمايتها قائمة طوال هذه المدة. تستمر النفقة والسكن، وتمتد العدة حتى يولد الطفل، ويبقى المولود مع أمه أولاً.
+      </p>
+      <p class="hero-author">بقلم <strong>أليكسي سوننين</strong> · مستشار قانوني ومغترب في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>الجواب باختصار</h2>
+        <p>
+          يجوز للزوج <strong>تطليق زوجته الحامل</strong> في الإمارات، كما يجوز للزوجة طلب الطلاق وهي حامل. يقع الطلاق، لكن واجبات الزوج لا تتوقف.
+          تمتد العدة <strong>حتى الوضع</strong> وفق المادة ٨٥ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤، لا ثلاثة قروء كالمعتاد.
+          <strong>وتستمر النفقة والسكن طوال الحمل حتى الوضع</strong> وفق المادة ١٠١. ويبقى المولود مع أمه أولاً وفق المادة ١١٤، ويتحمل الأب نفقة الطفل وأجرة الرضاعة.
+        </p>
+      </div>
+
+      <img
+        src="/images/woman-dubai-skyline.webp"
+        alt="امرأة تطل على أفق دبي · الطلاق أثناء الحمل في الإمارات"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Can you divorce while pregnant -->
+      <section class="content-section">
+        <h2>هل يمكن الطلاق أثناء الحمل في الإمارات؟</h2>
+        <p>
+          نعم، في الاتجاهَين. يجوز للزوج إيقاع الطلاق وزوجته حامل، كما يجوز للزوجة رفع دعوى طلاق أثناء الحمل، سواء عن طريق الخلع أو المسار القضائي. الحمل ليس مانعاً قانونياً من إنهاء الزواج.
+        </p>
+        <p>
+          ما يتغيّر هو التوقيت والمال لا الأهلية. فبمجرد وقوع الطلاق يعامل القانون الزوجة الحامل بوصفها طرفاً مشمولاً بالحماية. لا تتوقف نفقتها عند تاريخ الطلاق، ولا يُعدّ الزواج منتهياً تماماً حتى تنقضي العدة، وهي للحامل تنقضي بولادة الطفل. وللاطلاع على الطلاق بمبادرة من الزوج، راجعي دليلنا عن <a href="/ar/الطلاق-في-الامارات/">الطلاق في الإمارات</a>. وللحقوق المالية التي تبقى بعد الطلاق، راجعي <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/">حقوق الزوجة بعد الطلاق في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Iddah -->
+      <section class="content-section">
+        <h2>عدة الحامل: حتى الوضع</h2>
+        <p>
+          العدة هي المدة التي تتربّصها المطلقة قبل أن يحلّ لها الزواج من جديد، وهي كذلك تحدد المدة التي تسري فيها بعض الحقوق. وعدة المطلقة الحامل تمتد حتى تضع حملها، أو حتى الإجهاض، وفق <strong>المادة ٨٥ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong>. وهو الحكم نفسه الذي كان موجوداً في المادة ١٣٨ (٢) من قانون عام ٢٠٠٥ القديم.
+        </p>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>الحالة</div>
+            <div>مدة العدة</div>
+            <div>المصدر</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">المطلقة الحامل</div>
+            <div>حتى الوضع (أو الإجهاض)</div>
+            <div>المادة ٨٥، القانون ٤١ لسنة ٢٠٢٤</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type khula">المطلقة التي تحيض (المعتاد)</div>
+            <div>ثلاثة قروء</div>
+            <div>المادة ٨٤، القانون ٤١ لسنة ٢٠٢٤</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">المطلقة التي لا تحيض</div>
+            <div>ثلاثة أشهر قمرية</div>
+            <div>المادة ٨٤، القانون ٤١ لسنة ٢٠٢٤</div>
+          </div>
+        </div>
+        <p class="note-text">لأن عدة الحامل مرتبطة بالولادة، فقد تمتد من أسابيع قليلة إلى عدة أشهر بحسب مدى تقدّم الحمل. ولشرح أوفى لمدد العدة، راجعي دليلنا عن <a href="/ar/عدة-الطلاق/">عدة الطلاق في الإمارات</a>.</p>
+      </section>
+
+      <!-- Maintenance during pregnancy -->
+      <section class="content-section">
+        <h2>النفقة والسكن أثناء الحمل</h2>
+        <p>
+          تستحق الزوجة المطلقة الحامل النفقة طوال الحمل حتى الوضع، حتى بعد الطلاق البائن، وفق <strong>المادة ١٠١ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong> (وهي بمثابة المادة ٦٩ في قانون عام ٢٠٠٥). وتشمل هذه النفقة الطعام والكسوة والسكن في بيت الزوجية أو مسكن مناسب والرعاية الطبية المتعلقة بالحمل.
+        </p>
+        <p>
+          وإلى جانب النفقة المستمرة، يجوز للزوجة المطلقة بغير سبب من جانبها أن تطالب بـ<strong>المتعة</strong>، وهي تعويض قد يصل إلى نفقة سنة كاملة. ويتوقف المقدار على يسار الزوج وظروف الطلاق، وتقدّره المحكمة. ونفقة الطفل مستقلة مرة أخرى وتبدأ بمجرد ولادة الطفل. ولمعرفة كيف تُقدَّر النفقة وتُنفَّذ، راجعي <a href="/ar/نفقة-بعد-الطلاق-الامارات/">النفقة بعد الطلاق في الإمارات</a> و<a href="/ar/نفقة-الاطفال-الامارات/">نفقة الأطفال في الإمارات</a>.
+        </p>
+        <h3 class="sub-h">ما الذي يستمر أثناء الحمل والعدة</h3>
+        <div class="cost-grid">
+          {continues.map(c => (
+            <div class="cost-card">
+              <p class="cost-label">{c.item}</p>
+              <p class="cost-detail">{c.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Paternity -->
+      <section class="content-section">
+        <h2>أحكام النسب بعد الطلاق</h2>
+        <p>
+          النسب مهم لأنه يثبت انتساب الطفل وواجبات الأب. وبموجب <strong>المادة ٨٨ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong> (المطابقة للمادتَين ٩٠ و٩١ من قانون عام ٢٠٠٥)، فإن أقل مدة للحمل المعترف بها <strong>١٨٠ يوماً</strong> وأقصاها <strong>٣٦٥ يوماً</strong>. ويُنسب الطفل إلى الزوج إذا وُلد بعد أقل مدة الحمل خلال قيام الزواج، أو خلال ٣٦٥ يوماً من انتهائه.
+        </p>
+        <p>
+          أما الأب الذي يرغب في نفي النسب فعليه، وفق ما يذكره بعض المحامين، أن يتصرّف بسرعة: يُقال إن عليه أن يرفع الأمر خلال ١٥ يوماً من علمه بالولادة، وأن أدلة الحمض النووي قد تصلح إثباتاً في مثل هذا النزاع. وهذا مجال ضيق وحسّاس، وينبغي أن يؤكد محامي الأسرة الإجراء المعمول به حالياً قبل أي خطوة.
+        </p>
+      </section>
+
+      <!-- Newborn custody and nursing -->
+      <section class="content-section">
+        <h2>حضانة المولود وأجرة الرضاعة</h2>
+        <p>
+          يبقى المولود مع أمه أولاً. وترتيب الحضانة وفق <strong>المادة ١١٤ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong> يسير على هذا النحو: الأم، ثم الأب، ثم أم الأم، ثم أم الأب، مع تخويل المحكمة الفصل وفق مصلحة المحضون الفضلى. وفي قانون ٢٠٢٤ صارت الحضانة تستمر حتى سن ١٨ للذكور والإناث معاً، وللطفل البالغ ١٥ سنة فأكثر أن يختار مع أي والديه يعيش.
+        </p>
+        <p>
+          وتقع أجرة الرضاعة على الأب حين تعجز الأم عن إرضاع الطفل أو لا ترضعه. وهذه الأجرة تأتي إلى جانب نفقة الطفل المعتادة كجزء من واجب الأب في الإنفاق على المولود. ولمعرفة كيف تُقرَّر الحضانة وكيف تختلف الولاية عن الرعاية الفعلية، راجعي <a href="/ar/حضانة-الاطفال-الامارات/">حضانة الأطفال في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Non-Muslim position -->
+      <section class="content-section">
+        <h2>غير المسلمين: الوضع وفق القانون المدني</h2>
+        <p>
+          يجوز أن يخضع طلاق المقيمين غير المسلمين لـ<strong>قانون الأحوال الشخصية المدني الاتحادي رقم ٤١ لسنة ٢٠٢٢</strong>، الساري في الإمارات منذ ١ فبراير ٢٠٢٣. يجيز هذا القانون الطلاق بالإرادة المنفردة دون إثبات خطأ، ويتجاوز الصلح الإلزامي، ويجعل الحضانة المشتركة هي الأصل حتى سن ١٨. وتُقدَّر النفقة على أساس عوامل متعددة في المادة ٩، وتسقط بزواج الزوجة من جديد.
+        </p>
+        <p>
+          وفي ظل هذا النظام المدني، لا تُطبَّق مفاهيم عدة الحامل وأجرة الرضاعة الشرعية بالصورة ذاتها. وتُحمى الزوجة الحامل غير المسلمة بدلاً من ذلك عبر أحكام النفقة والحضانة في القانون المدني. وتنظر محكمة الأسرة المدنية في أبوظبي كثيراً من هذه القضايا بلغتَين. وللمزيد عن هذا المسار، اطّلعي على ملاحظتنا أدناه واسألي محامياً عن القانون الأنسب لجنسيتك وحالتك.
+        </p>
+        <p class="note-text">يجوز للمغتربين المسلمين كذلك أن يحتكموا في بعض الحالات إلى قانون بلدهم الأصلي بموجب المادة ١ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤. والقانون الواجب التطبيق قد يغيّر النتيجة في العدة والنفقة والحضانة، فتأكدي منه مبكراً مع محامي أسرة، واقرئي المزيد في <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/">حقوق الزوجة بعد الطلاق في الإمارات</a>.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} lang="ar" />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/عدة-الطلاق/" class="related-card">
+            <strong>عدة الطلاق في الإمارات</strong>
+            <span>كيف تعمل العدة وكم تستغرق من المدة</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>ترتيب الحضانة والأعمار وقاعدة المصلحة الفضلى</span>
+          </a>
+          <a href="/ar/نفقة-الاطفال-الامارات/" class="related-card">
+            <strong>نفقة الأطفال في الإمارات</strong>
+            <span>كيف تُحسب نفقة الطفل وتُدفع</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة ومقاديرها وكيفية تنفيذها</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>المهر والنفقة والسكن والحضانة وحق الإقامة</span>
+          </a>
+          <a href="/ar/المهر-عند-الطلاق-الامارات/" class="related-card">
+            <strong>المهر عند الطلاق</strong>
+            <span>كيف يُعامل المهر عند انتهاء الزواج</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>إجراءات الطلاق ومساراته وتوقيته</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 1rem; }
+  .content-section a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .content-section a:hover { text-decoration: underline; }
+  .sub-h { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0.5rem 0 1rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1.3fr 1.4fr 1.3fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 480px; }
+  .compare-row { display: grid; grid-template-columns: 1.3fr 1.4fr 1.3fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 480px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; font-weight: 600; text-decoration: none; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.82rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

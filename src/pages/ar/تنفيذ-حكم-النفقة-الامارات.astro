@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'تنفيذ حكم النفقة في الإمارات: ماذا تفعلين عند الامتناع عن الدفع';
+const description =
+  'طليقك توقف عن دفع النفقة في الإمارات؟ تعرّفي على تنفيذ الحكم: محكمة التنفيذ، الحجز على الراتب، منع السفر، الحجز على الأصول، الرسوم، والمواعيد.';
+
+const canonical = 'https://divorceu.ae/ar/تنفيذ-حكم-النفقة-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/unpaid-alimony-enforcement-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'تنفيذ حكم النفقة في الإمارات' },
+];
+
+const steps = [
+  {
+    num: '١',
+    title: 'التأكد من أن الحكم نهائي',
+    detail: 'لا يمكن تنفيذ حكم النفقة إلا بعد أن يصبح نهائياً، أي بعد انقضاء مدة الاستئناف أو استنفاد طرق الطعن. أما النفقة المؤقتة المقضي بها أثناء سير الدعوى فتكون واجبة النفاذ فوراً. احصلي من المحكمة المُصدِرة للحكم على نسخة تنفيذية مختومة وصالحة للتنفيذ.',
+  },
+  {
+    num: '٢',
+    title: 'فتح ملف تنفيذ',
+    detail: 'تُرفع دعوى التنفيذ أمام محكمة التنفيذ في الإمارة التي صدر فيها الحكم، مع الإشارة إلى الحكم النهائي والمبلغ المستحق. في دبي يُرفق عادةً خطاب رقم الآيبان (IBAN) الخاص بحسابك ورقم مكاني (Makani) الخاص بالمدين حتى تتمكن المحكمة من تحديد موقعه وتحويل المبالغ إليك.',
+  },
+  {
+    num: '٣',
+    title: 'الإعلان ومهلة الوفاء الطوعي',
+    detail: 'تُعلن المحكمة المدين وتمنحه مهلة قصيرة للسداد طوعاً. تختلف المصادر في تحديد طول هذه المهلة، إذ تتراوح التقارير بين ٧ و١٥ يوماً. فإن سدّد أُغلق الملف، وإن تجاهل الإعلان جاز لك طلب إجراءات التنفيذ الجبري.',
+  },
+  {
+    num: '٤',
+    title: 'طلب إجراءات التنفيذ',
+    detail: 'اطلبي من محكمة التنفيذ الحجز على راتبه، وتجميد حساباته البنكية والحجز عليها، والحجز على المركبات أو العقارات، وفرض منع السفر. تُحصَّل النفقة باعتبارها ديناً ممتازاً، فتُدفَع الأقساط الشهرية الجارية قبل أغلب الدائنين الآخرين.',
+  },
+  {
+    num: '٥',
+    title: 'التصعيد عند استمرار الامتناع',
+    detail: 'إذا لم تُجدِ إجراءات الحجز على الأصول في استرداد المبلغ وكان يُخفي أمواله، يمكن للمحكمة فرض ضغوط إضافية، تشمل الحبس المدني كملاذ أخير. الغاية هي إجباره على الدفع لا معاقبته، وبإمكانه تفادي ذلك بالسداد أو الاتفاق على خطة تقسيط.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'ماذا أفعل إذا توقف طليقي عن دفع النفقة في الإمارات؟',
+    answer: 'بمجرد أن يصبح حكم النفقة نهائياً، ترفعين دعوى تنفيذ أمام محكمة التنفيذ مع الإشارة إلى الحكم والمبلغ المستحق. عندئذ يمكن للمحكمة الحجز على راتبه، وتجميد حساباته البنكية، والحجز على أصوله، وفرض منع سفر حتى يدفع. أما النفقة المؤقتة المقضي بها أثناء دعوى قائمة فتكون واجبة النفاذ فوراً. لا تحتاجين عادةً إلى إثبات أي شيء جديد في هذه المرحلة، فأنت ببساطة تنفّذين حكماً سبق أن أصدرته المحكمة.',
+  },
+  {
+    question: 'كيف تعمل محكمة التنفيذ في الإمارات؟',
+    answer: 'محكمة التنفيذ هي الجهة المختصة بتنفيذ الأحكام النهائية. تفتحين ملف تنفيذ بالإشارة إلى حكم النفقة، وفي دبي تُرفقين عادةً خطاب الآيبان (IBAN) ورقم مكاني (Makani) الخاص بالمدين. تُعلن المحكمة المدين وتمنحه مهلة قصيرة للوفاء الطوعي، وتتراوح المدد المُبلَّغ عنها بين ٧ و١٥ يوماً. فإن لم يدفع، تطلبين إجراءات التنفيذ مثل الحجز على الراتب، وتجميد الحسابات، والحجز على الأصول، ومنع السفر.',
+  },
+  {
+    question: 'هل يمكن الحجز على راتبه بسبب النفقة غير المدفوعة؟',
+    answer: 'نعم. بموجب المادة ٢٥ من قانون العمل (المرسوم بقانون اتحادي رقم ٣٣ لسنة ٢٠٢١)، يجوز اقتطاع الديون المحكوم بها من الأجر بنسبة تصل إلى ٢٥٪، باستثناء النفقة المحكوم بها حيث يجوز اقتطاع أكثر من ربع الأجر. لا توجد نسبة قصوى ثابتة للنفقة، لذا يمكن للمحكمة أن تأمر بتحويل حصة أكبر إليك كل شهر.',
+  },
+  {
+    question: 'هل يُفرض منع سفر بسبب النفقة غير المدفوعة في الإمارات؟',
+    answer: 'نعم. يمكن لمحكمة التنفيذ فرض منع سفر على المدين الممتنع عن دفع النفقة. ولا يسري حد الدين الأدنى البالغ ١٠٬٠٠٠ درهم، المطبَّق على أوامر منع السفر المالية العادية، على النفقة، فيجوز فرض المنع عن أي مبلغ غير مدفوع. ويُرفع المنع بمجرد أن يسدد النفقة المستحقة أو يُرضي المحكمة بطريقة أخرى.',
+  },
+  {
+    question: 'هل يُسجن الممتنع عن دفع النفقة في الإمارات؟',
+    answer: 'الحبس المدني ممكن لكنه ملاذ أخير يُقصد به إجبار المدين على الدفع لا معاقبته. لا تلجأ إليه المحكمة إلا بعد استنفاد إجراءات الحجز على الأصول، ويمكن للمدين تفاديه بإثبات عجزه الحقيقي عن الدفع، ما لم يكن يُخفي أصوله. وفي دبي، يمنع التعميم رقم ٢ لسنة ٢٠٢٤ الحبس ما لم يثبت الدائن أن لدى المدين مالاً ويمتنع عن الدفع، ويُلغى أي حبس متى قُبلت خطة تقسيط. أما الإشارات إلى الحبس «حتى ٦ أشهر» وإلى عقوبة جزائية مستقلة عن الامتناع عن الإعالة فهي غير مؤكدة، فينبغي التعامل معها بحذر.',
+  },
+  {
+    question: 'إلى أي مدى يمكن المطالبة بمتأخرات النفقة؟',
+    answer: 'تُقيَّد المطالبة بمتأخرات نفقة الزوجة بآخر سنتين بموجب المادة ٩٩ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤. وقد تتاح النفقة بأثر رجعي من تاريخ نشوء الحق لمدة محدودة، تصل وفق بعض ما يُذكر إلى ٦ أشهر بموجب المادة ٩٧، غير أن هذا الرقم يستند إلى مصدر واحد. أما الحكم النهائي نفسه فيظل قابلاً للتنفيذ مدة تصل إلى ١٥ سنة، فلا يسقط حكم قائم لمجرد أن طليقك توقف عن الدفع.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} lang="ar" />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">النفقة وتنفيذها · الإمارات ٢٠٢٦</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        إذا توقف طليقك عن دفع النفقة في الإمارات، فإن حكم النفقة النهائي ليس مجرد ورقة. يمكن لمحكمة التنفيذ الحجز على راتبه، وتجميد حساباته، والحجز على أصوله، ومنعه من مغادرة البلاد حتى يدفع.
+      </p>
+      <p class="hero-author">بقلم <strong>أليكسي سوننين</strong> · مستشار قانوني ومغترب في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>كيف تُنفّذين حكم النفقة في الإمارات؟</h2>
+        <p>
+          ارفعي <strong>دعوى تنفيذ أمام محكمة التنفيذ</strong> مع الإشارة إلى حكم النفقة النهائي والمبلغ المستحق.
+          عندئذ يمكن للمحكمة <strong>الحجز على راتبه</strong>، و<strong>تجميد حساباته البنكية</strong>، و<strong>فرض منع سفر</strong>، و<strong>الحجز على أصوله</strong> كالمركبات والعقارات والأسهم.
+          ولا يسري <strong>حد الـ١٠٬٠٠٠ درهم</strong> الخاص بمنع السفر على النفقة، كما يجوز اقتطاع النفقة من الأجر بما يتجاوز سقف الـ٢٥٪ المعتاد. والحبس المدني <strong>ملاذ أخير</strong> يُقصد به الإجبار على الدفع لا المعاقبة.
+        </p>
+      </div>
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="مستندات قانونية إماراتية لتنفيذ حكم نفقة غير مدفوعة"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Execution court process -->
+      <section class="content-section">
+        <h2>إجراءات محكمة التنفيذ خطوة بخطوة</h2>
+        <p>
+          يجري التنفيذ عبر محكمة التنفيذ، وهي الجهة القائمة خصيصاً لتحصيل الأحكام النهائية. ويصبح الحكم نهائياً بانقضاء مدة الاستئناف أو استنفاد طرق الطعن، بينما تكون النفقة المؤقتة المقضي بها أثناء دعوى قائمة واجبة النفاذ فوراً. ترفعين دعوى تنفيذ بالإشارة إلى الحكم والمبلغ غير المدفوع. وفي دبي تُرفقين عادةً خطاب الآيبان (IBAN) الخاص بحسابك البنكي ورقم مكاني (Makani) الخاص بالمدين حتى تتمكن المحكمة من تحديد موقعه وتوجيه المدفوعات إليك. وبمجرد فتح الملف، تُعلن المحكمة المدين وتمنحه مهلة قصيرة للوفاء الطوعي. وتتفاوت التقارير في طولها بين ٧ و١٥ يوماً، فتأكدي من المدة الحالية لدى المحكمة أو محاميك.
+        </p>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">احتفظي بمدتَين منفصلتَين في ذهنك: مهلة الوفاء الطوعي أمام محكمة التنفيذ (نحو ٧ إلى ١٥ يوماً) تختلف عن مهلة الامتناع الموضوعية البالغة ٣٠ يوماً المذكورة أدناه. وللاطلاع على كيفية تحديد المبلغ نفسه، راجعي دليلنا حول <a href="/ar/نفقة-بعد-الطلاق-الامارات/">النفقة بعد الطلاق في الإمارات</a>.</p>
+      </section>
+
+      <!-- Article 77 refusal route -->
+      <section class="content-section">
+        <h2>مسار الامتناع عن النفقة بموجب المادة ٧٧</h2>
+        <p>
+          هناك أيضاً مسار موضوعي في قانون الأحوال الشخصية. فبموجب المادة ٧٧ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤، يُمنح الزوج الممتنع عن الإنفاق مهلة <strong>٣٠ يوماً</strong> للوفاء. ويمكن أن تمتد هذه المهلة <strong>إلى ٩٠ يوماً</strong> إذا أثبت إعساره. فإن استمر في الامتناع رغم قدرته على الدفع، جاز للمحكمة أن تعدّ هذا الامتناع سبباً <strong>للحكم بالتطليق</strong>. وهذا مستقل عن ملف التنفيذ: فدعوى التنفيذ تُحصِّل مالاً سبق الحكم به، بينما تعالج خطوة المادة ٧٧ استمرار الامتناع عن الإنفاق وقد تُغيّر حالتك الزوجية. وكثيرون يسلكون المسارَين معاً، فيُنفّذون المتأخرات القائمة بينما يُعرَض الامتناع نفسه على المحكمة. ولفهم كيفية احتساب المبلغ، انظري دليل <a href="/ar/حساب-النفقة-في-الامارات/">حساب النفقة في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Enforcement tools -->
+      <section class="content-section">
+        <h2>ما الذي يمكن لمحكمة التنفيذ فعله بالطليق الممتنع عن الدفع</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>الإجراء</div>
+            <div>السند القانوني</div>
+            <div>كيف يعمل</div>
+            <div>متى يُرفع</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الحجز على الراتب</div>
+            <div>المادة ٢٥ من قانون العمل (٣٣/٢٠٢١)</div>
+            <div>اقتطاعات تُحوَّل إليك شهرياً؛ ويجوز للنفقة تجاوز سقف الـ٢٥٪</div>
+            <div>سداد الدين</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type khula">منع السفر</div>
+            <div>أمر من محكمة التنفيذ</div>
+            <div>لا يسري حد الـ١٠٬٠٠٠ درهم على النفقة</div>
+            <div>السداد الكامل</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الحجز على الأصول</div>
+            <div>أمر من محكمة التنفيذ</div>
+            <div>تجميد الحسابات البنكية؛ الحجز على المركبات والعقارات والأسهم والرخص التجارية</div>
+            <div>الوفاء بالدين</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type">الحبس المدني</div>
+            <div>ملاذ أخير (وفق ما يذكره المحامون)</div>
+            <div>إجبار لا معاقبة، بعد إخفاق إجراءات الحجز على الأصول</div>
+            <div>السداد أو خطة تقسيط</div>
+          </div>
+        </div>
+        <p class="note-text">تُحصَّل النفقة الشهرية الجارية باعتبارها ديناً ممتازاً، تتقدم على أغلب الدائنين الآخرين وتلي الرسوم القضائية غير المدفوعة. أما المتأخرات الأقدم فترتب كدين مدني عادي.</p>
+      </section>
+
+      <!-- Salary garnishment + travel ban + assets detail -->
+      <section class="content-section">
+        <h2>الحجز على الراتب ومنع السفر والحجز على الأصول بالتفصيل</h2>
+        <p>
+          غالباً ما يكون <strong>الحجز على الراتب</strong> أسرع نتيجة. فبموجب المادة ٢٥ من قانون العمل (المرسوم بقانون اتحادي رقم ٣٣ لسنة ٢٠٢١)، تُقيَّد الديون المحكوم بها عادةً بنسبة ٢٥٪ من الأجر، غير أن النفقة المحكوم بها استثناء: إذ يجوز اقتطاع أكثر من الربع دون نسبة قصوى ثابتة. وتوجّه محكمة التنفيذ صاحب العمل إلى تحويل حصة من راتبه إليك كل شهر.
+        </p>
+        <p>
+          ويُعدّ <strong>منع السفر</strong> من أقوى أدوات الضغط، لأنه يمسّ قدرة المغترب العامل على المغادرة لأغراض العمل أو الأسرة. ولا يسري حد الدين الأدنى البالغ ١٠٬٠٠٠ درهم، المطبَّق على أوامر منع السفر المالية العادية، على النفقة، فيجوز فرض المنع عن أي مبلغ غير مدفوع. ويُرفع بمجرد أن يدفع.
+        </p>
+        <p>
+          ويصل <strong>الحجز على الأصول</strong> إلى ما يملكه. فيمكن للمحكمة تجميد الحسابات البنكية والحجز عليها عبر المصرف المركزي، والحجز على المركبات والعقارات وبيعها بالمزاد، والحجز على الأسهم والرخص التجارية، وحظر المعاملات لدى هيئة الطرق والمواصلات ودائرة الأراضي والأملاك ودائرة التنمية الاقتصادية. وتكون هذه الإجراءات أكثر أهمية حين يملك مدخرات أو أصولاً لكنه يختار ببساطة ألا يدفع.
+        </p>
+      </section>
+
+      <!-- Civil detention -->
+      <section class="content-section">
+        <h2>الحبس المدني: ملاذ أخير لا خطوة أولى</h2>
+        <p>
+          يمكن لمحكمة التنفيذ أن تأمر <strong>بالحبس المدني</strong>، لكنه إجبار لا معاقبة: فالمقصود الضغط على مدين قادر على الدفع كي يدفع، لا معاقبته. ووفق ما يذكره المحامون، لا تلجأ المحكمة إلى الحبس إلا بعد استنفاد إجراءات الحجز على الأصول، ويمكن للمدين تفاديه بإثبات عجزه الحقيقي عن الدفع، ما لم يكن يُخفي أصوله. أما مدى انطباق قواعد الحبس في الدين المدني على النفقة بصورة متطابقة فهو، وفق ما يذكره الممارسون القانونيون في الإمارات، أمر لم يُحسم تماماً.
+        </p>
+        <p>
+          وقد شُدِّدت القواعد في دبي. فالتعميم رقم ٢ لسنة ٢٠٢٤ يمنع الحبس ما لم يثبت الدائن أن لدى المدين مالاً ويمتنع عن الدفع، ويُلغى أي حبس متى قُبلت خطة تقسيط. وقد ترين كذلك إشارات إلى الحبس «حتى ٦ أشهر» على الامتناع العمدي عن الدفع، وإلى عقوبة جزائية مستقلة عن الامتناع عن إعالة الأسرة (يُذكر أنها المادة ٢٥٤ بغرامة تتراوح بين ٥٬٠٠٠ و١٠٠٬٠٠٠ درهم). وهذه الأرقام غير مؤكدة وتستند إلى مصادر مفردة، فعامليها كأمر مُبلَّغ عنه لا مُستقر، ولا تعتمدي عليها في التخطيط لقضيتك.
+        </p>
+      </section>
+
+      <!-- Arrears + fees -->
+      <section class="content-section">
+        <h2>حدود المتأخرات والرسوم والمواعيد</h2>
+        <p>
+          لا يمكنك المطالبة بنفقة متأخرة بلا حدود. فمتأخرات نفقة الزوجة <strong>مقيَّدة بآخر سنتين</strong> بموجب المادة ٩٩ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤. وقد تتاح النفقة بأثر رجعي من تاريخ نشوء الحق لمدة محدودة، تصل وفق بعض ما يُذكر إلى ٦ أشهر بموجب المادة ٩٧، غير أن هذا الرقم يأتي من مصدر واحد. والميزة هنا هي الديمومة: فالحكم النهائي يظل <strong>قابلاً للتنفيذ مدة تصل إلى ١٥ سنة</strong>، فلا يسقط حكم قائم لمجرد أن طليقك يماطل. ولتنظيم حقوقك ضمن تسوية شاملة، انظري دليل <a href="/ar/تسوية-الطلاق-الامارات/">تسوية الطلاق في الإمارات</a>.
+        </p>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">رسوم التنفيذ في دبي</p>
+            <p class="cost-amount">٢٪ من المبلغ المستحق</p>
+            <p class="cost-detail">بحد أدنى ٢٠٠ وأقصى ٥٬٠٠٠ درهم (القانون ٢١/٢٠١٥ المعدَّل بالقانون ٢/٢٠١٩، المادة ٣٥)</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">رسوم المحكمة في أبوظبي</p>
+            <p class="cost-amount">٥٪ من قيمة الدعوى</p>
+            <p class="cost-detail">بحد أدنى ١٠٠ وأقصى ٤٠٬٠٠٠ درهم (القانون ١٣/٢٠١٧)</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">مهلة الوفاء الطوعي</p>
+            <p class="cost-amount">٧ إلى ١٥ يوماً</p>
+            <p class="cost-detail">مدى مُبلَّغ عنه؛ تأكدي من المدة الحالية لدى المحكمة</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">مدة قابلية التنفيذ</p>
+            <p class="cost-amount">حتى ١٥ سنة</p>
+            <p class="cost-detail">لا يسقط الحكم النهائي إذا توقف طليقك عن الدفع</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} lang="ar" />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>أدلة ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيف تُحدَّد المبالغ وكيف تُحصَّل</span>
+          </a>
+          <a href="/ar/حساب-النفقة-في-الامارات/" class="related-card">
+            <strong>حساب النفقة في الإمارات</strong>
+            <span>تقدير نفقة الزوجة والأطفال قبل رفع الدعوى</span>
+          </a>
+          <a href="/ar/نفقة-الاطفال-الامارات/" class="related-card">
+            <strong>نفقة الأطفال</strong>
+            <span>قواعد نفقة الأطفال ومبالغها وكيفية تحصيلها</span>
+          </a>
+          <a href="/ar/تسوية-الطلاق-الامارات/" class="related-card">
+            <strong>تسوية الطلاق</strong>
+            <span>تقسيم المال والممتلكات والإعالة المستمرة</span>
+          </a>
+          <a href="/ar/أوامر-الطوارئ-الطلاق-الامارات/" class="related-card">
+            <strong>أوامر الطوارئ</strong>
+            <span>النفقة المؤقتة العاجلة والأوامر القضائية الوقائية</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>المهر والنفقة والسكن والحضانة والتأشيرة</span>
+          </a>
+          <a href="/ar/التخطيط-المالي-للطلاق-الامارات/" class="related-card">
+            <strong>التخطيط المالي للطلاق</strong>
+            <span>إدارة الميزانية حول مدفوعات الإعالة والتنفيذ</span>
+          </a>
+        </div>
+        <p class="note-text">التخطيط حول مدفوعات غير منتظمة مهمة قائمة بذاتها. ويتناول دليلنا حول <a href="/ar/التخطيط-المالي-للطلاق-الامارات/">التخطيط المالي للطلاق في الإمارات</a> كيفية إدارة ميزانيتك أثناء تنفيذ الحكم.</p>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p + p { margin-top: 1rem; }
+  .content-section a { color: #2563eb; text-decoration: none; }
+  .content-section a:hover { text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1fr 1.3fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.75rem; }
+  .note-text a { color: #2563eb; font-style: normal; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

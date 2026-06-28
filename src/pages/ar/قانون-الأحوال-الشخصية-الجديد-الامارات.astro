@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'قانون الأحوال الشخصية الإماراتي الجديد ٢٠٢٥: أهم التغييرات';
+const description =
+  'قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ دخل حيز التنفيذ في ١٥ أبريل ٢٠٢٥ وحلّ محل قانون ٢٠٠٥. تعرّف على ما تغيّر في الطلاق والحضانة حتى سن ١٨ والنفقة.';
+
+const canonical = 'https://divorceu.ae/ar/قانون-الأحوال-الشخصية-الجديد-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/new-uae-personal-status-law-2025/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'قانون الأحوال الشخصية الإماراتي الجديد ٢٠٢٥' },
+];
+
+const steps = [
+  { num: '١', title: 'يُطبَّق على المسلمين بصفة أصلية', detail: 'يحكم قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ أحوال المسلمين من مواطني الدولة والمقيمين المسلمين، ما لم يطلب أحد الطرفَين رسمياً تطبيق قانون بلده الأصلي (المادة ١). أما المقيمون غير المسلمين فيظلون خاضعين للقانون المدني الموازي، القانون الاتحادي رقم ٤١ لسنة ٢٠٢٢.' },
+  { num: '٢', title: 'توثيق الطلاق خلال ١٥ يوماً', detail: 'على الزوج الذي يوقع الطلاق أو يراجع زوجته أن يوثّق ذلك أمام المحكمة خلال ١٥ يوماً. فإن تخلّف، جاز للزوجة المطالبة بتعويض يعادل نفقتها عن مدة التأخير (المادة ٥٨)، وهو ما يسدّ ثغرة كانت تترك المرأة دون سجل مؤرّخ.' },
+  { num: '٣', title: 'الصلح لا يزال إلزامياً', detail: 'تمرّ قضايا طلاق المسلمين عبر قسم التوجيه الأسري قبل أن يفصل القاضي فيها، ويبقى خطاب عدم الصلح صالحاً ثلاثة أشهر. كما خُفِّضت مدة تحكيم التطليق للضرر إلى ٦٠ يوماً بعد أن كانت تصل إلى ٩٠ يوماً (المادة ٧٢).' },
+  { num: '٤', title: 'الحضانة تمتد حتى سن ١٨', detail: 'أصبحت الحضانة تمتد حتى سن ١٨ للذكور والإناث على السواء (المادة ١٢٣)، ويحق للطفل الذي بلغ ١٥ عاماً فأكثر أن يختار مع أيّ والديه يقيم (المادة ١٢٢). كما تتولى الأم الحاضنة الولاية التعليمية على الطفل.' },
+  { num: '٥', title: 'النفقة تسير على المنطق ذاته', detail: 'تظل النفقة شاملة للطعام والكسوة والمسكن والعلاج والتعليم بحسب العُرف (المادة ٩٥). وتُقيَّد دعوى متأخرات نفقة الزوجة بآخر سنتَين (المادة ٩٩).' },
+];
+
+const faqItems = [
+  {
+    question: 'متى دخل قانون الأحوال الشخصية الإماراتي الجديد حيز التنفيذ؟',
+    answer: 'صدر قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ ونُشر في ١٤ أكتوبر ٢٠٢٤، ودخل حيز التنفيذ في ١٥ أبريل ٢٠٢٥، حالّاً محل القانون الاتحادي رقم ٢٨ لسنة ٢٠٠٥. تُفصَل قضايا الطلاق المرفوعة في ١٥ أبريل ٢٠٢٥ أو بعده وفق النص الجديد، كما تؤثر بعض الأحكام مثل سن الحضانة الجديد في طريقة معالجة القضايا الجارية.',
+  },
+  {
+    question: 'ما الذي غيّره قانون الطلاق الإماراتي الجديد ٢٠٢٥ بشأن الحضانة؟',
+    answer: 'أبرز تغيير في الحضانة هو الحد العمري. ففي ظل قانون ٢٠٠٥ القديم كانت حضانة الأم تنتهي قرابة سن ١١ للذكور و١٣ للإناث. أما بموجب المادة ١٢٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤، فقد امتدت الحضانة حتى سن ١٨ للذكور والإناث معاً. ويحق للطفل الذي بلغ ١٥ عاماً فأكثر أن يختار مع أيّ والديه يقيم (المادة ١٢٢)، وتتولى الأم الحاضنة الولاية التعليمية، مع إحالة الخلافات إلى قاضي الأمور المستعجلة.',
+  },
+  {
+    question: 'هل غيّر القانون الجديد أحكام النفقة؟',
+    answer: 'أبقى القانون الجديد النفقة واسعة الشمول، فهي تغطي الطعام والكسوة والمسكن والعلاج والتعليم بحسب العُرف (المادة ٩٥). وتُقيَّد دعوى متأخرات نفقة الزوجة بآخر سنتَين (المادة ٩٩). ويذكر بعض المحامين أن النفقة الرجعية يمكن المطالبة بها لمدة تصل إلى ستة أشهر (المادة ٩٧)، غير أن هذه النقطة تستند إلى مصدر واحد، فينبغي التحقق منها مع محامٍ بحسب ظروف قضيتك.',
+  },
+  {
+    question: 'هل يُطبَّق قانون الأحوال الشخصية الإماراتي الجديد على المغتربين؟',
+    answer: 'يخضع المغتربون المسلمون لقانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ بصفة أصلية، لكن يجوز لأيّ من الطرفَين أن يطلب من المحكمة تطبيق قانون بلده الأصلي بدلاً منه (المادة ١). أما المغتربون غير المسلمين فيخضعون للقانون المدني المنفصل، القانون الاتحادي رقم ٤١ لسنة ٢٠٢٢، الذي يجيز الطلاق الانفرادي دون إثبات خطأ، ويتخطى الصلح الإلزامي، ويجعل الحضانة المشتركة حتى سن ١٨ هي الأصل.',
+  },
+  {
+    question: 'ما الحد الأدنى لسن الزواج في القانون الجديد؟',
+    answer: 'حدّد قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ الحد الأدنى لسن الزواج بـ ١٨ سنة ميلادية (المادة ١٩). كما أضاف القانون الجديد إدمان أحد الزوجَين المخدرات أو المسكرات سبباً للتطليق، وهو ما لم يكن قانون ٢٠٠٥ يدرجه سبباً مستقلاً.',
+  },
+  {
+    question: 'كيف يعامل القانون الجديد طلاق المسلمين وغير المسلمين بشكل مختلف؟',
+    answer: 'تطبّق الإمارات الآن نظامَي أحوال شخصية متوازيَين. فقانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ يطبّق مبادئ الشريعة على المسلمين مع إلزامية الصلح عبر التوجيه الأسري. أما القانون الاتحادي رقم ٤١ لسنة ٢٠٢٢ فيحكم غير المسلمين بنموذج مدني دون إثبات خطأ، ودون صلح إلزامي، مع الحضانة المشتركة بصفة أصلية، ونفقة تسقط إذا تزوجت الزوجة السابقة من جديد. وتؤثر جنسيتك وديانتك ومكان رفع الدعوى جميعاً في تحديد القواعد التي تنطبق عليك.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} lang="ar" />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٦</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ هو قانون الأحوال الشخصية الجديد في الإمارات للمسلمين. دخل حيز التنفيذ في ١٥ أبريل ٢٠٢٥ وحلّ محل قانون ٢٠٠٥. وتمسّ أبرز التغييرات توثيق الطلاق، والحضانة حتى سن ١٨، وطريقة تقدير النفقة.
+      </p>
+      <p class="hero-author">بقلم <strong>أليكسي سوننين</strong> · مستشار قانوني ومغترب في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>ما هو قانون الأحوال الشخصية الإماراتي الجديد؟</h2>
+        <p>
+          القانون الجديد هو <strong>قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong>، قانون الأحوال الشخصية للمسلمين في الإمارات. نُشر في ١٤ أكتوبر ٢٠٢٤ ودخل حيز التنفيذ في <strong>١٥ أبريل ٢٠٢٥</strong>، حالّاً محل <strong>القانون الاتحادي رقم ٢٨ لسنة ٢٠٠٥</strong>.
+          أهم التغييرات: امتداد الحضانة حتى <strong>سن ١٨</strong> للذكور والإناث، وحق الطفل الذي بلغ <strong>١٥ عاماً فأكثر في اختيار</strong> الوالد الذي يقيم معه، وإلزام الزوج بتوثيق الطلاق خلال <strong>١٥ يوماً</strong>، وتقليص مدة تحكيم الضرر إلى <strong>٦٠ يوماً</strong>. ويبقى غير المسلمين خاضعين للقانون المدني المنفصل، القانون الاتحادي رقم ٤١ لسنة ٢٠٢٢.
+        </p>
+      </div>
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="وثائق قانونية إماراتية لقانون الأحوال الشخصية الجديد رقم ٤١ لسنة ٢٠٢٤"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- What it is and when it took effect -->
+      <section class="content-section">
+        <h2>ما هو القانون ومتى دخل حيز التنفيذ</h2>
+        <p>
+          ظلّ الطلاق والحضانة والنفقة للمسلمين في الإمارات يخضع نحو عشرين عاماً للقانون الاتحادي رقم ٢٨ لسنة ٢٠٠٥. وقد حلّ محله الآن نص جديد، إذ نُشر قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ في ١٤ أكتوبر ٢٠٢٤ ودخل حيز التنفيذ في ١٥ أبريل ٢٠٢٥. وتُفصَل القضايا المرفوعة في ذلك التاريخ أو بعده وفق المواد الجديدة.
+        </p>
+        <p>
+          يُطبَّق القانون الجديد على المسلمين من مواطني الدولة وعلى المغتربين المسلمين المقيمين فيها. وبموجب المادة ١، يبقى لأيّ طرف أن يطلب من المحكمة تطبيق قانون بلده الأصلي بدلاً من القانون الإماراتي. أما المقيمون غير المسلمين فلا يتأثرون بهذا القانون إطلاقاً، إذ يخضعون للنظام المدني، القانون الاتحادي رقم ٤١ لسنة ٢٠٢٢، الساري على مستوى الدولة منذ ١ فبراير ٢٠٢٣. وللاطلاع على الصورة الكاملة لتعايش النظامَين معاً، راجع نظرتنا العامة على <a href="/ar/قانون-الطلاق-في-الامارات/">قانون الطلاق في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Old vs new comparison -->
+      <section class="content-section">
+        <h2>قانون ٢٠٠٥ القديم مقابل قانون ٢٠٢٤ الجديد: أهم النقاط</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>النقطة</div>
+            <div>القديم (قانون ٢٨ لسنة ٢٠٠٥)</div>
+            <div>الجديد (مرسوم بقانون ٤١ لسنة ٢٠٢٤)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">سن الحضانة</div>
+            <div>الذكور حتى نحو ١١ والإناث حتى نحو ١٣</div>
+            <div>حتى ١٨ للجنسَين (المادة ١٢٣)</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type new">اختيار الطفل</div>
+            <div>لا سن اختيار محدد بنص</div>
+            <div>للطفل ١٥ فأكثر أن يختار (المادة ١٢٢)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الحد الأدنى لسن الزواج</div>
+            <div>يحدده الولي أو عرف المحكمة</div>
+            <div>١٨ سنة ميلادية (المادة ١٩)</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type new">مدة تحكيم الضرر</div>
+            <div>تصل إلى ٩٠ يوماً</div>
+            <div>تُقيَّد بـ ٦٠ يوماً (المادة ٧٢)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">توثيق الطلاق</div>
+            <div>لا مهلة محددة بنص</div>
+            <div>خلال ١٥ يوماً أو تُعوَّض الزوجة (المادة ٥٨)</div>
+          </div>
+        </div>
+        <p class="note-text">أرقام المواد المذكورة هنا تخص قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤. وتُلغي أسنان الحضانة الجديدة ما تزال تذكره بعض صفحات الخدمات الحكومية من سنّي ١١ و١٣ بسبب تأخر تحديث المحتوى. ولمعرفة كيف ينعكس ذلك في قضية واقعية، اقرأ دليلنا عن <a href="/ar/حضانة-الاطفال-الامارات/">حضانة الأطفال في الإمارات</a>.</p>
+      </section>
+
+      <!-- Biggest changes for divorce -->
+      <section class="content-section">
+        <h2>أبرز التغييرات الخاصة بالطلاق</h2>
+        <p>
+          أكثر التغييرات أثراً عملياً على من يطلّق هو قاعدة التوثيق خلال ١٥ يوماً في المادة ٥٨. فعلى الزوج الذي ينطق بالطلاق أو يراجع زوجته أن يسجّل تلك الخطوة أمام المحكمة خلال ١٥ يوماً. وإن لم يفعل، جاز للزوجة المطالبة بتعويض يعادل نفقتها عن مدة التأخير. وقبل ذلك كان الطلاق غير المؤرّخ أو غير المسجَّل قد يترك الزوجة في حيرة بشأن موعد بدء عدتها وحقوقها المالية فعلياً.
+        </p>
+        <p>
+          كما صار مسار التطليق للضرر أسرع. فبينما كان القانون القديم يمنح المحكّمين مدة تصل إلى ٩٠ يوماً لمحاولة الإصلاح، تُقيِّد المادة ٧٢ نافذة التحكيم بـ ٦٠ يوماً. ويبقى الصلح عبر التوجيه الأسري إلزامياً في قضايا المسلمين، ويظل خطاب عدم الصلح صالحاً ثلاثة أشهر، أما عدد جلسات الصلح فغير محدد بنص. كما أدرج القانون الجديد إدمان أحد الزوجَين المخدرات أو المسكرات سبباً للتطليق. ولمعرفة موقع هذه المسارات بين الطلاق والخلع والتطليق القضائي، اقرأ تفصيلنا عن <a href="/ar/انواع-الطلاق/">أنواع الطلاق في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Custody changes -->
+      <section class="content-section">
+        <h2>تغييرات الحضانة: سن ١٨ وصوت الطفل</h2>
+        <p>
+          الحضانة هي الموضع الذي ابتعد فيه قانون ٢٠٢٤ أكثر ما يكون عن قانون ٢٠٠٥. فقد كان النص القديم ينهي حضانة الأم قرابة سن ١١ للذكور و١٣ للإناث، لتنتقل الحضانة بعدها عادةً نحو الأب بوصفه ولياً. أما المادة ١٢٣ فتمدّ الحضانة الآن حتى سن ١٨ للذكور والإناث على السواء. وهذا تغيير كبير في الحياة اليومية، لأنه يبقي الأطفال مع الوالد الحاضن طوال سنوات دراستهم.
+        </p>
+        <p>
+          وثمة نقطتان إضافيتان مهمتان. الأولى أن المادة ١٢٢ تمنح الطفل الذي بلغ ١٥ عاماً فأكثر حق اختيار الوالد الذي يقيم معه. والثانية أن الأم الحاضنة باتت تتولى الولاية التعليمية، أي يمكنها اتخاذ القرارات الدراسية، مع إحالة الخلافات إلى قاضي الأمور المستعجلة بدلاً من تركها للولي وحده. وتأتي هذه الأحكام إلى جانب التفرقة القديمة بين الحضانة (الرعاية اليومية) والولاية (السلطة القانونية والمالية). ويستعرض <a href="/ar/حضانة-الاطفال-الامارات/">دليل حضانة الأطفال</a> لدينا كيف توازن المحكمة بين مصلحة الطفل الفضلى وفق القواعد الجديدة.
+        </p>
+      </section>
+
+      <!-- Maintenance -->
+      <section class="content-section">
+        <h2>النفقة في ظل القانون الجديد</h2>
+        <p>
+          أبقى القانون الجديد النفقة واسعة الشمول بدلاً من إعادة ابتكارها. فبموجب المادة ٩٥، تغطي النفقة الطعام والكسوة والمسكن والعلاج والتعليم بحسب ما هو معتاد لظروف الأسرة. وتُقيَّد دعوى متأخرات نفقة الزوجة بآخر سنتَين (المادة ٩٩)، فلا يمكن لدعوى طال تأخيرها أن تمتد إلى الوراء بلا حدّ.
+        </p>
+        <p>
+          ووفق ما يذكره محامون إماراتيون، يمكن المطالبة بالنفقة الرجعية أيضاً لمدة تصل إلى ستة أشهر بموجب المادة ٩٧، غير أن هذه النقطة تستند إلى مصدر واحد، فتعامل معها بوصفها مسألة لمحاميك لا قانوناً مستقراً. والذي لم يتغير هو البنية الأساسية للنفقة أثناء الزواج وبعده، بما في ذلك نفقة العدة عن فترة الانتظار ونفقة الأطفال المستمرة. ولمعرفة كيفية احتساب المبالغ وتنفيذها، راجع دليلنا عن <a href="/ar/نفقة-بعد-الطلاق-الامارات/">النفقة بعد الطلاق في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Muslims vs non-Muslims and expats -->
+      <section class="content-section">
+        <h2>المسلمون وغير المسلمين وما يعنيه ذلك للمغتربين</h2>
+        <p>
+          تطبّق الإمارات الآن نظامَي أحوال شخصية متوازيَين، ويتوقف النظام الذي ينطبق عليك على الديانة والجنسية ومكان رفع الدعوى. فالمسلمون، ومنهم المغتربون المسلمون، يخضعون لقانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ الذي يطبّق مبادئ الشريعة ويبقي الصلح عبر التوجيه الأسري إلزامياً. والمواد الجديدة المذكورة أعلاه، بشأن الحضانة والتوثيق والتحكيم، تقع جميعاً في هذا القانون.
+        </p>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">المقيمون المسلمون</p>
+            <p class="cost-amount">مرسوم بقانون ٤١ لسنة ٢٠٢٤</p>
+            <p class="cost-detail">قائم على الشريعة، صلح إلزامي، حضانة حتى ١٨، وقانون البلد الأصلي اختياري بموجب المادة ١</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">المقيمون غير المسلمين</p>
+            <p class="cost-amount">مرسوم بقانون ٤١ لسنة ٢٠٢٢</p>
+            <p class="cost-detail">طلاق مدني دون إثبات خطأ، دون صلح إلزامي، حضانة مشتركة بصفة أصلية حتى ١٨</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">الصلح</p>
+            <p class="cost-amount">يختلف بحسب المسار</p>
+            <p class="cost-detail">مطلوب للمسلمين، وخطاب الإحالة صالح ٣ أشهر، وغير مطلوب في المسار المدني</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">مكان رفع الدعوى</p>
+            <p class="cost-amount">المحكمة مهمة</p>
+            <p class="cost-detail">محاكم الأحوال الشخصية تنظر قضايا المسلمين، ومحكمة أبوظبي المدنية للأسرة تنظر قضايا غير المسلمين</p>
+          </div>
+        </div>
+        <p class="note-text">على المغتربين ألا يفترضوا أن قانون المسلمين الجديد ينطبق عليهم تلقائياً. فالزوجان غير المسلمَين يسيران عادةً بموجب القانون المدني لسنة ٢٠٢٢، بينما يمكن للمغترب المسلم اختيار قانون بلده الأصلي بموجب المادة ١. اقرأ صفحاتنا عن <a href="/ar/طلاق-غير-المسلمين-الامارات/">طلاق غير المسلمين في الإمارات</a> و<a href="/ar/الطلاق-الشرعي-في-الإمارات/">الطلاق الشرعي في الإمارات</a> لمعرفة المسار الأنسب لحالتك.</p>
+      </section>
+
+      <!-- What to do -->
+      <section class="content-section">
+        <h2>ماذا يعني القانون الجديد لقضيتك: خطوة بخطوة</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">إذا بدأت طلاقاً قبل ١٥ أبريل ٢٠٢٥، فاسأل محاميك كيف تؤثر المرحلة الانتقالية في شروط حضانتك ونفقتك. وللاطلاع على شرح مبسّط للإجراء من رفع الدعوى حتى الحكم، راجع دليلنا عن <a href="/ar/الطلاق-في-الامارات/">الحصول على الطلاق في الإمارات</a>.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} lang="ar" />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/قانون-الطلاق-في-الامارات/" class="related-card">
+            <strong>قانون الطلاق في الإمارات</strong>
+            <span>نظرة عامة كاملة على إطار الأحوال الشخصية وأحكام الطلاق</span>
+          </a>
+          <a href="/ar/الطلاق-في-الامارات/" class="related-card">
+            <strong>الطلاق في الإمارات</strong>
+            <span>إجراء خطوة بخطوة من رفع الدعوى حتى الحكم النهائي</span>
+          </a>
+          <a href="/ar/انواع-الطلاق/" class="related-card">
+            <strong>أنواع الطلاق</strong>
+            <span>الطلاق والخلع والتطليق القضائي والمسار المدني دون إثبات خطأ</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>الحضانة حتى ١٨، واختيار الطفل عند ١٥، والولاية</span>
+          </a>
+          <a href="/ar/نفقة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>النفقة بعد الطلاق</strong>
+            <span>أنواع النفقة وكيفية تقدير المبالغ وتنفيذها</span>
+          </a>
+          <a href="/ar/طلاق-غير-المسلمين-الامارات/" class="related-card">
+            <strong>طلاق غير المسلمين</strong>
+            <span>النظام المدني بموجب القانون الاتحادي رقم ٤١ لسنة ٢٠٢٢</span>
+          </a>
+          <a href="/ar/الطلاق-الشرعي-في-الإمارات/" class="related-card">
+            <strong>الطلاق الشرعي في الإمارات</strong>
+            <span>كيف يعمل الطلاق وفق الشريعة في ظل قانون ٢٠٢٤</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p a { color: #2563eb; text-decoration: none; }
+  .content-section p a:hover { text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.3fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.3fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.new { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; font-style: normal; text-decoration: none; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'منع السفر أثناء الطلاق في الإمارات: دليل شامل للأزواج والأطفال';
+const description =
+  'هل يستطيع الزوج منعك من مغادرة الإمارات أثناء الطلاق؟ كيف يعمل منع سفر الأزواج والأطفال، مع من يبقى جواز السفر، قواعد موافقة السفر، وكيفية رفع المنع.';
+
+const canonical = 'https://divorceu.ae/ar/منع-السفر-أثناء-الطلاق-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/travel-ban-divorce-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'منع السفر أثناء الطلاق في الإمارات' },
+];
+
+const steps = [
+  { num: '١', title: 'حدّد سبب المنع', detail: 'يُرفع منع السفر المالي ومنع سفر الطفل بطرق مختلفة وأمام محاكم مختلفة. احصل على نسخة مصدّقة من القرار، أو كلّف محامياً بالبحث في سجلات المحاكم والجوازات، حتى تعرف نوع المنع الذي تواجهه قبل أن تتصرف.' },
+  { num: '٢', title: 'في المنع المالي: سدّد الدين أو أمّن المطالبة', detail: 'يُرفع المنع المرتبط بنفقة غير مدفوعة أو دَين بمجرد السداد الكامل، أو إيداع المبلغ المتنازع عليه لدى المحكمة، أو تقديم كفالة بنكية تقبلها المحكمة. عندها يصدر القاضي أو محكمة التنفيذ إشعار رفع المنع إلى الجوازات.' },
+  { num: '٣', title: 'في منع سفر الطفل: تقدّم إلى المحكمة مُصدِرة القرار', detail: 'يصدر منع سفر الطفل ويُلغى من محكمة الأحوال الشخصية التي أصدرته (عبر محاكم دبي أو دائرة القضاء في أبوظبي). تتقدم بطلب لرفعه أو تعديله، وتفصل المحكمة بناءً على مصلحة الطفل الفضلى.' },
+  { num: '٤', title: 'احضر الجلسة وأثبت تغيّر الظروف', detail: 'قدّم ما يثبت أن سبب المنع لم يعد قائماً: حُسمت الحضانة نهائياً، أو سُدّد الدين، أو أن الرحلة قصيرة ولغرض مشروع، أو اعرض إيداع جواز السفر عند العودة كضمان.' },
+  { num: '٥', title: 'احصل على قرار الرفع وتأكد من الجوازات', detail: 'بعد الموافقة، تصدر المحكمة قرار رفع المنع. تأكد من الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ أن المنع أُزيل من النظام قبل أن تحجز السفر، فالتنفيذ يقع عند المنفذ الحدودي.' },
+];
+
+const faqItems = [
+  {
+    question: 'هل يستطيع الزوج منع زوجته من السفر أثناء الطلاق؟',
+    answer: 'ليس لمجرد الزواج أو رفع دعوى الطلاق. يتطلب منع سفر البالغ في الإمارات وجود مطالبة أساسية عادةً، مثل نفقة غير مدفوعة أو دَين. وبموجب قانون الإجراءات المدنية الاتحادي رقم ٤٢ لسنة ٢٠٢٢ (المواد ٣٢٤ إلى ٣٢٦)، يتطلب منع السفر المالي عادةً دَيناً يتجاوز ١٠٬٠٠٠ درهم مع وجود خطر مغادرة المدين لتفادي السداد. ومطالبات النفقة استثناء مهم: لا يسري عليها حد الـ ١٠٬٠٠٠ درهم، فيجوز فرض المنع لأي مبلغ نفقة غير مدفوع.',
+  },
+  {
+    question: 'هل يمكن لأحد الوالدين منع سفر الأطفال؟',
+    answer: 'نعم. يجوز لأي من الوالدين التقدم إلى محكمة الأحوال الشخصية بطلب منع سفر الطفل. ومن الأسباب الشائعة: خوف حقيقي من الاختطاف، أو رحلة وشيكة دون إذن، أو ازدواج الجنسية، أو نزاع حضانة لم يُحسم، أو خطر إيذاء. توازن المحكمة بين مصلحة الطفل الفضلى، وبمجرد صدور المنع تنفّذه دائرة الجوازات الإماراتية عند كل منفذ خروج.',
+  },
+  {
+    question: 'مع من يبقى جواز سفر الطفل بعد الطلاق؟',
+    answer: 'بموجب المادة ١١٧ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤، يحتفظ الولي (الأب عادةً) بجواز سفر الطفل، إلا عندما يسافر الطرف الحاضن مع الطفل، فيُسلَّم الجواز لمدة تلك الرحلة. وإذا عرقل الولي سفراً مشروعاً، يجوز للمحكمة أن تأمر بأن يبقى الجواز لدى الحاضن. وعادةً تحتفظ الأم الحاضنة بشهادة ميلاد الطفل الأصلية وبطاقة الهوية الإماراتية.',
+  },
+  {
+    question: 'هل أحتاج موافقة الطرف الآخر للسفر مع طفلي؟',
+    answer: 'نعم بشكل عام. بموجب المادة ١١٦ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤، يحتاج الطرف الحاضن إلى موافقة كتابية مسبقة من الطرف الآخر لاصطحاب الطفل إلى الخارج. وإذا رُفضت الموافقة دون مبرر، يجوز للمحكمة أن تأذن بالسفر لمدة تصل إلى ٦٠ يوماً في السنة. ويعامل القانون حق السفر السنوي بين الوالدين على نحو متساوٍ إجمالاً.',
+  },
+  {
+    question: 'كيف أرفع منع السفر؟',
+    answer: 'يعتمد ذلك على نوع المنع. يُرفع المنع المالي عند سداد الدين كاملاً، أو إيداع المبلغ المتنازع عليه لدى المحكمة، أو تقديم كفالة بنكية تقبلها المحكمة. أما منع سفر الطفل فيُلغى بالتقدم إلى محكمة الأحوال الشخصية التي أصدرته وإثبات أن السبب لم يعد قائماً، مثلاً لأن الحضانة حُسمت نهائياً. عندها ترسل المحكمة قرار الرفع إلى الجوازات.',
+  },
+  {
+    question: 'هل الإمارات طرف في اتفاقية لاهاي؟',
+    answer: 'لا. الإمارات ليست طرفاً في اتفاقية لاهاي لعام ١٩٨٠ بشأن الجوانب المدنية لاختطاف الأطفال دولياً، ولا في اتفاقية لاهاي لعام ١٩٩٦ بشأن المسؤولية الأبوية، ولا توجد معاهدة ثنائية بين الإمارات والولايات المتحدة في هذا الشأن. تذكر بعض المدونات خلاف ذلك، لكنه غير صحيح. ولهذا تتعامل المحاكم الإماراتية بجدية بالغة مع منع سفر الأطفال وحفظ الجوازات: إذ لا توجد آلية إعادة بموجب اتفاقية لاهاي إذا أُخرج الطفل إلى الخارج.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} lang="ar" />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">دليل الطلاق · الإمارات ٢٠٢٦</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        لا يستطيع الزوج منعك من مغادرة الإمارات لمجرد أن الطلاق جارٍ. يحتاج منع السفر إلى أساس قانوني، مثل نفقة غير مدفوعة، أما منع سفر الأطفال فيخضع لقواعد قانون الأسرة المستقلة بشأن الموافقة والجوازات والحضانة.
+      </p>
+      <p class="hero-author">بقلم <strong>أليكسي سوننين</strong> · مستشار قانوني ومغترب في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>هل يستطيع الزوج منعك من مغادرة الإمارات؟</h2>
+        <p>
+          <strong>لا يستطيع أي زوج منعك من السفر لمجرد أنكما متزوجان أو بصدد الطلاق.</strong>
+          يحتاج منع سفر البالغ إلى مطالبة أساسية، عادةً مالية مثل نفقة غير مدفوعة أو دَين بموجب قانون الإجراءات المدنية الاتحادي رقم ٤٢ لسنة ٢٠٢٢.
+          يتطلب المنع المبني على دَين عادةً مبلغاً <strong>يتجاوز ١٠٬٠٠٠ درهم</strong>، لكن <strong>مطالبات النفقة معفاة من هذا الحد</strong>.
+          أما الأطفال فالأمر مختلف: <strong>يجوز لأي من الوالدين أن يطلب من محكمة الأحوال الشخصية منع سفر الطفل</strong>، وتنفّذه الجوازات عند الحدود.
+        </p>
+      </div>
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="وثائق قانونية وجواز سفر في الإمارات: منع السفر أثناء الطلاق في الإمارات"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Spouse vs child ban -->
+      <section class="content-section">
+        <h2>منع سفر الزوج مقابل منع سفر الطفل: الفروق الجوهرية</h2>
+        <p>نوعا المنع اللذان يظهران في الطلاق الإماراتي مختلفان جداً في أساسهما القانوني، وفي المحكمة المختصة، وفي طريقة رفعهما. يوضح الجدول أدناه هذا التباين.</p>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>الميزة</div>
+            <div>منع سفر الزوج</div>
+            <div>منع سفر الطفل</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الأساس القانوني</div>
+            <div>مطالبة أساسية: نفقة غير مدفوعة أو دَين مدني</div>
+            <div>مصلحة الطفل: خوف اختطاف، نزاع حضانة، خطر إيذاء</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type child">المحكمة المختصة</div>
+            <div>المحكمة المدنية أو محكمة التنفيذ (المطالبات المالية)</div>
+            <div>محكمة الأحوال الشخصية (محاكم دبي أو دائرة القضاء بأبوظبي)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الحد المالي</div>
+            <div>دَين يتجاوز ١٠٬٠٠٠ درهم، لكن النفقة معفاة منه</div>
+            <div>لا يوجد: يقوم على مصلحة الطفل الفضلى</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type child">كيف يُرفع</div>
+            <div>السداد الكامل، أو الإيداع، أو كفالة بنكية</div>
+            <div>التقدم إلى المحكمة المُصدِرة عند زوال السبب</div>
+          </div>
+        </div>
+        <p class="note-text">إذا كانت قضيتك تنطوي على خطر عاجل بأخذ الطفل إلى الخارج، فمنع السفر أحد عدة حلول سريعة. راجع دليلنا حول <a href="/ar/أوامر-الطوارئ-الطلاق-الامارات/">أوامر الطوارئ في الطلاق الإماراتي</a> للاطلاع على كامل الطلبات العاجلة.</p>
+      </section>
+
+      <!-- Travel ban on a spouse -->
+      <section class="content-section">
+        <h2>منع سفر الزوج أثناء الطلاق</h2>
+        <p>
+          الطلاق وحده لا يبرر منع زوجك أو زوجتك من مغادرة البلاد. لا يسمح القانون الإماراتي لأحد الزوجَين بحبس الآخر عند الحدود انتقاماً. ما يمكن أن يدعم المنع هو مطالبة منفصلة قابلة للإثبات، وهي مالية في الغالب الأعم.
+        </p>
+        <p>
+          يندرج منع السفر المدني والمالي تحت قانون الإجراءات المدنية الاتحادي رقم ٤٢ لسنة ٢٠٢٢ (المواد ٣٢٤ إلى ٣٢٦). وبصفة عامة، على الدائن أن يثبت مبلغاً محدداً مستحقاً، ودَيناً يتجاوز ١٠٬٠٠٠ درهم، وخطراً حقيقياً بأن المدين سيغادر الإمارات لتفادي السداد. عندها يجوز للمحكمة أن تأمر الجوازات بإيقاف الشخص عند منافذ الخروج.
+        </p>
+        <p>
+          أهم استثناء على الإطلاق في سياق الطلاق هو النفقة. <strong>مطالبات النفقة غير المدفوعة معفاة من حد الـ ١٠٬٠٠٠ درهم</strong>، فيجوز طلب المنع لأي مبلغ نفقة غير مدفوع. وهكذا ينشأ منع السفر بين الزوجَين عملياً في أغلب الأحيان: فالزوج الذي يتوقف عن دفع النفقة المحكوم بها قد يواجه منعاً يُطبَّق عبر محكمة التنفيذ كوسيلة ضغط، ولا يُرفع إلا بعد أن يسدد.
+        </p>
+      </section>
+
+      <!-- Travel ban on children -->
+      <section class="content-section">
+        <h2>منع سفر الأطفال</h2>
+        <p>
+          يُعالَج منع سفر الأطفال بمعزل تام عن منع سفر الأزواج، ويُفصل فيه بناءً على مصلحة الطفل الفضلى لا على المال. <strong>يجوز لأي من الوالدين التقدم إلى محكمة الأحوال الشخصية بطلب منع</strong> يحول دون مغادرة الطفل الإمارات.
+        </p>
+        <p>تمنح المحاكم عادةً منع سفر الطفل في الحالات التالية:</p>
+        <ul class="content-list">
+          <li>خوف حقيقي من أن يختطف أحد الوالدين الطفل أو لا يعود به من رحلة؛</li>
+          <li>خطة وشيكة غير مأذونة لأخذ الطفل إلى الخارج؛</li>
+          <li>ازدواج الجنسية، مما يرفع الخطر العملي للإخراج؛</li>
+          <li>نزاع حضانة أو ولاية لم يُحسم بعد؛ أو</li>
+          <li>خطر إيذاء أوسع يهدد الطفل.</li>
+        </ul>
+        <p>
+          يصدر المنع ثم يُلغى لاحقاً عبر محكمة الأحوال الشخصية، التي يُدخل إليها من خلال بوابتي محاكم دبي أو دائرة القضاء بأبوظبي، وتنفّذه الجوازات الإماراتية في كل مطار ومنفذ بري. ولأن وضع الحضانة والولاية يحرّك كثيراً من هذه الطلبات، يجدر فهم كليهما: راجع <a href="/ar/حضانة-الاطفال-الامارات/">حضانة الأطفال في الإمارات</a> وكيف تختلف عن <a href="/ar/حقوق-الوالدين-في-الحضانة-الامارات/">حقوق الوالدين في الحضانة</a>.
+        </p>
+      </section>
+
+      <!-- Passports and documents -->
+      <section class="content-section">
+        <h2>مع من يبقى جواز سفر الطفل؟</h2>
+        <p>
+          يحدد القانون حفظ جواز السفر صراحةً. فبموجب <strong>المادة ١١٧ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤</strong> (قانون الأحوال الشخصية للمسلمين، النافذ منذ ١٥ أبريل ٢٠٢٥)، يحتفظ الولي، وهو الأب عادةً، بجواز سفر الطفل. والاستثناء هو عندما يسافر الطرف الحاضن مع الطفل، فيُسلَّم الجواز طوال مدة الرحلة.
+        </p>
+        <p>
+          وإذا عرقل الولي سفراً مشروعاً برفض تسليم الجواز، يجوز للمحكمة أن تأمر ببقائه لدى الحاضن بدلاً منه. ووفق ما يُذكر، تحتفظ الأم الحاضنة كذلك بشهادة ميلاد الطفل الأصلية وبطاقة الهوية الإماراتية. ويُعدّ حجب جواز سفر الطفل نقطة اشتعال متكررة في حالات الطلاق الإماراتية، ومن الأفضل طرحه مبكراً مع محاميك لا عند المطار.
+        </p>
+      </section>
+
+      <!-- Travel consent and penalties -->
+      <section class="content-section">
+        <h2>موافقة السفر وعقوبة الإخراج دون إذن</h2>
+        <p>
+          حتى مع وجود الجواز في اليد، لا يمكن للطرف الحاضن أن يأخذ الطفل إلى الخارج ببساطة. فبموجب <strong>المادة ١١٦ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤</strong>، يحتاج الطرف الحاضن إلى <strong>موافقة كتابية مسبقة</strong> من الطرف الآخر للسفر بالطفل إلى الخارج. وحيث تُرفض الموافقة دون سبب وجيه، يجوز للمحكمة أن تتدخل وتأذن بالسفر لمدة تصل إلى <strong>٦٠ يوماً في السنة</strong>. ويعامل القانون حق السفر السنوي لكل من الوالدين على نحو متساوٍ إجمالاً.
+        </p>
+        <p>
+          إخراج الطفل من الإمارات دون تلك الموافقة أو دون أمر قضائي مسألة جنائية. فبموجب <strong>المادة ٢٥٢ من المرسوم بقانون اتحادي رقم ٤١ لسنة ٢٠٢٤</strong>، قد يؤدي إخراج الطفل من البلاد دون إذن الولي أو المحكمة إلى الحبس و/أو غرامة تتراوح بين <strong>٥٬٠٠٠ و ٥٠٬٠٠٠ درهم</strong>.
+        </p>
+        <p>
+          المخاطر أعلى في الإمارات منها في كثير من الدول الأخرى لأن <strong>الإمارات ليست طرفاً في اتفاقية لاهاي لعام ١٩٨٠ بشأن اختطاف الأطفال دولياً، ولا في اتفاقية لاهاي لعام ١٩٩٦</strong>، ولا توجد معاهدة ثنائية بين الإمارات والولايات المتحدة في هذا الشأن. فلا توجد آلية إعادة دولية تلقائية إذا أُخرج الطفل إلى الخارج، وهذا بالضبط سبب استخدام المحاكم لمنع السفر وقواعد الجوازات كأدوات وقائية. إذا كنت تواجه هذا الخطر، اقرأ صفحتنا عن <a href="/ar/اختطاف-الأطفال-الدولي-الامارات/">اختطاف الأطفال الدولي في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- How to lift a ban -->
+      <section class="content-section">
+        <h2>كيفية رفع منع السفر: خطوة بخطوة</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">قبل التقدم بأي طلب، احرص على ترتيب أوراقك الثبوتية. يبيّن دليلنا حول <a href="/ar/وثائق-الطلاق-في-الامارات/">وثائق الطلاق في الإمارات</a> الجوازات والشهادات والمستندات التي ستحتاجها. وانتبه أيضاً إلى أن ما يُنشر على الإنترنت قد يُستخدم في القضية: راجع <a href="/ar/وسائل-التواصل-الاجتماعي-والحضانة-الامارات/">وسائل التواصل الاجتماعي والحضانة</a>.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} lang="ar" />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>روابط ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/أوامر-الطوارئ-الطلاق-الامارات/" class="related-card">
+            <strong>أوامر الطوارئ في الطلاق الإماراتي</strong>
+            <span>الطلبات العاجلة، بما فيها منع السفر وتجميد الأصول</span>
+          </a>
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة للمسلمين وغير المسلمين أمام المحاكم</span>
+          </a>
+          <a href="/ar/حقوق-الوالدين-في-الحضانة-الامارات/" class="related-card">
+            <strong>حقوق الوالدين في الحضانة</strong>
+            <span>من يقرر بشأن الجوازات والسفر والتعليم والرعاية اليومية</span>
+          </a>
+          <a href="/ar/اختطاف-الأطفال-الدولي-الامارات/" class="related-card">
+            <strong>اختطاف الأطفال الدولي في الإمارات</strong>
+            <span>خياراتك حين تكون الإمارات خارج إطار اتفاقية لاهاي</span>
+          </a>
+          <a href="/ar/وثائق-الطلاق-في-الامارات/" class="related-card">
+            <strong>وثائق الطلاق في الإمارات</strong>
+            <span>الجوازات والشهادات والأوراق اللازمة لرفع الدعوى</span>
+          </a>
+          <a href="/ar/وسائل-التواصل-الاجتماعي-والحضانة-الامارات/" class="related-card">
+            <strong>وسائل التواصل الاجتماعي والحضانة</strong>
+            <span>كيف يؤثر ما تنشره على قضايا الحضانة والسفر</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p a { color: #2563eb; text-decoration: none; }
+  .content-section p a:hover { text-decoration: underline; }
+  .content-list { margin: 0.5rem 0 1rem; padding-left: 1.25rem; color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-list li { margin-bottom: 0.35rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.child { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; text-decoration: none; font-style: normal; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

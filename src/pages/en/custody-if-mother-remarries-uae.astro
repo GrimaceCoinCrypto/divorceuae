@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Does a Mother Lose Custody if She Remarries? UAE';
+const description =
+  'Does a mother lose custody if she remarries in the UAE? Under Article 113 it is conditional, not automatic, and the best-interest test can keep the child with her.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/custody-if-mother-remarries-uae/',
+  ar: 'https://divorceu.ae/ar/حضانة-الام-بعد-الزواج-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Custody if Mother Remarries UAE', url: 'https://divorceu.ae/en/custody-if-mother-remarries-uae/' },
+];
+
+const steps = [
+  { num: '01', title: 'Understand the rule, not the myth', detail: 'Article 113 of Federal Decree-Law No. 41 of 2024 lists remarriage to a man not related to the child as one custody condition. It is a factor the court weighs, not an automatic disqualifier. The best-interest test sits above it.' },
+  { num: '02', title: 'Assess the child\'s actual circumstances', detail: 'A court looks at stability, the new household, the child\'s age and wishes (a child aged 15+ may state a preference under Article 122), schooling, and whether any genuine harm exists. Remarriage alone, with a settled home, is often not treated as harm.' },
+  { num: '03', title: 'If a claim is filed, respond with evidence', detail: 'If the father petitions to transfer custody, the mother can show the new marriage does not harm the child. The hierarchy in Article 114 means the father\'s claim is not automatic; the judge still applies the child\'s best interest.' },
+  { num: '04', title: 'Regaining custody if the cause ends', detail: 'Under Article 115, a person whose custody ended may re-apply once the reason that ended it ceases. If the new marriage ends, the mother can petition to have custody restored, with the court again deciding on the child\'s interest.' },
+];
+
+const faqItems = [
+  {
+    question: 'Does a mother automatically lose custody if she remarries in the UAE?',
+    answer: 'No. Remarriage does not automatically end a mother\'s custody under UAE law. Article 113 of Federal Decree-Law No. 41 of 2024 lists being married to a man not related to the child as a condition that can affect custody, but the same article gives the court discretion to keep the child with the mother where that serves the child\'s interest. In practice, the mother loses custody only if a court is asked to rule and finds the new marriage actually harms the child\'s welfare. Each case is decided on its own facts.',
+  },
+  {
+    question: 'What does Article 113 say about a remarried mother?',
+    answer: 'Article 113 of Federal Decree-Law No. 41 of 2024 (the 2024 Personal Status Law, in force since 15 April 2025) sets the conditions a custodian must meet. For a female custodian, one condition is that she is not married to a man who is not related to the child within a prohibited degree, unless the court finds the child\'s interest requires otherwise. That closing best-interest exception is the key point: the restriction is not absolute, and a judge can let a remarried mother keep custody.',
+  },
+  {
+    question: 'Can the court let a remarried mother keep custody?',
+    answer: 'Yes. Article 113 expressly allows the court to keep the child with the mother despite her remarriage where the child\'s interest requires it. Judges weigh the child\'s stability, age and wishes, the new household, and whether any real harm exists. A settled, supportive new home, especially where the alternative would disrupt the child, can lead a court to leave custody with the mother. Outcomes are case-by-case and not guaranteed.',
+  },
+  {
+    question: 'Does the father automatically get custody if the mother remarries?',
+    answer: 'No. The father\'s claim is not automatic. Article 114 sets a custody order that starts with the mother, then the father, then the maternal grandmother, then the paternal grandmother, with the court deciding using the child\'s best interest. Even if a court were to find the mother\'s remarriage harms the child, custody does not pass to the father by default; the judge still applies the best-interest test to decide who should hold custody.',
+  },
+  {
+    question: 'Can a mother regain custody if the new marriage ends?',
+    answer: 'Yes. Article 115 of Federal Decree-Law No. 41 of 2024 allows a person whose custody ended to apply again once the cause that ended it ceases. If a mother lost custody because of a remarriage and that marriage later ends, she can petition the Personal Status Court to restore custody. The court will again assess the child\'s interest before granting the request, so restoration is not automatic.',
+  },
+  {
+    question: 'What about non-Muslim expats and remarriage custody?',
+    answer: 'Non-Muslim residents can be governed by Federal Decree-Law No. 41 of 2022 (the Civil Personal Status Law), which sets joint custody as the default to age 18. Under that regime, a parent\'s remarriage does not on its own forfeit custody; a party who objects must petition the court, which decides on the child\'s interest. One separate effect of remarriage under that law is that the ex-wife\'s alimony lapses when she remarries (Article 9). Custody and alimony are treated as different questions.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/custody-if-mother-remarries-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Child Custody · UAE 2026</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        A common worry after divorce is that remarriage ends a mother's custody. Under UAE law it does not happen automatically. Article 113 of the 2024 Personal Status Law makes it conditional, and the court can keep the child with the mother where that serves the child's interest.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>Does a remarried mother lose custody?</h2>
+        <p>
+          <strong>It is not automatic.</strong> Under <strong>Article 113 of Federal Decree-Law No. 41 of 2024</strong>, a female custodian being married to a man not related to the child is listed as a custody condition, but the same article lets a court keep the child with the mother where <strong>the child's interest requires it</strong>. So a mother loses custody only if a court is asked to rule and finds the new marriage genuinely harms the child. If custody does end, she can re-apply once the cause ceases under <strong>Article 115</strong>, and the father's claim is never automatic. Every case is decided on its own facts.
+        </p>
+      </div>
+
+      <img
+        src="/images/child-custody-uae.webp"
+        alt="Mother and child in the UAE: custody rules after remarriage"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- The rule -->
+      <section class="content-section">
+        <h2>The Rule: Article 113 and the Best-Interest Exception</h2>
+        <p>
+          The fear that remarriage instantly ends custody is one of the most common questions divorced mothers ask in the UAE. The honest answer is that the law is more measured than the rumour. The governing provision for Muslims is <strong>Article 113 of Federal Decree-Law No. 41 of 2024</strong>, the Personal Status Law that came into force on 15 April 2025 and replaced the older 2005 statute (where the equivalent rule sat in Article 144).
+        </p>
+        <p>
+          Article 113 lists the conditions a custodian must meet. For a female custodian, one of those conditions is that she is not married to a man who is not related to the child within a prohibited degree, that is, a man who is not a close relative such as an uncle. Read on its own, that sounds like a hard bar. But the article does not stop there: it builds in a best-interest exception, allowing the court to keep the child with the mother where the child's interest requires it. The restriction is therefore conditional, not absolute, and the override is the part that matters most in practice.
+        </p>
+        <p>
+          This is why the precise wording is worth reading rather than the headline. Remarriage is one factor a judge weighs, sitting underneath the overriding duty to protect the child's welfare. For the wider framework, see our guide to <a href="/en/child-custody-uae/">child custody in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- Why not automatic -->
+      <section class="content-section">
+        <h2>Why It Is Not Automatic in Practice</h2>
+        <p>
+          Because the best-interest test sits above the remarriage condition, custody does not simply lapse the day a mother signs a new marriage contract. Two things have to happen. First, someone, usually the father, has to actually raise the issue and ask a court to change custody; custody is not stripped on its own. Second, the court has to be persuaded that the new marriage harms the child, not merely that it has occurred.
+        </p>
+        <p>
+          Judges look at the practical reality: the child's stability, the nature of the new household, the child's age and schooling, and, for older children, their own wishes. Under Article 122 of the 2024 law, a child aged 15 or over may express a preference about which parent to live with. A settled, supportive new home, especially where moving the child would be more disruptive than leaving things as they are, can lead a court to keep custody with the mother. The outcome turns on the child's circumstances, so two similar-looking cases can be decided differently. None of this is a guarantee, and a mother who is concerned should take case-specific advice rather than rely on a general rule.
+        </p>
+      </section>
+
+      <!-- Father's position and hierarchy -->
+      <section class="content-section">
+        <h2>The Father's Position Is Not Automatic Either</h2>
+        <p>
+          A second misconception is that if a mother's custody is affected, the father automatically receives the child. He does not. <strong>Article 114</strong> sets out a custody order of priority that begins with the mother, then the father, then the maternal grandmother, then the paternal grandmother, with the court deciding throughout by reference to the child's best interest.
+        </p>
+        <p>
+          So even in the rare case where a court finds a remarriage harms the child, custody does not pass to the father by default. The judge still applies the best-interest test and may, depending on the facts, place the child with another eligible custodian in the order, or indeed leave the child with the mother under the Article 113 exception. Fathers researching their own standing should read our page on <a href="/en/father-custody-rights-uae/">father custody rights in the UAE</a>, which covers when and how a father can apply.
+        </p>
+      </section>
+
+      <!-- Regaining custody -->
+      <section class="content-section">
+        <h2>Regaining Custody After the Cause Ends</h2>
+        <p>
+          UAE law treats the loss of custody as something that can be reversed when the reason for it disappears. Under <strong>Article 115 of Federal Decree-Law No. 41 of 2024</strong>, a person whose custody ended may apply again once the cause that ended it ceases.
+        </p>
+        <p>
+          For a mother, the most direct example is the new marriage itself ending, whether by divorce or the death of the new spouse. If custody had been removed because of that marriage, its end removes the cause, and the mother can petition the Personal Status Court to restore custody. As with the original decision, restoration is not automatic: the court reassesses the child's interest before granting it. The point to hold on to is that a custody change linked to remarriage is not necessarily permanent.
+        </p>
+      </section>
+
+      <!-- Conditions list -->
+      <section class="content-section">
+        <h2>The Full List of Custodian Conditions (Article 113)</h2>
+        <p>
+          The remarriage rule is only one of several conditions in Article 113. A custodian, broadly, must:
+        </p>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">Capacity</p>
+            <p class="cost-amount">Sane &amp; adult</p>
+            <p class="cost-detail">Of sound mind and at least 18 years old where the custodian is a parent</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Character</p>
+            <p class="cost-amount">Trustworthy</p>
+            <p class="cost-detail">Honest and able to raise the child; not addicted to intoxicants or narcotics</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Health &amp; record</p>
+            <p class="cost-amount">Fit to care</p>
+            <p class="cost-detail">Free of serious or contagious disease; no conviction for an honour-related crime</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Religion &amp; marriage</p>
+            <p class="cost-amount">Conditional</p>
+            <p class="cost-detail">Same religion as the child; not married to a non-relative man, with the best-interest override</p>
+          </div>
+        </div>
+        <p class="note-text">This is a plain-language summary of Article 113 of Federal Decree-Law No. 41 of 2024 and is not a substitute for the official text or legal advice. Reported details should be checked against the current law for your specific case. For how custody differs from legal guardianship, see <a href="/en/guardianship-vs-custody-uae/">guardianship vs custody in the UAE</a>.</p>
+      </section>
+
+      <!-- Muslim vs non-Muslim -->
+      <section class="content-section">
+        <h2>The Non-Muslim Civil-Law Difference</h2>
+        <p>
+          Non-Muslim residents are often governed by a different statute: <strong>Federal Decree-Law No. 41 of 2022</strong>, the Civil Personal Status Law, which has applied UAE-wide since early 2023. It sets <strong>joint custody</strong> as the default to age 18 and approaches remarriage differently from the Muslim personal-status regime.
+        </p>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Question</div>
+            <div>Muslim personal-status law (41/2024)</div>
+            <div>Non-Muslim civil law (41/2022)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Default custody</div>
+            <div>Order of priority starting with the mother (Art. 114)</div>
+            <div>Joint custody as the default to age 18</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type">Effect of remarriage on custody</div>
+            <div>A condition under Art. 113, but with a best-interest override; not automatic</div>
+            <div>Does not on its own forfeit custody; a party must petition the court</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Effect on alimony</div>
+            <div>Iddah and child support handled separately from custody</div>
+            <div>Ex-wife's alimony lapses on her remarriage (Art. 9)</div>
+          </div>
+        </div>
+        <p class="note-text">Under the non-Muslim regime, the headline point is that remarriage does not by itself end custody, but it does end the ex-wife's spousal alimony under Article 9; child support is a separate obligation. Which law applies depends on the parties, so check our overview of <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a> before assuming a regime applies to you.</p>
+      </section>
+
+      <!-- What to do -->
+      <section class="content-section">
+        <h2>What to Do If Custody Is Challenged</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">Remarriage also affects money matters such as spousal maintenance differently from custody. To keep the two questions clear, read our guides on <a href="/en/wife-rights-after-divorce-uae/">wife rights after divorce</a> and <a href="/en/child-support-uae/">child support in the UAE</a>, which explain how each entitlement is treated when a parent remarries.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody rules, ages, and the best-interest test for Muslims and non-Muslims</span>
+          </a>
+          <a href="/en/remarriage-after-divorce-uae/" class="related-card">
+            <strong>Remarriage After Divorce UAE</strong>
+            <span>Waiting periods, rules, and how a new marriage affects your rights</span>
+          </a>
+          <a href="/en/father-custody-rights-uae/" class="related-card">
+            <strong>Father Custody Rights UAE</strong>
+            <span>When and how a father can apply for custody under UAE law</span>
+          </a>
+          <a href="/en/guardianship-vs-custody-uae/" class="related-card">
+            <strong>Guardianship vs Custody UAE</strong>
+            <span>The difference between daily care and legal guardianship</span>
+          </a>
+          <a href="/en/wife-rights-after-divorce-uae/" class="related-card">
+            <strong>Wife Rights After Divorce UAE</strong>
+            <span>Mahr, alimony, housing, custody, and visa rights explained</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>The civil personal-status law, joint custody, and alimony</span>
+          </a>
+          <a href="/en/child-support-uae/" class="related-card">
+            <strong>Child Support UAE</strong>
+            <span>How maintenance for children is set and continues after divorce</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p a { color: #2563eb; text-decoration: none; }
+  .content-section p a:hover { text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; font-style: normal; text-decoration: none; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

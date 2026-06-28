@@ -1,0 +1,346 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'هل تسقط حضانة الأم بزواجها في الإمارات؟ القاعدة والاستثناء';
+const description =
+  'هل تفقد الأم حضانة أطفالها إذا تزوجت في الإمارات؟ وفق المادة ١١٣ الأمر مشروط وليس تلقائياً، ويمكن لمعيار مصلحة المحضون أن يُبقي الطفل معها.';
+
+const canonical = 'https://divorceu.ae/ar/حضانة-الام-بعد-الزواج-الامارات/';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/custody-if-mother-remarries-uae/',
+  ar: canonical,
+};
+
+const breadcrumbItems = [
+  { name: 'الرئيسية', url: 'https://divorceu.ae/ar/' },
+  { name: 'حضانة الأم بعد الزواج في الإمارات' },
+];
+
+const steps = [
+  {
+    num: '١',
+    title: 'افهمي القاعدة، لا الشائعة',
+    desc: 'تُدرج المادة ١١٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ زواج الحاضنة من رجل غير محرم للطفل ضمن شروط الحضانة. هو عامل تزنه المحكمة وليس مُسقِطاً تلقائياً، ومعيار مصلحة المحضون يعلو عليه.',
+  },
+  {
+    num: '٢',
+    title: 'قيّمي ظروف الطفل الفعلية',
+    desc: 'تنظر المحكمة في الاستقرار، وطبيعة الأسرة الجديدة، وسنّ الطفل ورغبته، والتعليم، وما إذا كان هناك ضرر حقيقي. الزواج وحده، مع بيت مستقر، لا يُعامَل في الغالب على أنه ضرر.',
+  },
+  {
+    num: '٣',
+    title: 'إذا رُفعت دعوى، ردّي بالأدلة',
+    desc: 'إذا طلب الأب نقل الحضانة، يمكن للأم أن تُثبت أن الزواج الجديد لا يضرّ بالطفل. ترتيب الحضانة في المادة ١١٤ يعني أن طلب الأب ليس تلقائياً، ويبقى القاضي مُطبِّقاً لمصلحة المحضون.',
+  },
+  {
+    num: '٤',
+    title: 'استعادة الحضانة إذا زال السبب',
+    desc: 'وفق المادة ١١٥، يجوز لمن سقطت حضانته أن يطلب استعادتها متى زال السبب الذي أدّى إلى سقوطها. إذا انتهى الزواج الجديد، يمكن للأم أن تطلب استعادة الحضانة، وتفصل المحكمة من جديد وفق مصلحة الطفل.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'هل تفقد الأم الحضانة تلقائياً إذا تزوجت في الإمارات؟',
+    answer: 'لا. لا يُسقط الزواج حضانة الأم تلقائياً وفق القانون الإماراتي. تُدرج المادة ١١٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ زواج الحاضنة من رجل غير محرم للطفل ضمن الشروط التي قد تؤثر على الحضانة، لكن المادة نفسها تمنح المحكمة سلطة تقديرية لإبقاء الطفل مع الأم متى اقتضت مصلحته ذلك. عملياً، لا تسقط الحضانة إلا إذا رُفعت دعوى ووجدت المحكمة أن الزواج الجديد يضرّ فعلاً بمصلحة المحضون. كل حالة تُقدَّر على ملابساتها.',
+  },
+  {
+    question: 'ماذا تنص المادة ١١٣؟',
+    answer: 'تحدد المادة ١١٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ شروط الحاضن. وبالنسبة للحاضنة، من هذه الشروط ألا تكون متزوجة من رجل غير محرم للطفل، إلا إذا رأت المحكمة أن مصلحة المحضون تقتضي خلاف ذلك. هذا الاستثناء الخاص بمصلحة الطفل في آخر النص هو النقطة الجوهرية: القيد ليس مطلقاً، ويمكن للقاضي أن يُبقي الحضانة مع الأم المتزوجة.',
+  },
+  {
+    question: 'هل يمكن للمحكمة إبقاء الحضانة مع الأم رغم زواجها؟',
+    answer: 'نعم. تُجيز المادة ١١٣ صراحةً إبقاء الطفل مع الأم رغم زواجها متى اقتضت مصلحة المحضون ذلك. يزن القاضي استقرار الطفل وسنّه ورغبته، وطبيعة الأسرة الجديدة، وما إذا كان هناك ضرر حقيقي. البيت الجديد المستقر والداعم، خاصة حين يكون البديل أكثر إخلالاً باستقرار الطفل، قد يدفع المحكمة إلى إبقاء الحضانة مع الأم. النتائج تُقدَّر حسب كل حالة وليست مضمونة.',
+  },
+  {
+    question: 'هل ينتقل الحق للأب تلقائياً إذا تزوجت الأم؟',
+    answer: 'لا. طلب الأب ليس تلقائياً. ترتّب المادة ١١٤ الحضانة بدءاً بالأم، ثم الأب، ثم أم الأم، ثم أم الأب، مع فصل المحكمة وفق مصلحة المحضون. حتى لو رأت المحكمة أن زواج الأم يضرّ بالطفل، لا تنتقل الحضانة إلى الأب بشكل تلقائي، بل يبقى القاضي مُطبِّقاً معيار مصلحة الطفل ليقرر مَن الأحق بالحضانة.',
+  },
+  {
+    question: 'هل تستعيد الأم الحضانة إذا انتهى الزواج الجديد؟',
+    answer: 'نعم. تُجيز المادة ١١٥ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤ لمن سقطت حضانته أن يطلب استعادتها متى زال السبب الذي أدّى إلى سقوطها. إذا فقدت الأم الحضانة بسبب زواج جديد ثم انتهى ذلك الزواج، يمكنها أن تتقدم إلى محكمة الأحوال الشخصية لاستعادة الحضانة. وتُقدِّر المحكمة مصلحة الطفل من جديد قبل الاستجابة للطلب، فالاستعادة ليست تلقائية.',
+  },
+  {
+    question: 'ماذا عن غير المسلمين في مسألة الزواج والحضانة؟',
+    answer: 'قد يخضع المقيمون غير المسلمين لقانون الأحوال الشخصية المدني الاتحادي رقم ٤١ لسنة ٢٠٢٢، الذي يجعل الحضانة المشتركة هي الأصل حتى سنّ ١٨. وبموجب هذا النظام، لا يُسقط زواج أحد الوالدين الحضانة بذاته، وعلى مَن يعترض أن يرفع دعوى تفصل فيها المحكمة وفق مصلحة الطفل. ومن آثار الزواج الجديد بموجب هذا القانون أن نفقة الزوجة المطلقة تسقط بزواجها (المادة ٩). فالحضانة والنفقة مسألتان منفصلتان.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonical}
+  {hreflang}
+  lang="ar"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbItems} lang="ar" />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">حضانة الأطفال · الإمارات ٢٠٢٦</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        من أكثر المخاوف شيوعاً بعد الطلاق أن يُسقط الزواج الجديد حضانة الأم. وفق القانون الإماراتي لا يحدث ذلك تلقائياً. تجعل المادة ١١٣ من قانون الأحوال الشخصية لسنة ٢٠٢٤ الأمر مشروطاً، ويمكن للمحكمة أن تُبقي الطفل مع الأم متى خدم ذلك مصلحته.
+      </p>
+      <p class="hero-author">بقلم <strong>أليكسي سوننين</strong> · مستشار قانوني ومغترب في الإمارات · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>هل تسقط حضانة الأم المتزوجة؟</h2>
+        <p>
+          <strong>الأمر ليس تلقائياً.</strong> بموجب <strong>المادة ١١٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong>، يُدرج زواج الحاضنة من رجل غير محرم للطفل ضمن شروط الحضانة، لكن المادة نفسها تُتيح للمحكمة إبقاء الطفل مع الأم متى اقتضت <strong>مصلحة المحضون</strong> ذلك. فلا تفقد الأم الحضانة إلا إذا رُفعت دعوى ووجدت المحكمة أن الزواج الجديد يضرّ فعلاً بالطفل. وإذا سقطت الحضانة، يمكنها طلب استعادتها متى زال السبب وفق <strong>المادة ١١٥</strong>، وطلب الأب ليس تلقائياً أبداً. كل حالة تُقدَّر على ملابساتها.
+        </p>
+      </div>
+
+      <img
+        src="/images/child-custody-uae.webp"
+        alt="أم وطفلها في الإمارات: قواعد الحضانة بعد الزواج الجديد"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- The rule -->
+      <section class="content-section">
+        <h2>القاعدة: المادة ١١٣ واستثناء مصلحة المحضون</h2>
+        <p>
+          الخوف من أن يُنهي الزواج الجديد الحضانة فوراً هو من أكثر ما تسأل عنه الأمهات المطلقات في الإمارات. والإجابة الصادقة أن القانون أكثر اتزاناً من الشائعة. النص الحاكم للمسلمين هو <strong>المادة ١١٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong>، وهو القانون الذي دخل حيز التنفيذ في ١٥ أبريل ٢٠٢٥ وحلّ محل القانون الأقدم لسنة ٢٠٠٥.
+        </p>
+        <p>
+          تُعدّد المادة ١١٣ الشروط الواجب توافرها في الحاضن. وبالنسبة للحاضنة، من هذه الشروط ألا تكون متزوجة من رجل غير محرم للطفل، أي رجل ليس من ذوي القربى القريبين مثل العمّ. وحين تُقرأ وحدها تبدو قيداً صارماً. لكن المادة لا تقف عند ذلك: فهي تتضمن استثناء مصلحة المحضون، إذ تُتيح للمحكمة إبقاء الطفل مع الأم متى اقتضت مصلحته ذلك. فالقيد إذاً مشروط لا مطلق، والاستثناء هو ما يهمّ أكثر عملياً.
+        </p>
+        <p>
+          ولهذا تستحق صياغة النص أن تُقرأ بدقة بدلاً من العنوان العريض. الزواج الجديد عامل واحد يزنه القاضي، يقع تحت الواجب الأعلى بحماية مصلحة الطفل. وللإطار الأوسع، طالعي دليلنا عن <a href="/ar/حضانة-الاطفال-الامارات/">حضانة الأطفال في الإمارات</a>.
+        </p>
+      </section>
+
+      <!-- Why not automatic -->
+      <section class="content-section">
+        <h2>لماذا ليس الأمر تلقائياً عملياً</h2>
+        <p>
+          لأن معيار مصلحة المحضون يعلو على شرط الزواج، لا تسقط الحضانة بمجرد توقيع الأم عقد زواج جديد. لا بدّ من أمرين. الأول أن يثير أحدهم المسألة فعلاً، وهو الأب غالباً، ويطلب من المحكمة تغيير الحضانة، فالحضانة لا تُنزع من تلقاء نفسها. والثاني أن تقتنع المحكمة بأن الزواج الجديد يضرّ بالطفل، لا أنه وقع فحسب.
+        </p>
+        <p>
+          ينظر القضاة في الواقع العملي: استقرار الطفل، وطبيعة الأسرة الجديدة، وسنّه وتعليمه، ورغبته بالنسبة للأكبر سناً. والبيت الجديد المستقر والداعم، خاصة حين يكون نقل الطفل أكثر إخلالاً باستقراره من إبقاء الوضع على حاله، قد يدفع المحكمة إلى إبقاء الحضانة مع الأم. النتيجة تتوقف على ظروف الطفل، فقد تُفصَل قضيتان متشابهتان في الظاهر بشكل مختلف. لا شيء في هذا مضمون، وعلى الأم القلقة أن تطلب استشارة خاصة بحالتها بدلاً من الاعتماد على قاعدة عامة.
+        </p>
+      </section>
+
+      <!-- Father's position and hierarchy -->
+      <section class="content-section">
+        <h2>موقف الأب ليس تلقائياً هو الآخر</h2>
+        <p>
+          من المفاهيم الخاطئة الثانية أنه إذا تأثرت حضانة الأم، يحصل الأب على الطفل تلقائياً. وهذا غير صحيح. تضع <strong>المادة ١١٤</strong> ترتيباً لأحقية الحضانة يبدأ بالأم، ثم الأب، ثم أم الأم، ثم أم الأب، مع فصل المحكمة طوال الوقت بالرجوع إلى مصلحة المحضون.
+        </p>
+        <p>
+          وهكذا، حتى في الحالة النادرة التي تجد فيها المحكمة أن الزواج الجديد يضرّ بالطفل، لا تنتقل الحضانة إلى الأب بشكل تلقائي. يبقى القاضي مُطبِّقاً معيار مصلحة الطفل، وقد يضع الطفل، بحسب الوقائع، مع حاضن آخر مؤهَّل في الترتيب، أو قد يُبقيه مع الأم وفق استثناء المادة ١١٣. وعلى الآباء الباحثين عن مركزهم القانوني مطالعة صفحتنا عن <a href="/ar/حقوق-الوالدين-في-الحضانة-الامارات/">حقوق الوالدين في الحضانة بالإمارات</a>، التي توضح متى وكيف يمكن للأب أن يتقدم بطلبه.
+        </p>
+      </section>
+
+      <!-- Regaining custody -->
+      <section class="content-section">
+        <h2>استعادة الحضانة بعد زوال السبب</h2>
+        <p>
+          يعامل القانون الإماراتي سقوط الحضانة على أنه أمر قابل للعكس متى زال سببه. فبموجب <strong>المادة ١١٥ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤</strong>، يجوز لمن سقطت حضانته أن يطلب استعادتها متى زال السبب الذي أدّى إلى سقوطها.
+        </p>
+        <p>
+          وأوضح مثال بالنسبة للأم هو انتهاء الزواج الجديد نفسه، سواء بالطلاق أو بوفاة الزوج الجديد. فإذا كانت الحضانة قد سقطت بسبب ذلك الزواج، فإن انتهاءه يُزيل السبب، ويمكن للأم أن تتقدم إلى محكمة الأحوال الشخصية لاستعادة الحضانة. وكما في القرار الأصلي، الاستعادة ليست تلقائية: تُعيد المحكمة تقدير مصلحة الطفل قبل الاستجابة. والنقطة الجديرة بالتمسك بها أن تغيير الحضانة المرتبط بالزواج ليس بالضرورة دائماً.
+        </p>
+      </section>
+
+      <!-- Conditions list -->
+      <section class="content-section">
+        <h2>القائمة الكاملة لشروط الحاضن (المادة ١١٣)</h2>
+        <p>
+          قاعدة الزواج ليست سوى واحد من عدة شروط في المادة ١١٣. فالحاضن، بصورة عامة، يجب أن يكون:
+        </p>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">الأهلية</p>
+            <p class="cost-amount">عاقل وبالغ</p>
+            <p class="cost-detail">سليم العقل، وبالغاً من العمر ١٨ سنة على الأقل حين يكون الحاضن أحد الوالدين</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">الخُلُق</p>
+            <p class="cost-amount">أمين</p>
+            <p class="cost-detail">صادق وقادر على تربية الطفل، وغير مدمن على المُسكرات أو المخدرات</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">الصحة والسجل</p>
+            <p class="cost-amount">قادر على الرعاية</p>
+            <p class="cost-detail">خالٍ من مرض خطير أو مُعدٍ، وغير محكوم عليه في جريمة مخلّة بالشرف</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">الدين والزواج</p>
+            <p class="cost-amount">مشروط</p>
+            <p class="cost-detail">على دين الطفل، وغير متزوجة من رجل غير محرم له، مع استثناء مصلحة المحضون</p>
+          </div>
+        </div>
+        <p class="note-text">هذا ملخص مبسّط للمادة ١١٣ من قانون الأحوال الشخصية الاتحادي رقم ٤١ لسنة ٢٠٢٤، وليس بديلاً عن النص الرسمي أو الاستشارة القانونية. ينبغي التحقق من التفاصيل بالرجوع إلى القانون النافذ بشأن حالتك تحديداً. ولمعرفة آثار الزواج الجديد على حقوق المرأة المالية، راجعي <a href="/ar/الزواج-بعد-الطلاق-في-الامارات/">الزواج بعد الطلاق في الإمارات</a>.</p>
+      </section>
+
+      <!-- Muslim vs non-Muslim -->
+      <section class="content-section">
+        <h2>الفرق في القانون المدني لغير المسلمين</h2>
+        <p>
+          كثيراً ما يخضع المقيمون غير المسلمين لقانون مختلف هو <strong>قانون الأحوال الشخصية المدني الاتحادي رقم ٤١ لسنة ٢٠٢٢</strong>، الذي يُطبَّق على مستوى الدولة منذ مطلع ٢٠٢٣. يجعل هذا القانون <strong>الحضانة المشتركة</strong> هي الأصل حتى سنّ ١٨، ويتعامل مع الزواج الجديد بشكل يختلف عن نظام الأحوال الشخصية للمسلمين.
+        </p>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>المسألة</div>
+            <div>قانون الأحوال الشخصية للمسلمين (٤١/٢٠٢٤)</div>
+            <div>القانون المدني لغير المسلمين (٤١/٢٠٢٢)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الحضانة الأصلية</div>
+            <div>ترتيب للأحقية يبدأ بالأم (المادة ١١٤)</div>
+            <div>الحضانة المشتركة هي الأصل حتى سنّ ١٨</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type">أثر الزواج الجديد على الحضانة</div>
+            <div>شرط في المادة ١١٣، لكن مع استثناء مصلحة المحضون، وليس تلقائياً</div>
+            <div>لا يُسقط الحضانة بذاته، وعلى المعترض أن يرفع دعوى</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">الأثر على النفقة</div>
+            <div>نفقة العدة ونفقة الأطفال تُعالَجان منفصلتَين عن الحضانة</div>
+            <div>تسقط نفقة الزوجة المطلقة بزواجها (المادة ٩)</div>
+          </div>
+        </div>
+        <p class="note-text">في نظام غير المسلمين، الخلاصة أن الزواج الجديد لا يُنهي الحضانة بذاته، لكنه يُنهي نفقة الزوجة المطلقة وفق المادة ٩، أما نفقة الأطفال فالتزام منفصل. ويتوقف القانون المُطبَّق على أطراف الدعوى، فراجعي نظرتنا العامة على <a href="/ar/طلاق-غير-المسلمين-الامارات/">طلاق غير المسلمين في الإمارات</a> قبل افتراض انطباق نظام معيّن عليك.</p>
+      </section>
+
+      <!-- What to do -->
+      <section class="content-section">
+        <h2>ماذا تفعلين إذا طُعن في الحضانة</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">يؤثر الزواج الجديد على المسائل المالية مثل نفقة الزوجة بشكل مختلف عن الحضانة. وللتمييز بين المسألتين، طالعي دليلَينا عن <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/">حقوق الزوجة بعد الطلاق</a> و<a href="/ar/نفقة-الاطفال-الامارات/">نفقة الأطفال في الإمارات</a>، اللذَين يوضحان كيف يُعامَل كل حق عند زواج أحد الوالدين من جديد.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} lang="ar" />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>أدلة ذات صلة</h2>
+        <div class="related-grid">
+          <a href="/ar/حضانة-الاطفال-الامارات/" class="related-card">
+            <strong>حضانة الأطفال في الإمارات</strong>
+            <span>قواعد الحضانة والأعمار ومعيار مصلحة الطفل للمسلمين وغير المسلمين</span>
+          </a>
+          <a href="/ar/الزواج-بعد-الطلاق-في-الامارات/" class="related-card">
+            <strong>الزواج بعد الطلاق في الإمارات</strong>
+            <span>فترات العدة والقواعد وكيف يؤثر الزواج الجديد على حقوقك</span>
+          </a>
+          <a href="/ar/حقوق-الوالدين-في-الحضانة-الامارات/" class="related-card">
+            <strong>حقوق الوالدين في الحضانة</strong>
+            <span>متى وكيف يمكن للأب أن يتقدم بطلب الحضانة وفق القانون الإماراتي</span>
+          </a>
+          <a href="/ar/حقوق-الزوجة-بعد-الطلاق-الامارات/" class="related-card">
+            <strong>حقوق الزوجة بعد الطلاق</strong>
+            <span>المهر والنفقة والسكن والحضانة وحقوق التأشيرة</span>
+          </a>
+          <a href="/ar/طلاق-غير-المسلمين-الامارات/" class="related-card">
+            <strong>طلاق غير المسلمين في الإمارات</strong>
+            <span>قانون الأحوال الشخصية المدني والحضانة المشتركة والنفقة</span>
+          </a>
+          <a href="/ar/نفقة-الاطفال-الامارات/" class="related-card">
+            <strong>نفقة الأطفال في الإمارات</strong>
+            <span>كيف تُقدَّر نفقة الأطفال وكيف تستمر بعد الطلاق</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p a { color: #2563eb; text-decoration: none; }
+  .content-section p a:hover { text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; font-style: normal; text-decoration: none; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

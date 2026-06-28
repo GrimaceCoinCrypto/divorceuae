@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce While Pregnant in the UAE: Your Rights';
+const description =
+  'Divorce while pregnant in the UAE: how iddah runs until delivery, who pays maintenance and housing during pregnancy, paternity rules, newborn custody, and nursing costs.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-while-pregnant-uae/',
+  ar: 'https://divorceu.ae/ar/الطلاق-أثناء-الحمل-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce While Pregnant UAE', url: 'https://divorceu.ae/en/divorce-while-pregnant-uae/' },
+];
+
+const faqItems = [
+  {
+    question: 'Can a husband divorce his pregnant wife in the UAE?',
+    answer: 'Yes. UAE law does not bar a husband from pronouncing divorce while his wife is pregnant. However, his financial duties do not end at the divorce. Maintenance and housing continue, and the waiting period (iddah) runs until the baby is born, not for the usual three cycles. Under Federal Decree-Law No. 41 of 2024, the pregnant wife keeps her right to support through the pregnancy regardless of who initiated the divorce.',
+  },
+  {
+    question: 'How long is iddah if you are pregnant in the UAE?',
+    answer: 'For a pregnant divorcee, the iddah lasts until delivery (or until a miscarriage), under Article 85 of Federal Decree-Law No. 41 of 2024. This replaces the standard iddah of three menstrual cycles, or three lunar months for a woman who does not menstruate, set out in Article 84. So the waiting period can be a few weeks or several months, depending on how far along the pregnancy is when the divorce takes effect.',
+  },
+  {
+    question: 'Who pays maintenance during pregnancy in the UAE?',
+    answer: 'The husband does. Under Article 101 of Federal Decree-Law No. 41 of 2024, a pregnant divorced wife is entitled to maintenance through the pregnancy up to delivery, even after an irrevocable divorce. This covers food, clothing, suitable housing, and medical care. A wife divorced without cause may also claim mut\'a (consolatory payment) of up to one year of maintenance.',
+  },
+  {
+    question: 'Who gets custody of a newborn after divorce in the UAE?',
+    answer: 'A newborn stays with the mother first. The custody order under Article 114 of Federal Decree-Law No. 41 of 2024 places the mother at the top, then the father, then the maternal grandmother, then the paternal grandmother, with the court applying the best interests of the child. Physical custody and legal guardianship are separate roles, and both can be addressed at the same court.',
+  },
+  {
+    question: 'What about non-Muslim expats who divorce while pregnant?',
+    answer: 'Non-Muslim residents can be governed by Federal Decree-Law No. 41 of 2022, the civil personal status law in force since 1 February 2023. It allows no-fault divorce without mandatory reconciliation and sets joint custody as the default to age 18. Alimony is assessed on multiple factors under Article 9 and lapses if the wife remarries. Pregnancy-specific iddah and nursing rules from Sharia-based law do not apply in the same way under this regime.',
+  },
+  {
+    question: 'Does the husband pay for breastfeeding after divorce?',
+    answer: 'Where the mother cannot or does not nurse the child, the cost of breastfeeding (ujrat al-rida\'a) falls on the father, alongside ordinary child maintenance. This nursing-cost duty is recognised in UAE personal status law and is treated as part of the father\'s obligation to support the child. A family lawyer can confirm how a specific court applies it to your case.',
+  },
+];
+
+const continues = [
+  { item: 'Food and clothing', detail: 'Day-to-day maintenance for the wife continues through the pregnancy.' },
+  { item: 'Suitable housing', detail: 'Accommodation in the marital or a suitable home during pregnancy and iddah.' },
+  { item: 'Medical care', detail: 'Pregnancy-related treatment and delivery costs as part of maintenance.' },
+  { item: 'Child maintenance', detail: 'Support for the child begins at birth and continues after.' },
+  { item: 'Nursing cost', detail: 'Breastfeeding cost falls on the father where the mother does not nurse.' },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/divorce-while-pregnant-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · UAE 2026</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        A divorce can happen while a wife is pregnant, and UAE law keeps her protected through it. Maintenance and housing continue, the waiting period runs until the baby arrives, and the newborn stays with the mother first.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>The short answer</h2>
+        <p>
+          A husband <strong>can divorce a pregnant wife</strong> in the UAE, and a wife can also seek divorce while pregnant. The divorce takes effect, but the husband's duties do not stop.
+          The waiting period (iddah) <strong>runs until delivery</strong> under Article 85 of Federal Decree-Law No. 41 of 2024, not the usual three cycles.
+          <strong>Maintenance and housing continue through the pregnancy to delivery</strong> under Article 101. The newborn stays with the mother first under Article 114, and the father carries child support and nursing costs.
+        </p>
+      </div>
+
+      <img
+        src="/images/woman-dubai-skyline.webp"
+        alt="Woman looking over the Dubai skyline -- divorce while pregnant in the UAE"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Can you divorce while pregnant -->
+      <section class="content-section">
+        <h2>Can You Divorce While Pregnant in the UAE?</h2>
+        <p>
+          Yes, in both directions. A husband may pronounce talaq while his wife is pregnant, and a wife may file for divorce during pregnancy, whether through khula or a judicial route. Pregnancy is not a legal block on ending a marriage.
+        </p>
+        <p>
+          What changes is timing and money, not eligibility. Once the divorce takes effect, the law treats the pregnant wife as a protected party. Her support does not stop at the divorce date, and the marriage is not fully closed until the waiting period ends, which for a pregnant woman means the birth of the child. For the husband-initiated route, see our guide on <a href="/en/talaq-uae/">talaq in the UAE</a>. For the financial entitlements that survive a divorce, see <a href="/en/wife-rights-after-divorce-uae/">wife rights after divorce in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- Iddah -->
+      <section class="content-section">
+        <h2>Iddah When You Are Pregnant: Until Delivery</h2>
+        <p>
+          The iddah is the waiting period a divorced woman observes before she is free to remarry, and it also fixes how long certain rights run. For a pregnant divorcee, the iddah lasts until she gives birth, or until a miscarriage, under <strong>Article 85 of Federal Decree-Law No. 41 of 2024</strong>. This is the same rule that existed in Article 138(2) of the old 2005 law.
+        </p>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Situation</div>
+            <div>Iddah length</div>
+            <div>Source</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Pregnant divorcee</div>
+            <div>Until delivery (or miscarriage)</div>
+            <div>Article 85, Law 41/2024</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type khula">Menstruating wife (standard)</div>
+            <div>Three menstrual cycles</div>
+            <div>Article 84, Law 41/2024</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Non-menstruating wife</div>
+            <div>Three lunar months</div>
+            <div>Article 84, Law 41/2024</div>
+          </div>
+        </div>
+        <p class="note-text">Because the pregnant iddah is tied to the birth, it can run from a few weeks to several months depending on how far along the pregnancy is. For a full breakdown of waiting periods, see our <a href="/en/iddah-waiting-period-uae/">iddah waiting period in the UAE</a> guide.</p>
+      </section>
+
+      <!-- Maintenance during pregnancy -->
+      <section class="content-section">
+        <h2>Maintenance and Housing During Pregnancy</h2>
+        <p>
+          A pregnant divorced wife is entitled to maintenance through the pregnancy up to delivery, even after an irrevocable divorce, under <strong>Article 101 of Federal Decree-Law No. 41 of 2024</strong> (the equivalent of Article 69 in the 2005 law). This maintenance covers food, clothing, housing in the marital or a suitable home, and medical care related to the pregnancy.
+        </p>
+        <p>
+          On top of ongoing maintenance, a wife who is divorced without cause may claim <strong>mut'a</strong>, a consolatory payment that can reach up to one year of maintenance. The amount depends on the husband's means and the circumstances of the divorce, and it is decided by the court. Child maintenance is separate again and begins once the baby is born. For how maintenance amounts are set and enforced, see <a href="/en/alimony-uae/">alimony in the UAE</a> and <a href="/en/child-support-uae/">child support in the UAE</a>.
+        </p>
+        <h3 class="sub-h">What continues during pregnancy and iddah</h3>
+        <div class="cost-grid">
+          {continues.map(c => (
+            <div class="cost-card">
+              <p class="cost-label">{c.item}</p>
+              <p class="cost-detail">{c.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Paternity -->
+      <section class="content-section">
+        <h2>Paternity Rules After a Divorce</h2>
+        <p>
+          Paternity matters because it fixes the child's affiliation and the father's duties. Under <strong>Article 88 of Federal Decree-Law No. 41 of 2024</strong> (matching Articles 90 and 91 of the 2005 law), the minimum recognised pregnancy is <strong>180 days</strong> and the maximum is <strong>365 days</strong>. A child is affiliated to the husband if born after the minimum period during the marriage, or within 365 days of the marriage ending.
+        </p>
+        <p>
+          A father who wishes to deny paternity reportedly must act quickly: according to UAE legal practitioners, he should file within 15 days of learning of the birth, and DNA evidence can stand as proof in such a dispute. This is a narrow and sensitive area, and a family lawyer should confirm the current procedure before any step is taken.
+        </p>
+      </section>
+
+      <!-- Newborn custody and nursing -->
+      <section class="content-section">
+        <h2>Newborn Custody and Nursing Costs</h2>
+        <p>
+          A newborn stays with the mother first. The custody order under <strong>Article 114 of Federal Decree-Law No. 41 of 2024</strong> runs: mother, then father, then maternal grandmother, then paternal grandmother, with the court free to decide on the best interests of the child. Under the 2024 law, custody now continues to age 18 for both boys and girls, and a child of 15 or older may choose which parent to live with.
+        </p>
+        <p>
+          The cost of breastfeeding (ujrat al-rida'a) falls on the father where the mother cannot or does not nurse the child. This sits alongside ordinary child maintenance as part of the father's duty to support the newborn. For how custody is decided and how guardianship differs from physical care, see <a href="/en/child-custody-uae/">child custody in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- Non-Muslim position -->
+      <section class="content-section">
+        <h2>Non-Muslim Expats: The Civil-Law Position</h2>
+        <p>
+          Non-Muslim residents can have their divorce governed by <strong>Federal Decree-Law No. 41 of 2022</strong>, the civil personal status law in force across the UAE since 1 February 2023. It allows no-fault unilateral divorce, skips mandatory reconciliation, and sets joint custody as the default up to age 18. Alimony is assessed on a multi-factor basis under Article 9 and lapses if the wife remarries.
+        </p>
+        <p>
+          Under this civil regime, the Sharia-based concepts of pregnant iddah and nursing cost do not apply in the same form. A pregnant non-Muslim wife is instead protected through the civil law's maintenance and custody provisions. The Abu Dhabi Civil Family Court handles many of these cases bilingually. For more on this track, see our note below and ask a lawyer which law fits your nationality and situation.
+        </p>
+        <p class="note-text">Muslim expats may also invoke their home-country law in some cases under Article 1 of Federal Decree-Law No. 41 of 2024. Which law applies can change the result on iddah, maintenance, and custody, so confirm it early with a family lawyer, and read more in <a href="/en/wife-rights-after-divorce-uae/">wife rights after divorce in the UAE</a>.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/iddah-waiting-period-uae/" class="related-card">
+            <strong>Iddah Waiting Period UAE</strong>
+            <span>How the waiting period works and how long it lasts</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody order, ages, and best-interest rules</span>
+          </a>
+          <a href="/en/child-support-uae/" class="related-card">
+            <strong>Child Support UAE</strong>
+            <span>How child maintenance is calculated and paid</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony UAE</strong>
+            <span>Types of maintenance, amounts, and enforcement</span>
+          </a>
+          <a href="/en/wife-rights-after-divorce-uae/" class="related-card">
+            <strong>Wife Rights After Divorce UAE</strong>
+            <span>Mahr, maintenance, housing, custody, and visa rights</span>
+          </a>
+          <a href="/en/talaq-uae/" class="related-card">
+            <strong>Talaq UAE</strong>
+            <span>Husband-initiated divorce process and timing</span>
+          </a>
+          <a href="/en/mahr-divorce-uae/" class="related-card">
+            <strong>Mahr and Divorce UAE</strong>
+            <span>How the dowry is treated when a marriage ends</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; margin-bottom: 1rem; }
+  .content-section a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .content-section a:hover { text-decoration: underline; }
+  .sub-h { font-size: 1.05rem; font-weight: 700; color: #0a1628; margin: 0.5rem 0 1rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1.3fr 1.4fr 1.3fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 480px; }
+  .compare-row { display: grid; grid-template-columns: 1.3fr 1.4fr 1.3fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 480px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.khula { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; font-weight: 600; text-decoration: none; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.82rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

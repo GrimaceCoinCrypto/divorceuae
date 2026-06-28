@@ -1,0 +1,338 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'New UAE Personal Status Law 2025: What Changed';
+const description =
+  'Federal Decree-Law No. 41 of 2024 took effect 15 April 2025, replacing the 2005 law. See what changed for divorce, custody to age 18, and maintenance in the UAE.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/new-uae-personal-status-law-2025/',
+  ar: 'https://divorceu.ae/ar/قانون-الأحوال-الشخصية-الجديد-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'New UAE Personal Status Law 2025', url: 'https://divorceu.ae/en/new-uae-personal-status-law-2025/' },
+];
+
+const steps = [
+  { num: '01', title: 'It applies to Muslims by default', detail: 'Federal Decree-Law No. 41 of 2024 governs personal status for UAE Muslims and for Muslim expats, unless a party formally asks for their home-country law to apply (Article 1). Non-Muslim residents stay under the parallel civil law, Federal Decree-Law No. 41 of 2022.' },
+  { num: '02', title: 'Divorce must be documented within 15 days', detail: 'A husband who divorces or reconciles must register it before the court within 15 days. If he fails, the wife can claim compensation equal to her maintenance for the delay (Article 58). This closes a gap that previously left women without a dated record.' },
+  { num: '03', title: 'Reconciliation is still mandatory', detail: 'Muslim divorce cases must pass through the Family Guidance section before a judge rules. The non-settlement referral letter stays valid for three months. Harm-based dissolution arbitration is now capped at 60 days, down from 90 (Article 72).' },
+  { num: '04', title: 'Custody runs to age 18', detail: 'Custody now continues to 18 for both boys and girls (Article 123), and a child aged 15 or older may choose which parent to live with (Article 122). The custodial mother also holds educational guardianship over the child.' },
+  { num: '05', title: 'Maintenance follows the same logic', detail: 'Maintenance still covers food, clothing, housing, medical treatment, and education measured by custom (Article 95). A spousal-maintenance arrears claim is capped at the last two years (Article 99).' },
+];
+
+const faqItems = [
+  {
+    question: 'When did the new UAE Personal Status Law take effect?',
+    answer: 'Federal Decree-Law No. 41 of 2024 was published on 14 October 2024 and came into force on 15 April 2025. It replaced the previous Federal Law No. 28 of 2005. Divorce cases filed on or after 15 April 2025 are decided under the new text, and several provisions, such as the new custody age, also shape how ongoing matters are handled.',
+  },
+  {
+    question: 'What did the new divorce law UAE 2025 change for custody?',
+    answer: 'The biggest custody change is the age limit. Under the old 2005 law, a mother\'s custody ended around age 11 for boys and 13 for girls. Under Article 123 of Federal Decree-Law No. 41 of 2024, custody now continues to age 18 for both boys and girls. A child aged 15 or older may choose which parent to live with (Article 122), and the custodial mother holds educational guardianship, with disputes referred to the urgent-matters judge.',
+  },
+  {
+    question: 'Does the new law change maintenance and alimony?',
+    answer: 'The new law keeps maintenance broad: it covers food, clothing, housing, medical treatment, and education measured by what is customary (Article 95). A spousal-maintenance arrears claim is capped at the last two years (Article 99). Some practitioners report that backdated maintenance can be claimed for up to six months (Article 97), but this is a single-source point, so confirm it with a lawyer for your case.',
+  },
+  {
+    question: 'Does the new UAE Personal Status Law apply to expats?',
+    answer: 'Muslim expats fall under Federal Decree-Law No. 41 of 2024 by default, but either party can ask the court to apply their home-country law instead (Article 1). Non-Muslim expats are governed by the separate civil law, Federal Decree-Law No. 41 of 2022, which allows no-fault unilateral divorce, skips mandatory reconciliation, and sets joint custody to age 18 as the default.',
+  },
+  {
+    question: 'What is the minimum marriage age under the new law?',
+    answer: 'Federal Decree-Law No. 41 of 2024 sets the minimum marriage age at 18 Gregorian years (Article 19). The new law also adds a spouse\'s addiction to narcotics or intoxicants as a ground for dissolution, which the 2005 law did not list as a standalone ground.',
+  },
+  {
+    question: 'How does the new law treat Muslim and non-Muslim divorce differently?',
+    answer: 'The UAE now runs two parallel personal status systems. Federal Decree-Law No. 41 of 2024 applies Islamic-law principles to Muslims, with mandatory Family Guidance reconciliation. Federal Decree-Law No. 41 of 2022 governs non-Muslims with a civil, no-fault model, no mandatory reconciliation, joint custody as the default, and alimony that lapses if the ex-wife remarries. Your nationality, religion, and where you file all affect which rules apply.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/new-uae-personal-status-law-2025/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · UAE 2026</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        Federal Decree-Law No. 41 of 2024 is the UAE's new Personal Status Law for Muslims. It came into force on 15 April 2025 and replaced the 2005 law. The headline changes touch divorce documentation, custody to age 18, and how maintenance is measured.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>What is the new UAE Personal Status Law?</h2>
+        <p>
+          The new law is <strong>Federal Decree-Law No. 41 of 2024</strong>, the UAE's Personal Status Law for Muslims. It was published on 14 October 2024 and took effect on <strong>15 April 2025</strong>, replacing <strong>Federal Law No. 28 of 2005</strong>.
+          The biggest changes: custody now runs to <strong>age 18</strong> for boys and girls, a child aged <strong>15 or older can choose</strong> which parent to live with, a husband must document a divorce within <strong>15 days</strong>, and the harm-arbitration period is cut to <strong>60 days</strong>. Non-Muslims remain under the separate civil law, Federal Decree-Law No. 41 of 2022.
+        </p>
+      </div>
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="UAE legal documents for the new Personal Status Law Federal Decree-Law 41 of 2024"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- What it is and when it took effect -->
+      <section class="content-section">
+        <h2>What the Law Is and When It Took Effect</h2>
+        <p>
+          For nearly twenty years, divorce, custody, and maintenance for Muslims in the UAE ran under Federal Law No. 28 of 2005. That text has now been replaced. Federal Decree-Law No. 41 of 2024 was published on 14 October 2024 and entered into force on 15 April 2025. Cases filed on or after that date are decided under the new articles.
+        </p>
+        <p>
+          The new law applies to UAE Muslims and to Muslim expatriates living in the country. Under Article 1, a party can still ask the court to apply their home-country law instead of UAE law. Non-Muslim residents are not affected by this law at all: they fall under the civil regime, Federal Decree-Law No. 41 of 2022, which has run UAE-wide since 1 February 2023. For the full picture of how both systems sit together, see our overview of <a href="/en/uae-divorce-law/">UAE divorce law</a>.
+        </p>
+      </section>
+
+      <!-- Old vs new comparison -->
+      <section class="content-section">
+        <h2>Old 2005 Law vs New 2024 Law: Key Points</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Point</div>
+            <div>Old (Law 28 of 2005)</div>
+            <div>New (Decree-Law 41 of 2024)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Custody age</div>
+            <div>Boys to ~11, girls to ~13</div>
+            <div>To 18 for both (Art. 123)</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type new">Child's choice</div>
+            <div>No fixed statutory choice age</div>
+            <div>Child 15+ may choose (Art. 122)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Minimum marriage age</div>
+            <div>Set by guardian/court practice</div>
+            <div>18 Gregorian years (Art. 19)</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type new">Harm arbitration period</div>
+            <div>Up to 90 days</div>
+            <div>Capped at 60 days (Art. 72)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Documenting divorce</div>
+            <div>No fixed statutory deadline</div>
+            <div>Within 15 days, or wife is compensated (Art. 58)</div>
+          </div>
+        </div>
+        <p class="note-text">Article numbers cited here are for Federal Decree-Law No. 41 of 2024. The new custody ages override older government service pages that still list 11 and 13 due to content lag. For how this plays out in a real case, read our guide to <a href="/en/child-custody-uae/">child custody in the UAE</a>.</p>
+      </section>
+
+      <!-- Biggest changes for divorce -->
+      <section class="content-section">
+        <h2>The Biggest Changes for Divorce</h2>
+        <p>
+          The most practical change for anyone divorcing is the 15-day documentation rule in Article 58. A husband who pronounces a divorce, or who reconciles, must register that step before the court within 15 days. If he does not, the wife can claim compensation equal to her maintenance for the period of delay. Before this, an undated or unregistered divorce could leave a wife uncertain about when her waiting period and financial rights actually started.
+        </p>
+        <p>
+          The harm-based dissolution route also moved faster. Where the old law allowed arbitrators up to 90 days to attempt a fix, Article 72 caps that arbitration window at 60 days. Family Guidance reconciliation is still mandatory for Muslim cases, and the non-settlement referral letter stays valid for three months. The number of reconciliation sessions is not fixed by statute. The new law also lists a spouse's addiction to narcotics or intoxicants as a ground for dissolution. To see where these routes fit among talaq, khula, and judicial divorce, read our breakdown of the <a href="/en/types-of-divorce-uae/">types of divorce in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- Custody changes -->
+      <section class="content-section">
+        <h2>Custody Changes: Age 18 and the Child's Voice</h2>
+        <p>
+          Custody is where the 2024 law moved furthest from 2005. The old text ended a mother's custody at roughly age 11 for boys and 13 for girls, after which custody usually shifted toward the father as guardian. Article 123 now extends custody to age 18 for both boys and girls. That is a large change for day-to-day life, because it keeps children with the custodial parent through their school years.
+        </p>
+        <p>
+          Two further points matter. First, Article 122 gives a child aged 15 or older the right to choose which parent to live with. Second, the custodial mother now holds educational guardianship, meaning she can make schooling decisions, with disputes referred to the urgent-matters judge rather than left to the guardian alone. These provisions sit alongside the older distinction between custody (day-to-day care) and guardianship (legal and financial authority). Our <a href="/en/child-custody-uae/">child custody guide</a> walks through how a court weighs the best interests of the child under the new rules.
+        </p>
+      </section>
+
+      <!-- Maintenance -->
+      <section class="content-section">
+        <h2>Maintenance and Alimony Under the New Law</h2>
+        <p>
+          The new law keeps maintenance broad rather than reinventing it. Under Article 95, maintenance covers food, clothing, housing, medical treatment, and education, measured by what is customary for the family's circumstances. A claim for spousal-maintenance arrears is capped at the last two years (Article 99), so a long-delayed claim cannot reach back indefinitely.
+        </p>
+        <p>
+          According to UAE legal practitioners, backdated maintenance may also be claimed for up to six months under Article 97, though that point rests on a single source, so treat it as a question for your lawyer rather than settled law. What has not changed is the basic structure of maintenance during and after marriage, including iddah maintenance for the waiting period and ongoing child support. For how amounts are calculated and enforced, see our guide to <a href="/en/alimony-uae/">alimony in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- Muslims vs non-Muslims and expats -->
+      <section class="content-section">
+        <h2>Muslims, Non-Muslims, and What It Means for Expats</h2>
+        <p>
+          The UAE now runs two parallel personal status systems, and which one applies to you depends on religion, nationality, and where you file. Muslims, including Muslim expats, fall under Federal Decree-Law No. 41 of 2024, which applies Islamic-law principles and keeps Family Guidance reconciliation mandatory. The new articles cited above, on custody, documentation, and arbitration, all live in this law.
+        </p>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <p class="cost-label">Muslim residents</p>
+            <p class="cost-amount">Decree-Law 41 of 2024</p>
+            <p class="cost-detail">Sharia-based; mandatory reconciliation; custody to 18; home-country law optional under Art. 1</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Non-Muslim residents</p>
+            <p class="cost-amount">Decree-Law 41 of 2022</p>
+            <p class="cost-detail">Civil no-fault divorce; no mandatory reconciliation; joint custody default to 18</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Reconciliation</p>
+            <p class="cost-amount">Differs by track</p>
+            <p class="cost-detail">Required for Muslims; referral letter valid 3 months. Not required in the civil track</p>
+          </div>
+          <div class="cost-card">
+            <p class="cost-label">Where you file</p>
+            <p class="cost-amount">Court matters</p>
+            <p class="cost-detail">Personal Status Courts handle Muslim cases; the Abu Dhabi civil family court hears non-Muslim cases</p>
+          </div>
+        </div>
+        <p class="note-text">Expats should not assume the new Muslim law applies to them automatically. A non-Muslim couple usually proceeds under the 2022 civil law, while a Muslim expat can elect home-country law under Article 1. Read our pages on <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a> and <a href="/en/sharia-divorce-uae/">Sharia divorce in the UAE</a> to see which track fits your situation.</p>
+      </section>
+
+      <!-- What to do -->
+      <section class="content-section">
+        <h2>What the New Law Means for Your Case: Step by Step</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">If you started a divorce before 15 April 2025, ask your lawyer how the transition affects your custody and maintenance terms. For a plain walkthrough of the process from filing to decree, see our guide to <a href="/en/divorce-in-uae/">getting a divorce in the UAE</a>.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/uae-divorce-law/" class="related-card">
+            <strong>UAE Divorce Law</strong>
+            <span>Full overview of the personal status framework and divorce provisions</span>
+          </a>
+          <a href="/en/divorce-in-uae/" class="related-card">
+            <strong>Divorce in the UAE</strong>
+            <span>Step-by-step process from filing to final decree</span>
+          </a>
+          <a href="/en/types-of-divorce-uae/" class="related-card">
+            <strong>Types of Divorce UAE</strong>
+            <span>Talaq, khula, judicial divorce, and the civil no-fault route</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody to 18, the child's choice at 15, and guardianship</span>
+          </a>
+          <a href="/en/alimony-uae/" class="related-card">
+            <strong>Alimony UAE</strong>
+            <span>Maintenance types, how amounts are set, and enforcement</span>
+          </a>
+          <a href="/en/non-muslim-divorce-uae/" class="related-card">
+            <strong>Non-Muslim Divorce UAE</strong>
+            <span>The civil regime under Federal Decree-Law No. 41 of 2022</span>
+          </a>
+          <a href="/en/sharia-divorce-uae/" class="related-card">
+            <strong>Sharia Divorce UAE</strong>
+            <span>How Islamic-law divorce works under the 2024 law</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p a { color: #2563eb; text-decoration: none; }
+  .content-section p a:hover { text-decoration: underline; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.3fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.3fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.new { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; font-style: normal; text-decoration: none; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem; }
+  .cost-card { background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .cost-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 0 0 4px; }
+  .cost-amount { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 0 0 4px; }
+  .cost-detail { font-size: 0.8rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .cost-grid, .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>

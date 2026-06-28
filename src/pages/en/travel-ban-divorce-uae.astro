@@ -1,0 +1,315 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Travel Ban During Divorce in the UAE: Full Guide';
+const description =
+  'Can a spouse stop you leaving the UAE during divorce? How travel bans on spouses and children work, who keeps the passport, travel-consent rules, and how to lift a ban.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/travel-ban-divorce-uae/',
+  ar: 'https://divorceu.ae/ar/منع-السفر-أثناء-الطلاق-الامارات/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Travel Ban During Divorce UAE', url: 'https://divorceu.ae/en/travel-ban-divorce-uae/' },
+];
+
+const steps = [
+  { num: '01', title: 'Identify why the ban exists', detail: 'A financial travel ban and a child travel ban are lifted in different ways and by different courts. Get a certified copy of the order, or have a lawyer search the courts and immigration records, so you know which type you are facing before you act.' },
+  { num: '02', title: 'For a financial ban, settle or secure the claim', detail: 'A ban tied to unpaid maintenance or debt lifts once you pay in full, deposit the disputed amount with the court, or provide a bank guarantee the court accepts. The judge or Execution Court then issues a release notice to immigration.' },
+  { num: '03', title: 'For a child ban, petition the issuing court', detail: 'A travel ban on a child is granted and revoked by the Personal Status Court that issued it (through Dubai Courts or the Abu Dhabi Judicial Department, ADJD). You file to remove or vary it, and the court decides based on the child\'s best interests.' },
+  { num: '04', title: 'Attend the hearing and show changed circumstances', detail: 'Bring evidence that the reason for the ban no longer applies: custody is now finalised, the debt is cleared, the trip is short and for a legitimate purpose, or you offer to deposit the passport on return as a guarantee.' },
+  { num: '05', title: 'Obtain the release order and confirm with immigration', detail: 'Once granted, the court issues a lifting order. Confirm with the Federal Authority for Identity, Citizenship, Customs and Port Security that the ban has been cleared from the system before you book travel, as enforcement is at the border.' },
+];
+
+const faqItems = [
+  {
+    question: 'Can my spouse put a travel ban on me during divorce?',
+    answer: 'Not simply for being married or for filing for divorce. A travel ban on an adult in the UAE generally needs an underlying claim, such as unpaid maintenance or a debt. Under the Civil Procedure Code (Federal Decree-Law No. 42 of 2022, Articles 324 to 326), a financial travel ban usually requires a debt over AED 10,000 plus a risk that you will leave to avoid payment. Maintenance and alimony claims are an important exception: that AED 10,000 threshold does not apply, so a ban can attach for any unpaid maintenance.',
+  },
+  {
+    question: 'Can a parent stop a child leaving the UAE?',
+    answer: 'Yes. Either parent can apply to the Personal Status Court for a travel ban on a child. Common grounds include a genuine fear of abduction, an imminent unauthorised trip, dual nationality, an unfinalised custody dispute, or a risk of harm. The court weighs the child\'s best interests, and once granted the ban is enforced by UAE immigration at every exit point.',
+  },
+  {
+    question: 'Who keeps the child\'s passport after divorce?',
+    answer: 'Under Article 117 of Federal Decree-Law No. 41 of 2024, the guardian (normally the father) usually holds the child\'s passport, except when the custodial parent is travelling with the child, when the passport is handed over for that trip. If the guardian obstructs legitimate travel, the court can order that the passport stay with the custodian. The custodial mother typically keeps the child\'s original birth certificate and Emirates ID.',
+  },
+  {
+    question: 'Do I need my ex\'s consent to travel with my child?',
+    answer: 'Generally yes. Under Article 116 of Federal Decree-Law No. 41 of 2024, the custodial parent needs the prior written consent of the other parent to take the child abroad. If consent is refused unreasonably, the court can authorise travel of up to 60 days per year. The law frames annual travel rights as broadly equal between the parents.',
+  },
+  {
+    question: 'How do I lift a travel ban?',
+    answer: 'It depends on the type. A financial ban lifts when you pay the debt in full, deposit the disputed sum with the court, or provide a bank guarantee the court accepts. A travel ban on a child is revoked by petitioning the Personal Status Court that issued it and showing the reason no longer applies, for example because custody is finalised. The court then sends a release order to immigration.',
+  },
+  {
+    question: 'Is the UAE part of the Hague Abduction Convention?',
+    answer: 'No. The UAE is not a party to the 1980 Hague Convention on the Civil Aspects of International Child Abduction, nor to the 1996 Hague Convention on parental responsibility, and there is no UAE-US bilateral treaty on this. Some blogs state otherwise, but that is incorrect. This is why UAE courts treat child travel bans and passport custody so seriously: there is no Hague return mechanism if a child is taken abroad.',
+  },
+];
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://divorceu.ae/en/travel-ban-divorce-uae/"
+  {hreflang}
+  lang="en"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tag">Divorce Guide · UAE 2026</p>
+      <h1>{title}</h1>
+      <p class="hero-desc">
+        A spouse cannot stop you leaving the UAE just because a divorce is underway. A travel ban needs a legal basis, such as unpaid maintenance, and travel bans on children follow separate family-law rules on consent, passports, and custody.
+      </p>
+      <p class="hero-author">By <strong>Aleksi Suoninen</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+    </div>
+  </section>
+
+  <div class="page-layout">
+    <main class="main-content">
+
+      <!-- Quick answer -->
+      <div class="answer-box">
+        <h2>Can a spouse stop you leaving the UAE?</h2>
+        <p>
+          <strong>No spouse can ban you from travel simply because you are married or getting divorced.</strong>
+          A travel ban on an adult needs an underlying claim, usually a financial one such as unpaid maintenance or a debt under the Civil Procedure Code (Federal Decree-Law No. 42 of 2022).
+          Debt-based bans normally require a debt <strong>over AED 10,000</strong>, but <strong>maintenance and alimony claims are exempt from that threshold</strong>.
+          Children are different: <strong>either parent can ask the Personal Status Court for a travel ban on a child</strong>, and it is enforced by immigration at the border.
+        </p>
+      </div>
+
+      <img
+        src="/images/uae-legal-documents.webp"
+        alt="UAE legal documents and passport: travel ban during divorce UAE"
+        width="900" height="507"
+        loading="lazy" decoding="async"
+        class="article-img"
+      />
+
+      <!-- Spouse vs child ban -->
+      <section class="content-section">
+        <h2>Travel Ban on a Spouse vs. a Child: Key Differences</h2>
+        <p>The two kinds of ban that come up in a UAE divorce are very different in their legal basis, which court handles them, and how they are lifted. The table below sets out the contrast.</p>
+        <div class="compare-table">
+          <div class="compare-header">
+            <div>Feature</div>
+            <div>Travel ban on a spouse</div>
+            <div>Travel ban on a child</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Legal basis</div>
+            <div>An underlying claim: unpaid maintenance or a civil debt</div>
+            <div>Child welfare: abduction fear, custody dispute, risk of harm</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type child">Which court</div>
+            <div>Civil or Execution Court (financial claims)</div>
+            <div>Personal Status Court (Dubai Courts or ADJD)</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-type">Money threshold</div>
+            <div>Debt over AED 10,000, but maintenance is exempt</div>
+            <div>None: based on the child\'s best interests</div>
+          </div>
+          <div class="compare-row alt">
+            <div class="compare-type child">How it lifts</div>
+            <div>Pay in full, deposit the sum, or a bank guarantee</div>
+            <div>Petition the issuing court once the reason ends</div>
+          </div>
+        </div>
+        <p class="note-text">If your case involves an urgent risk of a child being taken abroad, a travel ban is one of several fast remedies. See our guide on <a href="/en/emergency-orders-divorce-uae/">emergency orders in UAE divorce</a> for the full range of urgent applications.</p>
+      </section>
+
+      <!-- Travel ban on a spouse -->
+      <section class="content-section">
+        <h2>Travel Bans on a Spouse During Divorce</h2>
+        <p>
+          A divorce alone does not justify banning your husband or wife from leaving the country. UAE law does not let one spouse trap the other at the border out of spite. What can support a ban is a separate, provable claim, almost always a financial one.
+        </p>
+        <p>
+          Civil and financial travel bans sit under the Civil Procedure Code, Federal Decree-Law No. 42 of 2022 (Articles 324 to 326). In broad terms, the creditor must show an ascertainable amount owed, a debt over AED 10,000, and a real risk that the debtor will leave the UAE to avoid paying. The court can then order immigration to stop the person at exit points.
+        </p>
+        <p>
+          The single most important exception in a divorce context is maintenance. <strong>Claims for unpaid maintenance or alimony are exempt from the AED 10,000 threshold</strong>, so a ban can be requested for any unpaid maintenance amount. In practice this is how a travel ban most often arises between spouses: a husband who stops paying court-ordered maintenance can face a ban applied through the Execution Court as a pressure tool, lifting only once he pays. How those payments are pursued is covered in our guide to <a href="/en/alimony-uae/">alimony in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- Travel ban on children -->
+      <section class="content-section">
+        <h2>Travel Bans on Children</h2>
+        <p>
+          Child travel bans are handled entirely separately from spousal ones and are decided on the child\'s best interests, not on money. <strong>Either parent can apply to the Personal Status Court for a ban</strong> preventing a child from leaving the UAE.
+        </p>
+        <p>Courts commonly grant a child travel ban where there is:</p>
+        <ul class="content-list">
+          <li>A genuine fear that one parent will abduct the child or not return from a trip;</li>
+          <li>An imminent, unauthorised plan to take the child abroad;</li>
+          <li>Dual nationality, which raises the practical risk of removal;</li>
+          <li>An unfinalised custody or guardianship dispute; or</li>
+          <li>A wider risk of harm to the child.</li>
+        </ul>
+        <p>
+          The ban is issued and later revoked through the Personal Status Court, accessed via the Dubai Courts or ADJD portals, and it is enforced by UAE immigration at every airport and land border. Because custody and guardianship status drives many of these applications, it is worth understanding both: see <a href="/en/child-custody-uae/">child custody in the UAE</a> and how it differs from <a href="/en/guardianship-vs-custody-uae/">guardianship versus custody</a>.
+        </p>
+      </section>
+
+      <!-- Passports and documents -->
+      <section class="content-section">
+        <h2>Who Keeps the Child\'s Passport?</h2>
+        <p>
+          Passport custody is set by statute. Under <strong>Article 117 of Federal Decree-Law No. 41 of 2024</strong> (the Personal Status Law for Muslims, in force since 15 April 2025), the guardian, who is normally the father, holds the child\'s passport. The exception is when the custodial parent is travelling with the child, at which point the passport is handed over for the duration of the trip.
+        </p>
+        <p>
+          If the guardian obstructs legitimate travel by refusing to release the passport, the court can order that it stay with the custodian instead. Reportedly, the custodial mother also keeps the child\'s original birth certificate and Emirates ID. Withholding a child\'s passport is a frequent flashpoint in UAE divorces, and it is worth raising early with your lawyer rather than at the airport.
+        </p>
+      </section>
+
+      <!-- Travel consent and penalties -->
+      <section class="content-section">
+        <h2>Travel Consent and Penalties for Unauthorised Removal</h2>
+        <p>
+          Even with the passport in hand, the custodial parent cannot simply take the child abroad. Under <strong>Article 116 of Federal Decree-Law No. 41 of 2024</strong>, the custodial parent needs the <strong>prior written consent</strong> of the other parent to travel overseas with the child. Where consent is refused without good reason, the court can step in and authorise travel of up to <strong>60 days per year</strong>. The law treats each parent\'s annual travel rights as broadly equal.
+        </p>
+        <p>
+          Taking a child out of the UAE without that consent or a court order is a criminal matter. Under <strong>Article 252 of Federal Decree-Law No. 41 of 2024</strong>, removing a child from the country without the guardian\'s or the court\'s permission can lead to imprisonment and/or a fine of <strong>AED 5,000 to AED 50,000</strong>.
+        </p>
+        <p>
+          The stakes are higher in the UAE than in many other countries because <strong>the UAE is not a party to the 1980 Hague Convention on international child abduction, nor to the 1996 Hague Convention</strong>, and there is no UAE-US bilateral treaty on the issue. There is no automatic international return mechanism if a child is taken abroad, which is exactly why courts use travel bans and passport rules as preventive tools. If you are facing this risk, read our pages on <a href="/en/international-child-abduction-uae/">international child abduction in the UAE</a> and on lawful <a href="/en/child-relocation-after-divorce-uae/">child relocation after divorce</a>.
+        </p>
+      </section>
+
+      <!-- How to lift a ban -->
+      <section class="content-section">
+        <h2>How to Lift a Travel Ban: Step by Step</h2>
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-card">
+              <div class="step-num">{step.num}</div>
+              <div class="step-body">
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="note-text">Fathers who fear losing contact, or who are accused of abduction risk, should understand their position before applying. Our guide on <a href="/en/father-custody-rights-uae/">father custody rights in the UAE</a> sets out where a father stands on custody, guardianship, and travel.</p>
+      </section>
+
+      <!-- FAQ -->
+      <FAQSection items={faqItems} />
+
+      <!-- Internal links -->
+      <section class="content-section">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+          <a href="/en/emergency-orders-divorce-uae/" class="related-card">
+            <strong>Emergency Orders in UAE Divorce</strong>
+            <span>Urgent applications, including travel bans and asset freezes</span>
+          </a>
+          <a href="/en/child-custody-uae/" class="related-card">
+            <strong>Child Custody UAE</strong>
+            <span>Custody rules for Muslims and non-Muslims in UAE courts</span>
+          </a>
+          <a href="/en/guardianship-vs-custody-uae/" class="related-card">
+            <strong>Guardianship vs. Custody UAE</strong>
+            <span>Who decides on passports, travel, schooling, and daily care</span>
+          </a>
+          <a href="/en/child-relocation-after-divorce-uae/" class="related-card">
+            <strong>Child Relocation After Divorce UAE</strong>
+            <span>Moving a child abroad lawfully with consent or court approval</span>
+          </a>
+          <a href="/en/international-child-abduction-uae/" class="related-card">
+            <strong>International Child Abduction UAE</strong>
+            <span>Your options when the UAE is outside the Hague framework</span>
+          </a>
+          <a href="/en/father-custody-rights-uae/" class="related-card">
+            <strong>Father Custody Rights UAE</strong>
+            <span>Where a father stands on custody, guardianship, and travel</span>
+          </a>
+          <a href="/en/documents-for-divorce-uae/" class="related-card">
+            <strong>Documents for Divorce UAE</strong>
+            <span>Passports, certificates, and paperwork you will need to file</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+        <LeadForm />
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; display: block; }
+  .hero-section { background: linear-gradient(rgba(10,22,40,0.72), rgba(10,22,40,0.72)), url('/images/hero-dubai-office.webp') center/cover no-repeat; color: #fff; padding: 3rem 1rem; }
+  .hero-inner { max-width: 52rem; margin: 0 auto; }
+  .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
+  .hero-author { font-size: 0.85rem; color: #9ca3af; }
+  .hero-author strong { color: #fff; }
+
+  .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
+  .main-content { min-width: 0; }
+  .sidebar-sticky { position: sticky; top: 1.5rem; }
+
+  .answer-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
+  .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #064e3b; margin: 0 0 0.5rem; }
+  .answer-box p { color: #1f2937; line-height: 1.8; margin: 0; font-size: 0.97rem; }
+  .answer-box strong { color: #064e3b; }
+
+  .content-section { margin-bottom: 2.5rem; }
+  .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
+  .content-section p { color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-section p a { color: #2563eb; text-decoration: none; }
+  .content-section p a:hover { text-decoration: underline; }
+  .content-list { margin: 0.5rem 0 1rem; padding-left: 1.25rem; color: #374151; line-height: 1.8; font-size: 0.95rem; }
+  .content-list li { margin-bottom: 0.35rem; }
+
+  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
+  .compare-header { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
+  .compare-row.alt { background: #fafafa; }
+  .compare-type { font-weight: 700; color: #0a1628; }
+  .compare-type.child { color: #c9a84c; }
+  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; }
+  .note-text a { color: #2563eb; text-decoration: none; font-style: normal; }
+  .note-text a:hover { text-decoration: underline; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+  .step-card { display: flex; gap: 1rem; padding: 1.1rem; border: 1.5px solid #e5e7eb; border-radius: 10px; background: #fff; }
+  .step-num { font-size: 1.3rem; font-weight: 800; color: #c9a84c; flex-shrink: 0; line-height: 1; }
+  .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 4px; }
+  .step-body p { font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin: 0; }
+
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: #c9a84c; }
+  .related-card strong { color: #0a1628; font-size: 0.9rem; }
+  .related-card span { color: #6b7280; font-size: 0.78rem; }
+
+  @media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+  @media (max-width: 640px) {
+    .related-grid, .compare-header, .compare-row { grid-template-columns: 1fr; }
+  }
+</style>
