@@ -1,12 +1,12 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Divorce in UAE — Complete Guide for Expats & Residents 2025';
+const title = 'Divorce in UAE 2026: Process, Cost & Timeline Explained';
 const description =
-  'Everything you need to know about divorce in UAE: laws, courts, costs, timelines, child custody, and financial rights. Expert guidance for expats and residents.';
+  'How to file for divorce in the UAE in 2026: who can file, the step-by-step court process, documents, indicative costs, timelines, custody and visa after divorce.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/divorce-in-uae/',
@@ -18,31 +18,59 @@ const breadcrumbs = [
   { name: 'Divorce in UAE', url: 'https://divorceu.ae/en/divorce-in-uae/' },
 ];
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2025-01-15',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/divorce-in-uae/',
+};
+
 const faqItems = [
   {
-    question: 'Can foreigners get divorced in UAE?',
+    question: 'How do I get a divorce in Dubai?',
     answer:
-      'Yes. Any person residing in the UAE can file for divorce at the Personal Status Court in their emirate of residence. Non-Muslim expats have additional options under the 2022 civil personal status law.',
+      'File at the Dubai Personal Status Court through the Family Guidance Section. Muslim couples attend mandatory reconciliation first (a window of up to 60 days). If mediation fails, a referral letter lets you register the case for court hearings. Non-Muslims filing under the civil law can skip mandatory reconciliation. A licensed lawyer can handle most steps for you.',
   },
   {
-    question: 'What is the fastest way to get divorced in UAE?',
+    question: 'What is the divorce procedure in the UAE step by step?',
     answer:
-      'Mutual (uncontested) divorce where both parties agree on all terms is the fastest route — typically 1–3 months from filing to decree. Contested divorces where parties dispute custody or assets take significantly longer.',
+      'Consult a lawyer, file at the Personal Status Court in your emirate, attend family guidance or reconciliation (Sharia track only), submit claims for custody, maintenance and assets, attend the hearings, then receive the decree. Muslim divorces are then registered with the court, typically within about 15 days of the ruling.',
   },
   {
-    question: 'Does UAE allow no-fault divorce?',
+    question: 'Can foreigners get divorced in the UAE?',
     answer:
-      'For non-Muslim expats under the 2022 law, yes — either party can file for divorce without proving fault or grounds. For Muslims, the talaq system allows the husband to divorce without grounds, but the wife must prove grounds or use khul\'a (with financial settlement).',
+      'Yes. Any person residing in the UAE can file at the Personal Status Court in their emirate. Non-Muslim expats file under Federal Decree-Law No. 41 of 2022 (civil, no-fault), or in Abu Dhabi via the Civil Family Court. Expat-law sources commonly cite a residency requirement of about six months, but the statutory basis is not firmly settled, so treat it as indicative.',
   },
   {
-    question: 'Do I need to be in UAE to file for divorce?',
+    question: 'What is the fastest way to get divorced in the UAE?',
     answer:
-      'Generally yes — the filing party or their legal representative must appear in person at the Personal Status Court. However, a licensed UAE lawyer can handle most steps on your behalf if you appoint them via a notarised power of attorney.',
+      'A mutual-consent (uncontested) divorce where both parties agree on custody, maintenance and assets is fastest, commonly around three to six months from filing to decree. Contested divorces with custody or asset disputes can run one to three years including appeals.',
   },
   {
-    question: 'What happens to the UAE visa after divorce?',
+    question: 'Does the UAE allow no-fault divorce?',
     answer:
-      "If sponsored on your spouse's visa, you have 30 days after divorce finalisation to change your visa status. Options include: employment visa, investor visa, or a 1-year divorce/custody visa if you have children in UAE.",
+      'For non-Muslims under Federal Decree-Law No. 41 of 2022, yes: either spouse can petition without proving fault or grounds. For Muslims under Federal Decree-Law No. 41 of 2024, the husband may pronounce talaq, and the wife can seek judicial divorce on grounds or khul (a divorce with financial settlement).',
+  },
+  {
+    question: 'How much does a divorce cost in the UAE?',
+    answer:
+      'Indicative only: government and administrative outlay for a straightforward case is roughly AED 2,000 to 5,000. Uncontested or mutual divorce lawyer fees run about AED 8,000 to 25,000, while contested cases start around AED 40,000 and can exceed AED 150,000 for complex asset or international custody disputes. Figures come from law-firm cost guides, not an official fee schedule.',
+  },
+  {
+    question: 'What happens to my UAE visa after divorce?',
+    answer:
+      'If you were sponsored on your spouse visa, you generally have 30 days after the decree to change status. Options include an employment visa, an investor visa, or a divorce/custody-linked residence if you have children in the UAE. Do not overstay while you arrange this.',
+  },
+  {
+    question: 'Do I have to be in the UAE to file for divorce?',
+    answer:
+      'Not necessarily. You can appoint a licensed UAE lawyer through a notarised and attested power of attorney to handle most steps if you are abroad, though some stages may still require your appearance or that of your representative.',
   },
 ];
 ---
@@ -53,21 +81,24 @@ const faqItems = [
   lang="en"
   dir="ltr"
   hreflang={hreflang}
+  schema={schema}
 >
   <header class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
         <Breadcrumb items={breadcrumbs} lang="en" />
-        <h1 class="hero__h1">Divorce in UAE — Complete Guide 2025</h1>
+        <h1 class="hero__h1">Divorce in UAE 2026: Process, Cost &amp; Timeline</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
         <p class="hero__sub">
-          Whether you are Muslim or non-Muslim, an expat or a UAE national — this guide covers
-          everything you need to know about divorce in the UAE. Laws, courts, costs, timelines,
-          and your rights.
+          A practical, how-it-works guide to divorce in the UAE: who can file, the step-by-step court
+          process, the documents you need, indicative costs, realistic timelines, and what happens
+          afterwards with your visa, custody and finances. For the statutes themselves, see our
+          <a href="/en/uae-divorce-law/">UAE divorce law guide</a>.
         </p>
         <ul class="hero__trust">
-          <li>✓ All Emirates covered</li>
-          <li>✓ Muslim &amp; non-Muslim law</li>
-          <li>✓ 2025 updated information</li>
+          <li>✓ All emirates covered</li>
+          <li>✓ Muslim &amp; non-Muslim tracks</li>
+          <li>✓ 2025 to 2026 law updates</li>
           <li>✓ Free legal consultation</li>
         </ul>
       </div>
@@ -81,92 +112,292 @@ const faqItems = [
 
     <!-- Key facts -->
     <section class="section" aria-labelledby="facts-heading">
-      <h2 id="facts-heading">Key Facts About Divorce in UAE</h2>
+      <h2 id="facts-heading">Key Facts About Divorce in the UAE</h2>
+      <p>
+        The UAE now runs a dual family-law system. Muslim divorces follow
+        <strong>Federal Decree-Law No. 41 of 2024</strong> (in force 15 April 2025, which fully
+        replaced the old Law No. 28 of 2005). Non-Muslim expats use the civil track under
+        <strong>Federal Decree-Law No. 41 of 2022</strong>. The figures below are indicative and
+        drawn from the current law and law-firm cost guides.
+      </p>
       <div class="stats-grid">
         <div class="stat-card">
-          <span class="stat-num">1–3</span>
-          <span class="stat-label">months for uncontested divorce</span>
+          <span class="stat-num">3–6</span>
+          <span class="stat-label">months typical for uncontested divorce</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">AED 600+</span>
-          <span class="stat-label">court filing fees from</span>
+          <span class="stat-num">60</span>
+          <span class="stat-label">day reconciliation window (Sharia track)</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">88%</span>
-          <span class="stat-label">of UAE population are expats</span>
+          <span class="stat-num">AED 200+</span>
+          <span class="stat-label">indicative court filing fee from</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">2022</span>
-          <span class="stat-label">civil law reform for non-Muslims</span>
+          <span class="stat-num">2</span>
+          <span class="stat-label">parallel legal tracks: Muslim &amp; civil</span>
         </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>The 2025 law change in one line</h3>
+        <p>
+          Since 15 April 2025, Muslim divorce is governed by Federal Decree-Law No. 41 of 2024,
+          not the 2005 law. It cut the reconciliation window from 90 to 60 days, extended child
+          custody to age 18 for boys and girls, counts repeated talaq pronouncements as a single
+          divorce, and requires the divorce to be documented at the court. Read the detail in our
+          <a href="/en/new-uae-personal-status-law-2025/">2025 personal status law guide</a>.
+        </p>
       </div>
     </section>
 
-    <!-- Who can divorce in UAE -->
+    <!-- Who can file -->
     <section class="section" aria-labelledby="who-heading">
-      <h2 id="who-heading">Who Can File for Divorce in UAE</h2>
+      <h2 id="who-heading">Who Can File for Divorce in the UAE</h2>
       <p>
-        Any person legally residing in the UAE can file for divorce at the Personal Status Court
-        in the emirate where they live. There is no minimum residency period required before filing.
-      </p>
-      <p>
-        The UAE handles divorce differently depending on the religion of the parties:
+        Any person legally residing in the UAE can file for divorce at the Personal Status Court in
+        the emirate where they live. Which law applies depends on the religion and nationality of the
+        parties, and, for non-Muslims, on whether they ask the court to apply UAE civil law or their
+        home-country law.
       </p>
       <div class="two-col">
         <div class="info-box info-box--blue">
-          <h3>Muslim Residents &amp; Expats</h3>
-          <p>Subject to UAE Personal Status Law No. 28 of 2005, based on Islamic jurisprudence. Covers talaq (husband-initiated), khul'a (wife-initiated with financial settlement), and judicial divorce on specific grounds.</p>
+          <h3>Muslim residents &amp; expats</h3>
+          <p>
+            Governed by Federal Decree-Law No. 41 of 2024, based on Islamic Sharia. Forms include
+            talaq (husband-initiated), khul (wife-initiated with financial settlement), judicial
+            divorce on grounds, and annulment. Under the 2024 law, judges may apply general Sharia
+            principles without being bound to a single school where it serves the family interest.
+          </p>
         </div>
         <div class="info-box info-box--gold">
-          <h3>Non-Muslim Expats</h3>
-          <p>Can opt into Federal Law No. 41 of 2022 — a secular civil divorce track. No-fault divorce, equal asset division, and joint custody by default. Does not require Islamic law to apply.</p>
+          <h3>Non-Muslim expats</h3>
+          <p>
+            Governed by Federal Decree-Law No. 41 of 2022 (civil personal status), applied across all
+            seven emirates since 1 February 2023. Either spouse can file with no fault or grounds. A
+            non-Muslim resident may instead ask the court to apply their home-country law if they
+            raise it in the petition and prove its content.
+          </p>
         </div>
       </div>
+      <p>
+        Expats often ask whether they can file at all. In practice, sources cite a residency
+        requirement of roughly six months in the UAE, though the statutory basis is not firmly
+        confirmed, so treat it as indicative and check with a lawyer for your situation. For a full
+        walkthrough of the non-Muslim route, see
+        <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Contested vs uncontested -->
+    <section class="section" aria-labelledby="type-heading">
+      <h2 id="type-heading">Uncontested vs Contested Divorce: Which Path Are You On</h2>
+      <p>
+        Before anything else, work out whether your divorce is uncontested (mutual consent) or
+        contested. The path you are on drives everything: the number of hearings, the timeline and
+        the cost.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Uncontested / mutual consent</h3>
+          <p>
+            Both spouses agree on the divorce and on custody, maintenance and asset division. You can
+            record terms in a settlement agreement and present them to the court. This is the fast
+            track, commonly three to six months. See our guide to
+            <a href="/en/mutual-consent-divorce-uae/">mutual-consent divorce in the UAE</a>.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Contested</h3>
+          <p>
+            One spouse disputes the divorce or its terms, so the court decides custody, maintenance
+            or assets after hearings and evidence. Contested cases commonly take one to three years
+            including appeals. Compare both routes in
+            <a href="/en/contested-vs-uncontested-divorce-uae/">contested vs uncontested divorce</a>.
+          </p>
+        </div>
+      </div>
+      <p>
+        Many couples start out contested and settle partway through. Even a partial agreement (for
+        example, on custody but not assets) narrows what the court has to decide and shortens the
+        process. A lawyer will usually push to resolve as much as possible by agreement before a
+        judge has to rule.
+      </p>
     </section>
 
     <!-- The divorce process -->
     <section class="section" aria-labelledby="process-heading">
-      <h2 id="process-heading">The Divorce Process in UAE</h2>
+      <h2 id="process-heading">How to File for Divorce in the UAE: Step by Step</h2>
+      <p>
+        The core procedure is similar across the emirates, with one key difference: mandatory
+        reconciliation applies to the Muslim (Sharia) track, but non-Muslims filing under the civil
+        law are not required to attend it.
+      </p>
       <ol class="steps">
         <li>
-          <h3>Consult a Family Lawyer</h3>
-          <p>Understand your rights, likely outcomes, and whether mutual or contested divorce applies to your case. First consultation is free.</p>
+          <h3>Get legal advice and pick your track</h3>
+          <p>
+            Confirm which law applies, whether your case is uncontested or contested, and what
+            outcomes are realistic on custody, maintenance and assets. Most consultations are free.
+          </p>
         </li>
         <li>
           <h3>File at the Personal Status Court</h3>
-          <p>Submit your application at the court in your emirate of residence. Documents needed: marriage certificate, passports, Emirates IDs, residence proof.</p>
+          <p>
+            Submit your application in your emirate of residence. You will need your marriage
+            certificate, passports, Emirates IDs, proof of residence and, if relevant, children
+            birth certificates. See the full
+            <a href="/en/documents-for-divorce-uae/">documents for divorce checklist</a>.
+          </p>
         </li>
         <li>
-          <h3>Reconciliation / Family Guidance Session</h3>
-          <p>All UAE courts require at least one reconciliation attempt before proceedings begin. A court counsellor meets both parties. If it fails, the case moves forward.</p>
+          <h3>Family guidance / reconciliation (Sharia track)</h3>
+          <p>
+            Muslim divorces start at the Family Guidance Department, where mediation is compulsory
+            with a reconciliation window of up to 60 days under the 2024 law. If it fails, the
+            conciliator issues a referral letter, which must be filed with the court within about
+            three months or the process restarts. Non-Muslims under the civil law may attend
+            voluntarily but are not required to.
+          </p>
         </li>
         <li>
-          <h3>Court Hearings</h3>
-          <p>Uncontested cases: typically 1 hearing. Contested (custody or asset disputes): multiple hearings over several months.</p>
+          <h3>Register the case and file your claims</h3>
+          <p>
+            With the referral letter (or directly, for civil no-fault cases), the case is registered
+            for hearings. This is where you lodge claims for custody, child support, spousal
+            maintenance and, where relevant, division of assets and debts.
+          </p>
         </li>
         <li>
-          <h3>Divorce Decree Issued</h3>
-          <p>The final decree is issued by the court. For expats it must be attested and may need legalisation for use in your home country.</p>
+          <h3>Court hearings</h3>
+          <p>
+            Uncontested cases often need just one substantive hearing. Contested cases run through
+            several hearings over months, sometimes with a court-appointed accountant assessing
+            finances or an expert on custody.
+          </p>
+        </li>
+        <li>
+          <h3>Divorce decree and registration</h3>
+          <p>
+            The court issues the decree. Muslim divorces must be documented at the court, typically
+            registered within about 15 days of the ruling (a figure reported by law firms that
+            should be confirmed against the official text). Appeals in personal-status matters are
+            generally filed within 30 days of the first-instance judgment.
+          </p>
         </li>
       </ol>
+      <p>
+        For a Dubai-specific version of these steps, see
+        <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a>.
+      </p>
+    </section>
+
+    <!-- Documents checklist -->
+    <section class="section" aria-labelledby="docs-heading">
+      <h2 id="docs-heading">Documents You Will Need</h2>
+      <p>
+        Missing paperwork is the most common cause of delay. Gather these before you file. Foreign
+        documents usually need to be legally translated into Arabic and, in many cases, attested.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Core documents</h3>
+          <p>
+            Original marriage certificate (attested and Arabic-translated if issued abroad); both
+            spouses passports and visa pages; both Emirates IDs; proof of UAE residence; and the
+            divorce petition itself.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Case-specific documents</h3>
+          <p>
+            Children birth certificates and school records for custody claims; salary certificates,
+            bank statements and title deeds for maintenance and asset claims; any prenuptial or
+            settlement agreement; and a notarised power of attorney if a lawyer will act for you.
+          </p>
+        </div>
+      </div>
+      <p>
+        The exact list varies by emirate, court and whether your case is contested. Our
+        <a href="/en/documents-for-divorce-uae/">documents for divorce in the UAE</a> guide breaks
+        down attestation and translation requirements in detail.
+      </p>
+    </section>
+
+    <!-- Mutual consent fast track -->
+    <section class="section" aria-labelledby="fasttrack-heading">
+      <h2 id="fasttrack-heading">The Mutual-Consent Fast Track</h2>
+      <p>
+        If you and your spouse agree on everything, mutual-consent divorce is by far the quickest and
+        cheapest route. You negotiate the terms, put them in a settlement agreement covering custody,
+        child support, maintenance and how assets and debts are split, then present that agreement to
+        the court for approval.
+      </p>
+      <p>
+        Because the judge is confirming an agreement rather than deciding a dispute, hearings are
+        minimal and the timeline is short, commonly three to six months end to end. For non-Muslims
+        under the civil law, with no mandatory reconciliation and no iddah waiting period, the fast
+        track is faster still. A reflection or notice period of about 30 days before the civil decree
+        is commonly reported, though that specific figure is not confirmed at article level.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>Get the agreement right the first time</h3>
+        <p>
+          The value of the fast track lives entirely in the settlement agreement. If it is vague on
+          custody schedules or asset division, the case can slide back into a contested dispute.
+          Have a lawyer draft or review it. Details in
+          <a href="/en/mutual-consent-divorce-uae/">mutual-consent divorce in the UAE</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Power of attorney for expats abroad -->
+    <section class="section" aria-labelledby="poa-heading">
+      <h2 id="poa-heading">Filing From Abroad: Power of Attorney</h2>
+      <p>
+        You do not always have to be physically in the UAE to divorce here. If you have left the
+        country or cannot attend in person, you can appoint a licensed UAE lawyer through a power of
+        attorney to handle most steps on your behalf.
+      </p>
+      <p>
+        The power of attorney generally needs to be notarised in the country where you sign it, then
+        legalised or attested so it is recognised in the UAE (through the relevant UAE embassy and
+        the Ministry of Foreign Affairs, or via apostille where applicable), and translated into
+        Arabic. Once that is in place, your lawyer can file, attend guidance sessions and represent
+        you at hearings, though some stages may still require your appearance. A
+        <a href="/en/divorce-lawyer-dubai/">divorce lawyer in Dubai</a> or
+        <a href="/en/divorce-lawyer-abu-dhabi/">Abu Dhabi</a> can tell you which steps, if any, need
+        you present.
+      </p>
     </section>
 
     <!-- Costs -->
     <section class="section" aria-labelledby="costs-heading">
-      <h2 id="costs-heading">Cost of Divorce in UAE</h2>
+      <h2 id="costs-heading">Cost of Divorce in the UAE (Indicative)</h2>
+      <p>
+        The figures below are indicative ranges from law-firm cost guides, not an official government
+        fee schedule, and they vary widely by case and firm. Government filing fees for a divorce
+        application are commonly cited at AED 200 to 500, with further first-instance court fees of
+        roughly AED 1,000 to 3,000, so total government and administrative outlay for a
+        straightforward case is often around AED 2,000 to 5,000.
+      </p>
       <div class="cost-table">
         <table>
           <thead>
-            <tr><th>Divorce Type</th><th>Court Fees</th><th>Lawyer Fees (est.)</th><th>Timeline</th></tr>
+            <tr><th>Divorce type</th><th>Lawyer fees (indicative)</th><th>Typical timeline</th></tr>
           </thead>
           <tbody>
-            <tr><td>Uncontested / mutual</td><td>AED 600–1,500</td><td>AED 5,000–15,000</td><td>1–3 months</td></tr>
-            <tr><td>Contested (no custody dispute)</td><td>AED 1,000–2,000</td><td>AED 12,000–25,000</td><td>3–9 months</td></tr>
-            <tr><td>Contested (with custody)</td><td>AED 1,500–3,000</td><td>AED 20,000–50,000+</td><td>6–24 months</td></tr>
-            <tr><td>Khul'a divorce</td><td>AED 600–1,500</td><td>AED 6,000–15,000</td><td>2–4 months</td></tr>
+            <tr><td>Uncontested / mutual consent</td><td>AED 8,000–25,000</td><td>3–6 months</td></tr>
+            <tr><td>Contested (no major dispute)</td><td>AED 40,000+</td><td>~1 year</td></tr>
+            <tr><td>Contested (custody or assets)</td><td>AED 40,000–80,000</td><td>1–3 years</td></tr>
+            <tr><td>Complex (business valuation, international custody)</td><td>AED 150,000+</td><td>1–3 years+</td></tr>
           </tbody>
         </table>
-        <p class="table-note">Fees are estimates. Many lawyers offer a free initial consultation. Contact us for a no-obligation quote.</p>
+        <p class="table-note">
+          Indicative only, from law-firm cost guides. Hourly rates run roughly AED 750 to 1,000
+          (junior), AED 1,200 to 1,800 (mid-level) and AED 2,000 to 2,500 (senior partner). Many
+          lawyers offer a free initial consultation. See our
+          <a href="/en/divorce-cost-uae/">full cost of divorce guide</a>.
+        </p>
       </div>
 
       <div class="cta-inline">
@@ -175,77 +406,125 @@ const faqItems = [
       </div>
     </section>
 
+    <!-- Timeline breakdown -->
+    <section class="section" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading">A Realistic Timeline Breakdown</h2>
+      <p>
+        Timelines depend on your track and on whether the case is contested. Here is how the stages
+        stack up in practice. See the full
+        <a href="/en/divorce-timeline-uae/">UAE divorce timeline guide</a> for detail.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Stage</th><th>Sharia track (Muslim)</th><th>Civil track (non-Muslim)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Family guidance / reconciliation</td><td>Mandatory, up to 60 days</td><td>Not required (optional)</td></tr>
+            <tr><td>Registering the case after referral</td><td>File within ~3 months of referral</td><td>File directly</td></tr>
+            <tr><td>Uncontested to decree</td><td>~3–6 months total</td><td>~3–6 months total</td></tr>
+            <tr><td>Contested to decree</td><td>~1–3 years incl. appeals</td><td>~1–3 years incl. appeals</td></tr>
+            <tr><td>Appeal window</td><td>~30 days from judgment</td><td>~30 days from judgment</td></tr>
+            <tr><td>Registration of divorce</td><td>~15 days after ruling (reported)</td><td>Recorded at decree</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Ranges are indicative. Cassation timelines and the exact registration day-count vary and
+          some sources disagree, so confirm current deadlines with your lawyer.
+        </p>
+      </div>
+    </section>
+
     <!-- After divorce -->
     <section class="section" aria-labelledby="after-heading">
-      <h2 id="after-heading">What Happens After Divorce in UAE</h2>
+      <h2 id="after-heading">What Happens After Divorce in the UAE</h2>
 
-      <h3>Visa Status</h3>
+      <h3>Visa status</h3>
       <p>
-        If you were on your spouse's visa, you have <strong>30 days</strong> after the divorce decree
-        to change your visa status. Apply for an employment visa, investor visa, or a 1-year divorce/custody
-        visa (if you have children in UAE). Do not miss this deadline — overstaying has serious consequences.
-      </p>
-
-      <h3>Child Custody</h3>
-      <p>
-        Under UAE law, mothers typically receive physical custody of young children. The 2022 civil law
-        for non-Muslims allows joint custody arrangements. The father retains guardianship rights and is
-        obligated to pay child support regardless of custody.
-      </p>
-      <p>
-        <a href="/en/child-custody-uae/">Full guide: Child custody in UAE →</a>
+        If you were on your spouse visa, you generally have <strong>30 days</strong> after the decree
+        to change your visa status. Common routes are an employment visa, an investor visa, or a
+        residence linked to custody if you have children in the UAE. Do not overstay while you sort
+        this out. Full detail in our
+        <a href="/en/visa-after-divorce-uae/">visa after divorce guide</a>.
       </p>
 
-      <h3>Financial Settlement</h3>
+      <h3>Child custody</h3>
       <p>
-        Financial rights after divorce depend on whether you are Muslim or non-Muslim. Key entitlements
-        include mahr, iddah maintenance, alimony (in certain cases), child support, and asset division
-        for non-Muslims.
-      </p>
-      <p>
-        <a href="/en/wife-rights-after-divorce-uae/">Full guide: Wife's financial rights after divorce →</a>
-      </p>
-
-      <h3>Attesting Your Divorce Certificate</h3>
-      <p>
-        If you plan to use your UAE divorce decree in another country, it must be attested by the UAE
-        Ministry of Foreign Affairs and then by the embassy of the destination country. Your lawyer
-        can manage this process.
+        Under the 2024 Muslim law, custody now continues to <strong>age 18</strong> for both boys and
+        girls, a major change from the old split ages, and a child aged 15 or older may choose which
+        parent to live with where the court finds it in the child best interest. For non-Muslims
+        under the 2022 civil law, joint and equal custody is the default, with either parent able to
+        petition for sole custody at the court discretion. Full detail in our
+        <a href="/en/child-custody-uae/">child custody in the UAE guide</a>.
       </p>
 
-      <h3>Where to File: UAE or Home Country?</h3>
+      <h3>Financial settlement</h3>
       <p>
-        For expats, <a href="/en/where-to-divorce-uae-or-home-country/">choosing where to file for divorce</a>
-        is a major financial decision. UAE applies separate property rules; England can redistribute all
-        marital assets. The country you choose changes the outcome. If you are based in the UAE,
-        <a href="/en/dubai-vs-abu-dhabi-divorce/">Dubai and Abu Dhabi operate different court frameworks</a>
-        for non-Muslims — the Abu Dhabi Civil Family Court has no mandatory counselling and concludes
-        uncontested divorces in under six weeks.
+        For Muslim divorces, entitlements can include mahr, iddah maintenance and child support. For
+        non-Muslims, a divorced woman may claim alimony, with the court weighing factors such as the
+        length of the marriage, the wife age and both spouses financial circumstances, often assessed
+        by a court-appointed accountant. Note that the civil law does <strong>not</strong> impose an
+        automatic 50/50 asset split; the court adjudicates based on each spouse contributions, needs
+        and any agreement. See
+        <a href="/en/wife-rights-after-divorce-uae/">wife rights after divorce in the UAE</a>.
+      </p>
+
+      <h3>Attesting your divorce certificate</h3>
+      <p>
+        To use your UAE divorce decree in another country, it usually must be attested by the UAE
+        Ministry of Foreign Affairs and then legalised by the destination country embassy (or
+        apostilled where that applies). Our
+        <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation guide</a>
+        walks through the steps. A lawyer can manage this for you.
+      </p>
+
+      <h3>Where to file: UAE or home country?</h3>
+      <p>
+        For expats, <a href="/en/where-to-divorce-uae-or-home-country/">choosing where to file</a> is
+        a major financial decision. UAE courts apply separate-property principles, while some home
+        jurisdictions can redistribute all marital assets, so the forum changes the outcome. UAE
+        courts may recognise a foreign decree, but this is not automatic and depends on nationality,
+        domicile and public order. If you are based in the UAE,
+        <a href="/en/dubai-vs-abu-dhabi-divorce/">Dubai and Abu Dhabi run different frameworks</a>
+        for non-Muslims, with Abu Dhabi offering a dedicated English-language Civil Family Court.
       </p>
     </section>
 
     <!-- Emirate comparison -->
     <section class="section" aria-labelledby="emirates-heading">
       <h2 id="emirates-heading">Divorce Courts by Emirate</h2>
+      <p>
+        You file in the emirate where you reside. Each has its own Personal Status Court, and Abu
+        Dhabi additionally runs a specialist civil venue for non-Muslims.
+      </p>
       <div class="cards">
         <div class="card">
           <h3>Dubai</h3>
-          <p>Dubai Personal Status Court at Dubai Courts. Family Guidance Section. Online services via Dubai Courts portal.</p>
+          <p>Dubai Personal Status Court at Dubai Courts, with a Family Guidance Section and online services via the Dubai Courts portal.</p>
           <a href="/en/divorce-lawyer-dubai/" class="card-link">Dubai lawyers →</a>
         </div>
         <div class="card">
           <h3>Abu Dhabi</h3>
-          <p>Abu Dhabi Personal Status Court via ADJD. Family Guidance Department. ADJD Smart Services for online filing.</p>
+          <p>Abu Dhabi Personal Status Court via ADJD, plus a dedicated Civil Family Court for non-Muslims that operates in Arabic and English.</p>
           <a href="/en/divorce-lawyer-abu-dhabi/" class="card-link">Abu Dhabi lawyers →</a>
         </div>
         <div class="card">
           <h3>Sharjah</h3>
-          <p>Sharjah Personal Status Court under Sharjah Judicial Department. Mandatory reconciliation sessions.</p>
+          <p>Sharjah Personal Status Court under the Sharjah Judicial Department, with reconciliation sessions for the Sharia track.</p>
         </div>
         <div class="card">
-          <h3>Other Emirates</h3>
-          <p>Ajman, RAK, Fujairah, and UAQ each have Personal Status Courts. File in the emirate where you reside.</p>
+          <h3>Other emirates</h3>
+          <p>Ajman, RAK, Fujairah and Umm Al Quwain each have Personal Status Courts. File where you reside.</p>
         </div>
+      </div>
+      <div class="info-box info-box--gold" style="margin-top:24px;">
+        <h3>A note on DIFC and ADGM</h3>
+        <p>
+          Despite some marketing claims, the DIFC Courts do not have jurisdiction over personal
+          status or family matters, so you cannot obtain a valid UAE divorce there. ADGM is used for
+          non-Muslim wills and succession, not for granting divorces. The correct venues are the
+          onshore family courts under the civil law, or the Abu Dhabi Civil Family Court.
+        </p>
       </div>
     </section>
 
@@ -253,33 +532,37 @@ const faqItems = [
     <section class="section" aria-labelledby="related-heading">
       <h2 id="related-heading">Detailed Guides</h2>
       <div class="service-links">
-        <a href="/en/new-uae-personal-status-law-2025/" class="service-link">
-          <strong>New UAE Personal Status Law 2025</strong>
-          <span>What Federal Decree-Law 41 of 2024 changed for divorce, custody and maintenance</span>
-        </a>
         <a href="/en/uae-divorce-law/" class="service-link">
           <strong>UAE Divorce Law</strong>
-          <span>Personal status law explained</span>
+          <span>The statutes explained: 41/2024 and 41/2022</span>
         </a>
-        <a href="/en/divorce-in-uae-for-expats/" class="service-link">
+        <a href="/en/new-uae-personal-status-law-2025/" class="service-link">
+          <strong>New Personal Status Law 2025</strong>
+          <span>What Federal Decree-Law 41 of 2024 changed</span>
+        </a>
+        <a href="/en/divorce-for-expats-in-uae/" class="service-link">
           <strong>Divorce for Expats</strong>
-          <span>2022 civil law for non-Muslims</span>
+          <span>The 2022 civil law route for non-Muslims</span>
         </a>
         <a href="/en/how-to-file-for-divorce-in-dubai/" class="service-link">
-          <strong>How to File for Divorce</strong>
-          <span>Step-by-step court guide</span>
+          <strong>How to File in Dubai</strong>
+          <span>Step-by-step Dubai court guide</span>
+        </a>
+        <a href="/en/divorce-cost-uae/" class="service-link">
+          <strong>Cost of Divorce</strong>
+          <span>Indicative fees and what drives them</span>
+        </a>
+        <a href="/en/divorce-timeline-uae/" class="service-link">
+          <strong>Divorce Timeline</strong>
+          <span>How long each stage really takes</span>
         </a>
         <a href="/en/child-custody-uae/" class="service-link">
           <strong>Child Custody UAE</strong>
-          <span>Custody rights and process</span>
+          <span>Custody to 18 and the choice age of 15</span>
         </a>
-        <a href="/en/wife-rights-after-divorce-uae/" class="service-link">
-          <strong>Wife's Rights After Divorce</strong>
-          <span>Financial entitlements</span>
-        </a>
-        <a href="/en/divorce-lawyer-dubai/" class="service-link">
-          <strong>Divorce Lawyer Dubai</strong>
-          <span>Find a qualified lawyer</span>
+        <a href="/en/documents-for-divorce-uae/" class="service-link">
+          <strong>Documents Checklist</strong>
+          <span>What to gather and how to attest it</span>
         </a>
       </div>
     </section>
@@ -287,7 +570,7 @@ const faqItems = [
     <FAQSection items={faqItems} lang="en" />
 
     <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
-      <h2 id="bottom-cta-heading">Get Free Legal Advice on Divorce in UAE</h2>
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on Divorce in the UAE</h2>
       <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
       <LeadForm lang="en" variant="inline" />
     </section>
@@ -296,7 +579,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>
@@ -311,7 +594,9 @@ const faqItems = [
   .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
   .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
   .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
   .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
   .hero__trust li { opacity: 0.9; }
 
@@ -319,6 +604,8 @@ const faqItems = [
   .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
   .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
   .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
   .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
 
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
@@ -326,18 +613,22 @@ const faqItems = [
   .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
   .stat-label { font-size: 0.875rem; color: #374151; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
   .info-box { padding: 24px; border-radius: 12px; }
   .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
   .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
   .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
   .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
 
   .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
   .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
   .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
   .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
   .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
 
   .cost-table { margin-top: 24px; overflow-x: auto; }
   .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
@@ -345,6 +636,7 @@ const faqItems = [
   .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
   .cost-table tr:nth-child(even) td { background: #f8faff; }
   .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
 
   .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
   .cta-inline p { margin: 0; font-weight: 600; }
