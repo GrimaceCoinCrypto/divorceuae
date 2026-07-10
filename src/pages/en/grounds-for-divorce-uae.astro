@@ -1,0 +1,641 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Grounds for Divorce in UAE: Every Legal Reason (2026)';
+const description =
+  'Every legal ground for divorce in the UAE: talaq, khula and judicial grounds for Muslims, and no-fault civil divorce for non-Muslims, and the evidence each needs.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/grounds-for-divorce-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Grounds for Divorce in UAE', url: 'https://divorceu.ae/en/grounds-for-divorce-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/grounds-for-divorce-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'What are the legal grounds for divorce in the UAE?',
+    answer:
+      'It depends on your track. For Muslims under Federal Decree-Law No. 41 of 2024, a husband can pronounce talaq with no grounds, a wife can seek khula by returning her mahr, and either spouse can ask for judicial divorce on specific grounds such as harm, abandonment, failure to maintain, imprisonment, incurable disease or addiction to intoxicants. For non-Muslims under Federal Decree-Law No. 41 of 2022, no grounds are required at all: either spouse can file on a no-fault basis.',
+  },
+  {
+    question: 'Do you need grounds for divorce as a non-Muslim in the UAE?',
+    answer:
+      'No. The civil track under Federal Decree-Law No. 41 of 2022, and Abu Dhabi Law No. 14 of 2021, are no-fault systems. Either spouse can petition for divorce without proving fault, harm or any reason. You do not have to blame the other person or show that the marriage broke down for a particular cause.',
+  },
+  {
+    question: 'Can a wife divorce without her husband agreeing in the UAE?',
+    answer:
+      'Yes. A Muslim wife can seek khula, where she returns the mahr and can now proceed even if the husband refuses consent, or she can ask for judicial divorce on grounds such as harm or failure to maintain. A non-Muslim wife can file for no-fault civil divorce on her own. See our guide to divorce without husband consent for the detail.',
+  },
+  {
+    question: 'What counts as harm (darar) as a ground for divorce?',
+    answer:
+      'Harm covers physical abuse, psychological or emotional abuse, and other treatment that makes married life unsustainable for the wife. A judge assesses the evidence, which can include medical or police reports, witness testimony and documented messages. If harm is proven, the court can grant a judicial divorce (tatliq) without the wife losing her financial rights.',
+  },
+  {
+    question: 'Is addiction a ground for divorce in the UAE?',
+    answer:
+      'Yes, for Muslim divorces. Federal Decree-Law No. 41 of 2024 added addiction to intoxicants as a valid ground on which a spouse may seek judicial divorce (reported at Article 80, which you should confirm against the official text). It is a newer route and, like other fault grounds, needs supporting evidence before a court.',
+  },
+  {
+    question: 'What is the difference between talaq and khula?',
+    answer:
+      'Talaq is divorce initiated by the husband; he does not need grounds, but under the 2024 law the divorce must be documented at the court. Khula is divorce initiated by the wife in exchange for giving back her mahr or another agreed sum. Under the current law a wife can pursue khula even without the husband agreeing, provided she returns the mahr.',
+  },
+  {
+    question: 'What evidence do I need to prove fault grounds?',
+    answer:
+      'Fault grounds such as harm, abandonment or non-maintenance must be proven to the court. Useful evidence includes medical and police reports, witness statements, bank records showing missed maintenance, travel or residence records for abandonment, court or prison records for imprisonment, and medical certificates for incurable disease. A lawyer can tell you what will carry weight for your specific ground.',
+  },
+  {
+    question: 'Does the UAE still recognise fault-based divorce?',
+    answer:
+      'Yes, but only on the Muslim track. Judicial divorce (tatliq or tafreeq) is granted on proven grounds. The non-Muslim civil track under Federal Decree-Law No. 41 of 2022 is entirely no-fault, so fault plays no part in whether the divorce is granted, though harm can still affect financial claims such as alimony.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Grounds for Divorce in the UAE: Every Legal Reason</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          What legal grounds does the UAE accept for divorce? The answer depends on which track you are
+          on. Muslim couples can use talaq, khula or judicial divorce on specific grounds. Non-Muslim
+          expats file on a no-fault basis with no grounds at all. This guide covers every route under the
+          current law, and the evidence each fault ground needs. For the full statutes, see our
+          <a href="/en/uae-divorce-law/">UAE divorce law guide</a>.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Muslim &amp; non-Muslim tracks</li>
+          <li>✓ Fault vs no-fault explained</li>
+          <li>✓ 2024 &amp; 2022 law updates</li>
+          <li>✓ Free legal consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Divorce Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <figure style="margin:0 0 8px;">
+      <img src="/images/grounds-for-divorce-uae.webp" alt="Grounds for divorce in the UAE: wedding rings on a legal document beside a gavel" width="1200" height="675" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px;" />
+    </figure>
+
+    <!-- Two legal systems -->
+    <section class="section" aria-labelledby="systems-heading">
+      <h2 id="systems-heading">The UAE Has Two Separate Answers</h2>
+      <p>
+        There is no single list of grounds for divorce in the UAE, because the country runs a dual
+        family-law system. Which grounds apply, if any, depends on the religion and law that governs
+        your marriage.
+      </p>
+      <p>
+        Muslim divorces follow <strong>Federal Decree-Law No. 41 of 2024</strong>, the personal status
+        law that came into force on 15 April 2025 and fully replaced the old Federal Law No. 28 of 2005.
+        This track keeps a set of recognised routes: talaq, khula and judicial divorce on grounds.
+        Non-Muslim expats file under <strong>Federal Decree-Law No. 41 of 2022</strong> (the federal
+        civil personal status law, in force since 1 February 2023) or, in Abu Dhabi, under
+        <strong>Abu Dhabi Law No. 14 of 2021</strong>. Both civil regimes are no-fault, so no grounds
+        are required.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Muslim track: grounds can matter</h3>
+          <p>
+            A husband can pronounce talaq without stating a reason, and a wife can seek khula or
+            judicial divorce. Judicial divorce is granted only on proven grounds. This is where the
+            classic list of reasons (harm, abandonment, non-maintenance and so on) lives.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Non-Muslim track: no grounds needed</h3>
+          <p>
+            Under the civil law, either spouse can petition for divorce with no fault, harm or reason
+            to prove. The court does not ask why the marriage ended. See
+            <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a> for the full route.
+          </p>
+        </div>
+      </div>
+      <p>
+        For a wider map of every divorce category, including annulment and mutual consent, read our
+        <a href="/en/types-of-divorce-uae/">types of divorce in the UAE</a> guide. The rest of this page
+        works through the actual grounds and reasons on each track.
+      </p>
+    </section>
+
+    <!-- Fault vs no-fault -->
+    <section class="section" aria-labelledby="fault-heading">
+      <h2 id="fault-heading">Fault vs No-Fault: What the Difference Means</h2>
+      <p>
+        The single most useful idea to grasp is the split between fault-based and no-fault divorce,
+        because it decides whether you need grounds at all.
+      </p>
+      <p>
+        A <strong>fault-based</strong> divorce is granted because one spouse did something the law
+        recognises as a valid reason to end the marriage. You have to prove that reason to a judge.
+        On the Muslim track, judicial divorce (called tatliq or tafreeq) works this way: the wife, or
+        sometimes the husband, asks the court to dissolve the marriage on a specific ground and backs
+        it with evidence.
+      </p>
+      <p>
+        A <strong>no-fault</strong> divorce needs no reason and no blame. The non-Muslim civil law is
+        purely no-fault: either spouse can file, and the court will grant the divorce whether or not
+        anything went wrong. Talaq is a special case. It is initiated by the husband and needs no
+        grounds, so in practice it behaves like a no-fault route for him, but it sits inside the
+        Muslim (Sharia) framework rather than the civil one.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>Why fault can still matter under no-fault</h3>
+        <p>
+          Even on the non-Muslim track, where fault is not needed to obtain the divorce, harm caused
+          by a spouse can still influence financial claims. Under the civil law, the court weighs
+          compensation for physical or moral harm when it sets alimony, so behaviour is not entirely
+          irrelevant, it just does not gate the divorce itself.
+        </p>
+      </div>
+    </section>
+
+    <!-- The comparison table -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Grounds for Divorce: Muslim vs Non-Muslim</h2>
+      <p>
+        Here is the side-by-side view. The Muslim column lists routes and recognised grounds under
+        Federal Decree-Law No. 41 of 2024. The non-Muslim column reflects the no-fault civil law.
+      </p>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Route or ground</th>
+              <th>Muslim track (41/2024)</th>
+              <th>Non-Muslim track (41/2022 &amp; AD 14/2021)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>No-grounds divorce</td>
+              <td>Talaq (husband) and khula (wife, returns mahr)</td>
+              <td>Yes, either spouse, no reason required</td>
+            </tr>
+            <tr>
+              <td>Harm or abuse (darar)</td>
+              <td>Judicial divorce ground, evidence required</td>
+              <td>Not needed to divorce; may affect alimony</td>
+            </tr>
+            <tr>
+              <td>Abandonment / desertion</td>
+              <td>Judicial divorce ground, evidence required</td>
+              <td>Not needed; no-fault applies</td>
+            </tr>
+            <tr>
+              <td>Failure to maintain</td>
+              <td>Judicial divorce ground, evidence required</td>
+              <td>Not needed; no-fault applies</td>
+            </tr>
+            <tr>
+              <td>Imprisonment of spouse</td>
+              <td>Judicial divorce ground, court records</td>
+              <td>Not needed; no-fault applies</td>
+            </tr>
+            <tr>
+              <td>Incurable disease or defect</td>
+              <td>Judicial divorce ground, medical proof</td>
+              <td>Not needed; no-fault applies</td>
+            </tr>
+            <tr>
+              <td>Addiction to intoxicants</td>
+              <td>New ground added by 41/2024</td>
+              <td>Not needed; no-fault applies</td>
+            </tr>
+            <tr>
+              <td>Reconciliation stage</td>
+              <td>Mandatory, up to 60 days</td>
+              <td>Not required (optional)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Indicative summary. Specific article numbers under 41/2024 come from law-firm briefings and
+          should be confirmed against the official text. Confirm how each ground applies to your case
+          with a lawyer.
+        </p>
+      </div>
+    </section>
+
+    <!-- Muslim track routes -->
+    <section class="section" aria-labelledby="talaq-heading">
+      <h2 id="talaq-heading">Muslim Track: Talaq (Husband-Initiated)</h2>
+      <p>
+        Talaq is divorce pronounced by the husband. He does not need to state or prove any grounds,
+        which makes talaq the one route where no reason is required and the decision rests with the
+        husband. Under Federal Decree-Law No. 41 of 2024, though, the rules around it tightened.
+      </p>
+      <p>
+        The divorce must now be <strong>documented at the competent court</strong> rather than treated
+        as valid on the words alone. Law-firm briefings report that the husband has a short window,
+        commonly cited as 15 days, to document it, and that a wife can file to prove the divorce and
+        claim maintenance from the divorce date until it is documented if he delays. Treat the exact
+        day-count as needing confirmation against the official text. The law also counts repeated
+        verbal, written or gestural pronouncements as a <strong>single</strong> divorce rather than
+        multiple, which changes how the old triple-talaq idea works.
+      </p>
+      <p>
+        For the full mechanics, including how iddah and registration work, see our dedicated
+        <a href="/en/talaq-uae/">talaq in the UAE</a> guide.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="khula-heading">
+      <h2 id="khula-heading">Muslim Track: Khula (Wife-Initiated)</h2>
+      <p>
+        Khula is the wife-initiated route. She asks to end the marriage in exchange for giving back her
+        mahr (dower) or another agreed sum. The important shift under the current law is that a wife can
+        pursue khula <strong>even where the husband does not consent</strong>, as long as she returns
+        the mahr. In practice this gives a wife a way out that does not depend on proving fault or on
+        the husband agreeing.
+      </p>
+      <p>
+        Khula suits a wife who wants to leave the marriage and is willing to forgo the financial dower
+        to do so cleanly. If you would rather keep your financial rights, a judicial divorce on grounds
+        (below) may fit better, because a wife who proves harm can be divorced without surrendering her
+        mahr. Our <a href="/en/khula-divorce-uae/">khula divorce in the UAE</a> guide walks through the
+        procedure, and <a href="/en/divorce-without-husband-consent-uae/">divorce without husband
+        consent</a> covers the wider options when a husband refuses.
+      </p>
+    </section>
+
+    <!-- Judicial divorce grounds -->
+    <section class="section" aria-labelledby="judicial-heading">
+      <h2 id="judicial-heading">Muslim Track: Judicial Divorce Grounds (Tatliq)</h2>
+      <p>
+        Judicial divorce, known as tatliq or tafreeq, is where the classic list of grounds lives. A
+        spouse asks the court to dissolve the marriage on a recognised ground and proves it with
+        evidence. These are the fault-based reasons the UAE Sharia track accepts. Below is each ground
+        and the kind of proof it usually calls for.
+      </p>
+
+      <h3>Harm or abuse (darar)</h3>
+      <p>
+        Harm covers physical violence, psychological or emotional abuse, and other treatment that makes
+        continuing the marriage unsustainable. It is one of the most-used grounds. Evidence can include
+        medical reports, police reports, witness testimony and documented messages. Where a wife proves
+        harm, the court can grant the divorce without her losing her financial rights. If violence is
+        involved, our guides to <a href="/en/divorce-for-harm-uae/">divorce for harm</a> and
+        <a href="/en/domestic-violence-divorce-uae/">domestic violence and divorce</a> set out the
+        evidence and protection routes in detail.
+      </p>
+
+      <h3>Abandonment or desertion</h3>
+      <p>
+        If a spouse leaves and stops supporting or living with the family, the other spouse can seek
+        judicial divorce. Proof typically involves showing the absence and its duration through
+        residence, travel or communication records. Where the husband cannot be located at all, a
+        distinct procedure applies, covered in our
+        <a href="/en/divorce-absent-husband-uae/">divorce from an absent husband</a> guide.
+      </p>
+
+      <h3>Failure to maintain</h3>
+      <p>
+        A husband has a duty to financially maintain his wife. Sustained failure to do so is a ground
+        for judicial divorce. Bank statements, records of missed payments and evidence of the husband's
+        means help establish it. Backdated maintenance itself can generally be claimed only for a
+        limited prior period (reported as the preceding two years, which you should confirm against the
+        statute).
+      </p>
+
+      <h3>Imprisonment</h3>
+      <p>
+        Where a spouse is sentenced to imprisonment, the other spouse may seek divorce on the basis
+        that the sentence prevents normal married life. Court judgments and prison records are the
+        natural evidence here.
+      </p>
+
+      <h3>Incurable disease or defect</h3>
+      <p>
+        A serious, incurable illness or defect that makes married life harmful or impossible can be a
+        ground. Medical certificates and specialist reports are needed to prove the condition and its
+        effect.
+      </p>
+
+      <h3>Addiction to intoxicants (new under 41/2024)</h3>
+      <p>
+        Federal Decree-Law No. 41 of 2024 added <strong>addiction to intoxicants</strong> as a valid
+        ground on which a spouse may seek judicial divorce. It is reported to sit at Article 80, though
+        the exact article number should be confirmed against the official text. As a newer ground, it
+        will still require credible evidence of the addiction before a court, in the same way as the
+        other fault grounds.
+      </p>
+
+      <div class="cta-inline">
+        <p>Not sure which ground fits your situation?</p>
+        <a href="#contact" class="btn btn--primary">Get a Free Assessment</a>
+      </div>
+    </section>
+
+    <!-- Non-Muslim track -->
+    <section class="section" aria-labelledby="nonmuslim-heading">
+      <h2 id="nonmuslim-heading">Non-Muslim Track: No Grounds Required</h2>
+      <p>
+        For non-Muslim expats, the picture is far simpler. Both the federal civil law and the Abu Dhabi
+        regime are no-fault. There is no list of grounds to satisfy, and the court does not ask you to
+        justify the divorce.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Federal Decree-Law No. 41 of 2022</h3>
+          <p>
+            In force since 1 February 2023 across all seven emirates. Either spouse can petition for
+            divorce without proving fault, harm or grounds. Unilateral no-fault divorce is codified. A
+            short reflection or notice period of around 30 days before the decree is commonly reported,
+            though that figure is not confirmed at article level.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Abu Dhabi Law No. 14 of 2021</h3>
+          <p>
+            The Abu Dhabi civil regime for non-Muslim foreigners, heard by a dedicated Civil Family
+            Court that operates in Arabic and English. It is no-fault and often the fastest route.
+            Jurisdiction for divorce generally still needs a connection to the emirate.
+          </p>
+        </div>
+      </div>
+      <p>
+        Because no grounds are needed, the substance of a non-Muslim case is not whether the divorce is
+        allowed, but the consequences: alimony, custody and assets. A non-Muslim resident may instead
+        ask the court to apply their home-country law if they raise it in the petition and prove its
+        content. For the complete route, see
+        <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Evidence -->
+    <section class="section" aria-labelledby="evidence-heading">
+      <h2 id="evidence-heading">Evidence: What Fault Grounds Actually Need</h2>
+      <p>
+        Grounds only matter on the Muslim judicial-divorce track, and there the burden is on the person
+        claiming the ground to prove it. A bare allegation is not enough; the court expects supporting
+        material. Here is what typically carries weight for each ground.
+      </p>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Ground</th>
+              <th>Evidence that helps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Harm or abuse (darar)</td>
+              <td>Medical reports, police reports, witness statements, saved messages</td>
+            </tr>
+            <tr>
+              <td>Abandonment</td>
+              <td>Residence and travel records, proof of absence and its duration</td>
+            </tr>
+            <tr>
+              <td>Failure to maintain</td>
+              <td>Bank statements, records of missed payments, evidence of the spouse's means</td>
+            </tr>
+            <tr>
+              <td>Imprisonment</td>
+              <td>Court judgment and prison or custody records</td>
+            </tr>
+            <tr>
+              <td>Incurable disease</td>
+              <td>Medical certificates and specialist reports</td>
+            </tr>
+            <tr>
+              <td>Addiction to intoxicants</td>
+              <td>Medical evidence, credible testimony, any related records</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Indicative guidance only. The weight the court gives each item varies by case. A lawyer can
+          tell you what will stand up for your specific ground.
+        </p>
+      </div>
+      <p>
+        Gathering evidence early matters, because contested judicial divorces can run for a year or
+        more. If you expect to rely on a fault ground, start documenting it now. For how the Sharia
+        procedure unfolds around these grounds, see our
+        <a href="/en/sharia-divorce-uae/">Sharia divorce in the UAE</a> guide.
+      </p>
+    </section>
+
+    <!-- Choosing a route -->
+    <section class="section" aria-labelledby="choose-heading">
+      <h2 id="choose-heading">Which Route Should You Use?</h2>
+      <p>
+        If you are non-Muslim, the choice is straightforward: file under the civil law and no grounds
+        are needed. Your effort goes into the terms, not into proving a reason.
+      </p>
+      <p>
+        If you are on the Muslim track, the route depends on who you are and what you want. A husband
+        who wants to end the marriage uses talaq. A wife has two broad options. Khula lets her leave
+        without proving anything, at the cost of returning her mahr, and now works even without the
+        husband's consent. Judicial divorce on a ground such as harm or non-maintenance lets her keep
+        her financial rights, but she has to prove the ground. Many wives weigh the speed and certainty
+        of khula against the financial protection of a proven fault ground.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Husband, Muslim</h3>
+          <p>Talaq, no grounds needed, but must be documented at court under 41/2024.</p>
+          <a href="/en/talaq-uae/" class="card-link">Talaq guide →</a>
+        </div>
+        <div class="card">
+          <h3>Wife, Muslim, quick exit</h3>
+          <p>Khula: return the mahr, no fault to prove, works without husband consent.</p>
+          <a href="/en/khula-divorce-uae/" class="card-link">Khula guide →</a>
+        </div>
+        <div class="card">
+          <h3>Wife, Muslim, keep rights</h3>
+          <p>Judicial divorce on a ground such as harm; prove it and keep financial rights.</p>
+          <a href="/en/divorce-for-harm-uae/" class="card-link">Harm ground →</a>
+        </div>
+        <div class="card">
+          <h3>Either spouse, non-Muslim</h3>
+          <p>No-fault civil divorce; no grounds required, either spouse can file.</p>
+          <a href="/en/non-muslim-divorce-uae/" class="card-link">Non-Muslim route →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Detailed Guides</h2>
+      <div class="service-links">
+        <a href="/en/types-of-divorce-uae/" class="service-link">
+          <strong>Types of Divorce</strong>
+          <span>Every category, from talaq to annulment</span>
+        </a>
+        <a href="/en/talaq-uae/" class="service-link">
+          <strong>Talaq in the UAE</strong>
+          <span>Husband-initiated divorce and documentation</span>
+        </a>
+        <a href="/en/khula-divorce-uae/" class="service-link">
+          <strong>Khula Divorce</strong>
+          <span>Wife-initiated divorce and returning the mahr</span>
+        </a>
+        <a href="/en/divorce-for-harm-uae/" class="service-link">
+          <strong>Divorce for Harm</strong>
+          <span>The darar ground and the evidence it needs</span>
+        </a>
+        <a href="/en/divorce-without-husband-consent-uae/" class="service-link">
+          <strong>Divorce Without Consent</strong>
+          <span>Options when a husband refuses to divorce</span>
+        </a>
+        <a href="/en/divorce-absent-husband-uae/" class="service-link">
+          <strong>Absent Husband</strong>
+          <span>Divorce when the husband cannot be found</span>
+        </a>
+        <a href="/en/sharia-divorce-uae/" class="service-link">
+          <strong>Sharia Divorce</strong>
+          <span>How the Muslim procedure works around grounds</span>
+        </a>
+        <a href="/en/non-muslim-divorce-uae/" class="service-link">
+          <strong>Non-Muslim Divorce</strong>
+          <span>The no-fault civil route for expats</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on Grounds for Divorce</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .comparison-table { margin-top: 24px; overflow-x: auto; }
+  .comparison-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .comparison-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .comparison-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .comparison-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

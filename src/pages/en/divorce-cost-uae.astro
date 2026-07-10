@@ -4,9 +4,9 @@ import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Divorce Cost in UAE 2025 — Court Fees, Lawyer Fees & Hidden Costs';
+const title = 'Divorce Cost in UAE 2026: Court Fees, Lawyer Fees & DLD Property Transfer';
 const description =
-  'How much does divorce cost in UAE? Complete breakdown of court filing fees, lawyer fees, mediation costs, and what drives your total divorce bill — with real Dubai figures for 2025.';
+  'How much does divorce cost in the UAE? The complete 2026 breakdown of court filing fees, lawyer fees, translation, expert reports, mediation and Dubai Land Department property-transfer fees, with worked examples for Muslim and non-Muslim divorces.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/divorce-cost-uae/',
@@ -18,65 +18,113 @@ const breadcrumbs = [
   { name: 'Divorce Cost UAE', url: 'https://divorceu.ae/en/divorce-cost-uae/' },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Divorce Cost in UAE 2026: Court Fees, Lawyer Fees & DLD Property Transfer',
+  description:
+    'The complete 2026 breakdown of what divorce costs in the UAE: court filing fees, lawyer fees, translation and attestation, expert and welfare reports, mediation and Dubai Land Department property-transfer fees.',
+  author: {
+    '@type': 'Person',
+    name: 'Aleksi Suoninen',
+    description: 'UAE Expat & Legal Consultant',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Divorce UAE',
+    url: 'https://divorceu.ae',
+  },
+  datePublished: '2025-01-15',
+  dateModified: '2026-07-04',
+  mainEntityOfPage: 'https://divorceu.ae/en/divorce-cost-uae/',
+  inLanguage: 'en',
+};
+
 const courtFees = [
-  { item: 'Court filing fee (first-time registration)', cost: 'AED 200–300', notes: 'Paid when submitting the petition. Differs slightly by emirate and case type.' },
-  { item: 'Case registration (Personal Status Court)', cost: 'AED 150–250', notes: 'Administrative fee to open the case file in the Family Court system.' },
-  { item: 'Mediation / Family Guidance session fee', cost: 'AED 100–300', notes: 'Mandatory for most contested cases in Dubai and Abu Dhabi. Sessions can range from 1 to 4+ meetings.' },
-  { item: 'Expert witness / psychologist (if appointed)', cost: 'AED 500–2,500', notes: 'Applies in custody disputes where the court orders a welfare report.' },
-  { item: 'Translation of documents (per document)', cost: 'AED 100–400', notes: 'Certified legal translation required for foreign documents (passports, marriage certificates, financial records).' },
-  { item: 'Document attestation', cost: 'AED 150–600+', notes: 'Foreign marriage certificates must be attested by UAE Ministry of Foreign Affairs and home country embassy.' },
-  { item: 'Court-appointed legal representative', cost: 'Variable', notes: 'If either spouse does not engage their own lawyer, the court may appoint one. Costs are assessed case-by-case.' },
+  { item: 'Court filing fee (petition registration)', cost: 'AED 200–500', notes: 'Paid when submitting the divorce petition. Differs slightly by emirate and case type.' },
+  { item: 'First-instance court fees (uncontested)', cost: 'AED 2,000–3,000', notes: 'Registration and processing to open and run the case file in the Family Court system.' },
+  { item: 'First-instance court fees (contested)', cost: 'AED 4,000–8,000', notes: 'Higher where multiple claims (custody, alimony, property) are joined and more hearings are scheduled.' },
+  { item: 'Certified legal translation (uncontested)', cost: 'AED 1,000–2,000', notes: 'Arabic translation of passports, marriage certificate and core documents by a Ministry of Justice-licensed translator.' },
+  { item: 'Certified translation & attestation (contested)', cost: 'AED 2,000–4,000', notes: 'Larger financial-disclosure and custody cases need many more documents translated and attested.' },
+  { item: 'Document attestation (foreign certificates)', cost: 'AED 150–1,000+', notes: 'Foreign marriage certificates must be attested by the UAE Ministry of Foreign Affairs and the home-country embassy.' },
+  { item: 'Notary charges', cost: 'AED 500–1,000', notes: 'Notarisation of powers of attorney, settlement agreements or affidavits.' },
+  { item: 'Family Guidance / mediation session fee', cost: 'AED 100–300', notes: 'Nominal fee per reconciliation session for Muslim (Sharia-track) cases. Usually 1 to 4 sessions.' },
+  { item: 'Expert reports (financial / valuation)', cost: 'AED 3,000–10,000', notes: 'Court-appointed accountants or valuers in asset-division disputes. Property valuation from AED 2,500.' },
+  { item: 'Welfare / social reports (custody)', cost: 'AED 3,000–5,000', notes: 'Ordered in custody disputes to assess each parent and the child’s best interests.' },
+  { item: 'Psychological evaluations', cost: 'AED 2,000–4,000', notes: 'Where the court needs a clinical assessment of a parent or child.' },
 ];
 
 const lawyerFees = [
-  { type: 'Uncontested / Mutual Consent', range: 'AED 3,000–8,000', desc: 'Both parties agree on all terms. Lawyer prepares and files the agreement. Minimal court time required.' },
-  { type: 'Contested (no children)', range: 'AED 8,000–20,000', desc: 'Disputes over assets, alimony, or property. Requires multiple court hearings. Complexity varies significantly.' },
-  { type: 'Contested with child custody', range: 'AED 15,000–45,000+', desc: 'Custody battles are the most expensive and time-consuming. May run 12–24 months with multiple expert reports.' },
-  { type: 'Non-Muslim / Expat cases', range: 'AED 6,000–25,000', desc: 'Cases heard under home country law or DIFC jurisdiction add procedural complexity and research time.' },
-  { type: 'Khulʿa (wife-initiated)', range: 'AED 4,000–12,000', desc: 'Simpler if husband agrees. Contested khulʿa cases are more complex as the wife may need to return the mahr.' },
+  { type: 'Uncontested / Mutual Consent', range: 'AED 8,000–25,000', desc: 'Both parties agree on all terms. The lawyer drafts and files the settlement. Lower end for simple civil uncontested cases; higher where a fixed full-service fee applies.' },
+  { type: 'Contested (assets or alimony)', range: 'AED 40,000–80,000', desc: 'Disputes over assets, alimony or property need multiple hearings, disclosure and expert input. Complexity drives the range.' },
+  { type: 'Complex contested / custody', range: 'AED 80,000–150,000+', desc: 'Custody fights, business valuations and international elements are the most expensive. Cases can run 1 to 3 years including appeals.' },
+  { type: 'Non-Muslim civil divorce', range: 'AED 8,000–30,000', desc: 'No-fault filings under Federal Decree-Law 41/2022 or the Abu Dhabi Civil Family Court are usually faster and cheaper than Sharia-track contested cases.' },
+  { type: 'Khulʿ (wife-initiated)', range: 'AED 4,000–12,000', desc: 'Simpler where the husband agrees. Contested khulʿ is more complex, as the wife may have to return the mahr.' },
+];
+
+const hourlyRates = [
+  { level: 'Junior associate', rate: 'AED 750–1,000 / hour' },
+  { level: 'Mid-level lawyer', rate: 'AED 1,200–1,800 / hour' },
+  { level: 'Senior partner', rate: 'AED 2,000–2,500 / hour' },
+];
+
+const dldFees = [
+  { item: 'Pre-divorce gift transfer (spouse to spouse)', cost: '0.125% of property value + AED 530', notes: 'The reduced “gift” (hiba) rate applies when the transfer is between spouses and is completed while still legally married. This is the cheapest route.' },
+  { item: 'Standard transfer after divorce', cost: '4% of property value + AED 540', notes: 'The ordinary DLD transfer fee once the marriage has ended. On a AED 2m property this is AED 80,540 versus AED 3,030 for the pre-divorce gift route.' },
+  { item: 'Title deed issuance', cost: 'AED 250', notes: 'New title deed reflecting the updated ownership.' },
+  { item: 'Property map / site plan', cost: 'AED 250', notes: 'Issued alongside the transfer.' },
+  { item: 'Knowledge & Innovation fees', cost: 'AED 10', notes: 'Fixed government levy on the transaction.' },
+  { item: 'Trustee office fee (property under AED 500k)', cost: 'AED 2,000 + 5% VAT', notes: 'Paid to the DLD-authorised registration trustee handling the transfer.' },
+  { item: 'Trustee office fee (property AED 500k+)', cost: 'AED 4,000 + 5% VAT', notes: 'Higher trustee fee band for higher-value properties.' },
+  { item: 'Property valuation', cost: 'From AED 2,500', notes: 'Needed where the transfer value or an equity buy-out must be evidenced.' },
 ];
 
 const faqItems = [
   {
     question: 'How much does it cost to file for divorce in Dubai?',
-    answer: 'The government court fees for filing a divorce in Dubai typically total AED 500–1,500 including registration, mediation sessions, and document processing. This is separate from lawyer fees, which are the larger cost. For a simple uncontested divorce with a lawyer, the total out-of-pocket cost is usually AED 4,000–10,000. Contested divorces with custody disputes can cost AED 20,000–60,000 or more over the full case duration.',
+    answer: 'Government court fees for a Dubai divorce typically run AED 2,000–5,000 for a straightforward case, covering petition registration, first-instance court fees, and document processing. This is separate from lawyer fees, which are the larger cost. For a simple uncontested civil divorce with a lawyer, the all-in out-of-pocket cost is usually AED 12,000–30,000. A contested divorce with a custody dispute can reach AED 60,000–100,000 or more over the full case. All figures are indicative and vary by firm and case.',
   },
   {
-    question: 'Is divorce free in the UAE if both parties agree?',
-    answer: 'Court fees still apply even for mutual consent divorces, but they are minimal (AED 500–1,500 total). The real cost saving with a mutual consent divorce is in lawyer fees — an agreed divorce can be handled for AED 3,000–8,000 in total legal fees rather than AED 15,000–45,000+ for a contested case. Many couples also save by having one lawyer draft the agreement, which both then sign.',
+    question: 'Is divorce cheaper for non-Muslims in the UAE?',
+    answer: 'Often, yes. Non-Muslim residents divorce under Federal Decree-Law 41/2022, or in Abu Dhabi under Law 14/2021. These no-fault routes do not require proof of grounds and do not go through mandatory Sharia reconciliation, so cases move faster with fewer hearings. The Abu Dhabi Civil Family Court, which runs proceedings in English, is generally the fastest and cheapest venue for a non-Muslim uncontested divorce. A Muslim divorce under Federal Decree-Law 41/2024 follows the Sharia track with a 60-day reconciliation period, which adds time and cost if disputed.',
+  },
+  {
+    question: 'What are the DLD fees to transfer property after a UAE divorce?',
+    answer: 'This is where timing matters most. If a property is transferred between spouses as a gift while still legally married, the Dubai Land Department (DLD) charges a reduced gift-transfer fee of 0.125% of the property value plus AED 530. Once the divorce is finalised, an ordinary transfer costs 4% of the property value plus AED 540. On a AED 2 million home that is roughly AED 3,030 versus AED 80,540, a difference of about AED 77,000. Where both parties agree on who keeps the property, completing the transfer before the divorce is finalised can save a large sum. Figures per the Dubai Land Department fee schedule; add title deed, trustee and valuation fees.',
   },
   {
     question: 'Do I need a lawyer to get divorced in the UAE?',
-    answer: 'Technically no — you can represent yourself in UAE courts. In practice, for foreign nationals especially, the procedural requirements (Arabic pleadings, court decorum, personal status law knowledge) make self-representation very difficult. UAE courts require documents in Arabic; many expats do not speak Arabic and cannot follow proceedings. A lawyer also ensures that settlements — especially custody terms — are correctly drafted and enforceable.',
+    answer: 'Technically no, you can represent yourself in UAE courts. In practice, for foreign nationals especially, the procedural requirements (Arabic pleadings, court decorum, personal status law knowledge) make self-representation very difficult. Onshore courts require documents in Arabic, and many expats cannot follow proceedings. A lawyer also ensures that settlements, especially custody and property terms, are correctly drafted and enforceable.',
   },
   {
-    question: 'How long does divorce take in UAE and how does that affect cost?',
-    answer: 'An uncontested divorce can be completed in 1–3 months. A contested divorce typically takes 6–18 months; custody battles can run 2+ years. The duration directly affects lawyer fees, as most UAE lawyers bill by the hearing or by the month. A case that takes 18 months at AED 1,500–3,000 per hearing (with 1–2 hearings per month) can accumulate AED 25,000–60,000+ in legal fees alone.',
+    question: 'How long does divorce take in the UAE and how does that affect cost?',
+    answer: 'An uncontested divorce usually completes in about 3 months; an Abu Dhabi civil no-fault divorce can be under 1 month. A contested divorce typically takes 1 to 3 years including appeals. Duration drives lawyer fees, as UAE lawyers often bill per hearing or on a monthly retainer. A case running 18 months at senior rates can accumulate AED 60,000–150,000 in legal fees alone.',
   },
   {
-    question: 'Are mediation sessions mandatory before divorce in Dubai?',
-    answer: 'Yes. Under UAE Federal Law, most divorce cases must go through the Family Guidance Section (also called Family Counselling or Reconciliation) before the court will hear the case. In Dubai, this is administered by the Dubai Courts Family Department. The goal is reconciliation; if it fails, a certificate is issued allowing the case to proceed. Fees are AED 100–300 per session; typically 1–4 sessions are held.',
+    question: 'Are mediation sessions mandatory before divorce in the UAE?',
+    answer: 'For Muslim (Sharia-track) divorces, yes. Cases start at the Family Guidance Department and mediation is compulsory, with a reconciliation window of 60 days under Federal Decree-Law 41/2024 (reduced from 90). For non-Muslims under Federal Decree-Law 41/2022, mandatory reconciliation does not apply; couples may attend voluntarily. Court session fees are nominal (AED 100–300). Private mediation, if you choose it, is separate and runs AED 5,000–10,000.',
   },
   {
     question: 'What hidden costs should I budget for in a UAE divorce?',
-    answer: 'Several costs catch clients off guard: (1) Certified legal translation of all foreign documents — AED 100–400 per document. (2) Attestation of foreign marriage certificates — AED 300–1,000+ depending on origin country. (3) Process server fees if the spouse must be formally served. (4) Travel costs if one party is abroad. (5) Enforcement proceedings — if your ex-spouse does not comply with the court order, a separate enforcement application costs an additional AED 2,000–6,000 in fees and legal time.',
+    answer: 'Several costs catch people off guard: (1) certified Arabic translation of foreign documents (AED 1,000–4,000 in total depending on volume); (2) attestation of foreign marriage certificates (AED 150–1,000+); (3) expert and welfare reports in disputed cases (AED 3,000–10,000); (4) DLD property-transfer fees if a home changes hands; and (5) enforcement proceedings if your ex-spouse does not comply with the order, which cost an additional AED 2,000–6,000 in fees and legal time.',
   },
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-cost-uae/" lang="en" hreflang={hreflang}>
+<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-cost-uae/" lang="en" hreflang={hreflang} schema={articleSchema}>
   <Breadcrumb items={breadcrumbs} />
 
   <!-- Hero -->
   <section class="hero-section">
     <div class="container">
-      <p class="overline">Cost Guide · UAE 2025</p>
-      <h1>Divorce Cost in UAE 2025 — Court Fees, Lawyer Fees &amp; Hidden Costs</h1>
-      <p class="hero-sub">A complete breakdown of what divorce actually costs in the UAE — government fees, lawyer rates, how long it takes, and what drives the total bill. Based on real Dubai and Abu Dhabi figures.</p>
+      <p class="overline">Cost Guide · UAE 2026</p>
+      <h1>Divorce Cost in UAE 2026: Court Fees, Lawyer Fees &amp; DLD Property Transfer</h1>
+      <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+      <p class="hero-sub">The full picture of what divorce costs in the UAE: government court fees, lawyer rates, translation and attestation, expert and welfare reports, private mediation, and the Dubai Land Department fees for transferring a home. With worked examples and the Muslim versus non-Muslim and Dubai versus Abu Dhabi differences that change your bill.</p>
       <div class="hero-meta">
-        <span>Updated: April 2025</span>
+        <span>Updated: July 2026</span>
         <span class="sep">·</span>
-        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
+        <span>Figures indicative; they vary by firm and case</span>
       </div>
     </div>
   </section>
@@ -86,30 +134,36 @@ const faqItems = [
 
       <!-- Quick summary box -->
       <div class="summary-box">
-        <h2>Quick Cost Summary — Divorce in UAE</h2>
+        <h2>Quick Cost Summary: Divorce in UAE (Indicative)</h2>
         <div class="summary-grid">
           <div class="summary-card summary-card--highlight">
             <p class="summary-label">Uncontested Divorce</p>
-            <p class="summary-amount">AED 4,000–10,000</p>
-            <p class="summary-note">Total (court fees + lawyer). Both parties agree on all terms.</p>
+            <p class="summary-amount">AED 12,000–30,000</p>
+            <p class="summary-note">All-in (court fees + lawyer + translation). Both parties agree on every term.</p>
           </div>
           <div class="summary-card">
             <p class="summary-label">Contested Divorce</p>
-            <p class="summary-amount">AED 15,000–45,000+</p>
-            <p class="summary-note">Assets, alimony, or property in dispute. 6–18 months.</p>
+            <p class="summary-amount">AED 45,000–90,000+</p>
+            <p class="summary-note">Assets, alimony or property in dispute. 1 to 2 years.</p>
           </div>
           <div class="summary-card">
-            <p class="summary-label">Custody Battle</p>
-            <p class="summary-amount">AED 25,000–80,000+</p>
-            <p class="summary-note">Most complex cases. Can run 12–24 months.</p>
+            <p class="summary-label">Custody / Complex</p>
+            <p class="summary-amount">AED 80,000–150,000+</p>
+            <p class="summary-note">Custody, business valuations, cross-border elements. Can run 2 to 3 years.</p>
           </div>
         </div>
-        <p class="summary-note-footer">All figures are total estimates including court fees and lawyer fees. Document translation and attestation costs are additional.</p>
+        <p class="summary-note-footer">All figures are indicative totals including court fees, lawyer fees and translation. They vary by firm and case. Property transfers add separate Dubai Land Department fees (see below).</p>
       </div>
+
+      <section class="content-section">
+        <h2>How the Full UAE Divorce Bill Adds Up</h2>
+        <p>Most cost guides quote one number, usually a lawyer fee, and stop there. Your real bill is a stack of six separate items, and any of them can be the one that surprises you. This guide combines all of them in one place: court filing fees, lawyer fees, certified translation and attestation, expert and welfare reports, private mediation, and Dubai Land Department (DLD) property-transfer fees. The property-transfer piece is the one almost nobody explains, and it can dwarf every other cost if a home changes hands at the wrong moment.</p>
+        <p>Two things shape the total more than anything else. The first is how much you and your spouse actually agree on: an uncontested settlement can cost a fraction of a fought case. The second is which law and court apply to you. Muslim divorces run under <strong>Federal Decree-Law No. 41 of 2024</strong> (in force since 15 April 2025, replacing the old 2005 Personal Status Law) on the Sharia track. Non-Muslim residents divorce under <strong>Federal Decree-Law No. 41 of 2022</strong>, or in Abu Dhabi under <strong>Law No. 14 of 2021</strong>, on a no-fault civil track that is usually faster and cheaper. For the full legal picture, see our <a href="/en/uae-divorce-law/">UAE divorce law overview</a> and the <a href="/en/divorce-in-uae/">complete divorce in UAE guide</a>.</p>
+      </section>
 
       <img
         src="/images/uae-legal-documents.webp"
-        alt="UAE legal documents with gold pen — divorce cost guide"
+        alt="UAE legal documents with gold pen, divorce cost guide"
         width="900" height="507"
         loading="lazy" decoding="async"
         class="article-img"
@@ -117,8 +171,8 @@ const faqItems = [
 
       <!-- Court fees table -->
       <section class="content-section">
-        <h2>UAE Court Fees — What You Pay the Government</h2>
-        <p>Government court fees are set by each emirate's judiciary and are generally affordable. The fees below apply in Dubai; Abu Dhabi and Sharjah have similar structures with minor differences.</p>
+        <h2>UAE Court &amp; Ancillary Fees: What You Pay Beyond the Lawyer</h2>
+        <p>Government court fees are set by each emirate's judiciary and are modest compared with legal fees. But the ancillary items around them, translation, attestation, expert reports and welfare reports, add up quickly in a disputed case. The table below covers the full set of court-side costs for a Dubai case; Abu Dhabi and Sharjah have similar structures with minor differences. All figures are indicative.</p>
 
         <div class="table-wrapper">
           <table class="cost-table">
@@ -140,13 +194,13 @@ const faqItems = [
             </tbody>
           </table>
         </div>
-        <p class="table-note">Court fees typically total AED 500–2,000 for a straightforward case. Complex cases with multiple sessions and expert appointments can reach AED 3,000–5,000 in government fees alone.</p>
+        <p class="table-note">Court-side costs typically total AED 2,000–5,000 for a straightforward uncontested case. Contested cases with multiple hearings, financial experts and welfare reports can reach AED 10,000–25,000 in court-side outlay before any lawyer fee. All figures indicative and vary by case.</p>
       </section>
 
       <!-- Lawyer fees -->
       <section class="content-section">
-        <h2>Lawyer Fees — The Biggest Cost Variable</h2>
-        <p>Legal fees are where divorce costs diverge dramatically based on how much you and your spouse agree on. UAE lawyers typically charge per case (for simple matters), per hearing, or a monthly retainer for long-running contested cases.</p>
+        <h2>Lawyer Fees: The Biggest Cost Variable</h2>
+        <p>Legal fees are where divorce costs diverge the most, driven by how much you and your spouse agree on. UAE lawyers typically charge a fixed fee for simple matters, per hearing, or a monthly retainer plus hourly time for long-running contested cases. For a full breakdown of how firms structure their pricing and how to compare quotes, see our dedicated guide to <a href="/en/divorce-lawyer-fees-uae/">divorce lawyer fees in the UAE</a>.</p>
 
         <div class="lawyer-cards">
           {lawyerFees.map(fee => (
@@ -161,15 +215,116 @@ const faqItems = [
         </div>
 
         <div class="info-box info-box--warning">
-          <h3>Hourly vs. Fixed vs. Per-Hearing Billing</h3>
+          <h3>Fixed vs. Per-Hearing vs. Retainer Billing</h3>
           <p>Most UAE divorce lawyers use one of three billing models:</p>
           <ul>
-            <li><strong>Fixed fee</strong> — common for uncontested cases (AED 3,000–8,000 total). Clear budget, no surprises.</li>
-            <li><strong>Per hearing</strong> — AED 1,500–5,000 per court session. If the case runs long, costs accumulate fast.</li>
-            <li><strong>Retainer + hourly</strong> — common for complex contested cases. Monthly retainer of AED 3,000–8,000 plus hourly rates of AED 500–1,500 for senior lawyers.</li>
+            <li><strong>Fixed fee</strong>: common for uncontested cases (AED 8,000–25,000 all-in). Clear budget, no surprises.</li>
+            <li><strong>Per hearing</strong>: AED 1,500–5,000 per court session. If the case runs long, costs accumulate fast.</li>
+            <li><strong>Retainer plus hourly</strong>: common for complex contested cases. A monthly retainer plus hourly time.</li>
           </ul>
           <p>Always ask for a written fee agreement before engaging any lawyer. Verbal estimates are not binding under UAE law.</p>
         </div>
+
+        <h3 class="subhead">Indicative Hourly Rates</h3>
+        <div class="table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr><th>Seniority</th><th>Hourly rate (indicative)</th></tr>
+            </thead>
+            <tbody>
+              {hourlyRates.map((r, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-label">{r.level}</td>
+                  <td class="td-cost">{r.rate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Rates vary by firm, seniority and case complexity. Location matters too: compare our guides to <a href="/en/divorce-lawyer-dubai/">divorce lawyers in Dubai</a> and <a href="/en/divorce-lawyer-abu-dhabi/">divorce lawyers in Abu Dhabi</a>.</p>
+      </section>
+
+      <!-- DLD property transfer -->
+      <section class="content-section">
+        <h2>Dubai Land Department Property-Transfer Fees</h2>
+        <p>If you own a home in Dubai, the single largest number in your divorce may not be a lawyer or the court, it is the DLD transfer fee. And it turns entirely on timing. Transferring property between spouses <strong>while still legally married</strong> qualifies for the reduced gift (hiba) rate of just <strong>0.125% of the property value plus AED 530</strong>. Wait until the divorce is finalised and the ordinary transfer fee of <strong>4% plus AED 540</strong> applies instead. On a AED 2 million home that is the difference between roughly AED 3,030 and AED 80,540, about AED 77,000. Where both parties already agree on who keeps the property, completing the transfer before the decree is a rare and legitimate way to save a very large sum.</p>
+
+        <div class="table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Fee Item</th>
+                <th>Amount</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dldFees.map((row, i) => (
+                <tr class={i % 2 === 0 ? '' : 'row-alt'}>
+                  <td class="td-label">{row.item}</td>
+                  <td class="td-cost">{row.cost}</td>
+                  <td class="td-notes">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Figures per the Dubai Land Department fee schedule. The DLD transfer itself is processed in about 25 to 30 minutes when the paperwork is complete. UAE law has no community-property concept, so property follows the title deed unless a contribution claim is filed. For how this works in practice, see <a href="/en/property-division-divorce-uae/">property division in UAE divorce</a> and <a href="/en/divorce-property-sale-uae/">selling property during a UAE divorce</a>.</p>
+
+        <div class="info-box info-box--warning">
+          <h3>Timing Warning</h3>
+          <p>The pre-divorce gift transfer only works if <strong>both spouses genuinely agree</strong> on who keeps the property and cooperate on the paperwork before the divorce is finalised. If ownership is disputed, do not attempt it: a transfer made to defeat the other party's claim can be challenged. Get legal advice on your specific case first.</p>
+        </div>
+      </section>
+
+      <!-- Muslim vs non-Muslim -->
+      <section class="content-section">
+        <h2>Muslim vs. Non-Muslim: How the Cost Differs</h2>
+        <p>The UAE now runs a dual family-law system, and which track you fall under changes both the process and the price.</p>
+        <p><strong>Muslim divorce (Federal Decree-Law 41/2024).</strong> Cases run on the Sharia track, starting with mandatory Family Guidance and a 60-day reconciliation window (reduced from 90 under the old 2005 law). The reconciliation stage is low-cost in itself, but it adds time, and time is what drives lawyer fees. A wife-initiated <a href="/en/mahr-divorce-uae/">khulʿ</a> can be simpler and cheaper where the husband agrees, though the wife may have to return the mahr. Where custody or assets are fought, Muslim contested cases sit at the top of the cost range.</p>
+        <p><strong>Non-Muslim divorce (Federal Decree-Law 41/2022).</strong> Either spouse can petition for a no-fault divorce without proving grounds, and mandatory reconciliation does not apply. Fewer procedural stages mean fewer hearings and lower fees for an uncontested split. There is no iddah waiting period and no guardian-approval requirement. Non-Muslim residents may also opt to have their home-country law applied if they raise it in the petition, though proving foreign law adds an expert cost.</p>
+
+        <h3 class="subhead">Dubai vs. Abu Dhabi for Non-Muslims</h3>
+        <p>Venue matters. The <strong>Abu Dhabi Civil Family Court</strong>, created under Abu Dhabi Law 14/2021, hears non-Muslim family cases in both Arabic and English with bilingual forms. It is widely regarded as the fastest and cheapest route for a non-Muslim uncontested divorce, an amicable no-fault case can complete in under a month. Dubai's onshore Personal Status Court applies the federal 41/2022 civil law but conducts proceedings in Arabic, so expats there carry more translation cost. Note that despite marketing claims, the DIFC and ADGM courts do <strong>not</strong> grant divorces; personal-status matters sit with the onshore family courts and the Abu Dhabi Civil Family Court. To compare the filing routes, see <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a> and <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file for divorce in Abu Dhabi</a>.</p>
+      </section>
+
+      <!-- Worked examples -->
+      <section class="content-section">
+        <h2>Worked Examples: What a Typical Divorce Actually Costs</h2>
+        <p>Real bills are easier to picture with a full stack rather than a single fee. These indicative examples add up every component. Your case will differ.</p>
+
+        <div class="example-card">
+          <h3>Example 1: Uncontested civil divorce, no property (Abu Dhabi)</h3>
+          <ul>
+            <li>Court filing and first-instance fees: <strong>AED 2,000–3,000</strong></li>
+            <li>Certified translation and attestation: <strong>AED 1,000–2,000</strong></li>
+            <li>Lawyer (fixed-fee, both terms agreed): <strong>AED 8,000–15,000</strong></li>
+          </ul>
+          <p class="example-total">All-in: roughly <strong>AED 11,000–20,000</strong>, completed in around a month via the Abu Dhabi Civil Family Court.</p>
+        </div>
+
+        <div class="example-card">
+          <h3>Example 2: Uncontested Muslim divorce with a Dubai property transfer</h3>
+          <ul>
+            <li>Court and Family Guidance fees: <strong>AED 2,500–4,000</strong></li>
+            <li>Translation, attestation and notary: <strong>AED 1,500–3,000</strong></li>
+            <li>Lawyer (fixed-fee settlement): <strong>AED 10,000–20,000</strong></li>
+            <li>DLD pre-divorce gift transfer of an AED 2m flat (0.125% + AED 530 + trustee + title): <strong>AED 6,000–8,000</strong></li>
+          </ul>
+          <p class="example-total">All-in: roughly <strong>AED 20,000–35,000</strong>. Had the same property transferred after the divorce at 4%, the DLD cost alone would jump by about AED 77,000.</p>
+        </div>
+
+        <div class="example-card">
+          <h3>Example 3: Contested divorce with a custody dispute</h3>
+          <ul>
+            <li>Contested court fees (multiple claims joined): <strong>AED 4,000–8,000</strong></li>
+            <li>Translation and attestation of financial disclosure: <strong>AED 2,000–4,000</strong></li>
+            <li>Welfare report plus financial expert: <strong>AED 6,000–15,000</strong></li>
+            <li>Lawyer (retainer plus hearings over 18 to 24 months): <strong>AED 80,000–150,000+</strong></li>
+          </ul>
+          <p class="example-total">All-in: <strong>AED 90,000–180,000+</strong>. Custody battles are the most expensive and slowest cases in the UAE system.</p>
+        </div>
+        <p class="table-note">Whether your case is contested or uncontested is the biggest single lever on all of the above. See <a href="/en/contested-vs-uncontested-divorce-uae/">contested vs uncontested divorce in the UAE</a> and the <a href="/en/divorce-timeline-uae/">UAE divorce timeline</a> for how duration maps to cost.</p>
       </section>
 
       <!-- What drives costs -->
@@ -202,11 +357,11 @@ const faqItems = [
 
         <div class="tips-list">
           {[
-            { tip: 'Reach agreement before filing', detail: 'Every item you agree on outside court — asset split, alimony amount, custody schedule, school fees — reduces hearing time. Draft a separation agreement first, then have your lawyer review and file it. This can cut legal fees by 60–80%.' },
+            { tip: 'Reach agreement before filing', detail: 'Every item you agree on outside court, whether asset split, alimony amount, custody schedule or school fees, reduces hearing time. Draft a separation agreement first, then have your lawyer review and file it. This can cut legal fees by 60 to 80%.' },
             { tip: 'Use one lawyer to draft, not two to fight', detail: 'For genuinely amicable separations, one lawyer can draft the agreement for both parties to review and sign. This is not appropriate if there is a power imbalance or dispute, but for cooperative separations it is significantly cheaper.' },
             { tip: 'Organise your documents before your first meeting', detail: 'Lawyer time spent chasing documents is billed time. Bring your marriage certificate (attested), passports, UAE residence details, property documents, and financial records to your first consultation.' },
             { tip: 'Attend mediation in good faith', detail: 'Mandatory UAE family mediation is an opportunity to resolve the case at very low cost. Couples who use mediation constructively often avoid full court proceedings entirely. A mediated agreement takes days, not months.' },
-            { tip: 'Understand what your spouse actually wants', detail: 'Many prolonged divorces are not about the stated issue — they are about unresolved grievances. A single direct conversation (or one mediation session) about what each party genuinely needs often unlocks resolution faster than months of legal correspondence.' },
+            { tip: 'Understand what your spouse actually wants', detail: 'Many prolonged divorces are not about the stated issue; they are about unresolved grievances. A single direct conversation (or one mediation session) about what each party genuinely needs often unlocks resolution faster than months of legal correspondence.' },
           ].map((t, i) => (
             <div class="tip-item">
               <div class="tip-number">{i + 1}</div>
@@ -228,7 +383,7 @@ const faqItems = [
       <!-- CTA -->
       <div class="cta-box">
         <h2>Get a Clear Cost Estimate for Your Case</h2>
-        <p>Every divorce is different. A brief consultation gives you a clear picture of likely costs, timeline, and what steps to take first — with no obligation to proceed.</p>
+        <p>Every divorce is different. A brief consultation gives you a clear picture of likely costs, timeline, and what steps to take first, with no obligation to proceed.</p>
         <LeadForm source="divorce-cost-uae" />
       </div>
 
@@ -237,14 +392,14 @@ const faqItems = [
         <h2>Related Guides</h2>
         <div class="related-grid">
           {[
-            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step guide to the filing process in Dubai courts.' },
-            { title: 'Divorce Timeline UAE', href: '/en/divorce-timeline-uae', desc: 'How long divorce takes in UAE by case type — stage by stage.' },
-            { title: 'Alimony in UAE', href: '/en/alimony-uae', desc: 'Types of financial support, who qualifies, and how courts calculate amounts.' },
-            { title: 'Child Custody UAE', href: '/en/child-custody-uae', desc: 'UAE custody rules, age limits, and how judges make decisions.' },
-            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae', desc: 'The 30-day rule and your 7 visa pathway options after divorce.' },
-            { title: 'Divorce Certificate Attestation UAE', href: '/en/divorce-certificate-attestation-uae/', desc: 'How to apostille and legalise your UAE divorce decree for use abroad.' },
-            { title: 'Visa and Residency After Divorce', href: '/en/divorce-employer-visa-uae/', desc: 'What happens to your UAE residency status when a spouse-visa is cancelled.' },
-            { title: 'EOSB and Gratuity in UAE Divorce', href: '/en/divorce-end-of-service-gratuity-uae/', desc: 'How end-of-service gratuity is treated in UAE divorce proceedings.' },
+            { title: 'Divorce Lawyer Fees UAE', href: '/en/divorce-lawyer-fees-uae/', desc: 'The deep dive on legal fees: fixed, per-hearing and retainer pricing, and how to compare quotes.' },
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai/', desc: 'Step-by-step guide to the filing process in Dubai courts.' },
+            { title: 'How to File for Divorce in Abu Dhabi', href: '/en/how-to-file-for-divorce-in-abu-dhabi/', desc: 'Filing at the Abu Dhabi Civil Family Court, the fastest civil route.' },
+            { title: 'Property Division in UAE Divorce', href: '/en/property-division-divorce-uae/', desc: 'How UAE courts treat property, why title matters, and DLD transfer strategy.' },
+            { title: 'Selling Property During Divorce', href: '/en/divorce-property-sale-uae/', desc: 'Options for a jointly owned home or mortgage when you divorce.' },
+            { title: 'Mahr and Divorce UAE', href: '/en/mahr-divorce-uae/', desc: 'How the mahr (dower) is treated in Muslim divorce and khulʿ.' },
+            { title: 'Divorce Timeline UAE', href: '/en/divorce-timeline-uae/', desc: 'How long divorce takes in the UAE by case type, stage by stage.' },
+            { title: 'Contested vs Uncontested Divorce', href: '/en/contested-vs-uncontested-divorce-uae/', desc: 'The single biggest lever on your total cost, explained.' },
           ].map(link => (
             <a href={link.href} class="related-card">
               <span class="related-title">{link.title} →</span>
@@ -272,6 +427,15 @@ const faqItems = [
   .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
   .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
   .sep { opacity: 0.4; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; color: #b0bec5; }
+  .subhead { font-size: 1.15rem; font-weight: 800; color: #0a1628; margin: 1.5rem 0 0.5rem; }
+  .example-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .example-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin-bottom: 0.75rem; }
+  .example-card ul { margin: 0 0 0.75rem 1.25rem; }
+  .example-card li { font-size: 0.88rem; color: #445; line-height: 1.7; margin-bottom: 0.25rem; }
+  .example-total { font-size: 0.92rem; color: #0a1628; background: #f9f4e8; border-left: 3px solid #c9a84c; padding: 0.6rem 0.9rem; border-radius: 0 0.4rem 0.4rem 0; margin: 0; }
+  .content-section a { color: #b7770d; font-weight: 600; text-decoration: underline; }
+  .table-note a { color: #b7770d; font-weight: 600; }
 
   /* ── Main container ───────────────────────────────── */
   .main-content { padding: 3rem 1.5rem; }

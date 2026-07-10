@@ -4,15 +4,36 @@ import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Child Custody UAE: Complete Guide for Expat Parents (2025)';
+const title = 'Child Custody UAE: Complete Guide for Expat Parents (2026)';
 const description =
-  'Child custody UAE explained for expat parents. Joint custody law, Hague Convention gap, travel bans, dual nationality, enforcement, visa loss, social media rules. Updated April 2025.';
+  'Child custody UAE explained for expat parents. Custody now runs to 18 under the 2024 law, joint custody for non-Muslims, Hague Convention gap, travel bans, dual nationality, enforcement. Updated July 2026.';
 
 const canonical = 'https://divorceu.ae/en/child-custody-uae/';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/child-custody-uae/',
   ar: 'https://divorceu.ae/ar/حضانة-الاطفال-الامارات/',
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Child Custody in UAE: The Complete Guide for Expat Parents',
+  description:
+    'How UAE child custody law works for expat families under Federal Decree-Law No. 41 of 2024 and No. 41 of 2022: custody to age 18, joint custody, the Hague Convention gap, travel bans and enforcement.',
+  author: {
+    '@type': 'Person',
+    name: 'Aleksi Suoninen',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'DivorceU.AE',
+  },
+  dateModified: '2026-07-04',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://divorceu.ae/en/child-custody-uae/',
+  },
 };
 
 const breadcrumbItems = [
@@ -138,7 +159,7 @@ const faqItems = [
   },
   {
     question: 'My child has UAE and British nationality. Which controls enforcement?',
-    answer: 'UAE treats them as UAE nationals and enforces the UAE travel ban via their UAE passport. However, once they reach the UK on their British passport, UK authorities see them as British. A UAE order is <strong>not automatically enforceable in the UK</strong> — you must mirror it in a UK family court.',
+    answer: 'UAE treats them as UAE nationals and enforces the UAE travel ban via their UAE passport. However, once they reach the UK on their British passport, UK authorities see them as British. A UAE order is <strong>not automatically enforceable in the UK</strong>. You must mirror it in a UK family court.',
   },
   {
     question: 'On what grounds can a UAE custody order be modified?',
@@ -158,9 +179,12 @@ const faqItems = [
   lang="en"
   dir="ltr"
   hreflang={hreflang}
-  schema={faqSchema}
+  schema={[articleSchema, faqSchema]}
 >
   <main>
+    <figure style="margin:0 0 8px;">
+      <img src="/images/child-custody-hero.webp" alt="Child custody in the UAE: a parent and child walking hand in hand at golden hour" width="1200" height="675" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px;" />
+    </figure>
     <header class="hero">
       <div class="container hero__inner">
         <div class="hero__content">
@@ -171,11 +195,11 @@ const faqItems = [
           </h1>
           <p class="hero__sub">
             Your children are the most important thing in your divorce. This guide explains
-            exactly how UAE custody law works for expat families in 2025 — which law applies
+            exactly how UAE custody law works for expat families in 2026, which law applies
             to you, what joint custody actually means in practice, how to protect your children
             from being taken abroad, and what to do if your worst fears become real.
           </p>
-          <p class="hero__byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant &mdash; Updated May 2026</p>
+          <p class="byline hero__byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant. Updated July 2026.</p>
           <ul class="hero__trust">
             <li>&#10003; Updated for Federal Decree-Law No. 41 of 2024</li>
             <li>&#10003; Hague Convention gap explained</li>
@@ -184,7 +208,7 @@ const faqItems = [
           </ul>
         </div>
         <div class="hero__form">
-          <LeadForm lang="en" variant="hero" heading="Protect Your Custody Rights — Free Advice" />
+          <LeadForm lang="en" variant="hero" heading="Protect Your Custody Rights: Free Advice" />
         </div>
       </div>
     </header>
@@ -193,10 +217,10 @@ const faqItems = [
 
       <!-- KEY FACTS BOX -->
       <div class="key-facts">
-        <h2 class="key-facts__title">Key Facts: Child Custody UAE (2025)</h2>
+        <h2 class="key-facts__title">Key Facts: Child Custody UAE (2026)</h2>
         <ul class="key-facts__list">
-          <li><strong>UAE is NOT a Hague Convention signatory</strong> — no automatic child return from UK, USA, Australia, or Canada</li>
-          <li><strong>2024 Personal Status Law in force</strong> since 15 April 2025 — replaces the old 2005 law entirely</li>
+          <li><strong>UAE is NOT a Hague Convention signatory:</strong> no automatic child return from UK, USA, Australia, or Canada</li>
+          <li><strong>2024 Personal Status Law in force</strong> since 15 April 2025, replacing the old 2005 law entirely</li>
           <li><strong>Joint custody is the default for non-Muslims</strong> under Federal Decree-Law No. 41 of 2022</li>
           <li><strong>Children choose their custodian at age 15</strong> (Muslims under 2024 law) or age 16 (Abu Dhabi non-Muslims)</li>
           <li><strong>Custody extends to age 18</strong> for all children under the 2024 law</li>
@@ -239,7 +263,7 @@ const faqItems = [
         <p>
           Here is why this matters in practice. Suppose you have physical custody and your daughter
           needs an emergency appendectomy abroad while visiting your family in London. You cannot
-          consent to the surgery without the father's written approval as guardian — unless you have
+          consent to the surgery without the father's written approval as guardian, unless you have
           a court order giving you independent medical authority. Equally, you cannot enroll your
           child in a new school, apply for their passport renewal, or book a flight home for Christmas
           without his documented consent.
@@ -252,7 +276,9 @@ const faqItems = [
           need your lawyer to seek specific guardianship provisions in your order, not just a
           generic custody arrangement. Where the father's rights in particular are contested,
           our guide on <a href="/en/father-custody-rights-uae/">father custody rights in UAE</a>
-          explains what the 2024 law provides.
+          explains what the 2024 law provides. Custody is decided alongside the divorce itself, so it
+          also helps to understand the <a href="/en/grounds-for-divorce-uae/">grounds for divorce in
+          the UAE</a> before you file.
         </p>
 
         <div class="callout">
@@ -269,7 +295,9 @@ const faqItems = [
         <p>
           This is the first question to answer, and it is not always obvious. The UAE has three
           distinct custody regimes operating simultaneously. The wrong assumption here can lead
-          you to prepare for the wrong court, under the wrong rules.
+          you to prepare for the wrong court, under the wrong rules. For the wider framework, see our
+          overview of <a href="/en/uae-divorce-law/">UAE divorce law</a> and the practical steps in
+          our guide to <a href="/en/divorce-in-uae/">divorce in the UAE</a>.
         </p>
 
         <div class="table-wrapper">
@@ -295,14 +323,14 @@ const faqItems = [
                 <td><strong>Federal Civil Personal Status</strong></td>
                 <td>Non-Muslim expats anywhere in the UAE (except where Abu Dhabi law applies)</td>
                 <td>Joint by default</td>
-                <td>Yes — default</td>
+                <td>Yes, default</td>
                 <td>Federal Decree-Law No. 41 of 2022</td>
               </tr>
               <tr>
                 <td><strong>Abu Dhabi Civil Family Court</strong></td>
                 <td>Non-Muslims resident in Abu Dhabi who elect this forum</td>
                 <td>Equal until age 16, then child chooses</td>
-                <td>Yes — equal rights</td>
+                <td>Yes, equal rights</td>
                 <td>Abu Dhabi Law No. 14 of 2021 + Resolution No. 8 of 2022</td>
               </tr>
             </tbody>
@@ -344,7 +372,7 @@ const faqItems = [
           consent to significant medical procedures, international travel, and passport applications.
         </p>
         <p>
-          Physical custody — where the child actually sleeps each night — is a separate question.
+          Physical custody, meaning where the child actually sleeps each night, is a separate question.
           A court may order joint legal custody while also ordering that the child primarily lives
           with one parent on weekdays with extended time with the other parent on weekends and
           school holidays. This is very common when both parents live in different areas of the city,
@@ -404,7 +432,7 @@ const faqItems = [
               </tr>
               <tr>
                 <td><strong>Federal 2022 Law (Non-Muslims)</strong></td>
-                <td>Age 18 — full autonomy</td>
+                <td>Age 18, full autonomy</td>
                 <td>To age 18</td>
                 <td>Joint custody operates throughout; child's preferences considered from earlier age</td>
               </tr>
@@ -426,8 +454,8 @@ const faqItems = [
         <h3>What "Choosing" Actually Means in Court</h3>
         <p>
           When a child reaches the relevant age and expresses a preference, that preference is not
-          automatically binding. The court will interview the child — sometimes with a child
-          psychologist present — and assess whether the preference reflects the child's genuine
+          automatically binding. The court will interview the child, sometimes with a child
+          psychologist present, and assess whether the preference reflects the child's genuine
           wishes or has been influenced by one parent. UAE courts are alert to parental coaching
           and will consider the full context of the child's life when making their determination.
         </p>
@@ -443,8 +471,10 @@ const faqItems = [
         <h2 id="childsupport-heading">Child Support: How Much and Who Pays?</h2>
         <p>
           UAE has no fixed formula for calculating child support. There is no percentage of income
-          that the court applies mechanically. This gives judges wide discretion — which can work
-          in your favour or against you depending on how well you present your case.
+          that the court applies mechanically. This gives judges wide discretion, which can work
+          in your favour or against you depending on how well you present your case. Our full guide to
+          <a href="/en/child-support-uae/">child support in the UAE</a> covers how maintenance is
+          calculated, documented, and enforced in more detail.
         </p>
 
         <h3>Under Islamic Personal Status Law (Muslims)</h3>
@@ -466,8 +496,8 @@ const faqItems = [
           Both parents share financial responsibility equally under the civil law framework.
           The court allocates costs based on each parent's income and the child's actual expenses.
           Where income is significantly unequal, the higher-earning parent will typically bear a
-          larger share. The court can order direct payment of specific expenses — school fees,
-          health insurance, extracurricular activities — rather than a single monthly sum.
+          larger share. The court can order direct payment of specific expenses, such as school fees,
+          health insurance, and extracurricular activities, rather than a single monthly sum.
         </p>
 
         <div class="cost-table-wrapper">
@@ -543,6 +573,8 @@ const faqItems = [
           <li>Breakdown of communication combined with threats to relocate</li>
         </ul>
         <p>
+          The mechanics of applying, and how these orders interact with a divorce case, are set out in
+          our dedicated guide to <a href="/en/travel-ban-divorce-uae/">travel bans in UAE divorce</a>.
           Once granted, the travel ban is recorded in the UAE immigration system and flags the
           child's passport at every airport and land border crossing in the UAE. The ban can be
           lifted only by court order. UAE mothers have historically found it somewhat easier to
@@ -624,8 +656,8 @@ const faqItems = [
           including custody orders, in Arab states:
         </p>
         <ul class="list">
-          <li><strong>The 1996 GCC Convention</strong> — enforces judgments between GCC states: Saudi Arabia, Bahrain, Kuwait, Oman, Qatar, and UAE</li>
-          <li><strong>The 1983 Riyadh Arab Convention</strong> — covers 18 Arab states: UAE, Jordan, Saudi Arabia, Egypt, Kuwait, Bahrain, Qatar, Oman, Iraq, Syria, Lebanon, Libya, Tunisia, Morocco, Algeria, Sudan, Yemen, and others</li>
+          <li><strong>The 1996 GCC Convention:</strong> enforces judgments between GCC states: Saudi Arabia, Bahrain, Kuwait, Oman, Qatar, and UAE</li>
+          <li><strong>The 1983 Riyadh Arab Convention:</strong> covers 18 Arab states including UAE, Jordan, Saudi Arabia, Egypt, Kuwait, Bahrain, Qatar, Oman, Iraq, Syria, Lebanon, Libya, Tunisia, Morocco, Algeria, Sudan, and Yemen</li>
         </ul>
         <p>
           This means a UAE custody order can be enforced relatively straightforwardly if the child
@@ -641,7 +673,7 @@ const faqItems = [
         <h2 id="socialmedia-heading">Social Media and Your Child: The New Legal Frontier</h2>
         <p>
           In May 2026, Abu Dhabi family courts began treating the posting of children's images
-          online as a parental decision requiring joint consent — the same category as travel,
+          online as a parental decision requiring joint consent, the same category as travel,
           school selection, and medical decisions. This is a direct application of the "sharenting"
           provisions in the UAE's new Child Digital Safety Law, and it is law that no competitor
           guide has yet written a practical guide on. For a full breakdown of what parents can and
@@ -654,7 +686,7 @@ const faqItems = [
           Federal Decree-Law No. 26 of 2025 on Child Digital Safety came into force on 1 January 2026.
           The law requires parents and guardians to refrain from displaying or negatively exploiting
           a child online in a way that threatens the child's privacy, dignity, or social and
-          psychological wellbeing. This targets "sharenting" — the practice of posting content
+          psychological wellbeing. This targets "sharenting", the practice of posting content
           about children on social media without sufficient thought about the child's privacy
           interests.
         </p>
@@ -670,7 +702,7 @@ const faqItems = [
           agreement. Abu Dhabi courts have begun treating the public posting of a child's images
           and location information online as such a decision. If you are posting regularly on
           Instagram or TikTok and your ex-partner objects, they can now apply to court for an
-          order restricting those posts — and courts appear willing to grant such applications.
+          order restricting those posts, and courts appear willing to grant such applications.
         </p>
         <p>
           This matters particularly when:
@@ -729,7 +761,7 @@ const faqItems = [
           </div>
           <div class="concept-card">
             <h3>Option 3: Regularise Your Visa</h3>
-            <p>A parent with children in UAE school is entitled to apply for a 1-year custody/divorce residency visa, renewable annually. Even if your employment visa lapses, this visa is designed specifically for this situation. Apply immediately — the 6-month grace period is generous but does not last forever.</p>
+            <p>A parent with children in UAE school is entitled to apply for a 1-year custody/divorce residency visa, renewable annually. Even if your employment visa lapses, this visa is designed specifically for this situation. Apply immediately, because the 6-month grace period is generous but does not last forever.</p>
           </div>
         </div>
 
@@ -749,7 +781,7 @@ const faqItems = [
           A significant number of expat families in the UAE have children with dual nationality.
           The most common combination is a child with UAE nationality (through a UAE national father)
           plus a Western passport (through the mother's nationality). This creates a genuinely
-          complicated legal landscape that most guides completely ignore.
+          complicated legal position that most guides completely ignore.
         </p>
 
         <h3>UAE Does Not Recognise Dual Nationality</h3>
@@ -770,7 +802,7 @@ const faqItems = [
           Here is the asymmetry that catches expat parents by surprise. Once a dual-national
           child reaches the UK, Australia, or Canada, they are treated as a citizen of that
           country. UK Border Force sees a British passport and admits them as a British citizen.
-          The UAE custody order — and any travel ban — has no jurisdiction once the child is
+          The UAE custody order, and any travel ban, has no jurisdiction once the child is
           outside UAE territory.
         </p>
         <p>
@@ -806,7 +838,7 @@ const faqItems = [
           The Execution Court has a graduated set of enforcement tools:
         </p>
         <ul class="list">
-          <li><strong>Formal warning:</strong> First step — the court issues an official warning and reminds the non-compliant parent of their legal obligations</li>
+          <li><strong>Formal warning:</strong> First step. The court issues an official warning and reminds the non-compliant parent of their legal obligations</li>
           <li><strong>Fines:</strong> Financial penalties per violation, increasing for repeated breaches</li>
           <li><strong>Police-assisted handover:</strong> For persistent refusal, the court can order police to assist in transferring the child</li>
           <li><strong>Arrest warrant:</strong> If the parent continues to defy court orders, an arrest warrant can be issued</li>
@@ -823,13 +855,13 @@ const faqItems = [
 
         <h3>Enforcing a UAE Order Abroad</h3>
         <p>
-          Within the 18 Arab countries that have signed the 1983 Riyadh Convention — including
-          Saudi Arabia, Egypt, Jordan, and Morocco — a UAE custody order can be enforced by
+          Within the 18 Arab countries that have signed the 1983 Riyadh Convention, including
+          Saudi Arabia, Egypt, Jordan, and Morocco, a UAE custody order can be enforced by
           presenting it to the relevant court in the destination country. The court is treaty-bound
           to give effect to it without a full merits re-hearing, subject to public policy.
         </p>
         <p>
-          Outside this treaty zone — UK, USA, Australia, Canada, EU countries — you have no
+          Outside this treaty zone, in the UK, USA, Australia, Canada, and EU countries, you have no
           treaty right. You must hire a local lawyer in the destination country and apply for
           recognition of the UAE order. The foreign court will consider the order as evidence
           of your parental rights but will make its own assessment under its own law. A well-drafted
@@ -845,7 +877,7 @@ const faqItems = [
         <p>
           Life changes after divorce. The parent who seemed capable at the time of the order
           remarries someone the children are afraid of. One parent is offered a job in another
-          country — or their visa situation changes, requiring a
+          country, or their visa situation changes, requiring a
           <a href="/en/child-relocation-after-divorce-uae/">child relocation order</a>.
           A child reaches 15 and makes clear they want to live with the other parent.
           The custody order you agreed to three years ago no longer works.
@@ -857,20 +889,20 @@ const faqItems = [
           change of circumstances since the original order was made. Recognised grounds include:
         </p>
         <ul class="list">
-          <li><strong>Remarriage of the custodial parent</strong> — under Islamic law, a mother's right to custody can be affected by remarriage to someone who is not the children's mahram; under civil law, remarriage alone is not automatically a ground but the court will assess the new family environment</li>
-          <li><strong>Relocation abroad</strong> — the custodial parent leaving the UAE or planning to</li>
-          <li><strong>Loss of UAE residency</strong> — inability to remain legally in the UAE</li>
-          <li><strong>Evidence of harm</strong> — abuse, neglect, domestic violence in the custodial home</li>
-          <li><strong>Child's expressed preference</strong> — at the appropriate age threshold</li>
-          <li><strong>Parent's inability to provide adequate care</strong> — serious illness, substance misuse, financial inability</li>
-          <li><strong>New evidence</strong> — facts that were not available at the time of the original order</li>
+          <li><strong>Remarriage of the custodial parent:</strong> under Islamic law, a mother's right to custody can be affected by remarriage to someone who is not the children's mahram, a point covered in detail in our guide on <a href="/en/custody-if-mother-remarries-uae/">whether a mother loses custody if she remarries</a>; under civil law, remarriage alone is not automatically a ground but the court will assess the new family environment</li>
+          <li><strong>Relocation abroad:</strong> the custodial parent leaving the UAE or planning to</li>
+          <li><strong>Loss of UAE residency:</strong> inability to remain legally in the UAE</li>
+          <li><strong>Evidence of harm:</strong> abuse, neglect, or domestic violence in the custodial home</li>
+          <li><strong>Child's expressed preference:</strong> at the appropriate age threshold, which is 15 under the 2024 law</li>
+          <li><strong>Parent's inability to provide adequate care:</strong> serious illness, substance misuse, or financial inability</li>
+          <li><strong>New evidence:</strong> facts that were not available at the time of the original order</li>
         </ul>
 
         <h3>The Process</h3>
         <p>
           A modification application is filed at the Personal Status Court (or Abu Dhabi Civil
           Family Court where applicable) as a new application. Courts in Dubai strongly encourage
-          mediation before hearing a modification case — the Family Guidance and Reconciliation
+          mediation before hearing a modification case. The Family Guidance and Reconciliation
           Section will attempt to settle the matter without a hearing. If mediation fails, a
           judge will hear the case and order any reports or expert assessments considered necessary.
         </p>
@@ -931,7 +963,7 @@ const faqItems = [
 
       <!-- CTA -->
       <section class="section section--cta" id="contact" aria-labelledby="cta-heading">
-        <h2 id="cta-heading">Free Custody Consultation — Within 24 Hours</h2>
+        <h2 id="cta-heading">Free Custody Consultation, Within 24 Hours</h2>
         <p>Speak to a UAE family lawyer who specialises in expat custody cases. Free, confidential, no obligation. Whether your divorce is just starting or you need to enforce an existing order, we can help.</p>
         <LeadForm lang="en" variant="inline" />
       </section>
@@ -941,7 +973,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2026 DivorceU.AE &mdash; Legal referral service. Not a law firm.</p>
+      <p>&copy; 2026 DivorceU.AE. Legal referral service. Not a law firm.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/ar/حضانة-الاطفال-الامارات/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
@@ -959,6 +991,7 @@ const faqItems = [
   .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   .hero__h1 { font-size: clamp(1.75rem, 3.5vw, 2.65rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
   .hero__sub { font-size: 1.03rem; opacity: 0.9; margin-bottom: 14px; line-height: 1.75; }
+  .byline { font-style: italic; }
   .hero__byline { font-size: 0.83rem; opacity: 0.7; margin-bottom: 22px; font-style: italic; }
   .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.87rem; }
   .hero__trust li { opacity: 0.88; }

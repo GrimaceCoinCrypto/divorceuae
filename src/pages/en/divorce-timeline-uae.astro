@@ -18,59 +18,93 @@ const breadcrumbs = [
   { name: 'Divorce Timeline UAE', url: 'https://divorceu.ae/en/divorce-timeline-uae/' },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2025-05-01',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/divorce-timeline-uae/',
+};
+
 const timelineCards = [
-  { type: 'Uncontested / Mutual Consent', duration: '1–3 months', cost: 'AED 4,000–10,000', hearings: '1–2', note: 'Both parties agree on all terms before filing. Fastest route to a decree.' },
-  { type: 'Contested — No Children', duration: '6–12 months', cost: 'AED 10,000–25,000', hearings: '4–8', note: 'Disputes over alimony or property. May require expert financial assessment.' },
-  { type: 'Contested — With Custody Dispute', duration: '12–24 months', cost: 'AED 20,000–60,000+', hearings: '8–15+', note: 'Welfare reports, expert witnesses, and multiple adjournments are common.' },
-  { type: 'Khulʿa (Wife-Initiated)', duration: '2–6 months', cost: 'AED 5,000–15,000', hearings: '2–4', note: 'Faster if husband agrees. Contested khulʿa can extend to 9–12 months.' },
-  { type: 'Non-Muslim Civil Divorce', duration: '1–4 months', cost: 'AED 3,500–12,000', hearings: '1–3', note: 'No-fault civil divorce for non-Muslim expats under Federal Decree-Law No. 41/2022.' },
+  { type: 'Abu Dhabi Civil (Non-Muslim)', duration: 'About 1 month', cost: 'AED 3,500–12,000', hearings: '1–2', note: 'Fast track at the Abu Dhabi Civil Family Court. No mandatory reconciliation, English-language proceedings, no-fault under Abu Dhabi Law No. 14 of 2021.' },
+  { type: 'Uncontested / Mutual Consent', duration: 'About 3 months', cost: 'AED 8,000–15,000', hearings: '1–2', note: 'Both parties agree on all terms before filing. Fastest onshore Sharia-track route to a decree.' },
+  { type: 'Khulʿa (Wife-Initiated)', duration: '2–6 months', cost: 'AED 5,000–15,000', hearings: '2–4', note: 'Faster if the husband agrees. Under the 2024 law a judge can grant khulʿa without his consent, so contested khulʿa no longer drags indefinitely.' },
+  { type: 'Contested, No Children', duration: '1 year or more', cost: 'AED 20,000–50,000', hearings: '4–8', note: 'Disputes over alimony or property. May require a court-appointed financial expert.' },
+  { type: 'Contested, With Custody Dispute', duration: '1–2 years or more', cost: 'AED 40,000–150,000+', hearings: '8–15+', note: 'Welfare reports, expert witnesses, and multiple adjournments are common. Appeals extend this further.' },
 ];
 
 const stages = [
   {
     num: 1,
-    title: 'Family Guidance / Reconciliation Session',
-    duration: '2–6 weeks from filing',
-    desc: 'All UAE divorce cases pass through a mandatory Family Guidance stage. The officer attempts reconciliation; if it fails, a certificate is issued allowing proceedings to continue. In Dubai this is the Family Guidance Section of Dubai Courts; in Abu Dhabi it falls under the Abu Dhabi Judicial Department. Expect 1–4 sessions for contested cases.',
+    title: 'Family Guidance / Reconciliation',
+    duration: 'Up to 60 days (Sharia track)',
+    desc: 'Muslim (Sharia-track) divorces must pass through the mandatory Family Guidance stage. A conciliator attempts reconciliation across a window that Federal Decree-Law No. 41 of 2024 cut from 90 days to 60 days, effective 15 April 2025. If reconciliation fails, a referral letter is issued that must then be filed with the court within about three months or the process restarts. In Dubai this sits with the Family Guidance Section of Dubai Courts; in Abu Dhabi it falls under the Abu Dhabi Judicial Department. Read our detailed guide to the Family Guidance Section. Non-Muslims filing under the civil law can skip this stage entirely: reconciliation is voluntary, not compulsory.',
   },
   {
     num: 2,
-    title: 'First Court Hearing',
-    duration: '4–8 weeks after Family Guidance',
-    desc: 'The judge reviews the petition, confirms representation, and sets a procedural schedule. For uncontested cases the judge may finalise here or schedule a single confirmation hearing. Contested cases move to evidence exchange.',
+    title: 'Filing the Petition',
+    duration: '1–2 weeks to register',
+    desc: 'Your lawyer files the divorce petition at the competent court with the marriage certificate, IDs, and the referral letter (for Sharia-track cases). Government filing fees are commonly cited around AED 200 to 500, with further first-instance fees roughly AED 1,000 to 3,000 depending on the claims raised. Figures are indicative and set by each court.',
   },
   {
     num: 3,
+    title: 'First Court Hearing',
+    duration: 'Roughly 3–6 weeks after filing',
+    desc: 'The judge reviews the petition, confirms representation, and sets a procedural schedule. For uncontested cases the judge may finalise here or schedule a single confirmation hearing. Contested cases move to evidence exchange. Reported scheduling gaps vary by court and caseload, so treat week counts as indicative.',
+  },
+  {
+    num: 4,
     title: 'Evidence Exchange and Expert Reports',
     duration: '2–6 months (contested cases only)',
     desc: 'Both sides submit financial records, witness statements, and property valuations. If children are involved, the court may appoint a social worker or psychologist to produce a welfare report. Expert reports are the main driver of delays in contested cases.',
   },
   {
-    num: 4,
-    title: 'Hearings and Pleadings',
-    duration: 'Ongoing — 1–2 hearings per month',
-    desc: 'The court schedules regular hearings. Adjournments for missing documents, absent parties, or additional evidence are common and add 3–6 weeks each. Experienced lawyers minimise adjournments by having all documents prepared in advance.',
-  },
-  {
     num: 5,
-    title: 'Judgment',
-    duration: '1–4 weeks after final hearing',
-    desc: 'The judge issues a written ruling. In uncontested cases this often happens the same day as the final hearing. In contested cases the judge may reserve judgment and issue it at a separate session. Either party has 30 days to file an appeal.',
+    title: 'Hearings, Pleadings and Judgment',
+    duration: 'Ongoing until the final ruling',
+    desc: 'The court schedules regular hearings. Adjournments for missing documents, absent parties, or additional evidence are common and each can add several weeks. The judge then issues a written ruling. In uncontested cases this often happens the same day as the final hearing; in contested cases the judge may reserve judgment for a later session. For Muslim divorces the ruling must be registered with the court, typically by the husband, within about 15 days under the 2024 law (a day-count reported by law firms rather than confirmed against the official text).',
   },
   {
     num: 6,
+    title: 'Appeal Window (Court of Appeal)',
+    duration: '30 days to file',
+    desc: 'Either party has 30 days from the first-instance judgment to file an appeal in personal status matters. If neither side appeals, or both waive the right, the decree becomes final and the certificate can issue. An appeal that does proceed typically adds several months. Our guide to the divorce appeal process explains what an appeal involves.',
+  },
+  {
+    num: 7,
+    title: 'Cassation (Court of Cassation)',
+    duration: 'Final tier, 6 months to a year or more',
+    desc: 'A Court of Appeal judgment can be challenged at the Court of Cassation, the final tier, on points of law. Sources disagree on whether the personal status cassation deadline is 30 or 60 days, so confirm the current filing window with your lawyer. Cassation is uncommon in straightforward cases and mostly relevant to high-value contested disputes.',
+  },
+  {
+    num: 8,
     title: 'Divorce Certificate Issuance',
-    duration: '1–3 weeks after final judgment',
-    desc: 'Once the judgment is final — appeal period elapsed or both parties waive appeal — the court issues the official divorce certificate. This document is required for visa applications, name changes, remarriage, and home-country record updates.',
+    duration: '1–3 weeks after judgment is final',
+    desc: 'Once the judgment is final, with the appeal period elapsed or waived, the court issues the official divorce certificate. This document is required for visa applications, name changes, remarriage, and home-country record updates.',
   },
 ];
 
 const delayFactors = [
   { factor: 'Missing or unattested documents', impact: '+3–8 weeks per incident', tip: 'Have all documents translated and attested before your first hearing.' },
+  { factor: 'Serving an absent or overseas spouse', impact: '+2–4 months', tip: 'Serving a spouse who has left the UAE or cannot be located adds notice and publication steps. Provide a last-known address and any contact details early.' },
   { factor: 'Party fails to appear', impact: '+3–6 weeks per missed hearing', tip: 'Both parties must be present or represented at every scheduled date.' },
   { factor: 'Expert report ordered by court', impact: '+6–16 weeks', tip: 'Common in custody disputes. Agree on custody terms before filing to avoid this.' },
   { factor: 'Post-judgment appeal', impact: '+3–6 months', tip: 'Appeal period is 30 days. If both parties waive, the decree becomes final immediately.' },
   { factor: 'Disputed financial disclosure', impact: '+2–4 months', tip: 'Prepare a full asset schedule with your lawyer before proceedings begin.' },
+];
+
+const routeCompare = [
+  { route: 'Abu Dhabi Civil Family Court (non-Muslim)', law: 'Abu Dhabi Law No. 14 of 2021', recon: 'None required', duration: 'About 1 month', notes: 'No-fault, English-language proceedings, bilingual forms. The fastest route in the UAE for eligible non-Muslims.' },
+  { route: 'Non-Muslim civil (federal)', law: 'Federal Decree-Law No. 41 of 2022', recon: 'Voluntary only', duration: '1–4 months', notes: 'No-fault, either spouse can file. A reflection period of about 30 days is commonly reported. Applies across all seven emirates.' },
+  { route: 'Uncontested / mutual consent (Sharia track)', law: 'Federal Decree-Law No. 41 of 2024', recon: 'Up to 60 days', duration: 'About 3 months', notes: 'Both parties agree all terms before filing. The reconciliation window and one or two brief hearings set the pace.' },
+  { route: 'Khulʿa (wife-initiated)', law: 'Federal Decree-Law No. 41 of 2024', recon: 'Up to 60 days', duration: '2–6 months', notes: 'The wife typically returns the prompt mahr. A judge can now grant khulʿa without the husband’s consent.' },
+  { route: 'Contested (Sharia track)', law: 'Federal Decree-Law No. 41 of 2024', recon: 'Up to 60 days', duration: '1 year or more', notes: 'Custody, alimony, and asset disputes plus expert reports and possible appeals drive the timeline. Cassation can add further months.' },
 ];
 
 const emirateDiffs = [
@@ -89,7 +123,7 @@ const faqSchema = {
       name: 'How long does divorce take in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'An uncontested divorce in UAE typically takes 1–3 months from filing to final decree. A contested divorce without custody disputes takes 6–12 months. Divorces involving child custody disputes are the longest, typically 12–24 months. The single biggest variable is whether both parties agree on all terms before filing.',
+        text: 'An uncontested or mutual consent divorce in UAE typically takes around 3 months from filing to final decree. Contested divorces usually run 1 year or more, and cases with custody or complex asset disputes can stretch to 2 years or more once appeals are factored in. The fastest route is the Abu Dhabi Civil Family Court for non-Muslims, which can conclude in about a month. The single biggest variable is whether both parties agree on all terms before filing. Figures are indicative and vary by court and case.',
       },
     },
     {
@@ -97,7 +131,7 @@ const faqSchema = {
       name: 'How long does a mutual consent divorce take in Dubai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A well-prepared mutual consent divorce in Dubai typically takes 4–12 weeks from first filing to decree. This includes the mandatory Family Guidance session (2–4 weeks) plus 1–2 court hearings. Having all documents translated, attested, and ready before filing is the most effective way to minimise the total time.',
+        text: 'A well-prepared mutual consent divorce in Dubai typically takes around 3 months from first filing to decree. This includes the mandatory Family Guidance stage, whose reconciliation window is now up to 60 days under Federal Decree-Law No. 41 of 2024 (reduced from 90 days), plus 1 to 2 court hearings. Having all documents translated, attested, and ready before filing is the most effective way to minimise the total time.',
       },
     },
     {
@@ -113,7 +147,7 @@ const faqSchema = {
       name: 'Can you get a fast divorce in UAE without a court hearing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You cannot entirely bypass the court process in UAE, but a fully agreed mutual consent divorce can often be resolved in 1–2 hearings. The mandatory Family Guidance session must be completed first. If both spouses have a pre-signed separation agreement covering custody, alimony, and property, the court hearing itself is typically brief — often 30–60 minutes.',
+        text: 'You cannot entirely bypass the court process in UAE, but a fully agreed mutual consent divorce can often be resolved in 1–2 hearings. The mandatory Family Guidance session must be completed first. If both spouses have a pre-signed separation agreement covering custody, alimony, and property, the court hearing itself is typically brief, often 30 to 60 minutes.',
       },
     },
     {
@@ -129,7 +163,7 @@ const faqSchema = {
       name: 'What happens if one spouse is abroad during divorce proceedings in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'If a spouse is abroad, proceedings can sometimes continue via power of attorney allowing a representative to appear. However, courts vary on when they accept POA representation vs. requiring personal appearance. In some stages — such as signing a mutual consent agreement — personal appearance or a notarised remote consent may be required. Your lawyer can advise on the specific requirements of your emirate and case type.',
+        text: 'If a spouse is abroad, proceedings can sometimes continue via power of attorney allowing a representative to appear. However, courts vary on when they accept POA representation vs. requiring personal appearance. In some stages, such as signing a mutual consent agreement, personal appearance or a notarised remote consent may be required. Your lawyer can advise on the specific requirements of your emirate and case type.',
       },
     },
     {
@@ -137,7 +171,15 @@ const faqSchema = {
       name: 'What is the fastest possible divorce timeline in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The theoretical minimum is 4-6 weeks. This applies only to a non-Muslim civil divorce under the 2022 law, or a fully agreed mutual consent divorce where both parties have signed a notarised settlement agreement before filing, all documents are already attested and translated, and the court accepts the case for an expedited hearing track. In practice, 8-12 weeks is a more realistic fast timeline for even the most well-prepared mutual consent divorces in Dubai.',
+        text: 'The fastest realistic route is the Abu Dhabi Civil Family Court for non-Muslims, which can conclude in about a month because there is no mandatory reconciliation period and proceedings run in English. A federal non-Muslim civil divorce under Federal Decree-Law No. 41 of 2022 is also quick, with a reflection period of about 30 days commonly reported. For a Sharia-track mutual consent divorce the reconciliation window of up to 60 days sets a practical floor, so around 3 months is a realistic fast timeline even when both parties agree and all documents are ready. Figures are indicative.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is the Abu Dhabi Civil Family Court faster?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Abu Dhabi Civil Family Court hears non-Muslim divorces under Abu Dhabi Law No. 14 of 2021. It can conclude a straightforward case in about a month for three reasons: there is no mandatory reconciliation stage, it is a no-fault system so neither party proves grounds, and proceedings and forms are available in English, which removes translation friction for expats. Jurisdiction for a divorce still generally requires a connection to the Emirate such as residence, work, or domicile. Muslims and contested cases follow the longer onshore process.',
       },
     },
     {
@@ -145,7 +187,7 @@ const faqSchema = {
       name: 'How long does it take to get the divorce certificate after the court judgment?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'After the final divorce judgment becomes enforceable — either after the 30-day appeal period lapses or both parties waive appeal — the court issues the official divorce certificate within 1-3 weeks. For non-UAE nationals who need to use the certificate internationally, MOFA attestation takes 2 hours (digital) or 1-3 working days (courier), and home country consulate notification takes 1-6 weeks depending on nationality. Build in 3-5 weeks from judgment to a fully legalised, internationally recognised certificate.',
+        text: 'After the final divorce judgment becomes enforceable, either after the 30-day appeal period lapses or both parties waive appeal, the court issues the official divorce certificate within 1-3 weeks. For non-UAE nationals who need to use the certificate internationally, MOFA attestation takes 2 hours (digital) or 1-3 working days (courier), and home country consulate notification takes 1-6 weeks depending on nationality. Build in 3-5 weeks from judgment to a fully legalised, internationally recognised certificate.',
       },
     },
     {
@@ -153,7 +195,7 @@ const faqSchema = {
       name: 'How long can I stay in UAE after divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Under current UAE rules, a divorced spouse receives an automatic 1-year residency extension from the date the divorce decree becomes final. This is granted independently of the former sponsor\'s consent. After 1 year, the divorced spouse must transfer to employment, investor, freelance, or other self-sponsored visa. Use the 1-year period to arrange new sponsorship — do not wait until the final months.',
+        text: 'Under current UAE rules, a divorced spouse receives an automatic 1-year residency extension from the date the divorce decree becomes final. This is granted independently of the former sponsor\'s consent. After 1 year, the divorced spouse must transfer to employment, investor, freelance, or other self-sponsored visa. Use the 1-year period to arrange new sponsorship, and do not wait until the final months.',
       },
     },
     {
@@ -179,6 +221,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
   canonical="https://divorceu.ae/en/divorce-timeline-uae/"
   lang="en"
   hreflang={hreflang}
+  schema={articleSchema}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -189,7 +232,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
     'totalTime': 'P3M',
     'estimatedCost': { '@type': 'MonetaryAmount', 'currency': 'AED', 'minValue': '4000', 'maxValue': '10000' },
     'step': [
-      { '@type': 'HowToStep', 'position': 1, 'name': 'Family Guidance / Reconciliation Session', 'text': 'All UAE divorce cases pass through a mandatory Family Guidance stage. The officer attempts reconciliation; if it fails, a certificate is issued allowing proceedings to continue. Expect 1-4 sessions for contested cases.', 'timeRequired': 'P6W' },
+      { '@type': 'HowToStep', 'position': 1, 'name': 'Family Guidance / Reconciliation', 'text': 'Muslim divorces pass through the mandatory Family Guidance stage. A conciliator attempts reconciliation across a window reduced to 60 days under Federal Decree-Law No. 41 of 2024. If it fails, a referral letter allows the court case to proceed. Non-Muslim civil divorces can skip this stage.', 'timeRequired': 'P60D' },
       { '@type': 'HowToStep', 'position': 2, 'name': 'First Court Hearing', 'text': 'The judge reviews the petition, confirms representation, and sets a procedural schedule. For uncontested cases the judge may finalise here or schedule a single confirmation hearing.', 'timeRequired': 'P8W' },
       { '@type': 'HowToStep', 'position': 3, 'name': 'Evidence Exchange and Expert Reports', 'text': 'Both sides submit financial records, witness statements, and property valuations. If children are involved, the court may appoint a social worker or psychologist to produce a welfare report.', 'timeRequired': 'P6M' },
       { '@type': 'HowToStep', 'position': 4, 'name': 'Hearings and Pleadings', 'text': 'The court schedules regular hearings. Adjournments for missing documents or additional evidence are common and add 3-6 weeks each.', 'timeRequired': 'P6M' },
@@ -201,22 +244,21 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
 
   <section class="hero-section">
     <div class="container">
-      <p class="overline">UAE Divorce Guide · 2025</p>
-      <h1>How Long Does Divorce Take in UAE? — Complete Timeline</h1>
-      <p class="hero-sub">From mandatory Family Guidance sessions to the final decree — here is the realistic stage-by-stage timeline for every type of divorce in UAE, with what causes delays and how to avoid them.</p>
-      <div class="hero-meta">
-        <span>Updated: May 2025</span>
-        <span class="sep">·</span>
-        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
-      </div>
+      <p class="overline">UAE Divorce Guide · Updated 2026</p>
+      <h1>How Long Does Divorce Take in UAE? Complete Timeline</h1>
+      <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+      <p class="hero-sub">From the mandatory Family Guidance stage to the final decree, here is the realistic stage-by-stage timeline for every type of divorce in UAE, updated for Federal Decree-Law No. 41 of 2024, with what speeds a case up and what slows it down.</p>
     </div>
   </section>
 
   <main class="main-content">
+    <figure style="margin:0 0 8px;">
+      <img src="/images/divorce-timeline-uae.webp" alt="UAE divorce timeline: a calendar and hourglass beside legal documents on a desk" width="1200" height="675" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px;" />
+    </figure>
     <div class="container">
 
       <div class="highlight-box">
-        <h2>UAE Divorce Timeline — Quick Reference</h2>
+        <h2>UAE Divorce Timeline: Quick Reference</h2>
         <div class="timeline-cards">
           {timelineCards.map(c => (
             <div class="tl-card">
@@ -235,7 +277,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
 
       <section class="content-section">
         <h2>Stage-by-Stage: What Happens at Each Step</h2>
-        <p>Every UAE divorce case — regardless of type — follows the same procedural sequence. The difference between a 6-week case and a 2-year case is almost entirely driven by what happens at stages 3 and 4.</p>
+        <p>Most UAE Sharia-track divorce cases follow the same procedural sequence, from Family Guidance through to the final certificate. Non-Muslims filing under the civil law skip the mandatory reconciliation stage. The difference between a three-month case and a two-year case is almost entirely driven by what happens at the evidence and hearings stages. For the underlying rules see our overview of <a href="/en/uae-divorce-law/">UAE divorce law</a> and the split between <a href="/en/contested-vs-uncontested-divorce-uae/">contested and uncontested divorce</a>.</p>
         <div class="stages-list">
           {stages.map(s => (
             <div class="stage-card">
@@ -253,8 +295,38 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
       </section>
 
       <section class="content-section">
-        <h2>What Causes Delays — and How to Avoid Them</h2>
-        <p>Most UAE divorce timeline overruns are avoidable. The table below covers the five most common delay factors and what to do about each.</p>
+        <h2>Timeline by Route: A Comparison</h2>
+        <p>There is no single UAE divorce timeline. The route you qualify for, and whether you both agree, sets the pace far more than the emirate does. The comparison table below maps each route to its governing law, reconciliation requirement, and indicative duration. Non-Muslim expats should read our comparison of <a href="/en/dubai-vs-abu-dhabi-divorce/">Dubai versus Abu Dhabi divorce</a> before choosing where to file, and our guide to <a href="/en/mutual-consent-divorce-uae/">mutual consent divorce</a> if you both agree.</p>
+        <div class="comparison-table">
+          <div class="comparison-header">
+            <span>Route</span>
+            <span>Governing Law</span>
+            <span>Reconciliation</span>
+            <span>Indicative Duration</span>
+            <span>Notes</span>
+          </div>
+          {routeCompare.map(r => (
+            <div class="comparison-row">
+              <span class="comp-route">{r.route}</span>
+              <span>{r.law}</span>
+              <span>{r.recon}</span>
+              <span class="comp-duration">{r.duration}</span>
+              <span class="comp-notes">{r.notes}</span>
+            </div>
+          ))}
+        </div>
+        <p class="table-caveat">All durations are indicative and vary by court, caseload, and case complexity. The Abu Dhabi Civil Family Court fast track is the quickest route because it removes mandatory reconciliation and runs in English. Read the detailed process in our guide to <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file for divorce in Abu Dhabi</a>.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>The Family Guidance Stage: Now 60 Days</h2>
+        <p>For Muslim (Sharia-track) divorces, Family Guidance is the mandatory first stage and often the single longest fixed block in the timeline. Under the old Federal Law No. 28 of 2005 the reconciliation window ran to 90 days. Federal Decree-Law No. 41 of 2024, in force since 15 April 2025, cut that to 60 days, which shortens the front end of every contested and mutual consent case by up to a month.</p>
+        <p>A conciliator meets both spouses and tries to settle differences or reconcile the marriage. If that fails, a referral letter is issued, and it must be filed with the court within about three months or the process restarts. Non-Muslims filing under the civil law are not required to attend at all, though they may do so voluntarily. Our dedicated guide to the <a href="/en/family-guidance-section-uae/">Family Guidance Section</a> explains what happens in each session and how to move through it efficiently.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>What Causes Delays, and How to Avoid Them</h2>
+        <p>Most UAE divorce timeline overruns are avoidable. The table below covers the most common delay factors and what to do about each. Serving a spouse who has left the UAE is one of the biggest, so flag an absent spouse to your lawyer at the first meeting. A post-judgment appeal is the other major extender; our <a href="/en/divorce-appeal-uae/">divorce appeal guide</a> covers the 30-day window and how to decide whether to appeal, and delays also feed into the total <a href="/en/divorce-cost-uae/">divorce cost in UAE</a>.</p>
         <div class="delay-table">
           <div class="delay-header">
             <span>Delay Factor</span>
@@ -273,7 +345,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
 
       <section class="content-section">
         <h2>Timeline by Emirate</h2>
-        <p>All UAE courts follow the same federal personal status law, but processing times and local procedures vary. Here is what to expect in each main emirate.</p>
+        <p>UAE family law now runs on a dual federal system, with Federal Decree-Law No. 41 of 2024 for Muslims and Federal Decree-Law No. 41 of 2022 for non-Muslims, but processing times and local procedures still vary by court. Here is what to expect in each main emirate. For the wider picture start with our overview of <a href="/en/divorce-in-uae/">divorce in UAE</a>, and for the capital versus Dubai see how to <a href="/en/how-to-file-for-divorce-in-dubai/">file for divorce in Dubai</a>.</p>
         <div class="emirate-grid">
           {emirateDiffs.map(e => (
             <div class="emirate-card">
@@ -299,13 +371,14 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
           </div>
           <div class="expat-item">
             <span class="expat-label">Joint property and custody</span>
-            <p>Property and custody disputes still extend the timeline — 6–18 months for contested custody. The 2022 law does not bypass mediation requirements.</p>
+            <p>Property and custody disputes still extend the timeline to 6 to 18 months for contested custody. The 2022 civil law removes mandatory reconciliation but complex disputes still take time.</p>
           </div>
           <div class="expat-item">
-            <span class="expat-label">DIFC Courts option</span>
-            <p>High-net-worth expats with DIFC-connected contracts can opt into DIFC Courts jurisdiction, which operates under common law and often resolves financial matters faster than the Personal Status Courts.</p>
+            <span class="expat-label">Abu Dhabi fast track</span>
+            <p>The Abu Dhabi Civil Family Court, under Abu Dhabi Law No. 14 of 2021, is the quickest route in the country. A straightforward case can conclude in about a month, with no mandatory reconciliation and proceedings in English. See <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file for divorce in Abu Dhabi</a>.</p>
           </div>
         </div>
+        <p class="table-caveat">Note: the DIFC Courts do not have jurisdiction over personal status matters. A valid UAE divorce decree comes from the onshore family courts applying Federal Decree-Law No. 41 of 2022, or from the Abu Dhabi Civil Family Court, not from the DIFC.</p>
       </section>
 
       <section class="content-section">
@@ -638,9 +711,9 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
           <div class="speed-tip">
             <div class="speed-tip-header">
               <span class="speed-icon">04</span>
-              <h3>Use DIFC Courts for Financial Disputes (High-Value Cases)</h3>
+              <h3>Non-Muslims: Consider the Abu Dhabi Civil Family Court</h3>
             </div>
-            <p>The Dubai International Financial Centre Courts operate under English common law and are often faster for complex financial disputes than the UAE Personal Status Courts - particularly for cases involving DIFC-registered assets or international investment portfolios. Both parties can agree to DIFC jurisdiction by consent. The DIFC Small Claims Tribunal handles disputes up to AED 500,000 and has a target resolution time of under 3 months. For financial elements exceeding AED 1 million in dispute value, ask your lawyer whether a DIFC jurisdiction clause is appropriate.</p>
+            <p>If you are a non-Muslim expat, the Abu Dhabi Civil Family Court under Abu Dhabi Law No. 14 of 2021 is the single fastest venue in the UAE. There is no mandatory reconciliation period, the process is no-fault, and proceedings and forms run in English, which removes the translation friction that slows onshore cases. A straightforward case can conclude in about a month. Jurisdiction for a divorce generally requires a connection to the Emirate such as residence, work, or domicile. One point to clear up early: the DIFC Courts do not hear personal status matters, so a valid UAE divorce cannot come from the DIFC. Ask your lawyer whether you qualify to file in Abu Dhabi.</p>
           </div>
 
           <div class="speed-tip">
@@ -692,7 +765,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
 
       <div class="cta-box">
         <h2>Concerned About How Long Your Case Will Take?</h2>
-        <p>An experienced UAE divorce lawyer can give you a realistic timeline for your specific situation after reviewing the facts — and identify any steps you can take now to avoid delays. Initial consultations are typically 30–60 minutes.</p>
+        <p>An experienced UAE divorce lawyer can give you a realistic timeline for your specific situation after reviewing the facts, and identify any steps you can take now to avoid delays. Initial consultations are typically 30 to 60 minutes.</p>
         <LeadForm source="divorce-timeline-uae" />
       </div>
 
@@ -700,11 +773,11 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
         <h2>Related Guides</h2>
         <div class="related-grid">
           {[
-            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Court fees, lawyer fees, and what drives your total bill.' },
-            { title: 'Mutual Consent Divorce UAE', href: '/en/mutual-consent-divorce-uae', desc: 'Fastest route — how to agree and file together.' },
-            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step filing guide for Dubai courts.' },
-            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae/', desc: '1-year residency extension and your 7 visa pathways after divorce.' },
-            { title: 'Documents for Divorce UAE', href: '/en/documents-for-divorce-uae', desc: 'Complete checklist + attestation guide.' },
+            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae/', desc: 'Court fees, lawyer fees, and what drives your total bill.' },
+            { title: 'Mutual Consent Divorce UAE', href: '/en/mutual-consent-divorce-uae/', desc: 'Fastest onshore route: how to agree and file together.' },
+            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai/', desc: 'Step-by-step filing guide for Dubai courts.' },
+            { title: 'Divorce Appeal UAE', href: '/en/divorce-appeal-uae/', desc: 'The 30-day appeal window and how appeals affect your timeline.' },
+            { title: 'Family Guidance Section UAE', href: '/en/family-guidance-section-uae/', desc: 'What happens in the mandatory reconciliation stage.' },
           ].map(link => (
             <a href={link.href} class="related-card">
               <span class="related-title">{link.title} →</span>
@@ -727,6 +800,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
   .hero-section .container { max-width: 56rem; margin: 0 auto; }
   .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
   h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  .byline { font-size: 0.85rem; color: #c9a84c; margin-bottom: 1rem; font-weight: 600; }
   .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
   .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
   .sep { opacity: 0.4; }
@@ -765,6 +839,15 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
   .delay-impact { color: #c0392b; font-weight: 700; }
   .delay-tip { color: #445; }
 
+  .comparison-table { border: 1px solid #e0e4ea; border-radius: 0.875rem; overflow: hidden; font-size: 0.82rem; margin-bottom: 1rem; }
+  .comparison-header { display: grid; grid-template-columns: 1.6fr 1.5fr 1fr 1.1fr 2.2fr; gap: 0.5rem; background: #0a1628; color: #fff; padding: 0.75rem 1rem; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .comparison-row { display: grid; grid-template-columns: 1.6fr 1.5fr 1fr 1.1fr 2.2fr; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid #e8eaed; align-items: start; }
+  .comparison-row:nth-child(even) { background: #f8f9fa; }
+  .comp-route { color: #0a1628; font-weight: 700; }
+  .comp-duration { color: #c9a84c; font-weight: 700; }
+  .comp-notes { color: #445; }
+  .table-caveat { font-size: 0.8rem; color: #667; }
+
   .emirate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
   .emirate-card { background: #f8f9fa; border: 1px solid #e0e4ea; border-radius: 0.875rem; padding: 1.1rem 1.25rem; }
   .emirate-card h3 { font-size: 1rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
@@ -791,6 +874,9 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
     .delay-header, .delay-row { grid-template-columns: 1fr; }
     .delay-header span:not(:first-child) { display: none; }
     .delay-impact, .delay-tip { padding-left: 0.5rem; }
+    .comparison-header, .comparison-row { grid-template-columns: 1fr; }
+    .comparison-header span:not(:first-child) { display: none; }
+    .comparison-row span { padding-left: 0.5rem; }
   }
 
   /* 2024 Law Table */

@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
@@ -18,48 +18,75 @@ const breadcrumbs = [
   { name: 'Visa After Divorce UAE', url: 'https://divorceu.ae/en/visa-after-divorce-uae/' },
 ];
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'UAE Visa After Divorce: The 30-Day Rule and Your Options',
+  description: description,
+  author: {
+    '@type': 'Person',
+    name: 'Aleksi Suoninen',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'DivorceU.AE',
+  },
+  dateModified: '2026-07-04',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://divorceu.ae/en/visa-after-divorce-uae/',
+  },
+};
+
 const visaOptions = [
   {
     type: 'Employment Visa',
     who: 'Anyone with a UAE job offer',
-    timeline: 'Can be arranged within 30 days',
-    notes: 'The most straightforward path if you are employed. Your employer sponsors your new visa. Notify HR immediately after your divorce is finalised.',
+    cost: 'AED 3,000–7,000 (usually employer-paid)',
+    validity: '2 years, renewable',
+    notes: 'The most direct path if you are employed. Your employer sponsors your new visa. Notify HR immediately once your divorce is documented so the transfer can begin before your grace period runs out.',
   },
   {
-    type: 'Investor / Business Visa',
-    who: 'Business owners, freelancers with trade licence',
-    timeline: '2–4 weeks',
-    notes: 'If you own a business or have a UAE trade licence, you can self-sponsor. Mainland and free zone companies both qualify.',
+    type: 'Investor / Partner Visa',
+    who: 'Business owners and partners with a UAE trade licence',
+    cost: 'AED 10,000–20,000 (incl. licence)',
+    validity: '2–3 years, renewable',
+    notes: 'If you own or co-own a company, you can self-sponsor. Mainland and free zone licences both qualify. This detaches your residency from your ex-spouse permanently.',
   },
   {
-    type: 'Freelance / Self-Employment Visa',
-    who: 'Freelancers in eligible categories',
-    timeline: '2–4 weeks',
-    notes: 'UAE freelance permits (available through free zones and MOHRE) allow self-sponsorship. Sectors include media, technology, education, and creative industries.',
+    type: 'Green Visa (Freelance / Self-Employed)',
+    who: 'Freelancers earning about AED 360,000/year, or skilled staff on AED 15,000/month',
+    cost: 'AED 4,000–6,000 approx.',
+    validity: '5 years, renewable',
+    notes: 'The Green Visa lets you self-sponsor for five years with no employer or spouse. Freelancers need a MOHRE permit plus audited income of roughly AED 360,000 over the past two years, and usually a bachelor\'s degree.',
   },
   {
     type: 'Property Owner Visa',
-    who: 'UAE property owners (property value AED 750,000+)',
-    timeline: '3–6 weeks',
-    notes: 'If you own property in Dubai or another emirate worth AED 750,000 or more, you qualify for a property investor visa — independent of your ex-spouse.',
+    who: 'Owners of UAE property worth AED 750,000 or more',
+    cost: 'AED 4,000–15,000 approx.',
+    validity: '2 years (or 10-yr Golden at AED 2m+)',
+    notes: 'Property worth AED 750,000+ qualifies you for a renewable investor visa. At AED 2 million and above, you may qualify for the 10-year Golden Visa instead.',
   },
   {
-    type: '1-Year Divorce / Custody Visa',
-    who: 'Divorced women with children in UAE schools',
-    timeline: 'Issued by GDRFA',
-    notes: 'A special 1-year renewable residency visa for divorced mothers whose children are enrolled in UAE schools. Allows you to stay in the UAE to care for and maintain custody of your children.',
+    type: '1-Year Divorced Woman Visa',
+    who: 'Divorced or widowed women previously on a spouse visa',
+    cost: 'Government fees only (approx. AED 1,000–3,000)',
+    validity: '1 year, renewable once',
+    notes: 'A dedicated one-year residency granted to divorced women without needing a substitute sponsor. It gives you breathing room to arrange work, a business, or to sponsor yourself. Custody of children in UAE schools strengthens the application.',
   },
   {
     type: 'Sponsored by Adult Child',
-    who: 'Parents of UAE residents over 18 with sufficient salary',
-    timeline: '2–4 weeks',
-    notes: 'If your child is a UAE resident and earns the minimum salary threshold, they can sponsor your visa as a dependent.',
+    who: 'Parents of a UAE resident earning the salary threshold',
+    cost: 'AED 4,000–6,000 approx.',
+    validity: 'Tied to child\'s visa',
+    notes: 'If your adult child is a UAE resident meeting the income requirement, they can sponsor you as a dependent parent.',
   },
   {
     type: 'Golden Visa',
-    who: 'Investors, professionals, talented individuals',
-    timeline: '4–8 weeks',
-    notes: 'The UAE Golden Visa (5 or 10 year) is available to investors, entrepreneurs, skilled professionals, and exceptional talent. Provides long-term residency independent of any sponsor.',
+    who: 'Investors, entrepreneurs, skilled professionals, exceptional talent',
+    cost: 'AED 5,000–10,000 approx.',
+    validity: '5 or 10 years, renewable',
+    notes: 'Long-term residency independent of any sponsor. Common routes include AED 2m property, business investment, a salary of AED 30,000+ in an eligible profession, or recognised talent.',
   },
 ];
 
@@ -67,32 +94,37 @@ const faqItems = [
   {
     question: 'How long do I have to change my visa after divorce in UAE?',
     answer:
-      'You have 30 days from the date the divorce is legally finalised to change or transfer your visa status. After 30 days, you are considered to be overstaying, which carries fines and can affect future UAE visa applications. Act immediately — speak to a lawyer or your HR department as soon as the decree is issued.',
+      'Your grace period depends on your visa category rather than a single fixed number. The commonly quoted figure is 30 days, and that applies to standard dependent visas once cancelled. However, divorced and widowed women who held a spouse-sponsored residence receive a far longer window: a one-year extension in many cases. Golden, Green and Blue visa holders and their families get up to 180 days. Treat 30 days as the safe minimum to act, confirm your exact grace period with GDRFA or ICP, and never rely on overstaying.',
   },
   {
     question: 'What is the 1-year divorce visa in UAE?',
     answer:
-      "The UAE offers a special 1-year renewable residency visa for divorced women who have children enrolled in UAE schools. It is issued by the General Directorate of Residency and Foreigners Affairs (GDRFA). The visa allows you to remain in the UAE to maintain custody and care for your children. It requires proof of divorce, proof of children's school enrollment, and proof of custody.",
+      'It is a one-year residency the UAE grants to a divorced or widowed woman who was previously on her husband\'s visa, without requiring a new sponsor. It lets you stay in the country to settle your affairs, care for children, or arrange your own visa. It is generally renewable once. You apply through GDRFA in Dubai or ICP in the other emirates using your attested divorce certificate, passport, and, where relevant, proof of custody and children\'s school enrolment.',
   },
   {
     question: 'Can I stay in the UAE after divorce if I do not have a job?',
     answer:
-      'Yes, there are options beyond employment: a property owner visa (if you own UAE property worth AED 750,000+), a business or freelance visa, the divorce/custody visa (if applicable), a Golden Visa (if you qualify), or being sponsored by an adult child. A lawyer can help you identify the best option for your situation.',
+      'Yes. Beyond employment you can use the 1-year divorced woman visa, a property owner visa (property worth AED 750,000+), an investor or Green Visa if you run a business or freelance, a Golden Visa if you qualify, or sponsorship by an adult child who is a UAE resident. A lawyer can match the fastest route to your circumstances before your grace period ends.',
   },
   {
-    question: 'What happens to my children\'s visas after divorce?',
+    question: 'Can a divorced mother sponsor her children in the UAE?',
     answer:
-      'Children\'s visas are typically linked to the father\'s sponsorship under UAE law. During divorce proceedings, it is important to address visa sponsorship for children explicitly. The parent with custody can often have the children\'s visas transferred to their sponsorship, particularly under the 2022 non-Muslim civil law or with a court order.',
+      'Often, yes. A mother who holds a valid residence visa and is the legal custodian can sponsor her children, typically if she earns at least AED 4,000 per month (or AED 3,000 plus accommodation). Special approval from ICP may be needed. If the children were on their father\'s visa when the divorce was documented, they can usually move onto the mother\'s one-year visa, though their permit will not exceed hers.',
+  },
+  {
+    question: 'What happens if I overstay after my divorce visa is cancelled?',
+    answer:
+      'Overstaying triggers a fine of about AED 50 per day and can complicate future UAE visa applications and exit procedures. It is far cheaper and safer to apply for a new visa, or an official status letter confirming your application is in progress, before the grace period expires.',
   },
   {
     question: 'Does divorce affect my UAE driving licence?',
     answer:
-      'No — your UAE driving licence is issued in your own name and is unaffected by your marital status or divorce. However, if your licence is linked to a visa that is cancelled, ensure you have a valid new visa before your licence renewal.',
+      'No. Your UAE driving licence is issued in your own name and is unaffected by your marital status. However, if it is linked to a residence visa that gets cancelled, make sure you hold a valid new visa before the licence comes up for renewal.',
   },
   {
     question: 'Can my husband cancel my UAE visa during divorce proceedings?',
     answer:
-      "A spouse can technically apply to cancel a dependent visa. However, UAE immigration authorities typically do not process visa cancellations mid-divorce proceedings, and courts can issue protective orders. If you believe your spouse may attempt to cancel your visa, inform your lawyer immediately so they can take protective legal action.",
+      'A sponsor can technically request cancellation of a dependent visa, but immigration authorities are generally cautious about processing this mid-divorce, and the Personal Status Court can issue protective orders. If you believe your spouse may try to cancel your visa, tell your lawyer immediately so they can act to protect your status.',
   },
 ];
 ---
@@ -103,26 +135,28 @@ const faqItems = [
   lang="en"
   dir="ltr"
   hreflang={hreflang}
+  schema={schema}
 >
   <header class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
         <Breadcrumb items={breadcrumbs} lang="en" />
         <h1 class="hero__h1">
-          UAE Visa After Divorce —<br />What Happens to Your Residency?
+          UAE Visa After Divorce:<br />What Happens to Your Residency?
         </h1>
+        <p class="byline">Guide by <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant &middot; Updated 4 July 2026</p>
         <p class="hero__sub">
-          For most expats in the UAE, their visa is linked to their spouse's sponsorship. Divorce means your
-          residency status changes — and you have <strong>30 days</strong> to act. This guide explains exactly what
-          happens, what your options are, and the steps you need to take immediately.
+          For most expats in the UAE, residency is linked to a spouse's sponsorship. Divorce changes your
+          status, and you have a limited grace period to act. This guide explains exactly what happens to your visa,
+          every legal pathway to stay afterwards, how to keep your children on-visa, and the steps to take in your
+          first 30 days.
         </p>
         <ul class="hero__trust">
           <li>✓ Free first consultation</li>
-          <li>✓ 30-day deadline — act fast</li>
-          <li>✓ All visa options explained</li>
+          <li>✓ Grace-period deadlines explained</li>
+          <li>✓ All visa options covered</li>
           <li>✓ 100% confidential</li>
         </ul>
-        <p class="hero__author">Guide by <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant</p>
       </div>
       <div class="hero__form">
         <LeadForm lang="en" variant="hero" />
@@ -131,97 +165,242 @@ const faqItems = [
   </header>
 
   <main class="container main-content">
+    <figure style="margin:0 0 8px;">
+      <img src="/images/visa-after-divorce-uae.webp" alt="UAE visa after divorce: a passport with a residence visa page and an ID card" width="1200" height="675" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px;" />
+    </figure>
 
-    <!-- The 30-day rule -->
-    <section class="section" aria-labelledby="thirty-day-heading">
-      <h2 id="thirty-day-heading">The 30-Day Rule — What You Must Know</h2>
+    <!-- What happens to your visa -->
+    <section class="section" aria-labelledby="what-happens-heading">
+      <h2 id="what-happens-heading">What Happens to a Spouse-Sponsored Visa on Divorce</h2>
+      <p>
+        Most expatriate spouses in the UAE hold a <em>dependent (family) visa</em> sponsored by their husband or wife.
+        That visa exists only because of the marriage. Once the divorce is legally documented, the sponsorship link is
+        broken and the dependent visa is cancelled or becomes cancellable.
+      </p>
+      <p>
+        The UAE immigration system does not automatically move you onto a new status. You have to switch to another visa
+        category yourself, or leave the country before your grace period ends. The good news is that there are several
+        routes to stay, and most people can secure a valid residency well inside the window if they start early.
+      </p>
+      <p>
+        This applies whether your divorce was processed under <strong>Federal Decree-Law No. 41 of 2024</strong> (the
+        Muslim personal status law, in force since 15 April 2025) or <strong>Federal Decree-Law No. 41 of 2022</strong>
+        (the civil personal status law for non-Muslims). The visa mechanics are the same either way; what differs is how
+        your divorce itself is granted. If you are still in the process, see our overview of
+        <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a> and the wider
+        <a href="/en/uae-divorce-law/">UAE divorce law</a>.
+      </p>
+    </section>
+
+    <!-- The grace period -->
+    <section class="section" aria-labelledby="grace-heading">
+      <h2 id="grace-heading">The Grace Period: How Long You Really Have</h2>
       <div class="alert-box">
         <span class="alert-icon">⚠️</span>
         <div>
-          <p class="alert-title">Time-sensitive: 30 days from finalised divorce</p>
-          <p>Once your divorce decree is issued, you have <strong>30 days</strong> to transfer or change your UAE visa status. After this period you are considered to be overstaying, which results in daily fines and can affect future UAE residency applications.</p>
+          <p class="alert-title">Act as if you have 30 days, then confirm your exact window</p>
+          <p>The widely quoted "30-day rule" is the safe assumption. In practice the UAE grace period is <strong>tiered by visa type</strong>, and divorced women previously on a spouse visa usually get significantly longer.</p>
         </div>
       </div>
       <p>
-        Most expatriate spouses in the UAE hold a <em>dependent/family visa</em> sponsored by their husband or wife.
-        When the marriage ends legally, that sponsorship relationship is severed. The UAE immigration system does not
-        automatically grant an extension — you must proactively switch to a new visa category.
+        After a residence visa is cancelled, UAE rules currently set the grace period by category. As a working
+        guide (confirm your own figure with GDRFA or ICP):
       </p>
+      <ul class="list">
+        <li><strong>30 days</strong> for standard dependent and general residence categories once cancelled</li>
+        <li><strong>60 days</strong> for permits issued with a guarantor or host</li>
+        <li><strong>90 days</strong> for property owners and skilled workers in certain levels</li>
+        <li><strong>180 days</strong> for Golden, Green and Blue visa holders and their family members, and for divorced or widowed women in many cases</li>
+      </ul>
       <p>
-        The good news: there are multiple pathways available, and with proper legal advice most people can arrange
-        a valid residency well within the 30-day window.
+        On top of this, a woman who was living on her husband's residence visa is commonly granted a
+        <strong>one-year extension</strong> from the date of the divorce, giving her time to arrange her own status or
+        sponsor herself. This is why the blanket "you only have 30 days" line so often repeated online can be
+        misleading: for many divorced women the real window is much longer. Even so, treat 30 days as your planning
+        deadline, because relying on a longer period you have not confirmed is a needless risk.
       </p>
       <div class="cta-inline">
-        <p>Need to act fast?</p>
+        <p>Not sure which grace period applies to you?</p>
         <a href="#contact" class="btn btn--primary">Speak to a Lawyer Today</a>
       </div>
     </section>
 
     <!-- Visa options -->
     <section class="section" aria-labelledby="visa-options-heading">
-      <h2 id="visa-options-heading">Your Visa Options After Divorce in UAE</h2>
-      <p>The right option depends on your employment status, whether you have children in UAE schools, whether you own property, and your longer-term plans. Here are all the available pathways:</p>
+      <h2 id="visa-options-heading">Every Way to Stay in the UAE Legally After Divorce</h2>
+      <p>The right option depends on your employment status, whether you have children in UAE schools, whether you own property, and your longer-term plans. Here are all the available pathways, from the fastest to the most permanent:</p>
 
       <div class="visa-cards">
         {visaOptions.map((v) => (
           <div class="visa-card">
             <div class="visa-card__header">
               <h3>{v.type}</h3>
-              <span class="visa-timeline">{v.timeline}</span>
+              <span class="visa-timeline">{v.validity}</span>
             </div>
             <p class="visa-who"><strong>Who qualifies:</strong> {v.who}</p>
             <p class="visa-notes">{v.notes}</p>
           </div>
         ))}
       </div>
+      <p class="micro-note">Figures above are indicative. Government fees, salary thresholds and validity periods change and vary by emirate, free zone and profession. Always confirm current rules before you apply.</p>
     </section>
 
-    <!-- Steps to take -->
-    <section class="section" aria-labelledby="steps-heading">
-      <h2 id="steps-heading">Immediate Steps to Take After Divorce</h2>
-      <ol class="steps">
-        <li>
-          <h3>Step 1 — Get a certified copy of your divorce decree</h3>
-          <p>You will need the official, attested divorce certificate for all visa transfer processes. Make sure you have multiple certified copies — both the Arabic original and an English translation.</p>
-        </li>
-        <li>
-          <h3>Step 2 — Identify your visa pathway (within the first week)</h3>
-          <p>Consult a lawyer or your HR department immediately. Do not wait until week 3 — processing visa transfers takes time, and applications can be delayed. Identify your best option in the first 7 days.</p>
-        </li>
-        <li>
-          <h3>Step 3 — Apply for your new visa</h3>
-          <p>Submit your visa application through the relevant authority: GDRFA (General Directorate of Residency and Foreigners Affairs) for the divorce/custody visa, your employer for an employment visa, or ICA for investor and Golden Visas.</p>
-        </li>
-        <li>
-          <h3>Step 4 — Request an official status letter if needed</h3>
-          <p>If your visa application is in progress and you approach the 30-day deadline, your lawyer can request an official status letter from immigration confirming your application is under review. This protects you from overstay fines during processing.</p>
-        </li>
-        <li>
-          <h3>Step 5 — Update your Emirates ID</h3>
-          <p>Once your new visa is issued, update your Emirates ID at an ICA service centre. Your Emirates ID must match your current visa status and new marital status (divorced).</p>
-        </li>
-      </ol>
+    <!-- Comparison table -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Visa Pathways Compared at a Glance</h2>
+      <p>Use this table to shortlist the routes worth exploring, then get specific advice on the one that fits you.</p>
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Pathway</th>
+              <th>Who qualifies</th>
+              <th>Indicative cost</th>
+              <th>Validity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Employment visa</td>
+              <td>Anyone with a UAE job offer</td>
+              <td>Usually employer-paid</td>
+              <td>2 years, renewable</td>
+            </tr>
+            <tr>
+              <td>Investor / partner visa</td>
+              <td>Business owners with a trade licence</td>
+              <td>AED 10,000–20,000</td>
+              <td>2–3 years</td>
+            </tr>
+            <tr>
+              <td>Green Visa (freelance)</td>
+              <td>Freelancers ~AED 360,000/yr income</td>
+              <td>AED 4,000–6,000</td>
+              <td>5 years</td>
+            </tr>
+            <tr>
+              <td>Property owner visa</td>
+              <td>Property worth AED 750,000+</td>
+              <td>AED 4,000–15,000</td>
+              <td>2 years (10 yr at AED 2m+)</td>
+            </tr>
+            <tr>
+              <td>1-year divorced woman visa</td>
+              <td>Women previously on a spouse visa</td>
+              <td>Government fees only</td>
+              <td>1 year, renewable once</td>
+            </tr>
+            <tr>
+              <td>Sponsored by adult child</td>
+              <td>Parent of a resident meeting salary rule</td>
+              <td>AED 4,000–6,000</td>
+              <td>Tied to child's visa</td>
+            </tr>
+            <tr>
+              <td>Golden Visa</td>
+              <td>Investors, professionals, talent</td>
+              <td>AED 5,000–10,000</td>
+              <td>5 or 10 years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- 1-year divorce visa detail -->
     <section class="section" aria-labelledby="divorce-visa-heading">
-      <h2 id="divorce-visa-heading">The 1-Year Divorce Visa — For Mothers with Children in UAE Schools</h2>
+      <h2 id="divorce-visa-heading">The 1-Year Divorced Woman Visa in Detail</h2>
       <p>
-        The UAE introduced a special residency provision for divorced mothers whose children are enrolled in UAE schools.
-        This 1-year renewable visa is issued by the General Directorate of Residency and Foreigners Affairs (GDRFA) and
-        allows the mother to remain in the UAE to care for her children.
+        The UAE grants a dedicated one-year residency to a woman who was living on her husband's visa when the marriage
+        ended. Its biggest advantage is that it needs <strong>no substitute sponsor</strong>: you can hold it in your
+        own name while you find work, set up a business, or arrange self-sponsorship. It is generally renewable one
+        time. Having custody of children enrolled in UAE schools makes the case stronger and can bring the children
+        onto the same visa.
       </p>
-      <h3>Requirements for the 1-year divorce visa:</h3>
+      <h3>What you typically need to apply</h3>
       <ul class="list">
-        <li>Proof of divorce (attested divorce certificate)</li>
-        <li>Proof that children are enrolled in a UAE-licensed school</li>
-        <li>Court order or custody agreement granting you custody or residency rights</li>
-        <li>Valid passport</li>
-        <li>Proof of financial means to support yourself in the UAE</li>
+        <li>Attested divorce certificate (Arabic original, plus a legal translation if needed)</li>
+        <li>Valid passport and your existing or recently cancelled Emirates ID</li>
+        <li>Proof of custody or a court order, where children are involved</li>
+        <li>Proof that any children are enrolled in a UAE-licensed school</li>
+        <li>Proof of financial means to support yourself</li>
       </ul>
       <p>
-        The visa is renewable annually as long as the qualifying conditions (children in UAE school, custody) continue to apply.
-        Speak to a family lawyer to ensure your documentation is complete before applying.
+        Apply through <strong>GDRFA</strong> in Dubai or <strong>ICP</strong> in the other emirates. If your divorce
+        certificate still needs formalising for official use, read our guide to
+        <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation in the UAE</a>. For the
+        wider financial and housing entitlements that sit alongside your residency, see
+        <a href="/en/wife-rights-after-divorce-uae/">a wife's rights after divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Children -->
+    <section class="section" aria-labelledby="children-heading">
+      <h2 id="children-heading">Keeping Your Children On-Visa After Divorce</h2>
+      <p>
+        Children's residence visas are usually tied to the father's sponsorship. Divorce does not automatically move
+        them, so this needs to be handled deliberately, ideally as part of the divorce settlement.
+      </p>
+      <p>
+        A mother who holds a valid residence visa and is the <strong>legal custodian</strong> can generally sponsor her
+        children herself. The standard requirement is a salary of at least <strong>AED 4,000 per month</strong>, or
+        AED 3,000 plus accommodation, and ICP or GDRFA approval. Where the children were on their father's visa at the
+        moment the divorce was documented, they can usually transfer onto the mother's one-year divorced woman visa,
+        though the children's permit will not run longer than the mother's.
+      </p>
+      <p>
+        Because visa control and custody are closely linked, settle both together. Our guides to
+        <a href="/en/child-custody-uae/">child custody in the UAE</a> and, if a name change is part of your plans,
+        <a href="/en/name-change-after-divorce-uae/">changing your name after divorce</a> cover the related steps.
+        Under the 2024 Muslim personal status law custody now continues to age 18 for both boys and girls, which affects
+        how long a child can remain on a custodial parent's visa.
+      </p>
+    </section>
+
+    <!-- First 30 days -->
+    <section class="section" aria-labelledby="steps-heading">
+      <h2 id="steps-heading">What to Do in Your First 30 Days</h2>
+      <ol class="steps">
+        <li>
+          <h3>Step 1: Get certified copies of your divorce decree</h3>
+          <p>You need the official, attested divorce certificate for every visa process. Obtain several certified copies of both the Arabic original and a legal translation. Without it, no transfer can start.</p>
+        </li>
+        <li>
+          <h3>Step 2: Confirm your exact grace period</h3>
+          <p>Check with GDRFA or ICP whether you fall under the 30-day rule or a longer window (60, 90, 180 days, or the one-year divorced woman extension). Knowing your true deadline shapes everything that follows.</p>
+        </li>
+        <li>
+          <h3>Step 3: Choose your visa pathway in the first week</h3>
+          <p>Do not wait until the deadline is close. Decide early between employment, investor, Green, property, Golden, or the 1-year divorced woman visa. A lawyer or your HR team can identify the fastest realistic route within 7 days.</p>
+        </li>
+        <li>
+          <h3>Step 4: Secure your children's status</h3>
+          <p>If you have custody, start the process to sponsor your children or move them onto your visa at the same time as your own application, so there is no gap in their residency or schooling.</p>
+        </li>
+        <li>
+          <h3>Step 5: Apply, and request a status letter if needed</h3>
+          <p>Submit through the relevant authority. If processing runs close to your deadline, ask immigration for an official letter confirming your application is under review, which protects you from overstay fines.</p>
+        </li>
+        <li>
+          <h3>Step 6: Update your Emirates ID</h3>
+          <p>Once your new visa is issued, update your Emirates ID at an ICP service centre so it reflects your current visa and marital status.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Overstay -->
+    <section class="section" aria-labelledby="overstay-heading">
+      <h2 id="overstay-heading">Overstay Fines and Consequences</h2>
+      <p>
+        If you let your grace period lapse without a new visa or an approved application in progress, you are treated as
+        overstaying. The penalty is a fine of around <strong>AED 50 per day</strong>, which accumulates quickly and must
+        be cleared before you can exit or regularise your status.
+      </p>
+      <p>
+        Overstaying can also complicate future UAE visa applications and travel. It is almost always cheaper and less
+        stressful to apply for a new visa in time, or to obtain the status letter described above, than to let fines
+        build up. If money is a concern during this period, our breakdown of the
+        <a href="/en/divorce-cost-uae/">cost of divorce in the UAE</a> can help you plan.
       </p>
     </section>
 
@@ -229,41 +408,20 @@ const faqItems = [
     <section class="section" aria-labelledby="cancellation-heading">
       <h2 id="cancellation-heading">Can Your Spouse Cancel Your Visa During Divorce?</h2>
       <p>
-        This is one of the most common concerns we hear from clients — and a legitimate one. In theory, a UAE visa sponsor can
-        submit a cancellation request for a dependent's visa. In practice:
+        This is one of the most common fears we hear, and a legitimate one. In theory a UAE sponsor can submit a
+        cancellation request for a dependent's visa. In practice:
       </p>
       <ul class="list">
-        <li>UAE immigration authorities are generally cautious about cancelling visas mid-divorce proceedings</li>
-        <li>Family courts can issue interim orders protecting your residency status during proceedings</li>
-        <li>If you believe your spouse intends to cancel your visa, <strong>inform your lawyer immediately</strong></li>
-        <li>A lawyer can file for a protective order with the Personal Status Court</li>
+        <li>Immigration authorities are generally cautious about cancelling visas mid-divorce</li>
+        <li>The Personal Status Court can issue interim orders protecting your residency during proceedings</li>
+        <li>If you believe your spouse intends to cancel your visa, <strong>tell your lawyer immediately</strong></li>
+        <li>A lawyer can seek a protective order to hold your status while the case runs</li>
       </ul>
       <p>
-        Do not wait to see if it happens. Proactive legal protection during divorce proceedings is far easier than recovering a cancelled visa after the fact.
+        Do not wait to see whether it happens. Protecting your status during proceedings is far easier than recovering
+        a cancelled visa afterwards. If your residency was tied to your employer rather than your spouse, our guide on
+        the <a href="/en/divorce-employer-visa-uae/">divorce and employer visa situation</a> covers that scenario.
       </p>
-    </section>
-
-    <!-- Internal links -->
-    <section class="section" aria-labelledby="related-heading">
-      <h2 id="related-heading">Related Guides</h2>
-      <div class="service-links">
-        <a href="/en/divorce-in-uae-for-expats/" class="service-link">
-          <strong>Divorce in UAE for Expats</strong>
-          <span>How the 2022 civil law changed divorce for non-Muslims</span>
-        </a>
-        <a href="/en/wife-rights-after-divorce-uae/" class="service-link">
-          <strong>Wife's Rights After Divorce UAE</strong>
-          <span>Financial rights, alimony, and housing entitlements</span>
-        </a>
-        <a href="/en/child-custody-uae/" class="service-link">
-          <strong>Child Custody UAE</strong>
-          <span>Custody rules, rights, and the court process</span>
-        </a>
-        <a href="/en/how-to-file-for-divorce-in-dubai/" class="service-link">
-          <strong>How to File for Divorce in Dubai</strong>
-          <span>Step-by-step court filing guide</span>
-        </a>
-      </div>
     </section>
 
     <!-- FAQ -->
@@ -273,8 +431,8 @@ const faqItems = [
     <section id="contact" class="section section--cta" aria-labelledby="cta-heading">
       <h2 id="cta-heading">Get Legal Advice on Your Visa Situation</h2>
       <p>
-        Visa status after divorce is time-sensitive. Speak to a qualified UAE family lawyer within the first week
-        of your divorce being finalised. Free consultation, completely confidential.
+        Visa status after divorce is time-sensitive. Speak to a qualified UAE family lawyer as early as possible after
+        your divorce is documented. Free consultation, completely confidential.
       </p>
       <LeadForm lang="en" variant="inline" />
     </section>
@@ -283,7 +441,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2025 DivorceU.AE. Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>
@@ -303,16 +461,18 @@ const faqItems = [
   }
   .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
   .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
   .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
   .hero__trust li { opacity: 0.9; }
-  .hero__author { font-size: 0.85rem; opacity: 0.7; margin-top: 16px; margin-bottom: 0; }
 
   .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
   .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
   .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; margin-top: 24px; }
   .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: underline; }
   .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+  .micro-note { font-size: 0.8rem; color: #6b7280; font-style: italic; margin-top: 20px; }
 
   .alert-box {
     display: flex;
@@ -338,6 +498,13 @@ const faqItems = [
   .visa-timeline { font-size: 0.75rem; font-weight: 600; background: #e0e7ff; color: #3730a3; border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
   .visa-who { font-size: 0.875rem; color: #374151; margin-bottom: 6px; }
   .visa-notes { font-size: 0.875rem; color: #6b7280; margin: 0; }
+
+  .table-wrap { overflow-x: auto; margin-top: 24px; }
+  .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; min-width: 640px; }
+  .comparison-table th, .comparison-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .comparison-table thead th { background: #1e3a5f; color: #fff; font-weight: 600; }
+  .comparison-table tbody tr:nth-child(even) { background: #f8faff; }
+  .comparison-table td:first-child { font-weight: 600; color: #1e3a5f; }
 
   .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
   .steps li {
@@ -376,17 +543,6 @@ const faqItems = [
     transition: background 0.2s;
   }
   .btn--primary:hover { background: #b8942d; }
-
-  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
-  .service-link {
-    display: flex; flex-direction: column; gap: 4px;
-    padding: 20px; background: #fff;
-    border: 1.5px solid #e5e7eb; border-radius: 10px;
-    text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .service-link:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
-  .service-link strong { color: #1e3a5f; font-size: 1rem; }
-  .service-link span { color: #6b7280; font-size: 0.875rem; }
 
   .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
   .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }

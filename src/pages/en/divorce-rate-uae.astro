@@ -1,93 +1,119 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Divorce Rate in UAE 2025 — Statistics, Trends & Key Causes';
+const title = 'Divorce Rate in UAE 2026: Statistics, Trends & Data by Emirate';
 const description =
-  'UAE divorce rate facts for 2025: how many marriages end in divorce, trends over the last decade, the gap between nationals and expats, and the main causes behind rising figures.';
+  'UAE divorce rate data for 2026: official figures from the FCSC, Dubai Statistics Center and the Ministry of Justice, trends by emirate, Emirati vs expat rates, first-year divorces, and how the 2022 and 2024 laws affect the numbers.';
+
+const canonicalUrl = 'https://divorceu.ae/en/divorce-rate-uae/';
 
 const hreflang = {
-  en: 'https://divorceu.ae/en/divorce-rate-uae/',
+  en: canonicalUrl,
   ar: 'https://divorceu.ae/ar/نسبة-الطلاق-في-الامارات/',
 };
 
 const breadcrumbs = [
   { name: 'Home', url: 'https://divorceu.ae/en/' },
-  { name: 'Divorce Rate UAE', url: 'https://divorceu.ae/en/divorce-rate-uae/' },
+  { name: 'Divorce Rate UAE', url: canonicalUrl },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Divorce Rate in UAE 2026: Statistics, Trends & Data by Emirate',
+  description,
+  author: {
+    '@type': 'Person',
+    name: 'Aleksi Suoninen',
+    jobTitle: 'UAE Expat & Legal Consultant',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Divorce UAE',
+    url: 'https://divorceu.ae',
+  },
+  datePublished: '2025-04-01',
+  dateModified: '2026-07-04',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
+
 const statsCards = [
-  { stat: '~26%', label: 'Overall UAE divorce-to-marriage ratio', note: 'Roughly 1 in 4 marriages registered in the UAE ends in divorce. Figures vary by emirate and nationality.' },
-  { stat: '~48%', label: 'Emirati citizen divorce rate', note: 'The divorce rate among UAE nationals is significantly higher than the expat average, reflecting different legal access and cultural norms around remarriage.' },
-  { stat: '1–3 yrs', label: 'Median marriage duration before divorce', note: 'Most divorces in the UAE are filed within the first three years of marriage, with a secondary peak at 7–10 years.' },
-  { stat: '2022', label: 'Year of non-Muslim divorce law reform', note: 'Federal Decree-Law No. 41 of 2022 introduced no-fault civil divorce for non-Muslim expats, simplifying access to divorce for the majority of UAE residents.' },
+  { stat: '~30%', label: 'Divorces within the first year', note: 'Roughly 30% of divorces recorded across the northern federal courts happened within the first year of marriage (Ministry of Justice data, 2020–2024, reported by Khaleej Times).' },
+  { stat: '2.44', label: 'Dubai Emirati divorce rate per 1,000', note: 'The rate for Emiratis in Dubai fell from 3.76 per 1,000 in 2016 to 2.44 in 2019, and to roughly 1.9 in recent years (Dubai Statistics Center / Community Development Authority).' },
+  { stat: '84%', label: 'Share of residents who are expatriates', note: 'About 84% of the UAE population are expatriates from 200-plus nationalities, so most marriages and divorces here involve at least one non-Emirati spouse (Expatriate Law).' },
+  { stat: '590', label: 'Civil (non-Muslim) divorce requests', note: 'Around 590 divorce requests had been filed under the federal civil non-Muslim framework as of September 2024 (Charles Russell Speechlys).' },
 ];
 
 const causes = [
-  { cause: 'Incompatibility & communication breakdown', frequency: 'Most common', detail: 'Cited in the majority of mutual consent divorce filings. UAE courts have noted that early-stage marital conflicts are the leading trigger for divorce applications.' },
-  { cause: 'Financial disputes', frequency: 'Very common', detail: 'Disputes over spending, debt, financial support obligations, and differing financial expectations — particularly in high-cost emirates like Dubai and Abu Dhabi.' },
-  { cause: 'Family interference', frequency: 'Common (Nationals)', detail: 'Among Emirati nationals, interference from extended family (particularly in-laws) is consistently cited as a significant divorce cause in UAE court welfare reports.' },
-  { cause: 'Domestic violence & abuse', frequency: 'Common (underreported)', detail: 'Physical and psychological abuse is grounds for judicial divorce (faskh) for Muslim women. The 2022 law also strengthens non-Muslim access to no-fault divorce, removing the need to prove abuse.' },
-  { cause: 'Long-distance / work separation', frequency: 'Common (Expats)', detail: 'Frequent travel, long work hours, and extended family separation from home countries create relationship strain that is especially acute in the UAE\'s expatriate-heavy workforce.' },
-  { cause: 'Social media & external relationships', frequency: 'Rising', detail: 'UAE courts and the Judicial Council have flagged social media use and online relationships as a growing factor in matrimonial breakdown, particularly among younger couples.' },
-  { cause: 'Hasty or arranged marriages', frequency: 'Documented', detail: 'Short courtship periods and social pressure to marry have been specifically cited in UAE National Programme for Happiness research as a contributing factor to early-stage divorce.' },
+  { cause: 'Incompatibility and unmet expectations', frequency: 'Most common', detail: 'Family counsellors quoted by Khaleej Times attribute most early breakdowns to a lack of compatibility rather than a lack of love. Disputes over housing, work expectations and daily life surface soon after couples start living together.' },
+  { cause: 'Financial disputes', frequency: 'Very common', detail: 'Arguments over spending, debt, mahr, and maintenance obligations rank among the top triggers, especially in high-cost emirates like Dubai and Abu Dhabi where housing and schooling costs strain young households.' },
+  { cause: 'Extended family interference', frequency: 'Common (nationals)', detail: 'Among Emirati couples, interference from in-laws and extended family is repeatedly cited in court welfare research as a driver of early divorce, alongside the involvement of relatives in day-to-day marital decisions.' },
+  { cause: 'Poor preparation for married life', frequency: 'Common', detail: 'Lawyers told Khaleej Times that a gap between legal commitment and emotional readiness leaves many couples unprepared. Short courtships and social pressure to marry compress the time to assess compatibility.' },
+  { cause: 'Domestic violence and abuse', frequency: 'Reported (underreported)', detail: 'Physical and psychological abuse is grounds for judicial divorce. Federal Decree-Law No. 13 of 2024 on protection against domestic violence covers physical, psychological, sexual and economic abuse, and the civil law lets non-Muslims divorce without proving harm.' },
+  { cause: 'Work separation and travel', frequency: 'Common (expats)', detail: 'Long hours, frequent travel and separation from home-country support networks strain relationships across the UAE workforce, which is heavily expatriate and mobile.' },
+  { cause: 'Social media and online relationships', frequency: 'Rising', detail: 'UAE courts and family experts have flagged social media use as a growing factor in matrimonial breakdown, particularly among younger couples. This is cited as a contributor rather than a measured statistic.' },
 ];
 
 const emirateData = [
-  { emirate: 'Dubai', divorceRatio: 'High', note: 'Largest expatriate population; significant non-Muslim divorce caseload, especially post-2022 reform. Dubai Courts Family Department handles high case volume.' },
-  { emirate: 'Abu Dhabi', divorceRatio: 'High', note: 'High Emirati national population relative to other emirates; historically elevated national divorce rate, offset by larger expat base.' },
-  { emirate: 'Sharjah', divorceRatio: 'Moderate', note: 'More conservative social norms; family reconciliation services are actively used. Lower absolute divorce numbers than Dubai.' },
-  { emirate: 'Northern Emirates', divorceRatio: 'Moderate–Low', note: 'Smaller populations and fewer commercial courts. Tribal and extended family mediation remains influential in reducing formal filings.' },
+  { emirate: 'Dubai', divorceRatio: '~1.9 / 1,000', note: 'The Emirati divorce rate fell 35% between 2016 and 2019 (3.76 to 2.44 per 1,000) and has since eased to around 1.9, described as a decade low (Dubai Statistics Center). Dubai still handles the largest absolute expat caseload, which is not captured in the Emirati-only rate.' },
+  { emirate: 'Abu Dhabi', divorceRatio: 'Reported high', note: 'Home to the specialist Civil Family Court under Abu Dhabi Law No. 14 of 2021. Research reported by Maudsley Health suggested a majority of Emirati couples in Abu Dhabi separated within the first four years; treat this as a reported study figure, not an official annual rate.' },
+  { emirate: 'Sharjah', divorceRatio: '217 cases (2024)', note: 'Sharjah recorded the highest divorce count among the northern federal courts in 2024 (217 cases), reflecting its larger population rather than an unusually high per-capita rate (Ministry of Justice, via Khaleej Times).' },
+  { emirate: 'Ajman', divorceRatio: '167 cases (2024)', note: 'Second highest among the four northern courts in 2024, at 167 cases (Ministry of Justice, via Khaleej Times).' },
+  { emirate: 'Fujairah', divorceRatio: '67 cases (2024)', note: 'Smaller population and a lower absolute count of 67 divorces in 2024 (Ministry of Justice, via Khaleej Times).' },
+  { emirate: 'Umm Al Quwain', divorceRatio: '22 cases (2024)', note: 'The smallest emirate by population recorded the fewest of the four northern federal courts, at 22 divorces in 2024 (Ministry of Justice, via Khaleej Times).' },
 ];
 
 const faqItems = [
   {
     question: 'What is the divorce rate in the UAE?',
-    answer: 'The UAE\'s overall divorce-to-marriage ratio is approximately 25–30% when looking at all residents (nationals and expats combined). Among Emirati nationals specifically, estimates have placed the rate as high as 46–50% in some years, though official figures vary by source and year. The UAE National Statistics Authority publishes annual marriage and divorce counts; the most recent available data shows divorces increasing in absolute terms alongside population growth.',
+    answer: 'There is no single official "UAE divorce rate," because figures are published as crude rates per 1,000 people, as annual counts, and as divorce-to-marriage ratios that mix different marriage cohorts. For Emiratis in Dubai, the Dubai Statistics Center reports a rate of around 1.9 per 1,000 people of marriage age in recent years, down from 2.44 in 2019 and 3.76 in 2016. Ministry of Justice data reported by Khaleej Times shows roughly 30% of divorces in the northern emirates happen within the first year of marriage. Expat divorces are only partly captured in official counts, so headline figures understate total marital breakdown.',
   },
   {
     question: 'Is the divorce rate in Dubai higher than the UAE average?',
-    answer: 'Dubai consistently records the highest absolute number of divorce filings in the UAE, driven by its large and diverse population. On a per-capita basis, Dubai\'s rate is comparable to the national average. Following the 2022 non-Muslim divorce law reform, Dubai courts saw a notable rise in civil divorce filings from expatriates who previously lacked a straightforward legal path to divorce under UAE law.',
+    answer: 'Dubai records the highest absolute number of divorce filings because it has the largest and most diverse population. On a per-capita basis, however, the Emirati divorce rate in Dubai has fallen sharply, down 35% between 2016 and 2019 according to the Dubai Statistics Center and Community Development Authority, and to around 1.9 per 1,000 recently. After the 2022 civil law reform, Dubai courts also saw more expatriate civil divorces enter the official count.',
   },
   {
-    question: 'Why is the divorce rate high among UAE nationals?',
-    answer: 'Several factors are cited in research: short courtship periods, early marriage ages, extended family pressure, relatively accessible remarriage (particularly for men under Islamic law), and financial disputes over mahr and maintenance obligations. The UAE government has responded with mandatory pre-marital counselling for nationals and family guidance centres attached to all Personal Status Courts.',
+    question: 'Why do so many UAE divorces happen in the first year?',
+    answer: 'Ministry of Justice data reported by Khaleej Times shows about 30% of divorces occur within the first year of marriage. Lawyers and counsellors attribute this to unmet expectations, a gap between legal commitment and emotional readiness, short courtships, and disputes over finances, housing, work expectations and the role of extended family that surface once couples live together. In one Ministry of Justice sample, some marriages ended within hours or days, while others followed unions of 40 to 58 years.',
   },
   {
-    question: 'Does the 2022 law change how divorce statistics are counted?',
-    answer: 'Yes, indirectly. The 2022 Federal Decree-Law No. 41 created a new civil divorce pathway for non-Muslim expats, meaning divorces that previously required home-country proceedings or DIFC jurisdiction are now recorded in UAE court statistics. This is expected to increase the reported UAE divorce rate going forward simply because more divorces now go through UAE courts rather than being handled abroad.',
+    question: 'How does the 2022 civil law change the divorce numbers?',
+    answer: 'Federal Decree-Law No. 41 of 2022 created a civil, no-fault divorce pathway for non-Muslims across all seven emirates from February 2023, building on Abu Dhabi Law No. 14 of 2021. Divorces that previously ran through home-country courts, consulates, or the Abu Dhabi civil court are now more likely to be recorded in UAE court statistics. Around 590 civil divorce requests had been filed federally as of September 2024 (Charles Russell Speechlys). This means recent counts capture more expat divorces than earlier years, so year-on-year comparisons should be read with caution.',
   },
   {
-    question: 'What percentage of UAE divorces involve children?',
-    answer: 'UAE family court data indicates that approximately 40–50% of divorce cases involve minor children, which is the primary driver of contested divorce proceedings and longer case timelines. Child custody disputes are the most complex and expensive type of divorce case in the UAE.',
+    question: 'Does the 2024 Muslim personal status law affect divorce statistics?',
+    answer: 'Federal Decree-Law No. 41 of 2024 replaced the 2005 law for Muslims from 15 April 2025. It shortened the reconciliation period to 60 days, requires the divorce to be documented at court within a short window, and counts repeated pronouncements as a single divorce. These procedural changes affect how and when divorces are recorded, which can influence the timing of cases appearing in annual statistics, though they do not by themselves make more or fewer marriages end.',
   },
   {
     question: 'How does the UAE divorce rate compare globally?',
-    answer: 'The UAE\'s crude divorce rate (divorces per 1,000 population) is roughly in line with Western European countries. The USA and Russia have higher crude divorce rates. Gulf Cooperation Council neighbours — Saudi Arabia, Qatar, Kuwait — have similarly elevated national divorce rates. The MENA region overall has seen rising divorce rates over the past two decades as urbanisation, women\'s workforce participation, and legal reforms have expanded access to divorce.',
+    answer: 'The UAE\'s crude divorce rate is broadly in line with many Western European countries and lower than the United States. Gulf neighbours such as Kuwait, Saudi Arabia and Qatar report similarly elevated national divorce rates. Across the wider MENA region, divorce rates have risen over the past two decades alongside urbanisation, higher women\'s workforce participation, and legal reforms that widened access to divorce.',
   },
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical="https://divorceu.ae/en/divorce-rate-uae/" lang="en" hreflang={hreflang}>
+<BaseLayout title={title} description={description} canonical={canonicalUrl} lang="en" hreflang={hreflang} schema={articleSchema}>
   <Breadcrumb items={breadcrumbs} />
 
   <!-- Hero -->
   <section class="hero-section">
     <div class="container">
-      <p class="overline">Statistics &amp; Analysis · UAE 2025</p>
-      <h1>Divorce Rate in UAE 2025 — Statistics, Trends &amp; Key Causes</h1>
-      <p class="hero-sub">How many marriages in the UAE end in divorce, how figures have changed over the past decade, the difference between nationals and expats, and what is driving the numbers. Based on UAE court records, government statistics, and published research.</p>
-      <div class="hero-meta">
-        <span>Updated: April 2025</span>
-        <span class="sep">·</span>
-        <span>By Aleksi Suoninen, UAE Expat &amp; Legal Consultant</span>
-      </div>
+      <p class="overline">Statistics &amp; Data · UAE 2026</p>
+      <h1>Divorce Rate in UAE 2026: Statistics, Trends &amp; Data by Emirate</h1>
+      <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated 4 July 2026</p>
+      <p class="hero-sub">What the official numbers actually say about divorce in the UAE: rates by emirate, the gap between Emiratis and expatriates, why so many marriages end in the first year, and how the 2022 and 2024 legal reforms are changing the count. Every figure below is attributed to its source and year.</p>
     </div>
   </section>
 
   <main class="main-content">
+    <figure style="margin:0 0 8px;">
+      <img src="/images/divorce-rate-uae.webp" alt="UAE divorce rate: the Dubai and Abu Dhabi skyline at golden hour" width="1200" height="675" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px;" />
+    </figure>
     <div class="container">
 
       <!-- Stats cards -->
@@ -104,27 +130,85 @@ const faqItems = [
       <!-- Context -->
       <section class="content-section">
         <h2>Understanding UAE Divorce Statistics</h2>
-        <p>UAE divorce statistics are reported by the Federal Competitiveness and Statistics Centre (FCSC) and individual emirate courts. They count registered divorces in UAE Personal Status Courts — which means they historically undercounted expat divorces, since many expatriates handled divorces through their home-country consulates or the DIFC Courts rather than UAE family courts.</p>
-        <p>Since the introduction of Federal Decree-Law No. 41 of 2022, non-Muslim expatriates have a dedicated civil divorce pathway in UAE courts. This has shifted more expat divorces into the official UAE court count, making post-2022 statistics less comparable to earlier years.</p>
-        <p>When sources quote a "UAE divorce rate," they may mean: the crude divorce rate (divorces per 1,000 population), the divorce-to-marriage ratio (divorces in a year divided by marriages in the same year), or the cumulative divorce probability for a given cohort. These produce very different-looking numbers from the same underlying data.</p>
+        <p>UAE divorce data comes from several separate bodies, and they do not measure the same thing. The Federal Competitiveness and Statistics Centre (FCSC) publishes registered marriage and divorce contracts by emirate and nationality. The Dubai Statistics Center, working with Dubai Courts and the Community Development Authority, reports rates specifically for Emiratis. The Ministry of Justice releases counts from the federal courts that serve Sharjah, Ajman, Fujairah and Umm Al Quwain. Because each source counts a different population, quoting a single "UAE divorce rate" without saying whose rate it is can be misleading.</p>
+        <p>There is a second problem: most official figures capture Emirati divorces far better than expat ones. About 84% of UAE residents are expatriates (Expatriate Law), and many of them historically divorced through their home-country courts or consulates rather than UAE family courts. That means headline national rates have long understated total marital breakdown among residents.</p>
+        <p>When a source quotes a "divorce rate," it usually means one of three things: the crude divorce rate (divorces per 1,000 population), the divorce-to-marriage ratio (divorces in a year divided by marriages in the same year), or the cumulative probability that a given cohort of marriages ends in divorce. These produce very different-looking numbers from the same underlying data, so it is worth checking which one a headline is using before drawing conclusions. If you are weighing your own situation, our <a href="/en/divorce-in-uae/">complete guide to divorce in the UAE</a> explains the process behind the numbers.</p>
 
         <div class="info-box info-box--blue">
-          <h3>What the Numbers Actually Mean</h3>
-          <p>A divorce-to-marriage ratio of 26% does NOT mean 26% of marriages end in divorce. It means that in a given year, for every 100 marriages registered, 26 divorces were also registered — but those divorces are from marriages that began in previous years. The true lifetime divorce probability for UAE marriages is not precisely known but is estimated at 30–40% for nationals and 15–20% for expatriates.</p>
+          <h3>What a Divorce-to-Marriage Ratio Actually Means</h3>
+          <p>A divorce-to-marriage ratio of, say, 26% does NOT mean 26% of marriages end in divorce. It means that for every 100 marriages registered in a year, 26 divorces were also registered, but those divorces come from marriages that began in earlier years. During periods of falling marriage numbers, the ratio can look alarming even when the underlying divorce rate is stable or dropping. Always check whether a figure is a per-1,000 rate, an annual count, or a ratio.</p>
         </div>
       </section>
 
-      <!-- Trends -->
+      <!-- Headline data -->
       <section class="content-section">
-        <h2>Trends Over the Past Decade</h2>
+        <h2>The Headline Numbers for 2024–2026</h2>
+        <p>Here are the most recent verifiable figures, each tied to its source. Where a number comes from a study or a news report rather than an official annual series, it is labelled as reported.</p>
+
+        <div class="table-wrapper">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Figure</th>
+                <th>Source &amp; year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-label">Divorces within first year of marriage</td>
+                <td class="td-cost">~30%</td>
+                <td class="td-notes">Ministry of Justice, northern federal courts, 2020–2024, reported by Khaleej Times (2025). 851 of 2,857 cases.</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-label">Dubai Emirati divorce rate</td>
+                <td class="td-cost">~1.9 / 1,000</td>
+                <td class="td-notes">Dubai Statistics Center, recent year; down from 2.44 (2019) and 3.76 (2016).</td>
+              </tr>
+              <tr>
+                <td class="td-label">Fall in Dubai divorce rate 2016–2019</td>
+                <td class="td-cost">35%</td>
+                <td class="td-notes">Dubai Statistics Center / Community Development Authority (2020).</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-label">Northern emirates divorces (2024)</td>
+                <td class="td-cost">473</td>
+                <td class="td-notes">Ministry of Justice, Sharjah, Ajman, Fujairah, Umm Al Quwain, reported by Khaleej Times (2025).</td>
+              </tr>
+              <tr>
+                <td class="td-label">Civil (non-Muslim) divorce requests filed</td>
+                <td class="td-cost">~590</td>
+                <td class="td-notes">Federal civil framework, as of September 2024 (Charles Russell Speechlys).</td>
+              </tr>
+              <tr class="row-alt">
+                <td class="td-label">Civil marriages registered (Abu Dhabi Law 14/2021)</td>
+                <td class="td-cost">26,000+</td>
+                <td class="td-notes">Since the Abu Dhabi civil regime began, reported by Charles Russell Speechlys.</td>
+              </tr>
+              <tr>
+                <td class="td-label">UAE divorce cases (2021)</td>
+                <td class="td-cost">~5,400</td>
+                <td class="td-notes">Statista, up from ~4,200 in 2020 (reported).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The single most striking pattern in this data is timing, not volume. The Ministry of Justice sample reported by Gulf News covered 519 divorces in the northern courts and included 14 "rapid divorce" cases where the marriage lasted less than a month, one ending within hours of the contract and another after a single day, alongside separations after 36, 40 and even 58 years of marriage. Marriages in the UAE are ending across the entire spectrum of duration, but the concentration in the first year is what draws the most concern from courts and counsellors.</p>
+      </section>
+
+      <!-- Dubai trend -->
+      <section class="content-section">
+        <h2>The Dubai Trend: A Genuine Decline</h2>
+        <p>Dubai is the one emirate with a clear, official long-run series for Emiratis, and it tells a consistent story of decline. The Dubai Statistics Center, with Dubai Courts and the Community Development Authority, reported that the divorce rate for Emiratis fell 35% between 2016 and 2019: from 3.76 per 1,000 people of marriage age to 2.44. The net divorce rate for married couples dropped about 33.5% over the same period, from 11.95 to 7.95. More recent reporting puts the Emirati rate at roughly 1.9 per 1,000, described as the lowest in a decade.</p>
+        <p>Two caveats matter. First, this is an Emiratis-only measure; it says nothing directly about the expatriate majority who make up most of Dubai's residents. Second, a falling per-capita rate can sit alongside a rising absolute number of court cases if the population is also growing, which is why headlines sometimes appear to contradict each other. Both can be true at once.</p>
 
         <div class="trend-list">
           {[
-            { year: '2013–2016', trend: 'Stable', desc: 'Divorce rates among nationals were broadly stable. Expat divorces largely handled outside UAE courts.' },
-            { year: '2017–2019', trend: 'Gradually rising', desc: 'Increasing divorce filings particularly in Dubai and Abu Dhabi. UAE government introduces expanded family counselling services in response.' },
-            { year: '2020–2021', trend: 'Spike', desc: 'COVID-19 lockdowns correlated with a notable increase in divorce filings across the UAE, consistent with global trends. Extended cohabitation and financial stress were cited as triggers.' },
-            { year: '2022', trend: 'Legal reform', desc: 'Federal Decree-Law No. 41 creates civil divorce for non-Muslims. Significant increase in expat divorce filings in Dubai Courts from H2 2022 onward.' },
-            { year: '2023–2025', trend: 'Rising (adjusted)', desc: 'Official statistics show rising absolute divorce numbers, partly reflecting the broader capture of expat divorces post-reform. Per-capita trends among nationals remain elevated.' },
+            { year: '2016', trend: 'Baseline', desc: 'Dubai Emirati divorce rate at 3.76 per 1,000 people of marriage age; net rate for married couples at 11.95 (Dubai Statistics Center).' },
+            { year: '2019', trend: 'Down 35%', desc: 'Rate falls to 2.44 per 1,000 and net rate to 7.95, a 35% and 33.5% decline respectively over four years (Dubai Statistics Center / CDA, 2020).' },
+            { year: '2020–2021', trend: 'Pandemic pressure', desc: 'Statista figures show UAE divorce cases rising to roughly 5,400 in 2021 from about 4,200 in 2020, consistent with global pandemic-era trends (reported).' },
+            { year: '2023', trend: 'Reform takes effect', desc: 'Federal Decree-Law No. 41 of 2022 (civil, non-Muslim) in force from February; more expat divorces begin entering UAE court records.' },
+            { year: '2024–2025', trend: 'Recent low + new law', desc: 'Dubai Emirati rate reported near 1.9 per 1,000. Federal Decree-Law No. 41 of 2024 replaces the 2005 Muslim law from 15 April 2025, changing how and when divorces are documented.' },
           ].map(t => (
             <div class="trend-item">
               <div class="trend-year">{t.year}</div>
@@ -139,16 +223,16 @@ const faqItems = [
 
       <!-- Emirate breakdown -->
       <section class="content-section">
-        <h2>Divorce Rates by Emirate</h2>
-        <p>Divorce rates vary significantly across the seven emirates, driven by differences in population composition, legal infrastructure, and cultural norms.</p>
+        <h2>Divorce Data by Emirate</h2>
+        <p>Numbers vary across the seven emirates, driven mainly by population size and which court publishes the data. The counts below for the northern emirates are absolute case numbers for 2024, so a higher figure reflects a larger population, not necessarily a higher per-capita rate. Dubai and Abu Dhabi report differently, which is why their entries use rates and study findings rather than raw counts.</p>
 
         <div class="table-wrapper">
           <table class="cost-table">
             <thead>
               <tr>
                 <th>Emirate</th>
-                <th>Divorce Ratio</th>
-                <th>Key Context</th>
+                <th>Latest figure</th>
+                <th>Key context</th>
               </tr>
             </thead>
             <tbody>
@@ -162,12 +246,21 @@ const faqItems = [
             </tbody>
           </table>
         </div>
+        <p>For expatriates, where you divorce shapes both the process and the outcome. Abu Dhabi's Civil Family Court and the federal civil law offer a no-fault route, while other emirates apply the family courts. Our guide to <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a> and the overview of <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a> explain how these venues differ in practice.</p>
+      </section>
+
+      <!-- Emirati vs expat -->
+      <section class="content-section">
+        <h2>Emiratis vs Expatriates: A Two-Track Picture</h2>
+        <p>The most important thing to understand about UAE divorce statistics is that they describe two very different populations that the data rarely separates cleanly. Emirati divorces are well documented through Dubai Statistics Center and Ministry of Justice reporting. Expatriate divorces, covering the roughly 84% of residents who are foreign nationals, are only partially captured, because many expats divorced abroad or, before 2023, had no clean UAE civil route.</p>
+        <p>Historically, the divorce rate among Emirati nationals has been reported as higher than the expat average, with some year-specific estimates in the 40 to 50% range. Those figures should be read as reported ratios that vary by source and year, not a fixed lifetime probability. The reasons cited in research include earlier marriage ages, shorter courtships, extended-family involvement, and relatively accessible remarriage. For the practical side of what happens next, see our guides on <a href="/en/grounds-for-divorce-uae/">grounds for divorce in the UAE</a> and <a href="/en/remarriage-after-divorce-uae/">remarriage after divorce</a>.</p>
+        <p>The expat picture is now shifting because the civil law finally gives non-Muslims a straightforward UAE pathway. As more of those divorces are recorded domestically, official counts will rise even if the underlying rate of relationship breakdown does not. That is a recording effect, not necessarily a real increase, and it is the single biggest reason to be careful comparing pre-2023 and post-2023 numbers.</p>
       </section>
 
       <!-- Causes -->
       <section class="content-section">
-        <h2>Main Causes of Divorce in the UAE</h2>
-        <p>UAE family courts and government research identify the following as the most frequently cited causes in divorce proceedings and welfare reports.</p>
+        <h2>Why UAE Marriages End: Cited Causes</h2>
+        <p>UAE courts, family guidance centres and family lawyers point to a consistent set of causes in divorce proceedings and welfare research. The frequency labels below reflect how often each factor is cited in reporting, not a precise measured share of cases.</p>
 
         <div class="cause-list">
           {causes.map(c => (
@@ -184,14 +277,15 @@ const faqItems = [
 
       <!-- Government response -->
       <section class="content-section">
-        <h2>Government Initiatives to Reduce Divorce</h2>
+        <h2>Government Initiatives Behind the Falling Rate</h2>
+        <p>Dubai's declining Emirati divorce rate has not happened in a vacuum. The UAE has invested heavily in family-stability programmes, and officials have publicly linked these to the improving figures.</p>
 
         <div class="initiative-list">
           {[
-            { initiative: 'Mandatory pre-marital counselling for UAE nationals', detail: 'Since 2008, UAE nationals must complete a pre-marital counselling course before obtaining a marriage licence. The programme covers communication, financial planning, and family values.' },
-            { initiative: 'Family Guidance Sections in all courts', detail: 'Every UAE Personal Status Court has a Family Guidance and Reconciliation department. Attendance is mandatory before divorce proceedings can begin. Reconciliation rates are approximately 10–15%.' },
-            { initiative: 'Marriage Fund (Sandooq Al Zawaj)', detail: 'The UAE Marriage Fund provides financial assistance and counselling to Emirati men to reduce barriers to marriage and support marital stability. Recipients receive pre-marital training as a condition.' },
-            { initiative: 'National Programme for Happiness — family stability pillar', detail: 'The UAE\'s national happiness programme includes family stability as a core metric. Research commissioned under this programme has produced policy recommendations on causes of and interventions for divorce.' },
+            { initiative: 'Mandatory pre-marital counselling for nationals', detail: 'UAE nationals complete a pre-marital course before obtaining a marriage licence, covering communication, financial planning and family values. This targets exactly the early-year disputes that data shows are most common.' },
+            { initiative: 'Family Guidance and Reconciliation departments', detail: 'For Muslim (Sharia-track) divorces, cases begin at a Family Guidance department with compulsory mediation. Under Federal Decree-Law No. 41 of 2024 the reconciliation window is now 60 days, down from 90. Non-Muslims under the civil law are not required to attend.' },
+            { initiative: 'Community Development Authority programmes', detail: 'In Dubai, the CDA co-authored the divorce-rate reports and runs family-support initiatives. Officials have credited counselling and awareness work with part of the 35% decline recorded between 2016 and 2019.' },
+            { initiative: 'National family-stability policy', detail: 'The UAE treats family stability as a national metric and commissions research on the causes of divorce, which feeds back into counselling programmes and the design of the 2022 and 2024 legal reforms.' },
           ].map((item, i) => (
             <div class="tip-item">
               <div class="tip-number">{i + 1}</div>
@@ -204,16 +298,39 @@ const faqItems = [
         </div>
       </section>
 
+      <!-- What it means -->
+      <section class="content-section">
+        <h2>What These Numbers Mean If You Are Considering Divorce</h2>
+        <p>Statistics describe populations, not people. A falling Emirati rate in Dubai or a 30% first-year figure tells you nothing about whether your own marriage should end. What the data can usefully tell you is that you are not an outlier, that early-marriage strain is common and well understood by UAE courts, and that the system now has clearer pathways than it did a few years ago.</p>
+        <p>Three practical points follow from the numbers. First, the law you fall under matters more than any rate: Muslims come under Federal Decree-Law No. 41 of 2024, while non-Muslims can use the civil no-fault route under Federal Decree-Law No. 41 of 2022. Our overview of <a href="/en/uae-divorce-law/">UAE divorce law</a> breaks down which applies to you. Second, timing and process differ sharply by track, which our <a href="/en/divorce-timeline-uae/">UAE divorce timeline</a> guide sets out step by step. Third, cost varies widely between uncontested and contested cases; the <a href="/en/divorce-cost-uae/">divorce cost guide</a> gives current fee ranges so the financial picture is not a surprise.</p>
+        <p>The strongest signal in the UAE data is that early intervention works. Counsellors quoted in the Ministry of Justice reporting stress that many first-year divorces stem from preparation gaps and unmet expectations rather than irreparable conflict. If your situation is unresolved rather than final, that is worth weighing before filing.</p>
+      </section>
+
       <!-- FAQ -->
       <section class="content-section">
         <h2>Frequently Asked Questions</h2>
         <FAQSection items={faqItems} />
       </section>
 
+      <!-- Sources -->
+      <section class="content-section">
+        <h2>Sources</h2>
+        <ul class="source-list">
+          <li>Federal Competitiveness and Statistics Centre (FCSC): registered marriages and divorces by emirate and nationality, uaestat.fcsc.gov.ae.</li>
+          <li>Dubai Statistics Center &amp; Community Development Authority: divorce and marriage rates for Emiratis, Emirate of Dubai (2016–2019 report, 2020; recent series).</li>
+          <li>Ministry of Justice: federal court divorce data for Sharjah, Ajman, Fujairah and Umm Al Quwain, as reported by Khaleej Times and Gulf News (2025).</li>
+          <li>Charles Russell Speechlys: 26,000+ civil marriages and ~590 civil divorce requests as of September 2024.</li>
+          <li>Expatriate Law: 84% of UAE residents are expatriates.</li>
+          <li>Statista: UAE number of divorce cases, 2009–2024 series.</li>
+          <li>Maudsley Health: reported study on early divorce among Emirati couples in Abu Dhabi.</li>
+        </ul>
+        <p class="source-note">Figures labelled "reported" come from news coverage or studies rather than an official annual statistical series, and are attributed as such above. Legal instruments cited: Federal Decree-Law No. 41 of 2022 (civil, non-Muslim), Federal Decree-Law No. 41 of 2024 (Muslim personal status), Abu Dhabi Law No. 14 of 2021, and Federal Decree-Law No. 13 of 2024 (domestic violence).</p>
+      </section>
+
       <!-- CTA -->
       <div class="cta-box">
         <h2>Going Through a Divorce in the UAE?</h2>
-        <p>Statistics are one thing — your situation is personal. Get a free, confidential consultation to understand your rights, timelines, and options before you make any decisions.</p>
+        <p>Statistics describe the crowd; your case is your own. Get a free, confidential consultation to understand your rights, likely timeline and costs before you make any decisions.</p>
         <LeadForm source="divorce-rate-uae" />
       </div>
 
@@ -222,10 +339,12 @@ const faqItems = [
         <h2>Related Guides</h2>
         <div class="related-grid">
           {[
-            { title: 'Divorce in UAE — Complete Guide', href: '/en/divorce-in-uae', desc: 'Everything you need to know about the UAE divorce process.' },
-            { title: 'UAE Divorce Law', href: '/en/uae-divorce-law', desc: 'Personal Status Law, 2022 reforms, and your legal rights.' },
-            { title: 'Divorce Cost UAE', href: '/en/divorce-cost-uae', desc: 'Court fees, lawyer fees, and how to budget accurately.' },
-            { title: 'How to File for Divorce in Dubai', href: '/en/how-to-file-for-divorce-in-dubai', desc: 'Step-by-step guide to the filing process.' },
+            { title: 'Divorce in UAE: Complete Guide', href: '/en/divorce-in-uae/', desc: 'Everything you need to know about the UAE divorce process.' },
+            { title: 'UAE Divorce Law', href: '/en/uae-divorce-law/', desc: 'Personal status law, 2022 and 2024 reforms, and your rights.' },
+            { title: 'Divorce Cost UAE', href: '/en/divorce-cost-uae/', desc: 'Court fees, lawyer fees, and how to budget accurately.' },
+            { title: 'Divorce for Expats in UAE', href: '/en/divorce-for-expats-in-uae/', desc: 'Forum choice, civil law, and outcomes for foreign nationals.' },
+            { title: 'Grounds for Divorce UAE', href: '/en/grounds-for-divorce-uae/', desc: 'The legal reasons that support a divorce petition.' },
+            { title: 'Divorce Timeline UAE', href: '/en/divorce-timeline-uae/', desc: 'How long each stage takes, from filing to final decree.' },
           ].map(link => (
             <a href={link.href} class="related-card">
               <span class="related-title">{link.title} →</span>
@@ -244,10 +363,9 @@ const faqItems = [
   .hero-section { background: #0a1628; color: #fff; padding: 3.5rem 1.5rem; }
   .hero-section .container { max-width: 56rem; margin: 0 auto; }
   .overline { color: #c9a84c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
-  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.25; margin-bottom: 0.75rem; }
+  .byline { color: #c9a84c; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
   .hero-sub { color: #b0bec5; font-size: 1.05rem; line-height: 1.7; }
-  .hero-meta { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: #7a8fa6; }
-  .sep { opacity: 0.4; }
 
   /* ── Main container ───────────────────────────────── */
   .main-content { padding: 3rem 1.5rem; }
@@ -255,6 +373,8 @@ const faqItems = [
   .content-section { margin-bottom: 3.5rem; }
   .content-section h2 { font-size: 1.55rem; font-weight: 800; color: #0a1628; margin-bottom: 0.75rem; }
   .content-section p { color: #445; line-height: 1.75; margin-bottom: 1rem; }
+  .content-section a { color: #1a5cd8; text-decoration: underline; text-underline-offset: 2px; }
+  .content-section a:hover { color: #0a1628; }
 
   /* ── Stats row ────────────────────────────────────── */
   .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
@@ -302,6 +422,11 @@ const faqItems = [
   .tip-number { width: 2rem; height: 2rem; min-width: 2rem; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-top: 0.1rem; }
   .tip-content h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin-bottom: 0.3rem; }
   .tip-content p { font-size: 0.85rem; color: #556; line-height: 1.65; margin: 0; }
+
+  /* ── Source list ──────────────────────────────────── */
+  .source-list { list-style: disc; padding-left: 1.4rem; margin-bottom: 1rem; }
+  .source-list li { color: #556; font-size: 0.84rem; line-height: 1.6; margin-bottom: 0.4rem; }
+  .source-note { font-size: 0.8rem; color: #778; line-height: 1.6; }
 
   /* ── CTA box ──────────────────────────────────────── */
   .cta-box { background: #0a1628; color: #fff; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }

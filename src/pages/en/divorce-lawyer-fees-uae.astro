@@ -1,0 +1,658 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Lawyer Fees in UAE 2026: What You Will Pay';
+const description =
+  'Divorce lawyer fees in the UAE for 2026: fixed fee vs hourly vs retainer, consultation costs, what drives lawyer fees, and how to budget before you hire.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-lawyer-fees-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Lawyer Fees UAE', url: 'https://divorceu.ae/en/divorce-lawyer-fees-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/divorce-lawyer-fees-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'How much do divorce lawyers cost in the UAE?',
+    answer:
+      'Indicative only: an uncontested or mutual-consent divorce commonly runs AED 8,000 to 25,000 in lawyer fees, often as a fixed fee. A contested divorce usually starts around AED 40,000 and reaches AED 80,000 with custody or asset disputes, while complex cases with business valuations or international custody can exceed AED 150,000. These are law-firm cost-guide ranges, not an official schedule, and they vary by firm and case.',
+  },
+  {
+    question: 'Is the first divorce consultation free in the UAE?',
+    answer:
+      'Many firms offer a free first consultation, usually 20 to 30 minutes, to review your situation and quote a fee. Others charge AED 500 to 1,500 for a longer strategy session with a senior lawyer. Always confirm before you book, and ask what the consultation covers.',
+  },
+  {
+    question: 'What is the difference between a fixed fee and a retainer?',
+    answer:
+      'A fixed fee is one agreed price for a defined scope, common for uncontested divorces. A retainer is an upfront sum that the lawyer draws against as they work, with hours billed at an agreed rate and topped up when it runs low. Monthly retainers for ongoing contested matters commonly start around AED 10,000. Fixed fees give you cost certainty; retainers suit disputes where the workload is hard to predict.',
+  },
+  {
+    question: 'How much do divorce lawyers charge per hour in Dubai?',
+    answer:
+      'Indicative hourly rates run roughly AED 750 to 1,000 for junior lawyers, AED 1,200 to 1,800 for mid-level lawyers, and AED 2,000 to 2,500 for senior partners, with some senior specialists quoting higher. Hourly billing is most common in contested cases where the number of hearings is uncertain.',
+  },
+  {
+    question: 'Why is a contested divorce so much more expensive?',
+    answer:
+      'A contested divorce means the court decides custody, maintenance or assets after multiple hearings, evidence and sometimes court-appointed experts. Each hearing, document and expert report adds lawyer hours, and the case can run one to three years including appeals. An uncontested divorce, by contrast, is largely a matter of drafting and confirming an agreement, so it needs far fewer hours.',
+  },
+  {
+    question: 'Do I pay extra for a power of attorney if I am abroad?',
+    answer:
+      'Yes. If you appoint a UAE lawyer to act for you from overseas, the power of attorney must be notarised, legalised or attested, and translated into Arabic. Attestation and translation are separate charges, commonly a few hundred to a couple of thousand dirhams depending on your country, and they sit on top of the lawyer fee.',
+  },
+  {
+    question: 'Are lawyer fees the only cost of a UAE divorce?',
+    answer:
+      'No. Lawyer fees are usually the largest single item, but you also pay government filing and court fees, translation and attestation of documents, and any expert or welfare reports the court orders. For the full picture including those non-lawyer costs, see our cost of divorce in the UAE guide.',
+  },
+  {
+    question: 'Can I get help with divorce lawyer fees if I cannot afford them?',
+    answer:
+      'Some routes exist, including free initial consultations, fixed-fee packages for simple cases, and, in limited circumstances, legal aid or pro bono support. Our divorce legal aid in the UAE guide explains the options and who qualifies. Filing an uncontested or mutual-consent divorce is also far cheaper than a contested case.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Divorce Lawyer Fees in the UAE 2026</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          What a divorce lawyer actually costs in the UAE: fixed fee versus hourly versus retainer,
+          consultation charges, what drives the price up, and how to budget before you hire. For the
+          full bill including court and translation costs, see our
+          <a href="/en/divorce-cost-uae/">cost of divorce guide</a>.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Fixed, hourly &amp; retainer explained</li>
+          <li>✓ Indicative 2026 fee ranges</li>
+          <li>✓ Questions to ask before hiring</li>
+          <li>✓ Free consultation available</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Fee Estimate" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <figure style="margin:0 0 8px;">
+      <img src="/images/divorce-lawyer-fees-uae.webp" alt="Divorce lawyer fees in the UAE: legal documents, a calculator and dirham notes on a desk" width="1200" height="675" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px;" />
+    </figure>
+
+    <!-- Intro / key numbers -->
+    <section class="section" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">What Does a Divorce Lawyer Cost in the UAE?</h2>
+      <p>
+        Lawyer fees are usually the largest single line in a UAE divorce, and the range is wide. A
+        simple uncontested case handled on a fixed fee can cost a fraction of a contested custody
+        fight billed by the hour. Every figure on this page is indicative, drawn from law-firm cost
+        guides and current 2026 market rates, not an official fee schedule. Your actual quote depends
+        on the firm, the seniority of the lawyer, your emirate, and above all whether your case is
+        agreed or disputed.
+      </p>
+      <p>
+        This page focuses on the lawyer fee itself. For government filing fees, translation,
+        attestation and the total out-the-door cost, defer to our
+        <a href="/en/divorce-cost-uae/">cost of divorce in the UAE</a> guide, which combines every
+        item in one place. To find and compare lawyers, see our
+        <a href="/en/divorce-lawyer-dubai/">divorce lawyer in Dubai</a> and
+        <a href="/en/divorce-lawyer-abu-dhabi/">Abu Dhabi</a> pages.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">Free–1,500</span>
+          <span class="stat-label">AED for a first consultation (many are free)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">8k–25k</span>
+          <span class="stat-label">AED lawyer fee, uncontested (indicative)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">40k+</span>
+          <span class="stat-label">AED lawyer fee, contested (indicative)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">750–2,500</span>
+          <span class="stat-label">AED per hour, junior to senior partner</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fee structures -->
+    <section class="section" aria-labelledby="structures-heading">
+      <h2 id="structures-heading">The Three Ways Lawyers Charge: Fixed, Hourly, Retainer</h2>
+      <p>
+        Before you look at any number, understand how you are being charged. UAE family lawyers
+        generally use one of three billing models, and the model matters as much as the headline
+        figure. The right choice depends on how predictable your case is.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Fixed (flat) fee</h3>
+          <p>
+            One agreed price for a defined scope of work, for example filing and completing an
+            uncontested divorce. This gives you cost certainty and is the most common structure for
+            mutual-consent cases. Ask exactly what the scope covers and what falls outside it, since
+            anything extra is usually billed separately.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Hourly rate</h3>
+          <p>
+            You pay for the lawyer's time at an agreed rate, from roughly AED 750 for a junior to AED
+            2,500 for a senior partner. Common in contested cases where the number of hearings cannot
+            be predicted. Total cost is open-ended, so ask for an estimate of likely hours and request
+            regular billing updates.
+          </p>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>Retainer</h3>
+        <p>
+          An upfront sum the lawyer draws against as they work, with hours billed at an agreed rate
+          and the balance topped up when it runs low. Monthly retainers for ongoing contested matters
+          commonly start around AED 10,000. A retainer suits disputes where the workload is hard to
+          forecast, but you should get a clear statement each month showing hours used and the
+          remaining balance so there are no surprises.
+        </p>
+      </div>
+    </section>
+
+    <!-- Fee ranges table -->
+    <section class="section" aria-labelledby="ranges-heading">
+      <h2 id="ranges-heading">Divorce Lawyer Fee Ranges (Indicative)</h2>
+      <p>
+        The table below shows indicative lawyer fees by case type. These are ranges from law-firm cost
+        guides and 2026 market rates, not fixed prices, and they cover the lawyer's professional fee
+        only, not court fees or translation. Where both spouses agree, the fixed fee sits at the lower
+        end. Where the court has to decide custody or assets, the fee climbs.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Case type</th><th>Lawyer fee (indicative)</th><th>Usual billing model</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Uncontested / mutual consent</td><td>AED 8,000–25,000</td><td>Fixed fee</td></tr>
+            <tr><td>Abu Dhabi civil no-fault (simple)</td><td>From AED 5,000–10,000</td><td>Fixed fee</td></tr>
+            <tr><td>Contested, no major dispute</td><td>AED 15,000–40,000</td><td>Fixed or hourly</td></tr>
+            <tr><td>Contested with custody or assets</td><td>AED 40,000–80,000</td><td>Hourly or retainer</td></tr>
+            <tr><td>Complex (business valuation, international custody)</td><td>AED 75,000–150,000+</td><td>Retainer plus hourly</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Indicative only, from law-firm cost guides and 2026 rates. Varies by firm, emirate and case.
+          Court and translation fees are extra: see the
+          <a href="/en/divorce-cost-uae/">full cost of divorce guide</a>.
+        </p>
+      </div>
+
+      <h3>Hourly rate tiers</h3>
+      <p>
+        When a lawyer bills by the hour, the rate tracks their seniority. These tiers are indicative
+        for the UAE market in 2026.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Lawyer level</th><th>Indicative hourly rate</th><th>Typically handles</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Junior associate</td><td>AED 750–1,000</td><td>Drafting, filing, routine steps</td></tr>
+            <tr><td>Mid-level lawyer</td><td>AED 1,200–1,800</td><td>Hearings, negotiation, most casework</td></tr>
+            <tr><td>Senior partner / specialist</td><td>AED 2,000–2,500+</td><td>Strategy, complex disputes, advocacy</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Some senior family-law specialists quote above this range. A blended team, junior work at
+          the lower rate and partner oversight at the higher rate, often costs less than one senior
+          lawyer doing everything.
+        </p>
+      </div>
+
+      <div class="cta-inline">
+        <p>Want a fee estimate for your case?</p>
+        <a href="#contact" class="btn btn--primary">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Consultation fees -->
+    <section class="section" aria-labelledby="consult-heading">
+      <h2 id="consult-heading">Consultation Fees: Is the First Meeting Free?</h2>
+      <p>
+        Many UAE family firms offer a free first consultation, usually a 20 to 30 minute call or
+        meeting where a lawyer reviews your situation and quotes a fee for the work. Others charge AED
+        500 to 1,500 for a longer, paid strategy session with a senior lawyer, where you leave with a
+        written view on your position and likely outcomes.
+      </p>
+      <p>
+        A free consultation is a sales and scoping conversation, which is useful for a fee quote and a
+        first impression. A paid strategy session buys you deeper advice and a considered opinion.
+        Neither is better in every case: for a straightforward uncontested divorce, the free route is
+        usually enough; for a contested case with custody or significant assets at stake, paying for a
+        senior lawyer's time up front can save far more later. Always confirm whether the meeting is
+        free and what it covers before you book.
+      </p>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>Use the free consultation to compare</h3>
+        <p>
+          Because so many firms offer a free first meeting, you can speak to two or three before you
+          commit and compare their fee structure, their estimate and how they explain your options.
+          The cheapest quote is not always the best value: a clear scope and an honest hours estimate
+          matter more than a low headline number.
+        </p>
+      </div>
+    </section>
+
+    <!-- What drives cost -->
+    <section class="section" aria-labelledby="drivers-heading">
+      <h2 id="drivers-heading">What Drives Your Lawyer Fee Up or Down</h2>
+      <p>
+        Two people can hire the same firm and pay very different amounts. These are the factors that
+        move the fee, and the biggest by far is whether your divorce is agreed or disputed.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Contested versus uncontested</h3>
+          <p>
+            The single largest driver. An uncontested divorce is mostly drafting and confirming an
+            agreement, so it needs few hours. A contested case runs through multiple hearings over
+            months, each adding lawyer time. See
+            <a href="/en/contested-vs-uncontested-divorce-uae/">contested vs uncontested divorce</a>
+            for how the two routes compare.
+          </p>
+        </li>
+        <li>
+          <h3>Custody disputes</h3>
+          <p>
+            Fights over children add hearings, welfare or psychological reports, and often a
+            court-appointed expert, all of which increase lawyer hours. Custody is one of the most
+            common reasons a case moves from the lower fee band to the higher one.
+          </p>
+        </li>
+        <li>
+          <h3>Assets and financial complexity</h3>
+          <p>
+            Property, business interests, pensions and offshore or corporate-held assets require
+            disclosure, valuation and sometimes forensic tracing. A court-appointed accountant may
+            assess finances. The more there is to divide, the more the fee climbs.
+          </p>
+        </li>
+        <li>
+          <h3>Cross-border and international elements</h3>
+          <p>
+            International custody, foreign assets, home-country law or recognition of a UAE decree
+            abroad all add specialist work. If you are weighing where to file at all, that decision
+            has its own cost consequences.
+          </p>
+        </li>
+        <li>
+          <h3>Lawyer seniority and firm</h3>
+          <p>
+            A senior partner at a large firm bills more per hour than a mid-level lawyer at a boutique.
+            For simple work, a more junior lawyer may deliver the same outcome for less. Match the
+            seniority to the difficulty of your case.
+          </p>
+        </li>
+        <li>
+          <h3>Your emirate and court</h3>
+          <p>
+            Fees and process vary between emirates. Abu Dhabi's civil no-fault route for non-Muslims
+            is often the fastest and lowest-cost path, which can pull the lawyer fee down for those
+            eligible. A <a href="/en/divorce-lawyer-abu-dhabi/">lawyer in Abu Dhabi</a> can advise
+            whether that route fits your situation.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Uncontested vs contested fees -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Uncontested vs Contested Lawyer Fees</h2>
+      <p>
+        Because the agreed-versus-disputed split drives so much of the cost, it is worth looking at
+        each side directly.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Uncontested / mutual consent</h3>
+          <p>
+            Both spouses agree on the divorce and on custody, maintenance and assets. The lawyer's job
+            is to draft or review the settlement agreement and take it through the court, so a fixed
+            fee of roughly AED 8,000 to 25,000 is common. This is the cheapest route, and it is worth
+            investing in a well-drafted agreement so the case does not slip back into a dispute. See
+            <a href="/en/mutual-consent-divorce-uae/">mutual-consent divorce in the UAE</a>.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Contested</h3>
+          <p>
+            One spouse disputes the divorce or its terms, so the court decides after hearings and
+            evidence. Lawyer fees commonly start around AED 40,000 and reach AED 80,000 with custody
+            or asset disputes, billed hourly or on a retainer. Complex cases run higher. The timeline
+            can stretch to one to three years including appeals, and lawyer time accrues throughout.
+          </p>
+        </div>
+      </div>
+      <p>
+        Many cases begin contested and settle partway through. Even a partial agreement narrows what
+        the court decides and reduces lawyer hours, which is why a good lawyer will push to resolve as
+        much as possible by agreement. If you can move a case from contested to uncontested, the fee
+        saving is usually the largest you can make.
+      </p>
+    </section>
+
+    <!-- Power of attorney costs -->
+    <section class="section" aria-labelledby="poa-heading">
+      <h2 id="poa-heading">Power of Attorney and Other Add-On Costs</h2>
+      <p>
+        The lawyer's professional fee is not always the whole story. A few add-ons commonly appear on
+        top, and it is better to know about them before you sign.
+      </p>
+      <p>
+        If you are abroad and appoint a UAE lawyer to act for you, you will need a
+        <strong>power of attorney</strong>. It must be notarised in the country where you sign it,
+        then legalised or attested so the UAE recognises it, and translated into Arabic. Notary,
+        attestation and translation are separate charges, commonly a few hundred to a couple of
+        thousand dirhams depending on your country, and they sit on top of the lawyer fee. Our guide
+        to <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a>
+        explains where a power of attorney fits in the process.
+      </p>
+      <p>
+        Other add-ons can include document translation and attestation, court-ordered expert or
+        welfare reports in custody cases, and any private mediation you choose to use. These are
+        separate from the lawyer fee and are covered in full in our
+        <a href="/en/divorce-cost-uae/">cost of divorce guide</a>. Always ask your lawyer for a
+        written list of what is included in their quote and what is billed on top.
+      </p>
+    </section>
+
+    <!-- Budgeting -->
+    <section class="section" aria-labelledby="budget-heading">
+      <h2 id="budget-heading">How to Budget for a Divorce Lawyer</h2>
+      <p>
+        You cannot know the exact figure in advance, but you can build a realistic budget and avoid
+        nasty surprises. A sensible approach:
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Work out your case type first</h3>
+          <p>
+            Decide, honestly, whether your case is likely to be uncontested or contested. That single
+            answer places you in the right fee band before you speak to anyone.
+          </p>
+        </li>
+        <li>
+          <h3>Get a written fee quote in the free consultation</h3>
+          <p>
+            Use the free first meeting to obtain a written estimate: the billing model, the scope, and
+            for hourly work, an estimate of likely hours. Ask what happens if the case runs longer.
+          </p>
+        </li>
+        <li>
+          <h3>Add the non-lawyer costs</h3>
+          <p>
+            On top of the lawyer fee, budget for government filing and court fees, translation and
+            attestation, and any expert reports. Our
+            <a href="/en/divorce-cost-uae/">cost of divorce guide</a> lists these so you can total
+            them up.
+          </p>
+        </li>
+        <li>
+          <h3>Keep a contingency for contested cases</h3>
+          <p>
+            If there is any chance your case becomes contested, hold back a contingency of at least a
+            few thousand dirhams. Contested cases are unpredictable, and appeals add cost.
+          </p>
+        </li>
+        <li>
+          <h3>Prefer a fixed fee where you can</h3>
+          <p>
+            For an agreed divorce, a fixed fee gives you certainty. Reserve hourly and retainer
+            arrangements for genuinely disputed matters where a fixed scope is not possible.
+          </p>
+        </li>
+      </ol>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>Cheaper is not always better value</h3>
+        <p>
+          A low quote that omits key steps, or a junior lawyer on a case that needs a specialist, can
+          cost more in the end through delays, reopened issues or a weak settlement agreement. Weigh
+          the quote against the lawyer's experience with cases like yours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Questions to ask -->
+    <section class="section" aria-labelledby="questions-heading">
+      <h2 id="questions-heading">Questions to Ask Before You Hire</h2>
+      <p>
+        Use the free consultation to ask these directly. Clear answers here are a good sign; vague
+        ones are a warning.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>How will you bill me?</h3>
+          <p>Fixed fee, hourly or retainer, and exactly what the number covers.</p>
+        </div>
+        <div class="card">
+          <h3>What is not included?</h3>
+          <p>Court fees, translation, attestation, expert reports and appeals, so you can budget for the extras.</p>
+        </div>
+        <div class="card">
+          <h3>Who does the work?</h3>
+          <p>Whether a partner or a junior handles day-to-day steps, and at what rate each bills.</p>
+        </div>
+        <div class="card">
+          <h3>What is your estimate of hours?</h3>
+          <p>For hourly work, a realistic range and what happens if the case runs longer.</p>
+        </div>
+        <div class="card">
+          <h3>Can this be uncontested?</h3>
+          <p>Whether an agreement is achievable, since that is the biggest cost saving available.</p>
+        </div>
+        <div class="card">
+          <h3>Have you handled cases like mine?</h3>
+          <p>Experience with your emirate, your law track and your kind of dispute.</p>
+        </div>
+      </div>
+      <p style="margin-top:24px;">
+        If your case is straightforward and both sides agree, our guides to
+        <a href="/en/divorce-in-uae/">divorce in the UAE</a> and the underlying
+        <a href="/en/uae-divorce-law/">UAE divorce law</a> will help you brief a lawyer efficiently,
+        which keeps billable hours down. Knowing the basics before you walk in is one of the simplest
+        ways to control cost.
+      </p>
+    </section>
+
+    <!-- Timeline note -->
+    <section class="section" aria-labelledby="timing-heading">
+      <h2 id="timing-heading">How Timeline Affects the Total Fee</h2>
+      <p>
+        Time is money when a lawyer bills by the hour. An uncontested divorce commonly completes in
+        about three to six months, while a contested case can run one to three years including
+        appeals. A longer case means more hearings, more correspondence and more billable hours, which
+        is a large part of why contested matters cost so much more. Our
+        <a href="/en/divorce-timeline-uae/">UAE divorce timeline guide</a> shows how long each stage
+        takes, so you can see where the hours accumulate. Anything you can agree with your spouse to
+        shorten the process usually reduces the fee as well.
+      </p>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/divorce-cost-uae/" class="service-link">
+          <strong>Cost of Divorce in the UAE</strong>
+          <span>The full bill: court, translation and lawyer costs</span>
+        </a>
+        <a href="/en/divorce-lawyer-dubai/" class="service-link">
+          <strong>Divorce Lawyer in Dubai</strong>
+          <span>Finding and comparing a lawyer in Dubai</span>
+        </a>
+        <a href="/en/divorce-lawyer-abu-dhabi/" class="service-link">
+          <strong>Divorce Lawyer in Abu Dhabi</strong>
+          <span>The civil no-fault court and local lawyers</span>
+        </a>
+        <a href="/en/divorce-legal-aid-uae/" class="service-link">
+          <strong>Divorce Legal Aid UAE</strong>
+          <span>Free advice and help with fees</span>
+        </a>
+        <a href="/en/contested-vs-uncontested-divorce-uae/" class="service-link">
+          <strong>Contested vs Uncontested</strong>
+          <span>The choice that drives your fee most</span>
+        </a>
+        <a href="/en/mutual-consent-divorce-uae/" class="service-link">
+          <strong>Mutual-Consent Divorce</strong>
+          <span>The cheapest, fastest route</span>
+        </a>
+        <a href="/en/how-to-file-for-divorce-in-dubai/" class="service-link">
+          <strong>How to File in Dubai</strong>
+          <span>Step-by-step, including power of attorney</span>
+        </a>
+        <a href="/en/divorce-timeline-uae/" class="service-link">
+          <strong>Divorce Timeline UAE</strong>
+          <span>How long each stage takes, and why it costs</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get a Free Divorce Lawyer Fee Estimate</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours for a no-obligation fee quote. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>
