@@ -1,0 +1,563 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'How Debts Are Divided in a UAE Divorce (2026 Guide)';
+const description =
+  'Who pays the debt after a UAE divorce? UAE has no community property, so loans and credit cards stay in the name they were taken in. Joint loans, guarantees and travel bans explained.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-debt-division-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Debt Division in UAE Divorce', url: 'https://divorceu.ae/en/divorce-debt-division-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/divorce-debt-division-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Who is responsible for debt after a divorce in the UAE?',
+    answer:
+      'The person whose name is on the debt. UAE has no community-property concept, so a personal loan, credit card or car finance stays with the spouse who took it out. Your husband or wife is not liable for your debt unless they co-signed it, were a joint borrower, or signed a personal guarantee. There is no rule that hands half your loans to your spouse or half your spouse\'s loans to you.',
+  },
+  {
+    question: 'Are both spouses liable for a joint loan after divorce in Dubai?',
+    answer:
+      'Yes. If both names are on the loan or mortgage, both remain jointly liable to the bank regardless of the divorce. The family court does not remove a borrower from a bank contract. Between yourselves you can agree in a settlement who repays it, but that agreement binds the two of you, not the lender. The bank can still pursue either party for the full balance until the facility is refinanced, settled or closed.',
+  },
+  {
+    question: 'Does the UAE split debts 50/50 in a divorce?',
+    answer:
+      'No. There is no automatic 50/50 split of debts. Under the non-Muslim civil law, Federal Decree-Law No. 41 of 2022, the court can weigh each spouse\'s financial and non-financial contributions when it decides claims, but it does not divide liabilities in half by default. Debt generally follows the name on the contract. Anyone promising a guaranteed equal split of debt is overstating how UAE law works.',
+  },
+  {
+    question: 'Am I liable for my ex-spouse\'s credit card debt in the UAE?',
+    answer:
+      'Only if you were a joint primary cardholder. If you were merely a supplementary or authorised user on a card held in your spouse\'s name, the primary holder owes the bank, not you. Cancel the supplementary card as soon as you separate so no new charges accrue in your name or on the account you are linked to. Keep a copy of the cancellation confirmation.',
+  },
+  {
+    question: 'Can I get a travel ban for unpaid debt during a UAE divorce?',
+    answer:
+      'Yes. A creditor with a civil judgment or a returned cheque can ask the Execution Court to impose a travel ban on the debtor, generally where the debt is AED 10,000 or more (maintenance is treated separately). Divorce does not pause a debt you owe in your own name. If you are the named borrower on a defaulting loan, the ban attaches to you, not to your ex-spouse.',
+  },
+  {
+    question: 'What happens to a bounced cheque after the 2022 law change?',
+    answer:
+      'Federal Decree-Law No. 50 of 2022 decriminalised most bounced cheques returned for insufficient funds, so a routine dishonoured cheque is now enforced as a civil matter. The holder can go straight to the Execution Court, and a returned cheque is treated as an executory instrument that can support attachment and a travel-ban request. Some cases involving bad faith or forgery can still carry criminal exposure, so take any cheque you have signed seriously.',
+  },
+  {
+    question: 'What happens to the joint mortgage on our Dubai property when we divorce?',
+    answer:
+      'The mortgage stays until the bank agrees otherwise. UAE lenders do not release a borrower without full credit re-approval. The usual routes are: the keeping spouse refinances into their sole name if they qualify, the property is sold and the loan repaid from proceeds with any equity split, or both remain joint borrowers under a written agreement. A court can order a sale but cannot force the bank to restructure the loan. See our property division guide for the detail.',
+  },
+  {
+    question: 'How do I protect myself from my spouse\'s debts before divorcing?',
+    answer:
+      'Separate your finances early. Stop being a guarantor or joint borrower where you can, close or convert joint facilities, cancel supplementary cards, request a credit report to see what is in your name, and keep bank statements that show who funded what. Get legal advice before you sign any settlement that has you taking on a debt, and never sign a personal guarantee for your spouse late in a marriage that is ending.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">How Debts Are Divided in a UAE Divorce</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          Who pays the loans, cards and mortgages after a UAE divorce? The short answer surprises most
+          expats: the UAE has no community-property system, so debt generally stays with the person
+          whose name is on it. This guide covers joint loans, guarantees, mortgages, travel bans, and
+          the practical steps to protect yourself. For assets rather than debts, see our
+          <a href="/en/property-division-divorce-uae/">property division guide</a>.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ No community property explained</li>
+          <li>✓ Joint loans &amp; guarantees</li>
+          <li>✓ Travel-ban risk covered</li>
+          <li>✓ Free legal consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Divorce Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- The core principle -->
+    <section class="section" aria-labelledby="principle-heading">
+      <h2 id="principle-heading">The Core Principle: Debt Follows the Name</h2>
+      <p>
+        The single most important thing to understand about debt in a UAE divorce is that the UAE does
+        <strong>not</strong> operate a community-property system. There is no shared marital pot that
+        gets divided in two, and there is no rule that automatically makes one spouse liable for the
+        other spouse\'s borrowing. Whoever\'s name is on a loan, credit card or car finance is the
+        person the bank looks to for repayment, married, separated or divorced.
+      </p>
+      <p>
+        This mirrors how assets work here. Just as property is owned by whoever holds the title, debt
+        is owed by whoever signed for it. A personal loan in the husband\'s name is his liability. A
+        credit card in the wife\'s name is hers. The marriage certificate does not merge your two
+        credit files into one. That principle runs through both the Muslim personal status law,
+        <strong>Federal Decree-Law No. 41 of 2024</strong>, and the non-Muslim civil law,
+        <strong>Federal Decree-Law No. 41 of 2022</strong>.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>The one-line rule</h3>
+        <p>
+          You are liable for the debts in your name. Your spouse is liable for the debts in theirs.
+          Debts you took on together are the exception, and personal guarantees are the trap. Almost
+          everything below is a variation on that theme.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sole vs joint debt -->
+    <section class="section" aria-labelledby="soletype-heading">
+      <h2 id="soletype-heading">Sole Debt vs Joint Debt: Who the Bank Chases</h2>
+      <p>
+        The line that decides who pays is not who benefited from the money. It is whose signature is
+        on the contract with the lender. Here is how the two categories differ in practice.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Debt in one name (sole)</h3>
+          <p>
+            A loan, overdraft, car finance or credit card held by one spouse alone stays with that
+            spouse. The other spouse is not a party to the contract and cannot be pursued by the bank
+            for it, even if the money was spent on the family, the home or a shared holiday. On
+            divorce the debt simply leaves with the person who signed for it.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Debt in both names (joint)</h3>
+          <p>
+            A joint loan or a mortgage with both spouses as borrowers makes both jointly liable to the
+            bank for the full balance. The lender can pursue either party, or both, for the whole
+            amount. A divorce does not change this. Only the bank can release a borrower, and it will
+            only do so through refinancing or full settlement.
+          </p>
+        </div>
+      </div>
+      <p>
+        This is why the question people really ask, <em>who pays the debt after a divorce in the
+        UAE</em>, has a two-part answer. To the bank, the named borrowers pay, full stop. Between the
+        two of you, a settlement agreement can decide who actually funds the repayments. Those are
+        different things, and confusing them is where expats get caught out.
+      </p>
+    </section>
+
+    <!-- Joint loans and accounts -->
+    <section class="section" aria-labelledby="joint-heading">
+      <h2 id="joint-heading">Joint Loans and Joint Accounts</h2>
+      <p>
+        Joint borrowing is the most contested area of debt in a UAE divorce, precisely because both
+        signatures are on the paperwork. If you took a personal loan together, opened a joint
+        overdraft, or hold a joint credit card as co-primary cardholders, you are each fully liable to
+        the bank for the entire balance. The bank does not split the debt in half and chase you for
+        50% each. It can demand the full sum from whichever borrower is easier to reach.
+      </p>
+      <p>
+        Between yourselves, you can and should agree who repays what, and record that in a settlement.
+        But remember that this agreement binds the two of you, not the lender. If your ex-spouse
+        agrees to clear a joint loan and then stops paying, the bank can still come after you, and
+        your only remedy is to enforce the settlement against your ex separately. That is slow and
+        uncertain. The cleaner fix is to remove the joint facility entirely: refinance it into one
+        name, or pay it off and close it, before the divorce is final.
+      </p>
+      <p>
+        Joint accounts sit alongside joint debt and behave very differently from what many expats
+        expect. There is no automatic freeze when a divorce is filed, and either holder can withdraw
+        the balance. If money and debt are tangled up in the same joint facility, read our dedicated
+        <a href="/en/divorce-joint-account-uae/">joint bank account in UAE divorce</a> guide, which
+        covers court freeze orders, contribution evidence and supplementary cards in detail.
+      </p>
+    </section>
+
+    <!-- Mortgages -->
+    <section class="section" aria-labelledby="mortgage-heading">
+      <h2 id="mortgage-heading">Mortgages on Jointly Owned Property</h2>
+      <p>
+        A mortgage is a joint loan secured on a home, so it carries all the joint-liability issues
+        above plus the complication of the property itself. If both spouses are borrowers on a Dubai
+        or Abu Dhabi mortgage, both stay liable until the bank agrees otherwise, and UAE lenders do
+        not remove a borrower without a full fresh credit assessment.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Option</th><th>How the debt is handled</th><th>Watch out for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Refinance into one name</td><td>Keeping spouse re-qualifies alone and buys out the other\'s share</td><td>Needs the bank\'s approval and enough income to qualify solo</td></tr>
+            <tr><td>Sell the property</td><td>Loan repaid from sale proceeds, any equity split by agreement</td><td>Early-settlement fees; a soft market can leave little equity</td></tr>
+            <tr><td>Both stay as borrowers</td><td>Joint mortgage continues under a written repayment agreement</td><td>Both credit files exposed if either party misses a payment</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Indicative options only. A court can order a sale of the property but cannot force the bank
+          to restructure the loan. Confirm settlement fees and eligibility with your lender.
+        </p>
+      </div>
+      <p>
+        The mechanics of transferring the property itself, the Dubai Land Department fees, and the
+        big saving from a spousal transfer before the divorce is final are covered in our
+        <a href="/en/property-division-divorce-uae/">property division in UAE divorce</a> guide. If
+        the plan is to sell rather than keep, see
+        <a href="/en/divorce-property-sale-uae/">selling property during a UAE divorce</a>.
+      </p>
+    </section>
+
+    <!-- Personal guarantees -->
+    <section class="section" aria-labelledby="guarantee-heading">
+      <h2 id="guarantee-heading">Personal Guarantees: The Hidden Trap</h2>
+      <p>
+        The one way a spouse becomes liable for debt they did not directly borrow is by signing a
+        <strong>personal guarantee</strong> or acting as a co-signer. Guarantees are common on
+        business loans, trade finance, and larger facilities, and they are easy to sign without
+        appreciating what they mean. If you guaranteed your spouse\'s loan or their company\'s
+        borrowing, the lender can enforce that guarantee against you personally even after you
+        divorce, because the divorce does not cancel a contract you signed with the bank.
+      </p>
+      <p>
+        This matters most where one spouse ran a business and the other signed as guarantor to help it
+        get funded. When the marriage ends, the guarantee does not automatically fall away. Before you
+        finalise anything, list every document you have signed for your spouse or their company and
+        ask a lawyer whether you can be released. Never sign a fresh guarantee for a spouse once a
+        separation is on the horizon.
+      </p>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>Check before you sign a settlement</h3>
+        <p>
+          A settlement agreement can shift who repays a debt between the two of you, but it cannot
+          erase a guarantee you gave the bank. If you are a guarantor, insist that removing or
+          replacing that guarantee is a condition of the deal, and get the lender\'s written release.
+        </p>
+      </div>
+    </section>
+
+    <!-- Civil law and contributions -->
+    <section class="section" aria-labelledby="civil-heading">
+      <h2 id="civil-heading">What the Non-Muslim Civil Law Actually Does</h2>
+      <p>
+        Expats often hope the non-Muslim civil law, Federal Decree-Law No. 41 of 2022, will simply
+        halve the couple\'s debts. It does not. The civil law lets either spouse petition without
+        proving fault, and it allows the court to weigh each party\'s financial and non-financial
+        contributions when deciding claims. But there is <strong>no automatic 50/50 split</strong> of
+        assets, and no automatic 50/50 split of liabilities either. Debt still generally follows the
+        name on the contract.
+      </p>
+      <p>
+        Where the court does have room to consider contributions, the outcome depends on evidence, not
+        on a fixed formula. A spouse who can document that they funded a purchase or serviced a loan
+        may raise a contribution claim, but that runs as its own civil argument and needs bank records
+        to support it. The practical takeaway is that you should not rely on the court to rebalance
+        debts for you. Sort the liabilities out by agreement wherever you can. For how the civil track
+        works overall, see our <a href="/en/uae-divorce-law/">UAE divorce law</a> guide and the wider
+        <a href="/en/divorce-in-uae/">divorce in the UAE</a> walkthrough.
+      </p>
+    </section>
+
+    <!-- Travel bans and criminal exposure -->
+    <section class="section" aria-labelledby="travelban-heading">
+      <h2 id="travelban-heading">Travel Bans and Criminal Exposure for Unpaid Debt</h2>
+      <p>
+        Debt in the UAE carries a consequence that does not exist in many home countries: an unpaid
+        debt can stop you leaving. This is separate from the divorce itself, but it becomes urgent when
+        a marriage breaks down and finances get strained. If you are the named borrower on a loan that
+        falls into default, the exposure is yours, and it does not transfer to your ex-spouse because
+        you divorced.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Travel bans</h3>
+          <p>
+            A creditor holding a civil judgment or a returned cheque can ask the Execution Court to
+            impose a travel ban on the debtor. It generally applies where the debt is around AED
+            10,000 or more, with maintenance claims treated separately. The ban attaches to the person
+            who owes the money, not to their former spouse.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Bounced cheques</h3>
+          <p>
+            Federal Decree-Law No. 50 of 2022 decriminalised most cheques bounced for insufficient
+            funds, so a routine dishonoured cheque is now a civil matter enforced through the Execution
+            Court, where the cheque works as an executory instrument. Cases involving bad faith or
+            forgery can still carry criminal risk.
+          </p>
+        </div>
+      </div>
+      <p>
+        The lesson for anyone divorcing is to keep your own debts current, especially any security
+        cheques you have handed to a bank, landlord or business partner. If your ex controls a facility
+        that has your name on it, a missed payment can rebound on you. For how travel bans intersect
+        with divorce proceedings specifically, see our
+        <a href="/en/travel-ban-divorce-uae/">travel ban and divorce in the UAE</a> guide.
+      </p>
+    </section>
+
+    <!-- Practical steps -->
+    <section class="section" aria-labelledby="steps-heading">
+      <h2 id="steps-heading">Practical Steps to Protect Yourself</h2>
+      <p>
+        You have more control over debt than over most parts of a divorce, because much of it comes
+        down to paperwork you can act on now. Work through these before you finalise anything.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Map every debt and whose name is on it</h3>
+          <p>
+            Request a credit report so you can see exactly what is registered against you, and list
+            each loan, card and facility as sole or joint. You cannot protect yourself from a liability
+            you have not identified.
+          </p>
+        </li>
+        <li>
+          <h3>Separate your finances</h3>
+          <p>
+            Move your salary to an account in your sole name, cancel any supplementary cards linked to
+            your spouse, and stop new joint spending. Keep the confirmation letters the bank issues.
+          </p>
+        </li>
+        <li>
+          <h3>Close or refinance joint facilities</h3>
+          <p>
+            A joint loan or overdraft keeps both of you liable until it is gone. Where you can,
+            refinance it into one name or pay it off and close it rather than relying on a promise to
+            repay.
+          </p>
+        </li>
+        <li>
+          <h3>Deal with guarantees head-on</h3>
+          <p>
+            If you guaranteed your spouse\'s borrowing, make a written release from the lender a
+            condition of your settlement. A private agreement between spouses does not bind the bank.
+          </p>
+        </li>
+        <li>
+          <h3>Record the debt split in your settlement</h3>
+          <p>
+            Put who repays what in a written settlement agreement approved by the court. It will not
+            override the bank, but it gives you a claim against your ex if they default on what they
+            agreed to pay.
+          </p>
+        </li>
+        <li>
+          <h3>Get legal advice before you sign</h3>
+          <p>
+            Never take on a debt or sign a guarantee in a settlement without advice. A lawyer can spot
+            liabilities you would otherwise inherit. Plan the wider finances with our
+            <a href="/en/divorce-financial-planning-uae/">divorce financial planning</a> guide.
+          </p>
+        </li>
+      </ol>
+      <div class="cta-inline">
+        <p>Worried about a debt in your name?</p>
+        <a href="#contact" class="btn btn--primary">Get a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- How debt relates to other money issues -->
+    <section class="section" aria-labelledby="related-money-heading">
+      <h2 id="related-money-heading">How Debt Fits the Wider Financial Picture</h2>
+      <p>
+        Debt is only one part of the financial settlement. It sits alongside property, maintenance and
+        the cost of the divorce itself, and the pieces interact. A spouse who keeps the mortgaged home
+        takes on its loan. A spouse claiming alimony has their own finances assessed. Getting one part
+        wrong can undo the others.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Property</h3>
+          <p>Who keeps the home, DLD transfer fees, and how a mortgage is handled on divorce.</p>
+          <a href="/en/property-division-divorce-uae/" class="card-link">Property division →</a>
+        </div>
+        <div class="card">
+          <h3>Maintenance</h3>
+          <p>How alimony and support are assessed, and how they rank against creditor claims.</p>
+          <a href="/en/alimony-uae/" class="card-link">Alimony in the UAE →</a>
+        </div>
+        <div class="card">
+          <h3>Cost of divorce</h3>
+          <p>Court fees and lawyer fees you will fund on top of settling any shared debt.</p>
+          <a href="/en/divorce-cost-uae/" class="card-link">Cost of divorce →</a>
+        </div>
+        <div class="card">
+          <h3>Joint accounts</h3>
+          <p>Freezing, protecting and dividing shared bank accounts and card balances.</p>
+          <a href="/en/divorce-joint-account-uae/" class="card-link">Joint accounts →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related guides -->
+    <section class="section" aria-labelledby="guides-heading">
+      <h2 id="guides-heading">Detailed Guides</h2>
+      <div class="service-links">
+        <a href="/en/property-division-divorce-uae/" class="service-link">
+          <strong>Property Division</strong>
+          <span>Title, DLD fees and mortgaged homes</span>
+        </a>
+        <a href="/en/divorce-joint-account-uae/" class="service-link">
+          <strong>Joint Bank Accounts</strong>
+          <span>Freezes, balances and card debt</span>
+        </a>
+        <a href="/en/divorce-property-sale-uae/" class="service-link">
+          <strong>Selling Property in Divorce</strong>
+          <span>When keeping the home is not an option</span>
+        </a>
+        <a href="/en/divorce-financial-planning-uae/" class="service-link">
+          <strong>Financial Planning</strong>
+          <span>Structuring the whole settlement</span>
+        </a>
+        <a href="/en/travel-ban-divorce-uae/" class="service-link">
+          <strong>Travel Bans &amp; Divorce</strong>
+          <span>How debt bans intersect with a case</span>
+        </a>
+        <a href="/en/alimony-uae/" class="service-link">
+          <strong>Alimony in the UAE</strong>
+          <span>How spousal maintenance is assessed</span>
+        </a>
+        <a href="/en/divorce-cost-uae/" class="service-link">
+          <strong>Cost of Divorce</strong>
+          <span>Indicative fees and what drives them</span>
+        </a>
+        <a href="/en/uae-divorce-law/" class="service-link">
+          <strong>UAE Divorce Law</strong>
+          <span>The statutes: 41/2024 and 41/2022</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on Debt and Divorce in the UAE</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

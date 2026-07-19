@@ -1,0 +1,578 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Child Visitation Rights in UAE: Access After Divorce';
+const description =
+  'How visitation and access rights work in the UAE after divorce: the non-custodial parent right to see the children, court schedules, supervised access and enforcement.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/visitation-rights-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Visitation Rights UAE', url: 'https://divorceu.ae/en/visitation-rights-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/visitation-rights-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Does the non-custodial parent have a right to see the children in the UAE?',
+    answer:
+      'Yes. UAE family law treats contact with both parents as a right of the child, not a favour granted to the parent. The parent who does not have day-to-day custody keeps a legal right of access, and the court sets a visitation schedule. Under the Muslim law, Federal Decree-Law No. 41 of 2024, the custodian holds hadanah while the guardian keeps wilayah and access. Under the non-Muslim civil law, Federal Decree-Law No. 41 of 2022, joint custody is the default, so both parents share time.',
+  },
+  {
+    question: 'How does a UAE court set a visitation schedule?',
+    answer:
+      'The court applies the best interests of the child standard. It looks at the child age, school routine, the distance between the two homes and each parent circumstances, then fixes days, times and a handover point. Many orders give the non-custodial parent regular weekly or weekend contact plus a share of school holidays. If the parents agree a schedule themselves, the court will usually approve it.',
+  },
+  {
+    question: 'Can I get overnight or holiday access to my children?',
+    answer:
+      'Often yes, especially for non-Muslim parents under the 2022 civil law where joint custody makes shared overnights normal. Under the Muslim law the picture is more case by case, but courts do grant overnight stays and holiday time where it suits the child. Younger children may start with daytime visits that extend to overnights as they get older.',
+  },
+  {
+    question: 'What is supervised visitation and when does a UAE court order it?',
+    answer:
+      'Supervised visitation means the visits happen in the presence of a trusted third party or at a supervised centre. A court may order it where there are concerns about the child safety, a history of abuse, a risk the parent will not return the child, or where the parent and child need to rebuild a relationship after a long gap. It is protective, not punitive, and can be relaxed over time.',
+  },
+  {
+    question: 'What can I do if the other parent denies me access?',
+    answer:
+      'Denying court-ordered access is a breach you can enforce. You apply to the Execution Court, not the family court that made the order. The Execution Court can issue warnings, fines and, for persistent refusal, police-assisted handover or an arrest warrant. Repeated obstruction of access can itself become a ground to review the custody arrangement.',
+  },
+  {
+    question: 'Can the custodial parent move away or travel with the children and cut off access?',
+    answer:
+      'Not freely. Neither parent may take the children out of the UAE without the other documented consent or a court order, and relocation within or outside the country that would damage the other parent access needs court approval. If you fear removal, you can apply for a travel ban. See our travel ban and child relocation guides.',
+  },
+  {
+    question: 'At what age can a child decide whether to see a parent?',
+    answer:
+      'Under Federal Decree-Law No. 41 of 2024, custody now continues to age 18 for both boys and girls, and a child aged 15 or older may choose which parent to live with where the court finds it in the child best interest. A teenager wishes about contact carry real weight, though the court still applies the best interests test and is alert to one parent influencing the child.',
+  },
+  {
+    question: 'Do fathers get visitation rights in the UAE?',
+    answer:
+      'Yes. Under the Muslim law the father is usually the guardian even when the mother is the custodian, and he keeps a right of access to the children. Under the non-Muslim civil law both parents start from joint custody. A father who is being kept from his children can ask the court to set or enforce a visitation schedule. Our father custody rights guide covers this in detail.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Child Visitation Rights in the UAE</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          Custody decides where your children live. Visitation, or access, decides how the other
+          parent stays in their lives. This guide explains the non-custodial parent right to see
+          the children after divorce in the UAE, how courts set a schedule, and what to do when
+          access is blocked. For the wider picture, start with our
+          <a href="/en/child-custody-uae/">child custody in the UAE guide</a>.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Muslim &amp; non-Muslim tracks</li>
+          <li>✓ Schedules, overnights &amp; holidays</li>
+          <li>✓ Enforcement if access is denied</li>
+          <li>✓ Free legal consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Access Rights Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Custody vs visitation -->
+    <section class="section" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Visitation vs Custody: Two Different Rights</h2>
+      <p>
+        Divorcing parents often use the word custody to mean everything about their children. In
+        UAE law it is narrower. Custody, or hadanah, is the day-to-day care of the child: where they
+        sleep, who takes them to school, who handles meals and bedtime. Visitation, sometimes called
+        access or contact, is the separate right of the parent who does not hold that daily care to
+        spend meaningful time with the child. One parent having custody does not erase the other
+        parent from the child life.
+      </p>
+      <p>
+        The guiding idea across both the Muslim and the non-Muslim systems is that contact with both
+        parents belongs to the child. It is framed as the child right to know and be raised by both
+        parents, rather than a reward handed to a parent who behaves well. That framing matters,
+        because it is why courts are reluctant to cut a parent off entirely and why a schedule is set
+        even in bitter cases. If you are still working out who will have custody in the first place,
+        read our full <a href="/en/child-custody-uae/">child custody guide</a> alongside this one.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>Custody, guardianship and access in one line</h3>
+        <p>
+          Under the Muslim law the custodian (often the mother) has hadanah, the guardian (often the
+          father) has wilayah, and the non-custodial parent keeps a right of access. Understanding
+          the split between <a href="/en/guardianship-vs-custody-uae/">guardianship and custody</a>
+          is the key to understanding where visitation fits.
+        </p>
+      </div>
+    </section>
+
+    <!-- Which law -->
+    <section class="section" aria-labelledby="law-heading">
+      <h2 id="law-heading">How UAE Law Treats Access to the Children</h2>
+      <p>
+        The UAE runs a dual family-law system, and which law applies shapes how visitation looks in
+        practice. Muslim families follow <strong>Federal Decree-Law No. 41 of 2024</strong>, in force
+        since 15 April 2025, which fully replaced the old Law No. 28 of 2005. Non-Muslim expats follow
+        <strong>Federal Decree-Law No. 41 of 2022</strong>, the civil personal status law applied
+        across all seven emirates since 1 February 2023.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Muslim families (41/2024)</h3>
+          <p>
+            Care is split between the custodian and the guardian. The mother is commonly the custodian
+            of younger children while the father is the guardian, and the non-custodial parent, most
+            often the father, keeps a clear right of access. The court fixes a schedule so the guardian
+            or the non-custodial parent sees the children regularly. See
+            <a href="/en/father-custody-rights-uae/">father custody rights in the UAE</a>.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Non-Muslim expats (41/2022)</h3>
+          <p>
+            Joint and equal custody is the default from the moment of divorce, so both parents share
+            time with the children rather than one visiting the other. Either parent can still petition
+            for sole custody at the court discretion, in which case the other parent moves to a
+            visitation schedule much like the Muslim-law pattern.
+          </p>
+        </div>
+      </div>
+      <p>
+        In Abu Dhabi, non-Muslims may instead use the Civil Family Court under Abu Dhabi Law No. 14 of
+        2021, which builds shared parenting in from the start. Whichever track applies, the same
+        principle drives the outcome: the child keeps a real relationship with both parents unless
+        there is a strong reason to limit it.
+      </p>
+    </section>
+
+    <!-- Best interests standard -->
+    <section class="section" aria-labelledby="best-heading">
+      <h2 id="best-heading">The Best Interests of the Child Standard</h2>
+      <p>
+        UAE courts decide visitation the same way they decide custody, by asking what serves the best
+        interests of the child. There is no fixed formula and no automatic entitlement to a set number
+        of hours. The judge weighs the practical realities of the family and builds a schedule around
+        the child, not around either parent convenience.
+      </p>
+      <p>Factors a court commonly considers include:</p>
+      <ul class="list">
+        <li>The child age and stage: young children may start with shorter daytime visits, older children with longer and overnight stays</li>
+        <li>The child school and activity routine, and how to disrupt it as little as possible</li>
+        <li>The distance between the two parents homes and the practicality of handovers</li>
+        <li>Each parent working hours, living arrangements and ability to care for the child</li>
+        <li>The quality of the existing relationship between the child and the non-custodial parent</li>
+        <li>Any safety concerns, history of harm, or risk that the child will not be returned</li>
+        <li>For a child aged 15 or older, their own expressed wishes about contact</li>
+      </ul>
+      <p>
+        Because the standard is discretionary, presentation matters. A parent who arrives with a
+        realistic, child-focused proposal, showing they have thought about the child school and
+        stability, tends to fare better than one who simply demands maximum time.
+      </p>
+    </section>
+
+    <!-- Setting a schedule -->
+    <section class="section" aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading">How a UAE Court Sets a Visitation Schedule</h2>
+      <p>
+        Most access arrangements are recorded in a court order so they can be enforced. The order fixes
+        the days and times of contact, where the child will be handed over, and how holidays are split.
+        Parents can reach these terms in two ways.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>By agreement</h3>
+          <p>
+            If both parents agree a schedule, they can record it in a settlement and present it to the
+            court for approval. This is faster, cheaper and far less stressful for the children. An
+            agreed access schedule often forms part of a wider
+            <a href="/en/child-custody-uae/">custody settlement</a> and can be built into a
+            mutual-consent divorce.
+          </p>
+        </li>
+        <li>
+          <h3>By court decision</h3>
+          <p>
+            If the parents cannot agree, the judge sets the schedule after hearings. The court may hear
+            from both parents, review the child routine and, in difficult cases, seek input from a
+            social expert or child specialist before fixing the pattern of contact.
+          </p>
+        </li>
+        <li>
+          <h3>Fixing the practical detail</h3>
+          <p>
+            A workable order names specifics: which weekday evenings or weekends, pick-up and drop-off
+            times, a neutral handover location, how school holidays and Eid or other festivals are
+            divided, and how the parent and child stay in touch by phone or video between visits.
+          </p>
+        </li>
+      </ol>
+      <p>
+        A vague order that simply grants reasonable access invites conflict, because reasonable means
+        different things to two people who have just divorced. The more precise the schedule, the less
+        room there is for one parent to frustrate the other. A
+        <a href="/en/divorce-in-uae/">family lawyer handling your divorce</a> can push for that
+        detail while the order is being drafted.
+      </p>
+    </section>
+
+    <!-- Overnight and holiday -->
+    <section class="section" aria-labelledby="overnight-heading">
+      <h2 id="overnight-heading">Overnight Stays and Holiday Access</h2>
+      <p>
+        Parents most often ask about two things: can the child stay overnight, and can they take the
+        child away during the school holidays. The answer depends on the track and on the child, but
+        both are commonly granted.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Overnight access</h3>
+          <p>
+            For non-Muslim parents under the 2022 civil law, joint custody makes shared overnights the
+            normal expectation. Under the Muslim law it is more case by case, but courts do order
+            overnight stays where the child is settled with it and the parent home is suitable. Very
+            young children may begin with daytime visits that extend to overnights as they grow.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Holiday and festival time</h3>
+          <p>
+            Access orders usually divide school holidays, Eid and other festivals so each parent gets
+            meaningful blocks of time. Taking the child on holiday inside the UAE is generally fine
+            within your access period. Travelling abroad with the child is different and needs consent
+            or court approval, covered below.
+          </p>
+        </div>
+      </div>
+      <p>
+        Where a non-custodial parent wants to take the children out of the country during their access
+        time, the rules on travel apply in full. Neither parent may remove the children from the UAE
+        without the other documented consent or a court order, and travel permission is typically
+        granted for a limited window at a time. Read our
+        <a href="/en/travel-ban-divorce-uae/">travel ban in UAE divorce guide</a> for how these
+        restrictions work and how to lift or impose them.
+      </p>
+    </section>
+
+    <!-- Supervised visitation -->
+    <section class="section" aria-labelledby="supervised-heading">
+      <h2 id="supervised-heading">Supervised Visitation: When and Why</h2>
+      <p>
+        Not every access order gives a parent free, unsupervised time with the child. Where the court
+        has concerns, it can order supervised visitation, meaning the visits take place in the presence
+        of a trusted third party or at a supervised setting. This is a protective tool, not a
+        punishment, and it is usually a stepping stone rather than a permanent state.
+      </p>
+      <p>Courts tend to consider supervision where there is:</p>
+      <ul class="list">
+        <li>A history or credible allegation of abuse, neglect or domestic violence</li>
+        <li>A genuine risk the parent will not return the child, or will try to remove them from the UAE</li>
+        <li>Substance misuse or a serious health issue affecting the parent ability to care for the child</li>
+        <li>A long gap in contact, where parent and child need to rebuild trust gradually</li>
+        <li>High conflict at handovers that is distressing the child</li>
+      </ul>
+      <p>
+        Supervised arrangements are often reviewed and relaxed as the parent demonstrates reliability.
+        A parent placed under supervision who wants to move toward normal access should comply fully,
+        keep records of every visit, and then apply to the court to widen the arrangement. Where safety
+        is the concern, related protections such as travel restrictions and emergency orders may run
+        alongside the visitation terms.
+      </p>
+    </section>
+
+    <!-- Denial of access -->
+    <section class="section" aria-labelledby="denial-heading">
+      <h2 id="denial-heading">What Happens if One Parent Denies Access</h2>
+      <p>
+        A common and painful situation is where the custodial parent simply stops the other parent from
+        seeing the children, despite a court order. UAE law does not leave you without a remedy. Denial
+        of court-ordered access is a breach that you can enforce, and the route is important: it runs
+        through the <strong>Execution Court</strong>, not the family court that first made the order.
+      </p>
+      <p>The Execution Court has a graduated set of tools:</p>
+      <ul class="list">
+        <li><strong>Formal warning:</strong> the court officially reminds the obstructing parent of their obligation to comply with the access order</li>
+        <li><strong>Fines:</strong> financial penalties that increase for repeated breaches</li>
+        <li><strong>Police-assisted handover:</strong> for persistent refusal, the court can involve the police to give effect to the order</li>
+        <li><strong>Arrest warrant:</strong> continued defiance of the court can escalate to an arrest warrant</li>
+        <li><strong>Custody review:</strong> systematic obstruction of the other parent access can itself become a ground to review who should hold custody</li>
+      </ul>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>Keep a record</h3>
+        <p>
+          If you are being denied access, log every missed visit with dates, messages and any refusal
+          in writing. A clear record of a pattern is what turns a complaint into an enforceable case,
+          and it is also evidence if you later ask the court to reconsider the custody arrangement.
+        </p>
+      </div>
+      <p>
+        The reverse can also happen: a non-custodial parent who refuses to return the child at the end
+        of a visit. That is treated seriously, can be a police matter, and where there is any risk the
+        child will be taken abroad you should also apply for a travel ban. The cross-border dimension
+        is set out in our guide on
+        <a href="/en/international-child-abduction-uae/">international child abduction in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- 2024 law effect -->
+    <section class="section" aria-labelledby="law2024-heading">
+      <h2 id="law2024-heading">How the 2024 Law Changes Access as Children Grow</h2>
+      <p>
+        The 2025 reform reshaped the age framework that sits behind visitation. Under
+        <strong>Federal Decree-Law No. 41 of 2024</strong>, custody now continues to
+        <strong>age 18</strong> for both boys and girls, replacing the old split ages of roughly 11 for
+        boys and 13 for girls under the 2005 law. Because custody runs longer, the period during which
+        a formal visitation schedule matters also runs longer.
+      </p>
+      <p>
+        The law also gives older children a voice. A child aged <strong>15 or older</strong> may choose
+        which parent to live with, where the court finds that choice in the child best interest. This
+        does not mean a 15-year-old dictates the outcome. The court still interviews the child, weighs
+        whether the preference is genuine or the product of one parent influence, and applies the best
+        interests test. In practice, a teenager settled wishes about who they live with, and how much
+        time they spend with the other parent, carry real weight.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>Access still matters up to 18</h3>
+        <p>
+          Even where an older child expresses a preference, the non-custodial parent retains a right to
+          contact. The child choosing one home does not extinguish the other parent access; it shapes
+          the schedule around the child life. For how these age rules interact with custody more
+          broadly, see our <a href="/en/child-custody-uae/">child custody guide</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Travel and relocation -->
+    <section class="section" aria-labelledby="travel-heading">
+      <h2 id="travel-heading">Travel, Relocation and Protecting Access</h2>
+      <p>
+        The single biggest threat to a visitation schedule is one parent moving away with the children.
+        A relocation, whether to another emirate or another country, can make a carefully set access
+        order impossible to keep. UAE law recognises this and does not let either parent unilaterally
+        move the children in a way that defeats the other parent contact.
+      </p>
+      <p>
+        Neither parent may take the children out of the UAE without the other documented consent or a
+        court order. A custodial parent who wants to relocate abroad with the children generally needs
+        the court permission, and the court weighs the effect on the non-custodial parent access as
+        part of the best interests assessment. If you fear the children will be removed, you can apply
+        for a travel ban that flags them in the immigration system at every UAE airport and border.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>If relocation is proposed</h3>
+          <p>The parent who wants to move must usually apply to court, showing the child will keep quality of life, schooling and access to the other parent.</p>
+          <a href="/en/child-relocation-after-divorce-uae/" class="card-link">Relocation guide →</a>
+        </div>
+        <div class="card">
+          <h3>If you fear removal</h3>
+          <p>Apply for a travel ban on the children. It can be granted urgently and prevents them leaving the UAE without a court order.</p>
+          <a href="/en/travel-ban-divorce-uae/" class="card-link">Travel ban guide →</a>
+        </div>
+        <div class="card">
+          <h3>If a parent remarries</h3>
+          <p>Remarriage can affect custody under the Muslim law, which in turn changes who visits whom. Know the rules before it happens.</p>
+          <a href="/en/custody-if-mother-remarries-uae/" class="card-link">Remarriage &amp; custody →</a>
+        </div>
+        <div class="card">
+          <h3>If a child is taken abroad</h3>
+          <p>The UAE is not a Hague Convention state, so there is no automatic return. Act fast through the courts and police.</p>
+          <a href="/en/international-child-abduction-uae/" class="card-link">Abduction guide →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access and support -->
+    <section class="section" aria-labelledby="support-heading">
+      <h2 id="support-heading">Access and Child Support Are Separate</h2>
+      <p>
+        One point trips up many parents: visitation and child maintenance are legally separate. A
+        parent cannot withhold access because support has not been paid, and a parent cannot stop
+        paying support because access is being blocked. Each is enforced on its own footing.
+      </p>
+      <p>
+        If the other parent is not paying maintenance, the remedy is enforcement through the court, not
+        cutting them off from the children. Equally, if you are being denied access, the answer is to
+        enforce the access order, not to stop paying. Our guide to
+        <a href="/en/child-support-uae/">child support in the UAE</a> explains how maintenance is set
+        and enforced, and why keeping the two issues separate protects you if the matter returns to
+        court. For the statutory background to both, see our
+        <a href="/en/uae-divorce-law/">UAE divorce law overview</a>.
+      </p>
+      <div class="cta-inline">
+        <p>Being kept from your children?</p>
+        <a href="#contact" class="btn btn--primary">Get Free Advice</a>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/child-custody-uae/" class="service-link">
+          <strong>Child Custody UAE</strong>
+          <span>Custody to 18 and the choice age of 15</span>
+        </a>
+        <a href="/en/father-custody-rights-uae/" class="service-link">
+          <strong>Father Custody Rights</strong>
+          <span>What the 2024 law gives fathers</span>
+        </a>
+        <a href="/en/guardianship-vs-custody-uae/" class="service-link">
+          <strong>Guardianship vs Custody</strong>
+          <span>Wilayah, hadanah and where access fits</span>
+        </a>
+        <a href="/en/child-relocation-after-divorce-uae/" class="service-link">
+          <strong>Child Relocation</strong>
+          <span>Moving abroad with the children</span>
+        </a>
+        <a href="/en/child-support-uae/" class="service-link">
+          <strong>Child Support UAE</strong>
+          <span>How maintenance is set and enforced</span>
+        </a>
+        <a href="/en/travel-ban-divorce-uae/" class="service-link">
+          <strong>Travel Bans in Divorce</strong>
+          <span>Stop the children being removed</span>
+        </a>
+        <a href="/en/custody-if-mother-remarries-uae/" class="service-link">
+          <strong>Custody if Mother Remarries</strong>
+          <span>How remarriage affects custody and access</span>
+        </a>
+        <a href="/en/international-child-abduction-uae/" class="service-link">
+          <strong>International Child Abduction</strong>
+          <span>The Hague Convention gap explained</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on Visitation Rights</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .list { margin: 10px 0 18px 20px; }
+  .list li { margin-bottom: 9px; color: #374151; line-height: 1.7; }
+  .list li a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .list li a:hover { text-decoration: underline; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

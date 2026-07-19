@@ -1,0 +1,554 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Postnuptial Agreements in UAE: Are They Valid? (2026)';
+const description =
+  'Are postnuptial agreements valid in the UAE? How a postnup signed after marriage works for non-Muslims and Muslims, what it can cover, and how to notarise one.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/postnuptial-agreement-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Postnuptial Agreement UAE', url: 'https://divorceu.ae/en/postnuptial-agreement-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/postnuptial-agreement-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'What is a postnuptial agreement?',
+    answer:
+      'A postnuptial agreement (or postnup) is a written contract that a married couple signs after their wedding to set out how assets, debts and financial support would be handled if they later divorce. It does the same job as a prenuptial agreement, but it is entered into during the marriage rather than before it. Couples often draft one after a business grows, after an inheritance, or after a period of reconciliation.',
+  },
+  {
+    question: 'Are postnuptial agreements valid in the UAE?',
+    answer:
+      'There is no statute that names the postnuptial agreement as a distinct instrument, so treat enforceability as case-by-case rather than guaranteed. For non-Muslims, Federal Decree-Law No. 41 of 2022 recognises party agreements on assets and maintenance, which gives a civil postnup a real legal footing when it is written, voluntary and fair. For Muslims, an agreement is assessed against Sharia principles under Federal Decree-Law No. 41 of 2024, and clauses that conflict with those principles are unlikely to hold. A UAE family lawyer should review any postnup before you rely on it.',
+  },
+  {
+    question: 'What is the difference between a prenup and a postnup in the UAE?',
+    answer:
+      'The only real difference is timing. A prenuptial agreement is signed before the marriage; a postnuptial agreement is signed after it. The legal tests are the same: it must be in writing, entered into voluntarily with full financial disclosure, and it must not contain terms that violate UAE public order or Sharia principles that apply to the couple. Courts tend to look closely at whether a spouse was pressured into signing once already married.',
+  },
+  {
+    question: 'Can non-Muslim expats sign a postnup in the UAE?',
+    answer:
+      'Yes. Non-Muslim residents are covered by Federal Decree-Law No. 41 of 2022, which lets spouses agree how property is divided and lets a non-Muslim couple ask the court to apply their home-country law if they raise it in the petition and prove its content. A postnup is a practical way to record that choice and to opt out of the default separate-property position for assets acquired during the marriage. The choice of foreign law must not breach UAE public order.',
+  },
+  {
+    question: 'Can Muslim couples sign a postnuptial agreement in the UAE?',
+    answer:
+      'Muslim couples can record financial terms in an agreement, but it is assessed under Federal Decree-Law No. 41 of 2024, which is based on Islamic Sharia. Matters such as mahr can be documented, and some conditions can be added, but a postnup cannot waive mandatory obligations such as nafaqa during the marriage, cannot pre-fix child support or custody, and cannot override mandatory inheritance shares. Clauses that contradict Sharia principles are liable to be struck out even where the marriage stays valid.',
+  },
+  {
+    question: 'What can a UAE postnuptial agreement not cover?',
+    answer:
+      'A postnup cannot fix child support or custody in advance, because a UAE court decides those independently on the child\'s best interests at the time of divorce. It cannot override mandatory Islamic inheritance shares for heirs entitled to them, cannot waive nafaqa (basic maintenance) during the marriage, and cannot include anything that violates UAE public order or applicable Sharia principles. Terms that are grossly one-sided also risk being set aside.',
+  },
+  {
+    question: 'Do we need to notarise or register a postnup in the UAE?',
+    answer:
+      'Notarisation or registration is not always a strict condition of validity, but it strengthens enforceability by creating an official record that one spouse cannot later deny. Foreign documents generally need legal translation into Arabic and attestation before a UAE court will give them weight. Registration at the Personal Status Court, or notarisation, is worth doing and a lawyer can arrange it.',
+  },
+  {
+    question: 'Is a postnup worth it for expats with foreign assets?',
+    answer:
+      'Often yes. If you own property, business shares or accounts across more than one country, a postnup lets you record who owns what and which law should apply, which reduces uncertainty if you divorce in the UAE. It pairs well with financial planning and, for cross-border wealth, with a clear record of offshore holdings. It does not guarantee a foreign court will follow it, so coordinate UAE and home-country advice.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Postnuptial Agreements in the UAE: Are They Valid?</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          A postnuptial agreement is signed after you marry, not before. This guide explains how a
+          postnup works in the UAE, how far courts will enforce one for non-Muslims and for Muslims,
+          what it can and cannot cover, and how to draft and notarise it. If you have not married
+          yet, start with our <a href="/en/prenuptial-agreement-uae/">prenuptial agreement guide</a>
+          instead.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Non-Muslim &amp; Muslim tracks</li>
+          <li>✓ 2022 &amp; 2024 laws explained</li>
+          <li>✓ Expat foreign-asset focus</li>
+          <li>✓ Free legal consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Marital Agreement Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- What is a postnup -->
+    <section class="section" aria-labelledby="what-heading">
+      <h2 id="what-heading">What Is a Postnuptial Agreement</h2>
+      <p>
+        A postnuptial agreement, often shortened to postnup, is a written contract that a married
+        couple signs to set out how their assets, debts and financial support would be handled if the
+        marriage later ends. It is the same idea as a prenuptial agreement, with one difference: it is
+        signed <strong>after</strong> the wedding rather than before it. People also call it a post
+        marriage agreement or, more broadly, a marital agreement.
+      </p>
+      <p>
+        The UAE does not have a single statute that names the postnuptial agreement as a separate
+        legal instrument. Instead, whether one is enforced depends on the general law that applies to
+        the couple, on contract principles, and on whether the terms clash with public order or
+        Sharia. That is why the honest answer to whether a UAE postnup is valid is: it can be, when it
+        is done properly, but treat enforceability as a question decided case by case rather than a
+        guarantee.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>Postnup in one line</h3>
+        <p>
+          A postnuptial agreement records financial terms during a marriage. It has the best chance of
+          being upheld when it is written, entered into voluntarily with full disclosure, reviewed by
+          independent lawyers, and free of any clause that conflicts with UAE public order or the
+          Sharia principles that apply to the couple.
+        </p>
+      </div>
+    </section>
+
+    <!-- Prenup vs postnup -->
+    <section class="section" aria-labelledby="diff-heading">
+      <h2 id="diff-heading">Postnup vs Prenup: What Actually Differs</h2>
+      <p>
+        The legal tests for a prenup and a postnup in the UAE are essentially the same. Both must be
+        written, voluntary and honest about each spouse\'s finances, and neither can pre-decide child
+        matters or override mandatory inheritance shares. The practical differences come down to
+        timing and negotiating position.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--gold">
+          <h3>Prenuptial agreement</h3>
+          <p>
+            Signed before the wedding. Both parties are usually cooperative and no assets have been
+            mixed yet, which makes disclosure cleaner. Our
+            <a href="/en/prenuptial-agreement-uae/">prenuptial agreement guide</a> covers what a prenup
+            can protect and the mistakes that void one.
+          </p>
+        </div>
+        <div class="info-box info-box--blue">
+          <h3>Postnuptial agreement</h3>
+          <p>
+            Signed during the marriage, often after a specific trigger such as a new business or an
+            inheritance. Because the couple is already married, a court is more likely to examine
+            whether one spouse was pressured, so voluntary consent and independent advice matter even
+            more.
+          </p>
+        </div>
+      </div>
+      <p>
+        One extra point of scrutiny with a postnup is fairness of bargaining. When a couple is already
+        married, one spouse may feel they have less room to walk away from the negotiation, so a court
+        will look harder at whether the agreement was genuinely free. Sensible drafting, separate legal
+        advice for each spouse, and full financial disclosure are the defence against a later challenge.
+      </p>
+    </section>
+
+    <!-- Non-Muslims under 41/2022 -->
+    <section class="section" aria-labelledby="civil-heading">
+      <h2 id="civil-heading">Postnups for Non-Muslims Under Federal Decree-Law 41 of 2022</h2>
+      <p>
+        Non-Muslim residents are covered by <strong>Federal Decree-Law No. 41 of 2022</strong> on
+        civil personal status, in force across all seven emirates since 1 February 2023. This is the
+        law that gives a civil postnup its firmest footing. The decree-law recognises that spouses can
+        agree how their property and financial affairs are arranged, and it lets a non-Muslim couple
+        ask the court to apply the law of their home country instead of UAE civil law if they raise
+        that election in the petition and prove what the foreign law says.
+      </p>
+      <p>
+        This matters because the default UAE position is <strong>separate property</strong>: each
+        spouse keeps assets registered in their own name, and the civil law does not impose an
+        automatic 50/50 split on divorce. A postnup lets a couple opt into something different, for
+        example agreeing that assets built up during the marriage are shared on an agreed basis
+        regardless of whose name they sit in. For how the courts divide assets when there is no
+        agreement, see our guide to
+        <a href="/en/property-division-divorce-uae/">property division on divorce in the UAE</a>.
+      </p>
+      <p>
+        Enforceability still has limits. A UAE court can set aside any term that breaches public order
+        or morality, and any election of foreign law must not conflict with UAE public order either.
+        The agreement should be clear, fair and free of coercion or concealment. For the wider picture
+        of the civil route, read
+        <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a> and
+        <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a>.
+      </p>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>The home-country law option</h3>
+        <p>
+          If one spouse comes from a country with equitable-distribution or community-property rules,
+          electing that law through a postnup can materially change what each party receives. The
+          election has to be pleaded and proven, so record it clearly in the agreement and take advice
+          in both jurisdictions before you rely on it.
+        </p>
+      </div>
+    </section>
+
+    <!-- Muslims under 41/2024 -->
+    <section class="section" aria-labelledby="sharia-heading">
+      <h2 id="sharia-heading">The Position for Muslims Under Federal Decree-Law 41 of 2024</h2>
+      <p>
+        For Muslim couples, marriage and divorce fall under <strong>Federal Decree-Law No. 41 of
+        2024</strong>, the personal status law that came into force on 15 April 2025 and fully replaced
+        the old Law No. 28 of 2005. It is based on Islamic Sharia, and under the 2024 law judges may
+        apply general Sharia principles without being tied to a single school where that serves the
+        best interest of the family. Any financial agreement between spouses is read against that
+        framework.
+      </p>
+      <p>
+        Within those limits, a Muslim couple can put certain financial matters in writing. The
+        <strong>mahr</strong> (dowry) can be documented, including the prompt portion paid at marriage
+        and the deferred portion payable on a husband-initiated divorce or on his death, which helps
+        avoid later disputes about what was agreed. Some conditions may also be added, but they hold
+        only if they do not contradict Sharia.
+      </p>
+      <p>
+        What a postnup cannot do for a Muslim couple is significant. It cannot waive the husband\'s
+        basic obligation of nafaqa (maintenance) during the marriage, cannot pre-fix child support or
+        custody, and cannot contract out of mandatory Islamic inheritance shares for heirs entitled to
+        them. Clauses that conflict with Sharia principles can be declared void even where the
+        marriage itself stays valid. Because the line between an enforceable financial term and a void
+        one is fact-specific, a Muslim couple should have any agreement reviewed against the Personal
+        Status Law by a UAE family lawyer. The statutes themselves are broken down in our
+        <a href="/en/uae-divorce-law/">UAE divorce law guide</a>.
+      </p>
+    </section>
+
+    <!-- What it can and cannot cover -->
+    <section class="section" aria-labelledby="scope-heading">
+      <h2 id="scope-heading">What a UAE Postnup Can and Cannot Cover</h2>
+      <p>
+        Regardless of which law applies, UAE practice draws clear lines between terms a court will
+        weigh and terms it will refuse to touch. Knowing the difference before you draft saves money
+        and stops you relying on clauses that will not hold.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>What a postnup can address</h3>
+          <ul class="list">
+            <li>Division of assets acquired during the marriage on an agreed basis</li>
+            <li>Ring-fencing of pre-marital property, savings and investments</li>
+            <li>Protection of a business or shares started or grown during the marriage</li>
+            <li>Allocation of debts each spouse is responsible for</li>
+            <li>Spousal maintenance arrangements, subject to court oversight</li>
+            <li>For non-Muslims, an election of home-country law for property division</li>
+            <li>For Muslims, documenting the prompt and deferred mahr</li>
+          </ul>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>What a postnup cannot do</h3>
+          <ul class="list">
+            <li>Pre-fix child custody, which the court decides on best interests at divorce</li>
+            <li>Cap or waive child support, set independently by the court</li>
+            <li>Override mandatory Islamic inheritance shares for entitled heirs</li>
+            <li>Waive nafaqa (basic maintenance) owed during the marriage</li>
+            <li>Include any clause that breaches UAE public order or morality</li>
+            <li>Contain terms that contradict applicable Sharia principles</li>
+            <li>Guarantee a foreign court will follow it abroad</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        The child-related limits are the ones couples most often misunderstand. A UAE court will always
+        assess custody and child support on the child\'s circumstances at the time of divorce, so any
+        postnup clause that tries to lock those in is unenforceable. Keep the agreement to the
+        financial and property matters it can actually govern.
+      </p>
+    </section>
+
+    <!-- Drafting and notarisation -->
+    <section class="section" aria-labelledby="draft-heading">
+      <h2 id="draft-heading">Drafting, Notarising and Attesting a Postnup</h2>
+      <p>
+        A postnup is only as strong as the way it is prepared. The steps below give an agreement its
+        best chance of being upheld if it is ever tested in a UAE court.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Confirm which law applies</h3>
+          <p>
+            Work out whether your agreement is assessed under the civil law (Federal Decree-Law No. 41
+            of 2022) or the Muslim personal status law (Federal Decree-Law No. 41 of 2024). This
+            decides what you can and cannot include and whether a home-country law election is open to
+            you.
+          </p>
+        </li>
+        <li>
+          <h3>Get independent legal advice for each spouse</h3>
+          <p>
+            Each party should have their own lawyer. An agreement where only one spouse had advice is
+            far more open to a later challenge on grounds of pressure or misunderstanding, which is a
+            particular risk once a couple is already married.
+          </p>
+        </li>
+        <li>
+          <h3>Make full financial disclosure</h3>
+          <p>
+            Both spouses should disclose assets, debts and income honestly, with a schedule attached to
+            the agreement. Hidden assets or material omissions give the disadvantaged party grounds to
+            unwind the postnup later.
+          </p>
+        </li>
+        <li>
+          <h3>Put it in writing and sign voluntarily</h3>
+          <p>
+            A verbal postnup has no standing. Use a formal written document, signed by both parties,
+            ideally with witnesses, and make sure neither spouse is under duress at signing.
+          </p>
+        </li>
+        <li>
+          <h3>Translate and attest foreign documents</h3>
+          <p>
+            If the agreement or supporting documents were made abroad, they generally need legal
+            translation into Arabic and attestation before a UAE court will give them weight. A lawyer
+            can manage the translation and legalisation.
+          </p>
+        </li>
+        <li>
+          <h3>Notarise or register it</h3>
+          <p>
+            Notarisation or registration at the Personal Status Court is not always a strict condition
+            of validity, but it creates an official record that a spouse cannot later deny and
+            strengthens enforceability. It is worth the modest cost.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- When couples use one -->
+    <section class="section" aria-labelledby="when-heading">
+      <h2 id="when-heading">When Couples Use a Postnuptial Agreement</h2>
+      <p>
+        People rarely draft a postnup out of nowhere. It usually follows a specific change in
+        circumstances that makes the couple want their financial position on the record.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>After a business starts or grows</h3>
+          <p>A spouse who builds a company during the marriage may want to ring-fence shares and set out how any value is treated if they later divorce.</p>
+        </div>
+        <div class="card">
+          <h3>After reconciliation</h3>
+          <p>Couples who separate and then decide to stay together sometimes use a postnup to reset expectations and record financial terms going forward.</p>
+        </div>
+        <div class="card">
+          <h3>Expats with foreign assets</h3>
+          <p>Where property, accounts or investments sit across more than one country, a postnup records who owns what and which law should apply on divorce.</p>
+        </div>
+        <div class="card">
+          <h3>After an inheritance or windfall</h3>
+          <p>A large inheritance or gift received during the marriage is a common trigger for documenting that it stays separate property.</p>
+        </div>
+      </div>
+      <p>
+        For couples with cross-border wealth, a postnup works best alongside broader planning. Our
+        guides to <a href="/en/divorce-financial-planning-uae/">divorce financial planning in the
+        UAE</a> and <a href="/en/offshore-assets-divorce-uae/">offshore assets in a UAE divorce</a>
+        cover how to structure and evidence holdings so an agreement is easier to apply. For the
+        underlying court process if a marriage does end, see
+        <a href="/en/divorce-in-uae/">divorce in the UAE</a>.
+      </p>
+      <div class="cta-inline">
+        <p>Thinking about a postnup?</p>
+        <a href="#contact" class="btn btn--primary">Get a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Enforceability reality check -->
+    <section class="section" aria-labelledby="reality-heading">
+      <h2 id="reality-heading">A Realistic View on Enforceability</h2>
+      <p>
+        It is fair to be cautious about how far a UAE court will follow a postnup, because there is no
+        statute that names the instrument and much of the reassurance online comes from law-firm
+        commentary rather than a settled body of reported cases. The safest way to read the position
+        is this: for non-Muslims, Federal Decree-Law No. 41 of 2022 gives a properly drafted civil
+        agreement a genuine basis, and for Muslims, an agreement is measured against the Sharia
+        framework in Federal Decree-Law No. 41 of 2024 and only the compatible parts survive.
+      </p>
+      <p>
+        In both cases the agreement is more persuasive the cleaner it is: written, voluntary, fully
+        disclosed, reviewed by independent lawyers, notarised, and free of any clause a court would
+        treat as contrary to public order or Sharia. A postnup does not remove the court\'s power to
+        decide child matters and maintenance, and it does not bind a foreign court. Treat it as a
+        strong statement of intent and a useful evidential record, backed by professional advice on
+        both sides, rather than an absolute guarantee of outcome.
+      </p>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/prenuptial-agreement-uae/" class="service-link">
+          <strong>Prenuptial Agreements UAE</strong>
+          <span>The before-marriage version and what it protects</span>
+        </a>
+        <a href="/en/property-division-divorce-uae/" class="service-link">
+          <strong>Property Division on Divorce</strong>
+          <span>How courts split assets with no agreement in place</span>
+        </a>
+        <a href="/en/non-muslim-divorce-uae/" class="service-link">
+          <strong>Non-Muslim Divorce UAE</strong>
+          <span>The civil route under Federal Decree-Law 41/2022</span>
+        </a>
+        <a href="/en/divorce-for-expats-in-uae/" class="service-link">
+          <strong>Divorce for Expats</strong>
+          <span>Filing, residency and home-country law options</span>
+        </a>
+        <a href="/en/offshore-assets-divorce-uae/" class="service-link">
+          <strong>Offshore Assets in Divorce</strong>
+          <span>Recording and protecting cross-border wealth</span>
+        </a>
+        <a href="/en/divorce-financial-planning-uae/" class="service-link">
+          <strong>Divorce Financial Planning</strong>
+          <span>Structuring finances before you need to</span>
+        </a>
+        <a href="/en/uae-divorce-law/" class="service-link">
+          <strong>UAE Divorce Law</strong>
+          <span>The statutes explained: 41/2024 and 41/2022</span>
+        </a>
+        <a href="/en/divorce-in-uae/" class="service-link">
+          <strong>Divorce in UAE</strong>
+          <span>The court process, cost and timeline</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on a UAE Postnuptial Agreement</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+  .list { margin: 0; padding-left: 20px; }
+  .list li { font-size: 0.9rem; color: #374151; line-height: 1.6; margin-bottom: 6px; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

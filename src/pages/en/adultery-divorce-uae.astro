@@ -1,0 +1,558 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Adultery and Divorce in UAE: The Law and Your Options';
+const description =
+  'How adultery affects divorce in the UAE: harm on the Sharia track, the complaint-based criminal law since 2021, and effects on custody and money claims.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/adultery-divorce-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Adultery and Divorce in UAE', url: 'https://divorceu.ae/en/adultery-divorce-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/adultery-divorce-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Is adultery still a crime in the UAE?',
+    answer:
+      'Reporting on the UAE Penal Code (Federal Decree-Law No. 31 of 2021, in force from 2 January 2022) indicates that adultery, meaning consensual sexual relations while at least one party is married, can still be treated as a criminal offence. The major change is that it is complaint-based: legal sources report that prosecution generally requires a complaint from a spouse or, in some cases, a guardian. This is a summary, not legal advice, and the criminal position is fact-sensitive, so consult a UAE lawyer before acting.',
+  },
+  {
+    question: 'Can I use my spouse cheating as a ground for divorce?',
+    answer:
+      'On the Muslim (Sharia) track, adultery can be presented as harm (darar), which is a recognised basis for a wife to seek judicial divorce. The difficulty is proof: courts generally look for a confession or direct eyewitness testimony, and suspicion or circumstantial material is often not enough on its own. For non-Muslims under the civil law, the divorce itself is no-fault, so you do not need to prove cheating to end the marriage.',
+  },
+  {
+    question: 'Does adultery affect child custody in the UAE?',
+    answer:
+      'It can. Custody in the UAE is decided on the best interests of the child, and a parent whose conduct is found to make them morally unsuitable or to create an unsafe environment may see their custody position weakened. Adultery is not an automatic bar to custody, and outcomes depend on the evidence and the specific facts. Get tailored advice from a family lawyer.',
+  },
+  {
+    question: 'Does adultery affect the financial settlement or alimony?',
+    answer:
+      'Possibly. For non-Muslims under Federal Decree-Law No. 41 of 2022, fault does not decide the divorce, but the court can weigh material and moral harm when assessing compensation and alimony, so proven misconduct may feed into a claim. On the Muslim track, established harm can also be relevant to the wife financial entitlements. The link is indirect and case-specific.',
+  },
+  {
+    question: 'How hard is it to prove adultery in a UAE court?',
+    answer:
+      'Generally hard. Legal commentary describes a high evidentiary bar, typically a confession or direct eyewitness testimony from competent witnesses with first-hand knowledge. Screenshots, messages or photos may support a harm claim but are often not treated as conclusive on their own. Because the standard is demanding and the stakes are high, this is an area to plan with a lawyer rather than act alone.',
+  },
+  {
+    question: 'Should I file a criminal complaint against a cheating spouse?',
+    answer:
+      'That is a serious decision with consequences for both parties, including possible imprisonment or deportation on conviction, and it can complicate custody, finances and your own position. Filing, withdrawing and settling a complaint all carry legal weight. Do not treat it as a routine step. Speak to a qualified UAE lawyer about the risks and alternatives before you do anything.',
+  },
+  {
+    question: 'What should I do if I discover my spouse is having an affair?',
+    answer:
+      'Avoid confronting the situation in a way that could expose you to legal risk, do not gather evidence unlawfully, and do not confess to anything yourself without advice. Instead, get confidential legal advice first so you understand your options on divorce, custody and finances, and the risks of the criminal route. A free consultation is a sensible first step.',
+  },
+  {
+    question: 'Does the civil law for non-Muslims care about adultery at all?',
+    answer:
+      'For ending the marriage, no. Federal Decree-Law No. 41 of 2022 lets either spouse divorce without proving fault, so adultery is not needed and is not a bar. Where it can matter is money: the court may consider harm caused by the divorce when it assesses alimony and compensation. So it is largely irrelevant to the divorce itself but may surface in the financial claims.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Adultery and Divorce in the UAE</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          What a cheating spouse means for a UAE divorce: adultery as harm on the Sharia track, the
+          complaint-based criminal law after the 2020 to 2021 reforms, and how it can touch custody
+          and money. The law here changed, so treat this as general information and see our
+          <a href="/en/uae-divorce-law/">UAE divorce law guide</a> for the statutes.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Muslim &amp; non-Muslim tracks</li>
+          <li>✓ Post-2021 Penal Code position</li>
+          <li>✓ Custody &amp; finance effects</li>
+          <li>✓ Free legal consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Divorce Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Intro / why the law matters -->
+    <section class="section" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Adultery and Divorce in the UAE: Start Here</h2>
+      <p>
+        Few things in a marriage are as painful as discovering infidelity, and in the UAE the
+        subject sits across two very different areas of law at once: family law, which decides your
+        divorce, custody and finances, and criminal law, which can treat adultery as an offence. The
+        two do not always move together, and getting them confused can lead people into serious
+        mistakes.
+      </p>
+      <p>
+        The single most important point is that the rules changed. The UAE overhauled parts of its
+        criminal law in 2020 and then issued a new Penal Code in 2021, softening and reshaping how
+        adultery is handled. Older articles online that say a person is automatically jailed for
+        adultery no longer reflect the current framework. This page walks through where things stand
+        now, while being honest about what is settled and what is not.
+      </p>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>This is information, not legal advice</h3>
+        <p>
+          DivorceU.AE is a referral service, not a law firm. Criminal-law consequences in this area
+          are fact-sensitive and can be severe, and public sources sometimes conflict. Nothing here
+          should be treated as advice for your situation. Speak to a licensed UAE lawyer before you
+          act, especially before confronting a spouse, gathering evidence or filing any complaint.
+        </p>
+      </div>
+    </section>
+
+    <!-- Two tracks -->
+    <section class="section" aria-labelledby="tracks-heading">
+      <h2 id="tracks-heading">Two Legal Tracks, Two Different Answers</h2>
+      <p>
+        The UAE runs a dual family-law system, and adultery is treated very differently on each
+        track. Which one applies to you depends on religion and, for non-Muslims, on whether you ask
+        the court to apply UAE civil law or your home-country law.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Muslim (Sharia) track</h3>
+          <p>
+            Governed by Federal Decree-Law No. 41 of 2024, based on Islamic Sharia. Adultery can be
+            raised as harm (darar) to support a judicial divorce, and fault-based conduct can feed
+            into custody and financial questions. See our
+            <a href="/en/sharia-divorce-uae/">Sharia divorce guide</a>.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Non-Muslim (civil) track</h3>
+          <p>
+            Governed by Federal Decree-Law No. 41 of 2022. Divorce is no-fault, so you do not have to
+            prove cheating to end the marriage. Adultery is largely irrelevant to the divorce itself
+            but may surface in financial claims. See our
+            <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce guide</a>.
+          </p>
+        </div>
+      </div>
+      <p>
+        Beneath both of these sits the criminal law, which applies regardless of the family-law
+        track. That is the layer that catches people out, so it is worth understanding how the 2020
+        to 2021 reforms changed it before deciding what to do.
+      </p>
+    </section>
+
+    <!-- Adultery as a ground: harm / darar -->
+    <section class="section" aria-labelledby="darar-heading">
+      <h2 id="darar-heading">Adultery as a Ground for Divorce: Harm (Darar)</h2>
+      <p>
+        On the Muslim track, UAE family law does not list adultery as a tidy standalone tick-box the
+        way some Western systems do. Instead, a spouse, most often the wife, can seek a judicial
+        divorce on the basis of harm, known as darar, where the other spouse conduct has made the
+        marriage unbearable. Infidelity is one of the situations that can fall under harm.
+      </p>
+      <p>
+        This matters because it gives an exit route even where the other spouse refuses to agree to
+        the divorce. If harm is established to the court satisfaction, the marriage can be dissolved
+        without the wife giving up her financial entitlements, which is a meaningful difference from
+        khul, where a wife typically forgoes some rights in exchange for release. For the wider list
+        of grounds a spouse can rely on, see our guides to
+        <a href="/en/grounds-for-divorce-uae/">grounds for divorce in the UAE</a> and
+        <a href="/en/divorce-for-harm-uae/">divorce for harm</a>.
+      </p>
+      <p>
+        It is worth being realistic, though. Raising adultery as harm is not the same as proving it,
+        and the two questions get decided very differently. Many cases that begin with an accusation
+        of cheating end up succeeding on a broader pattern of harm, such as abandonment, cruelty or
+        neglect, rather than on the affair itself. Where the conduct also involves threats or abuse,
+        our guide to <a href="/en/domestic-violence-divorce-uae/">domestic violence and divorce</a>
+        covers the protection options.
+      </p>
+    </section>
+
+    <!-- Evidence standard -->
+    <section class="section" aria-labelledby="evidence-heading">
+      <h2 id="evidence-heading">The Evidence Problem: Why Adultery Is Hard to Prove</h2>
+      <p>
+        The biggest practical hurdle is proof. Legal commentary on UAE practice describes a high
+        evidentiary bar for adultery, and the forms of proof that courts treat as strong are narrow.
+        In broad terms, the most reliable routes are a confession by the person involved, or direct
+        eyewitness testimony from competent witnesses who saw the act themselves rather than heard
+        about it.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Often treated as strong</h3>
+          <p>
+            A clear confession, or first-hand eyewitness testimony from adult, sane and competent
+            witnesses with direct knowledge. Some sources also mention conclusive forensic proof.
+            These are the categories courts tend to weigh most heavily.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Often not conclusive alone</h3>
+          <p>
+            Text messages, chat screenshots, photos, hotel records or private-investigator material
+            can support a harm claim, but reporting suggests they are frequently not treated as
+            decisive on their own. Suspicion and circumstantial hints rarely carry a case by
+            themselves.
+          </p>
+        </div>
+      </div>
+      <p>
+        There is a hard trade-off buried in this. The same evidence you might gather to prove an
+        affair can create legal exposure if it is obtained unlawfully, for example by illegal
+        recording or hacking a phone, which are themselves offences in the UAE. This is exactly why
+        do-it-yourself evidence gathering is risky, and why people are usually better off taking
+        advice before they act rather than after.
+      </p>
+    </section>
+
+    <!-- Criminal-law angle -->
+    <section class="section" aria-labelledby="criminal-heading">
+      <h2 id="criminal-heading">The Criminal-Law Angle After the 2020 to 2021 Reforms</h2>
+      <p>
+        This is the part where accuracy matters most, and where hedging is honest rather than evasive.
+        The UAE reformed its morality laws in two steps, and the effect is often misreported.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>2020: consensual sex out of wedlock relaxed</h3>
+          <p>
+            Reporting on Federal Decree-Law No. 15 of 2020 indicates that the UAE decriminalised
+            unmarried cohabitation and consensual sex between unmarried adults, part of a wider
+            liberalising package that also eased alcohol rules. This did not, on the reporting,
+            create a free pass for a married person to have an affair.
+          </p>
+        </li>
+        <li>
+          <h3>2021: a new Penal Code, effective January 2022</h3>
+          <p>
+            Federal Decree-Law No. 31 of 2021 issued a new Penal Code, reported to have replaced the
+            older 1987 code, and came into force on 2 January 2022. Under the reporting on this law,
+            adultery, meaning consensual sexual relations where at least one party is married, can
+            still be treated as a criminal offence, separate from the now-relaxed rules on unmarried
+            couples.
+          </p>
+        </li>
+        <li>
+          <h3>The key change: it is complaint-based</h3>
+          <p>
+            The most important shift, as widely reported, is that adultery is no longer prosecuted
+            automatically by the state. Legal sources indicate a case generally proceeds only where a
+            spouse, or in some accounts a guardian of one of the parties, files a complaint, and that
+            withdrawing the complaint can lead to the case being dropped. The specifics are
+            fact-sensitive, so treat this as a general summary.
+          </p>
+        </li>
+      </ol>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>On penalties, we are deliberately cautious</h3>
+        <p>
+          Public sources report that a conviction can carry imprisonment and, for non-citizens,
+          possible deportation, with some sources citing a minimum custodial term. We are not stating
+          a fixed sentence as certain, because the outcome depends on the charge, the facts and
+          prosecutorial and judicial discretion, and because sources vary. If a criminal dimension is
+          in play for you, this is a must-consult-a-lawyer situation, not a read-an-article one.
+        </p>
+      </div>
+    </section>
+
+    <!-- Custody effect -->
+    <section class="section" aria-labelledby="custody-heading">
+      <h2 id="custody-heading">Does Adultery Affect Child Custody?</h2>
+      <p>
+        Custody in the UAE is decided on the best interests of the child, not as a reward or
+        punishment for the parents behaviour in the marriage. That said, conduct can matter
+        indirectly. If a parent is found to be morally unsuitable to raise the child, or if the
+        relationship exposes the child to an unsafe or unstable environment, that can weaken their
+        custody position.
+      </p>
+      <p>
+        So adultery is not an automatic disqualification from custody, and it is not a guaranteed
+        weapon either. Courts look at the whole picture, including the practical care each parent
+        provides, stability and the child welfare. A proven affair might tip a finely balanced case,
+        but on its own it rarely decides custody. For how custody actually works under the current
+        law, including the change extending custody to age 18, see our
+        <a href="/en/child-custody-uae/">child custody in the UAE guide</a>.
+      </p>
+    </section>
+
+    <!-- Financial effect -->
+    <section class="section" aria-labelledby="finance-heading">
+      <h2 id="finance-heading">Does Adultery Affect the Financial Settlement?</h2>
+      <p>
+        The link between infidelity and money is real but indirect, and it works differently on each
+        track.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Muslim (Sharia) track</h3>
+          <p>
+            Where a wife secures a divorce for harm rather than surrendering rights through khul, she
+            generally keeps her financial entitlements such as deferred mahr and maintenance during
+            iddah. Established harm can therefore matter to the numbers. See
+            <a href="/en/wife-rights-after-divorce-uae/">wife rights after divorce</a>.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Non-Muslim (civil) track</h3>
+          <p>
+            Under Federal Decree-Law No. 41 of 2022 the divorce is no-fault, but the court can weigh
+            material and moral harm from the divorce when assessing alimony and compensation, so
+            proven misconduct may feed into a financial claim even though it is not needed to grant
+            the divorce.
+          </p>
+        </div>
+      </div>
+      <p>
+        In neither system does adultery flip a switch that automatically hands one spouse the other
+        assets. The UAE does not run an automatic community-property split, and the financial outcome
+        turns on contributions, needs, the length of the marriage and any agreement, with conduct as
+        one factor among several rather than the decisive one.
+      </p>
+    </section>
+
+    <!-- Non-Muslim position -->
+    <section class="section" aria-labelledby="nonmuslim-heading">
+      <h2 id="nonmuslim-heading">The Position for Non-Muslims: No-Fault by Design</h2>
+      <p>
+        For non-Muslim expats using the civil track, the whole point of Federal Decree-Law No. 41 of
+        2022 is that either spouse can end the marriage without proving fault, blame or grounds. You
+        do not have to prove your spouse cheated, and your spouse cannot block the divorce by denying
+        it. In that sense, adultery is largely beside the point when it comes to ending the marriage.
+      </p>
+      <p>
+        Where it can still matter is in the tail of claims that follow: alimony, compensation for
+        harm and, indirectly, the atmosphere around custody negotiations. Some non-Muslim residents
+        can also ask the court to apply their home-country law instead, which may treat fault
+        differently, so the forum and the choice of law can change how much infidelity counts. This
+        is a strategic decision worth taking advice on early, and our
+        <a href="/en/divorce-in-uae/">overview of divorce in the UAE</a> explains how the tracks fit
+        together.
+      </p>
+    </section>
+
+    <!-- Practical advice -->
+    <section class="section" aria-labelledby="advice-heading">
+      <h2 id="advice-heading">What to Do if You Suspect or Discover an Affair</h2>
+      <p>
+        The instinct to confront a cheating spouse, gather proof or report them is completely
+        understandable. In the UAE, acting on that instinct without advice is where people get hurt,
+        because the criminal layer can rebound on the accuser as well as the accused, and because
+        badly gathered evidence can be worthless or unlawful. A calmer, sequenced approach protects
+        you.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Get confidential legal advice first</h3>
+          <p>
+            Before you do anything else, speak to a licensed UAE family lawyer about your track, your
+            realistic options and the risks of the criminal route. Most first consultations are free
+            and confidential.
+          </p>
+        </li>
+        <li>
+          <h3>Do not gather evidence unlawfully</h3>
+          <p>
+            Illegal recording, hacking a phone or accessing accounts without permission are offences
+            in the UAE and can expose you to liability. Let a lawyer tell you what evidence is both
+            useful and lawful before you collect anything.
+          </p>
+        </li>
+        <li>
+          <h3>Be careful what you say and admit</h3>
+          <p>
+            Confessions carry real weight here. Do not admit to anything about your own conduct, and
+            do not provoke a confrontation that could be twisted against you, without advice first.
+          </p>
+        </li>
+        <li>
+          <h3>Think about the criminal complaint as a serious step</h3>
+          <p>
+            Filing a complaint is a decision with consequences for custody, finances, visas and both
+            parties liberty. It is not a routine tactic. Weigh it with a lawyer, not in the heat of
+            the moment.
+          </p>
+        </li>
+      </ol>
+      <div class="cta-inline">
+        <p>Discovered infidelity and unsure what to do?</p>
+        <a href="#contact" class="btn btn--primary">Get a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/grounds-for-divorce-uae/" class="service-link">
+          <strong>Grounds for Divorce</strong>
+          <span>Every basis you can rely on to file</span>
+        </a>
+        <a href="/en/divorce-for-harm-uae/" class="service-link">
+          <strong>Divorce for Harm (Darar)</strong>
+          <span>How the harm ground works in practice</span>
+        </a>
+        <a href="/en/sharia-divorce-uae/" class="service-link">
+          <strong>Sharia Divorce</strong>
+          <span>The Muslim track under 41 of 2024</span>
+        </a>
+        <a href="/en/non-muslim-divorce-uae/" class="service-link">
+          <strong>Non-Muslim Divorce</strong>
+          <span>The civil no-fault route for expats</span>
+        </a>
+        <a href="/en/child-custody-uae/" class="service-link">
+          <strong>Child Custody UAE</strong>
+          <span>Best interests and custody to 18</span>
+        </a>
+        <a href="/en/wife-rights-after-divorce-uae/" class="service-link">
+          <strong>Wife Rights After Divorce</strong>
+          <span>Mahr, maintenance and alimony</span>
+        </a>
+        <a href="/en/domestic-violence-divorce-uae/" class="service-link">
+          <strong>Domestic Violence &amp; Divorce</strong>
+          <span>Protection orders and safety</span>
+        </a>
+        <a href="/en/uae-divorce-law/" class="service-link">
+          <strong>UAE Divorce Law</strong>
+          <span>The statutes behind the dual system</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on Adultery and Divorce in the UAE</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

@@ -1,0 +1,571 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Husband Rights in Divorce UAE: What You Keep and Owe';
+const description =
+  'A practical guide to a husband rights and obligations in a UAE divorce: talaq, mahr, nafaqa, assets held in his name, guardianship, custody and access to children.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/husband-rights-divorce-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Husband Rights in Divorce UAE', url: 'https://divorceu.ae/en/husband-rights-divorce-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-04',
+  dateModified: '2026-07-04',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/husband-rights-divorce-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'What are a husband rights in a UAE divorce?',
+    answer:
+      'A husband can initiate divorce (talaq for Muslim couples, or a no-fault petition for non-Muslims), keep assets legally held in his own name (there is no automatic community-property split), seek guardianship (wilayah) of his children, and apply for custody or a defined visitation schedule. These rights sit alongside real obligations: documenting the divorce at court, paying any deferred mahr, covering the wife maintenance during her iddah, and paying child support regardless of who has custody.',
+  },
+  {
+    question: 'Can a husband still pronounce talaq in the UAE?',
+    answer:
+      'Yes, but it must now be documented at the competent court under Federal Decree-Law No. 41 of 2024. A verbal or written pronouncement outside court no longer settles the matter on its own. Law-firm briefings report the husband should document the divorce within a short statutory window (commonly cited as 15 days); confirm the exact figure with a lawyer. Repeated pronouncements now count as a single divorce.',
+  },
+  {
+    question: 'Does the husband have to pay mahr when he divorces his wife?',
+    answer:
+      'For Muslim marriages, any unpaid deferred mahr (muakhar) becomes due on divorce. If the wife obtains a khula (a divorce she initiates with a financial settlement), she typically returns or waives the mahr in exchange for the release. If she divorces on grounds of harm, the mahr right is usually retained. Non-Muslim civil marriages under Federal Decree-Law No. 41 of 2022 have no mahr concept.',
+  },
+  {
+    question: 'What maintenance must a husband pay after divorce?',
+    answer:
+      'For Muslim divorces, the husband pays the wife maintenance (nafaqa) during her iddah waiting period, commonly around three months. Separately, and regardless of who has custody, the father pays child maintenance covering food, housing, schooling and medical care. Non-Muslim husbands may face a spousal maintenance claim assessed under Article 9 factors of the 2022 civil law.',
+  },
+  {
+    question: 'Does the husband keep assets in his own name after divorce?',
+    answer:
+      'UAE law does not impose an automatic 50/50 split. Assets held in the husband name are treated on a separate-property basis, and the court adjudicates any claim based on each spouse contributions, needs and any agreement. That said, jointly owned property can be sold or bought out, and a court can still order payments, so a clean settlement is safer than assuming everything in your name stays yours.',
+  },
+  {
+    question: 'Can a father get custody of his children in the UAE?',
+    answer:
+      'The father is usually the guardian (wali) responsible for major decisions and finances, while day-to-day custody (hadanah) commonly rests with the mother. Under Federal Decree-Law No. 41 of 2024 custody now continues to age 18, and a child aged 15 or older may choose which parent to live with where the court finds it in the child best interest. A father can petition for custody, and for non-Muslims the 2022 civil law makes joint custody the default.',
+  },
+  {
+    question: 'What are a husband rights if he is a non-Muslim expat?',
+    answer:
+      'Under Federal Decree-Law No. 41 of 2022, a non-Muslim husband stands on equal footing with his wife. Either spouse can file a no-fault divorce, joint and equal custody is the default, and there is no mahr and no iddah. He may face a spousal maintenance (alimony) claim, and assets are divided by the court on contribution and need, not by an automatic equal split.',
+  },
+  {
+    question: 'Is a husband still responsible for children he does not have custody of?',
+    answer:
+      'Yes. Child maintenance is owed by the father whether or not he holds custody. Losing day-to-day custody does not end his financial duty, and it does not remove his guardianship role or his right to a reasonable visitation and access schedule set by the court.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Husband Rights in Divorce UAE</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          A husband in a UAE divorce has real rights, and real responsibilities that come with them.
+          This guide sets out both sides for men: what you can initiate, what assets you keep, what
+          you owe in mahr and maintenance, and your role as guardian and father. For the mirror
+          view, see <a href="/en/wife-rights-after-divorce-uae/">wife rights after divorce</a>.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Rights and obligations</li>
+          <li>✓ Muslim &amp; non-Muslim tracks</li>
+          <li>✓ 2024 &amp; 2022 law updates</li>
+          <li>✓ Free legal consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Know Your Rights: Free Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Intro / summary -->
+    <section class="section" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">A Husband Rights and Obligations at a Glance</h2>
+      <p>
+        Men going through divorce in the UAE often hear a lot about a wife entitlements and much less
+        about their own position. The reality is that a husband holds a defined set of rights, and
+        each one is paired with a duty. You can initiate the divorce, but you must document it at
+        court. You keep assets held in your name, but you still owe maintenance and child support.
+        You remain the children guardian, but day-to-day custody may sit with the mother.
+      </p>
+      <p>
+        Which rules apply depends on whether you are in a Muslim marriage governed by
+        <strong>Federal Decree-Law No. 41 of 2024</strong> (in force since 15 April 2025, replacing
+        the old 2005 law) or a non-Muslim civil marriage under
+        <strong>Federal Decree-Law No. 41 of 2022</strong>. The table below is a quick map; the
+        sections that follow give the detail.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Your main rights</h3>
+          <p>
+            Initiate divorce (talaq or a civil petition), keep separately owned assets, act as
+            guardian (wilayah) over your children, petition for custody, and get a defined visitation
+            and access schedule to your children.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Your main obligations</h3>
+          <p>
+            Document the divorce at court, pay any deferred mahr, cover the wife maintenance during
+            her iddah (Muslim marriages), and pay child maintenance regardless of who holds custody.
+            Non-Muslim husbands may also face a spousal alimony claim.
+          </p>
+        </div>
+      </div>
+      <p>
+        This page focuses on the husband perspective. For the statutes themselves, read our
+        <a href="/en/uae-divorce-law/">UAE divorce law guide</a>, and for the full step-by-step
+        procedure see <a href="/en/divorce-in-uae/">divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Right to initiate talaq -->
+    <section class="section" aria-labelledby="talaq-heading">
+      <h2 id="talaq-heading">The Right to Initiate Divorce (Talaq)</h2>
+      <p>
+        For Muslim couples, the husband retains the right to pronounce talaq. What has changed under
+        Federal Decree-Law No. 41 of 2024 is how that pronouncement is treated. A talaq spoken at
+        home, sent by message, or made in anger no longer settles the divorce by itself. The divorce
+        must be <strong>documented at the competent court</strong> to have legal effect, and law-firm
+        briefings report the husband is expected to register it within a short statutory window,
+        commonly cited as 15 days. Treat that specific day-count as needing confirmation against the
+        official text, because the exact figure varies between sources.
+      </p>
+      <p>
+        Two further points matter for men. First, repeated pronouncements of divorce (verbal,
+        written or by gesture) are now counted as a <strong>single</strong> divorce, not several, so
+        an impulsive repetition does not multiply the effect. Second, if the husband delays
+        documenting the divorce, the wife can file to prove it and claim compensation equal to
+        maintenance from the divorce date until it is registered. In short, the right to initiate is
+        intact, but it now runs through the court rather than around it. Our
+        <a href="/en/talaq-uae/">talaq in the UAE guide</a> walks through the mechanics.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>What if the wife initiates?</h3>
+        <p>
+          A wife can seek a <a href="/en/khula-divorce-uae/">khula divorce</a> (she initiates and
+          gives up a financial claim, typically returning the mahr) or a judicial divorce on grounds
+          such as harm or non-payment. As a husband, knowing which route she is on tells you a lot
+          about your likely mahr and maintenance exposure, which the next sections cover.
+        </p>
+      </div>
+    </section>
+
+    <!-- Non-Muslim position -->
+    <section class="section" aria-labelledby="nonmuslim-heading">
+      <h2 id="nonmuslim-heading">If You Are a Non-Muslim Expat: Equal Standing</h2>
+      <p>
+        If you married under, or elect, the civil regime, your position is governed by Federal
+        Decree-Law No. 41 of 2022, applied across all seven emirates since 1 February 2023. Here the
+        framework is deliberately even-handed. Either spouse can petition for divorce
+        <strong>without proving fault, harm or grounds</strong>, so the husband has the same right to
+        file as the wife, and neither side gains an advantage from being the one to initiate.
+      </p>
+      <p>
+        Three practical differences from the Muslim track stand out for men. There is
+        <strong>no mahr</strong> to settle, so that obligation simply does not arise. There is
+        <strong>no iddah</strong> waiting period, which removes the iddah-maintenance duty. And
+        <strong>joint and equal custody is the default</strong> after divorce, with both parents
+        sharing responsibility until the child turns 18, so a non-Muslim father starts from a much
+        stronger custody position than under Sharia principles. Either parent can still petition for
+        sole custody at the court discretion.
+      </p>
+      <p>
+        The trade-off is that a non-Muslim husband may face a spousal maintenance (alimony) claim.
+        Courts weigh factors under Article 9 of the civil law, including the length of the marriage,
+        the wife age and the financial circumstances of both spouses, often assessed by a
+        court-appointed accountant. Note that Abu Dhabi runs its own regime (Law No. 14 of 2021) with
+        a distinct alimony benchmark, so where you file affects the numbers. See
+        <a href="/en/alimony-uae/">alimony in the UAE</a> for how these claims are calculated.
+      </p>
+    </section>
+
+    <!-- Assets -->
+    <section class="section" aria-labelledby="assets-heading">
+      <h2 id="assets-heading">Assets Held in Your Name: What You Keep</h2>
+      <p>
+        This is the question most husbands ask first. The reassuring part is that the UAE does
+        <strong>not</strong> operate an automatic community-property regime, and there is no
+        guaranteed 50/50 division of everything acquired during the marriage. Both the Muslim and the
+        non-Muslim frameworks start from a separate-property principle: what is legally held in your
+        name is treated as yours, and what is in the wife name is treated as hers.
+      </p>
+      <p>
+        The important qualification is that separate property is a starting point, not an absolute
+        shield. Under the 2022 civil law the court can adjudicate a claim based on each spouse
+        financial and non-financial contributions, needs and any agreement between you.
+        <strong>Jointly</strong> owned property (a villa in both names, a shared account) can be sold
+        or one party bought out. And even where assets stay legally separate, a court can still order
+        payments such as maintenance or, for non-Muslims, alimony that draw on your income and
+        resources. So the accurate framing is: you keep what is properly yours, but you cannot assume
+        the divorce leaves your finances untouched.
+      </p>
+      <div class="info-box info-box--gold" style="margin-top:8px;">
+        <h3>Practical takeaway for men</h3>
+        <p>
+          Keep clear records of what you owned before the marriage and what you acquired in your sole
+          name. If significant assets are jointly held or were funded by both spouses, expect them to
+          be in play. A negotiated settlement usually protects a husband better than leaving division
+          to a contested hearing. Our
+          <a href="/en/divorce-in-uae/">divorce process guide</a> explains how asset claims are
+          lodged and assessed.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mahr obligations -->
+    <section class="section" aria-labelledby="mahr-heading">
+      <h2 id="mahr-heading">Mahr: When You Owe It and When You Do Not</h2>
+      <p>
+        For a Muslim marriage, mahr (the dowry set in the marriage contract) is one of the clearest
+        financial obligations a husband carries into divorce. It usually has two parts: the prompt
+        mahr (muqaddam) paid at the time of marriage, and the deferred mahr (muakhar) agreed to fall
+        due later. On divorce, any unpaid <strong>deferred mahr becomes immediately payable</strong>,
+        and the wife can pursue it through the Personal Status Court if you do not pay.
+      </p>
+      <p>
+        Where the mahr obligation shifts is when the wife is the one seeking the divorce:
+      </p>
+      <ul class="list">
+        <li>
+          <strong>Khula:</strong> if the wife obtains a khula, she typically returns or waives the
+          mahr in exchange for the release, so your deferred-mahr liability is usually offset. See
+          <a href="/en/khula-divorce-uae/">khula divorce in the UAE</a>.
+        </li>
+        <li>
+          <strong>Judicial divorce for harm:</strong> if she divorces on established grounds such as
+          harm, abandonment or non-payment, she generally keeps her mahr right, and you remain liable
+          for any deferred amount.
+        </li>
+        <li>
+          <strong>Husband-initiated talaq:</strong> if you initiate, the deferred mahr falls due, and
+          the court may also consider a consolation payment (mutaa) to the wife depending on the
+          circumstances.
+        </li>
+      </ul>
+      <p>
+        Non-Muslim husbands under the 2022 civil law have no mahr obligation at all, because the
+        civil regime does not use the concept. For the full picture of how the dowry is treated on
+        both sides, read our <a href="/en/mahr-divorce-uae/">mahr and divorce guide</a>.
+      </p>
+    </section>
+
+    <!-- Maintenance duties -->
+    <section class="section" aria-labelledby="maintenance-heading">
+      <h2 id="maintenance-heading">Maintenance Duties: Iddah and Child Support</h2>
+      <p>
+        Maintenance (nafaqa) is where a husband responsibilities are most concrete, and where men are
+        sometimes caught out by assuming the duty ends at the decree. It does not. There are two
+        distinct obligations, and they run on different tracks.
+      </p>
+
+      <h3>Iddah maintenance for the wife (Muslim marriages)</h3>
+      <p>
+        For a Muslim divorce, the husband must cover the wife full living expenses during her
+        <strong>iddah</strong> waiting period, commonly around three months, regardless of who
+        initiated the divorce. This covers accommodation, food, clothing and medical costs for that
+        period. After iddah ends, a wife right to ongoing maintenance from her ex-husband generally
+        stops under Islamic personal status principles, unless a court finds particular grounds. If
+        the wife is pregnant, the maintenance obligation can extend to delivery.
+      </p>
+
+      <h3>Child maintenance (regardless of custody)</h3>
+      <p>
+        This is the duty that surprises men most: as the father, you pay child maintenance
+        <strong>whether or not you hold custody</strong>. Losing day-to-day custody to the mother
+        does not reduce or remove your financial responsibility for the children. Child support
+        typically covers:
+      </p>
+      <ul class="list">
+        <li>Food, clothing and daily living costs for the children</li>
+        <li>School fees, supplies and education costs</li>
+        <li>Medical and healthcare expenses</li>
+        <li>Housing for the children and their custodial parent during the custody period</li>
+      </ul>
+      <p>
+        Under the 2024 law, backdated maintenance can generally be claimed only for the preceding two
+        years, which caps historic exposure but does not excuse ongoing payment. For non-Muslim
+        fathers the duty to support the children is comparable, alongside any spousal alimony claim.
+        See <a href="/en/child-support-uae/">child support in the UAE</a> for how amounts are set and
+        enforced.
+      </p>
+      <div class="cta-inline">
+        <p>Unsure what you will owe?</p>
+        <a href="#contact" class="btn btn--primary">Get Free Legal Advice</a>
+      </div>
+    </section>
+
+    <!-- Guardianship vs custody -->
+    <section class="section" aria-labelledby="guardianship-heading">
+      <h2 id="guardianship-heading">Guardianship (Wilayah) vs Custody (Hadanah)</h2>
+      <p>
+        UAE family law splits responsibility for children into two roles, and understanding the
+        difference is essential for any father. Confusing the two is one of the most common mistakes
+        men make in divorce.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Guardianship (wilayah): usually the father</h3>
+          <p>
+            The guardian (wali) is responsible for major life decisions and the children financial
+            and legal interests: schooling choices, travel documents, and management of the
+            children affairs. For Muslim families this role usually stays with the father even after
+            divorce, and it is not lost simply because the mother has day-to-day custody.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Custody (hadanah): often the mother</h3>
+          <p>
+            Custody is the day-to-day physical care and upbringing of the children. Under Federal
+            Decree-Law No. 41 of 2024 custody now continues to <strong>age 18</strong> for both boys
+            and girls, and a child aged 15 or older may choose which parent to live with where the
+            court finds it in the child best interest.
+          </p>
+        </div>
+      </div>
+      <p>
+        So a Muslim father typically remains guardian while the mother holds custody, and both roles
+        run in parallel. A father can still petition the court for custody, particularly where he can
+        show it serves the children best interest. For non-Muslims, Federal Decree-Law No. 41 of 2022
+        changes the default entirely: <strong>joint and equal custody</strong> is the starting point,
+        giving fathers a materially stronger position. Our
+        <a href="/en/guardianship-vs-custody-uae/">guardianship vs custody guide</a> unpacks the
+        distinction in full, and <a href="/en/father-custody-rights-uae/">father custody rights in
+        the UAE</a> focuses specifically on how fathers pursue and protect custody.
+      </p>
+    </section>
+
+    <!-- Visitation / access -->
+    <section class="section" aria-labelledby="access-heading">
+      <h2 id="access-heading">Visitation and Access to Your Children</h2>
+      <p>
+        A father who does not hold day-to-day custody retains the right to see his children. UAE
+        courts set a visitation and access schedule, and the guiding standard is the best interest of
+        the child, not a punishment of either parent. In practice this can mean regular weekly or
+        weekend contact, holiday arrangements, and communication by phone or video, with the detail
+        depending on the family circumstances and how far apart the parents live.
+      </p>
+      <p>
+        Two things help a father protect access. The first is a clear, workable schedule written into
+        the settlement or court order rather than left informal, because an informal arrangement is
+        hard to enforce if it breaks down. The second is keeping child maintenance current: while
+        maintenance and access are legally separate, a father who meets his financial duties is in a
+        far stronger position when asking a court to uphold or widen contact. For how custody and
+        access are decided together, see our
+        <a href="/en/child-custody-uae/">child custody in the UAE guide</a>.
+      </p>
+    </section>
+
+    <!-- Rights vs responsibilities recap -->
+    <section class="section" aria-labelledby="recap-heading">
+      <h2 id="recap-heading">Rights and Responsibilities: The Balance for Men</h2>
+      <p>
+        The theme running through all of the above is that a husband rights in a UAE divorce are
+        genuine, but each pairs with a duty. It helps to see them side by side.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Area</th><th>Your right</th><th>Your obligation</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Initiating divorce</td>
+              <td>Pronounce talaq (Muslim) or file a no-fault petition (non-Muslim)</td>
+              <td>Document the divorce at the competent court under 41/2024</td>
+            </tr>
+            <tr>
+              <td>Assets</td>
+              <td>Keep property legally held in your own name</td>
+              <td>Divide jointly owned assets; meet maintenance and alimony orders</td>
+            </tr>
+            <tr>
+              <td>Mahr (Muslim)</td>
+              <td>Offset the mahr if the wife takes a khula</td>
+              <td>Pay any deferred (muakhar) mahr on a husband-initiated talaq</td>
+            </tr>
+            <tr>
+              <td>Maintenance</td>
+              <td>Duty to the wife generally ends after iddah</td>
+              <td>Cover iddah maintenance, then child support regardless of custody</td>
+            </tr>
+            <tr>
+              <td>Children</td>
+              <td>Remain guardian (Muslim); petition for custody; get visitation</td>
+              <td>Support the children financially and honour the access schedule</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Indicative summary only. Muslim marriages follow Federal Decree-Law 41/2024; non-Muslim
+          civil marriages follow 41/2022, which makes joint custody the default and has no mahr or
+          iddah. Confirm your specific position with a lawyer.
+        </p>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/wife-rights-after-divorce-uae/" class="service-link">
+          <strong>Wife Rights After Divorce</strong>
+          <span>The mirror view: alimony, mahr and housing</span>
+        </a>
+        <a href="/en/father-custody-rights-uae/" class="service-link">
+          <strong>Father Custody Rights UAE</strong>
+          <span>How fathers pursue and protect custody</span>
+        </a>
+        <a href="/en/guardianship-vs-custody-uae/" class="service-link">
+          <strong>Guardianship vs Custody</strong>
+          <span>Wilayah and hadanah explained</span>
+        </a>
+        <a href="/en/child-custody-uae/" class="service-link">
+          <strong>Child Custody UAE</strong>
+          <span>Custody to 18 and the choice age of 15</span>
+        </a>
+        <a href="/en/talaq-uae/" class="service-link">
+          <strong>Talaq in the UAE</strong>
+          <span>Court documentation and the single-count rule</span>
+        </a>
+        <a href="/en/khula-divorce-uae/" class="service-link">
+          <strong>Khula Divorce</strong>
+          <span>Wife-initiated divorce and mahr return</span>
+        </a>
+        <a href="/en/mahr-divorce-uae/" class="service-link">
+          <strong>Mahr and Divorce</strong>
+          <span>Prompt and deferred dowry on divorce</span>
+        </a>
+        <a href="/en/alimony-uae/" class="service-link">
+          <strong>Alimony UAE</strong>
+          <span>How spousal maintenance is calculated</span>
+        </a>
+        <a href="/en/child-support-uae/" class="service-link">
+          <strong>Child Support UAE</strong>
+          <span>The father duty regardless of custody</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Understand Your Rights as a Husband: Free Consultation</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .list { margin: 12px 0 20px 20px; }
+  .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
+  .list li a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .list li a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>
