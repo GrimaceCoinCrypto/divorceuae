@@ -3,6 +3,14 @@
 # Root → English (301 redirect, avoids duplicate content at / and /en/)
 /  /en/  301
 
+# Consolidate trailing-slash duplicates indexed by Google (non-slash → slash, 301)
+/en/divorce-cost-uae      /en/divorce-cost-uae/      301
+/en/divorce-rate-uae      /en/divorce-rate-uae/      301
+/en/divorce-timeline-uae  /en/divorce-timeline-uae/  301
+/en/uae-divorce-law       /en/uae-divorce-law/       301
+/en/child-custody-uae     /en/child-custody-uae/     301
+/en/khula-divorce-uae     /en/khula-divorce-uae/     301
+
 # Thank-you page rewrite (form redirect target)
 /thank-you  /en/thank-you  200
 

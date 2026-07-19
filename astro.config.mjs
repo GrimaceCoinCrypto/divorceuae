@@ -8,11 +8,17 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) =>
-        !page.includes('/thank-you') &&
-        !page.includes('/404') &&
-        !page.includes('/disclaimer') &&
-        !page.includes('/privacy'),
+      filter: (page) => {
+        const p = decodeURIComponent(page);
+        return (
+          !p.includes('/thank-you') &&
+          !p.includes('/404') &&
+          !p.includes('/disclaimer') &&
+          !p.includes('/privacy') &&
+          !p.includes('إخلاء-المسؤولية') &&
+          !p.includes('سياسة-الخصوصية')
+        );
+      },
     }),
   ],
   i18n: {
