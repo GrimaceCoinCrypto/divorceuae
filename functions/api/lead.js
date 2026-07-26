@@ -24,8 +24,15 @@ export async function onRequestPost(context) {
   const portalUrl    = env.PORTAL_INGEST_URL || 'https://divorceuae-portal-production.up.railway.app'
   const ingestSecret = env.INGEST_SECRET     || ''
 
+  // Guard against the silent-failure mode: a missing/incorrect secret makes the
+  // portal reject every lead with 401, which is NOT a thrown error. Log loudly
+  // so it is visible in Cloudflare Pages function logs.
+  if (!ingestSecret) {
+    console.error('[lead] INGEST_SECRET env var is not set — portal will reject leads with 401')
+  }
+
   try {
-    await fetch(`${portalUrl}/api/ingest`, {
+    const res = await fetch(`${portalUrl}/api/ingest`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,6 +40,10 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify(payload),
     })
+    if (!res.ok) {
+      const body = await res.text().catch(() => '')
+      console.error(`[lead] portal ingest returned ${res.status}: ${body.slice(0, 300)}`)
+    }
   } catch (e) {
     console.error('[lead] portal ingest failed:', e)
   }
