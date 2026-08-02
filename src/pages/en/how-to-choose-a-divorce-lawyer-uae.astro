@@ -1,0 +1,631 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'How to Choose a Divorce Lawyer in UAE (2026 Guide)';
+const description =
+  'How to choose the right divorce lawyer in the UAE: licensing to verify, case-type experience, languages, questions to ask in the free consultation, and red flags.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/how-to-choose-a-divorce-lawyer-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'How to Choose a Divorce Lawyer', url: 'https://divorceu.ae/en/how-to-choose-a-divorce-lawyer-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-07-25',
+  dateModified: '2026-07-25',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/how-to-choose-a-divorce-lawyer-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Who is the best divorce lawyer in the UAE?',
+    answer:
+      'There is no single best divorce lawyer in the UAE, because the right choice depends on your case. A senior litigator who wins high-conflict custody battles may be the wrong fit for a quiet mutual-consent divorce, where a settlement-focused lawyer will cost less and finish sooner. Judge a lawyer on fit for your situation and track record with cases like yours, not on advertising or a generic best-of ranking.',
+  },
+  {
+    question: 'How do I check if a divorce lawyer is licensed in the UAE?',
+    answer:
+      'Ask for the advocate registration or licence number and the emirate that issued it, then confirm it with the relevant authority, such as Dubai Legal Affairs Department (the DLA) in Dubai or the Ministry of Justice register federally. Only a UAE-licensed advocate can represent you in the Personal Status Court. Legal consultants can advise but cannot always appear in court, so confirm rights of audience before you sign.',
+  },
+  {
+    question: 'What should I ask a divorce lawyer in the first consultation?',
+    answer:
+      'Ask how many cases like yours they have handled, which law applies to you (Muslim under 41/2024 or civil under 41/2022), a realistic range of outcomes on custody, maintenance and assets, the likely timeline, the total fee structure including court and translation costs, and who will actually run your file. A good lawyer gives clear answers and a written engagement letter, not just reassurance.',
+  },
+  {
+    question: 'Should I pick the cheapest divorce lawyer?',
+    answer:
+      'Price matters, but the cheapest lawyer is not always the cheapest outcome. A low fixed fee that misses a maintenance or custody point can cost far more later, and a poorly drafted settlement can push a fast uncontested case back into contested litigation. Compare a few written quotes on a like-for-like basis, and weigh experience and fit alongside price. For genuine low-cost options see our legal aid guide.',
+  },
+  {
+    question: 'Do I need a lawyer who speaks my language?',
+    answer:
+      'Court proceedings run in Arabic, so your lawyer must be comfortable in Arabic regardless of your own language. For your own understanding, choose a lawyer or firm that can advise you fluently in English or your first language and keep you updated in writing. In Abu Dhabi, the Civil Family Court for non-Muslims operates in both Arabic and English.',
+  },
+  {
+    question: 'What are the warning signs of a bad divorce lawyer?',
+    answer:
+      'Watch for guarantees of a specific outcome, pressure to sign or pay on the spot, no written engagement letter, vague or shifting fees, poor communication, and any suggestion of paying an official off the record. A lawyer who will not put the scope and fees in writing, or who cannot explain which law applies to you, is a lawyer to walk away from.',
+  },
+  {
+    question: 'Can one lawyer represent both spouses in a UAE divorce?',
+    answer:
+      'In a genuinely amicable, uncontested divorce some firms will draft a joint settlement agreement, but one lawyer cannot fairly advocate for two opposing sides if any dispute arises. Even in a mutual divorce it is safer for each spouse to have their own review of the agreement so nobody signs away rights unknowingly.',
+  },
+  {
+    question: 'How is DivorceU.AE different from a law firm?',
+    answer:
+      'DivorceU.AE is a referral and guidance service, not a law firm. We help you understand the process and connect you with qualified, UAE-licensed family lawyers suited to your case. The information here is for guidance only and does not replace advice from your own lawyer.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">How to Choose a Divorce Lawyer in the UAE</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="hero__sub">
+          A practical guide to picking the right divorce lawyer in the UAE: the licensing you must
+          verify, the case-type experience that actually matters, the questions to ask in the free
+          consultation, the red flags to avoid, and why the "best" or "cheapest" lawyer is really
+          about fit and track record. For prices, see our
+          <a href="/en/divorce-lawyer-fees-uae/">divorce lawyer fees guide</a>.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Muslim &amp; non-Muslim case types</li>
+          <li>✓ Dubai, Abu Dhabi &amp; all emirates</li>
+          <li>✓ Licensing checks explained</li>
+          <li>✓ Free lawyer matching</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Lawyer Matching" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Intro / what best means -->
+    <section class="section" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">What "Best Divorce Lawyer" Really Means</h2>
+      <p>
+        Search for the best divorce lawyer in Dubai or the top divorce lawyers in the UAE and you
+        will get pages of firms all claiming the same title. The honest answer is that there is no
+        single best lawyer, because the right choice depends entirely on your case. A senior
+        litigator who thrives in a high-conflict custody battle may be an expensive mismatch for a
+        calm mutual-consent divorce, where a settlement-focused lawyer will cost less and finish
+        faster.
+      </p>
+      <p>
+        The better question is not "who is the best" but "who is the best fit for my situation". Fit
+        comes down to a few things: the lawyer is properly licensed to act in the UAE, they have real
+        experience with cases like yours, you can communicate clearly with them, their fees are
+        transparent, and they tell you the truth about your likely outcome rather than what you want
+        to hear. This guide walks through each of those in order, then gives you a checklist of
+        questions and a list of red flags.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>A note on who we are</h3>
+        <p>
+          DivorceU.AE is a referral and guidance service, not a law firm. We do not rank or endorse
+          specific lawyers on this page, and we do not name firms. What we do is help you understand
+          how to judge one, and connect you with qualified, UAE-licensed family lawyers suited to
+          your case. Treat everything here as guidance, not legal advice.
+        </p>
+      </div>
+    </section>
+
+    <!-- Licensing -->
+    <section class="section" aria-labelledby="license-heading">
+      <h2 id="license-heading">Step 1: Verify Licensing and the Right to Represent You</h2>
+      <p>
+        This is the part most people skip, and it is the most important. In the UAE, only a
+        registered, UAE-licensed advocate can represent you in the Personal Status Court. There is a
+        practical difference between an advocate (who has rights of audience before the court) and a
+        legal consultant (who can advise and draft, but may not always appear in court). For a
+        contested divorce with hearings, you need someone who can actually stand up in front of the
+        judge, or a firm that pairs you with an advocate who will.
+      </p>
+      <p>
+        Licensing is issued at emirate and federal level. In Dubai, advocates are regulated through
+        the Dubai Legal Affairs Department (the DLA); federally, lawyers are registered with the
+        Ministry of Justice. Do not treat a slick website as proof of anything. Ask directly for the
+        advocate registration or licence number and the issuing authority, and confirm it against the
+        official register before you sign an engagement.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>What to confirm</h3>
+          <p>
+            A current UAE advocate licence or registration number; the emirate or authority that
+            issued it (for example the DLA in Dubai); whether the person will personally appear in
+            court or delegate to a licensed advocate; and that the firm is registered to practise in
+            the emirate where you will file.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Why it matters</h3>
+          <p>
+            An unlicensed advisor cannot represent you at a hearing, which can stall your case and
+            cost you money and time. A power of attorney granted to someone without rights of audience
+            is of limited use. Verify first, engage second.
+          </p>
+        </div>
+      </div>
+      <p>
+        If you are filing outside Dubai, the same principle applies through the local judicial
+        department. Location-specific pointers are in our guides to a
+        <a href="/en/divorce-lawyer-dubai/">divorce lawyer in Dubai</a> and a
+        <a href="/en/divorce-lawyer-abu-dhabi/">divorce lawyer in Abu Dhabi</a>.
+      </p>
+    </section>
+
+    <!-- Case type experience -->
+    <section class="section" aria-labelledby="casetype-heading">
+      <h2 id="casetype-heading">Step 2: Match the Lawyer to Your Case Type</h2>
+      <p>
+        UAE family law is a dual system, and experience in one track does not automatically mean
+        experience in the other. Muslim divorces follow Federal Decree-Law No. 41 of 2024, based on
+        Islamic Sharia. Non-Muslim expats use the civil, no-fault track under Federal Decree-Law No.
+        41 of 2022. A lawyer who spends most of their time on Sharia-track cases may be less familiar
+        with the civil route, and the other way round. Ask which track your case sits on and how many
+        cases like yours they have run recently.
+      </p>
+      <p>
+        Beyond the track, the shape of your case matters. Match the lawyer to the specific
+        complications you actually have.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Expat / non-Muslim</h3>
+          <p>You want someone fluent in the 2022 civil law, home-country law elections, and how the two interact. Background reading: divorce for expats.</p>
+          <a href="/en/divorce-for-expats-in-uae/" class="card-link">Expat divorce →</a>
+        </div>
+        <div class="card">
+          <h3>Custody disputes</h3>
+          <p>The 2024 law extended custody to age 18 and gives a child of 15 a say. Choose a lawyer with a real custody-litigation track record, not just filings.</p>
+        </div>
+        <div class="card">
+          <h3>Cross-border</h3>
+          <p>Assets, income or a spouse abroad, or a question of where to file, needs someone comfortable with jurisdiction and foreign-decree recognition.</p>
+        </div>
+        <div class="card">
+          <h3>Uncontested / mutual</h3>
+          <p>If you agree on everything, a settlement-focused lawyer who drafts a clean agreement is the right fit, and usually the cheapest route.</p>
+        </div>
+      </div>
+      <p>
+        A useful early step is to be clear yourself on whether your divorce is contested or
+        uncontested, because it changes the kind of lawyer you need. Our guide to
+        <a href="/en/contested-vs-uncontested-divorce-uae/">contested vs uncontested divorce</a>
+        helps you work that out before the first consultation.
+      </p>
+    </section>
+
+    <!-- Track record -->
+    <section class="section" aria-labelledby="track-heading">
+      <h2 id="track-heading">Step 3: Look for a Track Record, Not Just a Title</h2>
+      <p>
+        Titles like partner or senior counsel tell you about seniority, not about results in cases
+        like yours. What you want to understand is how the lawyer has handled situations similar to
+        yours, and how they think about your specific problem. You are not asking them to breach
+        confidentiality; you are asking for a realistic sense of their experience and approach.
+      </p>
+      <p>
+        Reviews and word of mouth help, but read them critically. A five-star review from an
+        uncontested divorce tells you little about how a firm performs in a bruising custody fight.
+        Look for feedback from cases that resemble yours, and weigh consistency over a single glowing
+        testimonial. If a firm points to a specific reported outcome, ask what made the difference,
+        because the reasoning tells you more than the result.
+      </p>
+      <div class="info-box info-box--gold">
+        <h3>Ask about who runs your file</h3>
+        <p>
+          It is common to meet a senior partner at the pitch and then have your case handled day to
+          day by a junior. That is not necessarily bad, and it can keep costs down, but you should
+          know who your main point of contact will be, how experienced they are, and how a partner
+          stays involved. Get this in writing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Language and communication -->
+    <section class="section" aria-labelledby="language-heading">
+      <h2 id="language-heading">Step 4: Language and Communication</h2>
+      <p>
+        UAE court proceedings are conducted in Arabic, and documents filed with the court generally
+        need to be in Arabic, so your lawyer must be fully comfortable working in Arabic no matter
+        what language you speak. That is separate from your own need to understand what is happening.
+        For your peace of mind, choose a lawyer or firm that can advise you fluently in English or
+        your first language, explain each stage clearly, and keep you updated in writing rather than
+        leaving you guessing between hearings.
+      </p>
+      <p>
+        In Abu Dhabi, the Civil Family Court for non-Muslims runs in both Arabic and English, with
+        bilingual forms, which many expats find easier to follow. Wherever you file, agree at the
+        start how often you will be updated and through which channel. Poor communication is one of
+        the most common complaints in divorce cases, and it is entirely avoidable if you set the
+        expectation early.
+      </p>
+    </section>
+
+    <!-- Fees at a high level -->
+    <section class="section" aria-labelledby="fees-heading">
+      <h2 id="fees-heading">Step 5: Understand the Fee Structure Before You Sign</h2>
+      <p>
+        You do not need to become a costs expert, but you do need to understand how you will be
+        charged so there are no surprises later. Divorce lawyers in the UAE typically work in one of
+        a few ways, and the right structure depends on how predictable your case is.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Common fee structures</h3>
+          <p>
+            Fixed fee (common for uncontested and mutual-consent divorces, where the scope is
+            predictable); hourly billing (common for contested cases, where the work is harder to
+            estimate); and staged or milestone fees tied to phases of the case. Each is legitimate;
+            the key is that it is written down.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>What sits on top</h3>
+          <p>
+            Court filing fees, official translation into Arabic, document attestation and
+            notarisation, and any court-appointed expert or accountant. Ask whether the quote is all
+            in or whether these are billed separately, so you can compare quotes on a like-for-like
+            basis.
+          </p>
+        </div>
+      </div>
+      <p>
+        As a rough sense of scale only, uncontested divorces tend to fall in the lower ranges while
+        contested custody or asset disputes cost far more. We keep the detailed numbers, hourly rates
+        and worked examples in our
+        <a href="/en/divorce-lawyer-fees-uae/">divorce lawyer fees guide</a> and the broader
+        <a href="/en/divorce-cost-uae/">cost of divorce in the UAE</a> guide, so this page does not
+        repeat them. What matters when choosing is that the lawyer gives you a clear written quote,
+        explains what is and is not included, and does not dodge the question.
+      </p>
+      <div class="cta-inline">
+        <p>Want quotes from matched lawyers?</p>
+        <a href="#contact" class="btn btn--primary">Get Matched Free</a>
+      </div>
+    </section>
+
+    <!-- Questions checklist -->
+    <section class="section" aria-labelledby="questions-heading">
+      <h2 id="questions-heading">Questions to Ask in the Free Consultation</h2>
+      <p>
+        Most UAE family lawyers offer a free initial consultation. Treat it as an interview, not a
+        formality. Bring the key facts of your marriage and any documents, and work through these
+        questions. The quality of the answers tells you as much as the answers themselves.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Are you a UAE-licensed advocate, and will you appear in court?</h3>
+          <p>
+            Confirm the licence and who will actually represent you at hearings. If they delegate,
+            ask to whom and what their experience is.
+          </p>
+        </li>
+        <li>
+          <h3>Which law applies to my case, and why?</h3>
+          <p>
+            A clear answer on whether you fall under the Muslim 41/2024 track or the civil 41/2022
+            track, and any option to elect home-country law, shows they have understood your
+            situation. See our <a href="/en/uae-divorce-law/">UAE divorce law overview</a>.
+          </p>
+        </li>
+        <li>
+          <h3>How many cases like mine have you handled recently?</h3>
+          <p>
+            You are testing for relevant, current experience with your case type, whether that is
+            expat, custody, cross-border or a simple mutual divorce.
+          </p>
+        </li>
+        <li>
+          <h3>What is a realistic range of outcomes?</h3>
+          <p>
+            Ask for the likely, best and worst cases on custody, maintenance and assets. Beware
+            anyone who guarantees a result; nobody can.
+          </p>
+        </li>
+        <li>
+          <h3>What is the likely timeline?</h3>
+          <p>
+            An honest estimate for your track and whether the case is contested. Mutual divorces are
+            typically faster than contested ones. Detail is in our
+            <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a> guide.
+          </p>
+        </li>
+        <li>
+          <h3>What is the total fee structure, all in?</h3>
+          <p>
+            Fixed, hourly or staged, plus court fees, translation and attestation. Ask for it in a
+            written engagement letter before you commit.
+          </p>
+        </li>
+        <li>
+          <h3>Who will run my file day to day?</h3>
+          <p>
+            Your main contact, their experience, how quickly they respond, and how you will be kept
+            updated between hearings.
+          </p>
+        </li>
+        <li>
+          <h3>Can we try to settle, and how?</h3>
+          <p>
+            A good lawyer looks for the least costly route first, pushing to resolve as much as
+            possible by agreement before a judge has to rule.
+          </p>
+        </li>
+      </ol>
+      <div class="info-box info-box--blue" style="margin-top:8px;">
+        <h3>Get the engagement in writing</h3>
+        <p>
+          Whatever you agree, ask for a written engagement letter covering the scope of work, the
+          fee structure, what is excluded, and who is responsible for your case. A lawyer who is
+          reluctant to put this on paper is telling you something.
+        </p>
+      </div>
+    </section>
+
+    <!-- Red flags -->
+    <section class="section" aria-labelledby="redflags-heading">
+      <h2 id="redflags-heading">Red Flags to Avoid</h2>
+      <p>
+        Most divorce lawyers in the UAE are professional and competent. A minority are not. These are
+        the warning signs that should make you pause, ask more questions, or walk away.
+      </p>
+      <ul class="list">
+        <li>
+          <strong>Guarantees of a specific outcome.</strong> No lawyer can promise you custody, a
+          set maintenance figure or a particular asset split. A guarantee is a sales tactic, not a
+          legal opinion.
+        </li>
+        <li>
+          <strong>Pressure to sign or pay on the spot.</strong> A reputable lawyer gives you time to
+          read the engagement letter and compare. Urgency and same-day cash demands are a bad sign.
+        </li>
+        <li>
+          <strong>No written engagement letter or vague fees.</strong> If the scope and cost will
+          not go on paper, or the quote keeps shifting, you cannot plan and you cannot hold them to
+          anything.
+        </li>
+        <li>
+          <strong>Cannot explain which law applies to you.</strong> If a lawyer is unclear on whether
+          you fall under the 2024 Muslim law or the 2022 civil law, they may be out of their depth on
+          your case type.
+        </li>
+        <li>
+          <strong>Poor or slow communication from the start.</strong> If getting answers is hard
+          before you have paid, it rarely improves afterwards.
+        </li>
+        <li>
+          <strong>Any hint of paying an official off the record.</strong> Suggestions of unofficial
+          payments to speed things up are a serious warning sign. Walk away.
+        </li>
+        <li>
+          <strong>Dismissing settlement out of hand.</strong> A lawyer who pushes straight to
+          maximum litigation without exploring an agreement may be optimising for their fees, not
+          your outcome.
+        </li>
+        <li>
+          <strong>One lawyer pushing to act for both spouses in a dispute.</strong> Fine for drafting
+          a genuinely agreed settlement, but one lawyer cannot fairly advocate for two opposing sides.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Best vs cheap -->
+    <section class="section" aria-labelledby="value-heading">
+      <h2 id="value-heading">How to Judge "Best" Against "Cheap"</h2>
+      <p>
+        People searching for the cheapest divorce lawyer and people searching for the best one are
+        often chasing the same thing from opposite directions: value. The cheapest lawyer is not
+        automatically the cheapest outcome. A low fixed fee that misses a maintenance or custody
+        point can cost you far more down the line, and a poorly drafted settlement can drag a fast
+        uncontested case back into contested litigation, which is the most expensive place to be.
+      </p>
+      <p>
+        Equally, the most expensive firm is not automatically the best. Big fees buy seniority and
+        capacity, which you may not need for a straightforward mutual divorce. The sensible approach
+        is to collect two or three written quotes on a like-for-like basis, then weigh price
+        alongside licensing, relevant experience, communication and fit. That is how you find genuine
+        value rather than just a low number or a big name.
+      </p>
+      <div class="info-box info-box--gold">
+        <h3>If cost is the real barrier</h3>
+        <p>
+          If affording a lawyer at all is the problem, there are lower-cost and support routes worth
+          knowing about, including certain court and community options. Start with our guide to
+          <a href="/en/divorce-legal-aid-uae/">divorce legal aid in the UAE</a> before assuming you
+          cannot get help.
+        </p>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section" aria-labelledby="location-heading">
+      <h2 id="location-heading">Where You File Shapes Who You Choose</h2>
+      <p>
+        You file in the emirate where you reside, and that affects your shortlist. Dubai and Abu
+        Dhabi run the busiest family courts and have the deepest pool of specialist family lawyers,
+        including many with strong English-language service. Abu Dhabi additionally runs a dedicated
+        Civil Family Court for non-Muslims that works in Arabic and English, so a lawyer familiar
+        with that venue can be an advantage if you qualify for it.
+      </p>
+      <p>
+        Pick a lawyer who regularly practises in the court where your case will actually be heard.
+        Familiarity with the local judicial department, its procedures and its expectations is worth
+        a great deal. Our location guides go into the specifics for a
+        <a href="/en/divorce-lawyer-dubai/">divorce lawyer in Dubai</a> and a
+        <a href="/en/divorce-lawyer-abu-dhabi/">divorce lawyer in Abu Dhabi</a>.
+      </p>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/divorce-lawyer-fees-uae/" class="service-link">
+          <strong>Divorce Lawyer Fees</strong>
+          <span>Indicative fee ranges and hourly rates</span>
+        </a>
+        <a href="/en/divorce-cost-uae/" class="service-link">
+          <strong>Cost of Divorce</strong>
+          <span>Total cost and what drives it</span>
+        </a>
+        <a href="/en/divorce-legal-aid-uae/" class="service-link">
+          <strong>Divorce Legal Aid</strong>
+          <span>Free and low-cost help options</span>
+        </a>
+        <a href="/en/divorce-lawyer-dubai/" class="service-link">
+          <strong>Divorce Lawyer in Dubai</strong>
+          <span>Choosing and filing in Dubai</span>
+        </a>
+        <a href="/en/divorce-lawyer-abu-dhabi/" class="service-link">
+          <strong>Divorce Lawyer in Abu Dhabi</strong>
+          <span>The Civil Family Court and more</span>
+        </a>
+        <a href="/en/divorce-for-expats-in-uae/" class="service-link">
+          <strong>Divorce for Expats</strong>
+          <span>The 2022 civil law route</span>
+        </a>
+        <a href="/en/contested-vs-uncontested-divorce-uae/" class="service-link">
+          <strong>Contested vs Uncontested</strong>
+          <span>Work out your path first</span>
+        </a>
+        <a href="/en/how-to-file-for-divorce-in-dubai/" class="service-link">
+          <strong>How to File in Dubai</strong>
+          <span>Step-by-step court guide</span>
+        </a>
+        <a href="/en/uae-divorce-law/" class="service-link">
+          <strong>UAE Divorce Law</strong>
+          <span>The statutes explained</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Matched With the Right UAE Divorce Lawyer</h2>
+      <p>Tell us about your case and we will connect you with a qualified, UAE-licensed family lawyer suited to it. Free, confidential, English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .list { margin: 24px 0 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .list li { position: relative; padding: 16px 20px 16px 44px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; line-height: 1.7; font-size: 0.95rem; }
+  .list li::before { content: "!"; position: absolute; left: 16px; top: 16px; width: 20px; height: 20px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+  .list li strong { color: #1e3a5f; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

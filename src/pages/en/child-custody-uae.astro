@@ -29,7 +29,7 @@ const articleSchema = {
     '@type': 'Organization',
     name: 'DivorceU.AE',
   },
-  dateModified: '2026-07-04',
+  dateModified: '2026-07-25',
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': 'https://divorceu.ae/en/child-custody-uae/',
@@ -125,6 +125,38 @@ const faqSchema = {
         text: 'First, contact a UAE family lawyer immediately and apply to the Execution Court (not the family court) for enforcement of your existing custody order. The Execution Court can issue warnings, fines, and arrest warrants for repeated violations. You should also file a police report, as withholding a child in breach of a court order can be treated as a criminal matter. If there is any risk the child will be taken out of the UAE, apply simultaneously for an emergency travel ban at the Personal Status Court.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Can an expat father get custody of young children in the UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends which law applies. Under Islamic personal status law, physical custody (hadana) of young children defaults to the mother, but the father keeps legal guardianship (wilaya) over major decisions, and can apply for custody if the mother is shown to be unfit or if the child chooses him at age 15. Under the 2022 civil law for non-Muslims, custody is joint and equal from the start, so a father who is present and stable can realistically secure a defined overnight schedule close to equal time. In both regimes, the surest way for a father to protect his role is a court order that spells out access days, holidays, passport control, and decision-making, rather than a vague "joint custody" label.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'My ex refuses to let me see my child despite the visitation order. What can I do?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Denial of contact is enforced the same way as any custody breach, through the Execution Court rather than the court that made the order. Keep a dated log of every missed visit and every message showing the refusal, then file for enforcement. The Execution Court can issue a formal warning, then fines, then police-assisted handover for the scheduled contact. Persistent, deliberate obstruction of access is itself a recognised ground to ask the court to review and even transfer primary custody, because it shows one parent is not supporting the child\'s relationship with the other.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I lift a travel ban on my child in the UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Apply to the same court that issued the ban and show that the reason for it no longer holds or that it is being used punitively rather than to protect the child. Courts are more willing to lift or narrow a ban when you offer safeguards: a signed undertaking to return by a fixed date, return flight tickets, a financial bond, agreement to travel only to a country where a mirror order exists, or having a neutral third party hold the passport between trips. The ban can only be removed by court order, so it stays active at every airport and land border until the judge signs the release.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I relocate abroad with my child if the other parent objects?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not without a court relocation order. If the other parent objects, you must apply to the Personal Status Court (or the Abu Dhabi Civil Family Court) and prove the move serves the child\'s best interests, not just your own preference. A strong application sets out the child\'s new school, housing, and quality of life, and a concrete contact plan for the parent left behind: video calls, school-holiday visits, and who pays for the flights. Leaving the UAE with the child before the order is granted is a criminal offence and can trigger an Interpol notice, even if your visa has lapsed.',
+      },
+    },
   ],
 };
 
@@ -168,6 +200,22 @@ const faqItems = [
   {
     question: 'What do I do immediately if my ex does not return the children?',
     answer: 'Apply to the <strong>Execution Court</strong> (not the family court) for enforcement of your custody order. File a police report simultaneously. If there is any travel risk, apply for an emergency travel ban at the Personal Status Court in the same urgent application.',
+  },
+  {
+    question: 'Can an expat father get custody of young children in the UAE?',
+    answer: 'It depends on the regime. Under Islamic law, physical custody of young children defaults to the mother while the father keeps <strong>guardianship</strong>; he can seek custody if she is unfit or the child chooses him at 15. Under the 2022 civil law, custody is <strong>joint and equal</strong>, so a present, stable father can secure near-equal time. Push for a defined schedule, not a vague "joint custody" label.',
+  },
+  {
+    question: 'My ex refuses to let me see my child despite the visitation order. What can I do?',
+    answer: 'Denial of contact is enforced through the <strong>Execution Court</strong>, like any custody breach. Keep a dated log of every missed visit, then file for enforcement: warning, fines, then police-assisted handover. Deliberate, persistent obstruction of access is itself a ground to ask the court to <strong>transfer primary custody</strong>.',
+  },
+  {
+    question: 'How do I lift a travel ban on my child in the UAE?',
+    answer: 'Apply to the court that issued it and show the reason no longer holds. Courts are more willing to lift or narrow a ban when you offer safeguards: an undertaking to return by a fixed date, return tickets, a bond, or a neutral third party holding the passport. The ban stays active at every border <strong>until a judge signs the release</strong>.',
+  },
+  {
+    question: 'Can I relocate abroad with my child if the other parent objects?',
+    answer: 'Not without a <strong>court relocation order</strong>. You must prove the move serves the child\'s best interests, with a concrete plan for the new school, housing, and contact with the parent left behind. Leaving before the order is granted is a criminal offence and can trigger an Interpol notice, even if your visa has lapsed.',
   },
 ];
 ---
@@ -845,6 +893,28 @@ const faqItems = [
           <li><strong>Custody modification:</strong> Systematic violation of custody arrangements is itself a ground for the court to transfer primary custody to the other parent</li>
         </ul>
 
+        <h3>Enforcing Access and Visitation Orders</h3>
+        <p>
+          Enforcement is not only for the parent who has physical custody. If you are the
+          non-custodial parent and your ex-partner keeps blocking your scheduled contact, the same
+          Execution Court route is open to you. The most common pattern is the custodial parent who
+          cancels visits at the last minute, invents reasons the child "cannot" come, or simply stops
+          answering on handover days. A single missed visit rarely moves a court, but a documented
+          pattern does.
+        </p>
+        <p>
+          Build the record before you file. Keep a dated log of every scheduled visit, whether it
+          happened, and the reason given for any refusal, and save the messages that show the
+          cancellation. Present that log to the Execution Court and it can enforce the access
+          schedule through the same graduated tools that apply to custody breaches: a formal
+          warning first, then fines, then police-assisted handover for the scheduled contact.
+          Because UAE courts treat a child's right to a relationship with both parents as part of
+          their best interests, deliberate and repeated obstruction of access is a recognised ground
+          to ask the court to review the arrangement, and in serious cases to transfer primary
+          custody. Our guide to <a href="/en/visitation-rights-uae/">visitation rights in the UAE</a>
+          sets out how contact schedules are drafted so they are practical to enforce.
+        </p>
+
         <h3>If There Is an Immediate Risk Your Child Will Be Taken Out of the UAE</h3>
         <p>
           Apply simultaneously to the Personal Status Court for an emergency travel ban and to the
@@ -921,6 +991,119 @@ const faqItems = [
           </table>
         </div>
         <p class="table-note">Fees are estimates based on Dubai and Abu Dhabi practice in 2024-25. Complex cases requiring psychological assessments or home visits will add to these figures. Free initial consultation available.</p>
+      </section>
+
+      <!-- SECTION 13: EXPAT FATHERS -->
+      <section class="section" aria-labelledby="fathers-heading">
+        <h2 id="fathers-heading">Custody Advice for Expat Fathers</h2>
+        <p>
+          Most expat fathers walk into a first consultation braced to lose everything. That fear is
+          understandable, but it is usually based on the old Sharia-era headlines rather than the law
+          that applies to your family in 2026. What you can realistically achieve depends entirely on
+          which regime governs your case, so read this alongside the section above on which law applies
+          to you.
+        </p>
+
+        <h3>If Islamic Personal Status Law Applies</h3>
+        <p>
+          For Muslim families, physical custody (hadana) of young children still defaults to the
+          mother. That is the part fathers hear about. What often gets missed is that the father
+          keeps legal guardianship (wilaya) throughout, which gives him real authority over schooling,
+          passports, international travel, and major medical decisions even while the child lives with
+          the mother. Custody itself now runs to 18 under the 2024 law, and a child of 15 or older may
+          choose which parent to live with, subject to the court's best-interests check. A father can
+          also apply for custody where the mother is shown to be unable to provide proper care, or in
+          the circumstances covered in our guide on whether a mother
+          <a href="/en/custody-if-mother-remarries-uae/">loses custody if she remarries</a>. What the
+          2024 law provides for fathers specifically is set out in our guide to
+          <a href="/en/father-custody-rights-uae/">father custody rights in the UAE</a>.
+        </p>
+
+        <h3>If the 2022 Civil Law Applies</h3>
+        <p>
+          For non-Muslim fathers, the starting point is genuinely different. Joint and equal custody is
+          the default from the moment of divorce, with no gender-based presumption in the mother's
+          favour. The court begins from equality and builds a practical arrangement around the child's
+          routine. This means a father who is present, stable, and involved can realistically secure a
+          defined overnight schedule that is at or close to equal time. The mistake to avoid is
+          treating the words "joint custody" in your order as enough. As explained earlier, joint
+          custody is primarily about shared decision-making, not automatic equal nights.
+        </p>
+
+        <h3>Realistic Outcomes and Practical Steps</h3>
+        <ul class="list">
+          <li>Ask for a specific access schedule in the order: exact weekdays, weekends, and how school holidays and Eid or Christmas are split, not a general reference to "reasonable contact"</li>
+          <li>Get passport control, travel consent, and school and medical decision-making written into the order, so guardianship works for you rather than becoming a source of disputes</li>
+          <li>Attend every family guidance and reconciliation session; a father who shows up consistently is treated very differently from one who does not</li>
+          <li>Keep a quiet record of your day-to-day involvement: school runs, medical appointments, fees paid, time spent, because this is the evidence that supports an equal-time request</li>
+          <li>Do not withhold child support to force contact; unpaid maintenance weakens your position and is enforced separately through the Execution Court</li>
+        </ul>
+        <p>
+          The most common regret fathers report is accepting a vague order to get the divorce finished
+          quickly, then spending years fighting over what it actually meant. The way access schedules
+          are drafted to survive that pressure is covered in our guide to
+          <a href="/en/visitation-rights-uae/">visitation rights in the UAE</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 14: LIFTING A TRAVEL BAN AND CROSS-BORDER RELOCATION -->
+      <section class="section" aria-labelledby="crossborder-heading">
+        <h2 id="crossborder-heading">Lifting a Travel Ban and Cross-Border Relocation</h2>
+        <p>
+          The travel section earlier covers how to place a ban and what happens if a child is taken
+          abroad. Two related situations catch expat parents out afterwards: how to get a travel ban
+          lifted, and how to relocate legally when the other parent objects. Both turn on the same
+          idea, that the child's best interests, not either parent's convenience, decide the outcome.
+        </p>
+
+        <h3>How to Lift or Narrow a Travel Ban</h3>
+        <p>
+          A travel ban is usually far easier to obtain than to remove, which is why parents who genuinely
+          want to travel with their children need a plan for lifting one. You apply to the same court
+          that issued the ban and show either that the reason behind it no longer holds, or that it is
+          being used to punish the other parent rather than to protect the child. Courts rarely lift a
+          ban outright on trust. They respond to safeguards that reduce the risk of the child not
+          coming back:
+        </p>
+        <ul class="list">
+          <li>A signed undertaking to return the child by a fixed date, filed with the court</li>
+          <li>Return flight tickets booked and disclosed before the trip</li>
+          <li>A financial bond or security deposit that is forfeited if the child is not returned</li>
+          <li>Agreement to travel only to a country where a mirror order already recognises the UAE arrangement</li>
+          <li>A neutral third party or lawyer holding the passport between trips</li>
+        </ul>
+        <p>
+          The ban stays active in the immigration system at every airport and land border until a judge
+          signs the release, so allow time before any planned trip. The mechanics of both placing and
+          lifting these orders are set out in our guide to
+          <a href="/en/travel-ban-divorce-uae/">travel bans in UAE divorce</a>.
+        </p>
+
+        <h3>Relocating Abroad With Your Child</h3>
+        <p>
+          Wanting to move home after a divorce is one of the most common situations expat parents face,
+          and it is also one of the most legally sensitive. You cannot simply leave with the child. If
+          the other parent consents in writing, you formalise that consent in a court-approved
+          agreement. If they object, you must apply for a relocation order and prove the move serves the
+          child, not just your own wish to go home. A relocation application is far stronger when it
+          answers the questions a judge will ask before you are asked them:
+        </p>
+        <ul class="list">
+          <li>Where exactly the child will live and which school they will attend, with evidence</li>
+          <li>How the child's standard of living and stability compare to staying in the UAE</li>
+          <li>A concrete contact plan for the parent left behind: video call schedule, school-holiday visits, and who pays for the flights</li>
+          <li>Whether you will register a mirror order in the destination country so the UAE arrangement remains enforceable there</li>
+        </ul>
+        <p>
+          Because the UAE is not a Hague Convention partner with Western countries, the contact plan
+          and mirror-order commitment matter more here than they would elsewhere; they are often what
+          persuades a UAE court that the left-behind parent will not simply lose the child. The full
+          procedure, including how relocation interacts with an existing custody order, is covered in
+          our guide to
+          <a href="/en/child-relocation-after-divorce-uae/">child relocation after divorce in the UAE</a>.
+          If a child has already been removed without consent, see instead our guide on
+          <a href="/en/international-child-abduction-uae/">international child abduction in the UAE</a>.
+        </p>
       </section>
 
       <!-- RELATED GUIDES -->

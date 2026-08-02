@@ -26,7 +26,7 @@ const articleSchema = {
   author: { '@type': 'Person', name: 'Aleksi Suoninen' },
   publisher: { '@type': 'Organization', name: 'Divorce UAE' },
   datePublished: '2025-01-15',
-  dateModified: '2026-07-04',
+  dateModified: '2026-07-25',
   inLanguage: 'en-AE',
   mainEntityOfPage: 'https://divorceu.ae/en/uae-divorce-law/',
 };
@@ -71,6 +71,26 @@ const faqItems = [
     question: 'Does the UAE recognise a foreign divorce?',
     answer:
       'UAE courts may recognise or enforce a foreign divorce, but it is not automatic. Recognition depends on nationality, domicile and habitual residence, plus rules on lis pendens, res judicata and UAE public order. The foreign decree usually needs to be attested and officially translated into Arabic, and a foreign order over UAE assets may not be directly enforceable onshore.',
+  },
+  {
+    question: 'Can I divorce without my spouse’s consent in the UAE?',
+    answer:
+      'Yes. You do not need your spouse to agree. Under the 2022 civil law, either non-Muslim spouse can file a no-fault petition and the divorce proceeds even if the other party objects. Under the Muslim personal status law, a husband can pronounce talaq and a wife can seek khula or a judicial divorce (tafreeq) on grounds such as harm, abandonment or non-payment of maintenance. Consent speeds things up and keeps a case uncontested, but it is not a requirement.',
+  },
+  {
+    question: 'Do I need to be Muslim to get divorced in the UAE?',
+    answer:
+      'No. Non-Muslim residents and citizens use the civil track under Federal Decree-Law No. 41 of 2022, or the Abu Dhabi Civil Family Court under Abu Dhabi Law No. 14 of 2021. The Muslim personal status law applies only where at least one spouse is Muslim. Which track fits you turns on religion and, for non-Muslims, on the emirate and whether you elect home-country law.',
+  },
+  {
+    question: 'Is residency required to file for divorce in the UAE?',
+    answer:
+      'For a UAE divorce you generally need a connection to the country, and practitioners commonly cite about six months of residency as a working guide, though the exact statutory basis varies and is not firmly confirmed across every emirate. Jurisdiction usually rests on domicile, residence or work in the emirate where you file. Abu Dhabi allows a civil marriage with no residency, but a divorce there still needs a link to the emirate.',
+  },
+  {
+    question: 'Can I use my home-country law for a UAE divorce?',
+    answer:
+      'Non-Muslim residents can ask for the law of their home country to apply to the divorce, but only if they raise it in the petition, prove the content of that law, and it does not offend UAE public order. If you do not opt in, the UAE civil law applies by default. This single choice can change custody, alimony and asset outcomes, so weigh it before filing. See our guide on where to divorce, the UAE or your home country.',
   },
 ];
 ---
@@ -148,6 +168,66 @@ const faqItems = [
       </p>
     </section>
 
+    <!-- Rules and requirements -->
+    <section class="section" aria-labelledby="rules-heading">
+      <h2 id="rules-heading">Divorce Rules and Requirements in the UAE</h2>
+      <p>
+        Before you file, it helps to know the ground rules that apply to almost every case: who is
+        allowed to file, what track you fall under, the documents the court expects, and the stages you
+        cannot skip. The detail lives in our dedicated guides, linked below, but here is the practical
+        summary in one place.
+      </p>
+
+      <h3>Who can file for divorce</h3>
+      <p>
+        You generally need a genuine connection to the UAE to file here. Practitioners commonly point to
+        around <strong>six months of residency</strong> as a working guide, though the exact statutory
+        basis varies and is not firmly confirmed across every emirate, so treat it as indicative rather
+        than a fixed rule. Jurisdiction usually rests on where you and your spouse are connected by
+        domicile, residence or work. You do not need your spouse's consent to start: either party can
+        file, and the case simply proceeds as contested if the other side objects. For the Dubai filing
+        steps in order, see <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in
+        Dubai</a>.
+      </p>
+
+      <h3>Which track you fall under</h3>
+      <p>
+        Eligibility for each regime turns on religion and location. If either spouse is Muslim, the case
+        runs under the 2024 Muslim personal status law. If both spouses are non-Muslim, you use the 2022
+        federal civil law anywhere in the UAE, or the Abu Dhabi Civil Family Court if you are in that
+        emirate. Non-Muslim residents also have an opt-in: you may ask for the law of your home country to
+        apply, but only if you raise it in the petition, prove that law's content, and it does not offend
+        UAE public order. Otherwise the UAE civil law applies by default. Our
+        <a href="/en/grounds-for-divorce-uae/">grounds for divorce in the UAE</a> guide sets out what each
+        track actually requires you to show.
+      </p>
+
+      <h3>Documents you will need at a glance</h3>
+      <ul class="list">
+        <li>Marriage certificate, attested and translated into Arabic where needed</li>
+        <li>Passports and Emirates IDs for both spouses</li>
+        <li>Residence visa pages, to show your connection to the emirate</li>
+        <li>Birth certificates for any children, where custody is in issue</li>
+        <li>Proof of income or assets where maintenance, alimony or property is claimed</li>
+      </ul>
+      <p>
+        Requirements shift slightly by emirate and by track, and civil cases in Abu Dhabi use bilingual
+        forms. For the full checklist and attestation steps, see
+        <a href="/en/documents-for-divorce-uae/">documents needed for divorce in the UAE</a>.
+      </p>
+
+      <h3>The mandatory reconciliation step</h3>
+      <p>
+        For Muslim divorces, family guidance and mediation is a compulsory first stage. Cases start at the
+        Family Guidance Department, and the reconciliation window is now <strong>60 days</strong>, down
+        from 90 under the old law. If mediation does not succeed, the conciliator issues a referral letter
+        that must be filed with the court within roughly three months, or the process restarts. Non-Muslim
+        couples under the 2022 civil law are not required to attend reconciliation, though they may do so
+        voluntarily. Our <a href="/en/family-guidance-section-uae/">family guidance section in the UAE</a>
+        guide explains what happens at this stage and how to prepare.
+      </p>
+    </section>
+
     <!-- What changed 2024/2025 -->
     <section class="section" aria-labelledby="changed-heading">
       <h2 id="changed-heading">The New Divorce Law: What Changed in 2024 and 2025</h2>
@@ -156,6 +236,11 @@ const faqItems = [
         2025. It modernised the Muslim personal status framework and shortened parts of the process. If
         you are a Muslim resident or national, these are the changes that matter most in a real case.
       </p>
+
+      <div class="info-box info-box--gold" style="margin-top:8px;margin-bottom:24px;">
+        <h3>What changed most in 2025, at a glance</h3>
+        <p>The single biggest shift was 15 April 2025, when the new Muslim personal status law replaced the 2005 statute. The five changes people feel first: custody now runs to age 18 for both boys and girls (not the old 11 and 13 split); a child aged 15 can state which parent to live with; the reconciliation window dropped from 90 days to 60; repeated pronouncements of talaq count as a single divorce; and every divorce must now be documented at court. Addiction to intoxicants was also added as a ground. Non-Muslim rules under the 2022 civil law were unchanged, so the dual system still stands.</p>
+      </div>
 
       <h3>Custody now runs to age 18 for both children</h3>
       <p>
@@ -627,7 +712,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>

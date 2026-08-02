@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
 const title = 'Alimony in UAE: What You Can Claim After Divorce (2026)';
 const description =
-  'Complete guide to alimony in UAE: iddah maintenance, mutaa, child support, how courts calculate amounts, Muslim vs non-Muslim rules, and how to claim your entitlements.';
+  'Alimony in the UAE explained: iddah maintenance, mutaa, child support, housing, and non-Muslim spousal support under Article 9. How courts calculate amounts and how to enforce non-payment.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/alimony-uae/',
@@ -18,91 +18,133 @@ const breadcrumbs = [
   { name: 'Alimony UAE', url: 'https://divorceu.ae/en/alimony-uae/' },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Alimony in UAE: What You Can Claim After Divorce (2026)',
+  description:
+    'A guide to alimony and maintenance entitlements in the UAE for Muslim and non-Muslim divorces, including how courts calculate amounts and how to enforce non-payment.',
+  author: {
+    '@type': 'Person',
+    name: 'Aleksi Suoninen',
+    jobTitle: 'UAE Expat & Legal Consultant',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Divorce UAE',
+    url: 'https://divorceu.ae',
+  },
+  datePublished: '2025-11-10',
+  dateModified: '2026-07-25',
+  mainEntityOfPage: 'https://divorceu.ae/en/alimony-uae/',
+};
+
 const alimonyTypes = [
   {
     type: 'Iddah Maintenance (Nafaqat Al-Iddah)',
     who: 'Muslim wives',
-    duration: '3 months (approx. 90 days)',
-    basis: 'Islamic law — mandatory',
-    detail: 'During the iddah waiting period following talaq or court-issued divorce, the husband is legally obligated to maintain his ex-wife financially. This covers housing, food, clothing, and reasonable living expenses. The iddah period is approximately 3 lunar months (or until the birth of a child if pregnant). This is not optional — UAE courts enforce it.',
+    duration: 'Roughly 3 months (the iddah period)',
+    basis: 'Muslim law (41/2024)',
+    detail: 'During the iddah waiting period after a talaq or a court-issued divorce, the husband is obliged to maintain his former wife. This covers housing, food, clothing, and reasonable living costs. The iddah is commonly three menstrual cycles, or until the birth of the child if the wife is pregnant. This obligation applies to Muslim divorces under Federal Decree-Law No. 41 of 2024 and is enforced by the courts. Iddah does not apply to non-Muslim divorces.',
   },
   {
     type: "Mut'a (Consolation Payment)",
-    who: 'Muslim wives divorced by husband (talaq)',
+    who: 'Muslim wives divorced by talaq',
     duration: 'One-time payment',
-    basis: 'Islamic law — court-determined',
-    detail: "Mut'a is a one-time consolation payment from the husband to the wife when the husband initiates divorce (talaq) without fault on the wife's part. The amount is determined by the court based on the length of the marriage, the husband's financial means, and the circumstances of the divorce. There is no fixed formula — judges have discretion.",
+    basis: 'Muslim law (41/2024)',
+    detail: "Mut'a is a one-time consolation payment from the husband to the wife when the husband initiates divorce without fault on the wife's part. The court fixes the amount based on the length of the marriage, the husband's means, and the circumstances of the divorce. There is no set formula, and the judge has discretion.",
   },
   {
     type: 'Child Support (Nafaqat Al-Awlad)',
-    who: 'Parent with custody (usually mother)',
-    duration: 'Until child reaches adulthood (boys ~18, girls until marriage)',
-    basis: 'Both Islamic and civil law',
-    detail: 'Child support is separate from alimony and covers the direct needs of the children — food, clothing, schooling, medical expenses, and housing. Under UAE law, the father is primarily responsible for child financial support regardless of who has custody. Courts set amounts based on the father\'s income and the children\'s reasonable needs.',
+    who: 'The custodial parent, usually the mother',
+    duration: 'Until the child reaches adulthood',
+    basis: 'Muslim and civil law',
+    detail: 'Child support is separate from any support paid to the wife. It covers the direct needs of the children: food, clothing, schooling, medical care, and their share of housing. The father is primarily responsible for maintaining the children financially regardless of who holds custody. Courts set amounts based on the father\'s verified income and the children\'s reasonable needs.',
   },
   {
     type: 'Housing Allowance During Custody',
-    who: 'Custodial parent (usually mother)',
-    duration: 'Duration of custody period',
-    basis: 'UAE Personal Status Law',
-    detail: "A wife with child custody is entitled to suitable housing for herself and the children. If the marital home is not available or suitable, the court can order the ex-husband to provide or pay for alternative accommodation. This right ends when the custody period ends (when children reach the qualifying ages).",
+    who: 'The custodial parent, usually the mother',
+    duration: 'For the duration of the custody period',
+    basis: 'Muslim law (41/2024)',
+    detail: "A mother with custody is entitled to suitable housing for herself and the children. If the marital home is unavailable or unsuitable, the court can order the father to provide or pay for alternative accommodation. This entitlement generally ends when the custody period ends.",
   },
   {
-    type: 'Equal Asset Division (Non-Muslims)',
-    who: 'Non-Muslim expat wives',
+    type: 'Court-Ordered Spousal Support (Non-Muslims)',
+    who: 'Non-Muslim ex-wives',
+    duration: 'A period set by the court, reviewable annually',
+    basis: 'Civil law (41/2022)',
+    detail: "For non-Muslim couples under Federal Decree-Law No. 41 of 2022, a divorced woman may claim alimony that the court assesses under the factors commonly cited as Article 9. There is no iddah in the civil track, so support is not capped at three months. The award can be a lump sum or periodic payments, is reviewable once a year at the wife's request, and is forfeited on remarriage.",
+  },
+  {
+    type: 'Financial Settlement of Property (Non-Muslims)',
+    who: 'Either non-Muslim spouse',
     duration: 'One-time on divorce',
-    basis: 'Federal Law No. 41 of 2022',
-    detail: 'Under the 2022 civil personal status law for non-Muslim expats, marital assets acquired during the marriage are divided 50/50 by default. This is a significant departure from Islamic law — it applies automatically unless a prenuptial agreement specifies otherwise. Premarital assets and inheritance are generally excluded.',
-  },
-  {
-    type: 'Extended Alimony (Non-Muslims)',
-    who: 'Non-Muslim expat wives',
-    duration: 'Court-determined period',
-    basis: 'Federal Law No. 41 of 2022',
-    detail: 'Unlike Islamic law where alimony ends after iddah, the 2022 civil law allows UAE courts to order ongoing spousal support for non-Muslim ex-wives based on factors including the length of the marriage, standard of living, earning capacity, and childcare responsibilities.',
+    basis: 'Civil law (41/2022)',
+    detail: 'There is no automatic community-property split under the civil law. The UAE has no default 50/50 division of marital assets. Property is generally held by whoever holds legal title, and the court assesses each spouse\'s financial and non-financial contributions, needs, and any agreement between them. A spouse who contributed can raise a claim, and jointly owned property may be sold or one share bought out. See the property division guide below for the detail.',
   },
 ];
 
 const calculationFactors = [
-  { factor: "Husband's net monthly income", weight: 'Very High', detail: 'The primary benchmark. Courts typically award a percentage of the husband\'s verified income.' },
-  { factor: 'Length of marriage',           weight: 'High',      detail: 'Longer marriages generally result in higher awards, particularly for mut\'a and non-Muslim extended alimony.' },
-  { factor: "Wife's earning capacity",      weight: 'Medium',    detail: 'If the wife is employed or has demonstrable earning capacity, courts may reduce alimony accordingly.' },
-  { factor: 'Standard of living during marriage', weight: 'High', detail: 'Maintenance awards aim to preserve the wife\'s reasonable standard of living, not reduce it dramatically.' },
-  { factor: 'Number and age of children',   weight: 'High',      detail: 'More children and younger children increase child support awards and housing entitlement duration.' },
-  { factor: 'Who initiated the divorce',    weight: 'Medium',    detail: 'For mut\'a, husband-initiated talaq without fault generally results in a higher consolation payment.' },
-  { factor: 'Prenuptial agreement',         weight: 'High',      detail: 'A registered prenuptial agreement can override default entitlements — courts honour these if legally valid.' },
+  { factor: "Husband's or payer's net monthly income", weight: 'Very High', detail: 'The primary benchmark. In the civil track the financial circumstances of both spouses are commonly assessed through a court-appointed accountant.' },
+  { factor: 'Length of marriage',           weight: 'High',      detail: 'Longer marriages generally result in larger awards, particularly for mut\'a and non-Muslim spousal support.' },
+  { factor: "Wife's age and earning capacity", weight: 'Medium', detail: 'The wife\'s age is a named factor in the civil track. If she is employed or has clear earning capacity, the court may adjust support accordingly.' },
+  { factor: 'Standard of living during the marriage', weight: 'High', detail: 'Maintenance aims to preserve a reasonable standard of living rather than reduce it sharply.' },
+  { factor: 'Number and age of children',   weight: 'High',      detail: 'More children and younger children increase child support and extend the housing entitlement.' },
+  { factor: 'Who initiated the divorce and any harm caused', weight: 'Medium', detail: 'Husband-initiated talaq without fault tends to raise mut\'a. In the civil track the court can award compensation for physical or moral harm from the divorce.' },
+  { factor: 'Registered agreement or prenuptial terms', weight: 'High', detail: 'A valid registered agreement can shape or override default entitlements, and courts honour agreements that meet the legal requirements.' },
+];
+
+const indicativeAmounts = [
+  { item: 'Iddah maintenance (Muslim)', range: 'AED 3,000 to 15,000 per month for about 3 months', note: 'Scales with the family standard of living and the husband\'s income.' },
+  { item: "Mut'a consolation (Muslim)", range: 'Often set at 3 to 12 months of the husband\'s salary', note: 'One-time payment, judge has full discretion.' },
+  { item: 'Child support per child', range: 'Commonly 15 to 30 percent of the father\'s verified income', note: 'Rises with school fees, medical needs, and housing.' },
+  { item: 'Non-Muslim spousal support (civil)', range: 'No fixed range; set case by case under Article 9', note: 'Assessed by a court-appointed accountant, reviewable annually.' },
+  { item: 'Abu Dhabi civil benchmark', range: 'Reported as up to 25 percent of the husband\'s last monthly income multiplied by years of marriage', note: 'Specific to the Abu Dhabi Civil Family Court regulation (Decision No. 8 of 2022), not the federal rule.' },
+];
+
+const enforcementSteps = [
+  { title: 'Open a file at the execution court', detail: 'Once you hold a final maintenance order, your lawyer files it with the execution court. A maintenance judgment is treated as an enforceable debt, and the court can move quickly because unpaid support affects the day-to-day needs of a family.' },
+  { title: 'Wage garnishment (salary deduction)', detail: 'The court can order the payer\'s employer to deduct maintenance directly from salary and pay it to you before the rest of the salary is released. This is often the most reliable route where the ex-spouse is a salaried employee in the UAE.' },
+  { title: 'Bank account freezing and seizure', detail: 'The court can freeze bank accounts and direct that the owed amount be transferred. Where funds exist, this can recover both current and backdated maintenance.' },
+  { title: 'Travel ban', detail: 'The execution court can impose a travel ban that stops the payer from leaving the country until the debt is settled. For an ex-spouse who works or travels internationally, this is a strong pressure point.' },
+  { title: 'Seizure of assets', detail: 'If salary and accounts are not enough, the court can move against other assets, including vehicles and, in some cases, property, to satisfy the outstanding maintenance.' },
 ];
 
 const faqItems = [
   {
     question: 'How much alimony does a wife get in UAE?',
     answer:
-      "There is no fixed formula — amounts vary significantly based on the husband's income, length of marriage, and number of children. As a rough guide, iddah maintenance typically ranges from AED 3,000 – 15,000 per month for 3 months, depending on the family's standard of living. Mut'a (one-time consolation payment) is often set at 3–12 months of the husband's salary. Child support is typically 15–30% of the father's verified income per child.",
+      "There is no fixed formula, and amounts vary with the payer's income, the length of the marriage, and the number of children. As an indicative guide only, iddah maintenance for a Muslim wife often ranges from AED 3,000 to 15,000 per month for about three months, mut'a is frequently set at three to twelve months of the husband's salary, and child support is commonly 15 to 30 percent of the father's verified income per child. For non-Muslim couples the court sets spousal support case by case under the Article 9 factors of Federal Decree-Law No. 41 of 2022, assessed by a court-appointed accountant.",
   },
   {
-    question: 'How long does alimony last in UAE under Islamic law?',
+    question: 'How long does alimony last in UAE under Muslim law?',
     answer:
-      "Under Islamic personal status law applied to Muslim couples, financial support to the ex-wife is limited to the iddah period — approximately 3 months after divorce. Extended alimony beyond iddah is not automatic under Islamic law. However, child support continues until children reach adulthood, and housing allowance continues for the duration of the custody period.",
+      "For Muslim couples under Federal Decree-Law No. 41 of 2024, financial support to the ex-wife is limited to the iddah period, which is roughly three months after divorce. Long-term alimony beyond iddah is not automatic. Child support, however, continues until the children reach adulthood, and the housing allowance continues for the duration of the custody period.",
   },
   {
     question: 'Does a non-Muslim wife get alimony in UAE?',
     answer:
-      "Yes — and potentially more than under Islamic law. Under Federal Law No. 41 of 2022 for non-Muslim expats, courts can order ongoing spousal support beyond the iddah period, taking into account the length of the marriage, the wife's earning capacity, and the standard of living during the marriage. Additionally, marital assets are divided equally (50/50) by default.",
+      "Yes. Under Federal Decree-Law No. 41 of 2022 for non-Muslims, a divorced woman may claim spousal support, and because there is no iddah the support is not capped at three months. The court weighs the factors commonly cited as Article 9, including the length of the marriage, the wife's age, the financial circumstances of both spouses assessed by a court-appointed accountant, and compensation for harm. It is important to be clear that the civil law does not impose an automatic 50/50 split of marital property, and the UAE has no community-property regime.",
+  },
+  {
+    question: 'Is marital property split 50/50 for non-Muslims in the UAE?',
+    answer:
+      "No. This is a common misunderstanding. Federal Decree-Law No. 41 of 2022 does not create an automatic 50/50 community-property division, and UAE law has no community-property concept. Assets are generally held by whoever holds legal title. The court assesses each spouse's financial and non-financial contributions, their needs, and any agreement between them, and a spouse who contributed can raise a claim. A woman may also claim spousal support weighed under the Article 9 factors.",
   },
   {
     question: 'What happens if my ex-husband refuses to pay alimony in UAE?',
     answer:
-      "Non-payment of court-ordered alimony in UAE is a serious legal matter. The UAE Family Court can enforce payment through: wage garnishment (deducting directly from salary), travel bans preventing the husband from leaving the country, freezing bank accounts, and in serious cases criminal prosecution for abandonment. Contact your lawyer immediately if payments stop.",
+      "Non-payment of a court-ordered maintenance award is enforceable through the execution court. The court can order wage garnishment that deducts support directly from salary, freeze and seize bank accounts, impose a travel ban that stops the payer leaving the country, and seize other assets. Backdated maintenance can also be pursued. Speak to your lawyer as soon as payments stop, and see our dedicated guide on enforcing unpaid alimony.",
   },
   {
     question: "What is the difference between mahr and alimony in UAE?",
     answer:
-      "Mahr (dowry) is a mandatory gift from the husband to the wife at marriage — it belongs entirely to the wife and is separate from alimony. Unpaid mahr (deferred mahr) becomes immediately due on divorce. Alimony (nafaqa) is ongoing financial support during and after divorce. Both are separate entitlements — a wife may claim both unpaid mahr AND alimony.",
+      "Mahr is the mandatory gift from the husband to the wife agreed at marriage, and it belongs entirely to the wife. Deferred mahr becomes due on divorce and is enforced as a debt. Alimony, or nafaqa, is financial maintenance during and after divorce. They are separate entitlements, and a wife may claim both unpaid mahr and maintenance.",
   },
   {
     question: 'Can I claim alimony retroactively in UAE?',
     answer:
-      "UAE courts generally do not award retroactive alimony for periods when the wife did not formally claim it. It is important to file your maintenance claim with the Personal Status Court as soon as possible — ideally during divorce proceedings. Delaying your claim can result in losing entitlement to past-due maintenance.",
+      "For Muslim divorces, sources report that backdated maintenance can be claimed only for the preceding two years under what is commonly cited as Article 99 of Federal Decree-Law No. 41 of 2024. In practice, courts are reluctant to award maintenance for long periods when no claim was filed, so it is best to file your maintenance claim during divorce proceedings rather than after.",
   },
 ];
 ---
@@ -113,26 +155,29 @@ const faqItems = [
   lang="en"
   dir="ltr"
   hreflang={hreflang}
+  schema={articleSchema}
+  lastmod="2026-07-25"
 >
   <header class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
         <Breadcrumb items={breadcrumbs} lang="en" />
         <h1 class="hero__h1">
-          Alimony in UAE —<br />What Are You Entitled to?
+          Alimony in UAE:<br />What Are You Entitled to?
         </h1>
+        <p class="byline" style="font-size:0.85rem;opacity:0.8;margin-bottom:20px;">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
         <p class="hero__sub">
-          UAE alimony law is different for Muslim and non-Muslim couples — and significantly changed by the 2022 reform.
-          This guide explains every type of financial entitlement after divorce in the UAE, how amounts are calculated,
-          and how to claim what you are legally owed.
+          UAE alimony law works differently for Muslim and non-Muslim couples, and it was reshaped by the 2022 civil law
+          and the 2024 Muslim personal status law. This guide explains every type of financial entitlement after divorce
+          in the UAE, how amounts are calculated, and how to enforce payment if your ex-spouse stops paying.
         </p>
         <ul class="hero__trust">
           <li>✓ Muslim &amp; non-Muslim rules</li>
-          <li>✓ 2022 law explained</li>
+          <li>✓ 2022 and 2024 laws explained</li>
           <li>✓ Free first consultation</li>
           <li>✓ 100% confidential</li>
         </ul>
-        <p class="hero__author">Guide by <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant</p>
+        <p class="hero__author">Guide by <strong>Aleksi Suoninen</strong>, UAE Expat &amp; Legal Consultant. Last updated 25 July 2026.</p>
       </div>
       <div class="hero__form">
         <LeadForm lang="en" variant="hero" />
@@ -146,34 +191,40 @@ const faqItems = [
     <section class="section" aria-labelledby="what-heading">
       <h2 id="what-heading">What Is Alimony in UAE?</h2>
       <p>
-        In the UAE, the term "alimony" covers several distinct financial entitlements that arise on divorce. The Arabic term
-        <em>nafaqa</em> refers broadly to financial maintenance — and UAE law distinguishes carefully between different types
-        depending on who is receiving it and under what circumstances.
+        In the UAE, "alimony" is an umbrella term for several distinct financial entitlements that arise on divorce. The
+        Arabic word <em>nafaqa</em> means financial maintenance, and UAE law separates it carefully by who receives it and
+        under what circumstances. A former wife, the children, and the custodial parent can each have separate claims, and
+        a woman may hold more than one at the same time.
       </p>
       <p>
-        The rules differ significantly depending on whether the couple is Muslim or non-Muslim. Muslim couples are subject to
-        Islamic personal status law. Non-Muslim expat couples can now opt for the 2022 civil personal status law
-        (Federal Law No. 41 of 2022), which introduced equal asset division and more flexible alimony provisions.
+        The rules depend on whether the couple is Muslim or non-Muslim, because the UAE now runs a dual system. Muslim
+        couples are governed by <strong>Federal Decree-Law No. 41 of 2024</strong>, the Muslim personal status law that
+        came into force on 15 April 2025 and replaced the older 2005 law in full. Non-Muslim residents are generally
+        governed by <strong>Federal Decree-Law No. 41 of 2022</strong> on civil personal status, in force since 1 February
+        2023 across all seven emirates, unless a party elects to apply the law of their home country. If you want the wider
+        picture of both tracks, start with our overview of <a href="/en/uae-divorce-law/">UAE divorce law</a>.
       </p>
       <div class="info-box">
-        <h3>Key distinction: Muslim vs Non-Muslim</h3>
+        <h3>Key distinction: Muslim vs non-Muslim</h3>
         <div class="info-grid">
           <div class="info-col">
-            <p class="info-label">Muslim couples</p>
+            <p class="info-label">Muslim couples (41/2024)</p>
             <ul>
-              <li>Iddah maintenance (3 months, mandatory)</li>
+              <li>Iddah maintenance for about 3 months</li>
               <li>Mut'a consolation payment (one-time)</li>
               <li>Child support (ongoing)</li>
+              <li>Housing allowance during custody</li>
               <li>No automatic long-term alimony</li>
             </ul>
           </div>
           <div class="info-col">
-            <p class="info-label">Non-Muslim expats (2022 law)</p>
+            <p class="info-label">Non-Muslim residents (41/2022)</p>
             <ul>
-              <li>50/50 asset division by default</li>
-              <li>Court-determined spousal support</li>
+              <li>Court-ordered spousal support (Article 9)</li>
+              <li>No iddah, so support is not capped at 3 months</li>
+              <li>Reviewable annually, forfeited on remarriage</li>
               <li>Child support (ongoing)</li>
-              <li>Extended alimony possible</li>
+              <li>No automatic 50/50 property split</li>
             </ul>
           </div>
         </div>
@@ -183,7 +234,11 @@ const faqItems = [
     <!-- Types of alimony -->
     <section class="section" aria-labelledby="types-heading">
       <h2 id="types-heading">Types of Alimony &amp; Financial Entitlements in UAE</h2>
-      <p>Here is a detailed breakdown of every financial entitlement available after divorce in the UAE:</p>
+      <p>
+        Below is a breakdown of every financial entitlement that can arise after divorce in the UAE. Read them as a set,
+        because most divorcing spouses hold several at once. A Muslim wife with young children, for example, may claim
+        iddah maintenance, mut'a, child support, and a housing allowance, plus any unpaid deferred mahr.
+      </p>
 
       <div class="alimony-cards">
         {alimonyTypes.map((item) => (
@@ -200,14 +255,87 @@ const faqItems = [
           </div>
         ))}
       </div>
+
+      <div class="callout callout--warning">
+        <h3>Correcting a common myth: there is no automatic 50/50 split</h3>
+        <p>
+          Many websites claim that non-Muslim marital assets are "divided equally" or "split 50/50 by default" under the
+          2022 civil law. That is not accurate. Federal Decree-Law No. 41 of 2022 does not impose a community-property
+          division, and UAE law has no community-property concept at all. Property is generally held by whoever holds legal
+          title. On divorce the court assesses each spouse's financial and non-financial contributions, their needs, and
+          any agreement between them, and a spouse who contributed can raise a claim. Separately, a divorced woman may claim
+          spousal support weighed under the Article 9 factors. Treat any "guaranteed half" promise with caution and read our
+          <a href="/en/property-division-divorce-uae/">property division in UAE divorce</a> guide for how title, contributions,
+          and buy-outs actually work.
+        </p>
+      </div>
+    </section>
+
+    <!-- Muslim vs non-Muslim comparison -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Muslim vs Non-Muslim Alimony: Side by Side</h2>
+      <p>
+        The single biggest factor in what you can claim is which law applies to your divorce. The table below sets the two
+        federal tracks against each other on the points that matter most for maintenance.
+      </p>
+      <div class="compare-table">
+        <div class="compare-row compare-row--head">
+          <span>Point</span>
+          <span>Muslim (41/2024)</span>
+          <span>Non-Muslim (41/2022)</span>
+        </div>
+        <div class="compare-row">
+          <span>Support to the ex-wife</span>
+          <span>Iddah maintenance for about 3 months</span>
+          <span>Spousal support set by the court, not capped at 3 months</span>
+        </div>
+        <div class="compare-row">
+          <span>One-time consolation</span>
+          <span>Mut'a where the husband initiates talaq</span>
+          <span>Compensation for harm can be built into the award</span>
+        </div>
+        <div class="compare-row">
+          <span>How the amount is set</span>
+          <span>Judicial discretion on income, marriage length, means</span>
+          <span>Article 9 factors, income assessed by a court-appointed accountant</span>
+        </div>
+        <div class="compare-row">
+          <span>Review over time</span>
+          <span>Fixed by the ruling; new claims must be filed</span>
+          <span>Reviewable annually at the wife's request</span>
+        </div>
+        <div class="compare-row">
+          <span>Ends on remarriage</span>
+          <span>Iddah maintenance is short by design</span>
+          <span>Spousal support is forfeited on remarriage</span>
+        </div>
+        <div class="compare-row">
+          <span>Property</span>
+          <span>Held by title; mahr is the wife's separate right</span>
+          <span>No automatic 50/50; contribution-based claims</span>
+        </div>
+        <div class="compare-row">
+          <span>Child support</span>
+          <span>Father primarily liable until adulthood</span>
+          <span>Both parents contribute; father usually primary payer</span>
+        </div>
+      </div>
+      <p>
+        Non-Muslim residents can also elect to have their home-country law applied to the divorce if they raise it in the
+        petition, subject to proof of that law and UAE public order. That choice can change the financial outcome
+        significantly, so it is a decision to take with a lawyer before filing. Expats weighing this should read our guide to
+        <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a>.
+      </p>
     </section>
 
     <!-- How courts calculate -->
     <section class="section" aria-labelledby="calculation-heading">
       <h2 id="calculation-heading">How UAE Courts Calculate Alimony Amounts</h2>
       <p>
-        There is no fixed alimony formula in UAE law — judges have discretion to determine amounts based on a set of
-        established factors. Understanding these factors helps you set realistic expectations and build a strong case.
+        There is no single alimony formula in UAE federal law. Judges assess amounts against a set of established factors,
+        and in the civil track the financial position of both spouses is often verified by a court-appointed accountant
+        rather than taken on trust. Understanding these factors helps you set realistic expectations and prepare the right
+        evidence.
       </p>
 
       <div class="factors-table">
@@ -224,84 +352,245 @@ const faqItems = [
         ))}
       </div>
 
+      <p>
+        One regional benchmark is worth flagging because it is often quoted as if it were a national rule. In the Abu Dhabi
+        Civil Family Court, the executive regulation (Decision No. 8 of 2022) is reported to set spousal support with
+        reference to up to 25 percent of the husband's last monthly income multiplied by the number of years of marriage,
+        with further factors such as the wife's career sacrifice and standard of living. That concrete formula is specific
+        to Abu Dhabi and is not the federal rule under 41/2022. If your case is in Dubai or another emirate, do not assume
+        the 25 percent benchmark applies.
+      </p>
+
       <div class="cta-inline">
-        <p>Need help calculating your entitlements?</p>
-        <a href="#contact" class="btn btn--primary">Get Free Consultation</a>
+        <p>Want a rough figure before you speak to a lawyer?</p>
+        <a href="/en/alimony-calculator-uae/" class="btn btn--primary">Try the Alimony Calculator</a>
       </div>
+    </section>
+
+    <!-- Financial disclosure -->
+    <section class="section" aria-labelledby="disclosure-heading">
+      <h2 id="disclosure-heading">Financial Disclosure and the Court-Appointed Accountant</h2>
+      <p>
+        Whatever the track, a maintenance award is only as good as the income figure it rests on. This is where many claims
+        succeed or fail. In the civil track under Federal Decree-Law No. 41 of 2022, the financial circumstances of both
+        spouses are commonly assessed by a court-appointed accountant rather than accepted on either party's word. The
+        accountant reviews salary records, bank statements, and business income, and reports back to the judge, which makes
+        it harder for a higher-earning spouse to understate what they actually make.
+      </p>
+      <p>
+        Two practical points follow from this. First, gather your evidence early and keep it organised, because the stronger
+        your documentation of both the payer's income and your own standard of living, the better the outcome. Second, be
+        realistic about self-employed or business-owner spouses. Where income is not a simple monthly salary, the court may
+        need to look at dividends, drawings, and company accounts, and forensic tracing is sometimes required. If assets are
+        held offshore or through corporate structures, this adds time and cost, and it is one reason contested cases run
+        longer and cost more.
+      </p>
+      <p>
+        Disclosure also matters for enforcement later. A clear record of the payer's employer and bank details, built up
+        during the case, is exactly what the execution court needs if payments stop, so good disclosure work at the
+        maintenance stage pays off twice.
+      </p>
+    </section>
+
+    <!-- Indicative amounts -->
+    <section class="section" aria-labelledby="amounts-heading">
+      <h2 id="amounts-heading">Indicative Alimony Amounts in the UAE</h2>
+      <p>
+        The figures below are indicative ranges drawn from UAE law-firm guides, not an official schedule. Actual awards
+        vary widely by income, emirate, and the facts of each case. Use them to frame a conversation with a lawyer, not as
+        a promise of what a court will order.
+      </p>
+      <div class="amounts-table">
+        <div class="amounts-row amounts-row--head">
+          <span>Entitlement</span>
+          <span>Indicative range</span>
+          <span>Notes</span>
+        </div>
+        {indicativeAmounts.map((row) => (
+          <div class="amounts-row">
+            <span class="amounts-item">{row.item}</span>
+            <span>{row.range}</span>
+            <span class="amounts-note">{row.note}</span>
+          </div>
+        ))}
+      </div>
+      <p>
+        For a fuller picture of what a divorce costs alongside any maintenance you receive, including court fees, translation,
+        and lawyer fees, see our breakdown of the <a href="/en/divorce-cost-uae/">cost of divorce in the UAE</a>. If children
+        are involved, the child element usually dwarfs any spousal element, so read the dedicated
+        <a href="/en/child-support-uae/">child support in the UAE</a> guide as well.
+      </p>
+    </section>
+
+    <!-- Child support and housing detail -->
+    <section class="section" aria-labelledby="children-heading">
+      <h2 id="children-heading">Child Support and Housing: The Ongoing Entitlements</h2>
+      <p>
+        Where there are children, the child element of maintenance usually outlasts and outweighs anything paid to the
+        former wife. Support to the ex-wife is short in the Muslim track and time-limited in the civil track, but child
+        support (nafaqat al-awlad) continues until the children reach adulthood. Under Federal Decree-Law No. 41 of 2024,
+        the father is primarily responsible for maintaining the children financially, regardless of who holds custody, and
+        that obligation covers food, clothing, schooling, medical care, and the children's share of housing.
+      </p>
+      <p>
+        Housing is a distinct entitlement that people often miss. A mother with custody is entitled to suitable
+        accommodation for herself and the children for the duration of the custody period. If the marital home is not
+        available or not suitable, the court can order the father to provide alternative housing or pay a housing allowance.
+        Because custody now runs to 18 under the 2024 law, the housing entitlement can last far longer than the short iddah
+        support, which is why the housing figure often matters more than the headline alimony number.
+      </p>
+      <p>
+        Child support is reviewable as circumstances change. School fees rise, medical needs appear, and the father's income
+        can move up or down, so a figure set today is not fixed forever. Our
+        <a href="/en/child-support-uae/">child support in the UAE</a> guide sets out how the father's obligation is
+        calculated, what counts as a reasonable need, and how to return to court if an existing order no longer reflects the
+        children's real costs.
+      </p>
     </section>
 
     <!-- How to claim -->
     <section class="section" aria-labelledby="claim-heading">
-      <h2 id="claim-heading">How to Claim Alimony in UAE — Step by Step</h2>
+      <h2 id="claim-heading">How to Claim Alimony in UAE, Step by Step</h2>
       <ol class="steps">
         <li>
-          <h3>Step 1 — Consult a family lawyer immediately</h3>
+          <h3>Step 1: Consult a family lawyer early</h3>
           <p>
-            Do not wait until after the divorce is finalised. Alimony claims are far stronger when filed during
-            divorce proceedings. A lawyer will assess your specific entitlements and file the appropriate claims
-            alongside the divorce petition.
+            Do not wait until the divorce is finalised. Maintenance claims are far stronger when filed during proceedings,
+            and backdated maintenance is limited. A lawyer will identify your specific entitlements and file the right
+            claims alongside the divorce petition.
           </p>
         </li>
         <li>
-          <h3>Step 2 — Gather financial evidence</h3>
+          <h3>Step 2: Gather financial evidence</h3>
           <p>
-            The court will need evidence of the husband's income — salary certificates, bank statements, business
-            income. Gather evidence of your standard of living during the marriage: household expenses, school fees,
-            rent or mortgage, lifestyle costs. The stronger your documentation, the better the outcome.
+            The court needs proof of the payer's income, such as salary certificates, bank statements, and business
+            income. Gather evidence of your standard of living during the marriage as well: rent or mortgage, school fees,
+            household and lifestyle costs. In the civil track a court-appointed accountant may review the financial
+            picture, so clear documentation matters.
           </p>
         </li>
         <li>
-          <h3>Step 3 — File a maintenance claim at the Personal Status Court</h3>
+          <h3>Step 3: File a maintenance claim at the Personal Status Court</h3>
           <p>
-            Your lawyer files a nafaqa (maintenance) claim at the Personal Status Court in the emirate where you
-            reside. This is done alongside or immediately after divorce filing. The court can issue interim
-            maintenance orders while the case is ongoing.
+            Your lawyer files a nafaqa claim at the Personal Status Court in the emirate where you live, alongside or
+            immediately after the divorce filing. The court can issue interim maintenance orders while the case runs so you
+            are not left without support during proceedings.
           </p>
         </li>
         <li>
-          <h3>Step 4 — Attend the hearing</h3>
+          <h3>Step 4: Attend the hearing</h3>
           <p>
-            Both parties present their financial positions. Your lawyer argues for the appropriate level of maintenance
-            based on the husband's income and your established standard of living. The judge may request additional
-            documentation.
+            Both sides present their financial positions. Your lawyer argues for the appropriate level of maintenance based
+            on the payer's income and your established standard of living. The judge may request further documentation or
+            an accountant's report before ruling.
           </p>
         </li>
         <li>
-          <h3>Step 5 — Enforce the order if necessary</h3>
+          <h3>Step 5: Enforce the order if payment stops</h3>
           <p>
-            Once a maintenance order is issued, it is legally enforceable. If your ex-husband does not pay, the court
-            has enforcement mechanisms including wage garnishment, travel bans, and account freezing. Non-payment
-            is a serious matter under UAE law.
+            A maintenance order is legally enforceable. If your ex-spouse does not pay, the execution court can garnish
+            wages, freeze accounts, and impose a travel ban. The enforcement section below explains exactly how this works.
           </p>
         </li>
       </ol>
     </section>
 
-    <!-- Mahr -->
-    <section class="section" aria-labelledby="mahr-heading">
-      <h2 id="mahr-heading">Don't Forget Your Mahr — It Becomes Due on Divorce</h2>
+    <!-- ENFORCEMENT -->
+    <section class="section" aria-labelledby="enforce-heading">
+      <h2 id="enforce-heading">What Happens If Your Ex Refuses to Pay: Enforcement in the UAE</h2>
       <p>
-        Mahr is the mandatory gift agreed at marriage from the husband to the wife. It is the wife's exclusive
-        property — not shared marital assets. If your mahr was partly deferred (as is common in UAE marriages),
-        the entire deferred amount becomes immediately due and payable on divorce.
+        Non-payment is the single biggest fear for people who are owed maintenance, and it is a fear the UAE system takes
+        seriously. A maintenance judgment is treated as an enforceable debt. Once you hold a final order, you do not have to
+        rely on goodwill. You take the order to the execution court, which has real tools to make an unwilling ex-spouse pay.
+      </p>
+
+      <div class="enforce-list">
+        {enforcementSteps.map((step, i) => (
+          <div class="enforce-item">
+            <span class="enforce-num">{i + 1}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p>
+        These measures can be combined. In practice a wage garnishment plus a travel ban is a powerful pairing, because a
+        salaried ex-spouse who wants to keep working and travelling in the UAE has a strong incentive to clear the debt.
+        For Muslim divorces, sources report that backdated maintenance can be claimed for the preceding two years, under
+        what is commonly cited as Article 99 of Federal Decree-Law No. 41 of 2024, so a period of non-payment does not
+        simply vanish.
       </p>
       <p>
-        Many women overlook this. Unpaid deferred mahr should be claimed simultaneously with alimony and child
-        support. The court enforces mahr payment the same way it enforces maintenance orders.
-        If you want to estimate your total entitlement before consulting a lawyer, our
-        <a href="/en/alimony-calculator-uae/">alimony calculator UAE</a> walks through the key variables.
-        For couples who are both employed in the UAE, end-of-service benefits can also affect the financial
-        picture — our guide on <a href="/en/divorce-pension-uae/">pension and alimony in UAE divorce</a>
-        explains how EOSB and gratuity are factored into maintenance awards, and the related
-        <a href="/en/divorce-pension-gratuity-uae/">pension and gratuity in UAE divorce</a> guide covers
-        the specific calculation rules in depth.
+        Enforcement is a specialist process, and getting the file opened correctly at the execution court matters. Our
+        dedicated guide on <a href="/en/unpaid-alimony-enforcement-uae/">enforcing unpaid alimony in the UAE</a> walks
+        through the execution court steps, the documents you need, and how travel bans and salary deductions are applied in
+        practice.
+      </p>
+    </section>
+
+    <!-- Iddah context -->
+    <section class="section" aria-labelledby="iddah-heading">
+      <h2 id="iddah-heading">Iddah Maintenance and Why Timing Matters</h2>
+      <p>
+        For Muslim wives, iddah maintenance is the clearest and most immediate entitlement. During the iddah, roughly three
+        menstrual cycles after divorce, the husband must continue to maintain his former wife, covering housing, food, and
+        reasonable living costs. Because the window is short, delay is costly. If you do not raise the claim promptly, you
+        can lose part of it. Non-Muslim divorces under the civil law have no iddah at all, which is why spousal support in
+        that track is set for a court-determined period instead.
+      </p>
+      <p>
+        For a full explanation of how the waiting period works, what it covers, and how it interacts with remarriage and
+        paternity, see our guide to the <a href="/en/iddah-waiting-period-uae/">iddah waiting period in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Mahr -->
+    <section class="section" aria-labelledby="mahr-heading">
+      <h2 id="mahr-heading">Do Not Forget Your Mahr: It Becomes Due on Divorce</h2>
+      <p>
+        Mahr is the mandatory gift agreed at marriage from the husband to the wife. It is the wife's exclusive property,
+        not shared marital assets. If your mahr was partly deferred, as is common in UAE marriages, the entire deferred
+        amount becomes immediately due and payable on divorce, and it is enforced through the execution court as a debt.
+      </p>
+      <p>
+        Many women overlook this. Unpaid deferred mahr should be claimed at the same time as maintenance and child support.
+        Our <a href="/en/mahr-divorce-uae/">mahr and divorce in the UAE</a> guide explains the prompt and deferred parts of
+        mahr and how to claim what you are owed, and our
+        <a href="/en/wife-rights-after-divorce-uae/">wife's rights after divorce</a> guide sets mahr alongside every other
+        entitlement so nothing is missed.
       </p>
       <ul class="list">
         <li>Check your marriage contract for the agreed mahr amount</li>
-        <li>Identify how much was paid upfront (muqaddam) and how much is deferred (mu'akhkhar)</li>
+        <li>Identify how much was paid upfront and how much is deferred</li>
         <li>Claim the full deferred mahr amount through your lawyer</li>
-        <li>Mahr is separate from alimony — you are entitled to both</li>
+        <li>Mahr is separate from alimony, so you are entitled to both</li>
       </ul>
+    </section>
+
+    <!-- Common mistakes -->
+    <section class="section" aria-labelledby="mistakes-heading">
+      <h2 id="mistakes-heading">Common Mistakes That Reduce What You Receive</h2>
+      <p>
+        Most losses in maintenance cases are avoidable. They come from waiting too long, claiming too little, or trusting a
+        promise that a court would never enforce. The points below are the ones that cost people money most often.
+      </p>
+      <ul class="list">
+        <li><strong>Waiting until after the divorce is final.</strong> Maintenance claims are strongest when filed during proceedings, and backdated maintenance is limited, so a delay can permanently reduce what you can recover.</li>
+        <li><strong>Believing the 50/50 myth.</strong> Non-Muslim spouses who assume they will automatically get half the assets often fail to file the contribution-based claim they actually need. There is no automatic community-property split under 41/2022.</li>
+        <li><strong>Forgetting deferred mahr.</strong> Deferred mahr becomes due on divorce and is enforced as a debt, yet it is frequently left unclaimed because it feels separate from the divorce itself.</li>
+        <li><strong>Under-documenting the standard of living.</strong> The court awards against evidence, not memory. Rent, school fees, and lifestyle costs from during the marriage all support a higher figure.</li>
+        <li><strong>Not planning for enforcement.</strong> Winning an order is only half the battle. Keeping records of the payer's employer and bank details makes execution far quicker if payments stop.</li>
+      </ul>
+      <p>
+        If your case is a non-Muslim expat divorce, the choice between UAE law and your home-country law can change the whole
+        financial picture, so decide it with a lawyer before filing. Our guide to
+        <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a> and our overview of
+        <a href="/en/uae-divorce-law/">UAE divorce law</a> both explain how that decision interacts with maintenance and
+        property.
+      </p>
     </section>
 
     <!-- Related links -->
@@ -314,19 +603,19 @@ const faqItems = [
         </a>
         <a href="/en/wife-rights-after-divorce-uae/" class="service-link">
           <strong>Wife's Rights After Divorce UAE</strong>
-          <span>Complete overview of all financial and housing rights</span>
+          <span>Every financial and housing right in one overview</span>
         </a>
-        <a href="/en/child-custody-uae/" class="service-link">
-          <strong>Child Custody UAE</strong>
-          <span>Custody rules, rights, and child support</span>
+        <a href="/en/child-support-uae/" class="service-link">
+          <strong>Child Support UAE</strong>
+          <span>How the father's obligation is calculated and enforced</span>
+        </a>
+        <a href="/en/property-division-divorce-uae/" class="service-link">
+          <strong>Property Division in UAE Divorce</strong>
+          <span>Why there is no automatic 50/50 split and how title works</span>
         </a>
         <a href="/en/divorce-for-expats-in-uae/" class="service-link">
           <strong>Divorce for Expats (2022 Law)</strong>
-          <span>How the 2022 civil law changed everything for non-Muslims</span>
-        </a>
-        <a href="/en/visa-after-divorce-uae/" class="service-link">
-          <strong>Visa After Divorce UAE</strong>
-          <span>What happens to your residency when you divorce</span>
+          <span>How the civil law changed things for non-Muslims</span>
         </a>
       </div>
     </section>
@@ -338,7 +627,7 @@ const faqItems = [
     <section id="contact" class="section section--cta" aria-labelledby="cta-heading">
       <h2 id="cta-heading">Speak to a UAE Family Lawyer About Your Entitlements</h2>
       <p>
-        Alimony entitlements in UAE are time-sensitive — file your claim during proceedings, not after.
+        Alimony entitlements in the UAE are time-sensitive, so file your claim during proceedings, not after.
         Get a free confidential consultation with a qualified UAE family lawyer today.
       </p>
       <LeadForm lang="en" variant="inline" />
@@ -348,7 +637,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2025 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>
@@ -378,16 +667,23 @@ const faqItems = [
   .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 16px 0 6px; }
   .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
   .section em { font-style: italic; }
+  .section a { color: #2563eb; text-decoration: underline; }
   .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+  .section--cta a { color: #2563eb; }
 
   .info-box { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px; margin-top: 28px; }
   .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 16px; }
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .info-col { }
   .info-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #2563eb; margin: 0 0 8px; }
   .info-col ul { list-style: none; padding: 0; margin: 0; }
   .info-col ul li { font-size: 0.875rem; color: #374151; padding: 4px 0 4px 16px; position: relative; }
   .info-col ul li::before { content: '✓'; position: absolute; left: 0; color: #c9a84c; font-weight: 700; }
+
+  .callout { border-radius: 12px; padding: 24px; margin-top: 28px; }
+  .callout h3 { margin-top: 0; }
+  .callout--warning { background: #fff8ec; border: 1.5px solid #f0d68a; }
+  .callout--warning h3 { color: #92400e; }
+  .callout--warning p { margin-bottom: 0; }
 
   .alimony-cards { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
   .alimony-card { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px; }
@@ -396,6 +692,23 @@ const faqItems = [
   .alimony-badge { font-size: 0.7rem; font-weight: 600; background: #e0e7ff; color: #3730a3; border-radius: 20px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; }
   .alimony-meta { display: flex; gap: 24px; font-size: 0.8rem; color: #6b7280; margin-bottom: 12px; flex-wrap: wrap; }
   .alimony-card p { font-size: 0.875rem; color: #374151; line-height: 1.7; margin: 0; }
+
+  .compare-table { display: flex; flex-direction: column; border: 1.5px solid #e5e7eb; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+  .compare-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #f3f4f6; font-size: 0.85rem; color: #374151; }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row:nth-child(even) { background: #f8faff; }
+  .compare-row--head { background: #1e3a5f; color: #fff; font-weight: 700; }
+  .compare-row--head span { color: #fff; }
+  .compare-row span:first-child { font-weight: 600; color: #1e3a5f; }
+  .compare-row--head span:first-child { color: #fff; }
+
+  .amounts-table { display: flex; flex-direction: column; border: 1.5px solid #e5e7eb; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+  .amounts-row { display: grid; grid-template-columns: 1fr 1.3fr 1.3fr; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #f3f4f6; font-size: 0.85rem; color: #374151; }
+  .amounts-row:last-child { border-bottom: none; }
+  .amounts-row:nth-child(even) { background: #f8faff; }
+  .amounts-row--head { background: #1e3a5f; color: #fff; font-weight: 700; }
+  .amounts-item { font-weight: 600; color: #1e3a5f; }
+  .amounts-note { color: #6b7280; }
 
   .factors-table { display: flex; flex-direction: column; gap: 0; margin: 24px 0; border: 1.5px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
   .factor-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #f3f4f6; background: #fff; }
@@ -427,6 +740,12 @@ const faqItems = [
   }
   .steps li h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
   .steps li p { font-size: 0.9rem; color: #374151; margin: 0; }
+
+  .enforce-list { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+  .enforce-item { display: flex; gap: 16px; align-items: flex-start; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 20px; }
+  .enforce-num { flex-shrink: 0; width: 32px; height: 32px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .enforce-item h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 4px; }
+  .enforce-item p { font-size: 0.875rem; color: #374151; line-height: 1.7; margin: 0; }
 
   .list { margin: 12px 0 20px 20px; }
   .list li { margin-bottom: 8px; color: #374151; line-height: 1.6; }
@@ -468,5 +787,9 @@ const faqItems = [
     .footer__inner { flex-direction: column; text-align: center; }
     .info-grid { grid-template-columns: 1fr; }
     .factor-row { flex-direction: column; align-items: flex-start; }
+    .compare-row { grid-template-columns: 1fr; gap: 4px; }
+    .compare-row--head { display: none; }
+    .amounts-row { grid-template-columns: 1fr; gap: 4px; }
+    .amounts-row--head { display: none; }
   }
 </style>
