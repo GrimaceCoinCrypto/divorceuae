@@ -15,6 +15,9 @@
 /en/divorce-in-uae-for-expats/  /en/divorce-for-expats-in-uae/  301
 /en/divorce-in-uae-for-expats   /en/divorce-for-expats-in-uae/  301
 
+# Author page renamed (Suoninen -> Suon), 301 the old slug
+/en/author/aleksi-suoninen/  /en/author/aleksi-suon/  301
+
 # Thank-you page rewrite (form redirect target)
 /thank-you  /en/thank-you  200
 
