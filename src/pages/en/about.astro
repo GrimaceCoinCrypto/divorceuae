@@ -1,0 +1,406 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'About Divorce UAE: Who We Are and How We Help';
+const description =
+  'Divorce UAE is a free legal information and referral service. Learn who we are, what we do, our editorial standards, and how we connect you with UAE lawyers.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/about/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'About', url: 'https://divorceu.ae/en/about/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE' },
+  datePublished: '2026-08-10',
+  dateModified: '2026-08-10',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/about/',
+};
+
+const faqItems = [
+  {
+    question: 'Is Divorce UAE a law firm?',
+    answer:
+      'No. Divorce UAE is a legal information and referral service, not a law firm. We do not provide legal representation, file cases or act for you in court. We publish plain-English guides on UAE divorce law and connect you with independent, UAE-licensed family lawyers who handle the legal work.',
+  },
+  {
+    question: 'Is the service free?',
+    answer:
+      'Yes. Using our guides and requesting a connection to a lawyer for a free initial consultation costs you nothing, and there is no obligation to proceed. If you later choose to hire a lawyer, any fees are agreed directly between you and that lawyer.',
+  },
+  {
+    question: 'How do you choose which lawyers you connect me with?',
+    answer:
+      'We refer users to independent family lawyers who are licensed to practise in the UAE. The lawyer you speak with is an independent professional, not an employee of Divorce UAE, and any engagement is a direct agreement between you and them.',
+  },
+  {
+    question: 'Is the information on the site legal advice?',
+    answer:
+      'No. Our guides are general legal information written to help you understand how UAE divorce law works. They are not legal advice and cannot account for the facts of your case. For advice on your situation, speak with a licensed UAE family lawyer.',
+  },
+  {
+    question: 'How current is your information?',
+    answer:
+      'We write our guides against the current UAE statutes, including Federal Decree-Law No. 41 of 2024 for Muslims and Federal Decree-Law No. 41 of 2022 for non-Muslims, and review them against primary sources. Law and procedure can still change, so confirm anything time-sensitive with a lawyer.',
+  },
+  {
+    question: 'Do you offer help in Arabic?',
+    answer:
+      'Yes. Our content is available in English and Arabic, and the lawyers we connect you with can typically assist in both languages. You can switch to the Arabic site at any time from the footer.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">About Divorce UAE</h1>
+        <p class="byline">By Aleksi Suoninen, UAE Expat &amp; Legal Consultant · Updated August 2026</p>
+        <p class="hero__sub">
+          Divorce UAE is a free legal information and referral service for people facing divorce in
+          the UAE. We publish researched, plain-English guides on UAE divorce law and connect you
+          with independent, UAE-licensed family lawyers for a free initial consultation. We are not a
+          law firm.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Free to use, no obligation</li>
+          <li>✓ Independent UAE-licensed lawyers</li>
+          <li>✓ English &amp; Arabic support</li>
+          <li>✓ Kept current with UAE law</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Divorce Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Mission -->
+    <section class="section" aria-labelledby="mission-heading">
+      <h2 id="mission-heading">Our Mission and Who This Is For</h2>
+      <p>
+        Divorce is stressful enough without a confusing, Arabic-language court system on top of it.
+        Divorce UAE exists to make the process clear. Our mission is to give residents and expats in
+        the UAE accurate, readable information about their divorce options, and a simple way to reach
+        a qualified lawyer when they need one.
+      </p>
+      <p>
+        This site is written for anyone dealing with, or thinking about, divorce in the UAE: expats
+        on spouse visas, mixed-nationality couples, long-term residents, and people trying to
+        understand their rights before they commit to a lawyer. Whether your case falls under the
+        Muslim personal status law or the civil law for non-Muslims, our guides start from the
+        basics and build up to the detail. A good place to begin is our overview of
+        <a href="/en/divorce-in-uae/">divorce in the UAE</a> and the underlying
+        <a href="/en/uae-divorce-law/">UAE divorce law</a>.
+      </p>
+    </section>
+
+    <!-- What we do / do not do -->
+    <section class="section" aria-labelledby="whatwedo-heading">
+      <h2 id="whatwedo-heading">What We Do, and What We Do Not Do</h2>
+      <p>
+        To avoid any confusion, here is exactly where our service starts and stops. We are an
+        information and referral service. The legal work itself is done by independent lawyers, not
+        by us.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>What we do</h3>
+          <p>
+            We research and publish practical guides on UAE divorce law, procedure, costs and
+            timelines. We keep that content aligned with the current statutes. And we connect you,
+            free of charge, with an independent UAE-licensed family lawyer for an initial
+            consultation so you can get advice on your own situation.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>What we do not do</h3>
+          <p>
+            We are not a law firm. We do not provide legal representation, file cases, attend court
+            or act for you in any legal capacity. We do not give legal advice on your specific
+            circumstances, and we do not charge you for connecting you with a lawyer. Any legal
+            engagement is a direct agreement between you and the lawyer.
+          </p>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>Plain statement</h3>
+        <p>
+          Divorce UAE is not a law firm and does not provide legal representation. The content on
+          this site is general legal information, not legal advice. For advice on your case, always
+          consult a lawyer licensed to practise in the UAE. See our
+          <a href="/en/disclaimer/">full disclaimer</a> for the detail.
+        </p>
+      </div>
+    </section>
+
+    <!-- How the free consultation works -->
+    <section class="section" aria-labelledby="how-heading">
+      <h2 id="how-heading">How the Free Consultation Connection Works</h2>
+      <p>
+        If you want to speak with a lawyer, the process is straightforward and there is no cost to
+        you for the connection. Here is what happens after you reach out.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>You send a short request</h3>
+          <p>
+            You complete the enquiry form with a few basic details about your situation. You do not
+            need to share sensitive documents at this stage.
+          </p>
+        </li>
+        <li>
+          <h3>We match you to a licensed lawyer</h3>
+          <p>
+            We pass your enquiry to an independent family lawyer licensed to practise in the UAE who
+            handles cases like yours. The lawyer is not employed by Divorce UAE.
+          </p>
+        </li>
+        <li>
+          <h3>You have a free initial consultation</h3>
+          <p>
+            The lawyer contacts you for a free, confidential first consultation to discuss your
+            options. This is where you get advice tailored to your circumstances.
+          </p>
+        </li>
+        <li>
+          <h3>You decide, with no obligation</h3>
+          <p>
+            After the consultation you are free to proceed, take time to think, or walk away. If you
+            do choose to hire the lawyer, fees are agreed directly between you and them.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Not sure what to look for in a lawyer first? Read our guide on
+        <a href="/en/how-to-choose-a-divorce-lawyer-uae/">how to choose a divorce lawyer in the UAE</a>,
+        or see our overview of finding a
+        <a href="/en/divorce-lawyer-dubai/">divorce lawyer in Dubai</a>.
+      </p>
+    </section>
+
+    <!-- Editorial standards -->
+    <section class="section" aria-labelledby="editorial-heading">
+      <h2 id="editorial-heading">Our Editorial and Accuracy Standards</h2>
+      <p>
+        Divorce is a matter where getting the facts wrong has real consequences, so we treat our
+        content seriously. Every guide is written to be accurate against the law as it stands, and
+        clear enough to actually use.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>How we research</h3>
+          <p>
+            We build our guides from the primary sources: the UAE federal laws themselves, official
+            court and government information, and reputable law-firm commentary. Where the law cites
+            specific statutes, such as Federal Decree-Law No. 41 of 2024 for Muslims and Federal
+            Decree-Law No. 41 of 2022 for non-Muslims, we name them so you can check.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>How we handle uncertainty</h3>
+          <p>
+            Some figures, such as indicative costs or timelines, come from law-firm guides rather
+            than an official schedule. Where a point is reported but not firmly confirmed in the
+            statute, we say so plainly rather than present it as settled fact. We would rather flag a
+            caveat than overstate certainty.
+          </p>
+        </div>
+      </div>
+      <p>
+        We review our guides against primary sources and update them when the law or procedure
+        changes. The UAE overhauled its family law recently, so keeping content current is a core
+        part of what we do, not an afterthought. That said, our guides are
+        <strong>general information, not legal advice</strong>. They cannot replace a consultation
+        about the specific facts of your case.
+      </p>
+    </section>
+
+    <!-- Languages -->
+    <section class="section" aria-labelledby="languages-heading">
+      <h2 id="languages-heading">Languages: English and Arabic</h2>
+      <p>
+        The UAE is home to people from all over the world, and the courts operate primarily in
+        Arabic. We publish our content in both English and Arabic so you can read about your rights
+        in a language you are comfortable with. The lawyers we connect you with can typically assist
+        in both languages as well. You can switch to the Arabic version of the site at any time from
+        the link in the footer.
+      </p>
+    </section>
+
+    <!-- Meet the author -->
+    <section class="section" aria-labelledby="author-heading">
+      <h2 id="author-heading">Meet the Author</h2>
+      <p>
+        The guides on Divorce UAE are written by <strong>Aleksi Suoninen</strong>, a UAE expat and
+        legal consultant who researches and writes about UAE family law for a general audience. His
+        focus is turning dense statutory language into practical, honest explanations that residents
+        and expats can act on, with clear caveats about where professional advice is needed. You can
+        read more on his <a href="/en/author/aleksi-suoninen/">author page</a>.
+      </p>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Start Here</h2>
+      <div class="service-links">
+        <a href="/en/divorce-in-uae/" class="service-link">
+          <strong>Divorce in the UAE</strong>
+          <span>The process, cost and timeline explained</span>
+        </a>
+        <a href="/en/uae-divorce-law/" class="service-link">
+          <strong>UAE Divorce Law</strong>
+          <span>The statutes: 41/2024 and 41/2022</span>
+        </a>
+        <a href="/en/divorce-lawyer-dubai/" class="service-link">
+          <strong>Divorce Lawyer Dubai</strong>
+          <span>Finding representation in Dubai</span>
+        </a>
+        <a href="/en/how-to-choose-a-divorce-lawyer-uae/" class="service-link">
+          <strong>Choosing a Lawyer</strong>
+          <span>What to look for before you hire</span>
+        </a>
+        <a href="/en/author/aleksi-suoninen/" class="service-link">
+          <strong>About the Author</strong>
+          <span>Who writes these guides</span>
+        </a>
+        <a href="/en/disclaimer/" class="service-link">
+          <strong>Disclaimer</strong>
+          <span>The limits of what we provide</span>
+        </a>
+        <a href="/en/privacy-policy/" class="service-link">
+          <strong>Privacy Policy</strong>
+          <span>How we handle your data</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Free Legal Advice on Divorce in the UAE</h2>
+      <p>Speak to a qualified UAE family lawyer within 24 hours. Completely confidential. English and Arabic support.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .card p { font-size: 0.875rem; color: #6b7280; margin: 0 0 10px; }
+  .card-link { font-size: 0.875rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 
-const title = 'Divorce UAE — Divorce Lawyer Dubai & Legal Advice for Expats';
+const title = 'Divorce UAE, Divorce Lawyer Dubai & Legal Advice for Expats';
 const description =
   'Expert divorce legal advice for UAE residents and expats. Get connected with qualified divorce lawyers in Dubai, Abu Dhabi, and all Emirates. Free consultation.';
 
@@ -12,17 +12,26 @@ const hreflang = {
   ar: 'https://divorceu.ae/ar/',
 };
 
-const homepageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Divorce UAE',
-  url: 'https://divorceu.ae',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://divorceu.ae/en/?q={search_term_string}/',
-    'query-input': 'required name=search_term_string',
+const homepageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Divorce UAE',
+    url: 'https://divorceu.ae',
+    inLanguage: ['en', 'ar'],
   },
-};
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Divorce UAE',
+    url: 'https://divorceu.ae',
+    description:
+      'Independent legal information and lawyer referral service for divorce in the UAE. Not a law firm.',
+    areaServed: 'AE',
+    knowsLanguage: ['English', 'Arabic'],
+    founder: { '@type': 'Person', name: 'Aleksi Suoninen' },
+  },
+];
 
 const faqItems = [
   {
@@ -33,7 +42,7 @@ const faqItems = [
   {
     question: 'Can non-Muslims get divorced in UAE?',
     answer:
-      "Yes. UAE's 2022 Personal Status Law allows non-Muslim expats to divorce under civil law principles. This means equal division of marital assets and shared custody by default — without requiring Islamic law to apply. The process is handled at the Personal Status Court.",
+      "Yes. The 2022 Civil Personal Status Law (Federal Decree-Law No. 41 of 2022) lets non-Muslim expats divorce on a no-fault basis under civil principles, with joint custody by default and no need to apply Islamic law. There is no automatic 50/50 asset split: the court assesses each spouse's financial and non-financial contributions. Cases are handled at the Personal Status Court.",
   },
   {
     question: 'What is the cost of divorce in Dubai?',
@@ -48,7 +57,7 @@ const faqItems = [
   {
     question: 'Who gets child custody in UAE?',
     answer:
-      'Under UAE law, mothers typically receive physical custody of young children (boys until age 11, girls until age 13 under personal status law). However, both parents retain guardianship rights. The 2022 law for non-Muslims allows equal custody arrangements.',
+      'Under the 2024 Muslim personal status law (Federal Decree-Law No. 41 of 2024), custody now continues to age 18 for both boys and girls, and a child aged 15 or older may choose which parent to live with. This replaced the old rule that ended custody at 11 for boys and 13 for girls. For non-Muslims under the 2022 civil law, joint custody is the default. The father generally retains guardianship in the Muslim track.',
   },
 ];
 ---
@@ -66,13 +75,13 @@ const faqItems = [
     <div class="container hero__inner">
       <div class="hero__content">
         <h1 class="hero__h1">
-          Divorce Lawyer Dubai &amp; UAE —<br />
+          Divorce Lawyer Dubai &amp; UAE:<br />
           Free Legal Consultation
         </h1>
         <p class="hero__sub">
-          Navigating divorce in the UAE is complex. Whether you are Muslim or non-Muslim,
-          expat or Emirati — our network of qualified family lawyers in Dubai guides you
-          through every step, from Personal Status Court filing to custody and asset division.
+          Divorce in the UAE follows different rules for Muslim and non-Muslim couples. Whether you are an
+          expat or Emirati, our network of independent UAE-licensed family lawyers guides you through every
+          step, from Personal Status Court filing to custody and financial settlement.
         </p>
         <ul class="hero__trust">
           <li>✓ Free first consultation</li>
@@ -112,36 +121,36 @@ const faqItems = [
         <div class="card">
           <span class="card__icon">📋</span>
           <h3>End-to-End Guidance</h3>
-          <p>From initial consultation through court filing, hearings, and final decree — we support you at every stage.</p>
+          <p>From initial consultation through court filing, hearings, and final decree, we support you at every stage.</p>
         </div>
       </div>
     </section>
 
     <!-- ===== DIVORCE PROCESS ===== -->
     <section class="section" aria-labelledby="process-heading">
-      <h2 id="process-heading">How to File for Divorce in Dubai — Step by Step</h2>
+      <h2 id="process-heading">How to File for Divorce in Dubai, Step by Step</h2>
       <p>
         The divorce process in Dubai is handled by the Personal Status Court. Here is what to expect:
       </p>
       <ol class="steps">
         <li>
-          <h3>Step 1 — Consult a Family Lawyer</h3>
+          <h3>Step 1, Consult a Family Lawyer</h3>
           <p>Before filing, consult a qualified UAE family lawyer to understand your rights, likely outcomes, and whether reconciliation is possible or desired.</p>
         </li>
         <li>
-          <h3>Step 2 — File at the Personal Status Court</h3>
+          <h3>Step 2, File at the Personal Status Court</h3>
           <p>Submit your divorce application at the Personal Status Court in the emirate where you reside. Required documents include your marriage certificate, passports, and Emirates ID.</p>
         </li>
         <li>
-          <h3>Step 3 — Mandatory Reconciliation Session</h3>
+          <h3>Step 3, Mandatory Reconciliation Session</h3>
           <p>UAE courts require at least one reconciliation attempt before proceeding. A court-appointed counsellor will meet with both parties. If reconciliation fails, the case proceeds.</p>
         </li>
         <li>
-          <h3>Step 4 — Court Hearings</h3>
+          <h3>Step 4, Court Hearings</h3>
           <p>For uncontested divorce, a single hearing is often sufficient. Contested cases involving custody or asset disputes require multiple hearings.</p>
         </li>
         <li>
-          <h3>Step 5 — Final Decree Issued</h3>
+          <h3>Step 5, Final Decree Issued</h3>
           <p>The court issues the divorce decree. This must be attested and, for expats, legalised for recognition in your home country.</p>
         </li>
       </ol>
@@ -154,7 +163,7 @@ const faqItems = [
 
     <!-- ===== EXPATS ===== -->
     <section class="section" aria-labelledby="expat-heading">
-      <h2 id="expat-heading">Divorce in UAE for Expats — What You Need to Know</h2>
+      <h2 id="expat-heading">Divorce in UAE for Expats, What You Need to Know</h2>
       <p>
         Expats make up over 88% of the UAE population, and divorce law for non-citizens has changed significantly
         following the <strong>2022 UAE Personal Status Law</strong> reform.
@@ -162,11 +171,11 @@ const faqItems = [
 
       <h3>Non-Muslim Expats (2022 Law)</h3>
       <p>
-        Under Federal Law No. 41 of 2022, non-Muslim expats can now divorce under civil principles — not Islamic law.
+        Under Federal Law No. 41 of 2022, non-Muslim expats can now divorce under civil principles, not Islamic law.
         Key differences include:
       </p>
       <ul class="list">
-        <li>Equal division of marital assets acquired during the marriage</li>
+        <li>No automatic 50/50 split: the court assesses each spouse's financial and non-financial contributions</li>
         <li>Joint parental custody as the default (subject to best interests of the child)</li>
         <li>No mandatory waiting period (iddah) for non-Muslims</li>
         <li>Either spouse can initiate divorce proceedings</li>
@@ -174,7 +183,7 @@ const faqItems = [
 
       <h3>Muslim Expats</h3>
       <p>
-        Muslim expats — regardless of nationality — are subject to UAE personal status law based on Islamic principles.
+        Muslim expats, regardless of nationality, are subject to UAE personal status law based on Islamic principles.
         This includes rules around <em>talaq</em> (husband-initiated divorce), <em>khul'a</em> (wife-initiated divorce),
         iddah waiting period, and mahr (dowry) obligations.
       </p>
@@ -215,193 +224,45 @@ const faqItems = [
       </div>
     </section>
 
-    <!-- ===== CLIENT REVIEWS ===== -->
-    <section class="section reviews-section" aria-labelledby="reviews-heading">
-      <h2 id="reviews-heading">What Our Clients Say</h2>
-      <p class="reviews-intro">Real people. Real outcomes. All cases handled with complete confidentiality.</p>
-
-      <div class="reviews-carousel">
-        <button id="rev-prev" class="rev-arrow rev-arrow--prev" aria-label="Previous reviews">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-          </svg>
-        </button>
-
-        <div class="reviews-overflow">
-          <div id="rev-track" class="reviews-track">
-
-            <div class="rev-card">
-              <div class="rev-card__top">
-                <div>
-                  <p class="rev-name">Jennifer M., 41</p>
-                  <p class="rev-type">British Expat · Dubai</p>
-                </div>
-                <div class="rev-stars">★★★★★</div>
-              </div>
-              <p class="rev-quote">"I was terrified about losing my visa after the divorce. The lawyer explained the 2022 law, handled everything smoothly, and my visa transfer was sorted within the same process. Incredible service."</p>
-              <div class="rev-details">
-                <div class="rev-detail"><span>Case type:</span><strong>Uncontested divorce</strong></div>
-                <div class="rev-detail"><span>Duration:</span><strong>6 weeks</strong></div>
-                <div class="rev-detail"><span>Outcome:</span><strong>Decree + visa resolved</strong></div>
-              </div>
-            </div>
-
-            <div class="rev-card">
-              <div class="rev-card__top">
-                <div>
-                  <p class="rev-name">Anna S., 36</p>
-                  <p class="rev-type">Russian Expat · Abu Dhabi</p>
-                </div>
-                <div class="rev-stars">★★★★★</div>
-              </div>
-              <p class="rev-quote">"As a non-Muslim expat I had no idea where to start. The free consultation explained my rights under the 2022 law clearly. Assets were split fairly and the whole process was surprisingly calm."</p>
-              <div class="rev-details">
-                <div class="rev-detail"><span>Case type:</span><strong>Non-Muslim civil divorce</strong></div>
-                <div class="rev-detail"><span>Duration:</span><strong>8 weeks</strong></div>
-                <div class="rev-detail"><span>Outcome:</span><strong>Equal asset division</strong></div>
-              </div>
-            </div>
-
-            <div class="rev-card">
-              <div class="rev-card__top">
-                <div>
-                  <p class="rev-name">Sanjay R., 44</p>
-                  <p class="rev-type">Indian Expat · Sharjah</p>
-                </div>
-                <div class="rev-stars">★★★★★</div>
-              </div>
-              <p class="rev-quote">"Mutual divorce handled quickly and at a fair price. No surprises on fees — everything was explained upfront. Final decree issued in 7 weeks. Professional and discreet throughout."</p>
-              <div class="rev-details">
-                <div class="rev-detail"><span>Case type:</span><strong>Mutual divorce</strong></div>
-                <div class="rev-detail"><span>Duration:</span><strong>7 weeks</strong></div>
-                <div class="rev-detail"><span>Outcome:</span><strong>Decree issued</strong></div>
-              </div>
-            </div>
-
-            <div class="rev-card">
-              <div class="rev-card__top">
-                <div>
-                  <p class="rev-name">Laura K., 38</p>
-                  <p class="rev-type">American Expat · Dubai Marina</p>
-                </div>
-                <div class="rev-stars">★★★★★</div>
-              </div>
-              <p class="rev-quote">"My priority was keeping primary custody of my two children. Our lawyer built a strong case and secured exactly the arrangement we needed. I could not have done this without expert guidance."</p>
-              <div class="rev-details">
-                <div class="rev-detail"><span>Case type:</span><strong>Divorce + custody</strong></div>
-                <div class="rev-detail"><span>Duration:</span><strong>5 months</strong></div>
-                <div class="rev-detail"><span>Outcome:</span><strong>Primary custody granted</strong></div>
-              </div>
-            </div>
-
-            <div class="rev-card">
-              <div class="rev-card__top">
-                <div>
-                  <p class="rev-name">Khalid A., 47</p>
-                  <p class="rev-type">UAE National · Abu Dhabi</p>
-                </div>
-                <div class="rev-stars">★★★★★</div>
-              </div>
-              <p class="rev-quote">"A contested custody dispute that I feared would drag on for years was resolved in four months. Weekly updates, clear strategy, and a fair outcome for both parents and the children."</p>
-              <div class="rev-details">
-                <div class="rev-detail"><span>Case type:</span><strong>Contested custody</strong></div>
-                <div class="rev-detail"><span>Duration:</span><strong>4 months</strong></div>
-                <div class="rev-detail"><span>Outcome:</span><strong>Joint custody agreed</strong></div>
-              </div>
-            </div>
-
-            <div class="rev-card">
-              <div class="rev-card__top">
-                <div>
-                  <p class="rev-name">Fatima N., 33</p>
-                  <p class="rev-type">Emirati · Dubai</p>
-                </div>
-                <div class="rev-stars">★★★★★</div>
-              </div>
-              <p class="rev-quote">"I initiated khul'a and was unsure of my financial rights. The lawyer explained my mahr entitlement and alimony options clearly. The process was handled with full respect and dignity."</p>
-              <div class="rev-details">
-                <div class="rev-detail"><span>Case type:</span><strong>Khul'a divorce</strong></div>
-                <div class="rev-detail"><span>Duration:</span><strong>10 weeks</strong></div>
-                <div class="rev-detail"><span>Outcome:</span><strong>Rights fully protected</strong></div>
-              </div>
-            </div>
-
-          </div>
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" aria-labelledby="how-heading">
+      <h2 id="how-heading">How DivorceU.AE Helps</h2>
+      <p>
+        DivorceU.AE is an independent legal information and referral service. We are not a law firm.
+        We publish plain-English guides on UAE divorce law and connect you with independent
+        UAE-licensed family lawyers for a free initial consultation. The service is free to you and
+        there is no obligation to proceed.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <span class="card__icon">1️⃣</span>
+          <h3>Tell us your situation</h3>
+          <p>Share a few details through the confidential form or WhatsApp. It takes a minute, and your information is never shared without your consent.</p>
         </div>
-
-        <button id="rev-next" class="rev-arrow rev-arrow--next" aria-label="Next reviews">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </button>
+        <div class="card">
+          <span class="card__icon">2️⃣</span>
+          <h3>Get matched with a lawyer</h3>
+          <p>We connect you with an independent UAE-licensed family lawyer suited to your case, whether Muslim or non-Muslim, contested or mutual.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon">3️⃣</span>
+          <h3>Free first consultation</h3>
+          <p>Speak with the lawyer at no cost to understand your rights and options before you commit to anything.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon">4️⃣</span>
+          <h3>Decide with clarity</h3>
+          <p>You choose whether and how to move forward. No pressure, no obligation.</p>
+        </div>
       </div>
-
-      <div id="rev-dots" class="rev-dots"></div>
+      <p style="margin-top:24px;">
+        Our guides are researched against current UAE law, including Federal Decree-Law No. 41 of 2024
+        for Muslims and Federal Decree-Law No. 41 of 2022 for non-Muslims, and reviewed with input from
+        licensed UAE lawyers. They are general information, not legal advice. Learn more
+        <a href="/en/about/">about DivorceU.AE</a> and the
+        <a href="/en/author/aleksi-suoninen/">author</a>.
+      </p>
     </section>
-
-    <script>
-      (function () {
-        const track  = document.getElementById('rev-track');
-        const prev   = document.getElementById('rev-prev');
-        const next   = document.getElementById('rev-next');
-        const dotsEl = document.getElementById('rev-dots');
-        if (!track || !prev || !next || !dotsEl) return;
-
-        const cards = Array.from(track.querySelectorAll('.rev-card'));
-        const total = cards.length;
-        let current = 0;
-        let maxIndex = 0;
-
-        function getVisible() {
-          if (window.innerWidth >= 1024) return 3;
-          if (window.innerWidth >= 640)  return 2;
-          return 1;
-        }
-
-        function buildDots() {
-          dotsEl.innerHTML = '';
-          maxIndex = total - getVisible();
-          for (let i = 0; i <= maxIndex; i++) {
-            const d = document.createElement('button');
-            d.className = 'rev-dot' + (i === current ? ' rev-dot--active' : '');
-            d.setAttribute('aria-label', 'Go to review ' + (i + 1));
-            d.addEventListener('click', () => goTo(i));
-            dotsEl.appendChild(d);
-          }
-        }
-
-        function updateDots() {
-          dotsEl.querySelectorAll('.rev-dot').forEach((d, i) => {
-            d.className = 'rev-dot' + (i === current ? ' rev-dot--active' : '');
-          });
-        }
-
-        function goTo(index) {
-          maxIndex = total - getVisible();
-          current = Math.max(0, Math.min(index, maxIndex));
-          const cardWidth = cards[0].offsetWidth;
-          const gap = 20;
-          track.style.transform = 'translateX(-' + (current * (cardWidth + gap)) + 'px)';
-          prev.style.opacity = current === 0 ? '0.35' : '1';
-          prev.disabled = current === 0;
-          next.style.opacity = current >= maxIndex ? '0.35' : '1';
-          next.disabled = current >= maxIndex;
-          updateDots();
-        }
-
-        prev.addEventListener('click', () => goTo(current - 1));
-        next.addEventListener('click', () => goTo(current + 1));
-
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => { buildDots(); goTo(0); }, 150);
-        });
-
-        buildDots();
-        goTo(0);
-      })();
-    </script>
 
     <!-- ===== FAQ ===== -->
     <FAQSection items={faqItems} lang="en" />
@@ -420,7 +281,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2026 DivorceU.AE, Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>
