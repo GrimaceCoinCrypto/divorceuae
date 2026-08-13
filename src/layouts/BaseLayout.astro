@@ -51,7 +51,44 @@ const legalServiceSchema = {
   url: 'https://divorceu.ae',
 };
 
-const allSchemas = [legalServiceSchema, ...schemas];
+// Auto-add an Article schema to content pages that do not already declare one.
+// Skips the homepage, the About/author pages, and legal/utility pages.
+const path = Astro.url.pathname;
+const isContentPage =
+  /^\/(en|ar)\/.+/.test(path) &&
+  !/(\/thank-you|\/disclaimer|\/privacy|\/about\/?$|\/author\/)/.test(path);
+const hasArticle = schemas.some((s) => {
+  const t = s && s['@type'];
+  return t === 'Article' || t === 'NewsArticle' || t === 'BlogPosting' ||
+    (Array.isArray(t) && t.includes('Article'));
+});
+const autoArticleSchema = isContentPage && !hasArticle
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      inLanguage: lang === 'ar' ? 'ar-AE' : 'en-AE',
+      author: {
+        '@type': 'Person',
+        name: 'Aleksi Suon',
+        url: 'https://divorceu.ae/en/author/aleksi-suon/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Divorce UAE',
+        url: 'https://divorceu.ae',
+      },
+      mainEntityOfPage: canonicalURL,
+      ...(lastmod ? { dateModified: lastmod } : {}),
+    }
+  : null;
+
+const allSchemas = [
+  legalServiceSchema,
+  ...schemas,
+  ...(autoArticleSchema ? [autoArticleSchema] : []),
+];
 ---
 
 <!doctype html>
