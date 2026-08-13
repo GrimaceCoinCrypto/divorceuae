@@ -29,7 +29,7 @@ const orderTypes = [
   { icon: '✈️', title: 'Travel ban on children', desc: 'Prevents children from leaving the UAE at any border point or airport. Enforced by immigration within 24 hours of court order.' },
   { icon: '🏦', title: 'Asset freeze order', desc: 'Prevents a spouse from transferring money, selling property, or dissipating marital assets during proceedings.' },
   { icon: '🏠', title: 'Property restriction order', desc: 'Blocks registration of property transfers in the Dubai Land Department or equivalent emirate body.' },
-  { icon: '🛡️', title: 'Protection order (DV)', desc: 'Available under Federal Law 15 of 2021. Separate from divorce proceedings. Prevents contact, attendance at home or work.' },
+  { icon: '🛡️', title: 'Protection order (DV)', desc: 'Available under Federal Decree-Law No. 13 of 2024 on Combating Domestic Violence. Separate from divorce proceedings. Restrains contact, attendance at home or work.' },
   { icon: '📋', title: 'Interim maintenance order', desc: 'Compels a spouse to pay maintenance pending the final divorce judgment. Enforceable against salary within 2-4 weeks.' },
 ];
 
@@ -72,6 +72,22 @@ const faqItems = [
   {
     question: 'Will an emergency order affect my divorce outcome?',
     answer: 'Emergency orders are preliminary - they do not determine the final result of your divorce. However, the evidence gathered and presented to obtain emergency orders, and the behavior documented during the emergency proceedings, can influence the final judge\'s assessment of both parties. Courts form impressions of parental behavior from how parties conduct themselves throughout proceedings. Acting proportionately and with documented justification for every emergency application is advisable - emergency orders obtained without genuine grounds can reflect badly on the applicant.',
+  },
+  {
+    question: 'How fast can the Public Prosecution issue a domestic violence protection order?',
+    answer: 'Under Federal Decree-Law No. 13 of 2024 on Combating Domestic Violence, the Public Prosecution can issue a protection order quickly, often the same day a complaint is filed and assessed, without waiting for a full court hearing. The initial order can last up to 30 days and can be renewed once for a further period. If protection is still needed after that, the matter goes before the court, which can extend the order for up to six months. Because the prosecution route moves faster than a civil application, go to the nearest police station or Public Prosecution office first if you are in immediate danger.',
+  },
+  {
+    question: 'Can I get urgent maintenance before the divorce is finished?',
+    answer: 'Yes. You can apply for an interim (temporary) maintenance order that requires your spouse to pay support for you and the children while the divorce case is still running. These applications are heard on an urgent basis where a spouse has cut off financial support. If the maintenance is not paid, the order can be enforced through the execution court against salary and bank accounts. See our guide on enforcing unpaid alimony for how collection works once an order is in place.',
+  },
+  {
+    question: 'Does a UAE travel ban still work if the other country is not in the Hague Convention?',
+    answer: 'This is exactly why a preventative travel ban matters. The UAE is not a party to the 1980 Hague Convention on the Civil Aspects of International Child Abduction, so if a child is removed to a non-signatory country there is no automatic treaty mechanism to order the child returned. Return then depends on bilateral arrangements, the destination country\'s local family courts, and diplomatic channels, all of which are slow and uncertain. A UAE travel ban stops the removal at the border before it happens, which is far more reliable than trying to recover a child afterward.',
+  },
+  {
+    question: 'How quickly can I get an asset freeze if my spouse is moving money abroad?',
+    answer: 'Where you have concrete evidence of imminent asset flight, such as bank statements showing large outbound transfers or a property newly listed for a quick sale, the court can grant an urgent freeze within 48-72 hours, and in the most pressing cases on an ex parte basis before your spouse is notified. The freeze covers UAE bank accounts, property registrations, and identified assets. Speed matters: once funds leave the UAE, freezing them requires separate proceedings in the country they were sent to.',
   },
 ];
 ---
@@ -157,6 +173,13 @@ const faqItems = [
         <p>
           Where one parent's conduct is concerning but not at the emergency threshold, the correct application is an urgent (but not ex parte) interim order with a short hearing date - typically within 1-2 weeks rather than 48-72 hours.
         </p>
+        <h3>Interim custody while the divorce is running</h3>
+        <p>
+          Most custody disputes do not start as same-day emergencies. They start as a practical question: who do the children live with, and who decides day-to-day matters, while the divorce case works its way through the court over many months? For this the court can make an interim custody order that fixes living arrangements, a visitation schedule, and school and medical decision-making until the final judgment. This order is separate from an emergency order and is granted after a short hearing where both parents can be heard.
+        </p>
+        <p>
+          Under Federal Decree-Law No. 41 of 2024 on Personal Status, the framework for custody now generally continues to age 18, and the child's own view is given more weight as they get older. An interim order made early in the case tends to shape the status quo the final judge sees, so it is worth getting the arrangement right at the interim stage rather than treating it as a placeholder. If your circumstances change during the case, for example a parent relocating within the UAE or a school move, you apply to vary the interim order rather than waiting for the final hearing. For how the court weighs custody and guardianship over the longer term, see our <a href="/en/child-custody-uae/">child custody in the UAE guide</a>.
+        </p>
       </section>
 
       <section class="content-section">
@@ -197,15 +220,22 @@ const faqItems = [
         <p>
           A travel ban remains in force until the court lifts it. Either party can apply to vary or lift the ban - for example, to allow a child to travel for a specific school trip or family event, with the other parent's consent or on terms set by the court. Courts frequently grant temporary lifts for specific travel if the applicant demonstrates the trip is genuine, the destination is safe, and there are adequate safeguards against non-return.
         </p>
+        <h3>Why the travel ban matters more here: the Hague gap</h3>
+        <p>
+          A travel ban on a child is preventative for a reason that is specific to the UAE. The UAE is not a signatory to the 1980 Hague Convention on the Civil Aspects of International Child Abduction. In Hague member states, a parent whose child is wrongfully taken abroad can use a fast treaty process to seek the child's return. That mechanism does not automatically apply to or from the UAE. If a child is removed to a country that is also outside the Convention, recovery depends on any bilateral agreement between the two states, the local family courts in the destination country, and diplomatic contact through the Ministry of Justice, none of which is quick or guaranteed.
+        </p>
+        <p>
+          The practical consequence is simple: stopping removal at the UAE border is far more effective than trying to reverse it afterward. A travel ban registered with immigration flags the child at every exit point, so a parent cannot lawfully take them out of the country while proceedings continue. If you are worried a removal is being planned, treat it as urgent and apply before any attempt is made, not after. Our guides on <a href="/en/travel-ban-divorce-uae/">travel bans during divorce</a> and <a href="/en/international-child-abduction-uae/">international child abduction from the UAE</a> set out both the preventative and the recovery routes in more detail.
+        </p>
       </section>
 
       <section class="content-section">
         <h2>Domestic Violence Protection Orders</h2>
         <p>
-          Protection orders under <strong>Federal Law No. 15 of 2021 on Protection from Harassment</strong> are available to any person in the UAE regardless of nationality or visa status. They are separate from divorce proceedings and can be obtained before, during, or without any divorce case.
+          Protection orders are governed by <strong>Federal Decree-Law No. 13 of 2024 on Combating Domestic Violence</strong>, which replaced the earlier Federal Decree-Law No. 10 of 2019. The 2024 law widened the definition of domestic violence to cover physical, psychological, sexual, and economic harm between family members, and strengthened the tools available to protect victims. Protection is available to any person in the UAE regardless of nationality or visa status, and a protection order is separate from divorce proceedings: you can seek one before, during, or without any divorce case.
         </p>
         <p>
-          A protection order can prohibit the respondent from:
+          A protection order can restrain the respondent from:
         </p>
         <ul class="checklist">
           <li>Approaching the applicant within a specified distance</li>
@@ -214,12 +244,33 @@ const faqItems = [
           <li>Publishing any material about the applicant</li>
           <li>Damaging or disposing of property belonging to the applicant</li>
         </ul>
+        <h3>How fast a protection order can be issued</h3>
         <p>
-          Breaching a protection order is a criminal offense. The respondent can be arrested and prosecuted. This is one of the strongest protective mechanisms available and should be used immediately where there is genuine risk of harm.
+          The fastest route runs through the Public Prosecution rather than a civil filing. Under the 2024 law, the Public Prosecution can issue a protection order once a complaint is made and assessed, without waiting for a full court trial. The initial order can last up to 30 days and can be renewed. If protection is still required beyond the prosecution-issued period, the matter is referred to the competent court, which can extend the order for a longer period, understood to be up to six months. Exact procedural timelines and the article numbers governing renewal are best confirmed with your lawyer against the current text of the law, as implementing details can be refined by regulation.
         </p>
         <p>
-          Protection orders are processed through police stations and the Public Prosecution as well as through the courts. In an immediate danger situation, go to the nearest police station first - they can provide immediate protection measures while a formal court order is processed.
+          Breaching a protection order is a criminal offense. The respondent can be arrested and prosecuted, and repeated or aggravated breaches carry heavier penalties under the 2024 law. This is one of the strongest protective mechanisms available and should be used immediately where there is genuine risk of harm.
         </p>
+        <p>
+          In an immediate danger situation, go to the nearest police station first. Police can put interim protection measures in place and refer the file to the Public Prosecution the same day while a formal order is processed. For how protection orders interact with a divorce filing and what they mean for custody and fault, see our guide on <a href="/en/domestic-violence-divorce-uae/">domestic violence and divorce in the UAE</a>.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Emergency and Interim Maintenance Orders</h2>
+        <p>
+          A common trigger for urgent action is money rather than safety. When one spouse controls the household finances and cuts off support after separation, the other spouse and the children can be left without funds while the divorce case, which may run for a year or more, works through the court. You do not have to wait for the final judgment to fix this.
+        </p>
+        <p>
+          An interim maintenance order requires the paying spouse to provide support during the proceedings. It can cover the spouse's own maintenance, child maintenance, and housing costs, set at a level the court considers reasonable against the payer's income and the family's standard of living. Because the need is immediate, these applications are dealt with quickly, and the court can fix a temporary figure that runs until the final maintenance award replaces it.
+        </p>
+        <p>
+          The order is only as useful as its enforcement. If the spouse ignores it, you take the order to the execution court, which can attach salary directly through the employer and freeze bank accounts until the arrears are cleared. A travel ban can also attach to unpaid maintenance where a payer tries to leave the country owing money. For the step-by-step collection process, see our guide on <a href="/en/unpaid-alimony-enforcement-uae/">enforcing unpaid alimony in the UAE</a>.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>Keep proof of what stopped</h3>
+          <p>Bank records showing regular transfers that suddenly ended, unpaid school or rent invoices, and messages where support was refused all help the court set an interim figure fast. Bring these to the first consultation rather than reconstructing them later.</p>
+        </div>
       </section>
 
       <section class="content-section">

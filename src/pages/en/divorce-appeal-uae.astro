@@ -40,6 +40,14 @@ const appealSteps = [
   { n: 6, title: 'Receive judgment', body: 'The Court of Appeal issues its judgment - typically within 60-90 days of the hearing. The court can uphold, partially modify, or reverse the original decision. A full reversal is sent back to first instance or decided directly.' },
 ];
 
+const courtRows = [
+  { aspect: 'What it reviews', appeal: 'Both facts and law - the full merits of the first instance judgment', cassation: 'Points of law only - whether the Court of Appeal applied the law correctly' },
+  { aspect: 'New arguments', appeal: 'Can re-examine how the law was applied to the evidence on record', cassation: 'Cannot re-open factual findings or re-weigh evidence' },
+  { aspect: 'Deadline to file', appeal: '30 days from receipt of the written judgment', cassation: 'Commonly cited as 30 or 60 days depending on case type - confirm with your lawyer' },
+  { aspect: 'Typical duration', appeal: 'Around 3 to 6 months from filing to judgment', cassation: 'Often 6 to 12 months, sometimes longer' },
+  { aspect: 'Realistic use in family cases', appeal: 'Standard route for most divorce, custody and alimony challenges', cassation: 'Rare - reserved for genuine legal-principle disputes' },
+];
+
 const comparisonRows = [
   { aspect: 'Purpose', appeal: 'Challenge a legal error or procedural violation in the original judgment', modification: 'Change an existing order due to changed circumstances after it was made' },
   { aspect: 'Trigger', appeal: 'Dissatisfaction with outcome; identifiable legal or procedural error', modification: 'Job loss, relocation, health change, child reaching a different age' },
@@ -72,6 +80,22 @@ const faqItems = [
   {
     question: 'Is there a further appeal after the Court of Appeal?',
     answer: 'Yes. The Court of Cassation (Federal Supreme Court) can hear further appeals, but only on points of law - not on findings of fact. This means the Court of Cassation asks whether the Court of Appeal correctly applied the law, not whether it reached the right factual conclusions. Family law cases rarely proceed to the Court of Cassation in practice; the threshold for admission is high and the process adds considerable cost and time. Your lawyer will advise whether cassation is realistically worth pursuing.',
+  },
+  {
+    question: 'How long does a divorce appeal take in UAE?',
+    answer: 'A Court of Appeal case usually runs around three to six months from filing to judgment, covering the exchange of briefs, one or more hearings, and the written decision. Custody appeals are often faster because they receive priority scheduling. A further appeal to the Court of Cassation adds roughly another six to twelve months. These are indicative ranges only - the actual duration depends on the emirate, court workload, and how contested the case is.',
+  },
+  {
+    question: 'What is the deadline to file at the Court of Cassation?',
+    answer: 'Sources differ on this. Some practitioners cite 30 days from the Court of Appeal judgment, others cite 60 days depending on the type of case and the emirate. Because the consequences of missing the deadline are severe, do not rely on a general figure. Ask your appellate lawyer to confirm the exact period that applies to your specific judgment as soon as the Court of Appeal decision is issued.',
+  },
+  {
+    question: 'Can I appeal how the court divided our assets?',
+    answer: 'Yes. Property and financial settlement rulings can be appealed on the same grounds as any other part of the judgment, most commonly a legal error in how the court characterised or valued an asset, or a failure to apply the correct rules on what forms part of the marital estate. Under the non-Muslim personal status framework (Federal Decree-Law No. 41 of 2022) the court can divide jointly acquired property, so appeals here often turn on whether an asset was correctly treated as joint. Bring documentary proof of ownership and contribution.',
+  },
+  {
+    question: 'Does filing an appeal stop the other side from enforcing the judgment?',
+    answer: 'Not automatically. In UAE practice a first instance judgment is generally enforceable even while an appeal is pending, unless you obtain a stay of execution from the Court of Appeal. You have to apply for the stay separately and show that enforcement would cause serious, hard-to-reverse harm. This matters most for money orders and asset transfers, where funds moved before your appeal is decided can be difficult to recover.',
   },
 ];
 ---
@@ -129,6 +153,9 @@ const faqItems = [
         <p>
           Custody orders have a separate expedited appeal track: appeals in custody cases are typically heard within 60-90 days rather than the standard timeline, because delays in custody arrangements directly affect children's welfare. Courts give these cases priority scheduling.
         </p>
+        <p>
+          The substantive law the appeal court applies depends on your status. For Muslim parties, divorce and its financial consequences fall under Federal Decree-Law No. 41 of 2024 on Personal Status. For non-Muslims, the Federal Decree-Law No. 41 of 2022 on Civil Personal Status governs matters such as no-fault divorce, custody and the division of jointly acquired property. An appeal does not change which law applies; it asks whether the first instance court applied that law correctly. If you are still at the start of the process rather than appealing, our guide on <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a> explains how a first instance case is built.
+        </p>
         <div class="info-box info-box--warning">
           <h3>Do not miss the 30-day deadline</h3>
           <p>If you believe you have grounds to appeal, instruct a lawyer immediately upon receiving the judgment. Waiting to see whether you can negotiate with your ex-spouse wastes time you cannot recover. Even if negotiations are ongoing, file the appeal petition within the deadline to preserve your right.</p>
@@ -170,7 +197,11 @@ const faqItems = [
           Alimony quantum (amount) appeals are heard regularly. Grounds include: the court used the wrong income figure, failed to account for the wife's earning capacity, or applied the wrong period. Courts of Appeal frequently adjust alimony amounts - this is one area where partial modification outcomes are more common than full reversals.
         </p>
         <p>
-          If a husband's financial circumstances have genuinely changed after the original order (job loss, business failure, medical condition), the correct route is a modification application, not an appeal of the original amount.
+          If a husband's financial circumstances have genuinely changed after the original order (job loss, business failure, medical condition), the correct route is a modification application, not an appeal of the original amount. Where the problem is that an existing order is simply not being paid, the answer is enforcement rather than appeal - see our guide to <a href="/en/unpaid-alimony-enforcement-uae/">enforcing unpaid alimony in the UAE</a>. The wider picture of how support is set is covered in our <a href="/en/alimony-uae/">alimony in UAE</a> guide.
+        </p>
+        <h3>Asset and property division appeals</h3>
+        <p>
+          Financial settlement rulings are appealable on the same footing as custody and maintenance. The most common ground is a legal error in how the court treated a specific asset: valuing a property on the wrong basis, characterising a personal asset as part of the marital estate (or the reverse), or overlooking a documented contribution. Under the non-Muslim framework the court can divide jointly acquired assets, so many appeals here hinge on the factual and legal question of what counts as joint property. Because appellate courts do not usually take fresh evidence, the strength of an asset appeal depends heavily on what was already on the trial record. If ownership documents, bank statements or valuations were not put before the first instance court, that gap is difficult to fix on appeal.
         </p>
       </section>
 
@@ -187,6 +218,63 @@ const faqItems = [
             </div>
           ))}
         </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Court of Appeal vs Court of Cassation</h2>
+        <p>
+          UAE litigation has two levels of challenge above the first instance court, and they do very different jobs. The Court of Appeal (Mahkamah al-Istinaf) is where nearly every divorce appeal is decided. It can re-examine both the facts and the law of the original judgment and can uphold, adjust, or overturn it. The Court of Cassation (or the local equivalent, such as the Dubai Court of Cassation) sits above that and reviews points of law only. It does not re-hear the case or re-weigh the evidence; it asks a narrower question, namely whether the Court of Appeal applied the law correctly.
+        </p>
+        <p>
+          That distinction matters in practice. If your complaint is that the court got the facts wrong, the Court of Appeal is your real opportunity and often your only one. By the time a case reaches cassation, factual disputes are effectively closed. This is why the vast majority of family cases end at the Court of Appeal and only a small minority go further.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Court of Appeal</th>
+                <th>Court of Cassation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {courtRows.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.aspect}</td>
+                  <td>{row.appeal}</td>
+                  <td>{row.cassation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box info-box--info">
+          <h3>The cassation deadline is not fixed in public guidance</h3>
+          <p>Practitioners quote different figures for the time limit to file at the Court of Cassation, commonly 30 days but sometimes 60 depending on the case type and emirate. Do not act on a general number. Once the Court of Appeal judgment is issued, ask your lawyer to confirm the exact deadline that applies to your case in writing.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What Happens to Enforcement While an Appeal Is Pending</h2>
+        <p>
+          Filing an appeal does not, by itself, freeze the original judgment. In UAE practice a first instance decision is generally treated as enforceable while an appeal is running, so the other party can begin acting on custody, maintenance, or asset orders unless the court says otherwise. If you need to pause enforcement, you have to apply separately for a <strong>stay of execution</strong> from the Court of Appeal.
+        </p>
+        <p>
+          A stay is not granted as a matter of routine. You have to show that carrying out the order before the appeal is decided would cause serious harm that would be hard to reverse if you later win. The court weighs that against the unfairness to the other party of not being able to enforce an order in their favour. Financial and asset orders are the clearest example: money paid out or property transferred during the appeal can be very difficult to claw back, which is often the strongest argument for a stay.
+        </p>
+        <p>
+          For custody, the practical position is different again. Courts are reluctant to disrupt a child's living arrangements twice, so if the child is settled they may leave the current order in place until the appeal is resolved. Where you believe a child is genuinely at risk, an urgent interim application may achieve protection faster than waiting for the full appeal. If you are unsure how the stages line up, our <a href="/en/child-custody-uae/">child custody in UAE</a> guide sets out how custody decisions are structured.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>How Long an Appeal Takes</h2>
+        <p>
+          Appeal duration varies by emirate and by how contested the case is, but a Court of Appeal case commonly runs around three to six months from filing to written judgment. That covers the exchange of grounds and response briefs, one or more oral hearings, and the court's deliberation. Custody appeals tend to sit at the shorter end because they are given priority scheduling. A further step to the Court of Cassation typically adds another six to twelve months, and sometimes more.
+        </p>
+        <p>
+          These figures are indicative rather than guaranteed. Delays are usually driven by adjournments, requests for expert reports, or a heavy court list rather than by the appeal itself. For how the appeal stage fits into the wider case from filing to final decree, see our <a href="/en/divorce-timeline-uae/">UAE divorce timeline</a>.
+        </p>
       </section>
 
       <section class="content-section">
