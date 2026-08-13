@@ -86,6 +86,30 @@ const faqSchema = {
         text: 'If reverting to maiden name: Emirates ID (ICP), home country passport (embassy), UAE driving licence (RTA), bank accounts (each bank separately), tenancy contract (Ejari in Dubai, Tawtheeq in Abu Dhabi), vehicle registration (RTA), employer HR records, children\'s school records, and health insurance. If keeping married name, only records showing marital status need updating -- Emirates ID (for marital status change), and any financial or tenancy records where your status is material.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'My passport is in my husband\'s family name. How do I revert it to my maiden name?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'This is a home country matter, not a UAE one. The UAE cannot change what your passport says; only your embassy or national authority can. First check whether your nationality reverts you automatically once the divorce is registered at home, or whether you must apply. Some countries require the divorce to be recorded in their own civil registry before they issue an amended passport. Once the new passport is issued, bring it to ICP so your Emirates ID and residence visa point to the new document.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does my child need a new passport or Emirates ID after our divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. A divorce does not change your child\'s name, so their passport and Emirates ID stay valid. A new passport is only needed if the child\'s own name changes, which requires both parents\' consent. What usually needs updating is the child\'s school file, health insurance contact, and, if sponsorship shifts, their residence visa record.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'My country does not allow me to revert to my maiden name. What are my options in UAE?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your home country does not permit a name reversion, your passport name stays the same, and so should your Emirates ID, since the two must match. You can still update your marital status on the Emirates ID from married to divorced without changing the name. This is the same position as anyone who keeps their married name: no name change is required in UAE, and all existing documents remain valid.',
+      },
+    },
   ],
 };
 
@@ -136,6 +160,18 @@ const faqItems = [
   {
     question: 'Is there a deadline for updating my documents after divorce in UAE?',
     answer: 'There is no statutory deadline for name reversion. However, your Emirates ID should be updated promptly as it is the primary identity document in UAE -- driving with a different name on your licence than your Emirates ID can create complications. Insurance policies, bank accounts, and employment records should be updated within 30-60 days of the divorce to avoid discrepancies that may complicate future transactions.',
+  },
+  {
+    question: 'My passport is in my husband\'s family name. How do I revert it to my maiden name?',
+    answer: 'This is a home country matter, not a UAE one. The UAE cannot change what your passport says; only your embassy or national authority can. First check whether your nationality reverts you automatically once the divorce is registered at home, or whether you must apply. Some countries also require the divorce to be recorded in their own civil registry before they issue an amended passport. Once the new passport is issued, bring it to ICP so your Emirates ID and residence visa point to the new document.',
+  },
+  {
+    question: 'Does my child need a new passport or Emirates ID after our divorce?',
+    answer: 'No. A divorce does not change your child\'s name, so their passport and Emirates ID stay valid. A new passport is only needed if the child\'s own name changes, which requires both parents\' consent. What usually needs updating is the child\'s school file, health insurance contact, and, if sponsorship shifts, their residence visa record. See our <a href="/en/child-custody-uae/">child custody UAE guide</a>.',
+  },
+  {
+    question: 'My country does not allow me to revert to my maiden name. What are my options in UAE?',
+    answer: 'If your home country does not permit a name reversion, your passport name stays the same, and so should your Emirates ID, since the two must match. You can still update your marital status on the Emirates ID from married to divorced without changing the name. In practice this is the same position as anyone who chooses to keep their married name: no name change is required in UAE, and all your existing documents remain valid.',
   },
 ];
 ---
@@ -315,6 +351,38 @@ const faqItems = [
         <div class="info-box info-box--warning">
           <h3>Inconsistent documents: a frequent practical problem</h3>
           <p>Many divorced women in UAE find themselves in a period where their Emirates ID has been updated but their passport, driving licence, and bank account still show the married name. This is normal during the transition period. For day-to-day transactions, the Emirates ID is the primary document in UAE and institutions will typically accept it as the current record. Keep a certified copy of the divorce judgment with you during this transition period to explain any name discrepancies if challenged.</p>
+        </div>
+      </section>
+
+      <!-- Section: updating a child's records -->
+      <section class="content-section">
+        <h2>Updating a Child's Records After Divorce</h2>
+        <p>
+          A UAE divorce changes none of your child's records automatically, and in most cases the child's name stays exactly as it was registered. What usually needs attention is not the child's name but the details of who holds custody, who pays, and who the school or hospital should contact. These updates are separate from any surname change and do not require the other parent's consent.
+        </p>
+        <ul>
+          <li><strong>School records.</strong> Give the school your updated Emirates ID, a copy of the divorce judgment, and the custody arrangement so the emergency contact, fee payer, and authorised pick-up list are correct. This is where inconsistent records cause the most day-to-day friction. Our <a href="/en/child-custody-uae/">child custody UAE guide</a> explains how custody and access are set out in the judgment.</li>
+          <li><strong>Residence visa and Emirates ID.</strong> If the child was sponsored on the father's visa and sponsorship shifts to the mother, the child's visa file is updated through GDRFA or ICA. The child's own name does not change through this, only the sponsor on record.</li>
+          <li><strong>Health insurance.</strong> Confirm which parent's policy now covers the child and update the contact and beneficiary details so claims are not rejected during the transition.</li>
+          <li><strong>Passport.</strong> A child's passport is reissued only if the child's own name changes, which needs both parents' consent as covered above. A divorce on its own does not require a new passport for the child.</li>
+        </ul>
+      </section>
+
+      <!-- Section: passport in husband's name -->
+      <section class="content-section">
+        <h2>Expats Whose Passport Already Carries the Husband's Name</h2>
+        <p>
+          For several nationalities a married woman's passport is issued in, or amended to add, her husband's family name. This is common for some Gulf and Levantine conventions, parts of Africa, and women of any nationality who formally adopted the married surname on marriage. Reverting is a home-country procedure, not a UAE one, and the UAE has no power to change what your passport says. Only your embassy or national authority can do that.
+        </p>
+        <p>
+          The first question is whether reversion is even available, and whether it happens automatically on divorce or needs a separate application. Both answers depend entirely on your nationality's rules. Some countries revert a woman to her maiden name automatically once the divorce is registered in their civil records. Others treat the married name as your legal name until you actively apply to change it, sometimes requiring a deed poll or an equivalent formal step. A minority do not permit reversion at all while the divorce remains unregistered at home.
+        </p>
+        <p>
+          Because of this, the order of operations for these expats is different from the standard sequence. You often need to register or recognise the divorce in your home country's civil registry first, then apply for the amended passport, and only then bring the new passport to ICP to align your Emirates ID and residence visa. Check with your embassy before starting any UAE-side update, because your Emirates ID name should match your passport, not lead it.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Do not let the old passport lapse before the visa is transferred</h3>
+          <p>Until your new passport is issued, your UAE residence visa stays linked to the old passport number. Do not cancel or allow the old passport to expire before the visa is moved to the new document, or you risk a gap in residence status. Once the new passport is in hand, take it to ICP so the Emirates ID and visa both point to it. For the paperwork you will need at each stage, see our guides on <a href="/en/documents-for-divorce-uae/">documents for divorce in UAE</a> and the wider <a href="/en/divorce-in-uae/">divorce in UAE process</a>.</p>
         </div>
       </section>
 

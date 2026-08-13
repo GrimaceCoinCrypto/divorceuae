@@ -102,6 +102,30 @@ const faqSchema = {
         text: 'An uncontested divorce (talaq) for Pakistani Muslims in UAE courts under Federal Decree-Law No. 41 of 2024 typically costs AED 8,000 to AED 15,000 in total (lawyer fees, court fees, translation, and attestation). A contested case involving custody, mehr disputes, or property claims can range from AED 20,000 to AED 50,000 or more. The Union Council registration in Pakistan adds minimal cost (typically PKR 5,000 to 20,000 in attorney fees) but requires a Power of Attorney from Dubai.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'How do I get a UAE divorce decree attested for use in Pakistan?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A UAE court divorce certificate has to pass through a three-step attestation chain before Pakistani courts and NADRA will accept it. First, the UAE Ministry of Foreign Affairs attests the certificate. Second, the Pakistan Embassy or Consulate in the UAE attests it. Third, once it reaches Pakistan, the Ministry of Foreign Affairs of Pakistan attests it for domestic use. A certified Urdu translation is normally required with the Arabic original, and the process usually takes about 10 to 15 working days. An uncertified copy or a skipped step is the most common reason a UAE divorce is rejected in Pakistan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a Pakistani wife get khula in Pakistan while her husband is in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Khula is a court-granted dissolution the wife can obtain without the husband consenting, which makes it the practical route when he is working in the UAE and will not pronounce talaq. She files in the Family Court under the West Pakistan Family Courts Act 1964 in the district where she resides. After reconciliation attempts fail, the court grants the decree, and the wife usually forgoes her deferred mehr in exchange. The court sends the decree to the Union Council, which issues the dissolution certificate after the iddat period, and NADRA then updates the record.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I remarry in Pakistan after a UAE divorce?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, but only after the divorce is closed out in Pakistan. The woman must complete the iddat period, which runs about 90 days from the effective date of the talaq or khula. The Union Council issues a dissolution certificate once iddat elapses, and NADRA updates the CNIC. A nikah registrar will normally ask for this certificate before registering a new marriage. Remarrying while the earlier UAE divorce is still unregistered in Pakistan can leave the CNIC showing the old marriage and can expose the second marriage to challenge, so register the divorce first.',
+      },
+    },
   ],
 };
 
@@ -140,10 +164,10 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
         <ul class="key-facts">
           <li><strong>Both parties Muslim:</strong> Federal Decree-Law No. 41 of 2024 applies to UAE proceedings.</li>
           <li><strong>90-day registration rule:</strong> UAE talaq must be registered with the Pakistan Union Council within 90 days under MFLO 1961 Section 7.</li>
-          <li><strong>NADRA does not register divorces directly</strong> — the Union Council issues the Divorce Certificate first.</li>
+          <li><strong>NADRA does not register divorces directly</strong>, the Union Council issues the Divorce Certificate first.</li>
           <li><strong>Mehr is enforceable as a debt</strong> in UAE Execution Court: bank freeze, salary garnishment, travel ban.</li>
           <li><strong>Race to file issue:</strong> if spouses are in different countries, the first to file determines the forum.</li>
-          <li><strong>No Hague Convention:</strong> UAE and Pakistan are not signatories — cross-border custody disputes are complex.</li>
+          <li><strong>No Hague Convention:</strong> UAE and Pakistan are not signatories, cross-border custody disputes are complex.</li>
         </ul>
       </div>
 
@@ -211,6 +235,35 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           <h3>What happens if you miss the 90-day window?</h3>
           <p>If the Union Council notice is not filed within 90 days of the UAE divorce, the talaq under MFLO 1961 is technically considered not to have taken effect in Pakistan. The divorce remains valid in UAE, but you face the risk that Pakistani authorities or courts treat you as still married. In practice, Pakistani courts often take a pragmatic view where there is clear evidence of genuine intent and a UAE court judgment, but the safer course is always to file within 90 days.</p>
         </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Recognition and Attestation of a UAE Divorce Decree in Pakistan</h2>
+        <p>
+          Filing the Union Council notice is one route. A second, separate question is whether the UAE court decree itself will be accepted as a document by Pakistani courts, NADRA, and government offices. For that, the decree has to pass through an attestation chain before it carries any weight in Pakistan. A raw UAE judgment in Arabic, however genuine, is not treated as a valid public document in Pakistan until it has been legalised.
+        </p>
+        <p>
+          The attestation sequence runs in a fixed order. First, the UAE Ministry of Foreign Affairs (MOFA) attests the court divorce certificate, confirming it is a genuine UAE document. Second, the Pakistan Embassy or Consulate in the UAE attests the same certificate. Third, once the document reaches Pakistan, the Ministry of Foreign Affairs of Pakistan attests it for domestic legal use. Only after this third step will Pakistani family courts, NADRA, and departments treat the certificate as acceptable. A certified Urdu translation is usually required alongside the Arabic original. Standard processing runs roughly 10 to 15 working days, and each stage carries its own fee.
+        </p>
+        <p>
+          This attested decree is what your representative in Pakistan attaches to the Union Council notice, and what NADRA relies on when updating the CNIC. Skipping the attestation and presenting only a photocopy or an uncertified translation is the most common reason Pakistani offices reject an otherwise valid UAE divorce. The mechanics of legalising family documents from the Emirates are set out in our guide to <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation in the UAE</a>. Because a small ordering error can send the file back to square one, cross-border attestation is one of the steps where a lawyer or a specialist attestation agent earns their fee.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Khula for Pakistani Women: When the Husband Will Not Give Talaq</h2>
+        <p>
+          Talaq is pronounced by the husband. When a Pakistani wife wants to end the marriage and the husband refuses, her route is khula, a judicial dissolution granted by the court rather than a pronouncement by the husband. This matters for the many Pakistani women whose husbands are working in the UAE and are either unreachable or unwilling to cooperate.
+        </p>
+        <p>
+          A Pakistani wife can file for khula in the Family Court under the West Pakistan Family Courts Act 1964, in the district where she resides, even while the husband is in Dubai. The court attempts reconciliation, and where it finds the parties cannot live together within the limits set by Islam, it grants a decree for dissolution. In a khula the wife typically gives up her right to the deferred mehr in exchange for the release. The husband does not have to consent for the decree to be granted, which is precisely why khula is the practical option when he is abroad and silent.
+        </p>
+        <p>
+          A khula decree follows a slightly different registration path from a talaq. When a Family Court dissolves a Muslim marriage, it sends an attested copy of the decree to the Chairman or Secretary of the concerned Union Council within a few days. The Union Council then observes the iddat period and issues the Certificate of Dissolution of Marriage, after which NADRA can update the record. There is no separate Section 7 husband-notice for a court khula, because the court decree itself triggers the Union Council step.
+        </p>
+        <p>
+          A Pakistani wife living in the UAE can also pursue dissolution through the UAE courts under Federal Decree-Law No. 41 of 2024, which provides its own route for a wife to end the marriage. Whether to file in Dubai or in Pakistan turns on where the assets, children, and evidence sit, a choice examined in our note on <a href="/en/where-to-divorce-uae-or-home-country/">whether to divorce in the UAE or your home country</a>. Our dedicated pages on <a href="/en/talaq-uae/">talaq in the UAE</a> and <a href="/en/khula-divorce-uae/">khula divorce in the UAE</a> cover each procedure in detail.
+        </p>
       </section>
 
       <section class="content-section">
@@ -297,6 +350,19 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
         </p>
       </section>
 
+      <section class="content-section">
+        <h2>Remarriage After a UAE Divorce: Iddat and Documentation</h2>
+        <p>
+          A divorce that is effective in the UAE but not properly closed out in Pakistan can block a later remarriage, so this step deserves attention even when the marriage is clearly over. Under Pakistani practice, a woman must complete the iddat period before she can lawfully remarry. After a talaq or a khula, the iddat runs for roughly 90 days from the effective date, and its purpose is to confirm there is no pregnancy and to settle paternity before a new marriage.
+        </p>
+        <p>
+          The document that proves the marriage is over is the certificate issued by the Union Council once the iddat has elapsed, and the corresponding NADRA divorce certificate that follows. A nikah registrar in Pakistan will normally ask a divorced person to produce this certificate before registering a new nikah, and NADRA needs it to change the marital status on the CNIC to reflect the new marriage. A person who divorced in the UAE but never registered it in Pakistan can find their CNIC still shows the earlier marriage, which stalls the second nikah until the record is corrected.
+        </p>
+        <p>
+          The order of steps therefore matters. Register the UAE divorce with the Union Council, let the iddat and 90-day period run, collect the Union Council certificate, update the CNIC through NADRA, and only then arrange a new nikah. A remarriage registered while the earlier divorce is still unregistered in Pakistan can be challenged, which is a serious risk to the validity of the second marriage and to the legitimacy of any children of it. Because the sequence crosses two legal systems, confirming each step with a Pakistani family lawyer before remarrying is the prudent course.
+        </p>
+      </section>
+
       <FAQSection items={faqItems} />
 
       <section class="content-section">
@@ -320,7 +386,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           </a>
           <a href="/en/types-of-divorce-uae/" class="related-card">
             <strong>Types of Divorce in UAE</strong>
-            <span>Talaq, khul'a, tafreeq — all divorce types explained</span>
+            <span>Talaq, khul'a, tafreeq, all divorce types explained</span>
           </a>
           <a href="/en/divorce-cost-uae/" class="related-card">
             <strong>Divorce Cost UAE</strong>
