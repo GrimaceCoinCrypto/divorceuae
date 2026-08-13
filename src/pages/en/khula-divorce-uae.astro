@@ -4,7 +4,7 @@ import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Khula Divorce UAE 2025 — Wife-Initiated Divorce Guide';
+const title = 'Khula Divorce UAE 2025 - Wife-Initiated Divorce Guide';
 const description =
   'What is khula (khul\'a) divorce in the UAE? How to file, what conditions apply, how the mahr is handled, costs, timeline, and your rights as a wife initiating divorce under UAE law.';
 
@@ -18,6 +18,25 @@ const breadcrumbs = [
   { name: 'Khula Divorce UAE', url: 'https://divorceu.ae/en/khula-divorce-uae/' },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Khula Divorce UAE 2025 - Wife-Initiated Divorce Guide',
+  description:
+    'How khula (wife-initiated divorce) works in the UAE under Federal Decree-Law No. 41 of 2024: step-by-step procedure, khula without the husband\'s consent, what the wife keeps and gives up, iddah, timeline, and cost.',
+  author: {
+    '@type': 'Person',
+    name: 'Aleksi Suon',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Divorce UAE',
+  },
+  datePublished: '2025-05-01',
+  dateModified: '2026-08-10',
+  mainEntityOfPage: 'https://divorceu.ae/en/khula-divorce-uae/',
+};
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -27,7 +46,7 @@ const faqSchema = {
       name: 'What is khula divorce in the UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Khula (also written khul\'a or khulʿ) is a wife-initiated divorce in Islamic law, recognised under UAE Federal Personal Status Law (Federal Law No. 28 of 2005). Unlike talaq (husband-initiated divorce), khula requires the wife to return the mahr (dowry/dower) she received at marriage as a condition of the husband\'s consent — or alternatively, the court can grant it without his consent if the marriage is found to be irreparably harmful.',
+        text: 'Khula (also written khul\'a or khulʿ) is a wife-initiated divorce in Islamic law. For Muslims in the UAE it is governed by Federal Decree-Law No. 41 of 2024 on Personal Status, in force since 15 April 2025 (replacing Federal Law No. 28 of 2005). Unlike talaq (husband-initiated divorce), khula requires the wife to return the mahr (dowry/dower) she received at marriage. In a consensual khula the husband agrees; where he refuses, a judge can still grant khula once the wife returns the mahr and reconciliation has failed.',
       },
     },
     {
@@ -35,7 +54,7 @@ const faqSchema = {
       name: 'Does the wife have to return the mahr in a khula divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Generally yes — in a consensual khula, the wife returns the mahr she received (the muqaddam, or advance dowry). She does not need to return gifts received during the marriage or personal income. If the husband initiated conditions that harmed the marriage, or if the judge finds the husband at fault, the court may waive or reduce the mahr return. The exact amount is negotiated or decided by the court.',
+        text: 'Generally yes: in a consensual khula, the wife returns the mahr she received (the muqaddam, or advance dowry). She does not need to return gifts received during the marriage or personal income. If the husband initiated conditions that harmed the marriage, or if the judge finds the husband at fault, the court may waive or reduce the mahr return. The exact amount is negotiated or decided by the court.',
       },
     },
     {
@@ -43,7 +62,7 @@ const faqSchema = {
       name: 'Can a wife get khula divorce without the husband\'s consent in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Under Article 110 of UAE Federal Personal Status Law, a UAE court can grant khula even without the husband\'s agreement if the wife proves that continued marriage would cause her harm. The court first refers the case to mediation. If reconciliation fails, the judge may award khula and determine what portion of mahr (if any) must be returned. This judicial khula (khul\'a qada\'iyya) typically takes longer — 6–18 months — than a consensual khula.',
+        text: 'Yes. Under Federal Decree-Law No. 41 of 2024, a UAE court can grant khula even without the husband\'s agreement. The court first refers the case to family guidance for reconciliation, which now runs for up to 60 days. If reconciliation fails and the wife confirms she will return the mahr, the judge may rule the marriage dissolved by khula against the husband\'s wishes. This judicial khula (khul\'a qada\'iyya) typically takes longer, around 6 to 18 months, than a consensual khula.',
       },
     },
     {
@@ -59,7 +78,7 @@ const faqSchema = {
       name: 'How long does a khula divorce take in the UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'An uncontested khula (both parties agree on terms including mahr return) can be completed in 1–3 months. A contested khula — where the husband refuses and the wife must prove harm — typically takes 6–18 months through UAE Personal Status Courts. Non-Muslim expats governed by home country law may have different timelines depending on jurisdiction applied.',
+        text: 'An uncontested khula (both parties agree on terms including mahr return) can be completed in 1–3 months. A contested khula, where the husband refuses and the wife must prove harm, typically takes 6–18 months through UAE Personal Status Courts. Non-Muslim expats governed by home country law may have different timelines depending on jurisdiction applied.',
       },
     },
   ],
@@ -68,7 +87,7 @@ const faqSchema = {
 const steps = [
   { num: '01', title: 'Consult a lawyer', detail: 'Before filing, confirm whether your case qualifies as khula (you are seeking the divorce) vs. talaq (husband initiates) or judicial divorce for harm. Your lawyer will advise on the mahr position and likely outcome.' },
   { num: '02', title: 'File at the Personal Status Court', detail: 'Submit a petition at the Personal Status Court in the emirate where you reside. In Dubai this is at the Dubai Courts Family Department. Include your marriage certificate (attested if issued abroad), passport copies, and supporting statements.' },
-  { num: '03', title: 'Family Guidance (Mediation)', detail: 'UAE law requires the Family Guidance Section to attempt reconciliation. You will attend 1–4 sessions. If reconciliation fails, a certificate is issued allowing the case to proceed to the judge.' },
+  { num: '03', title: 'Family Guidance (Reconciliation)', detail: 'UAE law requires the Family Guidance Section to attempt reconciliation. Under Federal Decree-Law No. 41 of 2024 this stage runs for up to 60 days. You attend one or more sessions with a counsellor. If reconciliation fails, a certificate is issued allowing the case to proceed to the judge.' },
   { num: '04', title: 'Court hearing(s)', detail: 'For consensual khula, the judge confirms the terms and issues the divorce decree. For contested khula, the judge hears evidence, may appoint a welfare officer if children are involved, and delivers a verdict on both the divorce and the mahr amount.' },
   { num: '05', title: 'Divorce decree issued', detail: 'Once granted, you receive the official divorce certificate. Update your UAE visa status within 30 days if your residency was dependent on your spouse\'s sponsorship.' },
 ];
@@ -76,11 +95,11 @@ const steps = [
 const faqItems = [
   {
     question: 'What is the difference between khula and talaq divorce?',
-    answer: 'Talaq is a husband-initiated divorce — he pronounces it or files at court. Khula is a wife-initiated divorce in which she typically returns the mahr as consideration for releasing the husband from the marriage bond. In judicial terms, a wife can also seek a divorce for harm (tatliq lil-darar) without returning mahr, but that requires proving specific harm in court. Khula is generally faster and more available to wives in UAE courts without needing to prove grounds.',
+    answer: 'Talaq is a husband-initiated divorce in which he pronounces it or files at court. Khula is a wife-initiated divorce in which she typically returns the mahr as consideration for releasing the husband from the marriage bond. In judicial terms, a wife can also seek a divorce for harm (tatliq lil-darar) without returning mahr, but that requires proving specific harm in court. Khula is generally faster and more available to wives in UAE courts without needing to prove grounds.',
   },
   {
     question: 'Do I lose custody of my children if I file for khula?',
-    answer: 'No. Custody under UAE law is determined separately from the type of divorce. The mother typically retains custody of young children (boys until age 11, girls until age 13 under UAE law, though courts can extend). Filing for khula does not affect your custody rights — the court considers the best interests of the child independently of how the divorce was initiated.',
+    answer: 'No. Custody under UAE law is determined separately from the type of divorce. The mother typically retains custody of young children (boys until age 11, girls until age 13 under UAE law, though courts can extend). Filing for khula does not affect your custody rights, because the court considers the best interests of the child independently of how the divorce was initiated.',
   },
   {
     question: 'Can a non-Muslim expat file for khula in the UAE?',
@@ -88,11 +107,27 @@ const faqItems = [
   },
   {
     question: 'What happens to alimony (nafaqah) after khula?',
-    answer: 'After a khula divorce, the husband\'s obligation to pay iddah maintenance (nafaqat al-iddah) applies for the waiting period — approximately three menstrual cycles (about 3 months). If there are children, child support (nafaqat al-awlad) continues regardless of the divorce type. The wife who initiates khula does not receive muta\'a (post-divorce compensation payment) in most UAE court decisions, as she received consideration by returning the mahr.',
+    answer: 'After a khula divorce, the husband\'s obligation to pay iddah maintenance (nafaqat al-iddah) applies for the waiting period, approximately three menstrual cycles (about 3 months). If there are children, child support (nafaqat al-awlad) continues regardless of the divorce type. The wife who initiates khula does not receive muta\'a (post-divorce compensation payment) in most UAE court decisions, as she received consideration by returning the mahr.',
+  },
+  {
+    question: 'Do I have to observe iddah after khula?',
+    answer: 'Yes. Every Islamic divorce, including khula, is followed by an iddah (waiting period) before the wife can remarry. For a menstruating woman this is three menstrual cycles; if she is pregnant it lasts until the birth. The iddah confirms there is no pregnancy from the marriage and fixes the point from which the divorce is final. See our detailed guide to the <a href="/en/iddah-waiting-period-uae/">iddah waiting period in the UAE</a> for how it is counted in practice.',
+  },
+  {
+    question: 'Does khula affect child support or custody?',
+    answer: 'No. Custody (hadanah) and child maintenance (nafaqat al-awlad) are decided on the best interests of the child and are not linked to which spouse ended the marriage or to the mahr being returned. A mother who obtains khula keeps her custody position, and the father remains liable for the children\'s financial support. Read more in our guide to <a href="/en/child-custody-uae/">child custody in the UAE</a>.',
+  },
+  {
+    question: 'Can I remarry my husband after a khula?',
+    answer: 'Khula counts as an irrevocable divorce (talaq baa\'in), so the couple cannot simply resume the marriage during iddah. If both later wish to reunite, they must enter a fresh marriage contract with a new mahr and the wife\'s consent. This differs from a single revocable talaq, where the husband may take the wife back within the iddah without a new contract.',
+  },
+  {
+    question: 'What is tafreeq and how is it different from khula?',
+    answer: 'Tafreeq (also called tatliq) is a judicial divorce the court grants on proven grounds such as harm, desertion, or failure to maintain. The key practical difference is money: in khula the wife gives up and usually returns the mahr to secure her release, while in a fault-based tafreeq she keeps her mahr because the marriage broke down through the husband\'s conduct. If your husband caused documented harm, tafreeq or a <a href="/en/divorce-for-harm-uae/">divorce for harm</a> may protect your financial position better than khula.',
   },
   {
     question: 'Is khula recognised internationally?',
-    answer: 'A UAE divorce decree (including khula) is a legally issued court document. Recognition abroad depends on each country\'s private international law. Many countries recognise foreign divorce decrees through an apostille and official translation. Your lawyer can advise on the recognition process in your home country — it typically requires an apostilled copy of the UAE divorce certificate and a certified Arabic-to-English translation.',
+    answer: 'A UAE divorce decree (including khula) is a legally issued court document. Recognition abroad depends on each country\'s private international law. Many countries recognise foreign divorce decrees through an apostille and official translation. Your lawyer can advise on the recognition process in your home country, and it typically requires an apostilled copy of the UAE divorce certificate and a certified Arabic-to-English translation.',
   },
 ];
 ---
@@ -103,6 +138,7 @@ const faqItems = [
   canonical="https://divorceu.ae/en/khula-divorce-uae/"
   {hreflang}
   lang="en"
+  schema={articleSchema}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -129,15 +165,15 @@ const faqItems = [
       <div class="answer-box">
         <h2>What is khula divorce?</h2>
         <p>
-          Khula (خلع) is a wife-initiated divorce under Islamic law, recognised in the UAE under <strong>Federal Personal Status Law No. 28 of 2005</strong>.
-          The wife typically returns the mahr (advance dowry) she received at marriage. The husband must consent — or the court can grant khula without his consent if the marriage is irreparably broken.
+          Khula (خلع) is a wife-initiated divorce under Islamic law. For Muslims in the UAE it is governed by <strong>Federal Decree-Law No. 41 of 2024</strong> on Personal Status, which came into force on 15 April 2025 and replaced the older Law No. 28 of 2005.
+          The wife typically returns the mahr (advance dowry) she received at marriage. In a consensual khula the husband agrees; where he refuses, a judge can still grant khula against his wishes once the wife returns the mahr and reconciliation has failed.
           Uncontested khula takes <strong>1–3 months</strong> and costs <strong>AED 4,000–12,000</strong> in total legal fees. Contested khula takes <strong>6–18 months</strong>.
         </p>
       </div>
 
       <img
         src="/images/islamic-pattern.webp"
-        alt="Islamic geometric pattern in gold and navy — khula divorce UAE"
+        alt="Islamic geometric pattern in gold and navy, khula divorce UAE"
         width="900" height="507"
         loading="lazy" decoding="async"
         class="article-img"
@@ -145,7 +181,7 @@ const faqItems = [
 
       <!-- How it differs -->
       <section class="content-section">
-        <h2>Khula vs. Talaq vs. Judicial Divorce — Key Differences</h2>
+        <h2>Khula vs. Talaq vs. Judicial Divorce: Key Differences</h2>
         <div class="compare-table">
           <div class="compare-header">
             <div>Divorce Type</div>
@@ -163,7 +199,7 @@ const faqItems = [
             <div class="compare-type khula">Khula</div>
             <div>Wife</div>
             <div>Wife returns advance mahr</div>
-            <div>None — but often requires husband consent or proof of harm</div>
+            <div>None, but often requires husband consent or proof of harm</div>
           </div>
           <div class="compare-row">
             <div class="compare-type">Tatliq (judicial)</div>
@@ -177,7 +213,7 @@ const faqItems = [
 
       <!-- Step-by-step process -->
       <section class="content-section">
-        <h2>How to File for Khula Divorce in the UAE — Step by Step</h2>
+        <h2>How to File for Khula Divorce in the UAE: Step by Step</h2>
         <div class="steps-list">
           {steps.map(step => (
             <div class="step-card">
@@ -189,6 +225,51 @@ const faqItems = [
             </div>
           ))}
         </div>
+      </section>
+
+      <!-- Without consent -->
+      <section class="content-section">
+        <h2>Khula Without the Husband's Consent</h2>
+        <p>
+          The most common question wives ask is whether a husband can block a khula by simply refusing to agree. Under the older 2005 law, a purely consensual khula depended on the husband accepting the wife's offer to return the mahr, which left some women stuck when a spouse withheld agreement out of spite. Federal Decree-Law No. 41 of 2024 confirms the position that courts had already been moving toward: a judge can grant khula against the husband's wishes.
+        </p>
+        <p>
+          In practice the wife files her petition, the case goes to family guidance, and if reconciliation fails the judge asks whether she is willing to return the mahr in exchange for her freedom. Once she confirms that she is, and the mahr amount is fixed by the court, the marriage is dissolved by khula even if the husband never signs anything. What he cannot do is force her to stay married. His refusal changes the label of the case from a consensual khula to a judicial one and lengthens the timeline, but it does not defeat the divorce.
+        </p>
+        <p class="note-text">Because judicial khula requires proof of what the mahr was and evidence that the marriage cannot continue, it is where legal representation matters most. If your husband is refusing to cooperate at all, our page on <a href="/en/divorce-without-husband-consent-uae/">divorce without the husband's consent in the UAE</a> maps every route open to you, and <a href="/en/grounds-for-divorce-uae/">grounds for divorce in the UAE</a> explains when a fault-based route may serve you better.</p>
+      </section>
+
+      <!-- Give up / keep -->
+      <section class="content-section">
+        <h2>What the Wife Gives Up and What She Keeps</h2>
+        <p>
+          The trade at the heart of khula is narrow. The wife gives up her financial claim against the husband for ending the marriage. In most cases that means returning the advance mahr (the muqaddam) she received at the wedding, and forgoing the deferred mahr she would have collected on a husband-initiated talaq. She usually does not receive muta'a, the consolation payment a court may order when the husband is the one who walks away.
+        </p>
+        <p>
+          What she keeps is broader than many people expect. Her custody of the children is untouched, and the father's duty to pay child maintenance continues in full. She keeps her personal property, salary, and any gifts given to her during the marriage, none of which form part of the mahr she returns. She also keeps her right to iddah maintenance for the waiting period. The mahr she hands back is a figure recorded in the marriage contract, so a modest documented dower keeps the cost of exit low. Our guide to <a href="/en/mahr-divorce-uae/">mahr in UAE divorce</a> explains how prompt and deferred dower are treated, and our overview of <a href="/en/child-custody-uae/">child custody in the UAE</a> covers the custody rules in detail.
+        </p>
+      </section>
+
+      <!-- Iddah -->
+      <section class="content-section">
+        <h2>Khula, the Iddah Period, and Remarriage</h2>
+        <p>
+          Khula ends the marriage, but the wife enters an iddah (waiting period) before she is free to remarry. For a menstruating woman the iddah is three menstrual cycles; if she is pregnant it lasts until she gives birth. The waiting period serves to confirm there is no pregnancy from the marriage and marks the point from which the divorce is treated as complete.
+        </p>
+        <p>
+          Khula is an irrevocable divorce (talaq baa'in), which is a key contrast with a single revocable talaq. After a revocable talaq the husband can take his wife back within the iddah without a new contract. After khula he cannot: the release the wife paid for stands, and if the couple later wish to reunite they must sign a fresh marriage contract with a new mahr and the wife's renewed consent. During the iddah the husband still owes iddah maintenance, and the count is important for any later remarriage. Our page on the <a href="/en/iddah-waiting-period-uae/">iddah waiting period in the UAE</a> sets out exactly how it is measured.
+        </p>
+      </section>
+
+      <!-- Timeline -->
+      <section class="content-section">
+        <h2>How Long Khula Takes</h2>
+        <p>
+          Timing turns almost entirely on whether the husband cooperates. A consensual khula where both spouses agree on the mahr return and any child arrangements can move from filing to decree in roughly one to three months, most of which is the mandatory family guidance stage. Federal Decree-Law No. 41 of 2024 allows the reconciliation period to run for up to 60 days, so even a fully agreed case rarely finishes faster than that unless both parties waive further sessions.
+        </p>
+        <p>
+          A contested khula, where the husband refuses and the wife must establish the mahr and the breakdown before a judge, typically runs six to eighteen months, and longer if he appeals. Cost tracks the same divide, as the table below shows. For a fuller picture of how a UAE case unfolds from petition to final decree, see our <a href="/en/talaq-uae/">talaq in UAE</a> guide, which walks through the same court stages from the husband's side.
+        </p>
       </section>
 
       <!-- Costs -->
@@ -213,7 +294,7 @@ const faqItems = [
           <div class="cost-card">
             <p class="cost-label">Mahr return</p>
             <p class="cost-amount">Negotiated / court-set</p>
-            <p class="cost-detail">Separate from legal fees — amount in your marriage contract</p>
+            <p class="cost-detail">Separate from legal fees; amount in your marriage contract</p>
           </div>
         </div>
       </section>
