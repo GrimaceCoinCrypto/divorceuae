@@ -50,6 +50,14 @@ const validityRequirements = [
   { n: 5, title: 'Registration at Personal Status Court', body: 'Registration is not strictly mandatory for validity, but it creates an official court record and significantly strengthens enforceability. Cost is AED 200-500 depending on the emirate.' },
 ];
 
+const draftingSteps = [
+  { n: 1, title: 'Take separate legal advice', body: 'Each party instructs their own UAE family lawyer. Shared advice, or one party having no advice at all, is a common ground for a later challenge on undue influence.' },
+  { n: 2, title: 'Prepare full financial disclosure', body: 'List real assets, debts, and values in schedules attached to the agreement. Hidden or vague disclosure gives the other party grounds to void it on discovery.' },
+  { n: 3, title: 'Draft precise, lawful clauses', body: 'Use specific descriptions rather than broad categories, and keep clauses within what UAE law allows. Remove anything touching child custody or child support.' },
+  { n: 4, title: 'Sign well before the wedding', body: 'Aim to sign at least four to six weeks before the marriage, with witnesses. A document signed days before the ceremony is easier to attack as rushed or coerced.' },
+  { n: 5, title: 'Notarise or register the agreement', body: 'Execute before a Notary Public or register at the Personal Status Court. This creates a dated official record that is far harder to dispute later.' },
+];
+
 const faqItems = [
   {
     question: 'Can we write a prenup after getting married in UAE?',
@@ -74,6 +82,22 @@ const faqItems = [
   {
     question: 'What is the difference between a prenup and a marriage settlement agreement?',
     answer: 'A prenup is signed before marriage, when both parties are in a cooperative mindset, to govern what happens if the marriage ends. A marriage settlement agreement (or divorce settlement agreement) is drafted during divorce proceedings to resolve the actual disputes at hand. They serve completely different purposes. A prenup can make settlement negotiations faster and cheaper by pre-agreeing asset division - but it cannot anticipate every issue, and courts can still override specific clauses on child support and custody.',
+  },
+  {
+    question: 'Is a prenup enforceable for non-Muslim couples under Federal Decree-Law 41 of 2022?',
+    answer: 'Yes, and this is where a prenup is at its strongest in the UAE. The 2022 civil personal status law lets non-Muslim couples agree their own financial terms, and there is no automatic 50/50 split of marital property. Where a valid agreement exists, the court starts from those terms rather than dividing assets at its own discretion. To hold up, the prenup still needs written form, honest financial disclosure, free consent, and ideally notarisation or registration. Clauses that offend UAE public policy, or that try to fix child custody or support, will still be set aside.',
+  },
+  {
+    question: 'How is a prenup treated for Muslim couples under the 2024 law?',
+    answer: 'Muslim couples are governed by Federal Decree-Law No. 41 of 2024, which sits within Sharia principles. A prenup can record asset ownership, debt responsibility, and mahr, but the court reads each clause against mandatory Sharia rules. Provisions that contradict fixed inheritance shares, or that remove the husband\'s core maintenance duty during the marriage, will not be enforced. The agreement operates within those limits rather than overriding them, so the practical ceiling on what you can contract for is lower than under the non-Muslim civil law.',
+  },
+  {
+    question: 'Can a UAE prenup decide child custody or child support?',
+    answer: 'No. UAE courts decide custody and child support on the best interests of the child at the time of divorce, regardless of anything the parents agreed in advance. A clause that caps child support or pre-assigns custody is unenforceable, and including one can undermine confidence in the rest of the document. Keep the prenup focused on assets, debts, mahr, and adult financial arrangements, and leave anything concerning the children to the court process.',
+  },
+  {
+    question: 'Do I need to notarise or register my prenup for it to work?',
+    answer: 'Notarisation and registration are not always strictly required for validity, but they make the agreement much harder to challenge. Executing before a UAE Notary Public, or registering at the Personal Status Court for roughly AED 200 to 500, creates a dated official record that neither party can later deny. If your prenup is drafted in English, prepare a certified Arabic translation as well, since UAE courts operate in Arabic and will need it to rely on the document.',
   },
 ];
 ---
@@ -172,7 +196,7 @@ const faqItems = [
         </p>
         <div class="info-box info-box--warning">
           <h3>Practical note</h3>
-          <p>Some conditions inserted into a Nikah contract can be challenged on Sharia grounds and declared void - while the marriage itself remains valid. A standalone prenuptial agreement subject to civil contract law is generally more robust for financial protection purposes. Consult a lawyer on which approach suits your situation.</p>
+          <p>Some conditions inserted into a Nikah contract can be challenged on Sharia grounds and declared void - while the marriage itself remains valid. A standalone prenuptial agreement subject to civil contract law is generally stronger for financial protection purposes. Consult a lawyer on which approach suits your situation.</p>
         </div>
       </section>
 
@@ -246,6 +270,125 @@ const faqItems = [
             <li>The elected foreign law must not violate UAE public policy</li>
             <li>Both parties should have independent legal advice confirming they understand the chosen law</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>How Enforceable Is a UAE Prenup? Civil Law vs Islamic Law</h2>
+        <p>
+          Enforceability is the question that matters most, and the answer now depends heavily on which legal track applies to your marriage. Two separate frameworks sit side by side in the UAE, and a prenup that is strong under one may be treated very differently under the other.
+        </p>
+        <h3>Non-Muslim couples under Federal Decree-Law 41 of 2022</h3>
+        <p>
+          For non-Muslim residents, <strong>Federal Decree-Law No. 41 of 2022</strong> on Civil Personal Status is the key text. It moved the UAE toward a contract-based model where couples can agree their own financial terms and expect the court to respect them. Crucially, there is no automatic 50/50 division of marital property under this law. Instead, if there is no agreement, a spouse can request a share and the judge weighs factors such as the length of the marriage, each party's financial and non-financial contribution, and any harm caused. A valid prenup replaces that discretionary exercise with the terms you chose in advance, which is why a well-drafted agreement is far more predictable than leaving division to the court.
+        </p>
+        <p>
+          Because the 2022 law treats the couple's agreement as the starting point, a prenup signed by two non-Muslim expats stands its best chance of being enforced close to its written terms, provided it was entered freely, with disclosure, and does not offend UAE public policy. For expats weighing whether this route fits them, our guide on <a href="/en/divorce-for-expats-in-uae/">divorce for expats in the UAE</a> explains how the civil track works in practice.
+        </p>
+        <h3>Muslim couples under Federal Decree-Law 41 of 2024</h3>
+        <p>
+          For Muslim couples, personal status matters are now governed by <strong>Federal Decree-Law No. 41 of 2024</strong>, which updated and replaced much of the older 2005 framework. Financial arrangements here remain anchored in Sharia principles. A prenup can still record asset ownership, debt responsibility, and mahr, but any clause that contradicts a mandatory Sharia rule, such as fixed inheritance shares or the husband's core maintenance duty during the marriage, will not be enforced. The court retains authority to test each clause against those principles rather than simply applying the contract as written.
+        </p>
+        <div class="info-box info-box--info">
+          <h3>The practical difference</h3>
+          <p>Under the non-Muslim civil law, the couple's agreed financial terms are the default the court starts from. Under the Muslim law, the agreement operates within Sharia limits, and clauses are read against those limits. Both routes reward a clear, disclosed, properly executed document, but the ceiling on what you can contract for is different.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Assets, Mahr, Maintenance and the Limits on Children</h2>
+        <p>
+          A UAE prenup is strongest on money and property and weakest on anything touching children. Understanding that split before you draft saves disappointment later.
+        </p>
+        <p>
+          On <strong>assets</strong>, the agreement can define what counts as separate property, how anything acquired during the marriage is divided, and how business interests and the family home are treated. On <strong>mahr</strong>, the prenup can fix both the prompt and deferred amounts and record the conditions under which the deferred portion is paid or waived. Our dedicated guide to <a href="/en/mahr-divorce-uae/">mahr and divorce in the UAE</a> covers how courts treat unpaid deferred mahr when a marriage ends.
+        </p>
+        <p>
+          On <strong>spousal maintenance</strong>, the position is more limited. Couples can agree post-divorce financial support, but a UAE court can adjust or set aside a maintenance clause if it leaves one party in genuine need or, for Muslim couples, if it cuts across the maintenance obligations built into the law. You can shape maintenance, but you cannot contract a spouse into destitution.
+        </p>
+        <p>
+          On <strong>child custody and child support</strong>, the prenup has almost no reach. UAE courts decide both on the best interests of the child at the time of divorce, regardless of what the parents agreed years earlier. A clause capping child support or pre-assigning custody is unenforceable, and attempting to include one can weaken confidence in the rest of the document. Leave these to the court process and keep the prenup focused on the financial matters it can actually govern.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>How to Draft, Notarise and Register a UAE Prenup</h2>
+        <p>
+          A prenup is a legal document, not a template you fill in the week before the wedding. The drafting and execution steps below are what give it weight if it is ever tested.
+        </p>
+        <div class="step-list">
+          {draftingSteps.map((step) => (
+            <div class="step-item">
+              <div class="step-num">{step.n}</div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p>
+          Notarisation and registration are not always strictly required for a prenup to be valid, but they change how easily it can be challenged. A document notarised before a UAE Notary Public, or registered with the Personal Status Court, becomes an official record with a fixed date that neither party can later claim never existed. For a modest fee of around AED 200 to 500, registration removes one of the most common attack lines in a disputed divorce, which is the argument that the agreement was forged, altered, or signed under pressure at the last minute.
+        </p>
+        <div class="info-box info-box--warning">
+          <h3>Language and translation</h3>
+          <p>UAE courts operate in Arabic. If your prenup is drafted in English, you will typically need a legal Arabic translation for it to be relied on in proceedings. Preparing a certified bilingual version at the drafting stage avoids disputes later about what a clause was meant to say.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Will a Foreign Prenup Be Recognised in a UAE Divorce?</h2>
+        <p>
+          Many expat couples arrive in the UAE already holding a prenup signed in their home country. That document is not automatically enforced by a UAE court, but it is not ignored either.
+        </p>
+        <p>
+          A UAE court will look at a foreign prenup as evidence of what the couple intended and, in many non-Muslim cases under the 2022 civil law, will give real weight to it. What the court will not do is apply clauses that conflict with UAE public policy, or, in a Sharia-governed case, clauses that contradict Islamic law principles. So a foreign agreement that splits property between two non-Muslim spouses may be respected closely, while a clause that removes a child's right to support or overrides mandatory inheritance shares will be struck out.
+        </p>
+        <p>
+          The safest approach is to have a UAE lawyer review any foreign prenup while you are resident here, and where needed prepare a supplementary UAE agreement that mirrors the foreign terms in a form local courts recognise. This is particularly important if your foreign prenup elects a specific national law, because that election needs to be expressed in a way the UAE court can apply. Read alongside our overview of <a href="/en/property-division-divorce-uae/">property division on divorce in the UAE</a> to see how the court approaches assets when an agreement is only partly enforced.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Prenup vs Postnup: Which One Do You Need?</h2>
+        <p>
+          The only real difference between a prenuptial and a postnuptial agreement is timing. A prenup is signed before the wedding; a postnup is signed after the couple is already married. Under UAE law both are treated as marital agreements and must meet the same tests, written form, honest disclosure, free consent, and ideally registration.
+        </p>
+        <p>
+          A postnup is useful when circumstances change, for example when one spouse inherits, starts a business, or the couple simply never got around to a prenup before marrying. The practical catch is that negotiating fair terms is often harder once you are married and the balance of leverage has shifted, so independent legal advice for each party matters even more than with a prenup. If a postnuptial route fits your situation, our detailed guide to <a href="/en/postnuptial-agreement-uae/">postnuptial agreements in the UAE</a> walks through the process and enforceability.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Prenuptial agreement</th>
+                <th>Postnuptial agreement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-highlight">When signed</td>
+                <td>Before the marriage</td>
+                <td>After the marriage</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Legal standing in UAE</td>
+                <td>Recognised marital agreement</td>
+                <td>Recognised marital agreement, same requirements</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Common trigger</td>
+                <td>Protecting pre-marital assets and business interests</td>
+                <td>Change in circumstances: inheritance, new business, missed prenup</td>
+              </tr>
+              <tr>
+                <td class="td-highlight">Negotiation dynamic</td>
+                <td>Usually more cooperative before the wedding</td>
+                <td>Can be harder once married; independent advice essential</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 

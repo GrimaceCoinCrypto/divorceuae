@@ -1,10 +1,10 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Contested vs Uncontested Divorce UAE — What Is the Difference?';
+const title = 'Contested vs Uncontested Divorce UAE, What Is the Difference?';
 const description =
   'A contested divorce in UAE is fought in court. An uncontested divorce is agreed by both parties. The difference affects cost, timeline, and stress. This guide explains both paths and which applies to you.';
 
@@ -19,12 +19,13 @@ const breadcrumbs = [
 ];
 
 const comparison = [
-  { factor: 'Both parties agree',      contested: 'No — one party opposes',         uncontested: 'Yes — mutual agreement' },
+  { factor: 'Both parties agree',      contested: 'No, one party opposes',            uncontested: 'Yes, mutual agreement' },
   { factor: 'Court hearings required', contested: 'Multiple (3–10+ sessions)',        uncontested: 'Minimal (1–2 sessions)' },
   { factor: 'Timeline',                contested: '6 months – 2+ years',              uncontested: '1–4 months' },
   { factor: 'Legal cost',              contested: 'AED 15,000 – 80,000+',             uncontested: 'AED 3,000 – 15,000' },
-  { factor: 'Stress level',            contested: 'High — adversarial process',       uncontested: 'Low — cooperative process' },
-  { factor: 'Privacy',                 contested: 'Lower — court proceedings',        uncontested: 'Higher — minimal hearings' },
+  { factor: 'Stress level',            contested: 'High, adversarial process',        uncontested: 'Low, cooperative process' },
+  { factor: 'Control over outcome',    contested: 'Judge decides, limited control',   uncontested: 'Parties keep full control' },
+  { factor: 'Privacy',                 contested: 'Lower, court proceedings',         uncontested: 'Higher, minimal hearings' },
   { factor: 'Child custody',           contested: 'Court decides if no agreement',    uncontested: 'Parents agree in advance' },
   { factor: 'Asset division',          contested: 'Court rules on disputed assets',   uncontested: 'Agreed between parties' },
 ];
@@ -32,7 +33,7 @@ const comparison = [
 const contestedSteps = [
   {
     step: 'Filing the petition',
-    detail: 'One spouse files a divorce petition at the Personal Status Court in their emirate of residence. The other spouse is formally served and given a deadline to respond. If they contest, the court schedules an initial reconciliation session — mandatory under UAE law.'
+    detail: 'One spouse files a divorce petition at the Personal Status Court in their emirate of residence. The other spouse is formally served and given a deadline to respond. If they contest, the court schedules an initial reconciliation session, which is mandatory under UAE law.'
   },
   {
     step: 'Mandatory reconciliation',
@@ -40,7 +41,7 @@ const contestedSteps = [
   },
   {
     step: 'Filing of claims and evidence',
-    detail: 'Both parties submit their claims, supporting evidence, and witness lists. Contested issues — custody, asset division, alimony, property — are argued separately. Each contested matter may require its own hearing.'
+    detail: 'Both parties submit their claims, supporting evidence, and witness lists. Contested issues such as custody, asset division, alimony, and property are argued separately. Each contested matter may require its own hearing.'
   },
   {
     step: 'Court hearings',
@@ -48,26 +49,26 @@ const contestedSteps = [
   },
   {
     step: 'Judgment and enforcement',
-    detail: 'The judge issues a ruling on all contested matters. Either party may appeal within the allowed window. Once final, the judgment is legally enforceable — the court can compel compliance through asset freezes, travel bans, and wage garnishment.'
+    detail: 'The judge issues a ruling on all contested matters. Either party may appeal within the allowed window. Once final, the judgment is legally enforceable, and the court can compel compliance through asset freezes, travel bans, and wage garnishment.'
   },
 ];
 
 const uncontestSteps = [
   {
     step: 'Reach agreement on all key issues',
-    detail: 'Before filing, both parties must agree on: grounds for divorce, child custody and visitation, financial support and alimony, division of shared assets, and who retains the marital home. A family lawyer can help structure this agreement in a legally enforceable format.'
+    detail: 'Before filing, both parties must agree on grounds for divorce, child custody and visitation, financial support and alimony, division of shared assets, and who retains the marital home. A family lawyer can help structure this agreement in a legally enforceable format.'
   },
   {
     step: 'Draft and sign a settlement agreement',
-    detail: 'Your lawyer drafts a comprehensive settlement agreement covering all agreed terms. Both parties review and sign. For Muslim couples this is often done through the court\'s reconciliation office; for non-Muslims through a legal agreement submitted to the court.'
+    detail: 'Your lawyer drafts a full settlement agreement covering all agreed terms. Both parties review and sign. For Muslim couples this is often done through the court\'s reconciliation office; for non-Muslims through a legal agreement submitted to the court.'
   },
   {
     step: 'File at the Personal Status Court',
-    detail: 'The divorce petition and settlement agreement are filed together. The court reviews the agreement to ensure it meets legal requirements and does not violate either party\'s rights — particularly children\'s welfare requirements.'
+    detail: 'The divorce petition and settlement agreement are filed together. The court reviews the agreement to ensure it meets legal requirements and does not violate either party\'s rights, particularly children\'s welfare requirements.'
   },
   {
     step: 'Single court hearing',
-    detail: 'Both parties attend one (sometimes two) hearing where the judge reviews and confirms the agreement. This is typically a brief procedural session — not an adversarial hearing. The judge may ask clarifying questions but does not adjudicate disputes.'
+    detail: 'Both parties attend one (sometimes two) hearing where the judge reviews and confirms the agreement. This is typically a brief procedural session rather than an adversarial hearing. The judge may ask clarifying questions but does not adjudicate disputes.'
   },
   {
     step: 'Divorce decree issued',
@@ -79,12 +80,12 @@ const faqItems = [
   {
     question: 'Can I get an uncontested divorce if my spouse refuses to cooperate?',
     answer:
-      'No — an uncontested divorce requires genuine agreement from both parties on all key issues. If your spouse refuses to engage or disputes any major issue (custody, assets, alimony), the divorce becomes contested and must go through the full court process. However, a skilled lawyer can sometimes negotiate an agreement outside court, converting what seemed like a contested case into an uncontested one.',
+      'No. An uncontested divorce requires genuine agreement from both parties on all key issues. If your spouse refuses to engage or disputes any major issue (custody, assets, alimony), the divorce becomes contested and must go through the full court process. However, a skilled lawyer can sometimes negotiate an agreement outside court, converting what seemed like a contested case into an uncontested one.',
   },
   {
     question: 'How long does a contested divorce take in UAE?',
     answer:
-      'A contested divorce in UAE typically takes 6 months to 2 years from filing to final judgment. The timeline depends on: number of disputed issues, how quickly the court schedules hearings, whether either party appeals, and whether international assets or international custody is involved. Cases with multiple contested issues (custody + assets + alimony) routinely take 12–18 months.',
+      'A contested divorce in UAE typically takes 6 months to 2 years from filing to final judgment. The timeline depends on the number of disputed issues, how quickly the court schedules hearings, whether either party appeals, and whether international assets or international custody is involved. Cases with multiple contested issues (custody plus assets plus alimony) routinely take 12–18 months.',
   },
   {
     question: 'Can a Muslim husband get an uncontested divorce through talaq?',
@@ -94,17 +95,37 @@ const faqItems = [
   {
     question: 'What is Khula divorce and is it contested or uncontested?',
     answer:
-      'Khula is a divorce initiated by the wife in exchange for returning the mahr (dowry) to the husband. Under UAE law, if the husband agrees to the khula, it proceeds as an uncontested matter. If the husband refuses, the wife must apply to the court, which can grant a judicial khula — but this requires court proceedings and is therefore a form of contested divorce. See our guide on UAE divorce law for the full khula procedure.',
+      'Khula is a divorce initiated by the wife in exchange for returning the mahr (dowry) to the husband. Under UAE law, if the husband agrees to the khula, it proceeds as an uncontested matter. If the husband refuses, the wife must apply to the court, which can grant a judicial khula, but this requires court proceedings and is therefore a form of contested divorce. See our guide on UAE divorce law for the full khula procedure.',
   },
   {
     question: 'How much cheaper is uncontested divorce vs contested in UAE?',
     answer:
-      'Significantly cheaper. An uncontested divorce in UAE typically costs AED 3,000–15,000 in total legal fees (lawyer + court fees). A contested divorce typically costs AED 15,000–80,000+ depending on complexity and duration. Cases with international assets, contested custody, or business interests can cost AED 100,000+. The reconciliation attempts, multiple hearings, and potential appeals all add legal fees in contested cases.',
+      'Significantly cheaper. An uncontested divorce in UAE typically costs AED 3,000 to 15,000 in total legal fees (lawyer plus court fees). A contested divorce typically costs AED 15,000 to 80,000+ depending on complexity and duration. Cases with international assets, contested custody, or business interests can cost AED 100,000+. The reconciliation attempts, multiple hearings, and potential appeals all add legal fees in contested cases.',
   },
   {
     question: 'Does UAE require a reason (grounds) for divorce?',
     answer:
-      'For Muslim couples, a husband can divorce through talaq without stating a reason. A wife must either obtain her husband\'s agreement (khula) or prove grounds to the court (harm, desertion, failure to provide maintenance, imprisonment). For non-Muslim expats under the 2022 civil law, no-fault divorce is available — neither party needs to prove wrongdoing. This makes uncontested divorce significantly easier for non-Muslim expats.',
+      'For Muslim couples, a husband can divorce through talaq without stating a reason. A wife must either obtain her husband\'s agreement (khula) or prove grounds to the court (harm, desertion, failure to provide maintenance, imprisonment). For non-Muslim expats under the 2022 civil law, no-fault divorce is available and neither party needs to prove wrongdoing. This makes uncontested divorce significantly easier for non-Muslim expats.',
+  },
+  {
+    question: 'Is a non-Muslim divorce under the 2022 civil law always uncontested?',
+    answer:
+      'Usually, but not automatically. Federal Decree-Law No. 41 of 2022 lets either non-Muslim spouse end the marriage without proving fault and without the other spouse\'s consent, and it removes the mandatory reconciliation period. That means most civil divorces run as uncontested matters even when only one spouse wants out. A civil case can still be contested if the parties argue over how much financial support is owed or how custody is shared, but the framework is built to keep those disputes short.',
+  },
+  {
+    question: 'Can a UAE court force my spouse to disclose hidden assets?',
+    answer:
+      'Yes, within limits. UAE Personal Status Courts do not run broad automatic discovery, so your spouse is not obliged to volunteer every financial record. If you suspect concealed assets, your lawyer asks the court to order disclosure from a specific bank, the land department, or a company registry. The court can compel production, but you generally need to identify what you are looking for rather than request everything. This is why gathering account statements and property records before you file is worthwhile.',
+  },
+  {
+    question: 'What happens if my spouse ignores the divorce and never shows up?',
+    answer:
+      'The case can still proceed. Once the court is satisfied that your spouse was properly served and given the chance to respond, it can hear the matter and rule in their absence. The absence pushes the file onto the contested track and adds time, because the court must confirm valid service and may allow extra notice periods, but it does not give an uncooperative spouse a veto over the divorce.',
+  },
+  {
+    question: 'Can we agree on some issues and let the court decide the rest?',
+    answer:
+      'Yes, and it is often the smartest approach. Partial agreements let you settle the easy points, such as that the divorce goes ahead and how household items split, then leave only one or two genuinely disputed issues, such as custody, for the judge. Every issue removed shortens the hearing list and lowers cost. A file with a single remaining dispute resolves far faster than one contesting everything at once.',
   },
 ];
 ---
@@ -151,7 +172,7 @@ const faqItems = [
         <div class="def-card def-card--contested">
           <h3>Contested Divorce</h3>
           <p>
-            One or both parties dispute the divorce itself, or cannot agree on the terms — custody,
+            One or both parties dispute the divorce itself, or cannot agree on the terms such as custody,
             finances, assets, or alimony. The court must resolve these disputes. The judge decides
             what neither party could agree on.
           </p>
@@ -202,8 +223,8 @@ const faqItems = [
     <section class="section" aria-labelledby="contested-heading">
       <h2 id="contested-heading">The Contested Divorce Process in UAE</h2>
       <p>
-        A contested divorce in UAE goes through the Personal Status Court. The process is adversarial —
-        each party argues their position and the judge decides. Here is what to expect:
+        A contested divorce in UAE goes through the Personal Status Court. The process is adversarial.
+        Each party argues their position and the judge decides. Here is what to expect:
       </p>
       <ol class="steps">
         {contestedSteps.map((item) => (
@@ -214,11 +235,13 @@ const faqItems = [
         ))}
       </ol>
       <div class="warn-box">
-        <h3>Important: Reconciliation is mandatory</h3>
+        <h3>Important: Reconciliation is mandatory for Muslim divorces</h3>
         <p>
-          UAE law requires the court to attempt reconciliation before granting a contested divorce.
-          This adds time but cannot be bypassed. The court appoints a reconciliation expert who meets
-          with both parties. Only after reconciliation fails does the contested hearing proceed.
+          For Muslim couples, UAE law requires the court to attempt reconciliation before granting a
+          contested divorce. Under Federal Decree-Law No. 41 of 2024 on Personal Status this stage is
+          understood to run for around 60 days. It adds time but cannot be bypassed. The court appoints
+          a reconciliation expert who meets with both parties, and only after reconciliation fails does
+          the contested hearing proceed. Non-Muslim couples under the civil law do not face this step.
         </p>
       </div>
     </section>
@@ -227,8 +250,10 @@ const faqItems = [
     <section class="section" aria-labelledby="uncontested-heading">
       <h2 id="uncontested-heading">The Uncontested Divorce Process in UAE</h2>
       <p>
-        An uncontested divorce is faster because the court only needs to confirm your agreed terms —
-        not resolve disputes. The key is reaching complete agreement before you file.
+        An uncontested divorce is faster because the court only needs to confirm your agreed terms
+        rather than resolve disputes. The key is reaching complete agreement before you file. If both
+        sides already agree, our guide on <a href="/en/mutual-consent-divorce-uae/">mutual consent divorce in UAE</a>
+        walks through the paperwork step by step.
       </p>
       <ol class="steps">
         {uncontestSteps.map((item) => (
@@ -244,13 +269,42 @@ const faqItems = [
       </div>
     </section>
 
-    <!-- Which applies to you -->
+    <!-- What makes it contested -->
     <section class="section" aria-labelledby="which-heading">
-      <h2 id="which-heading">Which Type of Divorce Applies to You?</h2>
+      <h2 id="which-heading">What Actually Makes a Divorce Contested in the UAE</h2>
       <p>
-        Your divorce starts as uncontested if both parties agree on all major issues.
-        It becomes contested as soon as either party disputes a significant term.
-        The most common triggers for a contested divorce:
+        A divorce is not contested because the marriage was unhappy. It becomes contested when the two
+        people cannot agree on what happens after the marriage ends. In UAE Personal Status Courts, most
+        contested files come down to four recurring fault lines.
+      </p>
+      <p>
+        <strong>Custody and the children.</strong> This is the single most common reason a UAE divorce
+        turns adversarial. Disputes cover who the child lives with, how the other parent sees them, which
+        school the child attends, and whether either parent can travel abroad with the child. Because the
+        court weighs the child's welfare above the wishes of either parent, custody arguments are rarely
+        quick to settle.
+      </p>
+      <p>
+        <strong>Money and maintenance.</strong> A wife is generally entitled to maintenance (nafaqa)
+        during the marriage and, in defined situations, after it. When the husband disputes the amount,
+        the duration, or whether it is owed at all, the case becomes contested. Deferred dowry (mahr)
+        claims and unpaid past maintenance are frequent flashpoints.
+      </p>
+      <p>
+        <strong>Assets and property.</strong> The UAE does not apply automatic community-of-property
+        rules, so ownership usually follows whose name is on the title or account. That makes jointly
+        built wealth, the family villa, a shared business, and offshore holdings genuinely contestable,
+        and each disputed asset can generate its own line of argument.
+      </p>
+      <p>
+        <strong>One party simply refusing.</strong> Sometimes there is no dispute over terms at all. One
+        spouse just will not attend, will not sign, or will not acknowledge the divorce. UAE courts can
+        proceed without a cooperating spouse once proper service is proven, but the absence forces the
+        case onto the contested track and lengthens it.
+      </p>
+      <p>
+        Any one of these is enough to move a file from the fast, cheap uncontested path onto the slow,
+        adversarial one. Most contested cases involve two or more at once.
       </p>
       <div class="trigger-grid">
         <div class="trigger-item">
@@ -276,14 +330,141 @@ const faqItems = [
       </div>
     </section>
 
+    <!-- Contested to uncontested -->
+    <section class="section" aria-labelledby="settle-heading">
+      <h2 id="settle-heading">Turning a Contested Case Into an Uncontested Settlement</h2>
+      <p>
+        A case that starts contested does not have to stay contested. A large share of UAE divorces are
+        filed as disputes and then settled before judgment, which converts them into effectively
+        uncontested outcomes. Three routes make this happen.
+      </p>
+      <p>
+        <strong>Direct negotiation between lawyers.</strong> Each side instructs a family lawyer, and the
+        lawyers exchange proposals on custody, maintenance, and assets. Because both know roughly how a
+        UAE judge would rule, settlement offers tend to cluster around the likely court outcome, minus the
+        years of cost and stress.
+      </p>
+      <p>
+        <strong>Mediation.</strong> The court-appointed reconciliation stage is itself a form of
+        mediation, but parties can also use private mediators before or alongside the case. A mediator
+        does not take sides or impose a result; they help both spouses find terms each can accept. Our
+        guide on <a href="/en/mediated-divorce-uae/">mediated divorce in UAE</a> explains how the process runs.
+      </p>
+      <p>
+        <strong>Partial agreements.</strong> You do not have to settle everything at once. Couples often
+        agree on the easy points first, for example that the divorce will go ahead and how the household
+        goods split, then narrow the fight to one or two genuinely disputed issues such as custody. Every
+        issue you take off the table shortens the hearing list and lowers the bill. A file with a single
+        remaining dispute resolves far faster than one contesting five.
+      </p>
+      <p>
+        The practical takeaway is to shrink the disagreement rather than try to win every point. A signed
+        settlement, submitted to the court, is reviewed and confirmed in a short hearing rather than
+        argued across many. If you can convert even part of your dispute, you move measurably toward the
+        cheaper uncontested timeline. See our note on structuring a
+        <a href="/en/divorce-settlement-uae/">divorce settlement in UAE</a> for what a binding agreement
+        needs to contain.
+      </p>
+    </section>
+
+    <!-- Evidence and disclosure -->
+    <section class="section" aria-labelledby="evidence-heading">
+      <h2 id="evidence-heading">Evidence and Disclosure in a Contested Case</h2>
+      <p>
+        When terms are disputed, the court decides on the strength of evidence, so a contested divorce is
+        won or lost on what each side can prove.
+      </p>
+      <p>
+        <strong>What counts as evidence.</strong> UAE Personal Status Courts accept documents (marriage
+        certificate, bank statements, property title deeds, tenancy contracts, salary certificates, school
+        records), witness testimony, and official reports. For maintenance claims, proof of the husband's
+        income and standard of living carries weight. For custody, evidence about each parent's living
+        situation, conduct, and ability to care for the child is central.
+      </p>
+      <p>
+        <strong>Disclosure is not automatic.</strong> Unlike some Western systems, the UAE has no broad
+        pre-trial discovery that forces a spouse to hand over all financial records. If you believe assets
+        are being hidden, your lawyer asks the court to order disclosure from banks, the land department,
+        or a company registry. The court can compel production, but you generally have to identify what
+        you are looking for rather than fishing.
+      </p>
+      <p>
+        <strong>Building your file early.</strong> Because getting orders takes time, gathering your own
+        records before you file matters. Copies of joint account statements, property documents, transfer
+        records, and communications can be decisive later. Translation into Arabic and proper attestation
+        are usually required for foreign documents.
+      </p>
+      <p>
+        Weak or missing evidence is the most common reason a claim fails, not because the underlying
+        position was wrong, but because it could not be substantiated. This is also why documented
+        settlements are attractive: they replace a contest of proof with an agreed record. It is one of
+        the biggest factors behind the wide <a href="/en/divorce-cost-uae/">difference in divorce cost</a>
+        between contested and uncontested cases.
+      </p>
+    </section>
+
+    <!-- Non-Muslim civil fast track -->
+    <section class="section" aria-labelledby="civil-heading">
+      <h2 id="civil-heading">The Non-Muslim Civil Fast Track (Federal Decree-Law 41 of 2022)</h2>
+      <p>
+        Non-Muslim residents have a separate, faster route that most Muslim couples do not. Federal
+        Decree-Law No. 41 of 2022 on Civil Personal Status created a civil divorce framework for
+        non-Muslims in the UAE, and it is built around exactly the cooperative, low-conflict process this
+        page describes.
+      </p>
+      <p>
+        <strong>No-fault and no reason required.</strong> Either spouse can request divorce without
+        proving harm, blame, or wrongdoing, and without the other spouse's consent. A wish to end the
+        marriage is enough. That removes the single biggest driver of contested Muslim cases, the need to
+        establish grounds.
+      </p>
+      <p>
+        <strong>No mandatory reconciliation period.</strong> The civil law does not impose the
+        reconciliation stage that applies to Muslim divorces, so a straightforward civil divorce can be
+        granted quickly, sometimes in a single hearing or a small number of sessions once paperwork is in
+        order.
+      </p>
+      <p>
+        <strong>Predictable financial and custody rules.</strong> The civil law sets out clearer, more
+        equal default rules on post-divorce financial support and on joint custody, which gives both sides
+        a known baseline to settle against. When spouses agree, the court largely confirms their
+        arrangement.
+      </p>
+      <p>
+        The result is that a non-Muslim civil divorce is usually uncontested in practice, even when only
+        one spouse wants it, because neither consent nor fault is needed and there is little to argue
+        procedurally. Contested civil cases still happen, typically over how much support is owed or how
+        custody is shared, but the framework is designed to keep them short. You can compare the two paths
+        end to end in our <a href="/en/divorce-timeline-uae/">UAE divorce timeline guide</a>.
+      </p>
+      <p>
+        Muslim divorces, by contrast, fall under Federal Decree-Law No. 41 of 2024 on Personal Status,
+        which retains a reconciliation stage understood to run for around 60 days before a contested
+        divorce proceeds. Specific article numbers under both laws should be confirmed with a lawyer
+        against the current published text.
+      </p>
+    </section>
+
     <!-- Related links -->
     <section class="section" aria-labelledby="related-heading">
       <h2 id="related-heading">Related Legal Guides</h2>
       <div class="service-links">
-          <a href="/en/mediated-divorce-uae/" class="service-link">
-            <strong>Mediated Divorce in UAE</strong>
-            <span>Reaching agreement without a court fight</span>
-          </a>
+        <a href="/en/mutual-consent-divorce-uae/" class="service-link">
+          <strong>Mutual Consent Divorce UAE</strong>
+          <span>The fastest agreed route, step by step</span>
+        </a>
+        <a href="/en/mediated-divorce-uae/" class="service-link">
+          <strong>Mediated Divorce in UAE</strong>
+          <span>Reaching agreement without a court fight</span>
+        </a>
+        <a href="/en/divorce-settlement-uae/" class="service-link">
+          <strong>Divorce Settlement UAE</strong>
+          <span>What a binding agreement must contain</span>
+        </a>
+        <a href="/en/divorce-timeline-uae/" class="service-link">
+          <strong>Divorce Timeline UAE</strong>
+          <span>How long each path takes from filing to decree</span>
+        </a>
         <a href="/en/divorce-cost-uae/" class="service-link">
           <strong>Divorce Cost UAE</strong>
           <span>Full breakdown of court fees and lawyer costs</span>
@@ -324,7 +505,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2025 DivorceU.AE. Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>
@@ -353,6 +534,7 @@ const faqItems = [
   .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
   .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin: 16px 0 6px; }
   .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: underline; }
   .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
 
   .info-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
