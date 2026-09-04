@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'Can I choose where to file for divorce as a UAE expat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Often yes -- but the choice is constrained by jurisdictional rules. You can file for divorce in UAE if you are habitually resident there. You can file in England if you or your spouse are habitually resident in England or Wales, or are domiciled there. Australian courts require habitual residence for 12 months. The window for choice is usually brief -- once one party files in one jurisdiction and the other party is served, that jurisdiction is typically the one that proceeds.',
+        text: 'Often yes, but the choice is constrained by jurisdictional rules. You can file for divorce in UAE if you are habitually resident there. You can file in England if you or your spouse are habitually resident in England or Wales, or are domiciled there. Australian courts require habitual residence for 12 months. The window for choice is usually brief, once one party files in one jurisdiction and the other party is served, that jurisdiction is typically the one that proceeds.',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'Does filing first in UAE stop my spouse filing in the UK?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Not automatically, but it creates strong grounds for a stay of English proceedings. The lis pendens doctrine -- that the same matter should not be litigated simultaneously in two jurisdictions -- means that if UAE divorce proceedings are already underway when an English petition is filed, the English court can stay (pause) its proceedings in favour of the UAE court. SA v FA [2022] EWFC 115 demonstrates that English courts will grant this stay when UAE has the stronger connection. First mover advantage is real, but filing in the wrong jurisdiction for tactical reasons can backfire.',
+        text: 'Not automatically, but it creates strong grounds for a stay of English proceedings. The lis pendens doctrine, that the same matter should not be litigated simultaneously in two jurisdictions, means that if UAE divorce proceedings are already underway when an English petition is filed, the English court can stay (pause) its proceedings in favour of the UAE court. SA v FA [2022] EWFC 115 demonstrates that English courts will grant this stay when UAE has the stronger connection. First mover advantage is real, but filing in the wrong jurisdiction for tactical reasons can backfire.',
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: 'How long does UAE divorce take vs UK divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Abu Dhabi Civil Family Court uncontested: 4-6 weeks. Dubai Personal Status Court uncontested: 8-12 weeks (mandatory counselling adds time). UK divorce (decree absolute only, no financial proceedings): 6-12 months under the current no-fault divorce law. UK divorce including contested financial proceedings: 18-36 months. The UAE is substantially faster for the divorce itself. However, if you have UK assets and the UAE financial outcome is unsatisfactory, UK Part III MFPA proceedings can follow -- adding UK timelines to the total process.',
+        text: 'Abu Dhabi Civil Family Court uncontested: 4-6 weeks. Dubai Personal Status Court uncontested: 8-12 weeks (mandatory counselling adds time). UK divorce (decree absolute only, no financial proceedings): 6-12 months under the current no-fault divorce law. UK divorce including contested financial proceedings: 18-36 months. The UAE is substantially faster for the divorce itself. However, if you have UK assets and the UAE financial outcome is unsatisfactory, UK Part III MFPA proceedings can follow, adding UK timelines to the total process.',
       },
     },
     {
@@ -67,7 +67,7 @@ const faqSchema = {
       name: 'Which jurisdiction favours the financially weaker spouse in divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'England and Australia are most favourable to the financially weaker spouse. Both apply needs-based or just-and-equitable standards that can redistribute all marital assets regardless of whose name they are in, including property built up over many years of marriage. Germany applies accrued gains sharing (each party gets half the growth in the other\'s wealth). UAE and France operate closer to separate property systems -- assets stay with whoever owns them, which favours the higher earner or the party who accumulated more assets in their name.',
+        text: 'England and Australia are most favourable to the financially weaker spouse. Both apply needs-based or just-and-equitable standards that can redistribute all marital assets regardless of whose name they are in, including property built up over many years of marriage. Germany applies accrued gains sharing (each party gets half the growth in the other\'s wealth). UAE and France operate closer to separate property systems, assets stay with whoever owns them, which favours the higher earner or the party who accumulated more assets in their name.',
       },
     },
     {
@@ -75,7 +75,7 @@ const faqSchema = {
       name: 'Can I use Indian courts for divorce as an Indian national living in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For Indian nationals, this depends on religion. Hindu marriages under the Hindu Marriage Act 1955 can be dissolved by Indian courts, but only if the petitioner can establish jurisdiction -- typically by residence in India for at least one year before filing, or by marriage in India, or by last matrimonial home in India. Muslim Personal Law applies to Muslim Indians. Indian Christian marriages are governed by the Indian Divorce Act 1869. A UAE court can also dissolve an Indian marriage if both parties are habitually resident in the UAE. The Indian and UAE proceedings are separate -- divorcing in UAE as an Indian national does not prevent Indian courts from having jurisdiction if a party later establishes Indian residence.',
+        text: 'For Indian nationals, this depends on religion. Hindu marriages under the Hindu Marriage Act 1955 can be dissolved by Indian courts, but only if the petitioner can establish jurisdiction, typically by residence in India for at least one year before filing, or by marriage in India, or by last matrimonial home in India. Muslim Personal Law applies to Muslim Indians. Indian Christian marriages are governed by the Indian Divorce Act 1869. A UAE court can also dissolve an Indian marriage if both parties are habitually resident in the UAE. The Indian and UAE proceedings are separate, divorcing in UAE as an Indian national does not prevent Indian courts from having jurisdiction if a party later establishes Indian residence.',
       },
     },
     {
@@ -123,7 +123,7 @@ const jurisdictions = [
     country: 'France',
     assetDivision: 'Separation of property by default (similar to UAE). Community only if community regime elected.',
     pension: 'Compensatory allowance (prestation compensatoire) for standard of living loss.',
-    maintenance: 'Prestation compensatoire -- lump sum or capital to compensate standard of living difference.',
+    maintenance: 'Prestation compensatoire, lump sum or capital to compensate standard of living difference.',
     speed: '6-18 months',
     cost: 'EUR 3,000-20,000+ typical',
     favours: 'Higher earner under default separate property. More balanced under community regime.',
@@ -131,7 +131,7 @@ const jurisdictions = [
   {
     country: 'Germany',
     assetDivision: 'Zugewinngemeinschaft: each spouse gets half the increase in the other\'s wealth during marriage.',
-    pension: 'Versorgungsausgleich (pension equalisation) -- mandatory pension rights sharing.',
+    pension: 'Versorgungsausgleich (pension equalisation), mandatory pension rights sharing.',
     maintenance: 'Post-marital maintenance for role-based disadvantage. Time-limited.',
     speed: '6-24 months',
     cost: 'EUR 5,000-30,000+ typical',
@@ -155,10 +155,10 @@ const jurisdictions = [
 
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Jurisdiction Strategy Guide -- UAE Expats</p>
+      <p class="hero-tag">Jurisdiction Strategy Guide, UAE Expats</p>
       <h1>Where Should I Divorce: UAE or My Home Country?</h1>
       <p class="hero-desc">
-        This is the single most important financial decision in your divorce. The country you choose to file in determines which rules apply to your assets -- and the difference between jurisdictions can be the difference between keeping your UAE apartment or splitting it, between a lump sum payment and none, between a pension sharing order and no pension claim at all. Most expats do not realise they have a choice until after the decision is already made.
+        This is the single most important financial decision in your divorce. The country you choose to file in determines which rules apply to your assets, and the difference between jurisdictions can be the difference between keeping your UAE apartment or splitting it, between a lump sum payment and none, between a pension sharing order and no pension claim at all. Most expats do not realise they have a choice until after the decision is already made.
       </p>
       <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
     </div>
@@ -188,10 +188,10 @@ const jurisdictions = [
           Under <strong>UAE law</strong>: the apartment stays with the husband (his name, his property). The UK pension is not touched by UAE courts. The wife gets AED 140,000 from the joint account (her contribution). She receives mahr (if applicable under her personal status law), possibly mut'a (consolation gift), and child support. Her total financial outcome might be AED 300,000-400,000.
         </p>
         <p>
-          Under <strong>English law</strong>: the court assesses all assets globally. The apartment, pension, and savings are all in the pool. After seven years of marriage and two children, the wife's homemaker contribution is given significant weight. The starting point is equality of assets, adjusted for need and sharing. The wife might receive 40-50% of the total asset pool -- AED 1.5-2 million including her share of the apartment and pension.
+          Under <strong>English law</strong>: the court assesses all assets globally. The apartment, pension, and savings are all in the pool. After seven years of marriage and two children, the wife's homemaker contribution is given significant weight. The starting point is equality of assets, adjusted for need and sharing. The wife might receive 40-50% of the total asset pool, AED 1.5-2 million including her share of the apartment and pension.
         </p>
         <p>
-          The difference is potentially AED 1.1-1.6 million -- from the same marriage, same assets, same people. The only variable is jurisdiction.
+          The difference is potentially AED 1.1-1.6 million, from the same marriage, same assets, same people. The only variable is jurisdiction.
         </p>
       </section>
 
@@ -239,7 +239,7 @@ const jurisdictions = [
         <ul>
           <li>Prompt mahr (already paid during marriage) and deferred mahr (falls due immediately on divorce)</li>
           <li>Iddah maintenance for approximately three months</li>
-          <li>Mut'a (consolation payment) -- a discretionary compensatory amount reflecting the length of marriage and circumstances</li>
+          <li>Mut'a (consolation payment), a discretionary compensatory amount reflecting the length of marriage and circumstances</li>
           <li>Child support and housing for any children in her care</li>
         </ul>
         <p>
@@ -248,11 +248,11 @@ const jurisdictions = [
 
         <h3>The non-Muslim home country law election</h3>
         <p>
-          Under Article 13 of the UAE Civil Code, non-citizen non-Muslim residents can elect their home country law to apply to their personal status matters including financial division on divorce. This election is made at the time of filing and can dramatically change the outcome. A British national filing in UAE courts can request English law principles apply -- which would bring needs-based redistribution into the UAE proceedings.
+          Under Article 13 of the UAE Civil Code, non-citizen non-Muslim residents can elect their home country law to apply to their personal status matters including financial division on divorce. This election is made at the time of filing and can dramatically change the outcome. A British national filing in UAE courts can request English law principles apply, which would bring needs-based redistribution into the UAE proceedings.
         </p>
         <div class="info-box info-box--info">
           <h3>The important caveat: UAE property and Article 18</h3>
-          <p>Even if you elect home country law for financial division, Article 18 of the UAE Civil Code provides that immovable property located in the UAE is governed by UAE law. Your English law election covers bank accounts, pensions, and overseas assets -- but the Dubai apartment must still be transferred through DLD under UAE property law. The election does not override UAE's lex situs rule for real estate.</p>
+          <p>Even if you elect home country law for financial division, Article 18 of the UAE Civil Code provides that immovable property located in the UAE is governed by UAE law. Your English law election covers bank accounts, pensions, and overseas assets, but the Dubai apartment must still be transferred through DLD under UAE property law. The election does not override UAE's lex situs rule for real estate.</p>
         </div>
       </section>
 
@@ -267,7 +267,7 @@ const jurisdictions = [
           The period between one spouse deciding to divorce and the other spouse instructing a lawyer is typically 1-3 weeks in most cases. Once both parties have lawyers, parallel filings in different jurisdictions become likely. The opportunity for a clear first-filing advantage exists only before the other side mobilises legally.
         </p>
         <p>
-          This does not mean filing rashly. Filing in the wrong jurisdiction -- or filing before you have a complete picture of the asset position -- can cause more problems than it solves. But it does mean that the moment you decide the marriage is over, you should take legal advice in both your preferred jurisdiction and the UAE simultaneously, rather than sequentially.
+          This does not mean filing rashly. Filing in the wrong jurisdiction, or filing before you have a complete picture of the asset position, can cause more problems than it solves. But it does mean that the moment you decide the marriage is over, you should take legal advice in both your preferred jurisdiction and the UAE simultaneously, rather than sequentially.
         </p>
 
         <h3>What happens when both spouses file simultaneously in different countries</h3>
@@ -290,11 +290,11 @@ const jurisdictions = [
         <div class="scenario-list">
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Factor 1: Where the most valuable assets are registered</p>
-            <p>If the majority of your wealth is in Dubai property registered in your name, UAE proceedings protect that -- it stays in your name under UAE's separate property rules. If the majority of wealth is a UK pension in your name, UAE proceedings do not touch it but UK proceedings potentially would via pension sharing orders. Map the assets first, then assess which jurisdiction's rules produce the better outcome for your specific asset mix.</p>
+            <p>If the majority of your wealth is in Dubai property registered in your name, UAE proceedings protect that, it stays in your name under UAE's separate property rules. If the majority of wealth is a UK pension in your name, UAE proceedings do not touch it but UK proceedings potentially would via pension sharing orders. Map the assets first, then assess which jurisdiction's rules produce the better outcome for your specific asset mix.</p>
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Factor 2: Who earns more and who sacrificed career</p>
-            <p>UAE law does not compensate career sacrifice. A spouse who stopped working to raise children receives no automatic "homemaker contribution" credit against the other spouse's assets. English law gives this full weight -- a homemaker's contribution is treated as equivalent to the breadwinner's financial contribution. If you are the lower-earning spouse who made career sacrifices, English law is likely more favourable. If you are the higher-earning spouse with assets in your name, UAE law is likely more favourable.</p>
+            <p>UAE law does not compensate career sacrifice. A spouse who stopped working to raise children receives no automatic "homemaker contribution" credit against the other spouse's assets. English law gives this full weight, a homemaker's contribution is treated as equivalent to the breadwinner's financial contribution. If you are the lower-earning spouse who made career sacrifices, English law is likely more favourable. If you are the higher-earning spouse with assets in your name, UAE law is likely more favourable.</p>
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Factor 3: Where the children live and will live</p>
@@ -302,7 +302,7 @@ const jurisdictions = [
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Factor 4: Length of marriage and standard of living</p>
-            <p>Long marriages (over 10 years) produce more equitable outcomes under English law -- the starting point becomes equality of assets. Under UAE law, a 20-year marriage produces the same separate property result as a 2-year marriage. If your marriage is long and you are the lower-earning spouse, English courts may be significantly more favourable.</p>
+            <p>Long marriages (over 10 years) produce more equitable outcomes under English law, the starting point becomes equality of assets. Under UAE law, a 20-year marriage produces the same separate property result as a 2-year marriage. If your marriage is long and you are the lower-earning spouse, English courts may be significantly more favourable.</p>
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Factor 5: Whether there is a prenuptial agreement</p>
@@ -316,26 +316,26 @@ const jurisdictions = [
 
         <h3>Indian nationals divorcing in UAE</h3>
         <p>
-          Indian nationals have some unique considerations. Under the <strong>Hindu Marriage Act 1955</strong>, only Indian courts have exclusive jurisdiction to dissolve Hindu marriages under certain interpretations -- though UAE courts can also dissolve such a marriage when both parties are habitually resident in UAE. A UAE divorce of an Indian Hindu marriage may not be automatically recognised in India, requiring a separate recognition process in Indian courts.
+          Indian nationals have some unique considerations. Under the <strong>Hindu Marriage Act 1955</strong>, only Indian courts have exclusive jurisdiction to dissolve Hindu marriages under certain interpretations, though UAE courts can also dissolve such a marriage when both parties are habitually resident in UAE. A UAE divorce of an Indian Hindu marriage may not be automatically recognised in India, requiring a separate recognition process in Indian courts.
         </p>
         <p>
           Indian Muslim Personal Law applies to Indian Muslims under the Muslim Personal Law (Shariat) Application Act 1937. A UAE talaq under FL 41/2024 may need to be separately registered and recognised in India for it to have full legal effect there.
         </p>
         <p>
-          Indian Christian marriages are governed by the Indian Divorce Act 1869, which was amended significantly in 2001. Indian Christian divorces can be obtained in Indian courts or in UAE courts -- the question is recognition.
+          Indian Christian marriages are governed by the Indian Divorce Act 1869, which was amended significantly in 2001. Indian Christian divorces can be obtained in Indian courts or in UAE courts, the question is recognition.
         </p>
 
         <h3>German nationals: the Zugewinngemeinschaft advantage</h3>
         <p>
-          Germany's <em>Zugewinngemeinschaft</em> (community of accrued gains) is a distinctive system. During the marriage, each spouse keeps their own property. On divorce, each spouse gets half of the <em>increase</em> in the other's wealth during the marriage (the Zugewinn). This is different from community property -- it is not a 50/50 split of everything, but a sharing of growth.
+          Germany's <em>Zugewinngemeinschaft</em> (community of accrued gains) is a distinctive system. During the marriage, each spouse keeps their own property. On divorce, each spouse gets half of the <em>increase</em> in the other's wealth during the marriage (the Zugewinn). This is different from community property, it is not a 50/50 split of everything, but a sharing of growth.
         </p>
         <p>
-          Additionally, Germany has mandatory <em>Versorgungsausgleich</em> -- pension rights equalisation -- which is built into German divorce proceedings automatically. This can be particularly significant where one spouse has substantial German state or occupational pension rights that have accrued during the marriage.
+          Additionally, Germany has mandatory <em>Versorgungsausgleich</em>, pension rights equalisation, which is built into German divorce proceedings automatically. This can be particularly significant where one spouse has substantial German state or occupational pension rights that have accrued during the marriage.
         </p>
 
         <h3>French nationals: the default separate property trap</h3>
         <p>
-          France's default matrimonial regime is <em>separation de biens</em> (separation of goods) for couples married after 1966. Under this regime, each party keeps their own assets -- similar in outcome to UAE law. However, many French couples elect the <em>communaute reduite aux acquets</em> (community of acquests) regime, under which assets acquired during the marriage are shared. If you are French and your matrimonial regime is community of acquests, French proceedings may be substantially more favourable to the lower-earning spouse.
+          France's default matrimonial regime is <em>separation de biens</em> (separation of goods) for couples married after 1966. Under this regime, each party keeps their own assets, similar in outcome to UAE law. However, many French couples elect the <em>communaute reduite aux acquets</em> (community of acquests) regime, under which assets acquired during the marriage are shared. If you are French and your matrimonial regime is community of acquests, French proceedings may be substantially more favourable to the lower-earning spouse.
         </p>
       </section>
 
@@ -345,7 +345,7 @@ const jurisdictions = [
           Once UAE divorce proceedings have been properly commenced and the respondent has been served, applying to transfer those proceedings to a different country is an extremely complex legal manoeuvre. It requires applications in both jurisdictions, evidence of the respective forums' connections to the parties, and significant legal costs in two countries simultaneously.
         </p>
         <p>
-          Attempting to change jurisdiction after proceedings start typically costs AED 50,000-200,000 in legal fees across both jurisdictions, takes 6-18 months of additional litigation, and often fails -- the first court simply refuses to cede jurisdiction.
+          Attempting to change jurisdiction after proceedings start typically costs AED 50,000-200,000 in legal fees across both jurisdictions, takes 6-18 months of additional litigation, and often fails, the first court simply refuses to cede jurisdiction.
         </p>
         <p>
           The correct approach is to make the jurisdiction decision before filing, with full legal advice in all potentially relevant jurisdictions. This costs AED 5,000-15,000 for a multi-jurisdiction strategy session with experienced family lawyers. It is the best money you will spend in the entire divorce process.
@@ -387,7 +387,7 @@ const jurisdictions = [
           </a>
           <a href="/en/divorce-timeline-uae/" class="related-card">
             <strong>Divorce Timeline UAE</strong>
-            <span>How long divorce takes by case type — stage by stage</span>
+            <span>How long divorce takes by case type, stage by stage</span>
           </a>
           <a href="/en/child-custody-uae/" class="related-card">
             <strong>Child Custody UAE</strong>

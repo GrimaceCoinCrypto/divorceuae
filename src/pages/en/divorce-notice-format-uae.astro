@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'What is the format for a divorce notice in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'There is no standardised "divorce notice format" in UAE. What you file in court is called a petition (sahifat da\'wa / صحيفة دعوى), which must be submitted in Arabic through the court\'s official system. For Muslim couples registering a talaq, the form is the court\'s talaq registration document (not a written notice). A private letter to your spouse has no legal status. The court handles notification to the other party -- you do not serve papers directly.',
+        text: 'There is no standardised "divorce notice format" in UAE. What you file in court is called a petition (sahifat da\'wa / صحيفة دعوى), which must be submitted in Arabic through the court\'s official system. For Muslim couples registering a talaq, the form is the court\'s talaq registration document (not a written notice). A private letter to your spouse has no legal status. The court handles notification to the other party, you do not serve papers directly.',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'How do I file for divorce in UAE court?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For Muslim couples: the husband registers a talaq at the Personal Status Court within 15 days of pronouncement (Article 58, Federal Decree-Law No. 41 of 2024), or either party files a petition for judicial divorce (tatliq or khula). For non-Muslim expats under FL 41/2022: file a divorce petition at the Personal Status Court in the emirate where you reside, in person or via the Dubai Courts digital portal. The court then serves the respondent -- you do not serve them yourself.',
+        text: 'For Muslim couples: the husband registers a talaq at the Personal Status Court within 15 days of pronouncement (Article 58, Federal Decree-Law No. 41 of 2024), or either party files a petition for judicial divorce (tatliq or khula). For non-Muslim expats under FL 41/2022: file a divorce petition at the Personal Status Court in the emirate where you reside, in person or via the Dubai Courts digital portal. The court then serves the respondent, you do not serve them yourself.',
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: 'Is there an official divorce form in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, for talaq registration there is an official form provided by the Personal Status Court. For contested or judicial divorce petitions, the court\'s petition template is used -- these are provided by the court or completed by an authorised legal representative. For the non-Muslim digital divorce track, the Dubai Courts portal guides you through the required fields. There is no form you download from a website and fill in independently.',
+        text: 'Yes, for talaq registration there is an official form provided by the Personal Status Court. For contested or judicial divorce petitions, the court\'s petition template is used, these are provided by the court or completed by an authorised legal representative. For the non-Muslim digital divorce track, the Dubai Courts portal guides you through the required fields. There is no form you download from a website and fill in independently.',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'What happens after I file my divorce petition?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'After filing, the court assigns a case number and schedules an initial reconciliation session at the Family Guidance Section. This is mandatory under Article 12 of Federal Decree-Law No. 41 of 2024 -- the court must attempt reconciliation before hearing the divorce petition. If reconciliation fails, the petition proceeds to a hearing. The respondent is notified by the court (not by you) and given an opportunity to respond. Timelines vary: uncontested cases resolve in 2-4 months; contested matters take longer.',
+        text: 'After filing, the court assigns a case number and schedules an initial reconciliation session at the Family Guidance Section. This is mandatory under Article 12 of Federal Decree-Law No. 41 of 2024, the court must attempt reconciliation before hearing the divorce petition. If reconciliation fails, the petition proceeds to a hearing. The respondent is notified by the court (not by you) and given an opportunity to respond. Timelines vary: uncontested cases resolve in 2-4 months; contested matters take longer.',
       },
     },
   ],
@@ -96,15 +96,15 @@ const petitionContents = [
   { no: '4', item: 'Current residential addresses', detail: 'Both parties\' current addresses in UAE or abroad.' },
   { no: '5', item: 'Children\'s details', detail: 'Full name, date of birth, nationality, and passport number of each child.' },
   { no: '6', item: 'Brief summary of property and assets', detail: 'Only required where financial claims are included in the petition.' },
-  { no: '7', item: 'Relief sought', detail: 'Divorce decree, custody arrangement, maintenance, mahr, property orders -- specify each.' },
+  { no: '7', item: 'Relief sought', detail: 'Divorce decree, custody arrangement, maintenance, mahr, property orders, specify each.' },
   { no: '8', item: 'Legal basis for divorce', detail: 'Talaq (husband\'s pronouncement), khula (wife\'s redemption divorce), no-fault (non-Muslim track), or tatliq (judicial divorce).' },
   { no: '9', item: 'Signature of petitioner or legal representative', detail: 'Personal signature or licensed lawyer\'s signature. Power of attorney if through a representative.' },
 ];
 
 const faqItems = [
   {
-    question: 'There is no "divorce notice form" to download -- what do I actually need?',
-    answer: 'You need a court petition (sahifat da\'wa). This is drafted in Arabic by you, your lawyer, or a legal typist (muharrir) at the court. It is not a form you fill in at home -- it must meet the court\'s formal requirements for structure and content. Most people use a licensed UAE family lawyer or a court-registered typing centre to prepare it. See our <a href="/en/divorce-timeline-uae/">UAE divorce timeline guide</a> for what happens after filing.',
+    question: 'There is no "divorce notice form" to download, what do I actually need?',
+    answer: 'You need a court petition (sahifat da\'wa). This is drafted in Arabic by you, your lawyer, or a legal typist (muharrir) at the court. It is not a form you fill in at home, it must meet the court\'s formal requirements for structure and content. Most people use a licensed UAE family lawyer or a court-registered typing centre to prepare it. See our <a href="/en/divorce-timeline-uae/">UAE divorce timeline guide</a> for what happens after filing.',
   },
   {
     question: 'I am a husband who pronounced talaq verbally. What do I do now?',
@@ -112,7 +112,7 @@ const faqItems = [
   },
   {
     question: 'My wife wants a divorce but I do not agree. What is her legal route?',
-    answer: 'There are two main routes. Khula: she returns the mahr and asks the court to dissolve the marriage. Under Article 71 of Federal Decree-Law No. 41 of 2024, the court can grant khula over the husband\'s objection if the marriage has irretrievably broken down. Tatliq (judicial divorce): she applies to the court citing specific grounds -- harm, absence, failure to maintain, imprisonment. The court investigates and can order divorce if the grounds are proven. Neither route requires his agreement; both require a court petition.',
+    answer: 'There are two main routes. Khula: she returns the mahr and asks the court to dissolve the marriage. Under Article 71 of Federal Decree-Law No. 41 of 2024, the court can grant khula over the husband\'s objection if the marriage has irretrievably broken down. Tatliq (judicial divorce): she applies to the court citing specific grounds, harm, absence, failure to maintain, imprisonment. The court investigates and can order divorce if the grounds are proven. Neither route requires his agreement; both require a court petition.',
   },
   {
     question: 'Do I need a lawyer to file for divorce in UAE?',
@@ -153,7 +153,7 @@ const faqItems = [
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Court Filing Guide -- UAE 2025</p>
+      <p class="hero-tag">Court Filing Guide, UAE 2025</p>
       <h1>Divorce Notice Format UAE: What You Actually File in Court</h1>
       <p class="hero-desc">
         People search for "divorce notice format UAE" expecting a letter they can write to their spouse or a downloadable PDF. Neither exists. What UAE courts require is a formal Arabic-language petition, filed through the court system, with the court handling notification to the other party. This guide explains what you actually file, what it must contain, how much it costs, and what happens the moment you submit it.
@@ -181,10 +181,10 @@ const faqItems = [
       <section class="content-section">
         <h2>Why There Is No "Divorce Notice Format"</h2>
         <p>
-          In some legal systems -- notably England, where divorce proceedings historically involved a formal "petition" document served directly on the respondent -- there is a recognisable "divorce notice" with a specific format. This concept does not exist in UAE family law in the same way.
+          In some legal systems, notably England, where divorce proceedings historically involved a formal "petition" document served directly on the respondent, there is a recognisable "divorce notice" with a specific format. This concept does not exist in UAE family law in the same way.
         </p>
         <p>
-          UAE Personal Status Courts are inquisitorial rather than adversarial in their approach to family matters. When you want to divorce in UAE, you do not write a letter to your spouse and "serve" it on them. You file a petition with the court, and the court -- not you -- notifies the other party. This is a fundamental structural difference that catches many expats off guard.
+          UAE Personal Status Courts are inquisitorial rather than adversarial in their approach to family matters. When you want to divorce in UAE, you do not write a letter to your spouse and "serve" it on them. You file a petition with the court, and the court, not you, notifies the other party. This is a fundamental structural difference that catches many expats off guard.
         </p>
         <p>
           The document you file is called a <strong>sahifat da'wa (صحيفة دعوى)</strong>, which translates literally as "case sheet" or "statement of claim." It is a formal Arabic-language legal document submitted to the Personal Status Court registry. It is prepared either by a licensed UAE family lawyer, a court-registered legal typist (muharrir), or in some cases by the petitioner directly at the court's self-service centre.
@@ -192,7 +192,7 @@ const faqItems = [
 
         <div class="info-box info-box--info">
           <h3>Talaq registration: a special case</h3>
-          <p>For Muslim couples where the husband has already pronounced talaq verbally, the process is slightly different. The husband does not file a "petition" -- instead, he registers the talaq at the Personal Status Court using the court's official talaq registration form. Under Article 58 of Federal Decree-Law No. 41 of 2024, he must do this within 15 days of pronouncement. The court then notifies the wife and records the divorce. This is a registration process, not a contested petition. The wife receives notification from the court.</p>
+          <p>For Muslim couples where the husband has already pronounced talaq verbally, the process is slightly different. The husband does not file a "petition", instead, he registers the talaq at the Personal Status Court using the court's official talaq registration form. Under Article 58 of Federal Decree-Law No. 41 of 2024, he must do this within 15 days of pronouncement. The court then notifies the wife and records the divorce. This is a registration process, not a contested petition. The wife receives notification from the court.</p>
         </div>
       </section>
 
@@ -212,37 +212,37 @@ const faqItems = [
             </thead>
             <tbody>
               <tr>
-                <td class="td-bold">Muslim -- husband pronouncing talaq</td>
+                <td class="td-bold">Muslim, husband pronouncing talaq</td>
                 <td>Talaq registration form at court</td>
                 <td>Art. 58, FL 41/2024</td>
                 <td>In person at Personal Status Court</td>
               </tr>
               <tr class="row-alt">
-                <td class="td-bold">Muslim -- wife seeking khula</td>
+                <td class="td-bold">Muslim, wife seeking khula</td>
                 <td>Sahifat da'wa (khula petition)</td>
                 <td>Art. 71, FL 41/2024</td>
                 <td>In person at Personal Status Court</td>
               </tr>
               <tr>
-                <td class="td-bold">Muslim -- judicial divorce (tatliq)</td>
+                <td class="td-bold">Muslim, judicial divorce (tatliq)</td>
                 <td>Sahifat da'wa citing specific grounds</td>
                 <td>Arts. 74-82, FL 41/2024</td>
                 <td>In person, typically via lawyer</td>
               </tr>
               <tr class="row-alt">
-                <td class="td-bold">Non-Muslim -- mutual consent</td>
+                <td class="td-bold">Non-Muslim, mutual consent</td>
                 <td>Joint no-fault petition</td>
                 <td>FL 41/2022</td>
                 <td>In person or online (Dubai Courts e-divorce)</td>
               </tr>
               <tr>
-                <td class="td-bold">Non-Muslim -- contested</td>
+                <td class="td-bold">Non-Muslim, contested</td>
                 <td>Sahifat da'wa with grounds stated</td>
                 <td>FL 41/2022</td>
                 <td>In person, via lawyer or self-service</td>
               </tr>
               <tr class="row-alt">
-                <td class="td-bold">Non-Muslim -- electing home country law</td>
+                <td class="td-bold">Non-Muslim, electing home country law</td>
                 <td>Petition citing home country law election</td>
                 <td>Art. 13 Civil Code + FL 41/2022</td>
                 <td>In person, requires lawyer experienced in PIL</td>
@@ -347,7 +347,7 @@ const faqItems = [
         <p class="note-text">Fees are approximate based on Dubai Courts tariff as of 2025. Abu Dhabi and northern emirate courts have separate tariff schedules. Legal representative fees are entirely separate from court fees.</p>
 
         <p>
-          Note that the 2% financial claim fee is calculated on the value of what you are claiming -- not on what you receive. If you claim AED 200,000 in mahr and the court awards AED 100,000, you still pay 2% of the claimed AED 200,000. This fee structure encourages realistic claims rather than speculative over-claiming.
+          Note that the 2% financial claim fee is calculated on the value of what you are claiming, not on what you receive. If you claim AED 200,000 in mahr and the court awards AED 100,000, you still pay 2% of the claimed AED 200,000. This fee structure encourages realistic claims rather than speculative over-claiming.
         </p>
       </section>
 
@@ -355,7 +355,7 @@ const faqItems = [
       <section class="content-section">
         <h2>How the Court Notifies Your Spouse</h2>
         <p>
-          Once your petition is filed and the filing fee is paid, the court registry assigns a case number and schedules the initial reconciliation session at the Family Guidance Section. The court handles notification of the respondent (your spouse) -- you do not hand papers to your spouse yourself.
+          Once your petition is filed and the filing fee is paid, the court registry assigns a case number and schedules the initial reconciliation session at the Family Guidance Section. The court handles notification of the respondent (your spouse), you do not hand papers to your spouse yourself.
         </p>
 
         <h3>Standard notification</h3>
@@ -365,7 +365,7 @@ const faqItems = [
 
         <h3>Service on respondents abroad</h3>
         <p>
-          If your spouse is outside the UAE when you file, the court can serve notice through diplomatic channels (via the UAE embassy in the country where the respondent is located) or through public notice (newspaper publication) if the respondent's address is unknown. Service abroad adds significant time to proceedings -- typically 2-4 months for diplomatic service.
+          If your spouse is outside the UAE when you file, the court can serve notice through diplomatic channels (via the UAE embassy in the country where the respondent is located) or through public notice (newspaper publication) if the respondent's address is unknown. Service abroad adds significant time to proceedings, typically 2-4 months for diplomatic service.
         </p>
         <p>
           If you know your spouse is deliberately staying outside the UAE to evade proceedings, a lawyer can advise on applications to the court to proceed with alternative service. Courts have authority under the Civil Procedure Code to permit alternative service where standard service is impossible or deliberately frustrated.
@@ -373,10 +373,10 @@ const faqItems = [
 
         <h3>Private notice before filing: common but legally meaningless</h3>
         <p>
-          Many people want to notify their spouse informally before filing -- either out of courtesy, to attempt a final conversation, or to give the other party time to prepare. A private letter, WhatsApp message, or email saying "I intend to file for divorce" is not a legal document. It has no effect on proceedings, does not start any timelines, and does not constitute service. Courts treat proceedings as beginning from the date of filing only.
+          Many people want to notify their spouse informally before filing, either out of courtesy, to attempt a final conversation, or to give the other party time to prepare. A private letter, WhatsApp message, or email saying "I intend to file for divorce" is not a legal document. It has no effect on proceedings, does not start any timelines, and does not constitute service. Courts treat proceedings as beginning from the date of filing only.
         </p>
         <p>
-          There is one practical reason a private notification letter can be useful: if you are concerned about your spouse moving assets before you file, the letter gives you a timing reference point. However, if asset protection is a concern, the more effective step is to file a precautionary attachment application alongside the petition -- not to send a letter first. See our guide on <a href="/en/property-division-divorce-uae/">property division in UAE divorce</a> for precautionary attachment procedure.
+          There is one practical reason a private notification letter can be useful: if you are concerned about your spouse moving assets before you file, the letter gives you a timing reference point. However, if asset protection is a concern, the more effective step is to file a precautionary attachment application alongside the petition, not to send a letter first. See our guide on <a href="/en/property-division-divorce-uae/">property division in UAE divorce</a> for precautionary attachment procedure.
         </p>
       </section>
 
@@ -431,17 +431,17 @@ const faqItems = [
 
         <h3>Who can use e-divorce</h3>
         <p>
-          Both parties must: be non-Muslim, both agree to the divorce (mutual consent only), both be reachable digitally, and both be UAE residents or have a UAE Emirates ID. If either party is absent from the UAE, the process can still proceed digitally -- this is one of its key advantages over in-person proceedings.
+          Both parties must: be non-Muslim, both agree to the divorce (mutual consent only), both be reachable digitally, and both be UAE residents or have a UAE Emirates ID. If either party is absent from the UAE, the process can still proceed digitally, this is one of its key advantages over in-person proceedings.
         </p>
 
         <h3>What the digital process covers</h3>
         <p>
-          The e-divorce system handles: submission of the joint divorce petition, payment of court fees online, the mandatory reconciliation session (conducted virtually), and issuance of the digital divorce decree. If the couple has children or significant financial matters to resolve, these ancillary matters may require additional steps -- the e-divorce system handles the divorce itself most cleanly for couples without contested ancillary claims.
+          The e-divorce system handles: submission of the joint divorce petition, payment of court fees online, the mandatory reconciliation session (conducted virtually), and issuance of the digital divorce decree. If the couple has children or significant financial matters to resolve, these ancillary matters may require additional steps, the e-divorce system handles the divorce itself most cleanly for couples without contested ancillary claims.
         </p>
 
         <h3>Digital divorce decree</h3>
         <p>
-          The divorce decree issued through the e-divorce system is a legally valid UAE court judgment. It carries the same legal weight as an in-person judgment. For subsequent attestation (MOFAIC) and use abroad, the digital decree can be certified through the court's certification portal. This is a genuine legal innovation -- the UAE was among the first jurisdictions globally to implement a fully digital civil divorce track.
+          The divorce decree issued through the e-divorce system is a legally valid UAE court judgment. It carries the same legal weight as an in-person judgment. For subsequent attestation (MOFAIC) and use abroad, the digital decree can be certified through the court's certification portal. This is a genuine legal innovation, the UAE was among the first jurisdictions globally to implement a fully digital civil divorce track.
         </p>
 
         <div class="info-box info-box--info">

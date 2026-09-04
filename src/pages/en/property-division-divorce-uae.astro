@@ -43,7 +43,7 @@ const faqSchema = {
       name: 'What is the DLD fee to transfer property after divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A post-divorce transfer to an ex-spouse costs 4% of the property value plus AED 540 in DLD fees, plus title deed issuance (AED 250) and trustee office fees (AED 2,000-4,000 + 5% VAT). On a AED 1.5 million apartment that is approximately AED 66,000 in transfer fees alone. If both parties transfer the property while still legally married as a gift transfer, the rate drops to 0.125% plus AED 530 -- around AED 2,400 on the same property.',
+        text: 'A post-divorce transfer to an ex-spouse costs 4% of the property value plus AED 540 in DLD fees, plus title deed issuance (AED 250) and trustee office fees (AED 2,000-4,000 + 5% VAT). On a AED 1.5 million apartment that is approximately AED 66,000 in transfer fees alone. If both parties transfer the property while still legally married as a gift transfer, the rate drops to 0.125% plus AED 530, around AED 2,400 on the same property.',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'Is end-of-service gratuity (EOSB) divided in a UAE divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'EOSB belongs to the earning spouse and is not automatically divided. UAE courts treat it as that spouse\'s personal entitlement under labour law. However, its existence and value are relevant to maintenance calculations -- a court determining alimony or child support will consider the earning spouse\'s EOSB as part of their overall financial picture. Government (GPSSA) pensions are completely inalienable and cannot be attached or divided under Federal Decree-Law No. 57 of 2023.',
+        text: 'EOSB belongs to the earning spouse and is not automatically divided. UAE courts treat it as that spouse\'s personal entitlement under labour law. However, its existence and value are relevant to maintenance calculations, a court determining alimony or child support will consider the earning spouse\'s EOSB as part of their overall financial picture. Government (GPSSA) pensions are completely inalienable and cannot be attached or divided under Federal Decree-Law No. 57 of 2023.',
       },
     },
     {
@@ -99,7 +99,7 @@ const faqSchema = {
       name: 'Can non-Muslim expats use their home country law for property division in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Article 13 of the UAE Civil Code allows non-citizen residents to request that their home country law applies to personal status matters including divorce and property division. Under Federal Decree-Law No. 41 of 2022 (the non-Muslim civil family law), non-Muslim expats have an explicit right to elect their home law. English law (needs-based), French law (community of acquests), or Indian Hindu personal law -- all can apply if correctly elected at filing through a UAE court or the DIFC Courts.',
+        text: 'Yes. Article 13 of the UAE Civil Code allows non-citizen residents to request that their home country law applies to personal status matters including divorce and property division. Under Federal Decree-Law No. 41 of 2022 (the non-Muslim civil family law), non-Muslim expats have an explicit right to elect their home law. English law (needs-based), French law (community of acquests), or Indian Hindu personal law, all can apply if correctly elected at filing through a UAE court or the DIFC Courts.',
       },
     },
   ],
@@ -120,16 +120,16 @@ const dldFees = [
 const assetTypes = [
   { asset: 'Real estate (Dubai property)', rule: 'Title deed holder keeps it', detail: 'DLD registration is conclusive. Jointly registered property split by proven contribution or court-ordered sale.', flag: 'neutral' },
   { asset: 'Bank accounts', rule: 'Account holder keeps it', detail: 'Joint accounts split by proven contribution. No automatic freeze on filing divorce.', flag: 'neutral' },
-  { asset: 'Mahr (dower)', rule: 'Wife\'s right -- always', detail: 'Prompt mahr already due. Deferred mahr falls due immediately on divorce. Enforceable as a debt.', flag: 'wife' },
+  { asset: 'Mahr (dower)', rule: 'Wife\'s right, always', detail: 'Prompt mahr already due. Deferred mahr falls due immediately on divorce. Enforceable as a debt.', flag: 'wife' },
   { asset: 'Gifts from husband', rule: 'Wife keeps them', detail: 'Hibah (gifts) made to the wife during marriage cannot be reclaimed on divorce.', flag: 'wife' },
   { asset: 'Business / company shares', rule: 'Registered owner keeps it', detail: 'Contribution-based claim possible with documented proof (capital invested, director roles, salary routed to business).', flag: 'neutral' },
   { asset: 'Vehicles', rule: 'Registered owner keeps it', detail: 'RTA/traffic authority registration is decisive. Courts rarely transfer without joint registration.', flag: 'neutral' },
   { asset: 'Gold jewellery given by husband', rule: 'Wife keeps it', detail: 'Part of mahr or hibah. Husband cannot reclaim on divorce without proof it was a loan.', flag: 'wife' },
   { asset: 'End-of-service gratuity (EOSB)', rule: 'Earning spouse keeps it', detail: 'Not divisible. Relevant only to maintenance calculations.', flag: 'neutral' },
   { asset: 'DEWS (DIFC savings scheme)', rule: 'Employee\'s property', detail: 'Held independently by trustee (Equiom). Not automatically divisible, but value is disclosed as part of financial schedule.', flag: 'neutral' },
-  { asset: 'Government pension (GPSSA)', rule: 'Inalienable -- not divisible', detail: 'Federal Decree-Law No. 57 of 2023. Cannot be attached, split, or offset.', flag: 'neutral' },
+  { asset: 'Government pension (GPSSA)', rule: 'Inalienable, not divisible', detail: 'Federal Decree-Law No. 57 of 2023. Cannot be attached, split, or offset.', flag: 'neutral' },
   { asset: 'Cryptocurrency / virtual assets', rule: 'Holder keeps it', detail: 'Treated as property under DIFC Digital Assets Law No. 2 of 2024. Disclosure required. Tracing possible via exchange KYC records.', flag: 'neutral' },
-  { asset: 'Inheritance received during marriage', rule: 'Recipient spouse keeps it', detail: 'Personal property -- not a marital asset under UAE law.', flag: 'neutral' },
+  { asset: 'Inheritance received during marriage', rule: 'Recipient spouse keeps it', detail: 'Personal property, not a marital asset under UAE law.', flag: 'neutral' },
 ];
 
 const faqItems = [
@@ -143,11 +143,11 @@ const faqItems = [
   },
   {
     question: 'Can the husband empty our joint bank account before I file?',
-    answer: 'Technically yes -- if it is in his name or a joint account he controls. Courts can reverse withdrawals after the divorce petition is filed, but recovering funds spent before filing is very difficult. This is the most common financial loss in UAE divorces. Act before you file, not after: consult a lawyer first to understand what you can legitimately secure.',
+    answer: 'Technically yes, if it is in his name or a joint account he controls. Courts can reverse withdrawals after the divorce petition is filed, but recovering funds spent before filing is very difficult. This is the most common financial loss in UAE divorces. Act before you file, not after: consult a lawyer first to understand what you can legitimately secure.',
   },
   {
     question: 'What if the property is in a free zone or offshore company?',
-    answer: 'Dubai property held through a BVI or Cayman company sits outside the DLD\'s direct jurisdiction. The divorce court cannot simply transfer the shares. You would need to file a separate civil or commercial claim against the company or its shareholders. A precautionary attachment (Hajz Ihtiyati) can freeze the shares pending the claim, filed at the Court of Urgent Matters. Enforcement against BVI corporate structures requires parallel proceedings -- a UAE lawyer with cross-border experience is essential.',
+    answer: 'Dubai property held through a BVI or Cayman company sits outside the DLD\'s direct jurisdiction. The divorce court cannot simply transfer the shares. You would need to file a separate civil or commercial claim against the company or its shareholders. A precautionary attachment (Hajz Ihtiyati) can freeze the shares pending the claim, filed at the Court of Urgent Matters. Enforcement against BVI corporate structures requires parallel proceedings, a UAE lawyer with cross-border experience is essential.',
   },
   {
     question: 'How long does a DLD property transfer after divorce actually take?',
@@ -155,11 +155,11 @@ const faqItems = [
   },
   {
     question: 'Is my husband\'s DEWS or end-of-service gratuity available to me in the divorce?',
-    answer: 'EOSB and DEWS belong to the earning spouse and are not automatically divided. However, their existence and approximate value must be disclosed in financial schedules if ordered by the court. Courts use this information when setting alimony, child support, or compensatory payments -- so while you cannot directly claim his DEWS balance, a larger DEWS holding may result in a more favourable maintenance order for you.',
+    answer: 'EOSB and DEWS belong to the earning spouse and are not automatically divided. However, their existence and approximate value must be disclosed in financial schedules if ordered by the court. Courts use this information when setting alimony, child support, or compensatory payments, so while you cannot directly claim his DEWS balance, a larger DEWS holding may result in a more favourable maintenance order for you.',
   },
   {
     question: 'We have a joint mortgage. What happens?',
-    answer: 'Both spouses remain legally liable to the bank regardless of any divorce agreement between yourselves. The only way to remove a name from a UAE mortgage is to refinance (the keeping spouse qualifies alone for a new mortgage) or to sell the property and repay the loan. A court cannot force the bank to restructure the debt -- that is a contractual matter with the lender. Get the mortgage position clear early, as it is often the most complex part of the settlement.',
+    answer: 'Both spouses remain legally liable to the bank regardless of any divorce agreement between yourselves. The only way to remove a name from a UAE mortgage is to refinance (the keeping spouse qualifies alone for a new mortgage) or to sell the property and repay the loan. A court cannot force the bank to restructure the debt, that is a contractual matter with the lender. Get the mortgage position clear early, as it is often the most complex part of the settlement.',
   },
   {
     question: 'My foreign divorce ordered property division. Does that apply in Dubai?',
@@ -184,10 +184,10 @@ const faqItems = [
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Asset Division Guide -- UAE 2025</p>
+      <p class="hero-tag">Asset Division Guide, UAE 2025</p>
       <h1>Property Division in UAE Divorce: What You Actually Get</h1>
       <p class="hero-desc">
-        You own a AED 1.5 million apartment in Dubai. Your spouse's name is on the title deed too -- or maybe only yours is, but they paid half the mortgage. Now you are getting divorced and you need to know, precisely, what happens. This guide gives you the law, the DLD fee numbers, and the scenarios that other resources skip.
+        You own a AED 1.5 million apartment in Dubai. Your spouse's name is on the title deed too, or maybe only yours is, but they paid half the mortgage. Now you are getting divorced and you need to know, precisely, what happens. This guide gives you the law, the DLD fee numbers, and the scenarios that other resources skip.
       </p>
       <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
     </div>
@@ -201,11 +201,11 @@ const faqItems = [
         <h2>Six things to know before you read further</h2>
         <ul class="key-facts">
           <li><strong>UAE has no community property.</strong> Each spouse keeps assets registered in their name. No automatic 50/50 split.</li>
-          <li><strong>Title deed is decisive.</strong> The DLD register determines who owns Dubai real estate -- not who paid the mortgage.</li>
+          <li><strong>Title deed is decisive.</strong> The DLD register determines who owns Dubai real estate, not who paid the mortgage.</li>
           <li><strong>Transferring property before the divorce finalises costs 0.125% DLD fee.</strong> Post-divorce, it costs 4%. On a AED 1.5M apartment that is a AED 56,000 difference.</li>
           <li><strong>Courts cannot force a bank to restructure a mortgage.</strong> Refinancing is the only way to remove a name from a joint mortgage.</li>
           <li><strong>A foreign divorce does not automatically transfer Dubai property.</strong> Article 18 of the Civil Code: UAE assets are governed by UAE law regardless of where you divorced.</li>
-          <li><strong>Contribution claims are possible but require documentary proof.</strong> If your money bought property in your spouse's name, you can claim -- but bank records are essential.</li>
+          <li><strong>Contribution claims are possible but require documentary proof.</strong> If your money bought property in your spouse's name, you can claim, but bank records are essential.</li>
         </ul>
       </div>
 
@@ -216,14 +216,14 @@ const faqItems = [
           Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the Personal Status Law effective 15 April 2025, which replaced Federal Law No. 28 of 2005), each spouse maintains an independent financial personality throughout the marriage. Article 51 of that law states that assets acquired by one spouse individually remain that spouse's separate property. There is no moment at which separate property becomes "marital property" simply because time passes.
         </p>
         <p>
-          This is fundamentally different from England, France, Germany, or most US states, where marriage creates some form of shared financial estate. In UAE law, the marriage certificate does not convert your individually-owned assets into jointly-owned assets. The only automatic financial consequence of marriage under UAE Personal Status Law is the obligation of the husband to pay mahr, provide maintenance, and house the family -- not to share accumulated wealth.
+          This is fundamentally different from England, France, Germany, or most US states, where marriage creates some form of shared financial estate. In UAE law, the marriage certificate does not convert your individually-owned assets into jointly-owned assets. The only automatic financial consequence of marriage under UAE Personal Status Law is the obligation of the husband to pay mahr, provide maintenance, and house the family, not to share accumulated wealth.
         </p>
         <p>
-          What does this mean practically? If your spouse bought a Dubai apartment five years ago for AED 1.5 million, took out a joint mortgage, but registered the title deed solely in their own name -- the title deed controls. You do not automatically own any share of that apartment on divorce. You would need to file a separate contribution claim proving your financial involvement in the purchase.
+          What does this mean practically? If your spouse bought a Dubai apartment five years ago for AED 1.5 million, took out a joint mortgage, but registered the title deed solely in their own name, the title deed controls. You do not automatically own any share of that apartment on divorce. You would need to file a separate contribution claim proving your financial involvement in the purchase.
         </p>
         <div class="info-box info-box--warning">
           <h3>The practical gap: contribution without title</h3>
-          <p>The most common financial dispute in UAE expat divorces is exactly this: one spouse contributed money (paid the mortgage, funded the deposit, sent salary to a joint account used for repayments) but the other spouse's name is the only one on the title deed. UAE law gives you a claim in this situation -- but it is not automatic and it requires evidence. Start gathering bank records and transfer histories now, before they are needed.</p>
+          <p>The most common financial dispute in UAE expat divorces is exactly this: one spouse contributed money (paid the mortgage, funded the deposit, sent salary to a joint account used for repayments) but the other spouse's name is the only one on the title deed. UAE law gives you a claim in this situation, but it is not automatic and it requires evidence. Start gathering bank records and transfer histories now, before they are needed.</p>
         </div>
       </section>
 
@@ -276,7 +276,7 @@ const faqItems = [
                 <td>Home law governs most assets. UAE law still governs Dubai property transfer mechanism.</td>
               </tr>
               <tr>
-                <td class="td-bold">Either -- divorcing abroad with UAE assets</td>
+                <td class="td-bold">Either, divorcing abroad with UAE assets</td>
                 <td>Art. 18 Civil Code</td>
                 <td>Foreign decree does not transfer Dubai property. Separate UAE step required.</td>
               </tr>
@@ -316,17 +316,17 @@ const faqItems = [
           <a href="/en/divorce-end-of-service-gratuity-uae/">EOSB and divorce in UAE</a> covers the Labour Law calculation, DEWS trustee structure, and how courts use gratuity when setting maintenance awards. In summary: both belong to the earning spouse and are not automatically divisible. EOSB is paid under Federal Decree-Law No. 33 of 2021 (the Labour Law) to the employee alone. DEWS contributions (minimum 5.83% of salary for under-5-year employees, 8.33% for longer service) are held by an independent trustee (currently Equiom) but vest entirely in the employee. For a comprehensive breakdown of how all pension and gratuity assets interact with divorce proceedings, see our guide on <a href="/en/divorce-pension-gratuity-uae/">pension and gratuity in UAE divorce</a>.
         </p>
         <p>
-          What courts do with EOSB and DEWS is use them to calibrate maintenance awards. A husband sitting on AED 150,000 in accumulated EOSB has financial resources that a court will factor into child support and alimony calculations. The amount itself is not split -- but its existence makes the maintenance order larger.
+          What courts do with EOSB and DEWS is use them to calibrate maintenance awards. A husband sitting on AED 150,000 in accumulated EOSB has financial resources that a court will factor into child support and alimony calculations. The amount itself is not split, but its existence makes the maintenance order larger.
         </p>
 
         <h3>Joint bank accounts and liquid assets</h3>
         <p>
-          Bank accounts often receive less attention than property during divorce planning, but they carry equal risk. Our guide on <a href="/en/divorce-joint-account-uae/">joint bank accounts in UAE divorce</a> explains why there is no automatic freeze on filing, how to apply for a court precautionary attachment within 48 hours, and what banks are legally required to do. For the closely related question of what happens when jointly-owned property must be sold — including forced partition, DLD freeze orders, and the pre-divorce transfer strategy — see our dedicated guide on <a href="/en/divorce-property-sale-uae/">selling property during UAE divorce</a>.
+          Bank accounts often receive less attention than property during divorce planning, but they carry equal risk. Our guide on <a href="/en/divorce-joint-account-uae/">joint bank accounts in UAE divorce</a> explains why there is no automatic freeze on filing, how to apply for a court precautionary attachment within 48 hours, and what banks are legally required to do. For the closely related question of what happens when jointly-owned property must be sold, including forced partition, DLD freeze orders, and the pre-divorce transfer strategy, see our dedicated guide on <a href="/en/divorce-property-sale-uae/">selling property during UAE divorce</a>.
         </p>
 
         <h3>Cryptocurrency</h3>
         <p>
-          Virtual assets are increasingly common in UAE expat portfolios. The DIFC Court of Appeal has confirmed that digital assets are legal property under DIFC law (Digital Assets Law No. 2 of 2024). On mainland UAE, the same principle applies by analogy -- crypto is property, it must be disclosed in financial schedules if the court orders full disclosure, and its value is subject to precautionary attachment if there is a risk of dissipation. Exchange KYC records (Binance, Bybit, OKX all operate UAE-regulated entities) provide a paper trail for tracing undisclosed crypto holdings.
+          Virtual assets are increasingly common in UAE expat portfolios. The DIFC Court of Appeal has confirmed that digital assets are legal property under DIFC law (Digital Assets Law No. 2 of 2024). On mainland UAE, the same principle applies by analogy, crypto is property, it must be disclosed in financial schedules if the court orders full disclosure, and its value is subject to precautionary attachment if there is a risk of dissipation. Exchange KYC records (Binance, Bybit, OKX all operate UAE-regulated entities) provide a paper trail for tracing undisclosed crypto holdings.
         </p>
       </section>
 
@@ -384,7 +384,7 @@ const faqItems = [
 
         <h3>When pre-divorce transfer is not possible</h3>
         <p>
-          The spousal gift rate only works while you are still legally married. If the property carries a mortgage, you also need the lender's consent before any title transfer. Most UAE banks will not allow a title change on a mortgaged property without formal credit approval of the receiving spouse. In practice, if you want to transfer a mortgaged property to your spouse at the gift rate, the receiving spouse may need to refinance into their sole name simultaneously -- which involves a full mortgage application.
+          The spousal gift rate only works while you are still legally married. If the property carries a mortgage, you also need the lender's consent before any title transfer. Most UAE banks will not allow a title change on a mortgaged property without formal credit approval of the receiving spouse. In practice, if you want to transfer a mortgaged property to your spouse at the gift rate, the receiving spouse may need to refinance into their sole name simultaneously, which involves a full mortgage application.
         </p>
       </section>
 
@@ -407,7 +407,7 @@ const faqItems = [
             <div class="step-num">02</div>
             <div class="step-body">
               <h3>Get the developer No Objection Certificate (NOC)</h3>
-              <p>Required for any property within a development (Emaar, DAMAC, Nakheel etc). The NOC confirms all service charges are paid and the developer has no objection to the transfer. Allow 1-2 weeks. Outstanding service charge arrears will block this step entirely -- clear them first.</p>
+              <p>Required for any property within a development (Emaar, DAMAC, Nakheel etc). The NOC confirms all service charges are paid and the developer has no objection to the transfer. Allow 1-2 weeks. Outstanding service charge arrears will block this step entirely, clear them first.</p>
             </div>
           </div>
           <div class="step-card">
@@ -438,7 +438,7 @@ const faqItems = [
       <section class="content-section">
         <h2>What If Your Spouse Refuses?</h2>
         <p>
-          One of the most practically useful things a UAE lawyer will tell you that websites skip: courts order property transfers, but it is the Execution Court -- not the family court -- that actually forces compliance. Here is how that works.
+          One of the most practically useful things a UAE lawyer will tell you that websites skip: courts order property transfers, but it is the Execution Court, not the family court, that actually forces compliance. Here is how that works.
         </p>
 
         <h3>Step 1: Obtain a judgment with the executory formula</h3>
@@ -463,14 +463,14 @@ const faqItems = [
 
         <h3>Contribution claims: a different route</h3>
         <p>
-          If the dispute is not about enforcing a court order but about proving you have a claim in the first place -- because you funded a property in your spouse's name -- you need a contribution claim. Under <strong>Article 51 of Federal Decree-Law No. 41 of 2024</strong>, a spouse who contributed financially (or otherwise) to an increase in the other's wealth has a claim against the contributed share. The unjust enrichment doctrine in <strong>Article 318 of the Civil Code</strong> supports the same outcome: the spouse holding the property cannot retain your contribution without legal cause.
+          If the dispute is not about enforcing a court order but about proving you have a claim in the first place, because you funded a property in your spouse's name, you need a contribution claim. Under <strong>Article 51 of Federal Decree-Law No. 41 of 2024</strong>, a spouse who contributed financially (or otherwise) to an increase in the other's wealth has a claim against the contributed share. The unjust enrichment doctrine in <strong>Article 318 of the Civil Code</strong> supports the same outcome: the spouse holding the property cannot retain your contribution without legal cause.
         </p>
         <p>
           Contribution claims require documentary evidence: bank transfers showing your money went towards the deposit or mortgage payments, loan agreements between spouses, or written communications acknowledging your share. Without documentary proof, these claims are exceptionally difficult to win. UAE courts do not recognise verbal agreements about property ownership.
         </p>
         <div class="info-box info-box--info">
           <h3>Start gathering evidence now</h3>
-          <p>Pull your bank statements for the period spanning the deposit payment and the first 12 months of mortgage repayments. Screenshot any WhatsApp or email conversations where property ownership was discussed. Bank transfer records showing your salary deposited into an account used for mortgage payments are the most compelling evidence. Do this before you serve any divorce papers -- once proceedings start, your spouse may become less cooperative.</p>
+          <p>Pull your bank statements for the period spanning the deposit payment and the first 12 months of mortgage repayments. Screenshot any WhatsApp or email conversations where property ownership was discussed. Bank transfer records showing your salary deposited into an account used for mortgage payments are the most compelling evidence. Do this before you serve any divorce papers, once proceedings start, your spouse may become less cooperative.</p>
         </div>
       </section>
 
@@ -478,17 +478,17 @@ const faqItems = [
       <section class="content-section">
         <h2>Mortgaged Property: Your Options</h2>
         <p>
-          Most Dubai property is mortgaged. The mortgage sits between you and a clean separation -- because the bank does not care about your divorce. Both borrowers remain liable until the mortgage is discharged. Here are the realistic options.
+          Most Dubai property is mortgaged. The mortgage sits between you and a clean separation, because the bank does not care about your divorce. Both borrowers remain liable until the mortgage is discharged. Here are the realistic options.
         </p>
 
         <div class="scenario-list">
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Option 1: One spouse buys out the other and refinances</p>
-            <p>The keeping spouse applies for a new mortgage in their sole name, paying off the joint mortgage. The lender assesses the keeping spouse's income, credit, and debt-to-income ratio from scratch. UAE banks typically lend up to 80% of property value for expats (loan-to-value cap under Central Bank guidelines). If the current outstanding loan is above 80% of current value, the keeping spouse needs to fund the gap. This is the cleanest solution but requires the keeping spouse to qualify independently -- which many cannot after one income is removed from the calculation.</p>
+            <p>The keeping spouse applies for a new mortgage in their sole name, paying off the joint mortgage. The lender assesses the keeping spouse's income, credit, and debt-to-income ratio from scratch. UAE banks typically lend up to 80% of property value for expats (loan-to-value cap under Central Bank guidelines). If the current outstanding loan is above 80% of current value, the keeping spouse needs to fund the gap. This is the cleanest solution but requires the keeping spouse to qualify independently, which many cannot after one income is removed from the calculation.</p>
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Option 2: Sell the property, clear the mortgage, split the equity</p>
-            <p>The straightforward exit. Both parties sign the sale agreement, the mortgage is cleared from proceeds at completion, and the remaining equity is split per the divorce settlement. If the property is in negative equity (outstanding loan exceeds sale price, which can happen in down markets), both parties share the shortfall unless the settlement agreement allocates it differently. Dubai's resale market is liquid for well-priced units -- a realistic timeline from decision to proceeds is 2-4 months.</p>
+            <p>The straightforward exit. Both parties sign the sale agreement, the mortgage is cleared from proceeds at completion, and the remaining equity is split per the divorce settlement. If the property is in negative equity (outstanding loan exceeds sale price, which can happen in down markets), both parties share the shortfall unless the settlement agreement allocates it differently. Dubai's resale market is liquid for well-priced units, a realistic timeline from decision to proceeds is 2-4 months.</p>
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Option 3: Maintain joint ownership and co-repayment (rarely advisable)</p>
@@ -496,7 +496,7 @@ const faqItems = [
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Option 4: Court-ordered sale (if parties cannot agree)</p>
-            <p>A UAE court can order the sale of jointly-owned mortgaged property if the parties cannot agree. The court appoints a valuer, sets a reserve price, and oversees the sale process. The mortgage is cleared first from proceeds, then any equity split as ordered. Court-ordered sales take longer and often achieve a lower price than voluntary sales -- negotiating an agreement is almost always preferable.</p>
+            <p>A UAE court can order the sale of jointly-owned mortgaged property if the parties cannot agree. The court appoints a valuer, sets a reserve price, and oversees the sale process. The mortgage is cleared first from proceeds, then any equity split as ordered. Court-ordered sales take longer and often achieve a lower price than voluntary sales, negotiating an agreement is almost always preferable.</p>
           </div>
         </div>
 
@@ -512,7 +512,7 @@ const faqItems = [
         <p>
           UAE law recognises prenuptial agreements (made before marriage) and postnuptial agreements (made during marriage) for non-Muslim expats. Under Federal Decree-Law No. 41 of 2022, non-Muslim parties can agree to any financial arrangement on divorce, provided it meets the enforceability conditions.
         </p>
-        <p>For Muslim couples, prenuptial agreements can specify additional property rights above the default rules -- for example, agreeing that the wife receives a share of jointly-acquired assets on divorce -- but they cannot waive the wife's core rights to mahr, maintenance, or child support.</p>
+        <p>For Muslim couples, prenuptial agreements can specify additional property rights above the default rules, for example, agreeing that the wife receives a share of jointly-acquired assets on divorce, but they cannot waive the wife's core rights to mahr, maintenance, or child support.</p>
 
         <h3>Enforceability conditions</h3>
         <ul>
@@ -524,7 +524,7 @@ const faqItems = [
           <li>Terms must not conflict with children's welfare rights or mandatory legal protections</li>
         </ul>
         <p>
-          Courts can directly incorporate a valid prenuptial agreement into the divorce decree. However, an agreement signed 15 years ago when assets were minimal may be challenged as no longer reflecting the parties' actual financial position. UAE courts retain discretion to depart from prenuptial terms in cases of significant hardship or unconscionability -- the same discretion exercised by courts in England or Australia.
+          Courts can directly incorporate a valid prenuptial agreement into the divorce decree. However, an agreement signed 15 years ago when assets were minimal may be challenged as no longer reflecting the parties' actual financial position. UAE courts retain discretion to depart from prenuptial terms in cases of significant hardship or unconscionability, the same discretion exercised by courts in England or Australia.
         </p>
       </section>
 
@@ -532,12 +532,12 @@ const faqItems = [
       <section class="content-section">
         <h2>Offshore and Company-Held Assets</h2>
         <p>
-          High-net-worth expats in Dubai commonly hold property through BVI, Cayman Islands, or Jersey companies -- often for legitimate estate planning, privacy, or financing reasons. In a divorce, this structure creates significant complications.
+          High-net-worth expats in Dubai commonly hold property through BVI, Cayman Islands, or Jersey companies, often for legitimate estate planning, privacy, or financing reasons. In a divorce, this structure creates significant complications.
         </p>
 
         <h3>Why offshore structures are not an automatic shield</h3>
         <p>
-          UAE courts treat a Dubai property held by a BVI company as still subject to UAE law for the underlying asset. The court cannot directly transfer shares in a BVI company -- that is governed by BVI corporate law -- but the court can order financial compensation equivalent to the property value, or place a precautionary attachment on the BVI shares as an asset in the UAE.
+          UAE courts treat a Dubai property held by a BVI company as still subject to UAE law for the underlying asset. The court cannot directly transfer shares in a BVI company, that is governed by BVI corporate law, but the court can order financial compensation equivalent to the property value, or place a precautionary attachment on the BVI shares as an asset in the UAE.
         </p>
         <p>
           The UAE Civil Procedure Code provides for precautionary attachments (Hajz Ihtiyati) over assets in the defendant's name, including "stocks" and receivables. An application is made to the Court of Urgent Matters on an ex-parte basis (without notice to the other side) and can be decided within 48 hours. Once granted, the attachment prevents any transfer or sale of the attached asset. Critically: the applicant must file the substantive case within 8 days or the attachment is forfeited.
@@ -545,7 +545,7 @@ const faqItems = [
 
         <h3>Disclosure obligations</h3>
         <p>
-          UAE courts can order full financial disclosure schedules. A party who conceals offshore company assets faces contempt consequences and adverse inferences. Forensic tracing -- using corporate registry searches, bank KYC records, and expert investigators -- is used in complex high-value cases. Hiding property in a BVI company is significantly less effective than it was a decade ago.
+          UAE courts can order full financial disclosure schedules. A party who conceals offshore company assets faces contempt consequences and adverse inferences. Forensic tracing, using corporate registry searches, bank KYC records, and expert investigators, is used in complex high-value cases. Hiding property in a BVI company is significantly less effective than it was a decade ago.
         </p>
 
         <h3>ADGM and DIFC courts: when they make sense</h3>
@@ -554,11 +554,11 @@ const faqItems = [
           <a href="/en/adgm-divorce-abu-dhabi/">ADGM Courts (Abu Dhabi Global Market)</a> offer a common law framework applied by English-qualified judges. The DIFC Courts have jurisdiction over non-Muslim personal status matters under Dubai Law No. 2 of 2025 and can apply home country law to asset division.
         </p>
         <p>
-          The practical threshold for DIFC to make sense is typically AED 5-10 million in disputed assets. Below that, the costs of DIFC proceedings (higher lawyer fees, more complex procedure) outweigh the benefits. Above that threshold -- particularly where assets include offshore company structures, trusts, or assets in multiple jurisdictions -- the DIFC's common law toolbox (Mareva injunctions, Anton Piller orders, forensic disclosure) may produce better outcomes than mainland courts.
+          The practical threshold for DIFC to make sense is typically AED 5-10 million in disputed assets. Below that, the costs of DIFC proceedings (higher lawyer fees, more complex procedure) outweigh the benefits. Above that threshold, particularly where assets include offshore company structures, trusts, or assets in multiple jurisdictions, the DIFC's common law toolbox (Mareva injunctions, Anton Piller orders, forensic disclosure) may produce better outcomes than mainland courts.
         </p>
         <div class="info-box info-box--info">
           <h3>In May 2025: a record AED 100 million settlement</h3>
-          <p>UAE courts approved a no-fault divorce accompanied by an AED 100 million settlement in May 2025 -- the largest divorce financial settlement in the Gulf. This demonstrates that UAE courts can and do handle highly complex, multi-jurisdictional asset portfolios when properly presented. The infrastructure exists. What differs is whether your case is structured to use it effectively.</p>
+          <p>UAE courts approved a no-fault divorce accompanied by an AED 100 million settlement in May 2025, the largest divorce financial settlement in the Gulf. This demonstrates that UAE courts can and do handle highly complex, multi-jurisdictional asset portfolios when properly presented. The infrastructure exists. What differs is whether your case is structured to use it effectively.</p>
         </div>
       </section>
 
@@ -569,10 +569,10 @@ const faqItems = [
           Mahr is covered in depth in our <a href="/en/mahr-divorce-uae/">mahr enforcement guide</a>. The key points for property-focused readers:
         </p>
         <p>
-          Under <strong>Articles 45-48 of Federal Decree-Law No. 41 of 2024</strong>, mahr is a binding financial obligation -- not a cultural custom or token gesture. Deferred mahr (mu'ajjal) falls due immediately and in full upon the pronouncement of divorce. It is treated as a privileged debt, ranking ahead of most other creditors' claims against the husband's assets.
+          Under <strong>Articles 45-48 of Federal Decree-Law No. 41 of 2024</strong>, mahr is a binding financial obligation, not a cultural custom or token gesture. Deferred mahr (mu'ajjal) falls due immediately and in full upon the pronouncement of divorce. It is treated as a privileged debt, ranking ahead of most other creditors' claims against the husband's assets.
         </p>
         <p>
-          If your husband refuses to pay the deferred mahr after a court judgment is issued, the Execution Court process described above applies in full: bank freeze, salary garnishment, travel ban, and ultimately attachment of his Dubai property. A travel ban for mahr enforcement can be obtained quickly -- often within days of the Execution Court order -- because the underlying obligation is clear and the amount is fixed by the nikah contract.
+          If your husband refuses to pay the deferred mahr after a court judgment is issued, the Execution Court process described above applies in full: bank freeze, salary garnishment, travel ban, and ultimately attachment of his Dubai property. A travel ban for mahr enforcement can be obtained quickly, often within days of the Execution Court order, because the underlying obligation is clear and the amount is fixed by the nikah contract.
         </p>
         <p>
           One specific scenario worth noting: if the husband has already transferred his Dubai apartment to a family member to avoid mahr enforcement, UAE courts can reverse such transfers if they occurred within a short period before the divorce proceedings or after the mahr obligation arose. Document any asset movements by your spouse in the months before and after filing.
@@ -592,12 +592,12 @@ const faqItems = [
           <div class="misconception-card">
             <div class="misconception-badge">FALSE</div>
             <h3>"The court will automatically freeze our joint account"</h3>
-            <p>There is no automatic freeze of joint accounts on filing for divorce. A court freeze requires a specific precautionary attachment application to the Court of Urgent Matters. Until that order is obtained (if it is obtained at all), either party can withdraw from a joint account. This is why pre-filing planning with a lawyer is critical -- the window between deciding to divorce and serving papers is when financial damage most commonly occurs.</p>
+            <p>There is no automatic freeze of joint accounts on filing for divorce. A court freeze requires a specific precautionary attachment application to the Court of Urgent Matters. Until that order is obtained (if it is obtained at all), either party can withdraw from a joint account. This is why pre-filing planning with a lawyer is critical, the window between deciding to divorce and serving papers is when financial damage most commonly occurs.</p>
           </div>
           <div class="misconception-card">
             <div class="misconception-badge">FALSE</div>
             <h3>"My name on the mortgage payments means I own the property"</h3>
-            <p>Under UAE law and DLD rules, title deed registration is conclusive for legal ownership. Paying the mortgage does not create an automatic ownership interest in a property registered in someone else's name. You have a <em>potential</em> contribution claim under Article 51 of Federal Decree-Law No. 41 of 2024 and Article 318 of the Civil Code -- but it is a claim you must prove, not a right you automatically possess.</p>
+            <p>Under UAE law and DLD rules, title deed registration is conclusive for legal ownership. Paying the mortgage does not create an automatic ownership interest in a property registered in someone else's name. You have a <em>potential</em> contribution claim under Article 51 of Federal Decree-Law No. 41 of 2024 and Article 318 of the Civil Code, but it is a claim you must prove, not a right you automatically possess.</p>
           </div>
           <div class="misconception-card">
             <div class="misconception-badge">FALSE</div>
@@ -607,7 +607,7 @@ const faqItems = [
           <div class="misconception-card">
             <div class="misconception-badge">FALSE</div>
             <h3>"The wife always gets half if the marriage lasted long enough"</h3>
-            <p>This is a common misconception imported from English law familiarity. In UAE Personal Status Law, marriage duration is relevant to maintenance (longer marriage, more generous iddah provision and mut'a) but it does not create an automatic property entitlement. Even after 20 years of marriage, a wife who is not on the title deed of the family home has no automatic claim on it under UAE law. The contribution claim under Article 51 is available, but it requires evidence of actual financial contribution -- not just years of domestic partnership.</p>
+            <p>This is a common misconception imported from English law familiarity. In UAE Personal Status Law, marriage duration is relevant to maintenance (longer marriage, more generous iddah provision and mut'a) but it does not create an automatic property entitlement. Even after 20 years of marriage, a wife who is not on the title deed of the family home has no automatic claim on it under UAE law. The contribution claim under Article 51 is available, but it requires evidence of actual financial contribution, not just years of domestic partnership.</p>
           </div>
         </div>
       </section>

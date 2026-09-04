@@ -1,12 +1,12 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Divorce Lawyer Abu Dhabi — Family Law Specialists | Free Consultation';
+const title = 'Divorce Lawyer Abu Dhabi: Free Consultation (2026 Guide)';
 const description =
-  'Find a qualified divorce lawyer in Abu Dhabi. Expert family law advice for Muslim and non-Muslim expats at Abu Dhabi Personal Status Court. Free first consultation.';
+  'Find a qualified divorce lawyer in Abu Dhabi. How the ADJD Personal Status Court and the English-language Civil Family Court work, filing steps, documents, costs, and Abu Dhabi vs Dubai. Free first consultation.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/divorce-lawyer-abu-dhabi/',
@@ -22,27 +22,42 @@ const faqItems = [
   {
     question: 'Where is the divorce court in Abu Dhabi?',
     answer:
-      "Abu Dhabi's Personal Status Court is part of the Abu Dhabi Judicial Department (ADJD), located in Abu Dhabi city. The Family Guidance Department at the ADJD handles reconciliation sessions before cases proceed to hearings.",
+      "Divorce cases in Abu Dhabi are heard by the Abu Dhabi Judicial Department (ADJD). Muslim cases go to the Personal Status circuit of the Court of First Instance at the main ADJD courts complex in Abu Dhabi city, with branch courts in Al Ain and Al Dhafra for residents of those regions. Non-Muslim foreigners use the separate Abu Dhabi Civil Family Court, also run by ADJD. The Family Guidance Department at ADJD handles reconciliation sessions for Muslim cases before they proceed to hearings.",
   },
   {
     question: 'How long does divorce take in Abu Dhabi?',
     answer:
-      'An uncontested divorce in Abu Dhabi typically takes 1–3 months from filing to final decree. Contested divorces involving custody or asset disputes can take 6–18 months depending on complexity.',
+      'It depends on the track. A non-Muslim divorce at the Abu Dhabi Civil Family Court is the fastest in the UAE: the divorce itself is often pronounced at the first hearing, typically within a few weeks of filing, with financial and custody claims dealt with afterwards if the couple cannot agree. An uncontested Muslim divorce takes roughly 1 to 3 months including Family Guidance. Contested cases with custody or asset disputes take 6 to 18 months on either track.',
+  },
+  {
+    question: 'What is the Abu Dhabi Civil Family Court and who can use it?',
+    answer:
+      'The Abu Dhabi Civil Family Court is a dedicated court opened by ADJD in late 2021 under Abu Dhabi Law No. 14 of 2021 on civil marriage and its effects. It handles marriage, divorce, custody, maintenance and inheritance for non-Muslim foreigners on a civil, no-fault basis. Proceedings run in both Arabic and English, the court uses bilingual standard forms, and there is no mandatory reconciliation period. It is the main reason non-Muslim expats prefer Abu Dhabi over other emirates for divorce.',
   },
   {
     question: 'Can I use a Dubai divorce lawyer for my Abu Dhabi case?',
     answer:
-      'Yes, many UAE family lawyers are licensed to practice across all emirates. However, cases must be filed in the emirate where you reside. An Abu Dhabi-based case must go to Abu Dhabi Personal Status Court.',
+      'Yes, UAE advocates licensed to appear before Abu Dhabi courts can represent you regardless of where their office is, and the case must be filed in the emirate where you reside. Check that the lawyer is registered to plead before ADJD courts and has actually appeared in the Abu Dhabi Personal Status Court or the Civil Family Court. Procedures, forms and judge expectations differ from Dubai, so Abu Dhabi experience matters more than the office address.',
   },
   {
     question: 'What documents do I need to file for divorce in Abu Dhabi?',
     answer:
-      "You'll need: original marriage certificate (and certified Arabic translation if in another language), passports of both parties, UAE Emirates IDs, and proof of Abu Dhabi residence. Your lawyer will advise on any additional documents specific to your case.",
+      "For either track: passports, Emirates IDs and residence visa pages for both spouses, the original marriage certificate with a legal Arabic translation and attestation if issued abroad, children's birth certificates, and proof of Abu Dhabi residence such as a tenancy contract. Financial claims need salary certificates, bank statements and title deeds. At the Civil Family Court, English originals are generally accepted alongside the Arabic version; at the Personal Status Court everything must be in Arabic.",
   },
   {
     question: 'What is the cost of divorce in Abu Dhabi?',
     answer:
-      'Court filing fees in Abu Dhabi are typically AED 600–2,000 for the initial application. Lawyer fees for an uncontested divorce range from AED 5,000–15,000. Contested divorces with custody disputes cost significantly more.',
+      'Court fees are modest on both tracks, generally a few hundred dirhams to around AED 2,000 depending on the claims attached. Lawyer fees are the main cost: roughly AED 4,000 to 12,000 for an uncontested divorce, AED 15,000 to 40,000 or more for contested cases, and higher again where custody or foreign assets are disputed. Translation and attestation of foreign documents typically add AED 1,000 to 3,000.',
+  },
+  {
+    question: 'Does the 60-day reconciliation period apply at the Civil Family Court?',
+    answer:
+      'No. The 60-day Family Guidance reconciliation stage belongs to the Muslim track under Federal Decree-Law No. 41 of 2024. The Abu Dhabi Civil Family Court operates on a no-fault basis with no compulsory reconciliation, which is why civil divorces there conclude so much faster. The court may still offer voluntary mediation on custody and financial matters if both spouses want it.',
+  },
+  {
+    question: 'Will an Abu Dhabi Civil Family Court divorce be recognised abroad?',
+    answer:
+      'A judgment of the Abu Dhabi Civil Family Court is a final UAE court decree. Because the court issues its judgments in English as well as Arabic, the paperwork for recognition in your home country is simpler than from an Arabic-only court. You will still usually need attestation by the UAE Ministry of Foreign Affairs and, depending on the country, registration with your embassy or civil registry. Ask your lawyer to prepare the legalisation package at the same time as the decree.',
   },
 ];
 ---
@@ -61,15 +76,17 @@ const faqItems = [
         <h1 class="hero__h1">Divorce Lawyer Abu Dhabi</h1>
         <p class="hero__sub">
           Going through a divorce in Abu Dhabi? Our network of qualified family lawyers handles
-          cases at the Abu Dhabi Personal Status Court for both Muslim and non-Muslim expats.
-          Get expert legal advice with your first consultation free.
+          cases at the Abu Dhabi Personal Status Court and the English-language Abu Dhabi Civil
+          Family Court, for Muslim and non-Muslim expats alike. Get expert legal advice with your
+          first consultation free.
         </p>
         <ul class="hero__trust">
-          <li>✓ Abu Dhabi Personal Status Court</li>
-          <li>✓ Muslim &amp; non-Muslim cases</li>
+          <li>✓ ADJD Personal Status Court</li>
+          <li>✓ Abu Dhabi Civil Family Court</li>
           <li>✓ English &amp; Arabic</li>
           <li>✓ Free first consultation</li>
         </ul>
+        <p class="hero__author">By <strong>Aleksi Suon</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
       </div>
       <div class="hero__form">
         <LeadForm lang="en" variant="hero" heading="Get Free Legal Consultation in Abu Dhabi" />
@@ -81,18 +98,23 @@ const faqItems = [
 
     <!-- Why Abu Dhabi -->
     <section class="section" aria-labelledby="why-heading">
-      <h2 id="why-heading">Divorce Law in Abu Dhabi — What You Need to Know</h2>
+      <h2 id="why-heading">Divorce Law in Abu Dhabi: What You Need to Know</h2>
       <p>
-        Abu Dhabi follows the same federal personal status law as the rest of the UAE. Divorce
-        cases are handled by the <strong>Abu Dhabi Personal Status Court</strong> under the
-        Abu Dhabi Judicial Department (ADJD). For non-Muslim expats, the 2022 civil personal
-        status law applies, offering equal asset division and joint custody defaults.
+        Abu Dhabi is the one emirate that runs two clearly separate divorce systems side by side.
+        Muslim couples, and mixed couples where at least one spouse is a Muslim UAE national, use
+        the <strong>Abu Dhabi Personal Status Court</strong> under federal personal status law.
+        Non-Muslim foreigners use the <strong>Abu Dhabi Civil Family Court</strong>, a dedicated
+        court created under the emirate's own civil marriage law, where cases run in English as
+        well as Arabic and divorce is granted without proving fault. Both courts sit under the
+        <strong>Abu Dhabi Judicial Department (ADJD)</strong>. Which one you file in changes the
+        law applied, the language of the hearing, the timeline and the cost, so it is the first
+        thing an Abu Dhabi lawyer should establish with you.
       </p>
       <div class="cards">
         <div class="card">
           <span class="card__icon">⚖️</span>
           <h3>Licensed Abu Dhabi Lawyers</h3>
-          <p>Our lawyers are licensed with UAE Ministry of Justice and experienced in Abu Dhabi Personal Status Court procedures.</p>
+          <p>Our lawyers are licensed to appear before ADJD courts and experienced in both the Personal Status Court and the Civil Family Court.</p>
         </div>
         <div class="card">
           <span class="card__icon">🌐</span>
@@ -102,7 +124,7 @@ const faqItems = [
         <div class="card">
           <span class="card__icon">🏛️</span>
           <h3>Court Representation</h3>
-          <p>We handle all court filings, reconciliation sessions, and hearing appearances at Abu Dhabi ADJD on your behalf.</p>
+          <p>We handle all court filings, Family Guidance sessions, Civil Family Court forms and hearing appearances at ADJD on your behalf.</p>
         </div>
         <div class="card">
           <span class="card__icon">👨‍👩‍👧</span>
@@ -112,29 +134,135 @@ const faqItems = [
       </div>
     </section>
 
+    <!-- ADJD court system -->
+    <section class="section" aria-labelledby="adjd-heading">
+      <h2 id="adjd-heading">The Abu Dhabi Judicial Department and Its Family Courts</h2>
+      <p>
+        Unlike the northern emirates that rely on the federal court network, Abu Dhabi has its own
+        judiciary. The Abu Dhabi Judicial Department was set up as an independent local authority
+        under Abu Dhabi Law No. 23 of 2006 and runs a three-tier system: the Court of First
+        Instance, the Court of Appeal and the Court of Cassation. Family matters are heard in the
+        Personal Status circuits of the Court of First Instance at the main courts complex in Abu
+        Dhabi city, with branch courts serving residents of the Al Ain and Al Dhafra regions. If
+        you live in Al Ain, your case is normally registered there rather than in the capital; see
+        our separate guide to finding a <a href="/en/divorce-lawyer-al-ain/">divorce lawyer in Al Ain</a>.
+      </p>
+      <p>
+        ADJD also runs the <strong>Family Guidance Department</strong>, which is the mandatory
+        first stop for Muslim divorce cases, and the <strong>Abu Dhabi Civil Family Court</strong>,
+        which sits as a distinct court with its own judges, forms and case-management rules for
+        non-Muslim foreigners. A first-instance judgment from either family court can be appealed
+        to the Abu Dhabi Court of Appeal within the statutory window, usually 30 days, and a final
+        point of law can go to the Court of Cassation. Most uncontested divorces never leave the
+        first-instance court.
+      </p>
+      <p>
+        ADJD has pushed most of its procedure online. Case registration, fee payment, document
+        upload, hearing notifications and remote hearings are handled through the ADJD smart
+        services portal and mobile app, and many hearings in family matters now take place by
+        video link. That makes Abu Dhabi practical for a spouse who has already left the country,
+        provided a locally licensed lawyer holds a power of attorney to act for them.
+      </p>
+    </section>
+
+    <!-- Civil Family Court -->
+    <section class="section" aria-labelledby="civil-heading">
+      <h2 id="civil-heading">The Abu Dhabi Civil Family Court for Non-Muslims</h2>
+      <p>
+        This court is Abu Dhabi's biggest advantage over every other emirate, and the main reason
+        non-Muslim expats across the UAE ask whether they can file here. It was created by
+        <strong>Abu Dhabi Law No. 14 of 2021 on Civil Marriage and Its Effects in the Emirate of
+        Abu Dhabi</strong>, which came into force in late 2021, with the court itself opening in
+        December of that year. The law was later widened so that non-Muslim UAE nationals and
+        certain other categories can also rely on it, though the core users remain foreign
+        residents. Because it is a local Abu Dhabi law rather than federal legislation, it exists
+        alongside the federal civil personal status law (Federal Decree-Law No. 41 of 2022) that
+        applies elsewhere. In practice an Abu Dhabi resident non-Muslim couple files under the Abu
+        Dhabi law at this court.
+      </p>
+      <p>What makes it different from anything available in Dubai or Sharjah:</p>
+      <ul class="doc-list">
+        <li><strong>No-fault divorce.</strong> Either spouse can end the marriage by declaring they no longer wish to continue it. There is no need to prove harm, desertion or misconduct, and the other spouse's consent is not required.</li>
+        <li><strong>Arabic and English proceedings.</strong> Forms, hearings and judgments are bilingual. English-speaking litigants can follow their own case, and the judgment comes out in English, which simplifies recognition abroad.</li>
+        <li><strong>No compulsory reconciliation.</strong> The 60-day Family Guidance stage does not apply. Mediation on children and money is available if both sides want it, but it cannot be used to stall.</li>
+        <li><strong>Forms-based and fast.</strong> The divorce request is a standard form filed through ADJD's system. The divorce itself is commonly pronounced at the first hearing, often within a few weeks of registration, and the judge deals with financial and custody claims through a separate application afterwards if the couple cannot agree.</li>
+        <li><strong>Joint custody by default.</strong> Both parents share custody after divorce unless one of them applies to the court and shows why that would harm the child. There is no automatic gender-based split of custody and guardianship.</li>
+        <li><strong>Civil financial rules.</strong> Alimony is assessed on factors such as the length of the marriage, the wife's age and the financial position of each spouse, and either spouse can ask for a share of assets built up during the marriage. A pre-marriage agreement, including one signed in your home country, is given weight.</li>
+      </ul>
+      <p>
+        One limit worth being clear about: the DIFC Courts in Dubai do not grant divorces, so this
+        Abu Dhabi court is the only English-language family court in the country. For the wider
+        picture on the civil track, including which law applies if you live outside Abu Dhabi, read
+        our guide to <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Muslim track -->
+    <section class="section" aria-labelledby="muslim-heading">
+      <h2 id="muslim-heading">The Muslim Track: Personal Status Court and Family Guidance</h2>
+      <p>
+        Muslim couples, and any case where the Civil Family Court does not have jurisdiction, go to
+        the Personal Status Court under <strong>Federal Decree-Law No. 41 of 2024 on Personal
+        Status</strong>, which replaced the 2005 law across the UAE from April 2025. The 2024 law
+        kept the familiar forms of divorce, namely talaq by the husband, khula by the wife in return
+        for giving up financial rights, and judicial divorce for harm, non-maintenance or absence,
+        but tightened the procedure around them. Individual article numbers under the new law are
+        still settling in practice, so treat any clause reference as indicative and confirm it with
+        your lawyer.
+      </p>
+      <p>
+        The stage that shapes the timeline is <strong>Family Guidance</strong>. Before a contested
+        Muslim divorce can be heard, ADJD's Family Guidance Department calls both spouses to
+        counselling sessions and tries to reconcile them or, failing that, to record an agreed
+        settlement. The 2024 law is understood to cap this stage at around 60 days so that an
+        unwilling spouse cannot delay indefinitely; once it lapses without agreement, the department
+        issues a referral and the case moves to a judge. Where both spouses arrive with a signed
+        agreement, Family Guidance can certify it and the divorce is concluded there without a
+        contested hearing.
+      </p>
+      <p>
+        On children, the 2024 law extends custody to age 18 for both boys and girls, after which
+        the child chooses which parent to live with, and it gives judges wider discretion to keep
+        the arrangement that serves the child rather than applying fixed age rules. Financial
+        claims still follow the Islamic framework: deferred mahr, maintenance during the waiting
+        period (iddah), and ongoing child maintenance paid by the father. Abu Dhabi judges
+        routinely appoint accounting experts to fix maintenance where salary and living costs are
+        disputed, which adds time and a modest expert fee.
+      </p>
+    </section>
+
     <!-- Abu Dhabi Process -->
     <section class="section" aria-labelledby="process-heading">
       <h2 id="process-heading">How to File for Divorce in Abu Dhabi</h2>
+      <p>
+        The outline below covers both tracks; the notes flag where the Civil Family Court differs.
+        Our dedicated walkthrough on <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file
+        for divorce in Abu Dhabi</a> goes into each step in more detail.
+      </p>
       <ol class="steps">
         <li>
-          <h3>Consult a Family Lawyer</h3>
-          <p>Before filing, speak to a qualified Abu Dhabi family lawyer. Your first consultation is free. We assess your situation and advise on the best legal approach.</p>
+          <h3>Confirm your track and jurisdiction</h3>
+          <p>A lawyer checks the religion and nationality of both spouses and your registered residence. Non-Muslim foreigners resident in Abu Dhabi go to the Civil Family Court; Muslim and mixed cases go to the Personal Status Court. Your first consultation is free.</p>
         </li>
         <li>
-          <h3>Submit Application at Abu Dhabi ADJD</h3>
-          <p>The divorce application is filed at the Abu Dhabi Personal Status Court. Required documents include your marriage certificate, Emirates IDs, and passports.</p>
+          <h3>Prepare and translate documents</h3>
+          <p>Foreign marriage certificates and other documents are attested by your home country, the UAE embassy there and the UAE Ministry of Foreign Affairs, then translated by a licensed legal translator. The Civil Family Court accepts English documents alongside the Arabic; the Personal Status Court works in Arabic only.</p>
         </li>
         <li>
-          <h3>Family Guidance Session</h3>
-          <p>The Abu Dhabi Judicial Department requires at least one family guidance (reconciliation) session. A trained counsellor meets with both parties. If reconciliation fails, the case proceeds.</p>
+          <h3>Family Guidance (Muslim track only)</h3>
+          <p>The case is opened at ADJD's Family Guidance Department, which schedules counselling sessions with both spouses. If reconciliation fails within the 60-day window, or an agreement is signed, the department refers the matter on. Civil Family Court cases skip this stage entirely.</p>
         </li>
         <li>
-          <h3>Court Hearings</h3>
-          <p>Uncontested cases typically require one hearing. Contested cases (custody, assets) require multiple hearings over several months.</p>
+          <h3>Register the case through ADJD smart services</h3>
+          <p>Your lawyer files the claim, pays the fee and uploads the documents through the ADJD portal or app. Civil divorces use a standard bilingual divorce request form; Personal Status claims are drafted in Arabic. The other spouse is notified electronically and a hearing date is set.</p>
         </li>
         <li>
-          <h3>Final Divorce Decree</h3>
-          <p>The court issues the divorce decree. For expats, this must be attested and may need legalisation for use in your home country.</p>
+          <h3>Hearings</h3>
+          <p>At the Civil Family Court the divorce is usually pronounced at the first hearing, with financial and custody claims heard separately if needed. At the Personal Status Court an uncontested case typically needs one hearing; contested cases run over several sessions and may involve court-appointed experts. Many hearings take place by video.</p>
+        </li>
+        <li>
+          <h3>Judgment, appeal window and attestation</h3>
+          <p>The court issues the divorce decree. Either party can appeal within the statutory period, usually 30 days. Once final, the decree is stamped by ADJD and, if you need it recognised abroad, legalised through the Ministry of Foreign Affairs. The Civil Family Court issues its judgment in English as well as Arabic.</p>
         </li>
       </ol>
 
@@ -145,39 +273,91 @@ const faqItems = [
             <tr><th>Type</th><th>Court Fees</th><th>Lawyer Fees (est.)</th><th>Timeline</th></tr>
           </thead>
           <tbody>
-            <tr><td>Uncontested divorce</td><td>AED 600–1,500</td><td>AED 5,000–12,000</td><td>1–3 months</td></tr>
-            <tr><td>Contested divorce</td><td>AED 1,000–2,500</td><td>AED 15,000–40,000+</td><td>6–18 months</td></tr>
-            <tr><td>Custody dispute only</td><td>AED 500–1,500</td><td>AED 8,000–25,000</td><td>3–12 months</td></tr>
+            <tr><td>Civil Family Court, uncontested (non-Muslim)</td><td>A few hundred dirhams to AED 1,500</td><td>AED 4,000 to 10,000</td><td>3 to 8 weeks</td></tr>
+            <tr><td>Personal Status Court, uncontested (Muslim)</td><td>AED 600 to 1,500</td><td>AED 5,000 to 12,000</td><td>1 to 3 months</td></tr>
+            <tr><td>Contested divorce (either track)</td><td>AED 1,000 to 2,500</td><td>AED 15,000 to 40,000+</td><td>6 to 18 months</td></tr>
+            <tr><td>Custody dispute only</td><td>AED 500 to 1,500</td><td>AED 8,000 to 25,000</td><td>3 to 12 months</td></tr>
           </tbody>
         </table>
-        <p class="table-note">Fees are estimates. Consult a lawyer for a precise quote for your specific case.</p>
+        <p class="table-note">Fees are estimates and change with the claims attached to the case. Add AED 1,000 to 3,000 for translation and attestation of foreign documents, and expert fees in contested financial or custody matters. See our <a href="/en/divorce-cost-uae/">UAE divorce cost guide</a> for a full breakdown.</p>
       </div>
+    </section>
+
+    <!-- Documents -->
+    <section class="section" aria-labelledby="docs-heading">
+      <h2 id="docs-heading">Documents You Need in Abu Dhabi</h2>
+      <p>Have these ready before the first meeting with your lawyer so the case can be registered without delay:</p>
+      <ul class="doc-list">
+        <li>Passports, Emirates IDs and residence visa pages for both spouses</li>
+        <li>Original marriage certificate, attested and with a legal Arabic translation if issued outside the UAE (a civil marriage certificate issued by the Abu Dhabi Civil Family Court itself needs no translation)</li>
+        <li>Birth certificates of any children, attested and translated</li>
+        <li>Proof of residence in the Emirate of Abu Dhabi, such as a Tawtheeq-registered tenancy contract or a utility bill</li>
+        <li>For financial claims: salary certificates, bank statements, property title deeds, company ownership documents and any evidence of debts</li>
+        <li>Any prenuptial, postnuptial or separation agreement, including one signed abroad</li>
+        <li>A notarised power of attorney for your lawyer, which can be executed at an ADJD notary or, from abroad, at a UAE embassy</li>
+      </ul>
     </section>
 
     <!-- Abu Dhabi vs Dubai -->
     <section class="section" aria-labelledby="compare-heading">
-      <h2 id="compare-heading">Abu Dhabi vs Dubai Divorce — Key Differences</h2>
+      <h2 id="compare-heading">Abu Dhabi vs Dubai Divorce: Key Differences</h2>
       <p>
-        The law is the same across both emirates (federal personal status law), but there are some
-        practical differences in court procedures and timelines:
+        The Muslim personal status law is federal and identical in both emirates. The real
+        differences are in the non-Muslim route, the court language, the speed of an uncontested
+        case, and the administrative bodies you deal with:
       </p>
       <div class="comparison-table">
         <table>
           <thead>
-            <tr><th>Factor</th><th>Abu Dhabi (ADJD)</th><th>Dubai Personal Status Court</th></tr>
+            <tr><th>Factor</th><th>Abu Dhabi (ADJD)</th><th>Dubai Courts</th></tr>
           </thead>
           <tbody>
-            <tr><td>Governing authority</td><td>Abu Dhabi Judicial Department</td><td>Dubai Courts</td></tr>
-            <tr><td>Reconciliation body</td><td>Family Guidance Department (ADJD)</td><td>Family Guidance Section (Dubai Courts)</td></tr>
-            <tr><td>Online services</td><td>ADJD Smart Services portal</td><td>Dubai Courts portal</td></tr>
-            <tr><td>Average uncontested time</td><td>6–10 weeks</td><td>4–8 weeks</td></tr>
-            <tr><td>Filing jurisdiction</td><td>Must reside in Abu Dhabi emirate</td><td>Must reside in Dubai emirate</td></tr>
+            <tr><td>Governing authority</td><td>Abu Dhabi Judicial Department (local judiciary)</td><td>Dubai Courts (local judiciary)</td></tr>
+            <tr><td>Non-Muslim divorce law</td><td>Abu Dhabi Law No. 14 of 2021, applied at a dedicated Civil Family Court</td><td>Federal Decree-Law No. 41 of 2022, applied through the ordinary Personal Status Court</td></tr>
+            <tr><td>Language of proceedings</td><td>Arabic and English at the Civil Family Court; Arabic at the Personal Status Court</td><td>Arabic in all family courts (the DIFC Courts do not grant divorces)</td></tr>
+            <tr><td>Reconciliation stage</td><td>Family Guidance for Muslim cases only; none at the Civil Family Court</td><td>Family Guidance section for Muslim cases; civil cases may still be referred</td></tr>
+            <tr><td>Uncontested timeline</td><td>3 to 8 weeks civil; 1 to 3 months Muslim track</td><td>1 to 3 months on either track</td></tr>
+            <tr><td>Default custody (non-Muslim)</td><td>Joint custody unless the court orders otherwise</td><td>Joint custody under the federal civil law</td></tr>
+            <tr><td>Online services</td><td>ADJD smart services portal and app, remote hearings</td><td>Dubai Courts portal, remote hearings</td></tr>
+            <tr><td>Filing jurisdiction</td><td>Must reside in the Emirate of Abu Dhabi</td><td>Must reside in the Emirate of Dubai</td></tr>
           </tbody>
         </table>
       </div>
       <p style="margin-top: 20px;">
-        Cases must be filed in the emirate where the couple resides. If you live in Abu Dhabi,
-        your case goes to Abu Dhabi ADJD regardless of where you were married.
+        Cases must be filed in the emirate where the couple resides, so a Dubai resident cannot
+        simply drive to Abu Dhabi to use the Civil Family Court. Residence is judged on the
+        registered visa and tenancy, and the court can question a move that looks like forum
+        shopping. If you are genuinely deciding where to live before filing, our side-by-side
+        <a href="/en/dubai-vs-abu-dhabi-divorce/">Dubai vs Abu Dhabi divorce comparison</a> weighs
+        the trade-offs in more detail.
+      </p>
+    </section>
+
+    <!-- When to hire -->
+    <section class="section" aria-labelledby="hire-heading">
+      <h2 id="hire-heading">When to Hire an Abu Dhabi-Based Divorce Lawyer</h2>
+      <p>
+        You can represent yourself at the Civil Family Court, and its bilingual forms were designed
+        with that in mind. A simple mutual-consent civil divorce with no children and no property
+        is the one scenario where some couples manage without a lawyer, or use one only to review
+        the settlement before it is filed. Everywhere else, local representation pays for itself.
+      </p>
+      <p>
+        Hire an Abu Dhabi lawyer early if any of the following apply: the case is contested; there
+        are children and you want a custody or relocation order that will hold; there is property,
+        a business or a pension in more than one country; one spouse is Muslim and the other is
+        not, so the two tracks overlap; or one spouse has already left the UAE and you need a power
+        of attorney and remote hearings arranged. An Abu Dhabi-based lawyer matters specifically
+        because they know how the Civil Family Court judges apply the 2021 law, how the Family
+        Guidance counsellors run their sessions, and what the Al Ain and Al Dhafra branches expect,
+        which a Dubai-only practice may not.
+      </p>
+      <p>
+        When comparing quotes, ask whether the fee is fixed or per hearing, whether it includes the
+        separate financial and custody application at the Civil Family Court, and whether
+        translation, attestation and expert fees are extra. Our guide to
+        <a href="/en/divorce-lawyer-fees-uae/">divorce lawyer fees in the UAE</a> explains how to
+        read a fee proposal so you are not charged twice for the same work.
       </p>
     </section>
 
@@ -211,11 +391,11 @@ const faqItems = [
         </a>
         <a href="/en/divorce-for-expats-in-uae/" class="service-link">
           <strong>Divorce for Expats</strong>
-          <span>2022 civil law for non-Muslims</span>
+          <span>Civil law options for non-Muslims</span>
         </a>
-        <a href="/en/how-to-file-for-divorce-in-dubai/" class="service-link">
-          <strong>Filing Guide</strong>
-          <span>Full step-by-step process</span>
+        <a href="/en/how-to-file-for-divorce-in-abu-dhabi/" class="service-link">
+          <strong>Abu Dhabi Filing Guide</strong>
+          <span>Full step-by-step process at ADJD</span>
         </a>
       </div>
     </section>
@@ -232,7 +412,7 @@ const faqItems = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2025 DivorceU.AE — Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <p>&copy; 2025 DivorceU.AE. Legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
       <nav aria-label="Footer navigation">
         <a href="/en/privacy-policy/">Privacy Policy</a>
         <a href="/en/disclaimer/">Disclaimer</a>
@@ -250,11 +430,15 @@ const faqItems = [
   .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
   .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
   .hero__trust li { opacity: 0.9; }
+  .hero__author { font-size: 0.85rem; opacity: 0.8; margin-top: 20px; }
+  .hero__author strong { color: #fff; }
 
   .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
   .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
   .section h3 { font-size: 1.05rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
   .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a, .section li a, .table-note a { color: #1d4ed8; text-decoration: underline; }
+  .section p a:hover, .section li a:hover { color: #1e3a5f; }
   .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
 
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
@@ -263,13 +447,17 @@ const faqItems = [
   .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
   .card p { font-size: 0.875rem; color: #6b7280; margin: 0; }
 
+  .doc-list { margin: 0 0 16px; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 8px; }
+  .doc-list li { color: #374151; line-height: 1.7; font-size: 0.95rem; }
+  .doc-list li strong { color: #1e3a5f; }
+
   .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
   .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
   .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
   .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
   .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
 
-  .cost-box { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 28px 24px; margin-top: 32px; }
+  .cost-box { background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 28px 24px; margin-top: 32px; overflow-x: auto; }
   .cost-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 16px; }
   .cost-box table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
   .cost-box th { background: #1e3a5f; color: #fff; padding: 10px 14px; text-align: left; }
