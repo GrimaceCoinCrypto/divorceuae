@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Page Not Found';
+const description = 'The page you were looking for does not exist. Browse our UAE divorce guides instead.';
+
+const links = [
+  { href: '/en/', label: 'Home' },
+  { href: '/en/divorce-in-uae/', label: 'Divorce in UAE: complete guide' },
+  { href: '/en/uae-divorce-law/', label: 'UAE divorce law explained' },
+  { href: '/en/divorce-cost-uae/', label: 'How much divorce costs' },
+  { href: '/en/child-custody-uae/', label: 'Child custody in the UAE' },
+  { href: '/en/divorce-lawyer-dubai/', label: 'Find a divorce lawyer' },
+];
+---
+
+<BaseLayout title={title} description={description} lang="en" dir="ltr" noindex={true}>
+  <main class="nf">
+    <div class="nf__inner">
+      <p class="nf__code">404</p>
+      <h1 class="nf__h1">That page does not exist</h1>
+      <p class="nf__sub">
+        The link may be out of date or mistyped. Here are the guides most people are looking for.
+      </p>
+      <ul class="nf__links">
+        {links.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+      <p class="nf__ar"><a href="/ar/">النسخة العربية</a></p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .nf { padding: 80px 24px 100px; }
+  .nf__inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .nf__code { font-size: 3rem; font-weight: 800; color: #c9a84c; margin-bottom: 8px; }
+  .nf__h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: #0a1628; margin-bottom: 14px; }
+  .nf__sub { color: #374151; line-height: 1.8; margin-bottom: 28px; }
+  .nf__links { list-style: none; padding: 0; display: grid; gap: 10px; text-align: left; }
+  .nf__links a {
+    display: block; padding: 14px 18px; background: #f8faff;
+    border: 1.5px solid #e5e7eb; border-radius: 10px;
+    color: #1e3a5f; text-decoration: none; font-weight: 600;
+  }
+  .nf__links a:hover { border-color: #2563eb; }
+  .nf__ar { margin-top: 24px; }
+  .nf__ar a { color: #2563eb; text-decoration: none; font-weight: 600; }
+</style>
