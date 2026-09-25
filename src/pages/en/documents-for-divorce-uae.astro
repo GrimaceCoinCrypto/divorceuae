@@ -4,9 +4,9 @@ import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Documents Required for Divorce in UAE 2025, Complete Checklist';
+const title = 'Documents Required for Divorce in UAE 2026, Complete Checklist';
 const description =
-  'Full checklist of documents required to file for divorce in UAE, what to prepare, how to get them translated and attested, and what expats need that residents may not. Updated April 2025.';
+  'Full checklist of documents required to file for divorce in UAE, what to prepare, how to get them translated and attested, and what expats need that residents may not. Updated September 2026.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/documents-for-divorce-uae/',
@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'What documents do I need to file for divorce in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'To file for divorce in UAE, you typically need: original marriage certificate (attested and translated to Arabic), passports of both parties, UAE residence visas or Emirates IDs, recent passport-size photographs, and children\'s birth certificates if applicable. Expats also need their marriage certificate attested by the UAE Ministry of Foreign Affairs and their home country embassy. Additional financial documents may be required for contested alimony or property claims.',
+        text: 'To file for divorce in UAE, you typically need: original marriage certificate (attested and translated to Arabic), passports of both parties, UAE residence visas or Emirates IDs, recent passport-size photographs, and children\'s birth certificates if applicable. Expats also need a foreign marriage certificate authenticated in the issuing country, legalised by the UAE Embassy or consulate for that country and attested by the UAE Ministry of Foreign Affairs. Additional financial documents may be required for contested alimony or property claims.',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'Does my marriage certificate need to be translated for UAE divorce proceedings?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. All foreign documents presented to UAE courts must be translated into Arabic by a certified legal translator accredited by UAE Ministry of Justice. The marriage certificate also typically needs to be attested, first in your home country (notary + foreign affairs ministry), then by the UAE Ministry of Foreign Affairs. Costs: AED 100–400 per translation, AED 150–600 for attestation.',
+        text: 'Yes. All foreign documents presented to UAE courts must be translated into Arabic by a certified legal translator accredited by UAE Ministry of Justice. The marriage certificate also typically needs to be attested: first in your home country (notary where required, then the foreign affairs ministry), then by the UAE Embassy or consulate for that country, then by the UAE Ministry of Foreign Affairs. An apostille alone is not enough, because the UAE is not a party to the Apostille Convention. Indicative costs: AED 100 to 400 per translation, AED 150 to 600 for attestation.',
       },
     },
     {
@@ -56,10 +56,10 @@ const docCategories = [
     critical: true,
     docs: [
       { doc: 'Original marriage certificate', note: 'Must be the original or a certified copy. If issued abroad, needs attestation.' },
-      { doc: 'Certified Arabic translation of marriage certificate', note: 'By a UAE Ministry of Justice accredited translator. AED 100–400.' },
+      { doc: 'Certified Arabic translation of marriage certificate', note: 'By a UAE Ministry of Justice accredited translator. AED 100 to 400.' },
       { doc: 'Valid passports (both parties)', note: 'Copies of current passport, all pages with stamps.' },
       { doc: 'UAE residence visa or Emirates ID', note: 'Or tourist visa stamp if on short-term stay. Both parties\' residency status affects which court has jurisdiction.' },
-      { doc: 'Recent passport-size photographs', note: '4–6 photos each. Some courts specify white or grey background.' },
+      { doc: 'Recent passport-size photographs', note: '4 to 6 photos each. Some courts specify white or grey background.' },
     ],
   },
   {
@@ -79,7 +79,7 @@ const docCategories = [
     critical: false,
     docs: [
       { doc: 'Recent salary certificate or employment letter', note: 'For both parties if relevant. Certifies current monthly income.' },
-      { doc: 'Bank statements (last 3–6 months)', note: 'Key for proving income or establishing standard of living.' },
+      { doc: 'Bank statements (last 3 to 6 months)', note: 'Key for proving income or establishing standard of living.' },
       { doc: 'UAE property title deeds', note: 'If joint property or family home is part of the settlement.' },
       { doc: 'Vehicle registration documents', note: 'If vehicles are part of the asset division.' },
       { doc: 'Business ownership documents', note: 'Trade license, shareholding certificates if a business is at stake.' },
@@ -94,7 +94,7 @@ const docCategories = [
       { doc: 'Marriage certificate attested by home country notary', note: 'First step in the attestation chain. Varies by country, may require state or federal authentication.' },
       { doc: 'Attestation by home country Ministry of Foreign Affairs', note: 'Second attestation step. Known as "legalisation" in some countries.' },
       { doc: 'UAE Ministry of Foreign Affairs attestation', note: 'Final step. Required before UAE courts will accept foreign documents.' },
-      { doc: 'Home country embassy in UAE attestation (if required)', note: 'Some countries require an additional embassy stamp in the UAE. Check with your embassy.' },
+      { doc: 'UAE Embassy or consulate legalisation in your home country', note: 'Required before MOFA attestation. Now largely digital: you apply through the UAE MOFA website with UAE PASS, and for some countries (such as the UK) one application covers both the Embassy and MOFA steps.' },
     ],
   },
 ];
@@ -102,16 +102,16 @@ const docCategories = [
 const attestationSteps = [
   { num: 1, step: 'Get the document notarised by a local notary in your home country.' },
   { num: 2, step: 'Submit to the relevant state or regional government for authentication (varies by country).' },
-  { num: 3, step: 'Submit to your home country\'s Ministry of Foreign Affairs for the foreign affairs apostille or legalisation stamp.' },
-  { num: 4, step: 'Submit to your home country\'s embassy or consulate in the UAE (if your country requires this step).' },
-  { num: 5, step: 'Submit to the UAE Ministry of Foreign Affairs (MOFA) in Abu Dhabi, Dubai, or the relevant emirate. MOFA attestation can now be done online via the MOFA UAE portal or through approved service agents.' },
+  { num: 3, step: 'Submit to your home country\'s Ministry of Foreign Affairs for legalisation. In apostille countries this is issued as an apostille certificate (the UK FCDO does this), but for the UAE it is only the home-country step, not the end of the chain.' },
+  { num: 4, step: 'Have the document legalised by the UAE Embassy or consulate for your home country. This step is now largely digital: you apply through the UAE MOFA website or app with UAE PASS, and a courier handles the original.' },
+  { num: 5, step: 'Obtain UAE Ministry of Foreign Affairs (MOFA) attestation. MOFA attestation is done online through the MOFA website or app; for some countries, including the UK, the digital Embassy application in step 4 already returns a document attested by both the Embassy and MOFA.' },
   { num: 6, step: 'Take the fully attested document to a UAE Ministry of Justice accredited legal translator for the Arabic certified translation.' },
 ];
 
 const faqItems = [
   {
     question: 'How much does it cost to attest a marriage certificate for UAE divorce?',
-    answer: 'Attestation costs vary significantly by country of origin. In total, the full attestation chain (home country notary + state authentication + home country foreign affairs + UAE MOFA) typically costs AED 300–1,000 equivalent. Professional document clearing agencies in the UAE charge AED 300–600 to handle the UAE MOFA step on your behalf. Adding the certified Arabic translation, budget AED 500–1,500 total per foreign document.',
+    answer: 'Attestation costs vary significantly by country of origin. In total, the full attestation chain (home country notary + state authentication + home country foreign affairs + UAE MOFA) typically costs AED 300 to 1,000 equivalent. Professional document clearing agencies in the UAE charge AED 300 to 600 to handle the UAE MOFA step on your behalf. Adding the certified Arabic translation, budget AED 500 to 1,500 total per foreign document.',
   },
   {
     question: 'What if my spouse refuses to provide documents?',
@@ -119,15 +119,15 @@ const faqItems = [
   },
   {
     question: 'Do UAE marriage certificates need attestation too?',
-    answer: 'UAE-issued marriage certificates (issued by the UAE courts or authorised religious officials) are already official UAE government documents and do not need attestation for use in UAE courts. However, if you need to use a UAE marriage certificate abroad (for divorce recognition in another country), it would need UAE MOFA attestation and then authentication in the destination country.',
+    answer: 'UAE-issued marriage certificates (issued by the UAE courts or authorised religious officials) are already official UAE government documents and do not need attestation for use in UAE courts. However, if you need to use a UAE marriage certificate abroad (for divorce recognition in another country), it would need UAE MOFA attestation and, if the destination country requires it, legalisation by that country\'s embassy or consulate in the UAE. The UAE does not issue apostilles.',
   },
   {
     question: 'How long does the attestation process take?',
-    answer: 'UAE MOFA attestation for routine documents takes 1–3 working days in person, or 3–5 days online. The home country steps vary widely, the US State Department takes 8–12 weeks for apostille by mail, while UK Foreign Office apostille takes 10 days. Most expats spend 2–6 weeks completing the full chain before their documents are ready for court. Plan this well in advance of your intended filing date.',
+    answer: 'For documents coming from abroad, the UAE Embassy step and MOFA attestation are increasingly handled as one digital application. MOFA states that digital attestation is completed within hours and the courier route takes 1 to 3 business days. The home country steps vary widely, from days to several weeks depending on the country and the authority. As an indication only, many expats spend several weeks completing the full chain before their documents are ready for court. Plan this well in advance of your intended filing date.',
   },
   {
     question: 'Can I hire someone to handle document attestation for me?',
-    answer: 'Yes. Document clearing agencies (PRO services) in the UAE handle the MOFA and translation steps efficiently for AED 300–800 depending on the service. For the home country steps, you need to either handle it yourself, use your home country\'s embassy in UAE, or hire a local service in your home country. Your UAE lawyer will typically coordinate or recommend reliable service providers.',
+    answer: 'Yes. Document clearing agencies (PRO services) in the UAE handle the MOFA and translation steps efficiently for AED 300 to 800 depending on the service. For the home country steps, you need to either handle it yourself, use your home country\'s embassy in UAE, or hire a local service in your home country. Your UAE lawyer will typically coordinate or recommend reliable service providers.',
   },
 ];
 ---
@@ -145,10 +145,10 @@ const faqItems = [
   <section class="hero-section">
     <div class="container">
       <p class="overline">Practical Guide · UAE 2025</p>
-      <h1>Documents Required for Divorce in UAE 2025, Complete Checklist</h1>
+      <h1>Documents Required for Divorce in UAE 2026, Complete Checklist</h1>
       <p class="hero-sub">Getting your documents right before you file saves weeks and thousands of dirhams. This is the complete list of what UAE courts require, for residents, expats, Muslims, and non-Muslims.</p>
       <div class="hero-meta">
-        <span>Updated: April 2025</span>
+        <span>Updated: September 2026</span>
         <span class="sep">·</span>
         <span>By Aleksi Suon, UAE Expat &amp; Legal Consultant</span>
       </div>
@@ -201,8 +201,8 @@ const faqItems = [
         </div>
 
         <div class="attest-note">
-          <h3>Countries that use the Apostille system</h3>
-          <p>If your home country is a member of the Hague Apostille Convention (US, UK, Australia, most EU countries), you can replace steps 2 and 3 with a single apostille stamp, significantly faster. UAE MOFA accepts apostilled documents. Countries not in the convention (Pakistan, India, some Middle Eastern countries) must complete the full legalisation chain.</p>
+          <h3>If your home country uses the Apostille system</h3>
+          <p>The UAE is not a party to the Hague Apostille Convention, so an apostille on its own does not make a document valid in the UAE. If your home country is a party (for example the US, UK, Australia, India, Pakistan and the EU states), the apostille can replace its own authentication and foreign-ministry steps (steps 2 and 3), but the document still needs UAE Embassy legalisation (step 4), MOFA attestation (step 5) and an Arabic translation (step 6). For the full chain in both directions, see <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation</a>.</p>
         </div>
       </section>
 
@@ -210,10 +210,10 @@ const faqItems = [
         <h2>Document Preparation Timeline</h2>
         <div class="timeline">
           {[
-            { period: '6–8 weeks before filing', tasks: ['Request certified copy of marriage certificate from issuing registry', 'Begin home-country attestation chain', 'Gather financial documents (bank statements, salary certificates)'] },
-            { period: '3–4 weeks before filing', tasks: ['Complete UAE MOFA attestation', 'Submit to accredited Arabic translator', 'Consult with a lawyer and confirm what they need for your specific case'] },
-            { period: '1–2 weeks before filing', tasks: ['Collect all translated and attested documents', 'Organise children\'s documents if applicable', 'Confirm all parties have valid UAE residence documents'] },
-            { period: 'Day of filing', tasks: ['Bring originals AND certified copies of everything', 'Bring payment for court fees (AED 500–1,500)', 'Bring your lawyer or confirm appointment with the filing agent'] },
+            { period: '6 to 8 weeks before filing', tasks: ['Request certified copy of marriage certificate from issuing registry', 'Begin home-country attestation chain', 'Gather financial documents (bank statements, salary certificates)'] },
+            { period: '3 to 4 weeks before filing', tasks: ['Complete UAE MOFA attestation', 'Submit to accredited Arabic translator', 'Consult with a lawyer and confirm what they need for your specific case'] },
+            { period: '1 to 2 weeks before filing', tasks: ['Collect all translated and attested documents', 'Organise children\'s documents if applicable', 'Confirm all parties have valid UAE residence documents'] },
+            { period: 'Day of filing', tasks: ['Bring originals AND certified copies of everything', 'Bring payment for court fees (AED 500 to 1,500)', 'Bring your lawyer or confirm appointment with the filing agent'] },
           ].map(t => (
             <div class="timeline-item">
               <div class="tl-period">{t.period}</div>

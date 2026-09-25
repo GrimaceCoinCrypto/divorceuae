@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'Can I divorce in England while living in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. English courts accept divorce petitions from British nationals resident abroad provided you were domiciled in England and Wales at the time of marriage, or have habitual residence there (which typically requires at least 12 months of residence in the 12 months before filing). If you have been living in Dubai for several years your habitual residence is likely UAE, but domicile of origin as an English national may still allow you to petition in England. You should take advice in both jurisdictions before choosing where to file.',
+        text: 'Often, yes. Under section 5(2) of the Domicile and Matrimonial Proceedings Act 1973, the court in England and Wales has jurisdiction if, on the date the application is made, one of the listed habitual residence or domicile tests is met. The habitual residence tests include the respondent being habitually resident there, or the applicant having been habitually resident there for the year before applying. For British expats in Dubai the key test is usually domicile: the court has jurisdiction if either spouse is domiciled in England and Wales on the date of the application. Domicile is not the same as nationality or residence; a domicile of origin in England and Wales can survive years abroad unless a new domicile of choice has been acquired. Take advice in both jurisdictions before choosing where to file.',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'Will my UAE divorce be valid in England?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Generally yes. England recognises foreign divorces obtained through official court proceedings under the Family Law Act 1986, provided both parties had notice of the proceedings and an opportunity to take part. A UAE court divorce decree (authenticated and apostilled) will be recognised in England. Talaq divorces obtained without court proceedings are not recognised in England under the Divorce (Religious Marriages) Act 2002.',
+        text: 'Generally yes, for a UAE court divorce. Under section 46(1) of the Family Law Act 1986, a divorce obtained overseas by judicial or other proceedings is recognised if it is effective under UAE law and, when the proceedings began, either spouse was habitually resident in, domiciled in, or a national of the UAE. Recognition can be refused under section 51, for example if a spouse was not given reasonable notice of the proceedings or a reasonable opportunity to take part. As evidence, UK bodies usually want a certified copy of the UAE judgment attested by the UAE Ministry of Foreign Affairs (the UAE does not issue apostilles) with a certified English translation. A bare talaq obtained without proceedings is treated much more strictly: under section 46(2) it is recognised only if both spouses were domiciled in the country where it was obtained (or one there and the other in a country that recognises it) and neither had been habitually resident in the UK for the year before. A talaq pronounced in the UK is not recognised at all, because section 44(1) requires a divorce obtained in the British Islands to be granted by a civil court.',
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: 'Can I claim UK pension rights after a UAE divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'UAE courts will not divide a UK state pension or private pension. For private pensions and SIPPs, you would need to bring separate English court proceedings (via Part III of the Matrimonial and Family Proceedings Act 1984 after the UAE divorce, or in English divorce proceedings if you petition there) to obtain a pension sharing order. UK state pension rights in a UAE divorce are simply not available under UAE law.',
+        text: 'UAE courts will not divide a UK state pension or private pension. For private pensions and SIPPs, you would need to bring separate English court proceedings (via Part III of the Matrimonial and Family Proceedings Act 1984 after the UAE divorce, or in English divorce proceedings if you apply there) to obtain a pension sharing order. UK state pension rights in a UAE divorce are simply not available under UAE law.',
       },
     },
     {
@@ -67,7 +67,7 @@ const faqSchema = {
       name: 'What is Part III of the Matrimonial and Family Proceedings Act 1984?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Part III allows a spouse to apply to the English courts for financial relief after an overseas divorce. The court must first grant leave (permission) to proceed, considering whether England is the appropriate forum. If granted, the English court can make the same orders it could have made in an English divorce, including property adjustment, lump sum, pension sharing, and periodical payments. This is a significant safety net for British nationals who received an inadequate financial outcome in UAE proceedings.',
+        text: 'Part III allows a spouse to apply to the court in England and Wales for financial relief after an overseas divorce, if the jurisdiction tests in section 15 (domicile, one year of habitual residence, or a former matrimonial home in England or Wales) are met. The application is issued in the Family Court. The court must first grant leave (permission), which it does only if there is substantial ground for the application, and it considers whether England and Wales is the appropriate venue. If granted, the English court can make the same orders it could have made in an English divorce, including property adjustment, lump sum, pension sharing, and periodical payments. This is a significant safety net for British nationals who received an inadequate financial outcome in UAE proceedings.',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'Are UK-registered marriages valid for UAE divorce proceedings?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. A UK marriage certificate, apostilled under the Hague Apostille Convention and accompanied by a certified Arabic translation, is accepted by UAE courts and notaries as proof of marriage. The UAE and UK are both party to the Hague Apostille Convention, so the authentication process is straightforward. You will need the original certificate (or a certified copy from the General Register Office), the apostille from the UK Legalisation Office, and an Arabic translation certified by a UAE-licensed translator.',
+        text: 'Yes, once the certificate has been legalised for UAE use. The UK is a party to the Hague Apostille Convention but the UAE is not, so an apostille alone is not enough. The chain is: a certified copy from the General Register Office (or its Scottish or Northern Irish equivalent), legalisation by the FCDO Legalisation Office (issued as an apostille certificate), attestation by the UAE Embassy in London, which is now done digitally through the UAE Ministry of Foreign Affairs website and covers the MOFA attestation in the same application, and finally an Arabic translation by a translator licensed by the UAE Ministry of Justice.',
       },
     },
     {
@@ -124,12 +124,12 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">British Expats in UAE &middot; Divorce Guide 2025</p>
+      <p class="hero-tag">British Expats in UAE &middot; Divorce Guide 2026</p>
       <h1>British Expat Divorce in UAE: The Financial Stakes Are Higher Than You Think</h1>
       <p class="hero-desc">
         The difference between divorcing in UAE courts and divorcing in England is not procedural. It is financial. UAE applies separate property only. England can redistribute everything. For British expats in Dubai with joint assets, the choice of forum can mean the difference of hundreds of thousands of dirhams.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
   </section>
 
@@ -140,7 +140,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
         <h2>Key facts for British expats divorcing in UAE</h2>
         <ul class="key-facts">
           <li><strong>UAE has no community property.</strong> Title deed controls. England can redistribute all assets regardless of ownership.</li>
-          <li><strong>Part III MFPA 1984</strong> is the safety net: British nationals can bring financial claims in England after a UAE divorce.</li>
+          <li><strong>Part III MFPA 1984</strong> is the safety net: a spouse can bring financial claims in England after a UAE divorce, with the court's permission, if the domicile, habitual residence or English home tests in section 15 are met.</li>
           <li><strong>SA v FA [2022] EWFC 115:</strong> an English Family Court judge stayed an English divorce in favour of the Abu Dhabi Civil Family Court, on conditions. It is a single first-instance decision, not binding precedent, and it does not close off English financial claims.</li>
           <li><strong>UK private pensions and SIPPs</strong> are not divided by UAE courts. English proceedings are required for pension sharing.</li>
           <li><strong>UAE is not a Hague Convention signatory.</strong> English custody orders have no automatic enforcement in UAE.</li>
@@ -197,7 +197,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
       <section class="content-section">
         <h2>Part III Matrimonial and Family Proceedings Act 1984: The Safety Net</h2>
         <p>
-          Even after a UAE divorce has been finalised, British nationals have an important safety net: Part III of the Matrimonial and Family Proceedings Act 1984. This allows a party to apply to the English courts for financial relief after obtaining an overseas divorce, provided the court grants permission to proceed.
+          Even after a UAE divorce has been finalised, many British expats have an important safety net: Part III of the Matrimonial and Family Proceedings Act 1984. This allows a party to apply to the court in England and Wales for financial relief after an overseas divorce, provided the court grants permission to proceed. Nationality alone is not the test. Under section 15, either spouse must have been domiciled in England and Wales on the date of the permission application or when the overseas divorce took effect, or have been habitually resident there for the year before either date, or either spouse must have a beneficial interest in a dwelling-house in England or Wales that was at some time the matrimonial home.
         </p>
         <p>
           Part III was designed precisely for cases where the financial outcome from a foreign divorce is inadequate. The classic scenario for a British expat: a UAE divorce is obtained, the wife receives her mahr and iddah maintenance but nothing from the Dubai apartment, pension, or investment accounts that were all in the husband's name. She is a British national, may have lived or worked in England, and has property connections there. She applies under Part III.
@@ -205,7 +205,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
 
         <h3>How Part III works</h3>
         <p>
-          The applicant files in the Family Court (or High Court for substantial assets) and applies first for leave to proceed. The court considers whether England is an appropriate venue, looking at the parties' connection to England, the financial resources in England, the adequacy of what was received from the overseas divorce, and whether it would be appropriate for an order to be made in England. The court must be satisfied it is appropriate for an order to be made, having particular regard to factors including the countries where the parties reside and have assets.
+          The application is issued in the Family Court, in practice at the applicant's local Financial Remedies Court zone hub, not in the High Court. Under the President's guidance on the jurisdiction of the family court, both the permission application and the full claim are dealt with by a district judge by default; a complex or very high-value case can be allocated to a judge of High Court level sitting in the Family Court. The applicant first asks for leave (permission) to proceed, which the court grants only if there is substantial ground for the application (section 13). The court then considers whether England and Wales is an appropriate venue (section 16), looking at the parties' connection to England, the financial resources in England, the adequacy of what was received from the overseas divorce, and whether it would be appropriate for an order to be made in England. The court must be satisfied it is appropriate for an order to be made, having particular regard to factors including the countries where the parties reside and have assets.
         </p>
         <p>
           If leave is granted, the court proceeds to a full financial hearing applying the same Section 25 criteria used in an English divorce. The court can make property adjustment orders, lump sum orders, pension sharing orders, and periodical payments orders. Critically, the court can take into account the Dubai apartment and other UAE assets in assessing the overall financial position, even if it cannot directly transfer the DLD title.
@@ -237,9 +237,9 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
       </section>
 
       <section class="content-section">
-        <h2>UK Marriage Registration: Apostille and Documentation</h2>
+        <h2>UK Marriage Certificate: Legalisation and UAE Attestation</h2>
         <p>
-          British nationals married in England, Scotland, or Wales can use that marriage certificate in UAE divorce proceedings. The UK and UAE are both signatories to the Hague Apostille Convention, which simplifies the authentication process considerably.
+          British nationals married in England, Scotland, Wales or Northern Ireland can use that marriage certificate in UAE divorce proceedings once it has been legalised for UAE use. The UK is a party to the Hague Apostille Convention but the UAE is not, so an apostille on its own is not enough: the document also needs UAE Embassy legalisation and UAE Ministry of Foreign Affairs (MOFA) attestation. For the full chain in both directions, see <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation</a>.
         </p>
 
         <div class="steps-list">
@@ -247,28 +247,28 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
             <div class="step-num">01</div>
             <div class="step-body">
               <h3>Obtain a certified copy of the marriage certificate</h3>
-              <p>Order from the General Register Office (GRO) in England and Wales, or the equivalent in Scotland or Northern Ireland. Allow 7 to 10 working days. A recent certified copy is preferred over a decades-old original for international proceedings.</p>
+              <p>Order from the General Register Office (GRO) in England and Wales, or the equivalent in Scotland or Northern Ireland. Delivery times vary. A recent certified copy is preferred over a decades-old original for international proceedings.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">02</div>
             <div class="step-body">
-              <h3>Obtain the apostille from the UK Legalisation Office</h3>
-              <p>Submit to the Legalisation Office (part of the Foreign, Commonwealth and Development Office). The apostille certifies the GRO's signature and is the authentication recognised by UAE authorities. Cost: GBP 30 per document. Online applications typically processed in 2 to 3 working days.</p>
+              <h3>Legalise it at the FCDO Legalisation Office</h3>
+              <p>The Foreign, Commonwealth and Development Office legalises the certificate by confirming the GRO signature. The FCDO issues this as an apostille certificate. It is the UK first step that the UAE Embassy requires, not the final authentication for UAE use. Check the current FCDO fee and processing time on gov.uk.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">03</div>
             <div class="step-body">
-              <h3>Arabic translation by a UAE-licensed translator</h3>
-              <p>The apostilled certificate must be translated into Arabic by a translator licensed by the UAE Ministry of Justice. Translation offices in Dubai provide this service; allow 1 to 2 working days. Cost: AED 150 to 300 for a marriage certificate.</p>
+              <h3>UAE Embassy and MOFA attestation (digital)</h3>
+              <p>Apply through the UAE Ministry of Foreign Affairs website with UAE PASS, choosing the UK as the issuing country. Since 2025 the UAE Embassy in London attests UK documents digitally: a courier collects the legalised certificate, and you receive a copy attested by both the Embassy and MOFA in one application, ready for use in the UAE. No separate MOFA visit is needed.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">04</div>
             <div class="step-body">
-              <h3>MOFA attestation (if required by the UAE court)</h3>
-              <p>Some UAE courts require an additional attestation stamp from the UAE Ministry of Foreign Affairs (MOFA). This is applied to the translated document. The UAE MOFA has service centres in Dubai; attestation takes 1 to 3 days. Not all courts require this for apostilled documents, but obtain it to avoid adjournments.</p>
+              <h3>Arabic translation by a UAE-licensed translator</h3>
+              <p>UAE courts work in Arabic, so the attested certificate must be translated by a legal translator licensed by the UAE Ministry of Justice. Translation offices in Dubai provide this service; allow a working day or two. Cost is indicative only: roughly AED 150 to 300 for a marriage certificate.</p>
             </div>
           </div>
         </div>
@@ -329,7 +329,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
         </p>
         <ul>
           <li><strong>Get a UAE family lawyer and an English solicitor in the same week.</strong> You need both perspectives simultaneously. The forum decision cannot be unmade, and the English solicitor needs to assess whether you have jurisdictional grounds in England before you file anywhere.</li>
-          <li><strong>Document your financial position comprehensively.</strong> Bank statements, pension statements, property valuations, share portfolios, SIPP values, payslips from both parties. Take copies of everything you have access to before proceedings start.</li>
+          <li><strong>Document your financial position in full.</strong> Bank statements, pension statements, property valuations, share portfolios, SIPP values, payslips from both parties. Take copies of everything you have access to before proceedings start.</li>
           <li><strong>Consider a precautionary attachment in UAE</strong> if there is a risk your spouse will move or transfer assets before proceedings conclude. An application to the Court of Urgent Matters can freeze UAE assets within 48 hours.</li>
           <li><strong>Assess the DLD transfer option for property.</strong> If both parties agree on who keeps the Dubai property, a transfer made while still married costs 0.125% DLD fee versus 4% post-divorce. On a AED 2 million apartment that is a saving of approximately AED 75,000.</li>
           <li><strong>Brief your English solicitor on pension assets.</strong> If your spouse has a large SIPP or defined benefit pension, an English pension sharing order may be the only mechanism to access it. This needs English proceedings, and timing matters.</li>

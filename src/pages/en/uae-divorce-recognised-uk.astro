@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
 const title = 'Will My UAE Divorce Be Recognised in the UK?';
 const description =
-  'UAE divorces are recognised in England and Wales under the Family Law Act 1986, but talaq, financial orders, and the Scotland rules have critical differences. Full guide with the SA v FA [2022] EWFC 115 decision explained, apostille steps, and Part III MFPA 1984.';
+  'UAE divorces are recognised in England and Wales under the Family Law Act 1986, but talaq, financial orders, and the Scotland rules have critical differences. Full guide with the SA v FA [2022] EWFC 115 decision explained, the attestation steps for UK use, and Part III MFPA 1984.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/uae-divorce-recognised-uk/',
@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'Is my UAE divorce automatically valid in the UK?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A UAE divorce obtained through judicial proceedings, including the Abu Dhabi Civil Family Court and Dubai Personal Status Court, is recognised in England and Wales under Part II of the Family Law Act 1986, provided that at least one party was habitually resident, domiciled, or a national of the UAE at the time. Recognition is not automatic for bare talaq declarations made without court proceedings. A judicial or registered UAE divorce does not require a UK court proceeding to be valid, it is recognised by operation of law.',
+        text: 'A UAE divorce obtained through judicial proceedings, including the Abu Dhabi Civil Family Court and Dubai Personal Status Court, is recognised in England and Wales under Part II of the Family Law Act 1986, provided that, when the proceedings began, at least one party was habitually resident in, domiciled in, or a national of the UAE. Recognition is not automatic for bare talaq declarations made without court proceedings. A judicial or registered UAE divorce does not require a UK court proceeding to be valid, it is recognised by operation of law.',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'Do I need to register my UAE divorce in the UK?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'There is no mandatory registration requirement for a valid overseas divorce in England and Wales. However, for practical purposes, changing your name on a passport, registering a new marriage, dealing with financial institutions, you will typically need to present your UAE divorce certificate with an official English translation and an apostille. The General Register Office (GRO) can record the divorce if needed. Getting the certificate apostilled in the UAE before travelling is strongly recommended.',
+        text: 'There is no mandatory registration requirement for a valid overseas divorce in England and Wales. However, for practical purposes, changing your name on a passport, registering a new marriage, dealing with financial institutions, you will typically need to present a certified copy of your UAE divorce judgment attested by the UAE Ministry of Foreign Affairs (MOFA), with a certified English translation. The UAE is not a party to the Apostille Convention, so it cannot issue an apostille. Getting the MOFA attestation done in the UAE before you leave is strongly recommended.',
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: 'What if my UAE divorce was done by talaq?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Bare talaq, an oral or written declaration of divorce with no court involvement and no notification to the other party, is not recognised in England and Wales under the Family Law Act 1986. However, talaq that was registered with UAE courts, completed through the reconciliation process at the Family Guidance Department, and resulted in a court-issued certificate qualifies as "proceedings" and is eligible for recognition. The distinction is between a bare extrajudicial talaq and a court-administered talaq process. The latter is recognisable; the former is not.',
+        text: 'Bare talaq, an oral or written declaration of divorce with no court involvement and no notification to the other party, is not recognised in England and Wales under the Family Law Act 1986. A divorce obtained without proceedings can only be recognised under the stricter test in section 46(2) (both spouses domiciled in the country where it was obtained, or one there and the other in a country that recognises it, and neither habitually resident in the UK for the year before), which most British expats fail. A talaq that has been documented by a UAE court and resulted in a court-issued record is in a stronger position, because it may count as obtained by "proceedings" under section 46(1), but whether it does depends on the facts, so take English legal advice or seek a declaration under section 55.',
       },
     },
     {
@@ -80,10 +80,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How do I get my UAE divorce certificate apostilled for UK use?',
+      name: 'How do I get my UAE divorce certificate attested for UK use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The UAE Ministry of Foreign Affairs (MOFA) is the competent authority for apostilling UAE court documents. Steps: (1) obtain the official UAE divorce certificate from the issuing court; (2) have it translated into English by a UAE-certified legal translator; (3) submit both the original Arabic certificate and the English translation to MOFA for attestation; (4) MOFA attests the document (apostille). Cost is approximately AED 150-200 per document plus translation fees. The apostilled certificate is then accepted in the UK. Processing time is typically 2-5 working days.',
+        text: 'The UAE is not a party to the Hague Apostille Convention, so UAE documents are attested rather than apostilled. Steps: (1) obtain a certified copy of the divorce judgment or certificate from the issuing court; (2) have it attested by the UAE Ministry of Foreign Affairs (MOFA), online with UAE PASS; (3) have it translated into English by a UAE Ministry of Justice-licensed legal translator (some UK bodies also want the translation attested); (4) present the attested document and translation to the UK body. MOFA publishes a fee of AED 150 per personal document, and its stated processing time is within hours for digital attestation and 1 to 3 business days for the courier route; treat these as indicative and check current figures. UK authorities do not usually ask for a further embassy step, but each body decides what it accepts.',
       },
     },
     {
@@ -91,7 +91,7 @@ const faqSchema = {
       name: 'Can I remarry in the UK after a UAE divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, provided your UAE divorce is recognised in the UK under the Family Law Act 1986. You will need to present your UAE divorce certificate (with apostille and English translation) to the UK register office or church before a new marriage can proceed. They will carry out their own check of the documentation. If there is any doubt about recognition, you can apply to the English courts under Section 55 of the Family Law Act 1986 for a declaration that the divorce is recognised, this gives you a definitive English court order confirming the position.',
+        text: 'Yes, provided your UAE divorce is recognised in the UK under the Family Law Act 1986. You will need to present your UAE divorce judgment (MOFA-attested, with a certified English translation) to the UK register office or church before a new marriage can proceed. The register office checks overseas divorce documents and may refer them to the General Register Office for a decision, which carries a fee. If there is any doubt about recognition, you can apply to the English courts under Section 55 of the Family Law Act 1986 for a declaration that the divorce is recognised, this gives you a definitive English court order confirming the position.',
       },
     },
     {
@@ -110,8 +110,8 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
 const stepsData = [
   { step: '01', title: 'Obtain the official UAE divorce certificate', detail: 'Get the original court-issued divorce certificate from the UAE court (Personal Status Court or Abu Dhabi Civil Family Court; the DIFC Courts do not grant divorces). This must be the final decree, not just the initial filing confirmation. In Dubai, this is the Book Extract from the Personal Status Court.' },
   { step: '02', title: 'Official English translation', detail: 'Have the certificate translated into English by a UAE Ministry of Justice certified legal translator. Keep both the Arabic original and the certified English translation together. Courts and registries want to see both.' },
-  { step: '03', title: 'MOFA apostille', detail: 'Submit both documents (Arabic original and English translation) to the UAE Ministry of Foreign Affairs (MOFA) for apostille. The apostille certifies the authenticity of the signature, seal, and stamp on the document. Cost: approximately AED 150-200 per document. Processing: 2-5 working days. This step can be done online through the MOFA digital services portal.' },
-  { step: '04', title: 'Present to UK registry or financial institution', detail: 'The apostilled certificate with English translation is accepted by UK register offices for remarriage purposes, by HMRC and DWP for tax and benefit purposes, and by financial institutions for account updates. Keep certified copies rather than originals for routine submissions.' },
+  { step: '03', title: 'MOFA attestation', detail: 'Submit the certified court document to the UAE Ministry of Foreign Affairs (MOFA) for attestation, online with UAE PASS; attest the translation too if the UK body asks for it. Attestation confirms the authenticity of the signature, seal and stamp on the document. The UAE is not an apostille country, so this replaces the apostille you may have expected. MOFA publishes a fee of AED 150 per personal document and a processing time of within hours (digital) or 1 to 3 business days (courier); treat these as indicative.' },
+  { step: '04', title: 'Present to UK registry or financial institution', detail: 'The MOFA-attested document with a certified English translation is what UK register offices usually ask for when checking an overseas divorce before remarriage, and it is also used by HMRC and DWP for tax and benefit purposes, and by financial institutions for account updates. Keep certified copies rather than originals for routine submissions.' },
   { step: '05', title: 'Optional: UK court declaration', detail: 'If there is any doubt about whether the divorce is recognised, for example if it was a registered talaq, you can apply to the Family Court in England and Wales for a declaration of recognition under Section 55 of the Family Law Act 1986. This produces a definitive English court order confirming the divorce is valid. Cost: court fee of approximately £365 plus legal costs.' },
 ];
 ---
@@ -136,7 +136,7 @@ const stepsData = [
       <p class="hero-desc">
         You divorced in Abu Dhabi or Dubai. You are now back in the UK or planning to move there. You need to know whether the legal system you relied on actually counts. The answer depends on how you divorced, who was involved, and what financial questions remain open. This guide gives you the law, the SA v FA decision in plain English, and the practical steps to ensure your UAE divorce is properly recognised in England and Wales.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
   </section>
 
@@ -147,7 +147,7 @@ const stepsData = [
         <h2>The short answers</h2>
         <ul class="key-facts">
           <li><strong>Judicial UAE divorce + UK recognition:</strong> Yes, recognised under Family Law Act 1986 Part II, no UK proceedings needed.</li>
-          <li><strong>Bare talaq (unregistered):</strong> Not recognised. Court-administered, registered talaq: recognised.</li>
+          <li><strong>Bare talaq (not documented by a court):</strong> Almost always not recognised for British expats. A talaq documented by a UAE court is in a stronger position, but recognition depends on the facts.</li>
           <li><strong>UK financial orders:</strong> Not automatically recognised. Separate UK enforcement application required.</li>
           <li><strong>Part III MFPA 1984:</strong> Allows UK financial claims even after an overseas divorce, potentially significant for expats with UK assets.</li>
           <li><strong>SA v FA [2022] EWFC 115:</strong> an English Family Court judge (HHJ Hess) stayed an English divorce in favour of the Abu Dhabi Civil Family Court, on conditions. A first-instance decision, not binding precedent.</li>
@@ -158,14 +158,14 @@ const stepsData = [
       <section class="content-section">
         <h2>The Legal Framework: Family Law Act 1986 Part II</h2>
         <p>
-          The recognition of overseas divorces in England and Wales is governed by Part II of the <strong>Family Law Act 1986</strong>. An overseas divorce is recognised in England and Wales if it was obtained by means of judicial or other proceedings in a country where, at the time of the divorce, either party was habitually resident, domiciled, or a national.
+          The recognition of overseas divorces in England and Wales is governed by Part II of the <strong>Family Law Act 1986</strong>. Under section 46(1), an overseas divorce obtained by means of judicial or other proceedings is recognised in England and Wales if it is effective under the law of the country where it was obtained and, on the date the proceedings began, either party was habitually resident in, domiciled in, or a national of that country.
         </p>
         <p>
           Breaking that down for UAE divorces:
         </p>
         <ul>
           <li><strong>Obtained by proceedings:</strong> The divorce must have been obtained through some form of proceedings, a court process, an administrative registration, or a formal procedure. An informal oral statement of divorce with no official process does not qualify.</li>
-          <li><strong>Habitually resident, domiciled, or national:</strong> At the time of the UAE divorce, at least one of the parties must have been habitually resident in the UAE (which most expats living there will satisfy), domiciled in the UAE, or a UAE national. Most expat divorces in UAE easily satisfy the habitual residence test.</li>
+          <li><strong>Habitually resident, domiciled, or national:</strong> When the UAE proceedings began, at least one of the parties must have been habitually resident in the UAE (which most expats living there will satisfy), domiciled in the UAE, or a UAE national. Most expat divorces in UAE easily satisfy the habitual residence test.</li>
         </ul>
         <p>
           Provided both conditions are met, the UAE divorce is recognised in England and Wales automatically, meaning you do not need to go to an English court to get the divorce "approved." The recognition happens by operation of law.
@@ -229,12 +229,12 @@ const stepsData = [
               <tr>
                 <td class="td-bold">Muslim divorce (FL 41/2024) through UAE Personal Status Court</td>
                 <td class="td-rule--yes">Recognised</td>
-                <td class="td-light">Court-administered. Reconciliation process completed. Court certificate issued.</td>
+                <td class="td-light">Court-administered proceedings. Court judgment or certificate issued.</td>
               </tr>
               <tr class="row-alt">
-                <td class="td-bold">Talaq registered with UAE courts + reconciliation process completed</td>
-                <td class="td-rule--maybe">Recognised (if properly processed)</td>
-                <td class="td-light">Must qualify as "proceedings." Registration and reconciliation steps are critical to recognition.</td>
+                <td class="td-bold">Talaq pronounced out of court, then documented by a UAE court</td>
+                <td class="td-rule--maybe">Possibly recognised</td>
+                <td class="td-light">Must qualify as "proceedings" under section 46(1), which depends on the facts. Otherwise the stricter section 46(2) test applies.</td>
               </tr>
               <tr>
                 <td class="td-bold">Bare talaq, oral declaration, unregistered, no court process</td>
@@ -252,10 +252,10 @@ const stepsData = [
 
         <h3>The talaq question in detail</h3>
         <p>
-          Talaq is the most contested recognition issue for UAE divorces in UK courts. The key distinction is between extrajudicial talaq, where a husband simply declares divorce without any official process, and court-administered talaq, where the declaration is made before or registered with the UAE courts, and the Family Guidance Department's reconciliation process (three attempts over approximately 90 days) is completed.
+          Talaq is the most contested recognition issue for UAE divorces in UK courts. The key distinction is between extrajudicial talaq, where a husband simply declares divorce without any official process, and court-administered talaq, where the divorce is pronounced before, or documented by, the UAE courts. In a contested case the court may also refer the spouses to Family Guidance first; under the 2024 law that referral is at the judge's discretion (it was mandatory under the 2005 law) and there is no fixed statutory period for it.
         </p>
         <p>
-          Under UAE law, even a Muslim talaq must now be administered through the Personal Status Court system. A husband cannot simply announce a divorce; he must file a talaq application, attend reconciliation sessions, and receive a court certificate. When this process is completed, the resulting certificate represents a judicial process sufficient to satisfy the FLA 1986 test.
+          Under Federal Decree-Law No. 41 of 2024, a talaq can take effect when the husband pronounces it, but he must document it before the competent court within 15 days, and the wife can bring a claim to prove the divorce. Once a court has documented the talaq, there is an official court record, which puts it in a much stronger position under the FLA 1986 "proceedings" test. Whether that is enough depends on the facts, so take English advice or apply for a section 55 declaration if you rely on it.
         </p>
         <p>
           An unregistered talaq, which historically may have occurred, does not satisfy the "proceedings" test in English law. If you received a divorce this way and have since returned to the UK, you may legally still be married under English law. This has significant consequences for inheritance, remarriage, and financial claims.
@@ -361,11 +361,11 @@ const stepsData = [
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">You want to remarry in the UK after a UAE talaq</p>
-            <p>If your talaq was registered with the UAE Personal Status Court and the full reconciliation process was completed, you have a court certificate that will be recognised in the UK. Take the apostilled certificate with English translation to the UK register office when giving notice of your new marriage. If any doubt arises, apply for a Section 55 FLA 1986 declaration first, this resolves the question definitively before you schedule the new marriage.</p>
+            <p>If your talaq was documented by the UAE Personal Status Court, you have a court record that may be recognised in the UK, but a talaq is the case where recognition is most often questioned. Take the MOFA-attested court document with a certified English translation to the UK register office when giving notice of your new marriage. If any doubt arises, apply for a Section 55 FLA 1986 declaration first, this resolves the question definitively before you schedule the new marriage.</p>
           </div>
           <div class="scenario-card scenario-card--numbered">
             <p class="scenario-title">Your spouse divorced you in the UAE without telling you and you are now in the UK</p>
-            <p>If you were not given notice of the UAE divorce proceedings and did not participate, you may be able to challenge recognition of the UAE divorce in English courts on grounds that it was not obtained by proper "proceedings" that gave you notice. Under the Family Law Act 1986, Section 51, a court can refuse recognition if there was no official document serving notice on the respondent who did not take part. Apply to the English Family Court for a declaration under Section 55 of the FLA 1986 to clarify whether the marriage has legally ended in England.</p>
+            <p>If you were not given notice of the UAE divorce proceedings and did not participate, you may be able to challenge recognition of the UAE divorce in the English courts. Under section 51(3)(a) of the Family Law Act 1986, recognition of a divorce obtained by proceedings can be refused if the steps that should reasonably have been taken to give you notice were not taken, or if you were not given a reasonable opportunity to take part. Apply to the English Family Court for a declaration under Section 55 of the FLA 1986 to clarify whether the marriage has legally ended in England.</p>
           </div>
         </div>
       </section>
@@ -405,7 +405,7 @@ const stepsData = [
           </a>
           <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
             <strong>UAE Divorce Certificate Attestation</strong>
-            <span>How to apostille your UAE decree for use in the UK</span>
+            <span>How to attest your UAE decree for use in the UK</span>
           </a>
         </div>
       </section>

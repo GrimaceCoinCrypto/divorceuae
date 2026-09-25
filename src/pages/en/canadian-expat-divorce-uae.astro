@@ -26,7 +26,7 @@ const faqSchema = {
       name: 'Will Canada recognise my UAE divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, in most cases. Section 22 of the Divorce Act (Canada) recognises a foreign divorce as valid in Canada if either spouse was ordinarily resident in that country for at least one year before the divorce proceedings were commenced. Most Canadian expats in Dubai easily satisfy this test. Quebec adds a domicile requirement under Article 3167 of the Civil Code of Quebec, but UAE residence for employment purposes is generally treated as domicile in Quebec courts. An apostilled and officially translated UAE divorce certificate is the document required to prove the foreign divorce.',
+        text: 'Yes, in most cases. Section 22 of the Divorce Act (Canada) recognises a foreign divorce as valid in Canada if either spouse was ordinarily resident in that country for at least one year before the divorce proceedings were commenced. Most Canadian expats in Dubai easily satisfy this test. Quebec adds a domicile requirement under Article 3167 of the Civil Code of Quebec, but UAE residence for employment purposes is generally treated as domicile in Quebec courts. A UAE divorce certificate attested by the UAE Ministry of Foreign Affairs (MOFA) and officially translated is the usual proof of the foreign divorce. The UAE is not a party to the Hague Apostille Convention, so UAE documents are attested rather than apostilled; check with the Canadian authority receiving it whether it also wants legalisation by the Canadian Embassy or consulate in the UAE.',
       },
     },
     {
@@ -34,7 +34,7 @@ const faqSchema = {
       name: 'Can I split CPP credits after a UAE divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Canada Pension Plan credit splitting is available regardless of where the divorce was granted. A valid UAE divorce certificate (apostilled, translated, and accepted by Service Canada) is sufficient to trigger a CPP credit split application. The credits accumulated during the period of cohabitation in the marriage are divided equally between the former spouses. You apply directly to Service Canada using Form ISP-1901. The divorce does not need to have been granted in Canada for CPP splitting to apply.',
+        text: 'Yes. Canada Pension Plan credit splitting is available regardless of where the divorce was granted. A valid UAE divorce certificate (MOFA-attested, translated, and accepted by Service Canada) is sufficient to trigger a CPP credit split application. The credits accumulated during the period of cohabitation in the marriage are divided equally between the former spouses. You apply directly to Service Canada using Form ISP-1901. The divorce does not need to have been granted in Canada for CPP splitting to apply.',
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'Can I get divorced in UAE even if we married in Canada?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. UAE courts have jurisdiction to grant a divorce based on the couple\'s residence in the UAE, not on where they were married. A Canadian marriage certificate, apostilled by the relevant provincial authority and translated into Arabic by a UAE Ministry of Justice-licensed translator, is accepted by UAE courts as proof of marriage. The UAE and Canada are both party to the Hague Apostille Convention, making the authentication process straightforward. Marriage in Canada does not prevent divorce in UAE, provided at least one spouse is ordinarily resident in the UAE.',
+        text: 'Yes. UAE courts have jurisdiction to grant a divorce based on the couple\'s residence in the UAE, not on where they were married. A Canadian marriage certificate is accepted by UAE courts as proof of marriage once it has been authenticated in Canada (since Canada joined the Hague Apostille Convention this is usually an apostille from the competent Canadian authority), legalised by the UAE Embassy in Canada, attested by the UAE Ministry of Foreign Affairs (MOFA), and translated into Arabic by a UAE-licensed legal translator. The UAE is not a party to the Apostille Convention, so the Canadian apostille alone is not enough. Marriage in Canada does not prevent divorce in UAE, provided at least one spouse is ordinarily resident in the UAE.',
       },
     },
   ],
@@ -123,12 +123,12 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Canadian Expats in UAE &middot; Divorce Guide 2025</p>
+      <p class="hero-tag">Canadian Expats in UAE &middot; Divorce Guide 2026</p>
       <h1>Canadian Expat Divorce in UAE: Recognition, CPP Splitting, RRSPs, and the Canadian Property Problem</h1>
       <p class="hero-desc">
         Divorcing in Dubai is fast and straightforward under Federal Decree-Law No. 41 of 2022. Canada will recognise the divorce. But your RRSPs, pensions, and Canadian property will still be sitting there, entirely untouched by UAE courts, waiting for a separate Canadian legal process. This guide tells you exactly what UAE can do and where you still need Canadian proceedings.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
   </section>
 
@@ -221,10 +221,10 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           Canada Pension Plan credit splitting allows the CPP credits accumulated by each spouse during the period of their cohabitation to be divided equally between them. This is entirely separate from any UAE financial proceedings and is administered by Service Canada, not by any court.
         </p>
         <p>
-          To apply for CPP credit splitting after a UAE divorce, you will need your UAE divorce certificate, apostilled by the UAE Ministry of Foreign Affairs and officially translated into English or French. You submit Form ISP-1901 (or Form ISP-1901(Q) for Quebec) to Service Canada. The application can be made by either former spouse and does not require the consent of the other once the divorce is confirmed.
+          To apply for CPP credit splitting after a UAE divorce, you will need your UAE divorce certificate, certified by the issuing court, attested by the UAE Ministry of Foreign Affairs (MOFA) and officially translated into English or French. The UAE does not issue apostilles; ask Service Canada whether it needs any further legalisation. You submit Form ISP-1901 (or Form ISP-1901(Q) for Quebec) to Service Canada. The application can be made by either former spouse and does not require the consent of the other once the divorce is confirmed.
         </p>
         <p>
-          The credits are split based on the period during which both parties cohabited as spouses. Credits accumulated before the marriage or after separation are not included. This is a straightforward administrative process once the UAE divorce is finalised and the documentation is in order. See our guide on <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation in UAE</a> for the full apostille process.
+          The credits are split based on the period during which both parties cohabited as spouses. Credits accumulated before the marriage or after separation are not included. This is a straightforward administrative process once the UAE divorce is finalised and the documentation is in order. See our guide on <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation in UAE</a> for the full attestation and legalisation process.
         </p>
 
         <div class="info-box info-box--info">
@@ -297,7 +297,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           <li><strong>Engage a Canadian family lawyer at the same time as your UAE lawyer.</strong> The Canadian financial pieces (RRSPs, pensions, property) need to be addressed in parallel, not as an afterthought.</li>
           <li><strong>Inventory all Canadian assets.</strong> RRSP statements, TFSA balances, pension plan member statements, property valuations. Take copies of all documents before proceedings begin.</li>
           <li><strong>Note the two-year limitation period</strong> for Canadian property claims after divorce. Do not delay Canadian proceedings after the UAE divorce is finalised.</li>
-          <li><strong>Apostille your UAE divorce certificate</strong> promptly after it is issued. You need this for CPP splitting, Canadian property proceedings, and any Canadian authority that asks for proof of divorce.</li>
+          <li><strong>Get your UAE divorce certificate attested by MOFA</strong> promptly after it is issued (the UAE is not an apostille country). You need this for CPP splitting, Canadian property proceedings, and any Canadian authority that asks for proof of divorce.</li>
           <li><strong>If children are involved,</strong> decide on travel restriction applications before filing the divorce. Discuss the custody framework with both your UAE lawyer and a Canadian family lawyer simultaneously.</li>
         </ul>
       </section>
@@ -321,7 +321,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           </a>
           <a href="/en/divorce-certificate-attestation-uae/" class="related-card">
             <strong>Divorce Certificate Attestation UAE</strong>
-            <span>Apostille process, MOFA stamps, and international use</span>
+            <span>MOFA attestation, legalisation, and international use</span>
           </a>
           <a href="/en/divorce-cost-uae/" class="related-card">
             <strong>Divorce Cost UAE</strong>

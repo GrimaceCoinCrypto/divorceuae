@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'Is Abu Dhabi divorce faster than Dubai divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, for uncontested non-Muslim divorces. The Abu Dhabi Civil Family Court (ADCFC), under Abu Dhabi Law No. 14/2021, has no mandatory reconciliation or counselling requirement for uncontested cases. A straightforward uncontested civil divorce can be concluded in 3-6 weeks. Dubai\'s Personal Status Court requires family guidance counselling (typically 2-3 sessions over 4-6 weeks) before a case can proceed to a judge, making the minimum uncontested timeline 8-12 weeks.',
+        text: 'Often, for uncontested non-Muslim divorces, but not because of counselling. The Abu Dhabi Civil Family Court (ADCFC), under Abu Dhabi Law No. 14/2021, is a dedicated civil court with bilingual proceedings, and a straightforward uncontested civil divorce can be concluded in 3-6 weeks. In Dubai, non-Muslim divorces under Federal Decree-Law No. 41 of 2022 are not referred to Family Guidance either: Article 3 of that law sends divorce claims straight to the court for a judgment at the first hearing. How long a Dubai case takes in practice depends on hearing dates, translation of documents into Arabic, and whether custody and financial terms are agreed.',
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: 'Does it matter which emirate I live in for divorce in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The emirate of habitual residence determines which court system you use. Dubai and Abu Dhabi have materially different procedures and timelines for non-Muslim divorces. Abu Dhabi has the ADCFC (faster, more civil framework) while Dubai uses the Personal Status Court with mandatory counselling. For Muslim divorces, both emirates apply Federal Decree-Law No. 41 of 2024 through their respective Personal Status Courts, the differences are less significant, though Abu Dhabi tends to have faster processing times.',
+        text: 'Yes. The emirate of habitual residence determines which court system you use. Dubai and Abu Dhabi have materially different procedures and timelines for non-Muslim divorces. Abu Dhabi has the ADCFC (a dedicated civil court with bilingual proceedings) while Dubai hears non-Muslim divorces in the Dubai Courts under Federal Decree-Law No. 41 of 2022, in Arabic. For Muslim divorces, both emirates apply Federal Decree-Law No. 41 of 2024 through their respective Personal Status Courts, the differences are less significant, though Abu Dhabi tends to have faster processing times.',
       },
     },
     {
@@ -91,7 +91,7 @@ const faqSchema = {
       name: 'Do Muslim couples have different options in Dubai vs Abu Dhabi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For Muslim couples, both emirates apply Federal Decree-Law No. 41 of 2024 (the new Personal Status Law effective April 15 2025) through their respective Personal Status Courts. The substantive law is the same. Procedurally, Abu Dhabi tends to have faster processing and more flexible scheduling. Dubai courts are well-resourced and experienced but can have longer waiting periods. The Family Guidance Department (for mediation and reconciliation) operates in both emirates. Both have specialist judges for personal status matters.',
+        text: 'For Muslim couples, both emirates apply Federal Decree-Law No. 41 of 2024 (the new Personal Status Law effective April 15 2025) through their respective Personal Status Courts. The substantive law is the same. Procedurally, Abu Dhabi tends to have faster processing and more flexible scheduling. Dubai courts are well-resourced and experienced but can have longer waiting periods. Family Guidance (for mediation and reconciliation) operates in both emirates; under the 2024 law the judge may refer the spouses there, which was mandatory under the 2005 law and is now discretionary. Both have specialist judges for personal status matters.',
       },
     },
     {
@@ -109,8 +109,8 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
 
 const comparisonRows = [
   { criterion: 'Governing law (non-Muslim)', adcfc: 'Federal Decree-Law No. 41/2022 + civil framework under Abu Dhabi Law No. 14/2021', dubai: 'Federal Decree-Law No. 41/2022 (same substantive law)' },
-  { criterion: 'Mandatory counselling', adcfc: 'No (not required for uncontested)', dubai: 'Yes, 2-3 sessions at Family Guidance, adds 4-6 weeks minimum' },
-  { criterion: 'Speed (uncontested)', adcfc: '3-6 weeks', dubai: '8-12 weeks' },
+  { criterion: 'Family Guidance / counselling', adcfc: 'Not required for divorce', dubai: 'Not required for non-Muslim divorce claims (Article 3, Federal Decree-Law No. 41/2022)' },
+  { criterion: 'Speed (uncontested)', adcfc: '3-6 weeks', dubai: 'Can be decided at the first hearing; overall time depends on scheduling and document translation' },
   { criterion: 'Language', adcfc: 'Arabic and English (bilingual)', dubai: 'Arabic only (court translator for expats)' },
   { criterion: 'Judge type', adcfc: 'Civil judges; secular framework', dubai: 'Personal Status judges; religious law background' },
   { criterion: 'Financial disclosure', adcfc: 'Court can order; growing use', dubai: 'Court can order; less routinely applied' },
@@ -136,10 +136,10 @@ const comparisonRows = [
 
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">UAE Court Selection Guide, 2025</p>
+      <p class="hero-tag">UAE Court Selection Guide, 2026</p>
       <h1>Dubai vs Abu Dhabi Divorce: Which Court Should You Use?</h1>
       <p class="hero-desc">
-        Two entirely different legal frameworks operate in parallel in the UAE for non-Muslim divorces. Abu Dhabi's Civil Family Court can finalise an uncontested divorce in under four weeks with no mandatory counselling. Dubai requires family guidance sessions and takes at least three months. The DIFC and ADGM Courts, often mentioned in the same breath, cannot grant a divorce at all. Choosing the right court is not just procedural, it can change both your timeline and your financial outcome.
+        Two entirely different legal frameworks operate in parallel in the UAE for non-Muslim divorces. Abu Dhabi's Civil Family Court is a dedicated civil court that can finalise an uncontested divorce in a matter of weeks, working in English and Arabic. Dubai hears non-Muslim divorces in the Dubai Courts under the federal civil personal status law, in Arabic; neither emirate sends non-Muslim divorce claims to Family Guidance. The DIFC and ADGM Courts, often mentioned in the same breath, cannot grant a divorce at all. Choosing the right court is not just procedural, it can change both your timeline and your financial outcome.
       </p>
       <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
@@ -152,7 +152,7 @@ const comparisonRows = [
         <h2>Quick orientation</h2>
         <ul class="key-facts">
           <li><strong>Abu Dhabi Civil Family Court (ADCFC):</strong> secular, fast, no mandatory reconciliation. Best for non-Muslims wanting speed.</li>
-          <li><strong>Dubai Personal Status Court:</strong> requires counselling, 8-12 weeks minimum for uncontested non-Muslim cases. Applies FL 41/2022.</li>
+          <li><strong>Dubai Personal Status Court:</strong> applies FL 41/2022 to non-Muslims. Divorce claims go straight to the court without Family Guidance; proceedings are in Arabic.</li>
           <li><strong>DIFC Courts (Dubai) and ADGM Courts (Abu Dhabi):</strong> English-language common-law courts for civil and commercial disputes. They cannot grant a divorce or hear custody, alimony or financial claims between spouses, whatever the assets.</li>
           <li><strong>Muslim couples:</strong> both emirates apply FL 41/2024 through Personal Status Courts. Less procedural difference than for non-Muslims.</li>
           <li><strong>Jurisdiction is determined by habitual residence</strong>, but address registration and asset location can create arguments for an alternative court.</li>
@@ -199,12 +199,12 @@ const comparisonRows = [
           For non-Muslim expats, the Dubai PSC applies <strong>Federal Decree-Law No. 41 of 2022</strong>. For Muslim residents and UAE nationals, it applies <strong>Federal Decree-Law No. 41 of 2024</strong> (effective April 15 2025).
         </p>
 
-        <h3>The mandatory counselling requirement</h3>
+        <h3>Family Guidance: a Muslim-case step, not a non-Muslim one</h3>
         <p>
-          The most significant practical difference between Dubai PSC and the ADCFC for non-Muslim expats is the mandatory family guidance counselling. Before a divorce case can proceed to a judge in Dubai, the parties must attend the Family Guidance Department. The counsellors attempt reconciliation and mediation. There are typically 2-3 sessions scheduled over 4-6 weeks. If reconciliation fails, which in a typical expat divorce it usually does, the counsellor issues a certificate allowing the case to proceed to court.
+          Non-Muslim expats in Dubai are sometimes told they must attend family counselling before a judge will hear their divorce. That is not what the law says. Article 3 of Federal Decree-Law No. 41 of 2022 excludes divorce claims under that law from referral to Family Guidance and sends them directly to the court for a judgment at the first hearing. The same is true at the ADCFC.
         </p>
         <p>
-          For parties who are clearly committed to divorce and simply want the process completed, these sessions are a procedural hurdle rather than a genuine reconciliation opportunity. They add a minimum of 4-6 weeks to the timeline.
+          Family Guidance matters for Muslim couples. Under Federal Decree-Law No. 41 of 2024 the judge may refer the spouses to the Family Guidance and Reconciliation Centre if it seems useful; referral was mandatory under the 2005 law and is now discretionary, though many contested Muslim cases in Dubai still start there. There is no fixed statutory period for this stage; sessions usually take a few weeks. For non-Muslims, the practical differences between Dubai and Abu Dhabi are the language of proceedings, the dedicated civil court in Abu Dhabi, and the approach to finances described below. See our <a href="/en/family-guidance-section-uae/">Family Guidance guide</a>.
         </p>
 
         <h3>The Dubai PSC's approach to finances</h3>
@@ -332,7 +332,7 @@ const comparisonRows = [
               <tr class="row-alt">
                 <td class="td-bold">Uncontested divorce, want it done fast</td>
                 <td class="td-rule--gold">Abu Dhabi Civil Family Court</td>
-                <td class="td-light">No mandatory counselling. Fastest UAE route to final divorce decree for non-Muslims.</td>
+                <td class="td-light">Dedicated civil court with bilingual proceedings. Often the fastest UAE route to a final divorce decree for non-Muslims.</td>
               </tr>
               <tr>
                 <td class="td-bold">Muslim couple, standard divorce matters</td>
@@ -352,7 +352,7 @@ const comparisonRows = [
 
         <h3>Dubai Personal Status Court</h3>
         <p>
-          Dubai's PSC is the highest-volume court in the UAE for personal status matters. It has extensive experience with international Muslim divorces. The court has Arabic-only proceedings (court interpreters are available). The Family Guidance Department in Dubai is well-resourced and experienced. Average uncontested case timeline: 8-14 weeks including the mandatory reconciliation process.
+          Dubai's PSC is the highest-volume court in the UAE for personal status matters. It has extensive experience with international Muslim divorces. The court has Arabic-only proceedings (court interpreters are available). The Family Guidance Department in Dubai is well-resourced and experienced. Average uncontested case timeline (indicative): 8-14 weeks, including Family Guidance where the judge refers the case.
         </p>
 
         <h3>Abu Dhabi Personal Status Court</h3>
@@ -394,7 +394,7 @@ const comparisonRows = [
           </a>
           <a href="/en/uae-divorce-recognised-uk/" class="related-card">
             <strong>UAE Divorce Recognised in UK</strong>
-            <span>Recognition, apostille, and Part III MFPA</span>
+            <span>Recognition, attestation, and Part III MFPA</span>
           </a>
           <a href="/en/divorce-for-expats-in-uae/" class="related-card">
             <strong>Divorce in UAE for Expats</strong>

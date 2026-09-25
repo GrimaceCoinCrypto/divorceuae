@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'Is a UAE talaq valid in Pakistan?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, provided it is registered with the Union Council in Pakistan within 90 days of the divorce being pronounced, as required by Section 7 of the Muslim Family Laws Ordinance 1961. The UAE court divorce certificate must be apostilled, translated, and accompanied by the nikah nama for registration. If registration is not completed within 90 days, the divorce is still valid but enforcement in Pakistan becomes significantly more complicated.',
+        text: 'Yes, provided it is registered with the Union Council in Pakistan within 90 days of the divorce being pronounced, as required by Section 7 of the Muslim Family Laws Ordinance 1961. The UAE court divorce certificate must be attested (UAE Ministry of Foreign Affairs, then the Pakistan Embassy or Consulate in the UAE; the UAE is not an apostille country), translated, and accompanied by the nikah nama for registration. If registration is not completed within 90 days, the divorce is still valid but enforcement in Pakistan becomes significantly more complicated.',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'What documents do I need for a Pakistani divorce in UAE courts?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You will need: the original nikah nama (Islamic marriage contract) with an Arabic translation certified by a UAE-licensed translator; both parties\' passports; UAE residence visas or Emirates IDs; a UAE court filing fee (approximately AED 200-500 depending on the court and emirate); and if registered in Pakistan, the NADRA-verified CNIC of both parties. If the nikah was registered in Pakistan, the nikah nama must be apostilled by the Pakistan Ministry of Foreign Affairs before use in UAE courts.',
+        text: 'You will need: the original nikah nama (Islamic marriage contract) with an Arabic translation certified by a UAE-licensed translator; both parties\' passports; UAE residence visas or Emirates IDs; a UAE court filing fee (approximately AED 200-500 depending on the court and emirate); and if registered in Pakistan, the NADRA-verified CNIC of both parties. If the nikah was registered in Pakistan, the nikah nama must be authenticated by the Pakistan Ministry of Foreign Affairs, legalised by the UAE Embassy or Consulate in Pakistan, and then attested by the UAE Ministry of Foreign Affairs (MOFA) before use in UAE courts. The UAE is not a party to the Hague Apostille Convention, so a Pakistani apostille on its own is not enough.',
       },
     },
     {
@@ -91,7 +91,7 @@ const faqSchema = {
       name: 'What happens at the talaq arbitration/reconciliation stage?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Both UAE and Pakistan require reconciliation attempts before a talaq is finalised. Under Federal Decree-Law No. 41 of 2024, UAE courts will refer the parties to the Family Guidance and Reconciliation Centre before proceeding. In Pakistan, the Union Council appoints an arbitration council under MFLO Section 7 to attempt reconciliation within 90 days of notice. If reconciliation fails, the divorce proceeds. The reconciliation period is mandatory and cannot be waived, though it can be completed quickly if both parties clearly do not want to reconcile.',
+        text: 'Both systems build in reconciliation attempts. In the UAE, Family Guidance is usually the first step for Muslim couples; under Federal Decree-Law No. 41 of 2024 the judge decides whether to refer the parties to the Family Guidance and Reconciliation Centre (it was mandatory under the 2005 law). In Pakistan, the Union Council appoints an arbitration council under MFLO Section 7 to attempt reconciliation within 90 days of notice. If reconciliation fails, the divorce proceeds. The reconciliation period is mandatory and cannot be waived, though it can be completed quickly if both parties clearly do not want to reconcile.',
       },
     },
     {
@@ -147,12 +147,12 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
 
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Pakistani Expats in UAE &middot; Divorce Guide 2025</p>
+      <p class="hero-tag">Pakistani Expats in UAE &middot; Divorce Guide 2026</p>
       <h1>Pakistani Divorce in UAE: Talaq Registration, NADRA, Mehr, and Jurisdiction</h1>
       <p class="hero-desc">
         Pakistani nationals are among the largest expat communities in the UAE. Most are Muslim, which means their divorce falls under Federal Decree-Law No. 41 of 2024. But the UAE proceedings are only half the story: to make the divorce legally effective in Pakistan, it must be registered with the Union Council within 90 days.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated August 2026</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
   </section>
 
@@ -167,7 +167,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           <li><strong>NADRA does not register divorces directly</strong>, the Union Council issues the Divorce Certificate first.</li>
           <li><strong>Mehr is enforceable as a debt</strong> in UAE Execution Court: bank freeze, salary garnishment, travel ban.</li>
           <li><strong>Race to file issue:</strong> if spouses are in different countries, the first to file determines the forum.</li>
-          <li><strong>No Hague Convention:</strong> UAE and Pakistan are not signatories, cross-border custody disputes are complex.</li>
+          <li><strong>No Hague Convention cover:</strong> the UAE is not a party to the Hague Child Abduction Convention (Pakistan joined in 2017, but it only works between two member states), so cross-border custody disputes are complex.</li>
         </ul>
       </div>
 
@@ -177,7 +177,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
           Pakistani nationals in the UAE are overwhelmingly Muslim, and their personal status matters including marriage and divorce are governed by Islamic law as applied through the UAE courts. Under <strong>Federal Decree-Law No. 41 of 2024</strong> (the new Personal Status Law effective 15 April 2025), all Muslim residents in the UAE, regardless of nationality, have their divorce governed by this law.
         </p>
         <p>
-          This is broadly consistent with what Pakistani nationals are familiar with: both UAE and Pakistani divorce law for Muslims is rooted in Islamic jurisprudence, and many of the concepts overlap. However, there are procedural differences that matter. UAE courts process divorce through a formal court system with mandatory reconciliation. Pakistan has its own parallel system under the Muslim Family Laws Ordinance 1961 (MFLO). When a Pakistani national divorces in UAE, the question immediately becomes: is the divorce also effective in Pakistan?
+          This is broadly consistent with what Pakistani nationals are familiar with: both UAE and Pakistani divorce law for Muslims is rooted in Islamic jurisprudence, and many of the concepts overlap. However, there are procedural differences that matter. UAE courts process divorce through a formal court system, usually starting with Family Guidance reconciliation (the judge decides whether to refer the case under the 2024 law; it was mandatory under the 2005 law). Pakistan has its own parallel system under the Muslim Family Laws Ordinance 1961 (MFLO). When a Pakistani national divorces in UAE, the question immediately becomes: is the divorce also effective in Pakistan?
         </p>
         <p>
           The answer is yes, but only if the proper steps are taken to register it in Pakistan. A UAE court divorce that is not registered in Pakistan creates a situation where the person is divorced under UAE law but remains married under Pakistani law. This has consequences for remarriage, inheritance, and CNIC documentation.
@@ -198,7 +198,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
             <div class="step-num">01</div>
             <div class="step-body">
               <h3>Obtain the UAE court divorce certificate</h3>
-              <p>After the UAE court issues the final divorce judgment (Hukm al-Talaq), obtain a certified copy in Arabic. This must be apostilled by the UAE Ministry of Foreign Affairs and translated into Urdu or English by a certified translator for use in Pakistan.</p>
+              <p>After the UAE court issues the final divorce judgment (Hukm al-Talaq), obtain a certified copy in Arabic. This must be attested by the UAE Ministry of Foreign Affairs (MOFA) and then by the Pakistan Embassy or Consulate in the UAE, and translated into Urdu or English by a certified translator for use in Pakistan. The UAE does not issue apostilles; the full chain is set out below.</p>
             </div>
           </div>
           <div class="step-card">
@@ -212,7 +212,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
             <div class="step-num">03</div>
             <div class="step-body">
               <h3>File notice with the Union Council</h3>
-              <p>Your authorised representative files the written notice of talaq with the Chairman of the Union Council in the relevant tehsil, together with the apostilled UAE divorce certificate and the nikah nama. The 90-day reconciliation period starts from the date this notice is delivered.</p>
+              <p>Your authorised representative files the written notice of talaq with the Chairman of the Union Council in the relevant tehsil, together with the attested UAE divorce certificate and the nikah nama. The 90-day reconciliation period starts from the date this notice is delivered.</p>
             </div>
           </div>
           <div class="step-card">
@@ -340,7 +340,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.
       <section class="content-section">
         <h2>Children and Custody: Pakistan-UAE Cross-Border Issues</h2>
         <p>
-          Custody disputes between Pakistani parents across UAE and Pakistan are among the most difficult cross-border family law matters in the region. The absence of Hague Convention protection (neither UAE nor Pakistan are signatories) means there is no automatic mechanism for the return of children who have been taken to or retained in either country without the other parent's consent.
+          Custody disputes between Pakistani parents across UAE and Pakistan are among the most difficult cross-border family law matters in the region. The absence of Hague Convention protection between the two countries (Pakistan joined the Hague Child Abduction Convention in 2017, but the UAE is not a party) means there is no automatic mechanism for the return of children who have been taken to or retained in either country without the other parent's consent.
         </p>
         <p>
           Under <strong>Federal Decree-Law No. 41 of 2024</strong>, UAE courts determine custody based on the best interests of the child. For Pakistani Muslim families, the mother typically has physical custody of children up to a certain age (seven for boys, nine for girls under the traditional Hanafi school position applied in UAE courts), with the father retaining guardianship. Post-2022 reforms under Federal Decree-Law No. 41 of 2024 give courts more flexibility to depart from these default ages in the child's best interests.
