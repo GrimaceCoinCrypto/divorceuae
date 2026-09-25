@@ -25,7 +25,7 @@ const schema = {
   author: { '@type': 'Person', name: 'Aleksi Suon' },
   publisher: { '@type': 'Organization', name: 'Divorce UAE' },
   datePublished: '2026-07-04',
-  dateModified: '2026-07-04',
+  dateModified: '2026-09-25',
   inLanguage: 'en-AE',
   mainEntityOfPage: 'https://divorceu.ae/en/how-to-file-for-divorce-in-abu-dhabi/',
 };
@@ -34,7 +34,7 @@ const faqItems = [
   {
     question: 'How do I file for divorce in Abu Dhabi?',
     answer:
-      'It depends on which route applies to you. Muslim couples file at the Abu Dhabi Personal Status Court through the Abu Dhabi Judicial Department (ADJD), starting with family guidance and a reconciliation window of up to 60 days. Non-Muslim couples file at the Abu Dhabi Civil Family Court, a no-fault civil venue where the court can grant divorce in the first session with no mandatory reconciliation. Both routes begin at an approved typing centre or through ADJD Smart Services.',
+      'It depends on which route applies to you. Muslim couples file at the Abu Dhabi Personal Status Court through the Abu Dhabi Judicial Department (ADJD), usually starting with Family Guidance, which the judge can refer them to (it was mandatory under the old 2005 law) and which usually takes a few weeks. Non-Muslim couples file at the Abu Dhabi Civil Family Court, a no-fault civil venue where the court can grant divorce in the first session with no mandatory reconciliation. Both routes begin at an approved typing centre or through ADJD Smart Services.',
   },
   {
     question: 'What is the Abu Dhabi Civil Family Court?',
@@ -44,7 +44,7 @@ const faqItems = [
   {
     question: 'How long does a divorce take in Abu Dhabi?',
     answer:
-      'For non-Muslims at the Civil Family Court, the court aims to finalise the case within about one month of registration, and no-fault divorce can be granted in the first session. For Muslim divorces at the Personal Status Court, expect a reconciliation window of up to 60 days first, then roughly three to six months for an uncontested case and one to three years for a contested one. Timelines are indicative and vary by case.',
+      'For non-Muslims at the Civil Family Court, the court aims to finalise the case within about one month of registration, and no-fault divorce can be granted in the first session. For Muslim divorces at the Personal Status Court, expect Family Guidance first if the judge refers the case, usually a few weeks, then roughly three to six months for an uncontested case and one to three years for a contested one. Timelines are indicative and vary by case.',
   },
   {
     question: 'Do I need to be a UAE resident to file for divorce in Abu Dhabi?',
@@ -69,7 +69,7 @@ const faqItems = [
   {
     question: 'Is the Abu Dhabi Civil Family Court faster than the Personal Status Court?',
     answer:
-      'For non-Muslims, generally yes. The Civil Family Court can grant a no-fault divorce in the first session with no mandatory reconciliation and no iddah waiting period, and aims to close cases within about a month. The Sharia-track Personal Status Court requires family guidance and a reconciliation window of up to 60 days before the case proceeds.',
+      'For non-Muslims, generally yes. The Civil Family Court can grant a no-fault divorce in the first session with no mandatory reconciliation and no iddah waiting period, and aims to close cases within about a month. At the Sharia-track Personal Status Court, cases usually go through Family Guidance first when the judge refers them, which typically adds a few weeks, and contested harm cases can add up to 60 days of arbitration.',
   },
 ];
 ---
@@ -87,7 +87,7 @@ const faqItems = [
       <div class="hero__content">
         <Breadcrumb items={breadcrumbs} lang="en" />
         <h1 class="hero__h1">How to File for Divorce in Abu Dhabi</h1>
-        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated September 2026</p>
         <p class="hero__sub">
           Abu Dhabi runs two separate divorce routes: the ADJD Personal Status Court for Muslims and
           a dedicated Civil Family Court for non-Muslims. This guide walks through both, step by step:
@@ -141,8 +141,8 @@ const faqItems = [
           <span class="stat-label">month target at the Civil Family Court</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">60</span>
-          <span class="stat-label">day reconciliation window (Sharia route)</span>
+          <span class="stat-num">1st</span>
+          <span class="stat-label">session in which a civil divorce can be granted</span>
         </div>
         <div class="stat-card">
           <span class="stat-num">EN + AR</span>
@@ -174,7 +174,7 @@ const faqItems = [
           <p>
             Governed by Federal Decree-Law No. 41 of 2024, based on Islamic Sharia. Forms include
             talaq, khul (wife-initiated with financial settlement), judicial divorce on grounds and
-            annulment. Cases begin with family guidance and mandatory reconciliation. Filed through
+            annulment. Cases usually begin with Family Guidance when the judge refers them. Filed through
             the ADJD.
           </p>
         </div>
@@ -248,11 +248,14 @@ const faqItems = [
           <h3>Deal with custody, alimony and assets</h3>
           <p>
             Under the civil regime, joint custody applies by default after divorce unless a parent
-            waives it. If you cannot settle finances amicably, you can lodge a post-divorce
-            application for a financial order after the divorce judgment is issued. Alimony under the
-            Abu Dhabi regulation can be assessed against a benchmark of up to 25% of the husband last
-            monthly income multiplied by years of marriage (Regulation No. 8 of 2022), a formula
-            specific to Abu Dhabi and not the federal rule.
+            waives it; our guide to <a href="/en/child-custody-abu-dhabi/">child custody in Abu Dhabi</a>
+            covers schedules, travel and relocation. If you cannot settle finances amicably, you can
+            lodge a post-divorce application for a financial order after the divorce judgment is
+            issued. Under Article 18 of Regulation No. 8 of 2022 the court and its expert may be guided
+            by alimony of no less than 25% of the husband's last monthly income multiplied by the years
+            of marriage. It is a guide the court can depart from, not a cap, and it is specific to Abu
+            Dhabi rather than a federal rule. See <a href="/en/alimony-abu-dhabi/">alimony in Abu
+            Dhabi</a> for how awards are worked out in practice.
           </p>
         </li>
         <li>
@@ -277,7 +280,7 @@ const faqItems = [
       <h2 id="sharia-heading">Route B: Filing at the Abu Dhabi Personal Status Court (Muslims)</h2>
       <p>
         Muslim divorces in Abu Dhabi follow the Sharia track under Federal Decree-Law No. 41 of 2024.
-        Compared with the civil route, there is a compulsory reconciliation stage at the front, and
+        Compared with the civil route, there is usually a Family Guidance stage at the front, and
         the process is closer to the standard national procedure used across the emirates.
       </p>
       <ol class="steps">
@@ -293,9 +296,10 @@ const faqItems = [
         <li>
           <h3>Open the case at the Family Guidance Department</h3>
           <p>
-            Muslim divorces start at the ADJD family guidance stage, where mediation is compulsory
-            with a reconciliation window of up to 60 days under the 2024 law (reduced from the old 90
-            days). You register the case through a typing centre or ADJD Smart Services and bring your
+            Muslim divorces usually start at the ADJD Family Guidance stage. Under the 2024 law the
+            judge decides whether to refer the case there (under the 2005 law referral was
+            mandatory), urgent matters such as temporary maintenance or custody orders are not
+            referred, and there is no statutory time limit: sessions usually take a few weeks. You register the case through a typing centre or ADJD Smart Services and bring your
             marriage certificate, passports, Emirates IDs and proof of residence.
           </p>
         </li>
@@ -304,7 +308,10 @@ const faqItems = [
           <p>
             A conciliator meets both spouses. If reconciliation fails, they issue a referral letter,
             which must be filed with the court within about three months or the process restarts.
-            This mandatory stage does not apply to the civil route.
+            A settlement reached at this stage can be approved by the court and made binding. In
+            contested divorces for harm or discord the court can then appoint two arbitrators, whose
+            work the 2024 law caps at 60 days from their appointment (it was 90). None of this applies
+            to the civil route.
           </p>
         </li>
         <li>
@@ -355,7 +362,7 @@ const faqItems = [
           <tbody>
             <tr><td>Governing law</td><td>Abu Dhabi Law 14/2021 + Reg 8/2022</td><td>Federal Decree-Law 41/2024</td></tr>
             <tr><td>Basis</td><td>Civil, no-fault</td><td>Islamic Sharia</td></tr>
-            <tr><td>Mandatory reconciliation</td><td>No</td><td>Yes, up to 60 days</td></tr>
+            <tr><td>Family Guidance / reconciliation</td><td>No</td><td>If the judge refers the case, usually a few weeks</td></tr>
             <tr><td>Language of proceedings</td><td>Arabic and English</td><td>Arabic</td></tr>
             <tr><td>Iddah waiting period</td><td>Does not apply</td><td>Applies</td></tr>
             <tr><td>Target timeline (uncontested)</td><td>~1 month (aim)</td><td>~3–6 months</td></tr>
@@ -447,9 +454,11 @@ const faqItems = [
         attorney to prepare and lodge the application and represent you at hearings.
       </p>
       <p>
-        The power of attorney generally needs to be notarised where you sign it, then legalised or
-        attested so it is recognised in the UAE (through the relevant UAE embassy and the Ministry of
-        Foreign Affairs, or via apostille where applicable), and translated into Arabic. Once that is
+        The power of attorney generally needs to be notarised where you sign it, authenticated in
+        that country (in apostille countries this first step is often an apostille), then legalised
+        by the UAE embassy or consulate there and attested by the UAE Ministry of Foreign Affairs,
+        and translated into Arabic. An apostille on its own is not enough, because the UAE is not a
+        party to the Hague Apostille Convention. Once that is
         in place, a <a href="/en/divorce-lawyer-abu-dhabi/">divorce lawyer in Abu Dhabi</a> can
         handle most steps, though some stages may still require your appearance or that of your
         representative.

@@ -35,7 +35,7 @@ const articleSchema = {
     url: 'https://divorceu.ae',
   },
   datePublished: '2025-11-10',
-  dateModified: '2026-07-25',
+  dateModified: '2026-09-25',
   mainEntityOfPage: 'https://divorceu.ae/en/alimony-uae/',
 };
 
@@ -45,14 +45,14 @@ const alimonyTypes = [
     who: 'Muslim wives',
     duration: 'Roughly 3 months (the iddah period)',
     basis: 'Muslim law (41/2024)',
-    detail: 'During the iddah waiting period after a talaq or a court-issued divorce, the husband is obliged to maintain his former wife. This covers housing, food, clothing, and reasonable living costs. The iddah is commonly three menstrual cycles, or until the birth of the child if the wife is pregnant. This obligation applies to Muslim divorces under Federal Decree-Law No. 41 of 2024 and is enforced by the courts. Iddah does not apply to non-Muslim divorces.',
+    detail: 'Whether iddah maintenance is owed depends on the type of divorce. Under Article 101 of Federal Decree-Law No. 41 of 2024, it is owed during the iddah after a revocable divorce. After an irrevocable divorce it is owed only if the wife is pregnant, until she gives birth, and after khul\' there is no iddah maintenance at all. Housing for the iddah, in the marital home or a suitable alternative, is owed in every case. The iddah is commonly three menstrual cycles, or until the birth of the child if the wife is pregnant. Iddah does not apply to non-Muslim divorces.',
   },
   {
     type: "Mut'a (Consolation Payment)",
-    who: 'Muslim wives divorced by talaq',
+    who: 'Muslim wives divorced by the husband without their request or fault',
     duration: 'One-time payment',
     basis: 'Muslim law (41/2024)',
-    detail: "Mut'a is a one-time consolation payment from the husband to the wife when the husband initiates divorce without fault on the wife's part. The court fixes the amount based on the length of the marriage, the husband's means, and the circumstances of the divorce. There is no set formula, and the judge has discretion.",
+    detail: "Mut'a is a one-time consolation payment, separate from iddah maintenance, owed after a consummated marriage when the husband divorces his wife of his own will without a request or cause from her, or when the divorce or annulment was due to him (Article 102 of Federal Decree-Law No. 41 of 2024). The court sets it according to the husband's means and the harm she suffered, and it cannot exceed one year's maintenance for a woman of her standing. The court can order it in instalments.",
   },
   {
     type: 'Child Support (Nafaqat Al-Awlad)',
@@ -95,11 +95,11 @@ const calculationFactors = [
 ];
 
 const indicativeAmounts = [
-  { item: 'Iddah maintenance (Muslim)', range: 'AED 3,000 to 15,000 per month for about 3 months', note: 'Scales with the family standard of living and the husband\'s income.' },
-  { item: "Mut'a consolation (Muslim)", range: 'Often set at 3 to 12 months of the husband\'s salary', note: 'One-time payment, judge has full discretion.' },
+  { item: 'Iddah maintenance (Muslim)', range: 'AED 3,000 to 15,000 per month for about 3 months', note: 'Only after a revocable divorce, or an irrevocable one if she is pregnant; none after khul\'. Scales with the husband\'s income.' },
+  { item: "Mut'a consolation (Muslim)", range: 'Legal ceiling of one year\'s maintenance for a woman of her standing', note: 'One-time payment. Within the cap the court weighs the husband\'s means and the harm she suffered (Article 102).' },
   { item: 'Child support per child', range: 'Commonly 15 to 30 percent of the father\'s verified income', note: 'Rises with school fees, medical needs, and housing.' },
   { item: 'Non-Muslim spousal support (civil)', range: 'No fixed range; set case by case under Article 9', note: 'Assessed by a court-appointed accountant, reviewable annually.' },
-  { item: 'Abu Dhabi civil benchmark', range: 'Reported as up to 25 percent of the husband\'s last monthly income multiplied by years of marriage', note: 'Specific to the Abu Dhabi Civil Family Court regulation (Decision No. 8 of 2022), not the federal rule.' },
+  { item: 'Abu Dhabi civil benchmark', range: 'A guide of no less than 25 percent of the husband\'s last monthly income multiplied by years of marriage', note: 'Article 18 of ADJD Resolution No. 8 of 2022, Abu Dhabi Civil Family Court only. A guide, not a cap: the court can go higher or lower.' },
 ];
 
 const enforcementSteps = [
@@ -119,12 +119,12 @@ const faqItems = [
   {
     question: 'How much alimony does a wife get in UAE?',
     answer:
-      "There is no fixed formula, and amounts vary with the payer's income, the length of the marriage, and the number of children. As an indicative guide only, iddah maintenance for a Muslim wife often ranges from AED 3,000 to 15,000 per month for about three months, mut'a is frequently set at three to twelve months of the husband's salary, and child support is commonly 15 to 30 percent of the father's verified income per child. For non-Muslim couples the court sets spousal support case by case under the Article 9 factors of Federal Decree-Law No. 41 of 2022, assessed by a court-appointed accountant.",
+      "There is no fixed formula, and amounts vary with the payer's income, the length of the marriage, and the number of children. As an indicative guide only, iddah maintenance for a Muslim wife, where it is owed (after a revocable divorce, or an irrevocable one if she is pregnant), often ranges from AED 3,000 to 15,000 per month for about three months. Mut'a, where the husband ended the marriage without her request, cannot exceed one year's maintenance for a woman of her standing under Article 102 of Federal Decree-Law No. 41 of 2024. Child support is commonly 15 to 30 percent of the father's verified income per child. For non-Muslim couples the court sets spousal support case by case under the Article 9 factors of Federal Decree-Law No. 41 of 2022, assessed by a court-appointed accountant.",
   },
   {
     question: 'How long does alimony last in UAE under Muslim law?',
     answer:
-      "For Muslim couples under Federal Decree-Law No. 41 of 2024, financial support to the ex-wife is limited to the iddah period, which is roughly three months after divorce. Long-term alimony beyond iddah is not automatic. Child support, however, continues until the children reach adulthood, and the housing allowance continues for the duration of the custody period.",
+      "For Muslim couples under Federal Decree-Law No. 41 of 2024, financial support to the ex-wife is limited to the iddah period, which is roughly three months after divorce, plus any one-time mut'a. Iddah maintenance itself is owed after a revocable divorce, after an irrevocable divorce only if she is pregnant, and not after khul', while iddah housing is owed in every case (Article 101). Long-term alimony beyond iddah is not automatic. Child support, however, continues until the children reach adulthood, and the housing allowance continues for the duration of the custody period.",
   },
   {
     question: 'Does a non-Muslim wife get alimony in UAE?',
@@ -149,7 +149,7 @@ const faqItems = [
   {
     question: 'Can I claim alimony retroactively in UAE?',
     answer:
-      "For Muslim divorces, sources report that backdated maintenance can be claimed only for the preceding two years under what is commonly cited as Article 99 of Federal Decree-Law No. 41 of 2024. In practice, courts are reluctant to award maintenance for long periods when no claim was filed, so it is best to file your maintenance claim during divorce proceedings rather than after.",
+      "Only within limits. Under Article 99 of Federal Decree-Law No. 41 of 2024, a claim for a wife's maintenance is not heard for any period more than two years before the date the claim is filed. Separately, if you later ask the court to increase an existing maintenance order, Article 97 lets the increase reach back no more than six months. In practice, courts are reluctant to award maintenance for long periods when no claim was filed, so it is best to file your maintenance claim during divorce proceedings rather than after.",
   },
 ];
 ---
@@ -161,7 +161,7 @@ const faqItems = [
   dir="ltr"
   hreflang={hreflang}
   schema={articleSchema}
-  lastmod="2026-07-25"
+  lastmod="2026-09-25"
 >
   <header class="hero">
     <div class="container hero__inner">
@@ -170,7 +170,7 @@ const faqItems = [
         <h1 class="hero__h1">
           Alimony in UAE:<br />What Are You Entitled to?
         </h1>
-        <p class="byline" style="font-size:0.85rem;opacity:0.8;margin-bottom:20px;">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="byline" style="font-size:0.85rem;opacity:0.8;margin-bottom:20px;">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated September 2026</p>
         <p class="hero__sub">
           UAE alimony law works differently for Muslim and non-Muslim couples, and it was reshaped by the 2022 civil law
           and the 2024 Muslim personal status law. This guide explains every type of financial entitlement after divorce
@@ -182,7 +182,7 @@ const faqItems = [
           <li>✓ Free first consultation</li>
           <li>✓ 100% confidential</li>
         </ul>
-        <p class="hero__author">Guide by <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant. Last updated 25 July 2026.</p>
+        <p class="hero__author">Guide by <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant. Last updated 25 September 2026.</p>
       </div>
       <div class="hero__form">
         <LeadForm lang="en" variant="hero" />
@@ -215,8 +215,8 @@ const faqItems = [
           <div class="info-col">
             <p class="info-label">Muslim couples (41/2024)</p>
             <ul>
-              <li>Iddah maintenance for about 3 months</li>
-              <li>Mut'a consolation payment (one-time)</li>
+              <li>Iddah maintenance where the divorce type allows it; iddah housing always</li>
+              <li>Mut'a consolation payment (one-time, capped)</li>
               <li>Child support (ongoing)</li>
               <li>Housing allowance during custody</li>
               <li>No automatic long-term alimony</li>
@@ -291,12 +291,12 @@ const faqItems = [
         </div>
         <div class="compare-row">
           <span>Support to the ex-wife</span>
-          <span>Iddah maintenance for about 3 months</span>
+          <span>Iddah maintenance for about 3 months (revocable divorce, or pregnancy), plus iddah housing</span>
           <span>Spousal support set by the court, not capped at 3 months</span>
         </div>
         <div class="compare-row">
           <span>One-time consolation</span>
-          <span>Mut'a where the husband initiates talaq</span>
+          <span>Mut'a, up to one year's maintenance, where the husband ends the marriage without her request</span>
           <span>Compensation for harm can be built into the award</span>
         </div>
         <div class="compare-row">
@@ -359,11 +359,13 @@ const faqItems = [
 
       <p>
         One regional benchmark is worth flagging because it is often quoted as if it were a national rule. In the Abu Dhabi
-        Civil Family Court, the executive regulation (Decision No. 8 of 2022) is reported to set spousal support with
-        reference to up to 25 percent of the husband's last monthly income multiplied by the number of years of marriage,
-        with further factors such as the wife's career sacrifice and standard of living. That concrete formula is specific
-        to Abu Dhabi and is not the federal rule under 41/2022. If your case is in Dubai or another emirate, do not assume
-        the 25 percent benchmark applies.
+        Civil Family Court, Article 18 of ADJD Chairman Resolution No. 8 of 2022 says the court and its accounting expert
+        may be guided by a cash percentage of no less than 25 percent of the husband's last monthly income multiplied by
+        the number of years of marriage, alongside yardsticks based on his property and the couple's joint money. It is a
+        guide, not a cap (summaries that say "up to 25 percent" have it backwards), and the court can raise or lower the
+        figure after weighing factors such as the wife's career sacrifice, her own means, and the standard of living. That
+        guide is specific to Abu Dhabi and is not the federal rule under 41/2022. If your case is in Dubai or another
+        emirate, do not assume the 25 percent benchmark applies.
       </p>
 
       <div class="cta-inline">
@@ -551,9 +553,9 @@ const faqItems = [
       <p>
         These measures can be combined. In practice a wage garnishment plus a travel ban is a powerful pairing, because a
         salaried ex-spouse who wants to keep working and travelling in the UAE has a strong incentive to clear the debt.
-        For Muslim divorces, sources report that backdated maintenance can be claimed for the preceding two years, under
-        what is commonly cited as Article 99 of Federal Decree-Law No. 41 of 2024, so a period of non-payment does not
-        simply vanish.
+        Arrears already fixed by a judgment remain a debt, and for maintenance that was never claimed, Article 99 of
+        Federal Decree-Law No. 41 of 2024 lets a wife's claim reach back up to two years before the filing date, so a
+        period of non-payment does not simply vanish.
       </p>
       <p>
         Enforcement is a specialist process, and getting the file opened correctly at the execution court matters. Our
@@ -567,9 +569,12 @@ const faqItems = [
     <section class="section" aria-labelledby="iddah-heading">
       <h2 id="iddah-heading">Iddah Maintenance and Why Timing Matters</h2>
       <p>
-        For Muslim wives, iddah maintenance is the clearest and most immediate entitlement. During the iddah, roughly three
-        menstrual cycles after divorce, the husband must continue to maintain his former wife, covering housing, food, and
-        reasonable living costs. Because the window is short, delay is costly. If you do not raise the claim promptly, you
+        For Muslim wives, the iddah is the most immediate stage, but what it carries depends on the type of divorce. Under
+        Article 101 of Federal Decree-Law No. 41 of 2024, during the iddah (roughly three menstrual cycles, or until
+        delivery if she is pregnant) the husband must pay maintenance after a revocable divorce. After an irrevocable
+        divorce he pays maintenance only if she is pregnant, and after khul' there is no iddah maintenance. In every case
+        she is entitled to housing for the iddah, in the marital home or a suitable alternative. Because the window is
+        short, delay is costly. If you do not raise the claim promptly, you
         can lose part of it. Non-Muslim divorces under the civil law have no iddah at all, which is why spousal support in
         that track is set for a court-determined period instead.
       </p>

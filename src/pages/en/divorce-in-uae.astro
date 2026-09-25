@@ -26,7 +26,7 @@ const schema = {
   author: { '@type': 'Person', name: 'Aleksi Suon' },
   publisher: { '@type': 'Organization', name: 'Divorce UAE' },
   datePublished: '2025-01-15',
-  dateModified: '2026-07-04',
+  dateModified: '2026-09-25',
   inLanguage: 'en-AE',
   mainEntityOfPage: 'https://divorceu.ae/en/divorce-in-uae/',
 };
@@ -35,12 +35,12 @@ const faqItems = [
   {
     question: 'How do I get a divorce in Dubai?',
     answer:
-      'File at the Dubai Personal Status Court through the Family Guidance Section. Muslim couples attend mandatory reconciliation first (a window of up to 60 days). If mediation fails, a referral letter lets you register the case for court hearings. Non-Muslims filing under the civil law can skip mandatory reconciliation. A licensed lawyer can handle most steps for you.',
+      'File at the Dubai Personal Status Court. Muslim cases usually start at the Family Guidance Section: under the 2024 law the judge decides whether to refer the couple there (it was mandatory under the old 2005 law), and sessions usually take a few weeks. If no settlement is reached, a referral letter lets you register the case for court hearings. Non-Muslims filing under the civil law have no Family Guidance stage. A licensed lawyer can handle most steps for you.',
   },
   {
     question: 'What is the divorce procedure in the UAE step by step?',
     answer:
-      'Consult a lawyer, file at the Personal Status Court in your emirate, attend family guidance or reconciliation (Sharia track only), submit claims for custody, maintenance and assets, attend the hearings, then receive the decree. Muslim divorces are then registered with the court, typically within about 15 days of the ruling.',
+      'Consult a lawyer, file at the Personal Status Court in your emirate, attend Family Guidance if the judge refers you (Sharia track only), submit claims for custody, maintenance and assets, attend the hearings, then receive the decree. Muslim divorces are then registered with the court, typically within about 15 days of the ruling.',
   },
   {
     question: 'Can foreigners get divorced in the UAE?',
@@ -88,7 +88,7 @@ const faqItems = [
       <div class="hero__content">
         <Breadcrumb items={breadcrumbs} lang="en" />
         <h1 class="hero__h1">Divorce in UAE 2026: Process, Cost &amp; Timeline</h1>
-        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated September 2026</p>
         <p class="hero__sub">
           A practical, how-it-works guide to divorce in the UAE: who can file, the step-by-step court
           process, the documents you need, indicative costs, realistic timelines, and what happens
@@ -126,8 +126,8 @@ const faqItems = [
           <span class="stat-label">months typical for uncontested divorce</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">60</span>
-          <span class="stat-label">day reconciliation window (Sharia track)</span>
+          <span class="stat-num">18</span>
+          <span class="stat-label">custody age for boys and girls (Muslim track, 2024 law)</span>
         </div>
         <div class="stat-card">
           <span class="stat-num">AED 200+</span>
@@ -142,8 +142,9 @@ const faqItems = [
         <h3>The 2025 law change in one line</h3>
         <p>
           Since 15 April 2025, Muslim divorce is governed by Federal Decree-Law No. 41 of 2024,
-          not the 2005 law. It cut the reconciliation window from 90 to 60 days, extended child
-          custody to age 18 for boys and girls, counts repeated talaq pronouncements as a single
+          not the 2005 law. It left referral to Family Guidance to the judge (it used to be
+          mandatory), capped the arbitrators' period in contested harm cases at 60 days (was 90),
+          extended child custody to age 18 for boys and girls, counts repeated talaq pronouncements as a single
           divorce, and requires the divorce to be documented at the court. Read the detail in our
           <a href="/en/new-uae-personal-status-law-2025/">2025 personal status law guide</a>.
         </p>
@@ -228,9 +229,9 @@ const faqItems = [
     <section class="section" aria-labelledby="process-heading">
       <h2 id="process-heading">How to File for Divorce in the UAE: Step by Step</h2>
       <p>
-        The core procedure is similar across the emirates, with one key difference: mandatory
-        reconciliation applies to the Muslim (Sharia) track, but non-Muslims filing under the civil
-        law are not required to attend it.
+        The core procedure is similar across the emirates, with one key difference: Family Guidance
+        is usually the first step on the Muslim (Sharia) track, but non-Muslims filing under the
+        civil law are not required to attend it.
       </p>
       <ol class="steps">
         <li>
@@ -252,8 +253,9 @@ const faqItems = [
         <li>
           <h3>Family guidance / reconciliation (Sharia track)</h3>
           <p>
-            Muslim divorces start at the Family Guidance Department, where mediation is compulsory
-            with a reconciliation window of up to 60 days under the 2024 law. If it fails, the
+            Muslim divorces usually start at the Family Guidance Department. Under the 2024 law
+            the judge decides whether to refer the case there (under the 2005 law referral was
+            mandatory), and sessions usually take a few weeks. If no settlement is reached, the
             conciliator issues a referral letter, which must be filed with the court within about
             three months or the process restarts. Non-Muslims under the civil law may attend
             voluntarily but are not required to.
@@ -359,10 +361,11 @@ const faqItems = [
         attorney to handle most steps on your behalf.
       </p>
       <p>
-        The power of attorney generally needs to be notarised in the country where you sign it, then
-        legalised or attested so it is recognised in the UAE (through the relevant UAE embassy and
-        the Ministry of Foreign Affairs, or via apostille where applicable), and translated into
-        Arabic. Once that is in place, your lawyer can file, attend guidance sessions and represent
+        The power of attorney generally needs to be notarised in the country where you sign it,
+        authenticated there (in apostille countries this first step is often an apostille), then
+        legalised by the UAE embassy or consulate for that country and attested by the UAE Ministry
+        of Foreign Affairs, and translated into Arabic. An apostille alone is not enough, because
+        the UAE is not a party to the Hague Apostille Convention. Once that is in place, your lawyer can file, attend guidance sessions and represent
         you at hearings, though some stages may still require your appearance. A
         <a href="/en/divorce-lawyer-dubai/">divorce lawyer in Dubai</a> or
         <a href="/en/divorce-lawyer-abu-dhabi/">Abu Dhabi</a> can tell you which steps, if any, need
@@ -420,7 +423,8 @@ const faqItems = [
             <tr><th>Stage</th><th>Sharia track (Muslim)</th><th>Civil track (non-Muslim)</th></tr>
           </thead>
           <tbody>
-            <tr><td>Family guidance / reconciliation</td><td>Mandatory, up to 60 days</td><td>Not required (optional)</td></tr>
+            <tr><td>Family guidance / reconciliation</td><td>If the judge refers the case, usually a few weeks</td><td>Not required (optional)</td></tr>
+            <tr><td>Arbitration (contested harm cases)</td><td>Up to 60 days from the arbitrators' appointment (was 90)</td><td>Not applicable (no-fault)</td></tr>
             <tr><td>Registering the case after referral</td><td>File within ~3 months of referral</td><td>File directly</td></tr>
             <tr><td>Uncontested to decree</td><td>~3–6 months total</td><td>~3–6 months total</td></tr>
             <tr><td>Contested to decree</td><td>~1–3 years incl. appeals</td><td>~1–3 years incl. appeals</td></tr>
@@ -472,8 +476,9 @@ const faqItems = [
       <h3>Attesting your divorce certificate</h3>
       <p>
         To use your UAE divorce decree in another country, it usually must be attested by the UAE
-        Ministry of Foreign Affairs and then legalised by the destination country embassy (or
-        apostilled where that applies). Our
+        Ministry of Foreign Affairs and then, if the destination country requires it, legalised by
+        its embassy in the UAE. The UAE is not an apostille country, so a UAE decree cannot be
+        apostilled; some receiving authorities accept MOFA attestation alone, so check first. Our
         <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation guide</a>
         walks through the steps. A lawyer can manage this for you.
       </p>

@@ -144,7 +144,7 @@ const faqItems = [
   },
   {
     question: "Is there an alimony formula in Abu Dhabi for non-Muslims?",
-    answer: "Abu Dhabi's Civil Family Court works from a guide, not a fixed formula. Article 18 of ADJD Chairman Decision No. 8 of 2022 lets the court and its accounting expert be guided by a cash percentage of no less than 25 percent of the husband's last monthly income multiplied by the years of marriage (the wording of the ADJD's published English text; some summaries say up to 25 percent), or by yardsticks based on his property and any joint account. The court can raise or lower the amount. It is not the federal rule and does not apply to Muslim cases or outside Abu Dhabi's civil system. All figures are indicative.",
+    answer: "Abu Dhabi's Civil Family Court works from a guide, not a fixed formula. Article 18 of ADJD Chairman Decision No. 8 of 2022 lets the court and its accounting expert be guided by a cash percentage of no less than 25 percent of the husband's last monthly income multiplied by the years of marriage, or by yardsticks based on his property and any jointly held money. It is a guide, not a cap: summaries that call it \"up to 25 percent\" misread it. Under Article 18(2) the court keeps discretion and can raise or lower the amount. It is not the federal rule and does not apply to Muslim cases or outside Abu Dhabi's civil system. All figures are indicative.",
   },
   {
     question: "Is there an automatic 50/50 split of income or assets in UAE divorce?",
@@ -311,20 +311,20 @@ const faqItems = [
       <section class="content-section">
         <h2>Types of Financial Support in UAE Divorce</h2>
 
-        <h3>Nafaqa al-idda: Iddah maintenance (guaranteed)</h3>
+        <h3>Nafaqa al-idda: Iddah maintenance (depends on the type of divorce)</h3>
         <p>
-          Every Muslim woman is entitled to maintenance during the three-month iddah period following divorce, regardless of fault and regardless of her own income. This covers housing at the marital standard, food, clothing, and medical expenses. The husband provides this by maintaining the wife in the matrimonial home (or equivalent housing) for three months, or by paying a monthly cash equivalent. Courts calculate the amount with reference to the actual standard of living during the marriage.
+          Iddah maintenance is not automatic in every divorce. Under <strong>Article 101 of Federal Decree-Law No. 41 of 2024</strong>, a woman observing her iddah (waiting period) after a revocable divorce is owed maintenance. After an irrevocable divorce she is owed maintenance only if she is pregnant, and then until she gives birth. There is no iddah maintenance after khul'. In every one of these cases she is entitled to housing for the iddah, in the marital home or, if that is unsuitable, in a suitable home. For a woman who is not pregnant, the iddah is three menstrual cycles, or three lunar months if she does not menstruate (Article 84); for a pregnant woman it lasts until delivery (Article 85).
         </p>
         <p>
-          Iddah maintenance is a privileged debt under UAE law. It ranks ahead of most other creditors in enforcement proceedings and cannot be waived in the divorce agreement (a waiver would be unenforceable). Even in a khul' divorce (wife-initiated divorce against return of mahr), the iddah maintenance question is assessed separately.
+          Where it is owed, the amount follows the usual maintenance yardsticks: the husband's means, the wife's circumstances, and the cost of living (Article 96). Most first and second talaqs pronounced by the husband after consummation are revocable (Article 60), so iddah maintenance is due in the most common husband-initiated case. Khul' counts as an irrevocable divorce (Article 65), which is why it carries no iddah maintenance, only iddah housing.
         </p>
 
-        <h3>Mut'a: Consolation payment (one-time, fault-based)</h3>
+        <h3>Mut'a: Consolation payment (one-time, capped)</h3>
         <p>
-          Mut'a is a lump sum or equivalent payment awarded to a Muslim wife when the divorce was not her fault. It is not maintenance, it compensates for the harm and disruption of an unwanted divorce. Under <strong>Federal Decree-Law No. 41 of 2024</strong>, the minimum mut'a is one year of living expenses. Courts frequently award more than the minimum in long marriages or where the wife suffered documented harm.
+          Mut'a is a one-time consolation payment, separate from iddah maintenance. Under <strong>Article 102 of Federal Decree-Law No. 41 of 2024</strong>, a wife whose marriage was consummated is entitled to it when the husband divorced her of his own will, without a request or cause from her, or when the divorce or annulment was due to him. The court sets it according to the husband's circumstances, takes into account the harm she suffered, and can let him pay in instalments.
         </p>
         <p>
-          The mut'a calculation uses the same standard-of-living reference as iddah maintenance. A wife who lived on AED 15,000 per month has a minimum mut'a claim of approximately AED 180,000. Courts can award more, up to two or three years of expenses in cases involving long marriages or serious harm, but AED 180,000 is the statutory floor. This is enforceable as a judgment debt through the Execution Court.
+          The key number is a ceiling, not a floor: mut'a may not exceed one year's maintenance for a woman of her standing. If maintenance for a woman in her position would be about AED 15,000 per month, the most a court could award as mut'a is roughly AED 180,000, and the actual figure can be well below that depending on the husband's means. Once awarded, it is a judgment debt enforceable through the Execution Court.
         </p>
 
         <h3>Non-Muslim alimony: periodic payments or lump sum (FL 41/2022)</h3>
@@ -350,11 +350,11 @@ const faqItems = [
 
         <h3>Example 1: Lower-income Muslim household</h3>
         <p>
-          Husband earns AED 8,000 per month. Wife does not work. Married six years. Two young children who will live with the mother. Divorce was not the wife's fault.
+          Husband earns AED 8,000 per month. Wife does not work. Married six years. Two young children who will live with the mother. The husband pronounced a first talaq without any request or fault on her side, so the divorce is revocable and she is not pregnant.
         </p>
         <ul>
-          <li><strong>Iddah maintenance (nafaqa al-idda):</strong> set at the marital standard for three months. On this income a court might fix around AED 2,000 to 2,500 per month, so roughly AED 6,000 to 7,500 across the iddah period. Guaranteed regardless of fault.</li>
-          <li><strong>Mut'a (consolation):</strong> minimum one year of living expenses under Federal Decree-Law No. 41 of 2024. If the wife's personal expenses run near AED 2,500 per month, the floor is around AED 30,000, payable as a one-time debt.</li>
+          <li><strong>Iddah maintenance (nafaqa al-idda):</strong> owed because the divorce is revocable (Article 101). On this income a court might fix around AED 2,000 to 2,500 per month, so roughly AED 6,000 to 7,500 across an iddah of about three months, plus iddah housing. Had this been a khul', there would be no iddah maintenance, only housing.</li>
+          <li><strong>Mut'a (consolation):</strong> owed because the husband ended the marriage without her request, and capped at one year's maintenance for a woman of her standing (Article 102). If that maintenance is around AED 2,500 per month, the ceiling is about AED 30,000. On an AED 8,000 salary a court could well set less than the ceiling and allow instalments.</li>
           <li><strong>Ongoing spousal nafaqa:</strong> a Muslim wife has no automatic post-iddah maintenance for herself. Any continuing support here attaches to her role as custodial mother, such as a housing or caregiving allowance, rather than open-ended alimony.</li>
           <li><strong>Child support (nafaqa al-awlad):</strong> calculated separately and paid by the father regardless of custody. For two children on this income a court might land near AED 2,000 to 3,000 per month combined, covering their share of housing, food, schooling, and medical costs.</li>
         </ul>
@@ -362,11 +362,11 @@ const faqItems = [
 
         <h3>Example 2: Higher-income Muslim household</h3>
         <p>
-          Husband earns AED 80,000 per month. Wife earns AED 15,000. Married eleven years. One child in the wife's custody. Villa lifestyle with private schooling and household staff. Divorce initiated by the husband with no fault on the wife's side.
+          Husband earns AED 80,000 per month. Wife earns AED 15,000. Married eleven years. One child in the wife's custody. Villa lifestyle with private schooling and household staff. Revocable talaq pronounced by the husband with no request or fault on the wife's side; she is not pregnant.
         </p>
         <ul>
-          <li><strong>Iddah maintenance:</strong> pegged to the actual villa standard of living, not a fixed percentage. A court could fix AED 12,000 to 18,000 per month for the three-month period, so roughly AED 36,000 to 54,000 in total.</li>
-          <li><strong>Mut'a:</strong> the one-year floor measured at the marital standard is substantial here. If her lifestyle cost approaches AED 15,000 per month, the minimum mut'a is around AED 180,000, and a long marriage plus documented harm can push a court toward two or three years of expenses.</li>
+          <li><strong>Iddah maintenance:</strong> owed because the divorce is revocable, and her own salary does not remove it. Assessed on the husband's means and the family's circumstances, not a fixed percentage. A court could fix AED 12,000 to 18,000 per month for an iddah of about three months, so roughly AED 36,000 to 54,000 in total, plus iddah housing.</li>
+          <li><strong>Mut'a:</strong> capped at one year's maintenance for a woman of her standing. If that maintenance is around AED 15,000 per month, the ceiling is roughly AED 180,000. The husband's high income and a long marriage with documented harm point toward the upper part of the range, but the court cannot go above the one-year cap.</li>
           <li><strong>Ongoing spousal nafaqa:</strong> still limited under the Muslim framework, and the wife's own AED 15,000 income further reduces any custody-linked allowance.</li>
           <li><strong>Child support:</strong> separate and larger at this income, reflecting private school fees, the child's share of premium housing, and activities. A figure of AED 8,000 to 15,000 per month for one child is plausible where school fees alone run high.</li>
         </ul>
@@ -377,16 +377,16 @@ const faqItems = [
       <section class="content-section">
         <h2>The Abu Dhabi Non-Muslim Alimony Benchmark</h2>
         <p>
-          Abu Dhabi runs its own Civil Family Court for non-Muslims, and it has published something the federal law deliberately avoids: a numerical starting point. Under Abu Dhabi Decision No. 8 of 2022, the procedural regulation for the emirate's civil marriage and divorce system, reported practice points to a benchmark of up to 25 percent of the husband's last monthly income, multiplied by the number of years of marriage, as an indicative ceiling for the wife's compensation.
+          Abu Dhabi runs its own Civil Family Court for non-Muslims, and it has published something the federal law deliberately avoids: a numerical starting point. Article 18 of ADJD Chairman Resolution No. 8 of 2022, the regulation for the emirate's civil marriage and divorce procedures, says the court and its accounting expert may be guided by a cash percentage of <strong>no less than 25 percent</strong> of the husband's last monthly income (from his salary certificate or latest account statement, whichever is higher), multiplied by the number of years of marriage. The same article lists other yardsticks: a share of the husband's property and wealth, and the money the spouses hold jointly.
         </p>
         <p>
-          Two cautions matter here. First, this is an Abu Dhabi-specific formula tied to the emirate's civil family court. It is not the federal rule, and it does not apply to Muslim cases under Federal Decree-Law No. 41 of 2024 or to non-Muslim cases heard elsewhere on the general Article 9 discretion. Second, the 25 percent figure is a ceiling and a reference, not an entitlement. The court discounts it for the wife's own income, the length of the marriage, her age, whether she was at fault, and her general financial circumstances.
+          Two cautions matter here. First, this is an Abu Dhabi-specific guide tied to the emirate's civil family court. It is not the federal rule, and it does not apply to Muslim cases under Federal Decree-Law No. 41 of 2024 or to non-Muslim cases heard elsewhere on the general Article 9 discretion. Second, 25 percent is the wording of a starting guide, not a cap and not a guaranteed entitlement. Some summaries describe it as "up to 25 percent", which reverses the official text. Article 18(2) leaves the amount to the court's discretion: it can increase or decrease the figure, choose how it is calculated, and order instalments, guided by the accounting expert's report and the factors in Article 16, such as the wife's own income and wealth, her age, the length of the marriage, and who was responsible for the breakdown.
         </p>
         <h3>Example 3: Abu Dhabi non-Muslim couple (indicative)</h3>
         <p>
-          Husband's last monthly income AED 90,000. Married twelve years. Applying the Abu Dhabi benchmark as a ceiling: 25 percent of AED 90,000 is AED 22,500, multiplied by twelve years gives a notional AED 2,700,000. That is the upper reference, not the likely award. A court weighing the wife's own AED 20,000 salary, her age, and her financial independence could reduce this heavily or convert it into a capped periodic payment. There is no iddah maintenance or mut'a in a non-Muslim case, so this single compensation strand replaces the Islamic heads of claim.
+          Husband's last monthly income AED 90,000. Married twelve years. Running the Article 18 guide at its 25 percent level: 25 percent of AED 90,000 is AED 22,500, multiplied by twelve years gives a notional AED 2,700,000. That is a reference point for the court, not a predicted award and not a maximum. A court weighing the wife's own AED 20,000 salary, her age, and her financial independence could set a lower figure or spread it into instalments, while factors such as career sacrifice or fault could push it higher. There is no iddah maintenance or mut'a in a non-Muslim case, so this compensation strand replaces the Islamic heads of claim.
         </p>
-        <p class="note-text">Indicative Abu Dhabi formula only. Article numbers and internal practice can vary, and real awards are discounted well below the ceiling. Confirm current application with an Abu Dhabi civil family lawyer.</p>
+        <p class="note-text">Indicative only. The Article 18 percentage is a guide the court may follow or depart from, and outcomes vary widely. Confirm current application with an Abu Dhabi civil family lawyer.</p>
       </section>
 
       <!-- Non-Muslim Article 9 factors -->

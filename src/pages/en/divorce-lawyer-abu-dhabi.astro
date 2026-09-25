@@ -22,7 +22,7 @@ const faqItems = [
   {
     question: 'Where is the divorce court in Abu Dhabi?',
     answer:
-      "Divorce cases in Abu Dhabi are heard by the Abu Dhabi Judicial Department (ADJD). Muslim cases go to the Personal Status circuit of the Court of First Instance at the main ADJD courts complex in Abu Dhabi city, with branch courts in Al Ain and Al Dhafra for residents of those regions. Non-Muslim foreigners use the separate Abu Dhabi Civil Family Court, also run by ADJD. The Family Guidance Department at ADJD handles reconciliation sessions for Muslim cases before they proceed to hearings.",
+      "Divorce cases in Abu Dhabi are heard by the Abu Dhabi Judicial Department (ADJD). Muslim cases go to the Personal Status circuit of the Court of First Instance at the main ADJD courts complex in Abu Dhabi city, with branch courts in Al Ain and Al Dhafra for residents of those regions. Non-Muslim foreigners use the separate Abu Dhabi Civil Family Court, also run by ADJD. The Family Guidance Department at ADJD handles reconciliation sessions for Muslim cases that the judge refers to it, usually before they proceed to hearings.",
   },
   {
     question: 'How long does divorce take in Abu Dhabi?',
@@ -50,9 +50,9 @@ const faqItems = [
       'Court fees are modest on both tracks, generally a few hundred dirhams to around AED 2,000 depending on the claims attached. Lawyer fees are the main cost: roughly AED 4,000 to 12,000 for an uncontested divorce, AED 15,000 to 40,000 or more for contested cases, and higher again where custody or foreign assets are disputed. Translation and attestation of foreign documents typically add AED 1,000 to 3,000.',
   },
   {
-    question: 'Does the 60-day reconciliation period apply at the Civil Family Court?',
+    question: 'Does Family Guidance apply at the Civil Family Court?',
     answer:
-      'No. The 60-day Family Guidance reconciliation stage belongs to the Muslim track under Federal Decree-Law No. 41 of 2024. The Abu Dhabi Civil Family Court operates on a no-fault basis with no compulsory reconciliation, which is why civil divorces there conclude so much faster. The court may still offer voluntary mediation on custody and financial matters if both spouses want it.',
+      'No. Family Guidance belongs to the Muslim track: under Federal Decree-Law No. 41 of 2024 the judge can refer a Muslim case to it (under the 2005 law referral was mandatory), and sessions usually take a few weeks. The Abu Dhabi Civil Family Court operates on a no-fault basis with no compulsory reconciliation, which is why civil divorces there conclude so much faster. The court may still offer voluntary mediation on custody and financial matters if both spouses want it.',
   },
   {
     question: 'Will an Abu Dhabi Civil Family Court divorce be recognised abroad?',
@@ -148,8 +148,9 @@ const faqItems = [
         our separate guide to finding a <a href="/en/divorce-lawyer-al-ain/">divorce lawyer in Al Ain</a>.
       </p>
       <p>
-        ADJD also runs the <strong>Family Guidance Department</strong>, which is the mandatory
-        first stop for Muslim divorce cases, and the <strong>Abu Dhabi Civil Family Court</strong>,
+        ADJD also runs the <strong>Family Guidance Department</strong>, which is usually the
+        first stop for Muslim divorce cases (under the 2024 law the judge decides whether to refer
+        a case there), and the <strong>Abu Dhabi Civil Family Court</strong>,
         which sits as a distinct court with its own judges, forms and case-management rules for
         non-Muslim foreigners. A first-instance judgment from either family court can be appealed
         to the Abu Dhabi Court of Appeal within the statutory window, usually 30 days, and a final
@@ -184,10 +185,10 @@ const faqItems = [
       <ul class="doc-list">
         <li><strong>No-fault divorce.</strong> Either spouse can end the marriage by declaring they no longer wish to continue it. There is no need to prove harm, desertion or misconduct, and the other spouse's consent is not required.</li>
         <li><strong>Arabic and English proceedings.</strong> Forms, hearings and judgments are bilingual. English-speaking litigants can follow their own case, and the judgment comes out in English, which simplifies recognition abroad.</li>
-        <li><strong>No compulsory reconciliation.</strong> The 60-day Family Guidance stage does not apply. Mediation on children and money is available if both sides want it, but it cannot be used to stall.</li>
+        <li><strong>No compulsory reconciliation.</strong> The Family Guidance stage used on the Muslim track does not apply. Mediation on children and money is available if both sides want it, but it cannot be used to stall.</li>
         <li><strong>Forms-based and fast.</strong> The divorce request is a standard form filed through ADJD's system. The divorce itself is commonly pronounced at the first hearing, often within a few weeks of registration, and the judge deals with financial and custody claims through a separate application afterwards if the couple cannot agree.</li>
         <li><strong>Joint custody by default.</strong> Both parents share custody after divorce unless one of them applies to the court and shows why that would harm the child. There is no automatic gender-based split of custody and guardianship.</li>
-        <li><strong>Civil financial rules.</strong> Alimony is assessed on factors such as the length of the marriage, the wife's age and the financial position of each spouse, and either spouse can ask for a share of assets built up during the marriage. A pre-marriage agreement, including one signed in your home country, is given weight.</li>
+        <li><strong>Civil financial rules.</strong> Alimony is assessed on factors such as the length of the marriage, the wife's age and the financial position of each spouse (our guide to <a href="/en/alimony-abu-dhabi/">alimony in Abu Dhabi</a> explains how awards are worked out), and either spouse can ask for a share of assets built up during the marriage. A pre-marriage agreement, including one signed in your home country, is given weight.</li>
       </ul>
       <p>
         One limit worth being clear about: the DIFC Courts in Dubai do not grant divorces, so this
@@ -211,23 +212,27 @@ const faqItems = [
         your lawyer.
       </p>
       <p>
-        The stage that shapes the timeline is <strong>Family Guidance</strong>. Before a contested
-        Muslim divorce can be heard, ADJD's Family Guidance Department calls both spouses to
-        counselling sessions and tries to reconcile them or, failing that, to record an agreed
-        settlement. The 2024 law is understood to cap this stage at around 60 days so that an
-        unwilling spouse cannot delay indefinitely; once it lapses without agreement, the department
-        issues a referral and the case moves to a judge. Where both spouses arrive with a signed
-        agreement, Family Guidance can certify it and the divorce is concluded there without a
-        contested hearing.
+        The stage that shapes the timeline is <strong>Family Guidance</strong>. Contested Muslim
+        divorces in Abu Dhabi usually start at ADJD's Family Guidance Department, which calls both
+        spouses to counselling sessions and tries to reconcile them or, failing that, to record an
+        agreed settlement. Under the 2024 law the judge decides whether to refer a case there
+        (under the 2005 law referral was mandatory). There is no fixed statutory period for this
+        stage; sessions usually take a few weeks, and without agreement the case moves to a judge.
+        In contested divorces for harm or discord the court can then appoint two arbitrators to
+        try to reconcile the spouses, and the 2024 law caps their work at 60 days from their
+        appointment (the 2005 law allowed up to 90). Where both spouses arrive with a signed
+        agreement, it can be recorded and approved by the court without a contested hearing.
       </p>
       <p>
-        On children, the 2024 law extends custody to age 18 for both boys and girls, after which
-        the child chooses which parent to live with, and it gives judges wider discretion to keep
+        On children, the 2024 law extends custody to age 18 for both boys and girls, lets a child
+        aged 15 or older choose which parent to live with, and gives judges wider discretion to keep
         the arrangement that serves the child rather than applying fixed age rules. Financial
         claims still follow the Islamic framework: deferred mahr, maintenance during the waiting
         period (iddah), and ongoing child maintenance paid by the father. Abu Dhabi judges
         routinely appoint accounting experts to fix maintenance where salary and living costs are
-        disputed, which adds time and a modest expert fee.
+        disputed, which adds time and a modest expert fee. For how custody, visitation and travel
+        work on both tracks, see our guide to
+        <a href="/en/child-custody-abu-dhabi/">child custody in Abu Dhabi</a>.
       </p>
     </section>
 
@@ -250,7 +255,7 @@ const faqItems = [
         </li>
         <li>
           <h3>Family Guidance (Muslim track only)</h3>
-          <p>The case is opened at ADJD's Family Guidance Department, which schedules counselling sessions with both spouses. If reconciliation fails within the 60-day window, or an agreement is signed, the department refers the matter on. Civil Family Court cases skip this stage entirely.</p>
+          <p>Muslim cases usually open at ADJD's Family Guidance Department when the judge refers them there, and it schedules counselling sessions with both spouses, usually over a few weeks. If reconciliation fails, or an agreement is signed, the department refers the matter on. Civil Family Court cases skip this stage entirely.</p>
         </li>
         <li>
           <h3>Register the case through ADJD smart services</h3>

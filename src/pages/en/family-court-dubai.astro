@@ -45,7 +45,7 @@ const faqSchema = {
       name: 'What is the Family Guidance Section in Dubai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Family Guidance Section (دائرة الإرشاد والتوافق الأسري) is a mandatory pre-filing counselling service for Muslim couples. Before a divorce case is accepted at Dubai Personal Status Court, both spouses must attend up to three sessions with trained counsellors. The goal is reconciliation. If reconciliation fails, the counsellor issues a certificate that allows the court filing to proceed.',
+        text: 'The Family Guidance Section (دائرة الإرشاد والتوافق الأسري) is the counselling service where most Muslim divorce cases at Dubai Personal Status Court start. Under Federal Decree-Law No. 41 of 2024 the judge decides whether to refer a case there (under the 2005 law it was mandatory before a case was accepted), and referred spouses attend up to three sessions with trained counsellors, usually over a few weeks. The goal is reconciliation. If reconciliation fails, the counsellor issues a certificate that allows the court filing to proceed.',
       },
     },
     {
@@ -106,10 +106,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What is the 60-day reconciliation period under the 2024 law?',
+      name: 'Is there a 60-day reconciliation period under the 2024 law?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Federal Decree-Law 41/2024, in force from April 2025, builds a defined reconciliation stage into the Muslim divorce procedure. The figure commonly cited is a 60-day period during which Family Guidance counsellors attempt to settle the dispute before the divorce is documented. The exact wording sits in the decree and its regulations, so confirm the current count with your lawyer.',
+        text: 'Not for Family Guidance. Under Federal Decree-Law 41/2024, in force since 15 April 2025, the judge decides whether to refer a Muslim case to Family Guidance (it was mandatory under the 2005 law), and there is no statutory time limit for that stage; sessions usually take a few weeks. The 60 days applies to arbitration: in contested divorces for harm or discord, the two arbitrators appointed by the court have up to 60 days from their appointment, down from 90 under the old law.',
       },
     },
     {
@@ -153,7 +153,7 @@ const faqItems = [
   {
     question: 'What is the Family Guidance Section in Dubai?',
     answer:
-      'A mandatory pre-filing counselling service for Muslim couples. Up to three sessions with trained counsellors. If reconciliation fails, a non-reconciliation certificate allows the court case to proceed.',
+      'The counselling service where most Muslim divorce cases start when the judge refers them (it was mandatory under the 2005 law). Up to three sessions with trained counsellors, usually over a few weeks. If reconciliation fails, a non-reconciliation certificate allows the court case to proceed.',
   },
   {
     question: 'Do I need a lawyer in Dubai Personal Status Court?',
@@ -191,9 +191,9 @@ const faqItems = [
       'The judge confirms service, reviews filed documents, may address interim orders (custody, travel ban), and schedules the next hearing in 4 to 8 weeks for substantive arguments.',
   },
   {
-    question: 'What is the 60-day reconciliation period under the 2024 law?',
+    question: 'Is there a 60-day reconciliation period under the 2024 law?',
     answer:
-      'Federal Decree-Law 41/2024 (in force from April 2025) builds a formal reconciliation stage into the Muslim divorce procedure, commonly cited as <strong>60 days</strong> of counselling before the divorce is documented. Confirm the exact count with your lawyer, as it sits in the decree and its regulations.',
+      'Not for Family Guidance. Under Federal Decree-Law 41/2024 (in force since 15 April 2025) the judge decides whether to refer a Muslim case to Family Guidance, and there is no statutory time limit for that stage; sessions usually take a few weeks. The <strong>60 days</strong> applies to arbitration in contested harm cases: the two arbitrators the court appoints have up to 60 days from their appointment, down from 90 under the 2005 law.',
   },
   {
     question: 'Can I attend a Dubai family court hearing remotely?',
@@ -234,8 +234,8 @@ const faqItems = [
           <p class="hero__sub">
             When people search for "family court Dubai," they mean the <strong>Dubai Personal Status Court</strong>
             (محكمة الأحوال الشخصية). This guide explains exactly where it is, how the filing process works,
-            which court applies to Muslims and non-Muslims, and what to expect from the mandatory
-            Family Guidance Section before your case is accepted.
+            which court applies to Muslims and non-Muslims, and what to expect from the
+            Family Guidance Section if the judge refers your case there.
           </p>
           <ul class="hero__trust">
             <li>✓ Location &amp; court hierarchy</li>
@@ -356,8 +356,9 @@ const faqItems = [
           hierarchy for children.
         </p>
         <p>
-          Before a Muslim couple can file for divorce, they must first complete the Family Guidance
-          Section process (explained in detail below). This is a legal requirement, not optional.
+          Most Muslim divorce cases start with the Family Guidance Section process (explained in
+          detail below). Under the 2005 law this was a legal requirement; under the 2024 law the
+          judge decides whether to refer a case, and in practice many contested cases still go there.
         </p>
 
         <h3>For Non-Muslim Couples under Federal Decree-Law 41/2022</h3>
@@ -369,8 +370,8 @@ const faqItems = [
         <ul class="list">
           <li><strong>No-fault divorce:</strong> no grounds required, neither party needs to prove harm or misconduct</li>
           <li><strong>No Family Guidance requirement:</strong> non-Muslims can file directly without pre-filing counselling</li>
-          <li><strong>Equal asset division:</strong> marital assets split equally by default unless a prenuptial agreement states otherwise</li>
-          <li><strong>Joint custody default:</strong> courts default to equal parenting time rather than preferring the mother</li>
+          <li><strong>No automatic 50/50 split:</strong> each spouse generally keeps assets held in their own name, and the court weighs financial and non-financial contributions, the length of the marriage and the children's needs</li>
+          <li><strong>Joint custody default:</strong> both parents share parental rights and responsibilities from the start, which does not automatically mean equal parenting time</li>
           <li><strong>No iddah:</strong> the Islamic post-divorce waiting period does not apply</li>
           <li><strong>Either spouse initiates:</strong> there is no equivalent of talaq; either party files the petition</li>
         </ul>
@@ -416,16 +417,18 @@ const faqItems = [
       <section class="section" aria-labelledby="guidance-heading">
         <h2 id="guidance-heading">The Family Guidance Section: What It Is and What to Expect</h2>
         <p>
-          The <strong>Family Guidance Section</strong> (دائرة الإرشاد والتوافق الأسري) is a mandatory
-          pre-filing service for Muslim couples seeking divorce in Dubai. You cannot submit a divorce
-          petition to the Personal Status Court until this process has been completed, or lawfully waived.
+          The <strong>Family Guidance Section</strong> (دائرة الإرشاد والتوافق الأسري) is the
+          counselling service where most Muslim divorce cases in Dubai start. Under the old 2005 law
+          referral was mandatory before a divorce petition could proceed; under Federal Decree-Law
+          No. 41 of 2024 the judge refers the parties when it is considered useful. There is no
+          statutory time limit for this stage.
         </p>
 
         <h3>What Happens at the Family Guidance Section</h3>
         <p>
           The Section is staffed by trained family counsellors, not judges. Sessions are confidential
           and not recorded as part of the court file. The process typically involves up to three sessions
-          spread over approximately 30 days:
+          spread over a few weeks (around 30 days is common):
         </p>
         <ul class="list">
           <li><strong>Session 1:</strong> Each spouse is interviewed separately. The counsellor assesses the history of the marriage, reasons for the breakdown, and whether children are involved.</li>
@@ -434,13 +437,17 @@ const faqItems = [
         </ul>
         <p>
           If reconciliation attempts fail across all three sessions, the counsellor issues a
-          <strong>non-reconciliation certificate</strong>. This document is required when filing at the
-          Personal Status Court. Without it, the court will not accept your divorce petition.
+          <strong>non-reconciliation certificate</strong>, which lets the case continue at the Personal
+          Status Court. If the spouses reach a settlement instead, it can be approved by the court and
+          made binding.
         </p>
 
-        <h3>When Is the Family Guidance Section Waived?</h3>
+        <h3>When Is a Case Not Referred to Family Guidance?</h3>
         <p>
-          The requirement is waived in specific circumstances defined under the law:
+          Under the 2024 law some matters are not referred at all: urgent and temporary matters such
+          as interim maintenance, custody or guardianship orders, wills and inheritance, and matters
+          that cannot be reconciled, such as proving a marriage or a divorce. In practice the stage is
+          also cut short or skipped where:
         </p>
         <ul class="list">
           <li>One party refuses to attend despite being properly notified</li>
@@ -484,8 +491,9 @@ const faqItems = [
             <h3>Step 1: Attend the Family Guidance Section (Muslim couples only)</h3>
             <p>
               Contact the Family Guidance Section at Dubai Courts to schedule your first session.
-              Both spouses receive appointment notifications. Complete up to three sessions and obtain
-              the non-reconciliation certificate. This phase takes approximately 30 days but can take
+              Both spouses receive appointment notifications. If the judge refers the case, complete up
+              to three sessions and obtain the non-reconciliation certificate. This phase typically takes a
+              few weeks (around 30 days is common) but can take
               longer if scheduling delays occur or one party requires additional time.
             </p>
           </li>
@@ -641,7 +649,7 @@ const faqItems = [
               <li>Non-Muslims under FL 41/2022: file at the Personal Status Court (the DIFC Courts do not hear divorces)</li>
               <li>Higher case volume; longer wait times for hearings</li>
               <li>Online case registration available via Dubai Courts app</li>
-              <li>Family Guidance Section mandatory for Muslims before filing</li>
+              <li>Family Guidance Section usually the first step for Muslims (at the judge's discretion since April 2025)</li>
             </ul>
           </div>
           <div class="compare-card">
@@ -754,23 +762,24 @@ const faqItems = [
         <p>
           Federal Decree-Law No. 41 of 2024 replaced the older 2005 personal status statute and took
           effect in April 2025. For Muslim couples filing at Dubai Personal Status Court, the practical
-          change most people notice is the formal reconciliation window built into the procedure.
+          change most people notice is that Family Guidance is no longer automatic.
         </p>
         <p>
-          Under the current law, once a spouse asks the court to certify a divorce, the file passes
-          through a defined reconciliation stage before the divorce can be documented. The commonly
-          cited figure for this stage is a <strong>60-day reconciliation period</strong> during which
-          the Family Guidance counsellors attempt to settle the dispute. Note that the exact article
-          numbers and the precise counting of that period are set out in the decree and its executive
-          regulations, so confirm the current wording with your lawyer rather than relying on a fixed
-          number here. If reconciliation fails within the period, the counsellor refers the matter back
-          to the judge and the case moves forward.
+          Under the 2005 law most personal status claims had to go to Family Guidance first. Under
+          Article 8 of the 2024 law the supervising judge may refer the parties to the Family Guidance
+          and Reconciliation Centre if the judge considers it useful, and urgent matters are not
+          referred. There is no statutory time limit for the guidance stage; sessions usually take a
+          few weeks, and if reconciliation fails the counsellor refers the matter back to the judge.
+          The 60-day figure often quoted is about arbitration: in contested divorces for harm or
+          discord, the two arbitrators appointed by the court have up to <strong>60 days from their
+          appointment</strong> under Article 72, down from 90 days under the 2005 law.
         </p>
         <p>
           Other procedural shifts under the 2024 law include clearer rules on documenting talaq, tighter
           timelines for financial claims after divorce, and updated custody provisions. The Family
-          Guidance stage itself is unchanged in spirit but is now more explicitly tied to a statutory
-          clock, which is why some cases that previously stalled informally now have a defined endpoint.
+          Guidance stage itself is unchanged in spirit, and in practice many contested Muslim cases in
+          Dubai still start there, while the arbitration cap gives contested harm cases a defined
+          endpoint.
           For a fuller walk-through of the counselling stage, see our guide to the
           <a href="/en/family-guidance-section-uae/">Family Guidance Section in the UAE</a>.
         </p>

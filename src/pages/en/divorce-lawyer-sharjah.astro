@@ -59,7 +59,7 @@ const faqSchema = {
 const differences = [
   { factor: 'Muslim divorce law', sharjah: 'Federal Decree-Law No. 41 of 2024 (same federal law as all UAE)', dubai: 'Same federal law' },
   { factor: 'Non-Muslim civil law', sharjah: 'Federal Decree-Law No. 41 of 2022, applied through the ordinary Personal Status Court', dubai: 'Same civil law, applied through the Dubai Personal Status Court (the DIFC Courts do not hear divorces)' },
-  { factor: 'Reconciliation emphasis', sharjah: 'Strong; multiple sessions common before a case proceeds', dubai: 'Mandatory but typically 1 to 3 sessions' },
+  { factor: 'Reconciliation emphasis', sharjah: 'Strong; multiple sessions common before a case proceeds', dubai: 'Usual first step when the judge refers the case; typically 1 to 3 sessions' },
   { factor: 'Khula (wife-initiated)', sharjah: 'Granted but may take longer; more sessions typical', dubai: 'Processed faster in practice; more liberal interpretation' },
   { factor: 'Dedicated non-Muslim court', sharjah: 'No standalone civil family court; cases heard in Arabic', dubai: 'Non-Muslim cases heard at the Personal Status Court in Arabic; the DIFC Courts are not a family court' },
 ];
@@ -81,7 +81,7 @@ const faqItems = [
   },
   {
     question: 'Does the 2024 personal status law change divorce in Sharjah?',
-    answer: 'Yes. Federal Decree-Law No. 41 of 2024 on Personal Status replaced the older Law No. 28 of 2005 for Muslim family matters across the UAE, Sharjah included. In practical terms it keeps a reconciliation stage, understood to run for around 60 days before a contested divorce is granted, and continues child custody to the age of 18, at which point the child chooses which parent to live with. Individual article numbers under the new law are still settling in practice, so confirm any specific clause with your lawyer.',
+    answer: 'Yes. Federal Decree-Law No. 41 of 2024 on Personal Status replaced the older Law No. 28 of 2005 for Muslim family matters across the UAE, Sharjah included. In practical terms it makes referral to Family Guidance a decision for the judge (under the 2005 law it was mandatory), caps the arbitrators\' period in contested harm cases at 60 days from their appointment (it was 90), continues child custody to the age of 18 for boys and girls, and lets a child aged 15 or older choose which parent to live with. Individual article numbers under the new law are still settling in practice, so confirm any specific clause with your lawyer.',
   },
   {
     question: 'Can non-Muslim expats use civil divorce law in Sharjah?',
@@ -89,7 +89,7 @@ const faqItems = [
   },
   {
     question: 'Is there a reconciliation period I have to wait through in Sharjah?',
-    answer: 'For most Muslim cases, yes. Before a contested divorce proceeds, the Family Guidance and Reconciliation section attempts to settle or reconcile the couple, and under the 2024 law this period is understood to be capped at around 60 days so an unwilling spouse cannot stall indefinitely. Sharjah takes this stage seriously and several sessions are common, especially for Emirati families. Once reconciliation genuinely fails, the section issues a certificate that lets the court case go ahead.',
+    answer: 'Not a fixed one. Most Muslim cases in Sharjah still start at the Family Guidance and Reconciliation section, which tries to settle or reconcile the couple, but under the 2024 law the judge decides whether to refer a case (under the 2005 law it was mandatory), and there is no statutory time limit for this stage. Sharjah takes it seriously and several sessions over a few weeks are common, especially for Emirati families. Once reconciliation genuinely fails, the section issues a certificate that lets the court case go ahead. A separate 60-day limit applies to arbitrators in contested harm cases, counted from their appointment (it was 90 days under the old law).',
   },
   {
     question: 'Do I need a lawyer for divorce in Sharjah?',
@@ -97,11 +97,11 @@ const faqItems = [
   },
   {
     question: 'How long does divorce take in Sharjah?',
-    answer: 'An uncontested mutual consent divorce in Sharjah takes 1 to 3 months including the mandatory reconciliation sessions. A contested divorce with disputes over assets, alimony, or custody typically takes 6 to 18 months. Cases involving complex international asset issues or disputes over applicable law can run 2 years or more. Sharjah courts are slightly slower than Dubai on average because of the stronger emphasis on reconciliation.',
+    answer: 'An uncontested mutual consent divorce in Sharjah takes 1 to 3 months including any Family Guidance sessions. A contested divorce with disputes over assets, alimony, or custody typically takes 6 to 18 months. Cases involving complex international asset issues or disputes over applicable law can run 2 years or more. Sharjah courts are slightly slower than Dubai on average because of the stronger emphasis on reconciliation.',
   },
   {
     question: 'What is the Sharjah Family Guidance Centre?',
-    answer: 'The Sharjah Family Guidance and Reconciliation section is a mandatory step before most divorce cases in Sharjah can proceed to court. Its function is to attempt reconciliation between spouses. For UAE nationals especially, this step is taken seriously and multiple sessions may be required. If reconciliation genuinely fails, the section issues a certificate allowing the court case to proceed. Expats may also be referred here depending on the case type.',
+    answer: 'The Sharjah Family Guidance and Reconciliation section is where most Muslim divorce cases in Sharjah start when the judge refers them; under the old 2005 law it was a mandatory step before a case could proceed to court. Its function is to attempt reconciliation between spouses. For UAE nationals especially, this step is taken seriously and multiple sessions may be required. If reconciliation genuinely fails, the section issues a certificate allowing the court case to proceed. Expats may also be referred here depending on the case type.',
   },
   {
     question: 'Does Sharjah law allow non-Muslim expats to divorce under home country law?',
@@ -146,7 +146,7 @@ const faqItems = [
         <p>
           Divorce in Sharjah is governed by <strong>UAE federal personal status law</strong>: the Muslim track under <strong>Federal Decree-Law No. 41 of 2024</strong> and the non-Muslim civil track under <strong>Federal Decree-Law No. 41 of 2022</strong>.
           File at the <strong>Sharjah Personal Status Court</strong> under the Sharjah Judicial Department if you are a Sharjah resident.
-          Mandatory reconciliation through the Family Guidance section applies before a contested case can proceed.
+          Most Muslim cases start at the Family Guidance section when the judge refers them (it was mandatory under the old 2005 law).
           Lawyer fees: <strong>AED 3,000 to 50,000+</strong> depending on complexity.
           Timeline: <strong>1 to 3 months</strong> uncontested; <strong>6 to 18+ months</strong> contested.
         </p>
@@ -171,7 +171,7 @@ const faqItems = [
           Which law governs your divorce in Sharjah depends on the religion and nationality of the spouses, not on where you live inside the emirate.
         </p>
         <p>
-          Muslim couples, and cases where at least one spouse is a Muslim UAE national, are dealt with under the federal Muslim personal status framework. This was overhauled by <strong>Federal Decree-Law No. 41 of 2024 on Personal Status</strong>, which replaced the older Law No. 28 of 2005 and applies across the UAE including Sharjah. Under the new law a divorce request generally passes through a reconciliation stage, understood to run for around 60 days before the court will grant a contested separation, and custody of children continues to the age of 18, at which point the child chooses which parent to live with. Specific article numbers under the 2024 law are still being tested in practice, so treat any single clause reference as indicative and confirm it with your lawyer.
+          Muslim couples, and cases where at least one spouse is a Muslim UAE national, are dealt with under the federal Muslim personal status framework. This was overhauled by <strong>Federal Decree-Law No. 41 of 2024 on Personal Status</strong>, which replaced the older Law No. 28 of 2005 and applies across the UAE including Sharjah. Under the new law a divorce request usually passes through Family Guidance if the judge refers it (referral was mandatory under the 2005 law), with no fixed statutory period for that stage; in contested harm cases, the arbitrators appointed by the court have up to 60 days from their appointment (it was 90). Custody of children continues to the age of 18 for boys and girls, and a child aged 15 or older can choose which parent to live with. Specific article numbers under the 2024 law are still being tested in practice, so treat any single clause reference as indicative and confirm it with your lawyer.
         </p>
         <p>
           Non-Muslim expatriates can rely on <strong>Federal Decree-Law No. 41 of 2022 on Civil Personal Status</strong>, the UAE's civil family law. It allows no-fault divorce, meaning either spouse can end the marriage without proving harm, equal treatment of both parents in custody, and division of assets on a discretionary basis. In Sharjah this civil track is applied through the same Personal Status Court rather than a separate dedicated civil family court, which is the main practical difference from Abu Dhabi.
@@ -225,7 +225,7 @@ const faqItems = [
       <section class="content-section">
         <h2>Reconciliation comes first in Sharjah</h2>
         <p>
-          The reconciliation stage is not a formality in Sharjah. The Family Guidance and Reconciliation section is staffed by trained counsellors whose job is to explore whether the marriage can be saved, and for Emirati families in particular several sessions are common before a certificate to proceed is issued. Under the 2024 Muslim law the reconciliation period is understood to be capped at around 60 days so that an unwilling spouse cannot stall indefinitely, after which the case moves forward whether or not agreement was reached. Expats are frequently referred to the same section. Going in with a clear, documented position, and a lawyer who can present it in Arabic, shortens this stage considerably.
+          The reconciliation stage is not a formality in Sharjah. The Family Guidance and Reconciliation section is staffed by trained counsellors whose job is to explore whether the marriage can be saved, and for Emirati families in particular several sessions are common before a certificate to proceed is issued. Under the 2024 Muslim law the judge decides whether to refer a case to this section (it was mandatory under the 2005 law), and there is no fixed statutory period for it; sessions usually run over a few weeks, and the case moves forward if no agreement is reached. In contested harm cases a separate 60-day limit applies to the arbitrators the court appoints, counted from their appointment. Expats are frequently referred to the same section. Going in with a clear, documented position, and a lawyer who can present it in Arabic, shortens this stage considerably.
         </p>
       </section>
 
