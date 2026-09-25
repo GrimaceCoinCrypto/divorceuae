@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'Can I divorce my husband if he left UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. If your husband has left the UAE and is refusing to cooperate with divorce proceedings, you can file for judicial divorce (faskh) at the UAE Personal Status Court. For Muslim women: if he has been absent for 1 year or more without maintenance, Article 79 of Federal Decree-Law No. 41 of 2024 provides an absence-based divorce. For non-Muslim women: the civil no-fault dissolution under Federal Decree-Law No. 41 of 2022 does not require the husband\'s cooperation at all, you file, the court waits 90 days, and the divorce is granted.',
+        text: 'Yes. If your husband has left the UAE and is refusing to cooperate with divorce proceedings, you can file for judicial divorce (faskh) at the UAE Personal Status Court. For Muslim women: under Article 79 of Federal Decree-Law No. 41 of 2024, if he has been absent for 6 months or more and his address is known, you can apply for divorce unless the absence is for work; the court warns him and gives him up to 180 days. If his whereabouts are unknown, divorce is possible once a year has passed from filing. Article 77 separately allows divorce for non-payment of maintenance. For non-Muslim women: the civil no-fault dissolution under Federal Decree-Law No. 41 of 2022 does not require the husband\'s cooperation at all: you file, he is served, and the court can grant the divorce at the first hearing (Article 3 of that law), with no Family Guidance stage.',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'How long does absence divorce take in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'An absence-based judicial divorce under Article 79 of Federal Decree-Law No. 41 of 2024 takes approximately 6-18 months from filing. The investigation period is 30-90 days, followed by a public notice period (typically 30-60 days), then a court hearing and judgment. If the husband appears or responds during this period, the timeline extends. Non-Muslim civil no-fault dissolution is faster: approximately 3-6 months from filing.',
+        text: 'The law sets no overall timetable, and it varies by emirate and by how quickly the husband can be served. Article 79 of Federal Decree-Law No. 41 of 2024 builds in fixed waits: if his address is known, he is warned and given up to 180 days; if he is missing, no divorce can be granted until one year after filing. In practice these cases usually take several months and can take more than a year. A divorce for non-payment under Article 77 is usually quicker, since his grace period is at most 30 days (90 if he proves he cannot pay). Non-Muslim civil divorce is usually quickest, because the court can rule at the first hearing once he has been served.',
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: 'What if I do not know where my husband is?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'If your husband\'s whereabouts are unknown, UAE courts can proceed by public notice. After the court makes reasonable attempts to locate the husband (including through last known address, email, WhatsApp, and relevant authorities), it publishes a notice in the official gazette and a widely-circulated Arabic newspaper. If the husband does not respond within the notice period, the court proceeds to judgment in his absence. You do not need to know his location to obtain a divorce in UAE.',
+        text: 'If your husband\'s whereabouts are unknown, UAE courts can proceed by public notice. After the court makes reasonable attempts to locate the husband (including through last known address, email, WhatsApp, and relevant authorities), it serves him by posting on the court website or by publication in a widely circulated daily newspaper in Arabic, plus a foreign-language newspaper if he is a foreigner (Article 9 of Civil Procedure Law No. 42 of 2022). If he still does not respond, the court proceeds in his absence. For a missing husband, Article 79 means the divorce cannot be granted until a year after filing. You do not need to know his location to obtain a divorce in UAE.',
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: 'Can I get maintenance while waiting for divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. You can apply for an interim maintenance order at the Personal Status Court while divorce proceedings are pending. Courts can issue interim maintenance orders on an expedited basis, in urgent cases where you have no income and the husband has abandoned the family, courts can issue an order within 48-72 hours. The interim order covers your living expenses and any children\'s expenses until the divorce is finalised. The husband\'s non-presence does not prevent an interim order being issued.',
+        text: 'Yes. You can apply for an interim maintenance order at the Personal Status Court while divorce proceedings are pending. While a maintenance claim is being heard, the court can order interim maintenance for you and your children, and that order is enforceable immediately by law (Article 100 of Federal Decree-Law No. 41 of 2024). In urgent cases, where you have no income and the husband has abandoned the family, it can be issued quickly. The interim order covers your living expenses and any children\'s expenses until the divorce is finalised. The husband\'s non-presence does not prevent an interim order being issued.',
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: 'What if my husband refuses to respond to court notices?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'If the husband has been properly served (by all available means including email, WhatsApp, last known address, and if necessary publication in the gazette) and still does not respond, UAE courts proceed to judgment in absentia. His non-response is treated as a failure to contest the proceedings, not as a bar to the divorce being granted. Courts are experienced with absent respondents in divorce cases and have a clear procedural framework for proceeding without the husband.',
+        text: 'If the husband has been properly served (by all available means including email, WhatsApp, last known address, and if necessary court-ordered publication) and still does not respond, UAE courts proceed to judgment in absentia. His non-response is treated as a failure to contest the proceedings, not as a bar to the divorce being granted. Courts are experienced with absent respondents in divorce cases and have a clear procedural framework for proceeding without the husband.',
       },
     },
     {
@@ -67,7 +67,7 @@ const faqSchema = {
       name: 'Do I need a lawyer for absence divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You are not legally required to use a lawyer for absence divorce proceedings in UAE. However, given the complexity of serving process on an absent or foreign respondent, navigating the publication requirements, and presenting the financial abandonment evidence correctly, legal representation significantly increases the efficiency and success rate of the proceedings. Lawyer fees for an absence divorce case typically range from AED 5,000 to AED 25,000 depending on complexity.',
+        text: 'You are not legally required to use a lawyer for absence divorce proceedings in UAE. However, given the complexity of serving process on an absent or foreign respondent, meeting the publication requirements, and presenting the financial abandonment evidence correctly, legal representation significantly increases the efficiency and success rate of the proceedings. Lawyer fees for an absence divorce case typically range from AED 5,000 to AED 25,000 depending on complexity.',
       },
     },
     {
@@ -75,7 +75,7 @@ const faqSchema = {
       name: 'What evidence do I need to file for absence divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For an Article 79 absence divorce: original marriage certificate (attested, Arabic-translated), Emirates ID, evidence of husband\'s last known address or contact details, bank statements showing no maintenance payments received, records of communication attempts (WhatsApp, email, phone records), and any records of his departure (flight booking if known, last UAE entry/exit stamp). For financial abandonment under Article 72: the same documents plus evidence of the 3-month maintenance gap and that the husband had capacity to pay.',
+        text: 'For an Article 79 absence divorce: original marriage certificate (attested, Arabic-translated), Emirates ID, evidence of husband\'s last known address or contact details, bank statements showing no maintenance payments received, records of communication attempts (WhatsApp, email, phone records), and any records of his departure (flight booking if known, last UAE entry/exit stamp). For non-payment of maintenance under Article 77: the same documents plus evidence of when maintenance stopped and, if you have it, evidence that the husband is able to pay.',
       },
     },
     {
@@ -91,7 +91,7 @@ const faqSchema = {
       name: 'Can my husband contest the divorce after disappearing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. A husband who was absent during proceedings can apply to contest a judgment issued in absentia within the appeal period (typically 30 days from when he becomes aware of the judgment). He would need to demonstrate both a valid reason for his absence and grounds to contest the divorce. UAE courts apply a high standard for reopening absence judgments, genuine emergency or inability to receive service is required. Deliberate avoidance of court notices does not qualify.',
+        text: 'Yes. A husband who was absent during proceedings can apply to contest a judgment issued in absentia within the appeal period (generally 30 days, which for a judgment given in his absence usually runs from when he is served with it). He would need to demonstrate both a valid reason for his absence and grounds to contest the divorce. UAE courts apply a high standard for reopening absence judgments, genuine emergency or inability to receive service is required. Deliberate avoidance of court notices does not qualify.',
       },
     },
     {
@@ -107,38 +107,52 @@ const faqSchema = {
 
 const groundsRows = [
   {
-    ground: 'Absence without maintenance, 1 year+',
-    law: 'Article 79, FL 41/2024',
+    ground: 'Absence of a husband whose address is known, 6 months+',
+    law: 'Article 79(1), FL 41/2024',
     who: 'Muslim wives',
-    requirement: 'Husband absent 1 year or more. No maintenance paid. No acceptable reason for absence. Court investigation period.',
+    requirement: 'Husband absent for at least 6 months, even if he left money for maintenance, unless the absence is for work. The court first warns him to live with you, bring you to him or divorce you, and gives him up to 180 days from the warning.',
     flag: 'primary',
   },
   {
-    ground: 'Financial abandonment (nafaqa refusal), 3 months+',
-    law: 'Article 72, FL 41/2024',
+    ground: 'Missing husband, whereabouts unknown',
+    law: 'Article 79(2), FL 41/2024',
     who: 'Muslim wives',
-    requirement: 'Husband is contactable but refuses to pay maintenance for 3+ consecutive months without acceptable reason. Husband present or abroad, either applies.',
+    requirement: 'The court investigates and searches for him. Divorce cannot be granted until one year has passed from the date the case was filed.',
     flag: 'primary',
   },
   {
-    ground: 'Imprisoned spouse, 3+ years sentence',
-    law: 'Articles 73-74, FL 41/2024',
+    ground: 'Non-payment of maintenance (nafaqa)',
+    law: 'Article 77, FL 41/2024',
     who: 'Muslim wives',
-    requirement: 'Husband sentenced to 3 or more years imprisonment. Wife can file after he has served 1 year of the sentence.',
+    requirement: 'Husband refuses to maintain you or maintenance cannot be collected from him, whether he is in the UAE or abroad. The court gives him up to 30 days (up to 90 days if he proves he cannot pay), then divorces you if he still does not pay.',
+    flag: 'primary',
+  },
+  {
+    ground: 'Imprisoned husband, 3+ years sentence',
+    law: 'Article 79(3), FL 41/2024',
+    who: 'Muslim wives',
+    requirement: 'Final sentence of 3 years or more. Wife can apply after he has been imprisoned for 1 year, provided he is not released while the case is heard or at least 6 months of the sentence remain.',
+    flag: 'secondary',
+  },
+  {
+    ground: 'Desertion of the marital bed',
+    law: 'Article 78, FL 41/2024',
+    who: 'Muslim wives',
+    requirement: 'Husband refuses marital relations for more than 6 months without a legitimate excuse, or swears not to have relations for more than 4 months and does not retract.',
     flag: 'secondary',
   },
   {
     ground: 'Harm (darar) / irreconcilable breakdown',
-    law: 'Articles 75-76, FL 41/2024',
+    law: 'Article 71 (arbitration: Articles 72 to 74), FL 41/2024',
     who: 'Muslim wives',
     requirement: 'Proved harm to the wife from continued marriage. Absence and abandonment itself can constitute harm sufficient for darar divorce.',
     flag: 'secondary',
   },
   {
-    ground: 'Civil no-fault dissolution',
+    ground: 'Civil no-fault divorce',
     law: 'FL 41/2022',
     who: 'Non-Muslim residents',
-    requirement: 'No grounds required. File the application, wait 90 days, divorce granted regardless of husband\'s cooperation or location.',
+    requirement: 'No grounds required and no Family Guidance stage. Once the other spouse has been served, the court can grant the divorce at the first hearing, whether or not he cooperates.',
     flag: 'nonmuslim',
   },
 ];
@@ -146,11 +160,11 @@ const groundsRows = [
 const faqItems = [
   {
     question: 'My husband has been gone for 8 months and sends no money. Can I file now?',
-    answer: "For the Article 79 absence-based judicial divorce, the standard waiting period is 1 year of absence without maintenance. At 8 months you are not yet at the threshold for that specific ground. However, you can file now on the financial abandonment ground under Article 72: if your husband has not paid maintenance for 3 or more consecutive months without acceptable reason, you can seek judicial divorce regardless of how long he has been absent. File as soon as the 3-month maintenance gap is established. Do not wait for the 1-year absence threshold if financial abandonment is already present.",
+    answer: "Usually, yes. If you know where he lives, Article 79 requires at least 6 months of absence, so 8 months is enough to file unless he is away for work; the court will warn him and give him up to 180 days before ruling. Because he sends no money, you can also rely on Article 77 (non-payment of maintenance): the law sets no minimum period of non-payment, and the court gives him at most 30 days to pay (90 if he proves he cannot), then divorces you if he does not. If his whereabouts are unknown, the missing-husband rule applies instead, and divorce cannot be granted until a year after you file.",
   },
   {
     question: 'My husband is in prison abroad. Can I divorce him?',
-    answer: "Yes. Under Articles 73-74 of Federal Decree-Law No. 41 of 2024, if your husband has been sentenced to 3 or more years imprisonment anywhere, you can file for judicial divorce after he has served 1 year of that sentence. The imprisonment ground applies regardless of which country he is imprisoned in. You will need official documentation of the sentence, typically an authenticated court judgment from the relevant country. Your UAE lawyer can assist with obtaining this through diplomatic channels if necessary.",
+    answer: "Often, yes. Under Article 79(3) of Federal Decree-Law No. 41 of 2024, if your husband has a final sentence of 3 or more years, you can apply for divorce after he has been imprisoned for 1 year, provided he is not released while the case is heard or at least 6 months of the sentence remain. Whether a sentence imposed abroad counts is for the court to assess, so ask your lawyer; non-payment of maintenance or harm may also be available. You will need official documentation of the sentence, typically an authenticated court judgment from the relevant country. Your UAE lawyer can assist with obtaining this through diplomatic channels if necessary.",
   },
   {
     question: 'My husband left the UAE and cancelled my residence visa. What are my options?',
@@ -158,19 +172,19 @@ const faqItems = [
   },
   {
     question: 'How does the court serve papers on my husband if he is abroad?',
-    answer: "UAE courts have a range of service methods for foreign-located respondents. Formally: (1) email service to the last known email address, which is considered valid if email is confirmed; (2) WhatsApp or SMS to the last known phone number (UAE courts accept this as valid service under digital communications frameworks); (3) service through the UAE Ministry of Justice's judicial cooperation channels to the relevant foreign court or authority; (4) service through the UAE embassy in the relevant country. If all these fail, the court publishes a public notice in the official gazette and an Arabic daily newspaper. Once publication is complete and the notice period expires, the court can proceed to judgment.",
+    answer: "UAE courts have a range of service methods for foreign-located respondents. Formally: (1) email service to the last known email address, which is considered valid if email is confirmed; (2) WhatsApp or SMS to the last known phone number (UAE courts accept this as valid service under digital communications frameworks); (3) service through judicial cooperation agreements with the relevant foreign court or authority; (4) service through diplomatic channels, via the UAE Ministry of Foreign Affairs and the UAE embassy in the relevant country. If all these fail, the court serves by posting on its website or by publication in a widely circulated Arabic daily newspaper, plus a foreign-language one if he is a foreigner. Once service is complete, the court can proceed to judgment.",
   },
   {
     question: 'Can I get child custody sorted at the same time?',
-    answer: "Yes. Custody (hadana) and child maintenance (nafaqat al-awlad) can be dealt with simultaneously or in connected proceedings at the Personal Status Court. If your husband is absent and unable to participate, the court can make custody orders without him based on the children's best interests. Physical custody of younger children (boys under 11, girls under 13) typically stays with the mother. Legal guardianship (wilaya) technically remains with the father but is practically exercised by the court-appointed representative if he is absent. Child maintenance can be ordered and enforced against the father even in absentia.",
+    answer: "Yes. Custody (hadana) and child maintenance (nafaqat al-awlad) can be dealt with simultaneously or in connected proceedings at the Personal Status Court. If your husband is absent and unable to participate, the court can make custody orders without him based on the children's best interests. Physical custody of the children (to age 18 for boys and girls under the 2024 law, with a child aged 15 or over able to choose) typically stays with the mother. Legal guardianship (wilaya) technically remains with the father but is practically exercised by the court-appointed representative if he is absent. Child maintenance can be ordered and enforced against the father even in absentia.",
   },
   {
     question: 'What if my husband claims he had no way of knowing about the divorce proceedings?',
-    answer: "This is the standard defence for a husband who wants to contest a judgment made in absentia. For the defence to succeed, he must show that: (1) he never received any of the service attempts (all of email, WhatsApp, postal address, and publication), and (2) he had no reasonable way to know proceedings were underway, and (3) he has substantive grounds to contest the divorce. If the court followed proper service procedure including gazette publication, the 'I did not know' defence is very difficult to establish. Deliberate avoidance of known legal proceedings destroys this defence entirely.",
+    answer: "This is the standard defence for a husband who wants to contest a judgment made in absentia. For the defence to succeed, he must show that: (1) he never received any of the service attempts (all of email, WhatsApp, postal address, and publication), and (2) he had no reasonable way to know proceedings were underway, and (3) he has substantive grounds to contest the divorce. If the court followed proper service procedure including court-ordered publication, the 'I did not know' defence is very difficult to establish. Deliberate avoidance of known legal proceedings destroys this defence entirely.",
   },
   {
     question: 'My husband is in another emirate, not abroad. Does this still apply?',
-    answer: "An absent husband in another UAE emirate is much easier to locate and serve than one abroad. UAE courts can serve process via all domestic channels, and the husband cannot claim he was outside UAE service reach. A husband who is physically in the UAE but refuses to participate in divorce proceedings will be served and can be subject to contempt proceedings for deliberate non-cooperation. For Muslim wives, financial abandonment under Article 72 does not require actual physical absence, it applies when the husband is contactable but refuses to provide maintenance for 3+ months. See <a href='/en/how-to-file-for-divorce-in-dubai/'>how to file for divorce in Dubai</a> for the domestic filing process.",
+    answer: "An absent husband in another UAE emirate is much easier to locate and serve than one abroad. UAE courts can serve process via all domestic channels, and the husband cannot claim he was outside UAE service reach. A husband who is physically in the UAE but refuses to participate in divorce proceedings will be served and can be subject to contempt proceedings for deliberate non-cooperation. For Muslim wives, divorce for non-payment of maintenance under Article 77 does not require physical absence: it applies when the husband is contactable but refuses to maintain you and does not pay within the grace period the court gives him. See <a href='/en/how-to-file-for-divorce-in-dubai/'>how to file for divorce in Dubai</a> for the domestic filing process.",
   },
   {
     question: 'Will I lose mahr rights by filing for absence divorce rather than waiting for talaq?',
@@ -195,12 +209,12 @@ const faqItems = [
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Absent Husband Divorce UAE, 2025 Legal Guide</p>
+      <p class="hero-tag">Absent Husband Divorce UAE, 2026 Legal Guide</p>
       <h1>Divorced by Absence: How to End Your Marriage in UAE When Your Husband Has Disappeared or Is Abroad</h1>
       <p class="hero-desc">
         Your husband left. He may have abandoned you financially, disappeared without a word, or moved abroad and refuses to engage with any legal process. UAE law gives you a clear path to divorce without his cooperation. This guide explains exactly how, the legal grounds, the evidence you need, the process, and your full financial rights.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
   </section>
 
@@ -212,10 +226,10 @@ const faqItems = [
         <h2>Your situation in brief: what the law gives you</h2>
         <ul class="key-facts">
           <li><strong>You can divorce an absent husband in UAE.</strong> His cooperation is not required. Courts have a full procedure for absent respondents.</li>
-          <li><strong>Article 79 (FL 41/2024):</strong> Absence + no maintenance for 1 year = grounds for judicial divorce. Investigation period, public notice, judgment.</li>
-          <li><strong>Article 72 (FL 41/2024):</strong> No maintenance for 3 months = financial abandonment divorce, whether he is present or abroad.</li>
-          <li><strong>Non-Muslims:</strong> Civil no-fault dissolution requires no grounds and no husband cooperation. File and wait 90 days.</li>
-          <li><strong>Interim maintenance available</strong> during proceedings, courts can order it in 48-72 hours in urgent cases.</li>
+          <li><strong>Article 79 (FL 41/2024):</strong> Absence of 6 months or more (not for work) by a husband whose address is known = grounds for divorce after a warning and up to 180 days; a missing husband = divorce once a year has passed from filing.</li>
+          <li><strong>Article 77 (FL 41/2024):</strong> Non-payment of maintenance = grounds for divorce whether he is present or abroad, after a grace period of up to 30 days (90 if he proves he cannot pay).</li>
+          <li><strong>Non-Muslims:</strong> Civil no-fault divorce requires no grounds and no husband cooperation. Once he is served, the court can rule at the first hearing.</li>
+          <li><strong>Interim maintenance available</strong> while a maintenance claim is heard, and the order is enforceable immediately by law (Article 100).</li>
           <li><strong>Mahr rights are fully preserved</strong> in an absence-based judicial divorce. You do not forfeit mahr by filing.</li>
         </ul>
       </div>
@@ -270,38 +284,38 @@ const faqItems = [
             </tbody>
           </table>
         </div>
-        <p class="note-text">Multiple grounds can be pleaded simultaneously. A wife whose husband has been absent for 2 years without maintenance can plead both Article 79 and Article 72 in the same application.</p>
+        <p class="note-text">Multiple grounds can be pleaded simultaneously. A wife whose husband has been absent for 2 years without maintenance can plead both Article 79 and Article 77 in the same application.</p>
       </section>
 
       <!-- Section 3: Article 79 in Detail -->
       <section class="content-section">
         <h2>Article 79 Absence Divorce: The Full Process</h2>
         <p>
-          Article 79 of Federal Decree-Law No. 41 of 2024 provides the primary route for divorce when the husband has genuinely disappeared or abandoned the family. The article requires that the absence be for at least one year, that maintenance has not been paid during that period, and that the husband has no acceptable reason for his absence.
+          Article 79 of Federal Decree-Law No. 41 of 2024 provides the primary route for divorce when the husband has genuinely disappeared or abandoned the family. Where his address is known, the article requires an absence of at least 6 months, even if he left money from which maintenance can be taken, unless the absence is for work. The court must first warn him to live with you, bring you to him or divorce you, and give him up to 180 days from the warning. Where he is missing and his whereabouts are unknown, the court must investigate and search for him, and cannot grant the divorce until one year has passed from the date the case was filed.
         </p>
         <p>
-          "Acceptable reason" in UAE case law includes: documented medical emergency, imprisonment, or circumstances of force majeure beyond the husband's control. Working abroad and sending some (but not full) maintenance has been found by courts to be a partial defence. Simple preference to avoid the marriage is not an acceptable reason.
+          The law expressly excludes absence for work from this ground, so a husband working abroad cannot be divorced for absence alone, although non-payment of maintenance or harm may still apply. Imprisonment has its own rule in Article 79(3). Whether other reasons, such as illness or circumstances beyond his control, excuse an absence is for the court to assess in each case. Simple preference to avoid the marriage is not a valid reason.
         </p>
 
-        <h3>The investigation period</h3>
+        <h3>The warning or the search</h3>
         <p>
-          Once the application is filed, the court does not immediately proceed to judgment. It initiates an investigation period of 30-90 days during which it makes genuine efforts to locate and contact the husband. This investigation includes: enquiries through the UAE civil status authority (to check last registered address and any local records), requests to the GDRFA for travel movement records, service attempts at all known addresses and contact points, and correspondence with other UAE government bodies that may have the husband's last known information.
+          Once the application is filed, the court does not immediately proceed to judgment. If the husband's address is known, he is warned and given up to 180 days. If he is missing, the court makes genuine efforts to locate and contact him, and the law requires one year from filing before a divorce can be granted. The search can include: enquiries through the UAE civil status authority (to check last registered address and any local records), requests to the GDRFA for travel movement records, service attempts at all known addresses and contact points, and correspondence with other UAE government bodies that may have the husband's last known information.
         </p>
         <p>
-          This investigation period is not optional, it is a procedural safeguard to ensure that the court has genuinely tried to bring the husband into the proceedings before issuing a judgment in his absence.
+          This stage is not optional: it is a procedural safeguard to ensure that the court has genuinely tried to bring the husband into the proceedings before issuing a judgment in his absence.
         </p>
 
         <h3>Public notice publication</h3>
         <p>
-          If the investigation period yields no response, the court orders publication of a public notice. The notice is published in the UAE Official Gazette and in at least one widely-circulated Arabic-language newspaper. The notice period is typically 30-60 days. This is the legal mechanism by which the world is formally put on notice that proceedings are underway, analogous to service by publication in common law jurisdictions.
+          If the husband cannot be served by the usual methods, the court, after checking with at least one relevant authority, orders service by posting on the court website or by publication in a widely circulated daily newspaper published in the UAE in Arabic, plus a foreign-language newspaper if he is a foreigner (Article 9 of Civil Procedure Law No. 42 of 2022). This is the legal mechanism for putting him on notice when he cannot be reached, similar to service by publication in common law jurisdictions.
         </p>
         <p>
-          After the publication period expires without the husband appearing or responding, the court is authorised to proceed to judgment.
+          Once service is complete and the waiting periods in Article 79 have run without the husband appearing or responding, the court can proceed to judgment.
         </p>
 
         <h3>The hearing and judgment</h3>
         <p>
-          The court schedules a hearing at which the wife presents her evidence. If the grounds are established, absence of 1 year or more, no maintenance, no acceptable reason, proper service attempts made, the court issues a judicial divorce decree. The decree has the same legal effect as any other divorce judgment: it dissolves the marriage, records the divorce in civil status records, and establishes the wife's financial rights.
+          The court schedules a hearing at which the wife presents her evidence. If the grounds are established (the required absence, no work-related reason, the warning period or one-year wait completed, proper service made), the court issues a judicial divorce decree. The decree has the same legal effect as any other divorce judgment: it dissolves the marriage, records the divorce in civil status records, and establishes the wife's financial rights.
         </p>
         <p>
           See the <a href="/en/divorce-timeline-uae/">divorce timeline UAE guide</a> for realistic timelines at each stage, and <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a> for the step-by-step filing process.
@@ -310,22 +324,22 @@ const faqItems = [
 
       <!-- Section 4: Financial Abandonment -->
       <section class="content-section">
-        <h2>Financial Abandonment (Article 72): Divorce Without Physical Absence</h2>
+        <h2>Non-Payment of Maintenance (Article 77): Divorce Without Physical Absence</h2>
         <p>
-          Article 72 of Federal Decree-Law No. 41 of 2024 addresses a situation that many women face but do not realise constitutes grounds for judicial divorce: the husband is physically present or contactable, but he has completely stopped providing maintenance.
+          Article 77 of Federal Decree-Law No. 41 of 2024 addresses a situation that many women face but do not realise constitutes grounds for judicial divorce: the husband is physically present or contactable, but he has completely stopped providing maintenance.
         </p>
         <p>
-          Under Article 72, if a husband refuses to pay maintenance (nafaqa) for three consecutive months or more without an acceptable reason, the wife can apply for judicial divorce even if the husband is reachable. The three-month period is measured from the date the husband last paid maintenance. "Without acceptable reason" means absence of documented financial hardship, illness, or circumstances beyond his control. "I choose not to pay" does not qualify as an acceptable reason.
+          Under Article 77, if a husband refuses to maintain his wife, or maintenance cannot be collected from him, the court gives him a period of no more than 30 days; if he still does not pay without an acceptable excuse, the court divorces him, even if he is reachable. If he claims he cannot afford the maintenance and proves it, the judge gives him up to 90 days instead. The divorce is a minor irrevocable one (ba'in baynunah sughra). If the wife has had to bring a maintenance claim more than twice and non-payment was proven each time, the judge divorces her irrevocably on request. "I choose not to pay" is not an acceptable excuse.
         </p>
         <p>
-          This ground is often faster than the Article 79 absence route because it does not require the 1-year waiting period. If your husband stopped paying maintenance three months ago, you can file today.
+          This ground is often faster than the Article 79 absence route because it does not require 6 months of absence or the 180-day warning period, and the law sets no minimum period of non-payment before you file.
         </p>
         <p>
-          Evidence needed for an Article 72 application: bank statements showing no maintenance payments received from the husband for 3+ months, any payment platform records (bank transfers, cash payment receipts), WhatsApp or other communication records showing you requested maintenance and were refused, and your Emirates ID and marriage certificate.
+          Evidence needed for an Article 77 application: bank statements showing when maintenance payments from the husband stopped, any payment platform records (bank transfers, cash payment receipts), WhatsApp or other communication records showing you requested maintenance and were refused, and your Emirates ID and marriage certificate.
         </p>
         <div class="info-box info-box--warning">
           <h3>Document the maintenance gap now</h3>
-          <p>Start downloading your bank statements immediately, covering the period before the maintenance stopped and the period of non-payment. Screenshot any WhatsApp, email, or text messages where you asked for maintenance and received no response or a refusal. If your husband paid maintenance in cash, write down the dates and amounts while your memory is fresh and seek any corroborating records. This evidence is the foundation of your Article 72 application.</p>
+          <p>Start downloading your bank statements immediately, covering the period before the maintenance stopped and the period of non-payment. Screenshot any WhatsApp, email, or text messages where you asked for maintenance and received no response or a refusal. If your husband paid maintenance in cash, write down the dates and amounts while your memory is fresh and seek any corroborating records. This evidence is the foundation of your Article 77 application.</p>
         </div>
       </section>
 
@@ -354,8 +368,8 @@ const faqItems = [
           <div class="step-card">
             <div class="step-num">03</div>
             <div class="step-body">
-              <h3>UAE Ministry of Justice to foreign judicial authorities</h3>
-              <p>The UAE Ministry of Justice has judicial cooperation agreements with many countries. Under these agreements, the UAE MoJ can request that the relevant foreign court or judicial authority formally serve the proceedings on the husband. This route is more formal and typically adds 4-8 weeks but provides the strongest service record for a contested absence judgment.</p>
+              <h3>Judicial cooperation with foreign authorities</h3>
+              <p>The UAE has judicial cooperation agreements with many countries. Under these agreements, the relevant foreign court or judicial authority can be asked to formally serve the proceedings on the husband. This route is more formal and adds time, but provides the strongest service record for a contested absence judgment.</p>
             </div>
           </div>
           <div class="step-card">
@@ -368,8 +382,8 @@ const faqItems = [
           <div class="step-card">
             <div class="step-num">05</div>
             <div class="step-body">
-              <h3>Publication in the Official Gazette as last resort</h3>
-              <p>When all other service methods have been attempted without success, the court orders publication of notice in the UAE Official Gazette and an Arabic newspaper. This is the legal equivalent of service, after the publication period (30-60 days), the court can proceed regardless of whether the husband actually read the notice. This is the last resort but it is legally sufficient for the court to proceed to judgment.</p>
+              <h3>Publication as last resort</h3>
+              <p>When all other service methods have been attempted without success, the court orders service by posting on its website or by publication in a widely circulated Arabic daily newspaper, plus a foreign-language newspaper if the husband is a foreigner. This counts as legal service, and once it is complete the court can proceed regardless of whether the husband actually read the notice. This is the last resort but it is legally sufficient for the court to proceed to judgment.</p>
             </div>
           </div>
         </div>
@@ -408,7 +422,7 @@ const faqItems = [
             <div class="check-icon">4</div>
             <div class="check-body">
               <strong>Bank statements showing no maintenance received</strong>
-              <p>3-6 months minimum, ideally the full period of non-payment. Highlight the relevant period. Include statements from all accounts to which the husband previously paid maintenance.</p>
+              <p>Ideally the full period of non-payment, plus a few months before it stopped. Highlight the relevant period. Include statements from all accounts to which the husband previously paid maintenance.</p>
             </div>
           </div>
           <div class="check-item">
@@ -439,13 +453,13 @@ const faqItems = [
       <section class="content-section">
         <h2>Getting Interim Maintenance While Proceedings Are Pending</h2>
         <p>
-          One of the most urgent practical concerns for a wife whose husband has abandoned the family is financial: how do you pay rent, school fees, and daily expenses while the divorce proceedings run their course over 6-18 months?
+          One of the most urgent practical concerns for a wife whose husband has abandoned the family is financial: how do you pay rent, school fees, and daily expenses while the divorce proceedings run their course over several months, sometimes more than a year?
         </p>
         <p>
-          UAE Personal Status Courts can issue interim maintenance orders (nafaqa mu'ajjala) while divorce proceedings are pending. These are provisional orders that require the husband to pay a set monthly amount for the applicant's living expenses and, separately, for the children's expenses. The orders can be obtained on an expedited basis, in urgent cases where the wife has no income, courts have issued interim maintenance orders within 48-72 hours of the application.
+          UAE Personal Status Courts can issue interim maintenance orders (nafaqa mu'ajjala) while divorce proceedings are pending. These are provisional orders that require the husband to pay a set monthly amount for the applicant's living expenses and, separately, for the children's expenses. Under Article 100 of Federal Decree-Law No. 41 of 2024, the court hearing a maintenance claim can order interim maintenance at the wife's request, and the order is enforceable immediately by law. In urgent cases where the wife has no income, it can be issued quickly.
         </p>
         <p>
-          The interim maintenance application is filed simultaneously with or shortly after the main divorce application. You do not need the divorce to be finalised to enforce an interim maintenance order. If the husband is abroad and has UAE bank accounts or assets, the Execution Court can freeze accounts and enforce the interim maintenance order against those UAE-based assets.
+          The interim maintenance request is made within a maintenance claim, which can be filed with the divorce application or before it. You do not need the divorce to be finalised to enforce an interim maintenance order. If the husband is abroad and has UAE bank accounts or assets, the Execution Court can freeze accounts and enforce the interim maintenance order against those UAE-based assets.
         </p>
         <p>
           For the complete picture of <a href="/en/divorce-cost-uae/">divorce costs and financial rights in UAE</a>, see that dedicated guide.
@@ -496,7 +510,7 @@ const faqItems = [
           For non-Muslim residents of the UAE, the absence of a spouse is far less complicated legally. Federal Decree-Law No. 41 of 2022 provides a civil no-fault dissolution that does not require the other spouse's presence, consent, or cooperation.
         </p>
         <p>
-          A non-Muslim wife simply files the dissolution application at the Personal Status Court. The court waits 90 days. If neither party reconciles the marriage within those 90 days, the divorce is granted regardless of whether the husband responded, appeared, or was located. There is no requirement to prove abandonment, no investigation period, and no public notice publication requirement.
+          A non-Muslim wife simply files the dissolution application at the Personal Status Court. The case is not referred to Family Guidance and goes straight to the court, which can grant the divorce at the first hearing (Article 3 of Federal Decree-Law No. 41 of 2022), whether or not the husband responds or appears. There is no requirement to prove abandonment and no absence waiting period, but he must still be served, which can mean publication if he cannot be reached.
         </p>
         <p>
           This makes the absent spouse situation substantially simpler for non-Muslims: the civil no-fault route achieves the divorce without engaging the complex service-of-process questions that apply to the Muslim judicial divorce track. The non-Muslim route also allows the wife to elect her home country law for the financial aspects of the divorce, which in many jurisdictions (England, Germany, France, Australia) provides more generous financial outcomes than UAE separate property law. See the <a href="/en/types-of-divorce-uae/">divorce types overview</a> for more on this election.
