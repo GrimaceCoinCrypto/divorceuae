@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
 const title = 'Family Guidance Section UAE: The Step Before Divorce';
 const description =
-  'How the UAE Family Guidance Section works: mandatory reconciliation for Muslim couples, the 60-day window, sessions, and the referral letter that lets you file.';
+  'How the UAE Family Guidance Section works: when the judge refers Muslim couples to reconciliation, how long it takes, the sessions, and the referral letter that lets you file.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/family-guidance-section-uae/',
@@ -25,7 +25,7 @@ const schema = {
   author: { '@type': 'Person', name: 'Aleksi Suon' },
   publisher: { '@type': 'Organization', name: 'Divorce UAE' },
   datePublished: '2026-07-04',
-  dateModified: '2026-07-04',
+  dateModified: '2026-09-25',
   inLanguage: 'en-AE',
   mainEntityOfPage: 'https://divorceu.ae/en/family-guidance-section-uae/',
 };
@@ -39,12 +39,12 @@ const faqItems = [
   {
     question: 'Is family guidance mandatory before divorce in the UAE?',
     answer:
-      'For Muslim couples divorcing under Federal Decree-Law No. 41 of 2024, yes. Reconciliation through the Family Guidance Section is a compulsory first stage, and the court will not hear the divorce until the case has passed through it. Non-Muslims filing under the civil law (Federal Decree-Law No. 41 of 2022) are not required to attend and may present their case directly to the court, though they can request guidance voluntarily.',
+      'For Muslim couples it is usually the first step, but under Federal Decree-Law No. 41 of 2024 it is no longer automatic. Article 8 lets the supervising judge refer the spouses to the Family Guidance and Reconciliation Centre where the judge considers it useful; under the old 2005 law referral was mandatory. In practice many Muslim divorce cases in Dubai and Abu Dhabi still start there. Urgent matters, such as temporary maintenance or custody orders, are not referred. Non-Muslims filing under the civil law (Federal Decree-Law No. 41 of 2022) are not required to attend and may present their case directly to the court, though they can request guidance voluntarily.',
   },
   {
-    question: 'How long does the reconciliation period last?',
+    question: 'How long does the Family Guidance stage last?',
     answer:
-      'Under the 2024 Muslim personal status law, the reconciliation window is 60 days, reduced from 90 days under the old 2005 law. Within that period the conciliator usually schedules up to three sessions. If either spouse insists on the divorce after the sessions, the conciliator can close the file and issue the referral letter before the 60 days elapse.',
+      'There is no statutory time limit for Family Guidance. The stage usually takes a few weeks, depending on the court and on how decided the spouses are. The conciliator typically schedules a small number of sessions and can close the file and issue the referral letter once it is clear reconciliation will not happen. The 60-day figure often quoted for the 2024 law is about something else: in contested harm cases the court appoints two arbitrators, and Article 72 gives them up to 60 days from their appointment to report (the 2005 law allowed 90).',
   },
   {
     question: 'What is the referral letter or non-reconciliation certificate?',
@@ -59,12 +59,12 @@ const faqItems = [
   {
     question: 'Can I skip the Family Guidance Section?',
     answer:
-      'For a Muslim divorce, no. It is a compulsory gate before the court will register the case. In practice the stage can be short if both spouses are decided, since the conciliator can issue the referral letter once it is clear reconciliation will not happen. Non-Muslims under the civil law can bypass it entirely and file directly.',
+      'For a Muslim divorce, usually not in practice. The 2024 law leaves referral to the judge (it was compulsory under the 2005 law), and many Muslim cases in Dubai and Abu Dhabi are still sent to Family Guidance first. Urgent applications, such as temporary maintenance or custody orders, are not referred. The stage can be short if both spouses are decided, since the conciliator can issue the referral letter once it is clear reconciliation will not happen. Non-Muslims under the civil law can bypass it entirely and file directly.',
   },
   {
     question: 'Is the Family Guidance process different in Dubai and Abu Dhabi?',
     answer:
-      'The core function is the same, but the naming and administration differ. Dubai runs it as the Family Guidance and Reconciliation section within Dubai Courts. Abu Dhabi runs a Family Guidance Department under the Abu Dhabi Judicial Department. Both attempt reconciliation and issue a referral letter on failure. Abu Dhabi additionally operates a separate Civil Family Court for non-Muslims, which does not route through mandatory guidance.',
+      'The core function is the same, but the naming and administration differ. Dubai runs it as the Family Guidance and Reconciliation section within Dubai Courts. Abu Dhabi runs a Family Guidance Department under the Abu Dhabi Judicial Department. Both attempt reconciliation and issue a referral letter on failure. Abu Dhabi additionally operates a separate Civil Family Court for non-Muslims, which has no Family Guidance stage.',
   },
   {
     question: 'What happens in a family guidance session?',
@@ -87,12 +87,12 @@ const faqItems = [
       <div class="hero__content">
         <Breadcrumb items={breadcrumbs} lang="en" />
         <h1 class="hero__h1">Family Guidance Section UAE: The Step Before Divorce</h1>
-        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated July 2026</p>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated September 2026</p>
         <p class="hero__sub">
-          Almost every Muslim divorce in the UAE starts here, not in a courtroom. The Family Guidance
-          Section is the mandatory reconciliation stage that has to be cleared before the court will
-          register your case. This guide explains who must attend, the 60-day window, what happens in
-          the sessions, the documents to bring, and the referral letter that lets you file. For the
+          Most Muslim divorces in the UAE start here, not in a courtroom. The Family Guidance Section
+          is the reconciliation stage the judge can send you to before the divorce is heard. It was
+          mandatory under the 2005 law; under the 2024 law the judge decides whether to refer you. This
+          guide explains who attends, how long it takes, what happens in the sessions, the documents to bring, and the referral letter that lets you file. For the
           statutes behind it, see our <a href="/en/uae-divorce-law/">UAE divorce law guide</a>.
         </p>
         <ul class="hero__trust">
@@ -126,7 +126,7 @@ const faqItems = [
       <p>
         The logic is simple. Before a judge spends time on a contested divorce, the court wants to
         know that a genuine attempt at reconciliation has been made. So for Muslim couples the case is
-        routed through family guidance first. Only if that attempt fails does the file move on to the
+        usually routed through family guidance first. Only if that attempt fails does the file move on to the
         court proper. This makes the Family Guidance Section the practical first step that feeds the
         court filing, and it is the stage most people underestimate. Understanding it well can save
         you weeks.
@@ -134,9 +134,9 @@ const faqItems = [
       <div class="info-box info-box--blue" style="margin-top:24px;">
         <h3>Why this step matters in one line</h3>
         <p>
-          For a Muslim divorce, the court will not register your case until the Family Guidance
-          Section has tried reconciliation and issued a referral letter. Skip it and you have nothing
-          to file with. For the full route to court, see
+          For most Muslim divorces, the case reaches the judge only after the Family Guidance Section
+          has tried reconciliation and issued a referral letter. Prepare well and the stage can be
+          short. For the full route to court, see
           <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a>.
         </p>
       </div>
@@ -146,17 +146,19 @@ const faqItems = [
     <section class="section" aria-labelledby="who-heading">
       <h2 id="who-heading">Who Must Attend, and Who Can Skip It</h2>
       <p>
-        Whether family guidance is compulsory depends on which law governs your divorce. The UAE now
+        Whether you go through family guidance depends on which law governs your divorce. The UAE now
         runs a dual family-law system, and the two tracks treat reconciliation very differently.
       </p>
       <div class="two-col">
         <div class="info-box info-box--blue">
-          <h3>Muslim couples (mandatory)</h3>
+          <h3>Muslim couples (usually the first step)</h3>
           <p>
             Divorces under <strong>Federal Decree-Law No. 41 of 2024</strong>, in force since 15 April
-            2025, must pass through the Family Guidance Section. Reconciliation is a compulsory gate,
-            and the court will not hear the divorce until the stage is complete and a referral letter
-            has been issued. See our <a href="/en/sharia-divorce-uae/">Sharia divorce guide</a> for the
+            2025, usually pass through the Family Guidance Section. Under Article 8 the supervising
+            judge decides whether to refer the spouses, where the judge considers reconciliation
+            useful; under the 2005 law referral was mandatory. In practice many Muslim divorce cases in
+            Dubai and Abu Dhabi still start here, and a settlement reached here can be approved and
+            made binding. See our <a href="/en/sharia-divorce-uae/">Sharia divorce guide</a> for the
             wider Muslim-track process.
           </p>
         </div>
@@ -164,7 +166,7 @@ const faqItems = [
           <h3>Non-Muslims (voluntary)</h3>
           <p>
             Non-Muslim expats filing under <strong>Federal Decree-Law No. 41 of 2022</strong> are not
-            required to attend mandatory reconciliation. Under the civil no-fault law the case can be
+            required to attend any reconciliation stage. Under the civil no-fault law the case can be
             presented directly to the court. Couples may still request guidance voluntarily if they
             want a mediated outcome. Read the civil route in our
             <a href="/en/divorce-in-uae/">divorce in the UAE overview</a>.
@@ -173,32 +175,42 @@ const faqItems = [
       </div>
       <p>
         This split is one of the biggest practical differences between the two tracks. A Muslim couple
-        who both want the divorce still has to go through guidance first, while a non-Muslim couple can
+        who both want the divorce will usually still go through guidance first, while a non-Muslim couple can
         move straight to filing. If you are weighing a mediated settlement against a fully litigated
         case, our guide to <a href="/en/mediated-divorce-uae/">mediated divorce in the UAE</a> explains
         how the reconciliation session can double as a chance to agree terms.
       </p>
     </section>
 
-    <!-- The 60 day window -->
+    <!-- How long it takes -->
     <section class="section" aria-labelledby="window-heading">
-      <h2 id="window-heading">The 60-Day Reconciliation Window</h2>
+      <h2 id="window-heading">How Long Family Guidance Takes, and the 60-Day Arbitration Limit</h2>
       <p>
-        One of the headline changes under Federal Decree-Law No. 41 of 2024 is the reconciliation
-        window itself. The old 2005 law allowed a period of up to 90 days for family guidance and
-        arbitration. The 2024 law cut that to <strong>60 days</strong>, which is one of the reasons the
-        overall Muslim divorce timeline is now shorter than it used to be.
+        You will often read that the 2024 law cut a "reconciliation period" from 90 to 60 days. That
+        mixes up two different stages. Family Guidance itself has no statutory time limit, under either
+        the old or the new law. What the 2024 law changed about Family Guidance is whether you go there
+        at all: under Article 16 of the 2005 law referral was mandatory for most personal status claims,
+        while Article 8 of Federal Decree-Law No. 41 of 2024 lets the supervising judge decide whether a
+        referral is useful.
       </p>
       <p>
-        Sixty days is a maximum, not a fixed wait. Within that window the conciliator typically
+        In practice the Family Guidance stage usually takes a few weeks. The conciliator typically
         schedules a small number of sessions, commonly reported as up to three. If both spouses are
-        clear that the marriage is over, the conciliator does not have to hold the file open for the
-        full period. The referral letter can be issued as soon as it is plain that reconciliation will
-        not happen. That is why a decided couple can clear this stage in a matter of weeks rather than
-        two months.
+        clear that the marriage is over, the conciliator does not have to keep the file open, and the
+        referral letter can be issued as soon as it is plain that reconciliation will not happen. How
+        long it takes in your case depends on the court's workload and on the spouses.
+      </p>
+      <p>
+        The <strong>60 days</strong> belongs to a later stage. In a contested divorce for discord or
+        harm, the court appoints two arbitrators, ideally one from each family, to try to reconcile the
+        spouses and report back. Article 72 of the 2024 law gives them up to 60 days from their
+        appointment; the 2005 law allowed up to 90. That shorter arbitration period helps contested
+        harm cases reach a judgment sooner, but it does not apply to an agreed divorce or to the Family
+        Guidance sessions. Our <a href="/en/divorce-for-harm-uae/">divorce for harm guide</a> covers the
+        arbitration stage in more detail.
       </p>
       <div class="info-box info-box--gold" style="margin-top:8px;">
-        <h3>How the 60 days fits the wider timeline</h3>
+        <h3>How Family Guidance fits the wider timeline</h3>
         <p>
           Family guidance is only the opening stage. The referral letter, the court hearings and the
           registration of the divorce all come after it. For the full stage-by-stage picture and how
@@ -238,7 +250,7 @@ const faqItems = [
           <h3>Attend the reconciliation sessions</h3>
           <p>
             The conciliator meets the spouses, often separately at first and then together, over one or
-            more sessions inside the 60-day window (commonly up to three). Lawyers usually do not sit
+            more sessions (commonly up to three), usually spread over a few weeks. Lawyers usually do not sit
             in the room, so both parties speak for themselves. Discussions can cover the reasons for
             the divorce, custody arrangements, maintenance and how assets and debts might be split.
           </p>
@@ -320,7 +332,7 @@ const faqItems = [
       <h2 id="referral-heading">The Referral Letter and Its Short Validity</h2>
       <p>
         The single most important output of the Family Guidance Section is the referral letter. Without
-        it, a Muslim divorce cannot be registered with the court. It confirms that reconciliation was
+        it, a Muslim divorce that has been sent to Family Guidance cannot go on to the court hearing. It confirms that reconciliation was
         attempted and did not succeed, and it effectively hands the case over to the judge.
       </p>
       <p>
@@ -362,7 +374,7 @@ const faqItems = [
         </div>
         <div class="card">
           <h3>Abu Dhabi civil route</h3>
-          <p>Abu Dhabi additionally runs a dedicated Civil Family Court for non-Muslims that operates in Arabic and English. That route does not require mandatory family guidance.</p>
+          <p>Abu Dhabi additionally runs a dedicated Civil Family Court for non-Muslims that operates in Arabic and English. That route has no Family Guidance stage.</p>
         </div>
         <div class="card">
           <h3>Other emirates</h3>
@@ -371,7 +383,7 @@ const faqItems = [
       </div>
       <p>
         For a couple deciding where their case will be heard, the key point is that both Dubai and Abu
-        Dhabi gate Muslim divorces through mandatory reconciliation, while the non-Muslim civil route in
+        Dhabi usually send Muslim divorces through Family Guidance first, while the non-Muslim civil route in
         Abu Dhabi does not. See the wider <a href="/en/uae-divorce-law/">UAE divorce law</a> picture for
         how the two tracks compare.
       </p>
@@ -421,11 +433,13 @@ const faqItems = [
     <section class="section" aria-labelledby="skip-heading">
       <h2 id="skip-heading">Can the Stage Be Skipped or Shortened?</h2>
       <p>
-        For a Muslim divorce under Federal Decree-Law No. 41 of 2024, the Family Guidance Section
-        cannot be skipped. It is a compulsory gate, and the court will decline to register the case
-        without a referral letter. What you can do is shorten it. Because the conciliator can issue the
-        referral once reconciliation is clearly not going to happen, a couple who both want the divorce
-        and attend prepared may clear the stage well inside the 60-day window.
+        For a Muslim divorce under Federal Decree-Law No. 41 of 2024, you cannot simply choose to skip
+        the Family Guidance Section. The judge decides whether to refer the case (it was mandatory under
+        the 2005 law), and many Muslim cases in Dubai and Abu Dhabi are still sent there first. Urgent
+        matters, such as temporary maintenance or custody orders, are not referred. What you can do is
+        shorten the stage. Because the conciliator can issue the referral once reconciliation is clearly
+        not going to happen, a couple who both want the divorce and attend prepared may clear it
+        quickly.
       </p>
       <p>
         The genuine exception is the non-Muslim civil route. Non-Muslims filing under Federal
@@ -451,7 +465,7 @@ const faqItems = [
         </a>
         <a href="/en/divorce-timeline-uae/" class="service-link">
           <strong>Divorce Timeline</strong>
-          <span>How the 60 days fits the whole process</span>
+          <span>How Family Guidance fits the whole process</span>
         </a>
         <a href="/en/sharia-divorce-uae/" class="service-link">
           <strong>Sharia Divorce UAE</strong>

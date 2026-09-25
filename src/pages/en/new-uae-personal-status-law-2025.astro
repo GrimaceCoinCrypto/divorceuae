@@ -21,7 +21,7 @@ const breadcrumbs = [
 const steps = [
   { num: '01', title: 'It applies to Muslims by default', detail: 'Federal Decree-Law No. 41 of 2024 governs personal status for UAE Muslims and for Muslim expats, unless a party formally asks for their home-country law to apply (Article 1). Non-Muslim residents stay under the parallel civil law, Federal Decree-Law No. 41 of 2022.' },
   { num: '02', title: 'Divorce must be documented within 15 days', detail: 'A husband who divorces or reconciles must register it before the court within 15 days. If he fails, the wife can claim compensation equal to her maintenance for the delay (Article 58). This closes a gap that previously left women without a dated record.' },
-  { num: '03', title: 'Reconciliation is still mandatory', detail: 'Muslim divorce cases must pass through the Family Guidance section before a judge rules. The non-settlement referral letter stays valid for three months. Harm-based dissolution arbitration is now capped at 60 days, down from 90 (Article 72).' },
+  { num: '03', title: 'Family Guidance referral is now up to the judge', detail: 'Under the 2005 law most personal status claims had to go to Family Guidance first. Under Article 8 of the new law the supervising judge refers the spouses to the Family Guidance and Reconciliation Centre where the judge considers it useful, and in practice many Muslim divorce cases still start there. Where a non-settlement referral letter is issued, it is commonly reported as valid for three months. Harm-based dissolution arbitration is now capped at 60 days, down from 90 (Article 72).' },
   { num: '04', title: 'Custody runs to age 18', detail: 'Custody now continues to 18 for both boys and girls (Article 123), and a child aged 15 or older may choose which parent to live with (Article 122). The custodial mother also holds educational guardianship over the child.' },
   { num: '05', title: 'Maintenance follows the same logic', detail: 'Maintenance still covers food, clothing, housing, medical treatment, and education measured by custom (Article 95). A spousal-maintenance arrears claim is capped at the last two years (Article 99).' },
 ];
@@ -41,7 +41,7 @@ const faqItems = [
   },
   {
     question: 'Does the new UAE Personal Status Law apply to expats?',
-    answer: 'Muslim expats fall under Federal Decree-Law No. 41 of 2024 by default, but either party can ask the court to apply their home-country law instead (Article 1). Non-Muslim expats are governed by the separate civil law, Federal Decree-Law No. 41 of 2022, which allows no-fault unilateral divorce, skips mandatory reconciliation, and sets joint custody to age 18 as the default.',
+    answer: 'Muslim expats fall under Federal Decree-Law No. 41 of 2024 by default, but either party can ask the court to apply their home-country law instead (Article 1). Non-Muslim expats are governed by the separate civil law, Federal Decree-Law No. 41 of 2022, which allows no-fault unilateral divorce, has no reconciliation or Family Guidance stage, and sets joint custody to age 18 as the default.',
   },
   {
     question: 'What is the minimum marriage age under the new law?',
@@ -65,7 +65,7 @@ const faqItems = [
   },
   {
     question: 'How does the new law treat Muslim and non-Muslim divorce differently?',
-    answer: 'The UAE now runs two parallel personal status systems. Federal Decree-Law No. 41 of 2024 applies Islamic-law principles to Muslims, with mandatory Family Guidance reconciliation. Federal Decree-Law No. 41 of 2022 governs non-Muslims with a civil, no-fault model, no mandatory reconciliation, joint custody as the default, and alimony that lapses if the ex-wife remarries. Your nationality, religion, and where you file all affect which rules apply.',
+    answer: 'The UAE now runs two parallel personal status systems. Federal Decree-Law No. 41 of 2024 applies Islamic-law principles to Muslims, with Family Guidance reconciliation as the usual first step where the judge refers the case. Federal Decree-Law No. 41 of 2022 governs non-Muslims with a civil, no-fault model, no reconciliation stage, joint custody as the default, and alimony that lapses if the ex-wife remarries. Your nationality, religion, and where you file all affect which rules apply.',
   },
 ];
 ---
@@ -101,7 +101,7 @@ const faqItems = [
         <h2>What is the new UAE Personal Status Law?</h2>
         <p>
           The new law is <strong>Federal Decree-Law No. 41 of 2024</strong>, the UAE's Personal Status Law for Muslims. It was published on 14 October 2024 and took effect on <strong>15 April 2025</strong>, replacing <strong>Federal Law No. 28 of 2005</strong>.
-          The biggest changes: custody now runs to <strong>age 18</strong> for boys and girls, a child aged <strong>15 or older can choose</strong> which parent to live with, a husband must document a divorce within <strong>15 days</strong>, and the harm-arbitration period is cut to <strong>60 days</strong>. Non-Muslims remain under the separate civil law, Federal Decree-Law No. 41 of 2022.
+          The biggest changes: custody now runs to <strong>age 18</strong> for boys and girls, a child aged <strong>15 or older can choose</strong> which parent to live with, a husband must document a divorce within <strong>15 days</strong>, referral to Family Guidance is now at the judge's discretion, and the harm-arbitration period is cut to <strong>60 days</strong> (was 90). Non-Muslims remain under the separate civil law, Federal Decree-Law No. 41 of 2022.
         </p>
       </div>
 
@@ -168,6 +168,11 @@ const faqItems = [
             <div>Addiction not a standalone ground</div>
             <div>Addiction to intoxicants added as a ground</div>
           </div>
+          <div class="compare-row alt">
+            <div class="compare-type new">Family Guidance referral</div>
+            <div>Mandatory for most claims (Art. 16)</div>
+            <div>At the judge's discretion (Art. 8)</div>
+          </div>
         </div>
         <p class="note-text">Article numbers cited here are for Federal Decree-Law No. 41 of 2024. The new custody ages override older government service pages that still list 11 and 13 due to content lag. For how this plays out in a real case, read our guide to <a href="/en/child-custody-uae/">child custody in the UAE</a>.</p>
       </section>
@@ -194,9 +199,9 @@ const faqItems = [
           Under the new law, if a husband repeats talaq more than once in a single sitting, or pronounces it in anger during one episode, it is treated as one revocable divorce rather than several. This matters because three separate divorces make the split irrevocable. Counting a repeated pronouncement as one keeps the door open to reconciliation within the waiting period. For how the pronouncement itself works, see our guide to <a href="/en/talaq-uae/">talaq in the UAE</a>.
         </p>
 
-        <h3>4. The reconciliation period is cut from 90 to 60 days</h3>
+        <h3>4. Harm arbitration is capped at 60 days, and Family Guidance referral is discretionary</h3>
         <p>
-          Where the old law allowed arbitrators up to 90 days in a harm-based dissolution, the new law caps that window at 60 days (Article 72, subject to confirmation). Family Guidance reconciliation stays mandatory for Muslim couples, but the shorter arbitration period means a contested case can reach a judge sooner. Our guide to the <a href="/en/family-guidance-section-uae/">Family Guidance Section in the UAE</a> explains what happens in that stage.
+          Where the old law allowed arbitrators up to 90 days in a harm-based dissolution, the new law caps that window at 60 days from the arbitrators' appointment (Article 72). This is often misreported as a cut to a "reconciliation period", but it applies to arbitration in contested harm cases, not to Family Guidance. Family Guidance has no statutory time limit and usually takes a few weeks. What changed there is that referral is now at the judge's discretion under Article 8, where the 2005 law made it mandatory for most claims. In practice Family Guidance is still the usual first step for Muslim couples, and the shorter arbitration period means a contested harm case can reach a judgment sooner. Our guide to the <a href="/en/family-guidance-section-uae/">Family Guidance Section in the UAE</a> explains what happens in that stage.
         </p>
 
         <h3>5. Divorce must be documented in court</h3>
@@ -227,7 +232,7 @@ const faqItems = [
           The most practical change for anyone divorcing is the 15-day documentation rule in Article 58. A husband who pronounces a divorce, or who reconciles, must register that step before the court within 15 days. If he does not, the wife can claim compensation equal to her maintenance for the period of delay. Before this, an undated or unregistered divorce could leave a wife uncertain about when her waiting period and financial rights actually started.
         </p>
         <p>
-          The harm-based dissolution route also moved faster. Where the old law allowed arbitrators up to 90 days to attempt a fix, Article 72 caps that arbitration window at 60 days. Family Guidance reconciliation is still mandatory for Muslim cases, and the non-settlement referral letter stays valid for three months. The number of reconciliation sessions is not fixed by statute. The new law also lists a spouse's addiction to narcotics or intoxicants as a ground for dissolution. To see where these routes fit among talaq, khula, and judicial divorce, read our breakdown of the <a href="/en/types-of-divorce-uae/">types of divorce in the UAE</a>.
+          The harm-based dissolution route also moved faster. Where the old law allowed arbitrators up to 90 days to attempt a fix, Article 72 caps that arbitration window at 60 days. Family Guidance is still the usual first step for Muslim cases, although referral is now at the judge's discretion (Article 8), and a non-settlement referral letter is commonly reported as valid for three months. The number of reconciliation sessions is not fixed by statute. The new law also lists a spouse's addiction to narcotics or intoxicants as a ground for dissolution. To see where these routes fit among talaq, khula, and judicial divorce, read our breakdown of the <a href="/en/types-of-divorce-uae/">types of divorce in the UAE</a>.
         </p>
       </section>
 
@@ -257,23 +262,23 @@ const faqItems = [
       <section class="content-section">
         <h2>Muslims, Non-Muslims, and What It Means for Expats</h2>
         <p>
-          The UAE now runs two parallel personal status systems, and which one applies to you depends on religion, nationality, and where you file. Muslims, including Muslim expats, fall under Federal Decree-Law No. 41 of 2024, which applies Islamic-law principles and keeps Family Guidance reconciliation mandatory. The new articles cited above, on custody, documentation, and arbitration, all live in this law.
+          The UAE now runs two parallel personal status systems, and which one applies to you depends on religion, nationality, and where you file. Muslims, including Muslim expats, fall under Federal Decree-Law No. 41 of 2024, which applies Islamic-law principles and keeps Family Guidance reconciliation as the usual first step, with referral at the judge's discretion. The new articles cited above, on custody, documentation, and arbitration, all live in this law.
         </p>
         <div class="cost-grid">
           <div class="cost-card">
             <p class="cost-label">Muslim residents</p>
             <p class="cost-amount">Decree-Law 41 of 2024</p>
-            <p class="cost-detail">Sharia-based; mandatory reconciliation; custody to 18; home-country law optional under Art. 1</p>
+            <p class="cost-detail">Sharia-based; Family Guidance if the judge refers; custody to 18; home-country law optional under Art. 1</p>
           </div>
           <div class="cost-card">
             <p class="cost-label">Non-Muslim residents</p>
             <p class="cost-amount">Decree-Law 41 of 2022</p>
-            <p class="cost-detail">Civil no-fault divorce; no mandatory reconciliation; joint custody default to 18</p>
+            <p class="cost-detail">Civil no-fault divorce; no reconciliation stage; joint custody default to 18</p>
           </div>
           <div class="cost-card">
             <p class="cost-label">Reconciliation</p>
             <p class="cost-amount">Differs by track</p>
-            <p class="cost-detail">Required for Muslims; referral letter valid 3 months. Not required in the civil track</p>
+            <p class="cost-detail">Usual first step for Muslims, at the judge's discretion; referral letter commonly reported as valid 3 months. Not required in the civil track</p>
           </div>
           <div class="cost-card">
             <p class="cost-label">Where you file</p>
