@@ -28,7 +28,7 @@ export async function onRequestPost(context) {
   // portal reject every lead with 401, which is NOT a thrown error. Log loudly
   // so it is visible in Cloudflare Pages function logs.
   if (!ingestSecret) {
-    console.error('[lead] INGEST_SECRET env var is not set — portal will reject leads with 401')
+    console.error('[lead] INGEST_SECRET env var is not set, so the portal will reject leads with 401')
   }
 
   try {

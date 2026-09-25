@@ -1,0 +1,689 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Alimony in Abu Dhabi: Spousal and Temporary Maintenance 2026';
+const description =
+  'Alimony in Abu Dhabi explained: what the Civil Family Court and Personal Status Court award, temporary maintenance, the 25% income guide and enforcement.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/alimony-abu-dhabi/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Alimony in Abu Dhabi', url: 'https://divorceu.ae/en/alimony-abu-dhabi/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suon', url: 'https://divorceu.ae/en/author/aleksi-suon/' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE', url: 'https://divorceu.ae' },
+  datePublished: '2026-09-21',
+  dateModified: '2026-09-21',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/alimony-abu-dhabi/',
+};
+
+const faqItems = [
+  {
+    question: 'How is alimony calculated in Abu Dhabi?',
+    answer:
+      'It depends on the court. The Civil Family Court weighs the Article 8 factors of Abu Dhabi Law No. 14 of 2021, such as years of marriage, the wife’s age and both spouses’ finances, using an accounting expert’s report. The Personal Status Court weighs the payer’s means, the recipient’s needs and local costs, with no fixed percentage.',
+  },
+  {
+    question: 'Is the 25% of income per year of marriage rule guaranteed?',
+    answer:
+      'No. The ADJD’s English text of Article 18 says the court and expert may be guided by no less than 25% of the husband’s last monthly income multiplied by the years of marriage, while some law-firm summaries say up to 25%. The court can raise or lower the amount, so it is a reference point only.',
+  },
+  {
+    question: 'Can I get temporary alimony in Abu Dhabi while my case is pending?',
+    answer:
+      'Yes. For Muslims, Article 100 of Federal Decree-Law No. 41 of 2024 lets the court order temporary maintenance for the wife and children during a maintenance case, enforceable immediately. For non-Muslims, Article 21 of the 2022 Abu Dhabi regulation allows temporary alimony until financial rights are decided, backed by six months of account statements.',
+  },
+  {
+    question: 'How long does alimony last in Abu Dhabi?',
+    answer:
+      'At the Civil Family Court the judge sets the duration, and alimony is forfeited if the wife remarries. At the Personal Status Court, iddah maintenance lasts only for the waiting period and only where Article 101 allows it, and mut’a is a one-off payment. Child maintenance and the mother’s custody housing usually last much longer.',
+  },
+  {
+    question: 'Can a husband get alimony from his wife in Abu Dhabi?',
+    answer:
+      'Not as periodic alimony under the civil rules, which frame alimony as the wife’s claim (Article 8 of Abu Dhabi Law No. 14 of 2021). But Article 16 of the 2022 regulation lets the civil judge order either spouse to pay the other a lump sum after divorce. For Muslims, maintenance runs from husband to wife.',
+  },
+  {
+    question: 'Is there a court fee to claim alimony in Abu Dhabi?',
+    answer:
+      'The ADJD’s FAQ says alimony cases are exempt from court fees, and alimony requests are exempt from the AED 100 fee for Personal Status interim orders. Other costs remain: the civil no-fault divorce application costs AED 5,000, a travel ban request is listed at AED 400, and lawyer and expert fees vary.',
+  },
+  {
+    question: 'What can I do if my ex stops paying alimony in Abu Dhabi?',
+    answer:
+      'Open an enforcement file with the ADJD using the judgment bearing the executive wording stamp, your Emirates ID and your IBAN. Then request salary deduction, attachment of accounts or property, or a travel ban. Civil Family Court judgments also tell the bank to deduct the awarded amount seven working days after notice.',
+  },
+  {
+    question: 'How much child support does a father pay in Abu Dhabi?',
+    answer:
+      'Neither court uses a fixed percentage. For Muslims, Article 106 of the 2024 law makes the father liable for a child without money of their own, covering needs such as food, housing, treatment and education. At the Civil Family Court, Article 23 of the 2022 regulation obliges him to keep paying the costs he met before the divorce.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+  lastmod="2026-09-21"
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Alimony in Abu Dhabi: What You Can Claim in Each Court</h1>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated September 2026</p>
+        <p class="hero__sub">
+          Abu Dhabi has two family courts, and they treat money after divorce very differently. Here
+          is what each lets you claim, how temporary alimony works, how amounts are assessed and how
+          unpaid orders are enforced, with the article numbers behind each rule. For other emirates,
+          see our <a href="/en/alimony-uae/">alimony in the UAE</a> guide.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Civil Family Court &amp; Personal Status Court</li>
+          <li>✓ Temporary alimony explained</li>
+          <li>✓ Article numbers checked</li>
+          <li>✓ Free first consultation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Free Alimony Consultation" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <section class="section" aria-labelledby="snapshot-heading">
+      <h2 id="snapshot-heading">Alimony in Abu Dhabi: The Short Answer</h2>
+      <p>
+        What you can claim depends first on which court hears your case. Non-Muslims go to the
+        <strong>Abu Dhabi Civil Family Court</strong>, which applies Abu Dhabi Law No. 14 of 2021 on
+        Civil Marriage and its Effects and its 2022 regulation (ADJD Chairman Decision No. 8 of
+        2022). Muslims go to the <strong>ADJD Personal Status Court</strong>, which applies Federal
+        Decree-Law No. 41 of 2024, in force since 15 April 2025. Al Ain and Al Dhafra follow the same
+        rules.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Civil Family Court (non-Muslims)</h3>
+          <p>
+            Alimony is claimed after the divorce judgment, with amount and duration set by the judge
+            from an accounting expert’s report. Hearings can run in English.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Personal Status Court (Muslims)</h3>
+          <p>
+            Set heads of claim: maintenance, iddah maintenance and housing, mut’a, the deferred mahr
+            and child maintenance. The judge may refer you to Family Guidance first (Article 8).
+          </p>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">2</span>
+          <span class="stat-label">separate courts hear alimony claims in Abu Dhabi</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">AED 0</span>
+          <span class="stat-label">court fee for alimony cases at the ADJD (exempt)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">25%</span>
+          <span class="stat-label">of monthly income per year married: a civil yardstick, not a rule</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">2 yrs</span>
+          <span class="stat-label">longest look-back for a Muslim wife’s past maintenance claim</span>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>Which court is yours?</h3>
+        <p>
+          The civil court covers non-Muslim citizens, foreigners from countries whose family law is
+          not mainly Islamic, and civil marriages or marriages held in such countries (Article 5 of
+          the 2022 regulation). If either spouse is Muslim, take advice first; our
+          <a href="/en/dubai-vs-abu-dhabi-divorce/">Dubai vs Abu Dhabi divorce</a> guide compares the
+          two emirates.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="civil-heading">
+      <h2 id="civil-heading">Civil Family Court (Non-Muslims): What You Can Claim</h2>
+      <p>
+        At the Civil Family Court, a divorced wife can claim alimony once the divorce judgment is
+        issued, and the judge sets its amount and duration unless the marriage contract covers them
+        (Article 8 of Abu Dhabi Law No. 14 of 2021). The law frames this spousal maintenance as the
+        wife’s claim, but Article 16 of the 2022 regulation also lets the judge order either spouse to
+        pay the other a lump sum.
+      </p>
+      <h3>The factors the judge weighs (Article 8)</h3>
+      <ul class="checklist">
+        <li>Years of marriage: longer marriages mean higher alimony.</li>
+        <li>The wife’s age: the law says the amount falls as her age falls, and the reverse.</li>
+        <li>Each spouse’s finances, set out by an ADJD-accredited accounting expert.</li>
+        <li>How far the husband’s negligence, error or conduct caused the divorce.</li>
+        <li>Material, moral and financial damage caused by the divorce.</li>
+        <li>The father covering the mother’s custody costs during joint custody, for no more than two years.</li>
+        <li>How involved the wife is in caring for the children.</li>
+      </ul>
+      <p>
+        Article 16 adds lump-sum factors such as a career the wife gave up for the children, the
+        standard of living during the marriage, her contribution to his wealth and the income gap.
+        Outside Abu Dhabi, Article 9 of Federal Decree-Law No. 41 of 2022 uses a similar list; see our
+        <a href="/en/alimony-uae/">UAE alimony guide</a>.
+      </p>
+      <h3>Lump sum, duration and housing</h3>
+      <p>
+        Awards can be a lump sum or instalments, aiming at a decent living for the divorced woman and
+        children without burdening the father beyond his means (Article 18). The judge sets the
+        duration, alimony is forfeited if she remarries, and it can be reviewed yearly or when
+        finances change (Article 8). Housing is separate: the father pays a housing allowance,
+        utilities included, while joint custody lasts unless the mother can afford housing herself
+        (Article 19), and Article 20 allows short-term housing straight after the divorce.
+      </p>
+      <h3>What alimony does not cover</h3>
+      <p>
+        Alimony is not a property split: there is no automatic 50/50 division of assets anywhere in
+        the UAE, as our <a href="/en/property-division-divorce-uae/">property division guide</a>
+        explains. A signed marriage agreement also comes first, because the Article 8 discretion
+        applies only where the contract is silent; see our
+        <a href="/en/prenuptial-agreement-uae/">prenuptial agreement guide</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="benchmark-heading">
+      <h2 id="benchmark-heading">The 25% Income Yardstick: What Article 18 Actually Says</h2>
+      <p>
+        The reported benchmark is real, but it is a guide the court may use, not a formula. Article 18
+        of the 2022 regulation lists three yardsticks for the court and the expert:
+      </p>
+      <ul class="checklist">
+        <li><strong>Income:</strong> a cash percentage of no less than 25% of the husband’s last monthly income (salary certificate or last account statement, whichever is greater), multiplied by the years of marriage.</li>
+        <li><strong>Wealth:</strong> a share of the market or purchase value, whichever is greater, of his property and wealth, including real estate, shares, company interests, valuables and vehicles.</li>
+        <li><strong>Joint account:</strong> any account the spouses shared, and what each put into it.</li>
+      </ul>
+      <p>
+        Two cautions. The ADJD’s published English text and The National’s February 2022 report say
+        “no less than” 25%, but some law-firm summaries say “up to” 25%. And the same article lets the
+        court raise or lower the amount, so treat the figure as a reported reference point, never a
+        guaranteed result.
+      </p>
+      <div class="info-box info-box--gold">
+        <h3>Indicative illustration only</h3>
+        <p>
+          Last monthly income AED 40,000, marriage of 10 years: 25% of AED 40,000 is AED 10,000, and
+          10 years gives a reference figure of AED 100,000. The court may use another yardstick,
+          adjust the figure or order instalments. For fuller indicative scenarios, see our
+          <a href="/en/alimony-calculator-uae/">alimony calculator</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="muslim-heading">
+      <h2 id="muslim-heading">Personal Status Court (Muslims): What You Can Claim</h2>
+      <p>
+        At the ADJD Personal Status Court, a Muslim wife’s claims come from Federal Decree-Law No. 41
+        of 2024. Maintenance covers food, clothing, housing, treatment and education (Article 95),
+        assessed on the payer’s means, the recipient’s situation and local costs (Article 96), with no
+        fixed percentage of salary.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Claim</th><th>What the 2024 law says</th><th>Article</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Maintenance during the marriage</td><td>Owed even if the wife is wealthy; past maintenance claimable for up to two years before filing</td><td>99</td></tr>
+            <tr><td>Temporary maintenance</td><td>For the wife and children while a maintenance case is heard; enforceable immediately</td><td>100</td></tr>
+            <tr><td>Iddah maintenance and housing</td><td>Maintenance after a revocable divorce, after an irrevocable one only if she is pregnant, and none after khul’; housing for the iddah in every case</td><td>101</td></tr>
+            <tr><td>Mut’a</td><td>If he divorces her by his own will without her request or fault: up to one year’s maintenance for a woman of her standing, instalments allowed</td><td>102</td></tr>
+            <tr><td>Deferred mahr</td><td>Due when the separation becomes irrevocable, or on death</td><td>46</td></tr>
+            <tr><td>Children</td><td>The father maintains a child without money of their own and pays the custodial mother’s housing unless she owns a home</td><td>106, 119</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Wording summarised. Ongoing maintenance is a priority debt from the date the claim is filed
+          (Article 98).
+        </p>
+      </div>
+      <p>
+        Two points surprise people. A woman in the iddah after an irrevocable divorce who is not
+        pregnant gets housing but no maintenance, so ask whether your divorce is revocable. And mut’a
+        has a ceiling, not a floor. See our <a href="/en/iddah-waiting-period-uae/">iddah guide</a>
+        and <a href="/en/mahr-divorce-uae/">mahr and divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="temporary-heading">
+      <h2 id="temporary-heading">Temporary Alimony in Abu Dhabi While the Case Is Pending</h2>
+      <p>
+        You can get temporary alimony in Abu Dhabi before the final decision: both courts can make an
+        interim order, and in both it can be enforced straight away.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Personal Status Court (Muslims)</h3>
+          <p>
+            Article 100 of the 2024 law lets the court, at the wife’s request, order temporary
+            maintenance for her and the children during a maintenance case, enforceable immediately.
+            Article 8 exempts urgent and temporary maintenance orders from Family Guidance referral.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Civil Family Court (non-Muslims)</h3>
+          <p>
+            Article 21 of the 2022 regulation lets a divorced woman seek temporary alimony until her
+            financial rights are decided. Under Article 42 any interested party can seek a
+            provisional order for temporary alimony, housing or reconnected utilities, and either
+            spouse can object (Article 22).
+          </p>
+        </div>
+      </div>
+      <h3>Who can ask, when and how</h3>
+      <p>
+        In the Muslim track the wife asks once a maintenance claim is before the court. In the civil
+        track the divorce usually comes at the first hearing, so temporary alimony bridges the gap to
+        the final financial order; urgent requests reach the judge the day after registration
+        (Article 14). File the interim order form through the ADJD website or app, a typing centre or
+        a lawyer; alimony requests are fee-exempt.
+      </p>
+      <h3>What evidence to bring</h3>
+      <ul class="checklist">
+        <li>Six months of bank statements for both spouses where you can get them (relied on by the civil court under Article 21)</li>
+        <li>His salary certificate, payslips or proof of business income</li>
+        <li>Your rent, school fee and medical bills, and proof that support stopped</li>
+      </ul>
+      <h3>If he stops paying during the case</h3>
+      <p>
+        A temporary order is enforceable at once, so unpaid amounts can go straight into an
+        enforcement file. In the Muslim track, Article 77 adds a second lever: a husband who refuses to
+        maintain his wife gets up to 30 days to pay (90 if he proves he cannot), after which the court
+        can grant her a divorce. In the civil track, temporary alimony may be refused if the wife has a
+        job or stable income covering her basic needs (Article 21). See also our
+        <a href="/en/emergency-orders-divorce-uae/">emergency orders guide</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="assess-heading">
+      <h2 id="assess-heading">How Spousal Support Is Assessed in Abu Dhabi</h2>
+      <p>
+        Abu Dhabi courts set spousal support from evidence, not a published table. The civil court
+        relies on an English-proficient accounting expert who examines both spouses’ income, wealth
+        and assets (Article 17); the Personal Status Court weighs the payer’s means and the family’s
+        needs (Article 96) on the documents filed.
+      </p>
+      <h3>Evidence that moves the figure</h3>
+      <ul class="checklist">
+        <li>Salary certificates, payslips and bank statements showing real income, bonuses and transfers</li>
+        <li>Proof of the standard of living during the marriage: rent, school fees, domestic staff, cars and travel</li>
+        <li>Asset records: title deeds, company and share records, investment statements</li>
+        <li>Your own income, health, qualifications and any career you gave up</li>
+      </ul>
+      <h3>Self-employed payers</h3>
+      <p>
+        A salary certificate says little about someone paid through their own company. The civil
+        income yardstick uses the last account statement when it shows more, and the wealth yardstick
+        reaches company interests; see our <a href="/en/divorce-business-owner-uae/">divorce for
+        business owners</a> guide. No official award statistics exist, so treat the scenarios in our
+        <a href="/en/alimony-calculator-uae/">alimony calculator guide</a> as indicative only.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="children-heading">
+      <h2 id="children-heading">Child Support in Abu Dhabi</h2>
+      <p>
+        In both courts the father carries the main duty to support the children, separate from
+        anything paid to the mother. Under Article 106 of the 2024 law he maintains a child without
+        money of their own: a daughter until she marries or works, a son until he reaches the age at
+        which his peers earn a living, or later while he studies successfully. He also pays the
+        custodial mother’s housing unless she owns a home (Article 119), and past child maintenance
+        can be claimed for one year at most (Article 111).
+      </p>
+      <p>
+        At the civil court, Article 23 of the 2022 regulation obliges the father to keep paying the
+        education, housing, medical and daily costs he covered before the divorce, and Article 24 lets
+        the court adjust that support and penalise non-payment. Joint custody there lasts until 16,
+        while in the Muslim track custody runs to 18 (Article 123). See our
+        <a href="/en/child-support-uae/">child support guide</a> and
+        <a href="/en/child-custody-abu-dhabi/">child custody in Abu Dhabi</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="ends-heading">
+      <h2 id="ends-heading">When Alimony Ends or Can Be Changed</h2>
+      <p>
+        Alimony ends or changes on a few predictable events, and in both courts only a new court order
+        changes an existing one.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Event</th><th>Civil Family Court</th><th>Personal Status Court</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Wife remarries</td><td>Alimony forfeited (Law 14/2021, Art. 8)</td><td>Only possible after the iddah; child maintenance continues</td></tr>
+            <tr><td>Waiting period ends</td><td>No iddah in a civil divorce</td><td>Iddah maintenance stops after three cycles, three lunar months, or delivery (Arts. 84, 85)</td></tr>
+            <tr><td>Income changes</td><td>New application yearly or when finances change (Art. 8)</td><td>Not heard until a year after the order is final, save exceptional cases (Art. 97)</td></tr>
+            <tr><td>Backdating a change</td><td>Not addressed in the civil rules</td><td>Increase: up to six months back; decrease: not backdated (Art. 97)</td></tr>
+            <tr><td>Children grow up</td><td>Joint custody to 16; costs set by the court (Reg. Arts. 23 to 25)</td><td>Daughter until she marries or works; son until he can earn, or while studying (Art. 106)</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Summarised from Abu Dhabi Law No. 14 of 2021, ADJD Chairman Decision No. 8 of 2022 and
+          Federal Decree-Law No. 41 of 2024.
+        </p>
+      </div>
+      <p>
+        If you pay and your income falls, apply quickly, because a Muslim-track reduction is not
+        backdated. If you receive alimony, remarriage ends civil alimony but not child support; see
+        <a href="/en/remarriage-after-divorce-uae/">remarriage after divorce</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="enforce-heading">
+      <h2 id="enforce-heading">Enforcing Alimony in Abu Dhabi If Payments Stop</h2>
+      <p>
+        If your ex stops paying, you enforce the existing order through the ADJD: open an enforcement
+        file with the judgment bearing the executive wording stamp, your Emirates ID and your IBAN,
+        then request salary deduction, attachment of accounts or property, or a travel ban. The ADJD
+        pays collected alimony straight to your bank account.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Civil Family Court orders</h3>
+          <p>
+            The court enforces its own judgments, immediately and, in urgent cases, without prior
+            notice (Articles 46 and 47). A judgment can order a protective seizure or travel ban and
+            tell the bank to deduct the amount seven working days after notice (Article 48). Awards
+            under AED 500,000 are final on issue (Article 49).
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Personal Status Court orders</h3>
+          <p>
+            Ongoing maintenance from the filing date is a priority debt; older arrears rank as
+            ordinary debt (Article 98). Law-firm readings of Article 324 of the Civil Procedure Law
+            say the usual AED 10,000 travel-ban minimum works differently for alimony.
+          </p>
+        </div>
+      </div>
+      <p>
+        For civil detention and ex-spouses who leave the UAE, see our
+        <a href="/en/unpaid-alimony-enforcement-uae/">unpaid alimony enforcement guide</a> and
+        <a href="/en/travel-ban-divorce-uae/">travel bans in divorce</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="steps-heading">
+      <h2 id="steps-heading">How to Claim Alimony in Abu Dhabi, Step by Step</h2>
+      <p>Collect your financial documents first, then follow the track that applies to you.</p>
+      <h3>Civil Family Court (non-Muslims)</h3>
+      <ol class="steps">
+        <li>
+          <h3>File the no-fault divorce</h3>
+          <p>
+            Apply through an Abu Dhabi typing centre: the fee is AED 5,000 and the hearing comes at
+            least 30 days after approval. See
+            <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file for divorce in Abu Dhabi</a>.
+          </p>
+        </li>
+        <li>
+          <h3>Ask for temporary alimony</h3>
+          <p>Use the interim order form with six months of account statements (Articles 21 and 42).</p>
+        </li>
+        <li>
+          <h3>Settle or apply for a financial order</h3>
+          <p>
+            After the divorce, sign the post-divorce settlement form, use a family arbitrator from the
+            ADJD roll (Article 52), or apply for a financial order.
+          </p>
+        </li>
+        <li>
+          <h3>Expert, judgment and payment</h3>
+          <p>
+            Give the accounting expert full income and asset documents; the court relies on the
+            report (Article 15). Awards under AED 500,000 are final on issue.
+          </p>
+        </li>
+      </ol>
+      <h3>Personal Status Court (Muslims)</h3>
+      <ol class="steps">
+        <li>
+          <h3>Register the claim</h3>
+          <p>
+            File through the ADJD website or app, a law firm or a registered typing centre. Under
+            Article 8 the supervising judge may refer you to Family Guidance if it looks useful; it is
+            no longer automatic as under the 2005 law. See
+            <a href="/en/family-guidance-section-uae/">Family Guidance in the UAE</a>.
+          </p>
+        </li>
+        <li>
+          <h3>Request temporary maintenance</h3>
+          <p>Ask under Article 100; urgent and temporary maintenance orders are exempt from Family Guidance referral (Article 8).</p>
+        </li>
+        <li>
+          <h3>Go to court if there is no settlement</h3>
+          <p>
+            If you are referred and settle, the settlement is recorded and enforceable (Article 8);
+            otherwise the Personal Status Court hears the case, mostly by video according to the ADJD.
+          </p>
+        </li>
+        <li>
+          <h3>Claim every head</h3>
+          <p>
+            Maintenance (up to two years back), iddah maintenance and housing, mut’a, the deferred
+            mahr, and child maintenance and housing. Appeals must be filed within 30 days (Article 9).
+          </p>
+        </li>
+      </ol>
+      <p>
+        Bring the marriage certificate (attested if issued abroad), IDs, children’s birth
+        certificates, salary and bank records, an IBAN certificate and any power of attorney; English
+        documents need no translation at the civil court (Article 44). See our
+        <a href="/en/documents-for-divorce-uae/">documents checklist</a>.
+      </p>
+      <h3>Indicative costs and timeline</h3>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Cost</th><th>Where the figure comes from</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Court fee for an alimony claim</td><td>AED 0 (exempt)</td><td>ADJD FAQ</td></tr>
+            <tr><td>Interim order, Personal Status Division</td><td>AED 100; alimony requests exempt</td><td>ADJD FAQ</td></tr>
+            <tr><td>Civil no-fault divorce application</td><td>AED 5,000</td><td>Regulation 8/2022, Art. 13</td></tr>
+            <tr><td>Travel ban request</td><td>AED 400</td><td>ADJD FAQ</td></tr>
+            <tr><td>Accounting expert (civil track)</td><td>Varies</td><td>No published rate</td></tr>
+            <tr><td>Lawyer, agreed terms</td><td>AED 8,000 to 25,000, indicative</td><td>Law-firm cost guides</td></tr>
+            <tr><td>Lawyer, contested money claims</td><td>AED 40,000 to 80,000+, indicative</td><td>Law-firm cost guides</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Official fees can change; the ADJD shows the fee before you register. Lawyer ranges are
+          indicative, not an official tariff; see our <a href="/en/divorce-cost-uae/">cost of divorce
+          guide</a>.
+        </p>
+      </div>
+      <p>
+        Indicatively, the civil divorce targets about a month and the financial claim runs longer if an
+        expert is appointed. At the Personal Status Court, law-firm guides put uncontested cases at
+        three to six months and contested ones at a year or more.
+      </p>
+      <div class="cta-inline">
+        <p>Want a lawyer to check which claims apply to you?</p>
+        <a href="#contact" class="btn btn--primary">Book a Free Consultation</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="mistakes-heading">
+      <h2 id="mistakes-heading">Common Mistakes That Cost People Money</h2>
+      <p>Most losses come from timing and assumptions rather than from the law itself.</p>
+      <ul class="checklist">
+        <li><strong>Treating 25% per year as guaranteed.</strong> It is a yardstick the court may adjust.</li>
+        <li><strong>Expecting a 50/50 split.</strong> Alimony and property are separate questions.</li>
+        <li><strong>Waiting too long.</strong> Past maintenance claims reach back two years for a Muslim wife and one year for children.</li>
+        <li><strong>Choosing khul’ without costing it.</strong> There is no iddah maintenance after khul’ (Article 101); see our <a href="/en/khula-divorce-uae/">khula guide</a>.</li>
+        <li><strong>Moving out without advice.</strong> A Muslim wife’s maintenance lapses if she refuses to live in the marital home without a legitimate excuse (Article 103).</li>
+        <li><strong>Filing in ADGM or DIFC.</strong> Neither grants divorces; see <a href="/en/adgm-divorce-abu-dhabi/">ADGM and divorce</a>.</li>
+      </ul>
+      <p>
+        For every right a wife can raise, see
+        <a href="/en/wife-rights-after-divorce-uae/">wife’s rights after divorce in the UAE</a>, and
+        to have your figures checked, we can connect you with
+        <a href="/en/divorce-lawyer-abu-dhabi/">a divorce lawyer in Abu Dhabi</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/alimony-uae/" class="service-link">
+          <strong>Alimony in the UAE</strong>
+          <span>Muslim and non-Muslim rules across all seven emirates</span>
+        </a>
+        <a href="/en/alimony-calculator-uae/" class="service-link">
+          <strong>Alimony Calculator</strong>
+          <span>Indicative AED scenarios, including an Abu Dhabi example</span>
+        </a>
+        <a href="/en/unpaid-alimony-enforcement-uae/" class="service-link">
+          <strong>Unpaid Alimony</strong>
+          <span>Execution files, salary deduction and travel bans</span>
+        </a>
+        <a href="/en/child-support-uae/" class="service-link">
+          <strong>Child Support UAE</strong>
+          <span>What the father must pay and how it is reviewed</span>
+        </a>
+        <a href="/en/how-to-file-for-divorce-in-abu-dhabi/" class="service-link">
+          <strong>How to File in Abu Dhabi</strong>
+          <span>Both Abu Dhabi routes, documents, fees and timelines</span>
+        </a>
+        <a href="/en/divorce-lawyer-abu-dhabi/" class="service-link">
+          <strong>Divorce Lawyer Abu Dhabi</strong>
+          <span>Finding a family lawyer for an Abu Dhabi case</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Get Advice on Alimony in Abu Dhabi</h2>
+      <p>Speak to a UAE-licensed family lawyer about your claim, in confidence, in English or Arabic.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; margin-bottom: 16px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin-bottom: 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 16px; }
+  .checklist li { position: relative; padding: 14px 18px 14px 48px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; font-size: 0.9rem; line-height: 1.6; }
+  .checklist li::before { content: "✓"; position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+  .checklist li a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .checklist li a:hover { text-decoration: underline; }
+
+  .cost-table { margin-top: 24px; margin-bottom: 16px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #9ca3af; margin: 10px 0 0; }
+  .table-note a { color: #6b7280; text-decoration: underline; font-weight: 600; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

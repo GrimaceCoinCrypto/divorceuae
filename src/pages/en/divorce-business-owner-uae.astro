@@ -79,7 +79,7 @@ const businessTypes = [
   { type: 'Offshore company (BVI, Cayman, Jersey)', treatment: 'Shares are personal property, but disclosure required if UAE court orders it', key: 'Precautionary attachment possible. UAE courts can freeze offshore shares as UAE-held assets. Forensic tracing used in HNW cases.', flag: 'complex' },
   { type: 'Sole proprietorship / freelance licence', treatment: 'Personal property of licence holder', key: 'Revenue and goodwill value relevant to alimony calculations even if not "divided".', flag: 'owner' },
   { type: 'Partnership (general or limited)', treatment: 'Partner\'s interest is their personal property', key: 'Valuation of partnership interest required if claimed. Other partners\' interests not affected by the divorce.', flag: 'owner' },
-  { type: 'DIFC-registered company', treatment: 'Shares personal property; DIFC Courts have concurrent jurisdiction', key: 'DIFC Courts can handle both business disputes and personal status for non-Muslim expats under one forum.', flag: 'complex' },
+  { type: 'DIFC or ADGM company', treatment: 'Shares are personal property of registered owner', key: 'The family court decides the divorce and the financial claims, including these shares. The DIFC and ADGM Courts hear company and shareholder disputes, not divorces.', flag: 'complex' },
 ];
 
 const faqItems = [
@@ -108,8 +108,8 @@ const faqItems = [
     answer: 'Federal Decree-Law No. 26 of 2020 removed the 51% UAE national ownership requirement in most mainland sectors. A Dubai LLC can now be 100% owned by a foreign national. In a divorce, the full stake is that person\'s separate property. Verify current ownership structure, the old 49/51 assumption may no longer apply to your business.',
   },
   {
-    question: 'Can DIFC courts handle my divorce and my business dispute at the same time?',
-    answer: 'Yes. The DIFC Courts have concurrent jurisdiction over both non-Muslim personal status matters (under Dubai Law No. 2 of 2025) and commercial disputes involving DIFC-registered companies. A non-Muslim business owner with a DIFC company going through divorce can potentially handle both the family law and company-related disputes in the same English-language forum.',
+    question: 'Can the DIFC Courts handle my divorce and my business dispute at the same time?',
+    answer: 'No. The DIFC Courts hear civil and commercial disputes, such as a shareholder dispute involving a DIFC company, but they have no family jurisdiction. They cannot grant a divorce or decide financial claims between spouses, and the same is true of the ADGM Courts in Abu Dhabi. Your divorce and the financial claims, including the value of any DIFC or ADGM shares, go to the onshore family court of your emirate (for non-Muslims in Abu Dhabi, usually the Civil Family Court). A genuinely separate company dispute could still be litigated in the DIFC Courts on its own facts.',
   },
   {
     question: 'What practical steps can I take now to protect my business before divorce proceedings start?',
@@ -285,9 +285,9 @@ const faqItems = [
         <p>
           What free zone registration does affect is the subpoena process. UAE courts can issue orders to free zone authorities requiring production of share certificates, incorporation documents, and financial records. DMCC, JAFZA, and other major free zones have procedures for responding to court orders. If your free zone company records are relevant to a contribution claim or financial disclosure, they will be produced.
         </p>
-        <h3>DIFC companies, a special case</h3>
+        <h3>DIFC and ADGM companies</h3>
         <p>
-          The Dubai International Financial Centre is unique because the DIFC Courts have concurrent jurisdiction over both commercial disputes involving DIFC entities and non-Muslim personal status matters under Dubai Law No. 2 of 2025. A non-Muslim business owner with a DIFC company going through divorce can potentially address both the personal status case and any company-related dispute in the same English-language forum, avoiding parallel proceedings in different courts.
+          The DIFC and ADGM are financial free zones with their own English-language common-law courts, which leads some owners to assume their divorce could be heard there too. It cannot. The DIFC Courts and the ADGM Courts deal with civil and commercial matters and have no family jurisdiction. Shares in a DIFC or ADGM company are treated like any other shareholding: the onshore family court (or the Abu Dhabi Civil Family Court) deals with them as part of the financial claims and can order disclosure and precautionary attachment through the normal onshore procedures. A separate dispute between shareholders could still go to the DIFC or ADGM Courts on its own facts, but that case does not decide the divorce.
         </p>
       </section>
 
@@ -318,7 +318,7 @@ const faqItems = [
         </p>
         <h3>BVI and Cayman enforcement</h3>
         <p>
-          UAE mainland court orders are not automatically enforceable in the BVI or Cayman Islands, which have their own separate legal systems. Enforcing a UAE court order against BVI company shares typically requires applying to the BVI courts for recognition of the UAE order, or commencing separate BVI proceedings. This is costly and time-consuming, but it is done in high-value cases. ADGM Court orders (applying English common law) may be more readily recognised in common law offshore jurisdictions than UAE mainland court orders.
+          UAE mainland court orders are not automatically enforceable in the BVI or Cayman Islands, which have their own separate legal systems. Enforcing a UAE court order against BVI company shares typically requires applying to the BVI courts for recognition of the UAE order, or commencing separate BVI proceedings. This is costly and time-consuming, but it is done in high-value cases. The DIFC and ADGM Courts are not a way around this step, because they do not make financial orders on divorce.
         </p>
       </section>
 
@@ -363,15 +363,15 @@ const faqItems = [
       </section>
 
       <section class="content-section">
-        <h2>DIFC Courts, When They Are Relevant for Business Owner Divorces</h2>
+        <h2>DIFC and ADGM Courts: Where They Fit in a Business Owner's Divorce</h2>
         <p>
-          Non-Muslim business owners in Dubai with DIFC company interests or significant assets may find that the DIFC Courts offer practical advantages over mainland courts for their divorce.
+          Business owners with DIFC or ADGM companies often ask whether those English-language common-law courts could hear their divorce. They cannot. Under Dubai Law No. 2 of 2025 the DIFC Courts hear civil and commercial claims, employment claims, arbitration-related applications and the probate of non-Muslim wills registered with the DIFC Wills Service Centre, but no divorce, custody or maintenance cases. The ADGM Courts in Abu Dhabi have the same civil and commercial focus, plus probate for ADGM-registered wills. Neither court can grant a divorce or decide financial claims between spouses.
         </p>
         <p>
-          Under Dubai Law No. 2 of 2025, the DIFC Courts have jurisdiction over non-Muslim personal status matters including divorce and financial orders. In addition, the DIFC Courts have long-established jurisdiction over commercial disputes involving DIFC entities. This means a non-Muslim business owner divorcing in Dubai could potentially handle both the personal status case and any company-related disputes in the same court system, in English, under common law principles.
+          For a non-Muslim business owner, the divorce goes to the onshore family court of the emirate where you live, or to the Abu Dhabi Civil Family Court under Abu Dhabi Law No. 14 of 2021. That court treats your DIFC or ADGM shares like any other asset, and your spouse can ask it for disclosure or a precautionary attachment through the usual onshore procedures. The DIFC or ADGM Courts may still hear a genuinely separate commercial dispute, for example between you and your co-shareholders, but that case runs on its own facts and does not decide the divorce. Our guides to <a href="/en/difc-divorce-dubai/">why the DIFC Courts cannot grant a divorce</a> and <a href="/en/adgm-divorce-abu-dhabi/">ADGM and divorce in Abu Dhabi</a> explain where the line sits.
         </p>
         <p>
-          The DIFC's common law approach to asset division, considering all assets, non-financial contributions, and the court's broad discretion, can work in either party's favour depending on the case. For a business owner with a stay-at-home spouse who contributed substantially to the household while the business grew, the DIFC's needs-based analysis may produce a fairer outcome than UAE's strict separate property rule. Conversely, for a business owner whose spouse had minimal involvement, the separate property argument is available in both forums.
+          If what you really want is a court that applies English-style needs and sharing principles, that is a question of which country hears the case, not which UAE free zone your company sits in. Our guide on <a href="/en/where-to-divorce-uae-or-home-country/">divorcing in the UAE or your home country</a> covers that choice.
         </p>
       </section>
 
@@ -385,12 +385,12 @@ const faqItems = [
             <span>The separate property rule and DLD transfers</span>
           </a>
           <a href="/en/adgm-divorce-abu-dhabi/" class="related-card">
-            <strong>ADGM Divorce Abu Dhabi</strong>
-            <span>English common law for HNW cases in Abu Dhabi</span>
+            <strong>ADGM and Divorce in Abu Dhabi</strong>
+            <span>Why ADGM Courts cannot grant a divorce</span>
           </a>
           <a href="/en/difc-divorce-dubai/" class="related-card">
-            <strong>DIFC Courts for Divorce Dubai</strong>
-            <span>English common law divorce option in Dubai</span>
+            <strong>DIFC Divorce Dubai</strong>
+            <span>Why the DIFC Courts cannot grant a divorce</span>
           </a>
           <a href="/en/non-muslim-divorce-uae/" class="related-card">
             <strong>Non-Muslim Divorce UAE</strong>

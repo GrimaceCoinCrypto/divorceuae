@@ -16,7 +16,10 @@ export default defineConfig({
           !p.includes('/disclaimer') &&
           !p.includes('/privacy') &&
           !p.includes('إخلاء-المسؤولية') &&
-          !p.includes('سياسة-الخصوصية')
+          !p.includes('سياسة-الخصوصية') &&
+          // Off-topic dream-interpretation pages are noindexed
+          !p.includes('/en/dreaming-about-divorce-meaning/') &&
+          !p.includes('تفسير-الطلاق-في-المنام')
         );
       },
     }),

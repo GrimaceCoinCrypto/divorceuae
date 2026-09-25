@@ -67,7 +67,7 @@ const faqSchema = {
       name: 'What did SA v FA [2022] EWFC 115 decide about UAE divorces?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SA v FA was a forum non conveniens case, not a recognition case. The English court stayed (paused) its own divorce proceedings in favour of the Abu Dhabi Civil Family Court, finding that Abu Dhabi was the natural and appropriate forum for the dispute. The judgment confirmed that the ADCFC, operating under Abu Dhabi Law No. 14/2021 with a civil, secular framework, is a legitimate forum for international family disputes. It established that English courts will not automatically assume jurisdiction just because one party prefers English courts, UAE courts can be the appropriate forum.',
+        text: 'SA v FA was a forum case about which court should hear the divorce, not a recognition case. His Honour Judge Hess, sitting in the Central Family Court in London, found that both spouses were still domiciled in England, so England had jurisdiction, but he stayed (paused) the English divorce in favour of the Abu Dhabi Civil Family Court, finding the UAE the natural forum. He described the Abu Dhabi statutory scheme, under Abu Dhabi Law No. 14/2021, as broadly commensurate with the English courts and able to deliver substantial justice. The stay was conditional on undertakings from the husband, including continued financial support for the family, preserving his UAE assets and paying the reasonable legal costs of the wife in the Abu Dhabi proceedings. It is a single first-instance decision, not binding precedent, but it shows that an English court will not always keep a case just because one spouse filed there first.',
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
 const faqItems = faqSchema.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }));
 
 const stepsData = [
-  { step: '01', title: 'Obtain the official UAE divorce certificate', detail: 'Get the original court-issued divorce certificate from the UAE court (Personal Status Court, Abu Dhabi Civil Family Court, or DIFC Court). This must be the final decree, not just the initial filing confirmation. In Dubai, this is the Book Extract from the Personal Status Court.' },
+  { step: '01', title: 'Obtain the official UAE divorce certificate', detail: 'Get the original court-issued divorce certificate from the UAE court (Personal Status Court or Abu Dhabi Civil Family Court; the DIFC Courts do not grant divorces). This must be the final decree, not just the initial filing confirmation. In Dubai, this is the Book Extract from the Personal Status Court.' },
   { step: '02', title: 'Official English translation', detail: 'Have the certificate translated into English by a UAE Ministry of Justice certified legal translator. Keep both the Arabic original and the certified English translation together. Courts and registries want to see both.' },
   { step: '03', title: 'MOFA apostille', detail: 'Submit both documents (Arabic original and English translation) to the UAE Ministry of Foreign Affairs (MOFA) for apostille. The apostille certifies the authenticity of the signature, seal, and stamp on the document. Cost: approximately AED 150-200 per document. Processing: 2-5 working days. This step can be done online through the MOFA digital services portal.' },
   { step: '04', title: 'Present to UK registry or financial institution', detail: 'The apostilled certificate with English translation is accepted by UK register offices for remarriage purposes, by HMRC and DWP for tax and benefit purposes, and by financial institutions for account updates. Keep certified copies rather than originals for routine submissions.' },
@@ -150,7 +150,7 @@ const stepsData = [
           <li><strong>Bare talaq (unregistered):</strong> Not recognised. Court-administered, registered talaq: recognised.</li>
           <li><strong>UK financial orders:</strong> Not automatically recognised. Separate UK enforcement application required.</li>
           <li><strong>Part III MFPA 1984:</strong> Allows UK financial claims even after an overseas divorce, potentially significant for expats with UK assets.</li>
-          <li><strong>SA v FA [2022] EWFC 115:</strong> English court confirmed UAE (specifically Abu Dhabi Civil Family Court) is a legitimate forum. Forum stay granted.</li>
+          <li><strong>SA v FA [2022] EWFC 115:</strong> an English Family Court judge (HHJ Hess) stayed an English divorce in favour of the Abu Dhabi Civil Family Court, on conditions. A first-instance decision, not binding precedent.</li>
           <li><strong>Scotland:</strong> Different rules from England. Take separate Scottish legal advice if relevant.</li>
         </ul>
       </div>
@@ -182,20 +182,24 @@ const stepsData = [
           SA v FA is frequently cited in discussions of UAE divorces and UK recognition, but it is important to understand precisely what it decided, and what it did not.
         </p>
         <p>
-          The case involved a couple with connections to both England and Abu Dhabi. The wife issued divorce proceedings in England. The husband argued that Abu Dhabi, specifically the Abu Dhabi Civil Family Court (ADCFC), was the natural and appropriate forum for the dispute. The English court was asked to decide whether to stay (pause) its own proceedings in favour of the Abu Dhabi court.
+          The case involved a British couple who had lived in the UAE since 2008, latterly in Abu Dhabi. The wife issued divorce proceedings in England in September 2021. The husband argued that Abu Dhabi, specifically the Abu Dhabi Civil Family Court (ADCFC), was the natural and appropriate forum for the dispute, and the English court was asked to decide whether to stay (pause) its own proceedings in favour of the Abu Dhabi court.
         </p>
         <p>
-          Mr Justice Moor stayed the English proceedings in favour of the ADCFC. The key findings were:
+          His Honour Judge Hess, sitting in the Central Family Court in London, gave judgment on 9 September 2022 and stayed the English proceedings in favour of the ADCFC. The key findings were:
         </p>
         <ul>
-          <li>The ADCFC, established under Abu Dhabi Law No. 14/2021, applies a civil, secular framework to family disputes. It is not a religious court.</li>
-          <li>The ADCFC is a legitimate and appropriate international forum for family disputes with UAE connections.</li>
-          <li>The mere fact that one party would receive more money in English proceedings was not sufficient reason to override the forum analysis.</li>
-          <li>Abu Dhabi had the stronger connection to the parties' lives and assets.</li>
+          <li>Both spouses were still domiciled in England, so the English court did have jurisdiction. The question was whether it should use it.</li>
+          <li>The UAE was the natural forum: the family had lived there for over 14 years, the children were at school there, and most of the assets were there.</li>
+          <li>The ADCFC, established under Abu Dhabi Law No. 14/2021, applies a civil, secular framework, and the judge found its statutory scheme "broadly commensurate" with the English courts and able to deliver substantial justice.</li>
+          <li>The chance that the wife might receive less in Abu Dhabi than in England did not by itself outweigh that analysis. The judge said it would be wrong to conclude that only the English system gives substantial justice.</li>
+          <li>The stay was conditional on undertakings from the husband, including maintaining the family's financial support until the final outcome, preserving his UAE assets and paying the wife's reasonable legal costs of the UAE proceedings.</li>
         </ul>
+        <p>
+          You can read the <a href="https://caselaw.nationalarchives.gov.uk/ewfc/2022/115" rel="noopener" target="_blank">full judgment on the National Archives website</a>.
+        </p>
         <div class="info-box info-box--warning">
           <h3>What SA v FA did NOT decide</h3>
-          <p>SA v FA was a forum non conveniens case, about which court should hear the case first. It was not a recognition case. It did not decide that UAE divorces are recognised in the UK (that is governed by the Family Law Act 1986). It did not decide that UAE financial orders are enforceable in the UK. What it confirmed is that English courts will not automatically assume they are the right forum simply because one party files there. UAE courts, including the ADCFC, are legitimate alternatives that English courts will respect.</p>
+          <p>SA v FA was a forum case, about which court should hear the divorce. It was not a recognition case. It did not decide that UAE divorces are recognised in the UK (that is governed by the Family Law Act 1986). It did not decide that UAE financial orders are enforceable in the UK. It is also a single first-instance Family Court decision, not binding precedent. What it shows is that an English court will not automatically keep a case simply because one party filed there first, and that one English judge was prepared to trust the Abu Dhabi Civil Family Court on suitable terms.</p>
         </div>
       </section>
 
@@ -238,9 +242,9 @@ const stepsData = [
                 <td class="td-light">Not obtained by "proceedings." Fails FLA 1986 Part II test. Marriage still legally subsisting in England.</td>
               </tr>
               <tr class="row-alt">
-                <td class="td-bold">DIFC Court divorce (non-Muslim, from 2025)</td>
-                <td class="td-rule--yes">Recognised</td>
-                <td class="td-light">Judicial proceedings in English. Common law procedural framework. Easily meets recognition test.</td>
+                <td class="td-bold">"DIFC divorce" (DIFC Courts)</td>
+                <td class="td-rule--no">Not a route</td>
+                <td class="td-light">The DIFC Courts have no family jurisdiction and cannot grant a divorce. A recognisable UAE decree comes from the onshore courts listed above.</td>
               </tr>
             </tbody>
           </table>

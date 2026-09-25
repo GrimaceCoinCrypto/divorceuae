@@ -4,7 +4,7 @@ import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'Alimony in UAE: Realistic AED Amounts, How Courts Calculate, and How to Enforce';
+const title = 'UAE Alimony Calculator: How Much Alimony to Expect (2026)';
 const description =
   'UAE has no fixed alimony formula. Courts exercise discretion. This guide gives realistic AED ranges by income bracket, explains nafaqa vs mut\'a, and covers how to maximise your claim and enforce non-payment through the Execution Court.';
 
@@ -43,7 +43,7 @@ const faqSchema = {
       name: 'How long does alimony last in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For Muslim women, iddah maintenance (nafaqa al-idda) covers the three-month waiting period after divorce and is guaranteed regardless of fault. Mut\'a (consolation payment) is a one-time payment, not an ongoing obligation. Longer-term periodic alimony is primarily a non-Muslim concept under Federal Decree-Law No. 41 of 2022, where courts can order ongoing payments for a set period based on the wife\'s needs and the husband\'s ability to pay. Muslim wives do not automatically receive ongoing post-iddah maintenance unless a specific maintenance obligation (such as a custody-related housing allowance) applies.',
+        text: 'For Muslim women, iddah maintenance (nafaqa al-idda) is owed for the waiting period after a revocable divorce, after an irrevocable divorce only if the wife is pregnant, and not after khul’ (Article 101 of Federal Decree-Law No. 41 of 2024); housing during the iddah is owed in every case. Mut’a (consolation payment) is a one-time payment, not an ongoing obligation. Longer-term periodic alimony is primarily a non-Muslim concept under Federal Decree-Law No. 41 of 2022, where courts can order ongoing payments for a set period based on the wife\'s needs and the husband\'s ability to pay. Muslim wives do not automatically receive ongoing post-iddah maintenance unless a specific maintenance obligation (such as a custody-related housing allowance) applies.',
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: 'Can a working wife get alimony in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, but a wife\'s own income reduces the award proportionally. If the wife earns AED 15,000 per month and the husband earns AED 25,000, the court may award reduced nafaqa or no ongoing maintenance at all, while still awarding the guaranteed iddah maintenance. Mut\'a (for Muslim women) is not reduced by the wife\'s income, it compensates for the harm of divorce, not financial need.',
+        text: 'Yes, but a wife\'s own income reduces the award proportionally. If the wife earns AED 15,000 per month and the husband earns AED 25,000, the court may award reduced nafaqa or no ongoing maintenance at all, while iddah maintenance, where Article 101 makes it due, is still owed. Mut\'a (for Muslim women) is not reduced by the wife\'s income, it compensates for the harm of divorce, not financial need.',
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "What is the difference between nafaqa and mut'a?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Nafaqa is ongoing maintenance covering housing, food, clothing, and medical needs. Nafaqa al-idda is the guaranteed maintenance during the three-month iddah period after divorce. Mut'a is a one-time consolation payment awarded when the divorce was not the wife's fault, it compensates for the distress of an unwanted divorce. Under Federal Decree-Law No. 41 of 2024, the minimum mut'a is one year of living expenses. These are separate financial rights and a wife can claim both.",
+        text: "Nafaqa is ongoing maintenance covering housing, food, clothing, and medical needs. Nafaqa al-idda is maintenance during the iddah waiting period, owed after a revocable divorce, or after an irrevocable one only if the wife is pregnant (Article 101 of Federal Decree-Law No. 41 of 2024). Mut'a is a one-time consolation payment when the husband divorces her without her request or fault; it compensates for the harm of an unwanted divorce. Under Article 102 it is capped at one year's maintenance for a woman of her standing, set within that ceiling on the husband's means and the harm, and it can be paid in instalments. These are separate financial rights and a wife can claim both.",
       },
     },
     {
@@ -99,14 +99,14 @@ const faqSchema = {
       name: 'How much is alimony for a 10-year marriage in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "A 10-year marriage is treated as a long-term marriage by UAE courts and typically results in a more generous alimony award than a 1-2 year marriage. Using the reported case ranges: for a husband earning AED 20,000/month, a realistic range after a 10-year marriage is AED 3,000-5,000/month for ongoing maintenance, plus the guaranteed iddah maintenance and mut'a. Each case is different, the wife's age, her own income, the number of children in her custody, and the standard of living during the marriage all affect the actual award.",
+        text: "A 10-year marriage is treated as a long-term marriage by UAE courts and typically results in a more generous alimony award than a 1-2 year marriage. Using the reported case ranges: for a husband earning AED 20,000/month, a realistic range after a 10-year marriage is AED 3,000 to 5,000/month for ongoing maintenance, plus iddah maintenance where Article 101 makes it due and mut'a where the husband ended the marriage without her request or fault. Each case is different, the wife's age, her own income, the number of children in her custody, and the standard of living during the marriage all affect the actual award.",
       },
     },
   ],
 };
 
 const alimonyRanges = [
-  { bracket: 'AED 5,000 to 10,000/month', range: 'AED 700 to 1,500/month', notes: 'Low-income bracket. Court limits award to proportionate share. Iddah maintenance and mut\'a still apply.' },
+  { bracket: 'AED 5,000 to 10,000/month', range: 'AED 700 to 1,500/month', notes: 'Low-income bracket. Court limits award to proportionate share. Iddah maintenance and mut’a still apply where the 2024 law makes them due.' },
   { bracket: 'AED 10,000 to 25,000/month', range: 'AED 1,500 to 4,000/month', notes: 'Most common bracket in UAE expat cases. Rough guide: 15 to 20% of income.' },
   { bracket: 'AED 25,000 to 50,000/month', range: 'AED 4,000 to 8,000/month', notes: 'Professional and management level. Standard of living during marriage is key factor.' },
   { bracket: 'AED 50,000 to 100,000/month', range: 'AED 8,000 to 20,000/month', notes: 'Senior management and executive level. Wife\'s own income and lifestyle standard weighed.' },
@@ -124,7 +124,7 @@ const faqItems = [
   },
   {
     question: "What is the iddah maintenance and is it guaranteed?",
-    answer: "Nafaqa al-idda is the maintenance obligation covering the three-month iddah period after a Muslim divorce. It covers housing, food, clothing, and medical costs at the standard maintained during the marriage. It is guaranteed regardless of fault, even if the divorce was the wife's fault (except in cases of khul', where the wife initiates divorce in exchange for returning the mahr, which may affect iddah entitlement). The husband cannot waive this obligation.",
+    answer: "Not in every case. Nafaqa al-idda is maintenance for the iddah waiting period after a Muslim divorce, covering food, clothing, and medical costs at the standard of the marriage. Under Article 101 of Federal Decree-Law No. 41 of 2024 it is owed after a revocable divorce, after an irrevocable divorce only if the wife is pregnant (until delivery), and not at all after khul'. Housing during the iddah, in the marital home or a suitable alternative, is owed in every case.",
   },
   {
     question: "My husband refuses to pay the alimony ordered by the court. What are my options?",
@@ -144,7 +144,7 @@ const faqItems = [
   },
   {
     question: "Is there an alimony formula in Abu Dhabi for non-Muslims?",
-    answer: "Abu Dhabi's Civil Family Court applies an indicative benchmark reported as up to 25 percent of the husband's last monthly income multiplied by the years of marriage, under Abu Dhabi Decision No. 8 of 2022. This is an Abu Dhabi-specific ceiling, not the federal rule, and courts discount it heavily for the wife's own income, her age, and the length of the marriage. It does not apply to Muslim cases or to non-Muslim cases outside Abu Dhabi's civil system. All figures are indicative.",
+    answer: "Abu Dhabi's Civil Family Court works from a guide, not a fixed formula. Article 18 of ADJD Chairman Decision No. 8 of 2022 lets the court and its accounting expert be guided by a cash percentage of no less than 25 percent of the husband's last monthly income multiplied by the years of marriage (the wording of the ADJD's published English text; some summaries say up to 25 percent), or by yardsticks based on his property and any joint account. The court can raise or lower the amount. It is not the federal rule and does not apply to Muslim cases or outside Abu Dhabi's civil system. All figures are indicative.",
   },
   {
     question: "Is there an automatic 50/50 split of income or assets in UAE divorce?",
@@ -181,12 +181,12 @@ const faqItems = [
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Alimony Guide, UAE 2025</p>
-      <h1>Alimony in UAE: Realistic AED Amounts and How Courts Actually Decide</h1>
+      <p class="hero-tag">Alimony Guide, UAE 2026</p>
+      <h1>UAE Alimony Calculator: Realistic AED Amounts and How Courts Decide</h1>
       <p class="hero-desc">
         There is no alimony calculator in UAE law. Judges exercise discretion. But informed by reported cases and legal practice, we can give you the realistic AED ranges by income bracket, the six factors courts use, and what you can do to maximise or defend against a claim.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated May 2025</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
     </div>
   </section>
 
@@ -199,8 +199,8 @@ const faqItems = [
         <ul class="key-facts">
           <li><strong>UAE has no fixed alimony formula.</strong> Courts exercise discretion. The ranges below are based on reported cases, they are not guaranteed outcomes.</li>
           <li><strong>The rough guide for Muslim cases is 15 to 20% of the husband's income</strong>, adjusted by the wife's own income, marriage length, and harm suffered.</li>
-          <li><strong>Nafaqa al-idda (iddah maintenance) is guaranteed for Muslim women</strong> regardless of fault. It covers the three-month waiting period.</li>
-          <li><strong>Mut'a (consolation payment) is a one-time payment</strong> when divorce is not the wife's fault. Minimum one year of living expenses under the 2024 law.</li>
+          <li><strong>Nafaqa al-idda (iddah maintenance) depends on the type of divorce.</strong> Under Article 101 of the 2024 law it is owed after a revocable divorce, after an irrevocable one only if the wife is pregnant, and not after khul'. Iddah housing is owed in every case.</li>
+          <li><strong>Mut'a (consolation payment) is a one-time payment</strong> when the husband divorces without the wife's request or fault. Article 102 of the 2024 law caps it at one year's maintenance for a woman of her standing.</li>
           <li><strong>Non-Muslim alimony is not automatic.</strong> Federal Decree-Law No. 41 of 2022 gives courts wide discretion and a financially independent wife may receive nothing.</li>
         </ul>
       </div>

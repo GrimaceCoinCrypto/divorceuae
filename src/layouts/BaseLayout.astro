@@ -1,6 +1,7 @@
 ---
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { SOURCES, pickSources } from '../data/sources';
 
 export interface Props {
   title: string;
@@ -34,22 +35,96 @@ const {
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = new URL(ogImage, Astro.site).href;
+const SITE = 'https://divorceu.ae';
 
-// Normalise schema to array
-const schemas = schema
-  ? Array.isArray(schema) ? schema : [schema]
-  : [];
-
-// LegalService base schema — present on all pages
-const legalServiceSchema = {
+// Sitewide entity schema: the site is an information and referral service, not a
+// law firm, so it is described as an Organization (not LegalService).
+const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LegalService',
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
   name: 'Divorce UAE',
-  description: 'Divorce lawyer referral and legal guidance for UAE residents',
-  areaServed: ['Dubai', 'Abu Dhabi', 'UAE'],
-  availableLanguage: ['English', 'Arabic'],
-  url: 'https://divorceu.ae',
+  alternateName: 'DivorceU.AE',
+  url: SITE,
+  description:
+    'Independent legal information and lawyer referral service for divorce in the UAE. Not a law firm.',
+  areaServed: { '@type': 'Country', name: 'United Arab Emirates' },
+  knowsLanguage: ['English', 'Arabic'],
+  founder: { '@type': 'Person', name: 'Aleksi Suon', url: `${SITE}/en/author/aleksi-suon/` },
 };
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE}/#website`,
+  name: 'Divorce UAE',
+  url: SITE,
+  inLanguage: ['en-AE', 'ar-AE'],
+  publisher: { '@id': `${SITE}/#organization` },
+};
+
+const typesOf = (s) => [].concat((s && s['@type']) || []);
+const isFaqSchema = (s) => typesOf(s).includes('FAQPage');
+
+// Normalise schema to array. Page-level WebSite/Organization objects are dropped
+// because the sitewide ones above already describe the same entities.
+const schemas = (schema ? (Array.isArray(schema) ? schema : [schema]) : []).filter(
+  (s) => !typesOf(s).some((t) => t === 'WebSite' || t === 'Organization')
+);
+
+// Render the page body first so its JSON-LD can be validated and its FAQ markup
+// merged. Any JSON-LD block that fails to parse fails the build.
+const rawBody = await Astro.slots.render('default');
+const LD_JSON_RE = /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g;
+const faqCandidates = [];
+const bodyHtml = rawBody.replace(LD_JSON_RE, (block, json) => {
+  let parsed;
+  try {
+    parsed = JSON.parse(json);
+  } catch (err) {
+    throw new Error(`Invalid JSON-LD on ${Astro.url.pathname}: ${err.message}`);
+  }
+  if (isFaqSchema(parsed)) {
+    faqCandidates.push(parsed);
+    return '';
+  }
+  return block;
+});
+faqCandidates.push(...schemas.filter(isFaqSchema));
+
+// One FAQPage per page, containing only questions AND answers that are visible on
+// the page. Pages often carry a hand-written FAQ block next to the FAQSection
+// component; where both answer the same question, the visible answer wins.
+const normText = (t) =>
+  String(t)
+    .toLowerCase()
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z#0-9]+;/gi, ' ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+const visibleText = normText(
+  bodyHtml.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
+);
+const faqByQuestion = new Map();
+for (const block of faqCandidates) {
+  for (const q of [].concat(block.mainEntity || [])) {
+    if (!q || !q.name) continue;
+    const key = normText(q.name);
+    if (!faqByQuestion.has(key)) faqByQuestion.set(key, []);
+    faqByQuestion.get(key).push(q);
+  }
+}
+const faqEntities = [];
+for (const [key, candidates] of faqByQuestion) {
+  if (!visibleText.includes(key) && !visibleText.includes(key.slice(0, 50))) continue;
+  const visible = candidates.find((q) =>
+    visibleText.includes(normText((q.acceptedAnswer && q.acceptedAnswer.text) || '').slice(0, 60))
+  );
+  if (visible) faqEntities.push(visible);
+}
+const faqSchema = faqEntities.length
+  ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqEntities }
+  : null;
 
 // Auto-add an Article schema to content pages that do not already declare one.
 // Skips the homepage, the About/author pages, and legal/utility pages.
@@ -76,8 +151,9 @@ const autoArticleSchema = isContentPage && !hasArticle
       },
       publisher: {
         '@type': 'Organization',
+        '@id': `${SITE}/#organization`,
         name: 'Divorce UAE',
-        url: 'https://divorceu.ae',
+        url: SITE,
       },
       mainEntityOfPage: canonicalURL,
       ...(lastmod ? { dateModified: lastmod } : {}),
@@ -85,10 +161,37 @@ const autoArticleSchema = isContentPage && !hasArticle
   : null;
 
 const allSchemas = [
-  legalServiceSchema,
-  ...schemas,
+  organizationSchema,
+  websiteSchema,
+  ...schemas.filter((s) => !isFaqSchema(s)),
   ...(autoArticleSchema ? [autoArticleSchema] : []),
+  ...(faqSchema ? [faqSchema] : []),
 ];
+
+// Official sources: attached to content pages by the trigger rules in
+// src/data/sources.ts (a page lists the laws and official pages it names).
+const sourceKeys = isContentPage ? pickSources(visibleText) : [];
+const escapeHtml = (s) =>
+  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const sourcesHtml = sourceKeys.length
+  ? `<section class="site-sources" aria-labelledby="site-sources-heading"><h2 id="site-sources-heading">${
+      lang === 'ar' ? 'المصادر الرسمية والنصوص القانونية' : 'Sources and official references'
+    }</h2><ol>${sourceKeys
+      .map((key) => {
+        const s = SOURCES[key];
+        const title = lang === 'ar' && s.titleAr ? s.titleAr : s.title;
+        const publisher = lang === 'ar' && s.publisherAr ? s.publisherAr : s.publisher;
+        const url = lang === 'ar' && s.urlAr ? s.urlAr : s.url;
+        return `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(title)}</a>${
+          lang === 'ar' ? '، ' : ', '
+        }${escapeHtml(publisher)}</li>`;
+      })
+      .join('')}</ol></section>`
+  : '';
+const pageHtml =
+  sourcesHtml && bodyHtml.includes('</main>')
+    ? bodyHtml.replace(/<\/main>(?![\s\S]*<\/main>)/, `${sourcesHtml}</main>`)
+    : bodyHtml;
 ---
 
 <!doctype html>
@@ -199,9 +302,33 @@ const allSchemas = [
       {lang === 'ar' ? 'واتساب' : 'WhatsApp'}
     </a>
 
-    <slot />
+    <Fragment set:html={pageHtml} />
 
     <Footer lang={lang} />
+
+    <style is:global>
+      .site-sources {
+        max-width: 1200px;
+        margin: 8px auto 56px;
+        padding: 24px;
+        border-top: 1px solid #e5e7eb;
+      }
+      .site-sources h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1e3a5f;
+        margin-bottom: 12px;
+      }
+      .site-sources ol {
+        padding-inline-start: 22px;
+        display: grid;
+        gap: 6px;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: #4b5563;
+      }
+      .site-sources a { color: #2563eb; text-decoration: underline; }
+    </style>
 
     <style>
       .whatsapp-sticky {

@@ -4,9 +4,9 @@ import LeadForm from '../../components/ui/LeadForm.astro';
 import FAQSection from '../../components/ui/FAQSection.astro';
 import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
-const title = 'ADGM Divorce Abu Dhabi, Courts, Costs, and Who Should Use Them';
+const title = 'ADGM Divorce in Abu Dhabi: Why ADGM Courts Cannot Grant One';
 const description =
-  'ADGM Courts on Al Maryah Island apply English common law in English. A guide for non-Muslim expats comparing ADGM divorce with the Abu Dhabi Civil Family Court, who qualifies, costs, and what asset division looks like under common law.';
+  'ADGM Courts hear civil and commercial cases, not divorces. Where non-Muslims really divorce in Abu Dhabi, how ADGM assets are treated, and why wills matter.';
 
 const hreflang = {
   en: 'https://divorceu.ae/en/adgm-divorce-abu-dhabi/',
@@ -18,138 +18,49 @@ const breadcrumbs = [
   { name: 'ADGM Divorce Abu Dhabi', url: 'https://divorceu.ae/en/adgm-divorce-abu-dhabi/' },
 ];
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is ADGM divorce and who can use ADGM courts?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'ADGM Courts are the judicial arm of Abu Dhabi Global Market, an international financial free zone on Al Maryah Island, Abu Dhabi. ADGM Courts apply English common law and conduct proceedings in English. Non-Muslim individuals can file for divorce in ADGM Courts if they have a real and substantial connection to ADGM, for example, through employment, a business registered in ADGM, or residence in the ADGM jurisdiction. The ADGM Courts are most appropriate for high-net-worth cases with significant assets, offshore holdings, or complex international financial structures.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How is ADGM different from the Abu Dhabi Personal Status Court?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The Abu Dhabi Personal Status Court applies UAE federal personal status law in Arabic and handles Muslim and non-Muslim cases. The Abu Dhabi Civil Family Court (ADCFC) at Hudayriyat Island is the mainstream non-Muslim civil divorce option for Abu Dhabi residents, applying Federal Decree-Law No. 41 of 2022 in English. ADGM Courts are a separate third option: they apply English common law (not UAE federal family law), are located on Al Maryah Island, and are designed for those with a genuine connection to the ADGM financial free zone. ADGM proceedings are conducted entirely in English with English common law judges.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much does ADGM divorce cost?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'ADGM Court filing fees are significantly higher than mainland UAE courts. An ADGM Court of First Instance divorce filing fee starts at USD 1,500 to USD 3,000 for the initial petition, with additional fees for each subsequent application. Legal representation in ADGM is provided by registered ADGM legal practitioners at rates broadly comparable to English commercial law firms, typically AED 900 to AED 2,500 per hour. Total legal costs for a contested ADGM divorce commonly range from AED 100,000 to AED 500,000 or more. The ADGM route makes financial sense when the asset value in dispute justifies those costs.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can non-residents use ADGM courts for divorce?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'ADGM Courts require a "real and substantial connection" to the ADGM jurisdiction. This can be established through employment by an ADGM-registered entity, residence or habitual residence in Abu Dhabi, or significant financial or business interests connected to ADGM. Simply owning UAE assets is not by itself sufficient. If you are an Abu Dhabi resident without a specific ADGM connection but want English-language civil divorce proceedings, the Abu Dhabi Civil Family Court (ADCFC) at Hudayriyat Island is the more accessible option.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How does ADGM divide assets in a divorce?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'ADGM Courts apply English common law principles to asset division, which takes a fundamentally different approach to UAE federal personal status law. Under English common law applied in ADGM, courts consider the welfare of children as the first priority, then the financial needs and resources of each party, the standard of living during the marriage, contributions made by each party including non-financial contributions, and conduct in limited circumstances. The court has wide discretion to divide all assets regardless of whose name they are in, this is closer to English needs-based division than to UAE\'s strict separate property rule.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is Abu Dhabi Law No. 14 of 2021 and how does it relate to ADGM divorce?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Abu Dhabi Law No. 14 of 2021 established the legal foundation for non-Muslim civil family law in Abu Dhabi, providing for no-fault divorce, joint custody, and civil marriage registration for non-Muslims resident in Abu Dhabi. Federal Decree-Law No. 41 of 2022 later extended equivalent provisions across all UAE emirates. ADGM Courts operate within this Abu Dhabi non-Muslim civil divorce framework but apply English common law as the substantive law of the ADGM free zone, giving the courts a broader toolkit for complex asset cases.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Should I register an ADGM will alongside my divorce proceedings?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes, strongly recommended. If you hold UAE assets including property, investments, or business interests, an ADGM Will or DIFC Will registered in the UAE ensures those assets pass according to your wishes rather than under UAE intestacy rules (which apply Sharia inheritance principles to Muslim estates and UAE Civil Code rules to non-Muslim estates). Divorce itself does not automatically invalidate an existing UAE will. Given that major asset restructuring happens during divorce, it is the right time to both update your will and ensure your UAE assets are covered. An ADGM Will registration costs approximately USD 950 to USD 1,500 and covers all UAE-based assets.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the appeal route from an ADGM divorce judgment?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Appeals from ADGM Court of First Instance judgments go to the ADGM Court of Appeal, which also applies English common law. Further appeal to the ADGM Court of Appeal sits at the top of the ADGM judicial hierarchy. ADGM judgments can also be enforced outside the UAE through bilateral enforcement treaties or the New York Convention framework where applicable to non-arbitral ADGM orders.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the difference between ADGM Courts and DIFC Courts for divorce?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Both ADGM Courts and DIFC Courts apply English common law in English and are designed for international financial centre users. DIFC Courts are in Dubai (Gate Village, DIFC) and have a more established personal status jurisdiction under Dubai Law No. 2 of 2025. ADGM Courts are in Abu Dhabi (Al Maryah Island) and operate under ADGM Regulations. Both are valid options for non-Muslim expats with complex financial cases. The practical choice depends on where your assets, business interests, and professional connections are concentrated.',
-      },
-    },
-  ],
-};
-
 const comparisonData = [
-  { factor: 'Location', adgm: 'Al Maryah Island, Abu Dhabi', adcfc: 'Hudayriyat Island, Abu Dhabi' },
-  { factor: 'Applicable law', adgm: 'English common law (ADGM Regulations)', adcfc: 'Federal Decree-Law No. 41 of 2022' },
-  { factor: 'Language', adgm: 'English only', adcfc: 'English' },
-  { factor: 'Who can use it', adgm: 'Non-Muslims with ADGM connection (employment, business, residence)', adcfc: 'All non-Muslim Abu Dhabi residents' },
-  { factor: 'Asset division approach', adgm: 'English needs-based discretion, court considers all assets', adcfc: 'UAE civil law framework, contribution-based' },
-  { factor: 'Filing fees', adgm: 'USD 1,500-3,000+ for initial petition', adcfc: 'AED 500-1,500 for standard filing' },
-  { factor: 'Legal costs (typical)', adgm: 'AED 100,000-500,000+ for contested case', adcfc: 'AED 8,000-60,000 depending on complexity' },
-  { factor: 'Best for', adgm: 'HNW cases AED 5M+, offshore assets, complex structures', adcfc: 'Mainstream non-Muslim expat divorces in Abu Dhabi' },
-  { factor: 'Appeal route', adgm: 'ADGM Court of Appeal', adcfc: 'Abu Dhabi Court of Appeal' },
-  { factor: 'Enforcement', adgm: 'Strong international enforceability via English law framework', adcfc: 'Standard UAE court enforcement' },
+  { factor: 'Where it sits', difc: 'Dubai International Financial Centre', adgm: 'Al Maryah Island, Abu Dhabi', adcfc: 'Abu Dhabi Judicial Department (ADJD)' },
+  { factor: 'Type of court', difc: 'Common-law civil and commercial court', adgm: 'Common-law civil and commercial court', adcfc: 'Civil family court for non-Muslims' },
+  { factor: 'Legal basis', difc: 'Dubai Law No. 2 of 2025', adgm: 'ADGM regulations and English common law', adcfc: 'Abu Dhabi Law No. 14 of 2021' },
+  { factor: 'Language', difc: 'English', adgm: 'English', adcfc: 'Arabic and English' },
+  { factor: 'Can grant a divorce', difc: 'No', adgm: 'No', adcfc: 'Yes, on a no-fault basis' },
+  { factor: 'Custody, alimony and financial claims', difc: 'No', adgm: 'No', adcfc: 'Yes' },
+  { factor: 'Non-Muslim wills', difc: 'DIFC Wills Service Centre, with probate in the DIFC Courts', adgm: 'ADGM wills registry and probate', adcfc: 'Civil inheritance rules for non-Muslims in Abu Dhabi' },
+  { factor: 'Role in your divorce', difc: 'None, beyond separate commercial claims', adgm: 'None, beyond separate commercial claims and wills', adcfc: 'Decides the divorce and the family claims' },
 ];
 
 const faqItems = [
   {
-    question: 'What is ADGM divorce and who should consider it?',
-    answer: 'ADGM Courts apply English common law in English and are designed for users of the Abu Dhabi Global Market financial free zone. Non-Muslim expats with a genuine ADGM connection, employment, registered business, or residence ties, can use ADGM Courts for divorce. The ADGM route is most appropriate when the case involves significant assets (AED 5 million or more), offshore holdings, or international business structures where English common law gives a more effective toolkit than UAE federal family law.',
+    question: 'Can I get a divorce from the ADGM Courts?',
+    answer: 'No. The ADGM Courts are the English-language common-law courts of Abu Dhabi Global Market, and their jurisdiction covers civil and commercial matters plus the ADGM wills registry and probate. They do not grant divorces and do not hear custody, alimony or financial claims between spouses. Non-Muslims who want to divorce in Abu Dhabi file at the Abu Dhabi Civil Family Court, which runs a no-fault process in Arabic and English.',
   },
   {
-    question: 'How is ADGM different from the Abu Dhabi Civil Family Court?',
-    answer: 'The ADCFC at Hudayriyat Island is the mainstream non-Muslim civil divorce option for Abu Dhabi residents, applying Federal Decree-Law No. 41 of 2022. ADGM Courts apply English common law, require an ADGM connection, carry significantly higher costs, and take a broader approach to asset division similar to English courts. Most non-Muslim expat divorces in Abu Dhabi belong in the ADCFC, not ADGM.',
+    question: 'Why do so many people search for an ADGM divorce?',
+    answer: 'Because ADGM is known for applying English common law in English, and expats reasonably assume such a court might handle their divorce the way courts do at home. It cannot. What most people really want, an English-language, no-fault civil divorce, does exist in Abu Dhabi, at the Civil Family Court of the Abu Dhabi Judicial Department.',
   },
   {
-    question: 'How much does ADGM divorce cost?',
-    answer: 'ADGM filing fees start at approximately USD 1,500 to USD 3,000 for the initial petition. Legal representation from an ADGM-registered practitioner runs AED 900 to AED 2,500 per hour. A contested ADGM divorce commonly costs AED 100,000 to AED 500,000 or more in total legal fees. The ADGM route is financially justified when asset values in dispute warrant the investment.',
+    question: 'Where do non-Muslims actually divorce in Abu Dhabi?',
+    answer: 'At the Abu Dhabi Civil Family Court, part of the Abu Dhabi Judicial Department. It was created under Abu Dhabi Law No. 14 of 2021, works in Arabic and English, and grants divorce on a no-fault basis, so neither spouse has to prove harm. For an uncontested case there is often a single hearing. Muslim couples use the Abu Dhabi Personal Status Court instead.',
   },
   {
-    question: 'Can I use ADGM courts if I am not an ADGM employee?',
-    answer: 'You need a "real and substantial connection" to ADGM. This can be through employment at an ADGM-registered entity, a business registered in the free zone, or established residence and financial ties to Abu Dhabi connected to ADGM activities. Simply living in Abu Dhabi without an ADGM nexus is not sufficient. For most Abu Dhabi residents, the ADCFC is the more appropriate non-Muslim divorce forum.',
+    question: 'I work for an ADGM company or own shares in one. Does that change where I divorce?',
+    answer: 'No. An employer or company based in ADGM does not move the divorce into the ADGM Courts. The family court, usually the Civil Family Court for non-Muslims in Abu Dhabi, decides the divorce and the financial claims, and your ADGM salary, benefits and shares are disclosed there like any other income or asset. A separate shareholder dispute could still go to the ADGM Courts on its own facts.',
   },
   {
-    question: 'How does ADGM divide assets?',
-    answer: 'ADGM applies English common law principles: the court considers all assets regardless of whose name they are in, the needs and resources of each party, the welfare of any children, contributions made by each party including non-financial contributions, and the standard of living during the marriage. This is a more flexible and potentially broader approach than UAE\'s separate property doctrine, which is why it attracts high-net-worth cases with complex asset profiles.',
+    question: 'Can the ADGM Courts freeze assets during a divorce?',
+    answer: 'Not as part of a divorce, because they have no family jurisdiction. In Abu Dhabi the family court handles this: it can order financial disclosure and, where there is a real risk that assets will be moved, a precautionary attachment through the normal onshore procedures. Assets held outside the UAE may also need a freezing order from a court in the country where they sit, obtained through a local lawyer.',
   },
   {
-    question: 'What is the Abu Dhabi Civil Family Court and how does it differ from ADGM?',
-    answer: 'The ADCFC at Hudayriyat Island applies Federal Decree-Law No. 41 of 2022, the UAE civil family law for non-Muslims. It operates in English and is accessible to all non-Muslim Abu Dhabi residents without any connection to a financial free zone. Filing fees are a fraction of ADGM costs. For most non-Muslim expat divorces in Abu Dhabi, the ADCFC is the right starting point.',
+    question: 'Should I update my ADGM will after a divorce?',
+    answer: 'You should at least review it. An ADGM will lets the assets it covers pass under your will rather than default inheritance rules, and a will made during the marriage often names your spouse as beneficiary, executor or guardian of your children. Check with a lawyer how your existing will treats a former spouse, and update it once the financial arrangements are settled.',
   },
   {
-    question: 'Should I register an ADGM will during my divorce?',
-    answer: 'Yes. Divorce is a major financial restructuring event and the right moment to update your UAE estate plan. An ADGM Will covers all UAE-based assets and ensures they pass according to your wishes rather than under UAE intestacy rules. Registration costs approximately USD 950 to USD 1,500. Your ADGM lawyer can handle this alongside the divorce proceedings.',
+    question: 'Is the DIFC any different from ADGM for divorce?',
+    answer: 'No. The DIFC Courts in Dubai are also English-language common-law courts for civil and commercial disputes, and Dubai Law No. 2 of 2025 gives them no family, divorce, custody or maintenance jurisdiction. Like ADGM, the DIFC runs a non-Muslim wills service, which is estate planning rather than divorce. Neither financial-centre court can end a marriage.',
   },
   {
-    question: 'What is the appeal route from an ADGM divorce judgment?',
-    answer: 'Appeals from the ADGM Court of First Instance go to the ADGM Court of Appeal. Both courts apply English common law. ADGM judgments are enforceable in other common law jurisdictions through standard enforcement procedures, which is one advantage of the ADGM route for parties with assets in multiple countries.',
-  },
-  {
-    question: 'Can ADGM courts handle cross-border asset disputes?',
-    answer: 'Yes. ADGM Courts can issue Mareva injunctions (worldwide freezing orders), Anton Piller orders (search and seizure), and other common law interim relief measures that are not available in mainland UAE courts. This makes ADGM particularly effective in cases where there is a risk of asset dissipation across multiple jurisdictions. The English common law framework is recognised and enforceable in many other countries with common law systems.',
-  },
-  {
-    question: 'What is the difference between ADGM Courts and DIFC Courts for divorce?',
-    answer: 'Both apply English common law in English. DIFC Courts are in Dubai under Dubai Law No. 2 of 2025 and have an established personal status jurisdiction for non-Muslim residents. ADGM Courts are in Abu Dhabi and require an ADGM connection. Both are appropriate for HNW complex cases. Choose based on where your assets, business interests, and employment are concentrated.',
+    question: 'Will a divorce from the Abu Dhabi Civil Family Court be recognised abroad?',
+    answer: 'A divorce from the Abu Dhabi Civil Family Court is a formal court judgment and can generally be recognised abroad under the rules of your home country, usually after attestation and translation. Requirements differ by country, so confirm the steps with a lawyer at home before relying on it.',
   },
 ];
 ---
@@ -160,21 +71,20 @@ const faqItems = [
   canonical="https://divorceu.ae/en/adgm-divorce-abu-dhabi/"
   {hreflang}
   lang="en"
+  lastmod="2026-09-21"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
     <Breadcrumb items={breadcrumbs} />
   </div>
 
   <section class="hero-section">
     <div class="hero-inner">
-      <p class="hero-tag">Abu Dhabi Divorce Guide · ADGM Courts 2025</p>
+      <p class="hero-tag">Abu Dhabi Divorce Guide · ADGM Courts 2026</p>
       <h1>{title}</h1>
       <p class="hero-desc">
-        Abu Dhabi has three distinct divorce tracks for non-Muslim expats: the Abu Dhabi Personal Status Court (Arabic, Sharia framework), the Abu Dhabi Civil Family Court at Hudayriyat Island (English, Federal Law 41/2022), and the ADGM Courts on Al Maryah Island (English, English common law). This guide covers the ADGM route: who it is designed for, what it costs, how asset division works under common law, and when it makes sense to use ADGM rather than the mainstream ADCFC.
+        Many expats search for an "ADGM divorce" hoping for an English-language, common-law process in Abu Dhabi. The ADGM Courts cannot provide one. They are civil and commercial courts, and family cases sit outside their remit. The good news is that Abu Dhabi already has what most people are looking for: a Civil Family Court for non-Muslims that works in Arabic and English and grants divorce without anyone having to prove fault.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong> · UAE Expat &amp; Legal Consultant · divorceu.ae</p>
+      <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated September 2026</p>
     </div>
   </section>
 
@@ -182,217 +92,179 @@ const faqItems = [
     <main class="main-content">
 
       <div class="answer-box">
-        <h2>Quick summary, ADGM divorce</h2>
-        <p>
-          <strong>ADGM Courts</strong> on Al Maryah Island apply <strong>English common law</strong> in English.
-          Available to non-Muslims with a genuine ADGM connection (employment, registered business, or residence ties).
-          Filing fees: <strong>USD 1,500-3,000+</strong>. Total legal costs: <strong>AED 100,000-500,000+</strong> for contested cases.
-          Asset division follows English discretionary principles, broader than UAE's separate property rule.
-          Most Abu Dhabi non-Muslim divorces belong in the <strong>ADCFC at Hudayriyat Island</strong>, not ADGM.
-          ADGM is the right choice for <strong>AED 5M+ cases</strong> with offshore holdings or complex structures.
-        </p>
+        <h2>The short answer</h2>
+        <ul class="key-facts">
+          <li><strong>The ADGM Courts cannot grant a divorce.</strong> They hear civil and commercial cases and handle the ADGM non-Muslim wills registry and probate.</li>
+          <li><strong>Non-Muslims divorce at the Abu Dhabi Civil Family Court,</strong> created under Abu Dhabi Law No. 14 of 2021. It works in Arabic and English and grants no-fault divorce.</li>
+          <li><strong>ADGM companies and assets</strong> are dealt with by the family court as part of the financial claims, not by the ADGM Courts.</li>
+          <li><strong>ADGM wills</strong> are worth reviewing after a divorce.</li>
+          <li><strong>The DIFC Courts in Dubai</strong> cannot grant a divorce either.</li>
+        </ul>
       </div>
 
       <section class="content-section">
-        <h2>Abu Dhabi's Three Divorce Tracks</h2>
+        <h2>What the ADGM Courts Actually Do</h2>
         <p>
-          Abu Dhabi is unusual among UAE emirates in offering non-Muslim expats three separate divorce forums. Understanding which track applies to your situation is the first and most important step.
-        </p>
-        <h3>Track 1: Abu Dhabi Personal Status Court</h3>
-        <p>
-          The mainstream court for Muslim residents of Abu Dhabi, applying Federal Decree-Law No. 41 of 2024 in Arabic. Non-Muslim residents can also use this court if they choose to apply UAE personal status law, but most non-Muslims prefer one of the English-language options below.
-        </p>
-        <h3>Track 2: Abu Dhabi Civil Family Court (ADCFC) at Hudayriyat Island</h3>
-        <p>
-          Created under Abu Dhabi Law No. 14 of 2021 and now operating under Federal Decree-Law No. 41 of 2022, the ADCFC is the mainstream English-language civil divorce option for non-Muslim Abu Dhabi residents. It applies UAE civil family law, offers no-fault divorce, joint custody as default, and the option to elect home country law. Filing fees are accessible (AED 500 to 1,500). This is the correct choice for the majority of non-Muslim expat divorces in Abu Dhabi.
-        </p>
-        <h3>Track 3: ADGM Courts at Al Maryah Island</h3>
-        <p>
-          The ADGM Courts are the judicial arm of the Abu Dhabi Global Market, an international financial free zone established under UAE Federal Decree No. 15 of 2013. ADGM Courts apply English common law, are staffed by English-qualified judges, and conduct proceedings entirely in English. They are accessible to non-Muslims with a genuine connection to ADGM. The ADGM route is designed for high-net-worth individuals with complex financial situations where English common law's broader discretionary toolkit offers practical advantages over UAE civil family law.
-        </p>
-      </section>
-
-      <section class="content-section">
-        <h2>ADGM Courts, What They Are</h2>
-        <p>
-          ADGM Courts were established under ADGM Founding Law (Abu Dhabi Law No. 4 of 2013) and the ADGM Courts, Civil Evidence, Judgments, Enforcement and Judicial Appointments Regulations 2015. The courts sit on Al Maryah Island in Abu Dhabi, in the same free zone as international banks, law firms, and financial institutions.
+          Abu Dhabi Global Market (ADGM) is Abu Dhabi's international financial centre on Al Maryah Island. Like the DIFC in Dubai, it has its own legal system built on English common law and its own English-language courts, the ADGM Courts, with a Court of First Instance and a Court of Appeal. The set-up is real and well regarded, and it is the reason the idea of an "ADGM divorce" keeps coming up.
         </p>
         <p>
-          The Court of First Instance is the primary trial court within ADGM, with the Court of Appeal hearing appeals. Both courts apply English common law as supplemented by ADGM Regulations. Judges are typically senior barristers or former judges from English-speaking common law jurisdictions.
+          The ADGM Courts exist to resolve civil and commercial disputes: contracts, banking and finance, companies and shareholders, employment within ADGM, and other claims connected to the financial centre. Their one role that touches family life is succession. ADGM runs a wills registry for non-Muslims, and its courts handle probate of the wills registered there.
         </p>
         <p>
-          ADGM Courts have jurisdiction over non-Muslim personal status matters, including divorce, financial orders on divorce, and related relief, where the parties have a real and substantial connection to ADGM. This connection can be established through employment at an ADGM-registered company, a business incorporated in ADGM, or established residence in the Abu Dhabi area with significant financial interests tied to ADGM activities.
-        </p>
-      </section>
-
-      <section class="content-section">
-        <h2>ADGM vs ADCFC, Comparison</h2>
-        <div class="compare-table">
-          <div class="compare-header">
-            <div>Factor</div>
-            <div>ADGM Courts</div>
-            <div>ADCFC (Hudayriyat)</div>
-          </div>
-          {comparisonData.map((row, i) => (
-            <div class={`compare-row${i % 2 === 1 ? ' alt' : ''}`}>
-              <div class="compare-factor">{row.factor}</div>
-              <div class="compare-col">{row.adgm}</div>
-              <div class="compare-col">{row.adcfc}</div>
-            </div>
-          ))}
-        </div>
-        <p class="note-text">ADCFC = Abu Dhabi Civil Family Court at Hudayriyat Island. Both courts conduct proceedings in English for non-Muslim cases.</p>
-      </section>
-
-      <section class="content-section">
-        <h2>Who Should Use ADGM Courts for Divorce</h2>
-        <p>
-          The ADGM route is not for everyone. It carries higher costs, requires a genuine ADGM connection, and is procedurally more demanding than the ADCFC. The cases where ADGM genuinely adds value over the ADCFC share several characteristics:
-        </p>
-        <h3>High-value cases with complex asset structures</h3>
-        <p>
-          When the total asset value in dispute exceeds AED 5 million, the broader discretionary jurisdiction of English common law applied by ADGM Courts can produce better outcomes than either UAE civil family law or the separate property rules of UAE personal status law. English common law allows the court to consider all assets regardless of registration, to look through corporate structures, and to apply needs-based analysis that can benefit the financially weaker spouse in a way UAE law does not.
-        </p>
-        <h3>Offshore holdings and international business interests</h3>
-        <p>
-          If significant assets are held through offshore companies, trusts, or foreign investment structures, the ADGM Courts' common law toolkit includes Mareva injunctions, Anton Piller orders, and cross-border disclosure mechanisms that mainland UAE courts do not provide. The English common law framework is also more readily recognised and enforced in BVI, Cayman Islands, UK, and other common law jurisdictions where offshore structures are typically registered.
-        </p>
-        <h3>Those who prefer English proceedings and common law outcomes</h3>
-        <p>
-          For non-Muslim expats from common law jurisdictions (UK, Australia, Canada, India, Nigeria, and others) who are accustomed to how English family law works, the ADGM route provides familiar procedure and predictable outcomes within the common law framework. Proceedings are entirely in English, and there is no need for translation of documents or court interpretation.
-        </p>
-        <h3>When both parties have ADGM employment or business connections</h3>
-        <p>
-          If both spouses work for or operate businesses registered within ADGM, the jurisdictional basis is straightforward and the ADGM Courts are the natural forum for the dissolution of the marriage's financial affairs.
-        </p>
-      </section>
-
-      <section class="content-section">
-        <h2>Asset Division Under ADGM English Common Law</h2>
-        <p>
-          This is where ADGM Courts differ most significantly from both mainland UAE courts and the ADCFC. UAE personal status law and Federal Decree-Law No. 41 of 2022 both apply variations of a separate property rule: assets in one party's name belong to that party, subject to contribution claims. English common law, as applied by ADGM, takes a fundamentally different approach.
-        </p>
-        <p>
-          ADGM Courts applying English common law consider the following factors when determining financial orders on divorce:
-        </p>
-        <ul>
-          <li>The welfare of any children, which is the first consideration</li>
-          <li>The income, earning capacity, property, and financial resources of each party now and in the foreseeable future</li>
-          <li>The financial needs, obligations, and responsibilities of each party</li>
-          <li>The standard of living enjoyed during the marriage</li>
-          <li>The age of each party and duration of the marriage</li>
-          <li>Any physical or mental disability of either party</li>
-          <li>Contributions made by each party, including non-financial contributions such as homemaking and childcare</li>
-          <li>The conduct of each party, where it would be inequitable to disregard it</li>
-          <li>The value of any benefit that a party will lose on divorce (such as pension rights)</li>
-        </ul>
-        <p>
-          Critically, the ADGM Court is not limited to assets in one party's name. A spouse who contributed to the household without earning income, running the family home, raising children while the other built a business, has standing under English common law principles to seek a share of assets registered entirely in the other spouse's name. This is fundamentally different from UAE's position.
+          What the ADGM Courts do not do is hear family cases. They cannot grant a divorce, and they do not decide custody, alimony, child maintenance or financial claims between spouses. If a website suggests you can obtain an ADGM divorce decree, treat it as marketing shorthand rather than a description of the court's powers.
         </p>
         <div class="info-box info-box--info">
-          <h3>The "needs plus sharing" approach</h3>
-          <p>In practice, ADGM Courts applying English principles often work from a starting point of equal division of all matrimonial assets, then depart from equality to meet the particular needs of each party (especially children's welfare and housing needs of the primary carer). Pre-marital assets and gifts or inheritances received by one party individually are treated more cautiously, but they can still be considered if meeting needs requires it. This is a more generous framework for financially dependent spouses than UAE civil law.</p>
+          <h3>In one line</h3>
+          <p>ADGM is where many people keep their wills and their companies, not where they end their marriages. For the divorce itself, Abu Dhabi has a separate court built for exactly that job.</p>
         </div>
       </section>
 
       <section class="content-section">
-        <h2>Abu Dhabi Law No. 14 of 2021, The Foundation</h2>
+        <h2>Why People Search for an ADGM Divorce</h2>
         <p>
-          Abu Dhabi Law No. 14 of 2021 was the initial foundation for non-Muslim civil family law in Abu Dhabi, providing for civil marriage registration, no-fault divorce, joint custody, and civil inheritance rules for non-Muslims resident in Abu Dhabi. When Federal Decree-Law No. 41 of 2022 was enacted at the federal level, it extended equivalent provisions across all UAE emirates.
+          The search is usually shorthand for a wish list: proceedings in English, a court that reasons in a way that feels familiar from home, and a process that does not require one spouse to prove the other did something wrong. ADGM's reputation ticks all three boxes, so it becomes the search term.
         </p>
         <p>
-          ADGM divorce sits within the framework created by Abu Dhabi Law No. 14 of 2021 in the sense that the ADGM Courts are one of the judicial bodies authorised to handle non-Muslim civil family matters in Abu Dhabi. However, ADGM Courts apply English common law as the substantive law of the free zone rather than the UAE civil family law statute. This distinction matters enormously for outcomes in asset-heavy cases.
+          Some of the confusion comes from online content that describes ADGM as a "third track" for divorce, quotes ADGM filing fees for a divorce petition, or promises English-style needs and sharing orders. None of that reflects how the courts work. There is no ADGM divorce petition, no ADGM family fee scale and no ADGM financial remedy on divorce.
+        </p>
+        <p>
+          The instinct behind the search is sound, though. Every item on that wish list is available in Abu Dhabi through the correct court: English-language proceedings, a civil rather than religious framework, and no-fault divorce are all features of the Abu Dhabi Civil Family Court. The same question comes up in Dubai, and our guide to <a href="/en/difc-divorce-dubai/">DIFC divorce in Dubai</a> reaches the same conclusion about the DIFC Courts.
         </p>
       </section>
 
       <section class="content-section">
-        <h2>The ADGM Filing Process</h2>
+        <h2>Where Non-Muslims Really Divorce in Abu Dhabi</h2>
+        <p>
+          The venue is the Abu Dhabi Civil Family Court, part of the Abu Dhabi Judicial Department (ADJD) and also known as the Non-Muslim Family Court. It was created under Abu Dhabi Law No. 14 of 2021, which gave non-Muslims in the emirate a civil personal status regime before the federal civil law followed in 2022, and it has handled civil marriages, divorces and related claims since it opened at the end of 2021. The ADJD describes the court and its services on its <a href="https://www.adjd.gov.ae/EN/Pages/nonmuslimsfamilycourt.aspx" rel="noopener" target="_blank">official Non-Muslim Family Court page</a>.
+        </p>
+        <h3>Why it is the court most people are really looking for</h3>
+        <ul>
+          <li><strong>Arabic and English:</strong> the court works bilingually, so hearings and documents are accessible to expats who do not read Arabic.</li>
+          <li><strong>No-fault divorce:</strong> either spouse can ask for a divorce without proving harm, misconduct or any particular ground.</li>
+          <li><strong>Speed:</strong> there is no mandatory reconciliation stage, and an uncontested case often needs only a single hearing.</li>
+          <li><strong>Civil rules on the family issues:</strong> custody, alimony and other financial claims are decided under the civil regime, with joint custody as the starting point.</li>
+        </ul>
+        <p>
+          Muslim couples in Abu Dhabi use the Abu Dhabi Personal Status Court instead, under Federal Decree-Law No. 41 of 2024. If you live in Dubai or one of the northern emirates, the civil route for non-Muslims runs through the local personal status court under Federal Decree-Law No. 41 of 2022. Our guide to <a href="/en/non-muslim-divorce-uae/">non-Muslim divorce in the UAE</a> explains how that works, and the <a href="/en/dubai-vs-abu-dhabi-divorce/">Dubai vs Abu Dhabi divorce comparison</a> sets the two emirates side by side.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>How a Civil Family Court Divorce Works, Step by Step</h2>
+        <p>
+          The outline below is deliberately high level. Our full walkthrough of <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file for divorce in Abu Dhabi</a> covers the forms, fees and timelines in detail.
+        </p>
         <ol class="steps">
           <li>
             <div class="step-num">1</div>
             <div class="step-body">
-              <h3>Instruct an ADGM-registered legal practitioner</h3>
-              <p>Only practitioners registered with the ADGM Courts can appear in ADGM proceedings. These are typically UAE-licensed advocates with additional ADGM registration, or international law firms with ADGM offices. Your first step is engaging a practitioner with ADGM family law experience.</p>
+              <h3>Confirm you can use the civil route</h3>
+              <p>The court is designed for non-Muslims with a connection to Abu Dhabi, such as residence in the emirate or a civil marriage registered there. A short jurisdiction check with a lawyer avoids a filing that gets turned away.</p>
             </div>
           </li>
           <li>
             <div class="step-num">2</div>
             <div class="step-body">
-              <h3>Establish the ADGM connection</h3>
-              <p>Your lawyer confirms that you have a real and substantial connection to ADGM. This typically involves documenting employment with an ADGM entity, a business registration within the free zone, or establishing residence and financial ties that satisfy the jurisdictional test.</p>
+              <h3>Gather your documents</h3>
+              <p>Typically the marriage certificate, passports and Emirates IDs for both spouses, and any marriage or settlement agreement. Foreign documents may need translation and attestation. Our <a href="/en/documents-for-divorce-uae/">documents checklist</a> lists what to prepare.</p>
             </div>
           </li>
           <li>
             <div class="step-num">3</div>
             <div class="step-body">
-              <h3>File the divorce petition at ADGM Court of First Instance</h3>
-              <p>The petition is filed in English and sets out the grounds for divorce, the relief sought (financial orders, custody arrangements), and the jurisdictional basis. Filing fees of USD 1,500 to USD 3,000 are paid at this stage. The court issues a claim number and the respondent is served.</p>
+              <h3>Submit the application</h3>
+              <p>Applications go in through the ADJD channels, such as an approved typing centre or the ADJD smart services. A lawyer can file for you under a power of attorney.</p>
             </div>
           </li>
           <li>
             <div class="step-num">4</div>
             <div class="step-body">
-              <h3>Financial disclosure and case management</h3>
-              <p>ADGM Courts require full financial disclosure from both parties: asset schedules, business valuations, pension values, and details of offshore holdings. The court issues case management directions setting timelines for disclosure, expert reports, and hearing dates.</p>
+              <h3>Attend the hearing</h3>
+              <p>Either spouse can ask for the divorce without giving reasons. In an uncontested case the divorce is often granted at a single hearing, and there is no mandatory reconciliation stage first.</p>
             </div>
           </li>
           <li>
             <div class="step-num">5</div>
             <div class="step-body">
-              <h3>Financial dispute resolution (FDR) or contested hearing</h3>
-              <p>Most ADGM family cases include a Financial Dispute Resolution hearing, a without-prejudice negotiation meeting before a judge who gives an indication of likely outcomes. This often produces settlement. If settlement is not reached, the case proceeds to a final contested hearing where the judge makes binding orders.</p>
+              <h3>Agree or apply for the family orders</h3>
+              <p>Custody, alimony, child support and other financial claims are either agreed between you or decided by the court under the civil rules. Our guides to <a href="/en/child-custody-abu-dhabi/">child custody in Abu Dhabi</a> and <a href="/en/alimony-abu-dhabi/">alimony in Abu Dhabi</a> explain what to expect.</p>
             </div>
           </li>
           <li>
             <div class="step-num">6</div>
             <div class="step-body">
-              <h3>Judgment and enforcement</h3>
-              <p>The court issues financial orders specifying each party's entitlements. ADGM judgments are enforceable in Abu Dhabi through the standard UAE enforcement mechanisms, and in common law jurisdictions abroad through international enforcement frameworks.</p>
+              <h3>Collect and attest the judgment</h3>
+              <p>Once the judgment is issued, it can be attested for use abroad, for example to update your civil status at home or to remarry.</p>
             </div>
           </li>
         </ol>
       </section>
 
       <section class="content-section">
-        <h2>ADGM Wills, Register Alongside Your Divorce</h2>
+        <h2>Assets or Companies Held in ADGM</h2>
         <p>
-          Divorce is the most significant financial restructuring event most people experience. While proceedings are ongoing, your existing estate plan may no longer reflect your wishes or circumstances. If you hold UAE-based assets, property, investments, business shares, bank accounts, an ADGM Will ensures those assets pass according to your intentions rather than under UAE intestacy rules.
+          ADGM hosts a large number of companies, holding structures, funds and family offices, so it is common for one spouse to own shares in an ADGM entity or to work for an ADGM employer. None of that moves the divorce into the ADGM Courts. The family court deciding your divorce, usually the Civil Family Court for non-Muslims in Abu Dhabi, deals with ADGM assets as part of the financial claims, just as it would with a mainland company or a bank account.
         </p>
+        <h3>What that means in practice</h3>
+        <ul>
+          <li><strong>Disclosure:</strong> ADGM shareholdings, dividends, salary, bonuses and employment benefits belong in the financial picture that both spouses put before the family court. ADGM company registry records can help confirm who owns what.</li>
+          <li><strong>Protecting assets:</strong> where there is a real risk that assets will be moved, the family court can order a precautionary attachment through the normal onshore procedures. There is no separate ADGM family remedy to apply for.</li>
+          <li><strong>Valuation:</strong> if a spouse owns a business through an ADGM company, its value is assessed within the family case, usually with the help of an expert report.</li>
+          <li><strong>Separate commercial disputes:</strong> a genuine dispute between shareholders, or with the company itself, can still go to the ADGM Courts on its own facts. That case runs alongside the divorce, not instead of it, and it does not decide the family claims.</li>
+        </ul>
         <p>
-          For non-Muslims, UAE intestacy rules apply the UAE Civil Code rather than your home country's law. An ADGM Will overrides this and allows you to direct your UAE assets to whomever you choose. ADGM Wills cost approximately USD 950 to USD 1,500 to register and can cover all UAE-based assets in a single document.
-        </p>
-        <p>
-          The DIFC Wills Service also operates an equivalent scheme for assets across all UAE emirates and is often used alongside or as an alternative to ADGM Wills registration. Your ADGM lawyer can register a Will concurrently with divorce proceedings at minimal additional cost.
+          If a business is at the centre of your finances, our guide to <a href="/en/divorce-business-owner-uae/">divorce when you own a business in the UAE</a> explains how shares, valuations and contribution claims work, and our <a href="/en/property-division-divorce-uae/">property division guide</a> covers real estate and joint assets. Assets held outside the UAE raise their own questions, which our guide to <a href="/en/offshore-assets-divorce-uae/">offshore assets in a UAE divorce</a> covers.
         </p>
       </section>
 
       <section class="content-section">
-        <h2>When ADGM Makes Sense, and When It Does Not</h2>
-        <div class="scenario-grid">
-          <div class="scenario-card scenario-card--yes">
-            <p class="scenario-title">Consider ADGM when:</p>
-            <ul>
-              <li>Total assets exceed AED 5 million in value</li>
-              <li>One or both parties are employed by or own a business in ADGM</li>
-              <li>Significant assets are held offshore (BVI, Cayman, Jersey)</li>
-              <li>There are international business interests requiring common law enforcement tools</li>
-              <li>You need worldwide freezing orders or other common law interim relief</li>
-              <li>One party has contributed significantly as non-earning spouse and needs English needs-based analysis</li>
-              <li>Enforceability in other common law jurisdictions is a priority</li>
-            </ul>
-          </div>
-          <div class="scenario-card scenario-card--no">
-            <p class="scenario-title">Use ADCFC instead when:</p>
-            <ul>
-              <li>Assets are below AED 5 million</li>
-              <li>No genuine ADGM employment or business connection</li>
-              <li>Straightforward property and custody matters</li>
-              <li>Both parties agree on the main terms</li>
-              <li>Cost is a significant consideration</li>
-              <li>You are a standard Abu Dhabi resident without financial free zone ties</li>
-            </ul>
-          </div>
+        <h2>ADGM Wills and Estate Planning After Divorce</h2>
+        <p>
+          This is where ADGM genuinely matters to a divorcing couple. ADGM runs a wills registry for non-Muslims, and a registered ADGM will lets the assets it covers pass under your will rather than under default inheritance rules. The DIFC Wills Service Centre in Dubai offers a similar service, with probate in the DIFC Courts. Both are estate-planning tools. Neither has anything to do with how or where you divorce.
+        </p>
+        <p>
+          A divorce is still a good moment to look at your will again. A will written during the marriage often names your spouse as the main beneficiary, as an executor, or as the person who would look after your children if something happened to you. Once the divorce and the financial arrangements are settled, those choices may no longer reflect what you want.
+        </p>
+        <ul>
+          <li><strong>Review beneficiaries:</strong> check who receives your UAE property, accounts and business interests under your current will.</li>
+          <li><strong>Check executors and guardians:</strong> decide whether your former spouse should keep any role, particularly as guardian of your children.</li>
+          <li><strong>Ask how divorce affects your existing will:</strong> the effect of a divorce on an earlier will depends on the rules that govern it, so confirm the position with a lawyer rather than assuming the will updates itself. Many people make the update once the financial settlement is final.</li>
+        </ul>
+        <p>
+          The family lawyer handling your Abu Dhabi divorce can usually point you to a wills specialist. If you are still choosing representation, our guide to finding a <a href="/en/divorce-lawyer-abu-dhabi/">divorce lawyer in Abu Dhabi</a> explains what to look for.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>DIFC, ADGM and the Civil Family Court Compared</h2>
+        <p>
+          The table sets the two financial-centre courts against the court that actually decides non-Muslim divorces in Abu Dhabi. The point is not that one is better than the others. They do different jobs.
+        </p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>DIFC Courts</th>
+                <th>ADGM Courts</th>
+                <th>Abu Dhabi Civil Family Court</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonData.map((row) => (
+                <tr>
+                  <td class="td-highlight">{row.factor}</td>
+                  <td>{row.difc}</td>
+                  <td>{row.adgm}</td>
+                  <td>{row.adcfc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+        <p>
+          The rows that matter most are the divorce and family-claims rows. Only the Civil Family Court can end the marriage and decide custody, alimony and the financial claims, so asking the ADGM Courts for any of them wastes time and money. For the wider legal framework behind every UAE divorce, see our overview of <a href="/en/uae-divorce-law/">UAE divorce law</a>.
+        </p>
       </section>
 
       <FAQSection items={faqItems} />
@@ -400,33 +272,37 @@ const faqItems = [
       <section class="content-section">
         <h2>Related Guides</h2>
         <div class="related-grid">
+          <a href="/en/how-to-file-for-divorce-in-abu-dhabi/" class="related-card">
+            <strong>How to File for Divorce in Abu Dhabi</strong>
+            <span>The Civil Family Court process, step by step</span>
+          </a>
+          <a href="/en/difc-divorce-dubai/" class="related-card">
+            <strong>DIFC Divorce Dubai</strong>
+            <span>Why the DIFC Courts cannot grant a divorce either</span>
+          </a>
           <a href="/en/non-muslim-divorce-uae/" class="related-card">
             <strong>Non-Muslim Divorce UAE</strong>
-            <span>Federal Law 41/2022 complete guide for expats</span>
+            <span>Federal Law 41/2022 and the civil route</span>
           </a>
           <a href="/en/divorce-lawyer-abu-dhabi/" class="related-card">
             <strong>Divorce Lawyer Abu Dhabi</strong>
-            <span>Abu Dhabi courts, ADCFC, and all options</span>
+            <span>Abu Dhabi courts and finding the right lawyer</span>
           </a>
-          <a href="/en/difc-divorce-dubai/" class="related-card">
-            <strong>DIFC Courts for Divorce Dubai</strong>
-            <span>English common law divorce in Dubai</span>
-          </a>
-          <a href="/en/property-division-divorce-uae/" class="related-card">
-            <strong>Property Division in UAE Divorce</strong>
-            <span>UAE's separate property rule and DLD transfers</span>
+          <a href="/en/dubai-vs-abu-dhabi-divorce/" class="related-card">
+            <strong>Dubai vs Abu Dhabi Divorce</strong>
+            <span>How the two emirates compare</span>
           </a>
           <a href="/en/divorce-business-owner-uae/" class="related-card">
             <strong>Divorce if You Own a Business UAE</strong>
-            <span>LLC shares, free zone companies, offshore structures</span>
+            <span>Shares, valuations, and free zone companies</span>
+          </a>
+          <a href="/en/property-division-divorce-uae/" class="related-card">
+            <strong>Property Division in UAE Divorce</strong>
+            <span>How property and joint assets are divided</span>
           </a>
           <a href="/en/divorce-for-expats-in-uae/" class="related-card">
             <strong>Divorce in UAE for Expats</strong>
             <span>Jurisdiction, law choices, and recognition abroad</span>
-          </a>
-          <a href="/en/dubai-vs-abu-dhabi-divorce/" class="related-card">
-            <strong>Dubai vs Abu Dhabi Divorce</strong>
-            <span>ADCFC, DIFC, ADGM, which court framework suits you</span>
           </a>
         </div>
       </section>
@@ -447,8 +323,7 @@ const faqItems = [
   .hero-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.75rem; }
   h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
   .hero-desc { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; margin-bottom: 0.75rem; }
-  .hero-author { font-size: 0.85rem; color: #9ca3af; }
-  .hero-author strong { color: #fff; }
+  .byline { font-size: 0.85rem; color: #9ca3af; margin: 0; }
 
   .page-layout { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: start; }
   .main-content { min-width: 0; }
@@ -456,8 +331,9 @@ const faqItems = [
 
   .answer-box { background: #fef3c7; border-left: 4px solid #c9a84c; padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem; }
   .answer-box h2 { font-size: 1.1rem; font-weight: 700; color: #78350f; margin: 0 0 0.5rem; }
-  .answer-box p { color: #1f2937; line-height: 1.9; margin: 0; font-size: 0.97rem; }
-  .answer-box strong { color: #78350f; }
+  .key-facts { margin: 0; padding-left: 1.25rem; }
+  .key-facts li { color: #1f2937; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0.35rem; }
+  .key-facts strong { color: #78350f; }
 
   .content-section { margin-bottom: 2.5rem; }
   .content-section h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; color: #0a1628; margin-bottom: 1rem; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; }
@@ -465,45 +341,41 @@ const faqItems = [
   .content-section p { color: #374151; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
   .content-section ul { margin: 0.5rem 0 1rem 1.5rem; }
   .content-section li { color: #374151; line-height: 1.75; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .content-section a { color: #b8860b; font-weight: 600; text-decoration: underline; }
 
   .info-box { border-radius: 0.75rem; padding: 1.1rem 1.4rem; margin: 1rem 0; }
   .info-box--info { background: #eaf4fb; border: 1px solid #a9cce3; }
-  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #0a1628; }
+  .info-box--warning { background: #fffbe6; border: 1px solid #f0d060; }
+  .info-box h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.4rem; color: #0a1628; }
   .info-box p { font-size: 0.88rem; line-height: 1.65; color: #374151; margin: 0; }
 
-  .compare-table { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; overflow-x: auto; margin-bottom: 0.75rem; }
-  .compare-header { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; background: #0a1628; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 10px 14px; gap: 10px; min-width: 520px; }
-  .compare-row { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; padding: 10px 14px; gap: 10px; border-top: 1px solid #f3f4f6; font-size: 0.85rem; min-width: 520px; }
-  .compare-row.alt { background: #fafafa; }
-  .compare-factor { font-weight: 700; color: #0a1628; }
-  .compare-col { color: #374151; }
-  .note-text { font-size: 0.82rem; color: #6b7280; font-style: italic; border-left: 3px solid #c9a84c; padding-left: 0.75rem; margin-top: 0.5rem; }
+  .table-wrapper { overflow-x: auto; margin-bottom: 1rem; border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 620px; }
+  .data-table thead tr { background: #0a1628; color: #fff; }
+  .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+  .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; color: #374151; }
+  .data-table tr:nth-child(even) td { background: #f8f9fa; }
+  .td-highlight { font-weight: 700; color: #0a1628; }
 
   .steps { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
-  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; }
+  .steps li { display: flex; gap: 1rem; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 1.1rem; margin: 0; }
   .step-num { width: 2rem; height: 2rem; min-width: 2rem; background: #0a1628; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
   .step-body h3 { font-size: 0.95rem; font-weight: 700; color: #0a1628; margin: 0 0 0.3rem; }
   .step-body p { font-size: 0.875rem; color: #374151; margin: 0; line-height: 1.7; }
-
-  .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .scenario-card { padding: 1.25rem; border-radius: 10px; }
-  .scenario-card--yes { background: #f0fdf4; border: 1.5px solid #86efac; }
-  .scenario-card--no { background: #fef9ec; border: 1.5px solid #fde68a; }
-  .scenario-title { font-weight: 700; color: #0a1628; font-size: 0.9rem; margin: 0 0 0.75rem; }
-  .scenario-card ul { margin: 0; padding-left: 1.2rem; }
-  .scenario-card li { font-size: 0.85rem; color: #374151; line-height: 1.65; margin-bottom: 0.3rem; }
 
   .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .related-card { display: flex; flex-direction: column; gap: 4px; padding: 1rem; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
   .related-card:hover { border-color: #c9a84c; }
   .related-card strong { color: #0a1628; font-size: 0.9rem; }
   .related-card span { color: #6b7280; font-size: 0.78rem; }
+  .content-section a.related-card { font-weight: 400; text-decoration: none; }
 
   @media (max-width: 900px) {
     .page-layout { grid-template-columns: 1fr; }
     .sidebar { order: -1; }
   }
   @media (max-width: 640px) {
-    .related-grid, .scenario-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .data-table { min-width: unset; }
   }
 </style>

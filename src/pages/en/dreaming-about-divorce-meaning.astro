@@ -106,6 +106,7 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
   canonical="https://divorceu.ae/en/dreaming-about-divorce-meaning/"
   lang="en"
   hreflang={hreflang}
+  noindex={true}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <Breadcrumb items={breadcrumbs} />
@@ -190,11 +191,11 @@ const faqItems = faqSchema.mainEntity.map((q) => ({
         <h2>Related Guides</h2>
         <div class="related-grid">
           {[
-            { title: 'Divorce in UAE', href: '/en/divorce-in-uae', desc: 'Complete guide to divorce in UAE for residents and expats.' },
-            { title: 'Khulʿa Divorce UAE', href: '/en/khula-divorce-uae', desc: 'Wife-initiated divorce, conditions, process and mahr.' },
-            { title: "Wife's Rights After Divorce UAE", href: '/en/wife-rights-after-divorce-uae', desc: 'Mahr, alimony, custody rights and residency.' },
-            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae', desc: 'Full cost breakdown, court fees and lawyer fees.' },
-            { title: 'Divorce Rate in UAE', href: '/en/divorce-rate-uae', desc: 'Statistics, trends and causes behind UAE divorce figures.' },
+            { title: 'Divorce in UAE', href: '/en/divorce-in-uae/', desc: 'Complete guide to divorce in UAE for residents and expats.' },
+            { title: 'Khulʿa Divorce UAE', href: '/en/khula-divorce-uae/', desc: 'Wife-initiated divorce, conditions, process and mahr.' },
+            { title: "Wife's Rights After Divorce UAE", href: '/en/wife-rights-after-divorce-uae/', desc: 'Mahr, alimony, custody rights and residency.' },
+            { title: 'Divorce Cost in UAE', href: '/en/divorce-cost-uae/', desc: 'Full cost breakdown, court fees and lawyer fees.' },
+            { title: 'Divorce Rate in UAE', href: '/en/divorce-rate-uae/', desc: 'Statistics, trends and causes behind UAE divorce figures.' },
           ].map(link => (
             <a href={link.href} class="related-card">
               <span class="related-title">{link.title} →</span>
