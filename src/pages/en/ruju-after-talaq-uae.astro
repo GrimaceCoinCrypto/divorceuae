@@ -1,0 +1,817 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Ruju After Talaq in the UAE: How to Take Your Wife Back (2026)';
+const description =
+  'Ruju after 1st or 2nd talaq in the UAE: the iddah deadline, valid wording, the 15-day court rule, triple talaq counted as one, and when a new nikah is needed.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/ruju-after-talaq-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Ruju After Talaq', url: 'https://divorceu.ae/en/ruju-after-talaq-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suon', url: 'https://divorceu.ae/en/author/aleksi-suon/' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE', url: 'https://divorceu.ae' },
+  datePublished: '2026-10-09',
+  dateModified: '2026-10-09',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/ruju-after-talaq-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Can I do ruju after 2 talaq in the UAE?',
+    answer:
+      'Yes. A second talaq in a consummated marriage is still revocable, so you can take your wife back during her iddah by clear words or by action (Articles 60 to 62 of Federal Decree-Law No. 41 of 2024). Tell her at once, and register the ruju at court within 15 days if the talaq was registered (Article 64). After that only one talaq remains, and a third would be final.',
+  },
+  {
+    question: 'How many days do I have to do ruju after talaq?',
+    answer:
+      'As long as her iddah lasts: three periods of purity if she menstruates, three lunar months if she has passed menopause or never menstruated, or until the birth if she is pregnant (Articles 84 and 85). There is no fixed number of days, so act early. Once you have done ruju after a registered talaq, a separate 15-day deadline applies to register it at court (Article 64).',
+  },
+  {
+    question: 'Does the wife have to agree to ruju?',
+    answer:
+      'The 2024 UAE law does not make her consent a condition of a ruju during the iddah. Article 61 gives the right to the husband and says it is not lost by waiving it. Her agreement is needed for a new nikah after the iddah, and if she disputes a claimed ruju the husband needs proof (Article 63). A wife who does not want to continue the marriage can look at khula or a divorce for harm.',
+  },
+  {
+    question: 'Is ruju valid by phone or WhatsApp?',
+    answer:
+      'It can be. Article 62 accepts explicit spoken or written words, and a phone call or a clear message can meet that test if it is final and unconditional. The weak point is proof if your wife later disputes it. Keep the message, tell her in a way you can show later, and register the ruju at court within 15 days if the talaq was registered.',
+  },
+  {
+    question: 'Do we need a new nikah after the iddah ends?',
+    answer:
+      'Yes. If the iddah of a first or second talaq ends without ruju, the divorce becomes minor irrevocable and she is lawful to you again only with a new contract and a new mahr (Article 59(2)(a)). That is a fresh marriage, so it needs her agreement. After a third talaq even a new contract is not possible until she has completed an iddah from another husband who consummated a valid marriage with her (Article 59(2)(b)).',
+  },
+  {
+    question: 'What if the iddah ended and nobody registered the ruju?',
+    answer:
+      'The law does not say an unregistered ruju is void in itself. Article 64(2) makes it invalid where it was not registered within the 15-day period and the wife, not knowing of it, married another man. Otherwise the main problem is proof: her word that her iddah ended is accepted if enough time has passed (Article 63). Take advice quickly and bring your messages and witnesses.',
+  },
+  {
+    question: 'Can a husband take his wife back after khula?',
+    answer:
+      'No. Khula takes effect as a minor irrevocable divorce (Article 65), so there is no ruju. If both spouses want to reunite, they need a new marriage contract and a new mahr, and that needs her agreement. Khula itself must be documented at court within 15 days (Article 68).',
+  },
+  {
+    question: 'Is ruju possible after three talaqs said at once?',
+    answer:
+      'In a UAE court, yes, if it was otherwise a first or second talaq. Article 57 counts a repeated talaq, or a talaq coupled with a number, as one, whether it was spoken, written or given by a sign, so ruju stays open during the iddah. Scholars differ on how triple talaq in one sitting counts religiously, so many couples also ask a scholar. A talaq that completes three, counted this way, is final.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+  lastmod="2026-10-09"
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Ruju After Talaq in the UAE: Taking Your Wife Back Legally</h1>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated October 2026</p>
+        <p class="hero__sub">
+          Yes, a husband can take his wife back in the UAE, but only after a first or second talaq and
+          only while she is still in her iddah. He does it by clear words or by action, he must tell her
+          at once, and if the talaq was registered he must register the ruju at court within 15 days.
+          Once the iddah ends you need a new nikah, and after a third talaq ruju is closed.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Based on Federal Decree-Law No. 41 of 2024</li>
+          <li>✓ Article number for each rule</li>
+          <li>✓ Situation table: ruju yes or no</li>
+          <li>✓ Written for husbands and wives</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Talaq Given? Talk It Through Free" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Short answer -->
+    <section class="section" aria-labelledby="answer-heading">
+      <h2 id="answer-heading">Ruju After Talaq in the UAE: The Short Answer</h2>
+      <p>
+        A husband in the UAE can take his wife back (ruju, also written rujoo or raja&rsquo;a) after a
+        revocable talaq for as long as she is in her iddah, with no new contract and no new mahr. The
+        rules are in Articles 59 to 64 of Federal Decree-Law No. 41 of 2024, the Muslim personal status
+        law in force since 15 April 2025. Four points decide almost every case:
+      </p>
+      <ul class="checklist">
+        <li><strong>The talaq must be revocable.</strong> That means a first or second talaq in a valid marriage that was consummated, or where the couple had valid seclusion (Articles 59 and 60).</li>
+        <li><strong>The iddah must still be running.</strong> Once it ends, the divorce becomes irrevocable and you need a new contract and a new mahr (Article 59(2)(a)).</li>
+        <li><strong>The ruju must be clear and immediate.</strong> By words, writing or action, never conditional and never set for a future date (Article 62).</li>
+        <li><strong>Your wife must be told at once.</strong> If the talaq was registered, the ruju must be registered at court within 15 days (Article 64).</li>
+      </ul>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">1st or 2nd</span>
+          <span class="stat-label">talaq after which ruju is possible</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Iddah</span>
+          <span class="stat-label">the only window in which ruju works</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">15 days</span>
+          <span class="stat-label">to register the ruju if the talaq was registered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1</span>
+          <span class="stat-label">talaq is what &ldquo;three in one sitting&rdquo; counts as (Article 57)</span>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>This page explains UAE law, not religious rulings</h3>
+        <p>
+          UAE courts apply the statute, while scholars of different schools differ on points such as
+          which acts count as ruju. For a religious question, ask a qualified scholar; for your legal
+          position, the court or a UAE-licensed family lawyer. DivorceU.AE is a referral service, not a
+          law firm, and earns when readers ask to be put in touch with a lawyer.
+        </p>
+      </div>
+    </section>
+
+    <!-- What ruju means -->
+    <section class="section" aria-labelledby="meaning-heading">
+      <h2 id="meaning-heading">What Ruju Means Under UAE Law</h2>
+      <p>
+        Ruju is the husband resuming a marriage that a revocable talaq has put on hold. Article 59(1) of
+        the 2024 law says a revocable divorce does not end the marriage contract until the waiting period
+        expires. Until then the original nikah, with its original mahr, still stands, which is why a ruju
+        needs no new contract, no new mahr and no new ceremony.
+      </p>
+      <p>
+        Article 60 sets the default: every divorce in a valid marriage is revocable, with two exceptions.
+        The third talaq is a major irrevocable divorce, and a divorce before intercourse or seclusion is a
+        minor irrevocable divorce from the start. Seclusion (khalwa) means the spouses meeting alone where
+        each feels safe with the other and nobody can see them (Article 17). A marriage that ends before
+        either intercourse or valid seclusion leaves no iddah (Article 82), so there is no window in which
+        to take her back (see <a href="/en/divorce-before-consummation-uae/">divorce before consummation</a>). During a revocable iddah the spouses even still inherit from each other if one
+        of them dies.
+      </p>
+
+      <h3>Ruju, remarriage and a talaq that never happened</h3>
+      <div class="cards">
+        <div class="card">
+          <h3>Ruju</h3>
+          <p>
+            During the iddah of a first or second talaq. The husband&rsquo;s act. Same contract, same
+            mahr, nothing new to sign.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Remarriage</h3>
+          <p>
+            After the iddah has ended, or after khula. A new contract and a new mahr, which needs her
+            agreement like any marriage. See <a href="/en/remarriage-after-divorce-uae/">remarrying with a new contract</a>.
+          </p>
+        </div>
+        <div class="card">
+          <h3>No talaq at all</h3>
+          <p>
+            Words the law says never took effect (Article 56). Nothing to take back, and the count of
+            talaqs stays where it was.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Iddah deadline -->
+    <section class="section" aria-labelledby="deadline-heading">
+      <h2 id="deadline-heading">When Can You Do Ruju? The Iddah Deadline</h2>
+      <p>
+        You can do ruju at any moment from the talaq until her iddah ends, and not one day later. Article
+        61 gives the husband the right to take his wife back while she is in the waiting period. The
+        iddah is the period in which a woman may not remarry after a separation (Article 81), and its
+        length depends on her situation.
+      </p>
+
+      <h3>How long the iddah lasts</h3>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Her situation</th><th>Iddah</th><th>Article</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>She menstruates</td><td>Three periods of purity (in practice, roughly three cycles)</td><td>84(1)</td></tr>
+            <tr><td>She has passed menopause or has never menstruated</td><td>Three lunar months, a little shorter than three calendar months</td><td>84(2)</td></tr>
+            <tr><td>She is pregnant</td><td>Until the birth or a miscarriage</td><td>85</td></tr>
+            <tr><td>Divorce before intercourse and before valid seclusion</td><td>No iddah, so no ruju</td><td>82</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Federal Decree-Law No. 41 of 2024. More on rights during the waiting period in our
+          <a href="/en/iddah-waiting-period-uae/">iddah guide</a>.
+        </p>
+      </div>
+
+      <h3>When the clock starts for the court</h3>
+      <p>
+        The date that counts in court is not always the day the words were spoken. Under Article 83, the
+        iddah after a divorce runs from the date the divorce is proven before the court by evidence or
+        admission, and the court dates the divorce to the admission unless an earlier date is proven. The
+        court&rsquo;s count can therefore differ from yours, so do the ruju well inside the iddah as you
+        both count it.
+      </p>
+
+      <h3>Her word on the iddah</h3>
+      <p>
+        If the husband says he took his wife back and she says her iddah had already finished, Article
+        63(2) accepts her statement, as long as the time that passed is one in which an iddah usually
+        ends. On other points in a divorce or ruju dispute, her statement needs proof (Article 63(1)). A
+        late ruju with no witness and no message is hard to defend.
+      </p>
+    </section>
+
+    <!-- Counting -->
+    <section class="section" aria-labelledby="counting-heading">
+      <h2 id="counting-heading">Ruju After 1, 2 or 3 Talaq: How UAE Law Counts Them</h2>
+      <p>
+        Ruju is possible after the first and the second talaq, and impossible after the third. The harder
+        question is how many talaqs the law counts, and the 2024 law counts fewer than many couples expect.
+      </p>
+
+      <h3>Three talaqs in one sitting count as one</h3>
+      <p>
+        Article 57 says a repeated divorce, or a divorce coupled with a number, counts as one divorce,
+        whether it was spoken, written or given by a sign. Saying &ldquo;talaq, talaq, talaq&rdquo;, or
+        &ldquo;I give you three talaq&rdquo;, is one talaq in a UAE court. If it was the first, ruju is
+        still open during the iddah.
+      </p>
+      <p>
+        Scholars disagree here. Many classical jurists, including the Hanafi school followed by many South
+        Asian Muslims, count three pronouncements in one sitting as three; others count them as one. The
+        UAE statute takes the second approach, and the court applies it. For the religious question, ask
+        a scholar you trust; your legal status in the UAE follows Article 57. More in our guide to
+        <a href="/en/triple-talaq-uae/">whether triple talaq is valid in the UAE</a>.
+      </p>
+
+      <h3>A talaq repeated during the iddah does not add to the count</h3>
+      <p>
+        Article 56(1) says a divorce does not occur while the wife is in the waiting period of a divorce.
+        So a husband who says talaq on one day and again a few weeks later, before any ruju, has still
+        given one talaq in law. A second talaq counts only once the marriage is running again, after a
+        ruju or a new contract. This follows the plain wording of the statute, in Arabic as in English;
+        classical jurists often held that a talaq during a revocable iddah does add to the count, so if
+        the number of talaqs decides your case, have a lawyer confirm how your court applies Article 56.
+      </p>
+
+      <h3>After the second and the third talaq</h3>
+      <p>
+        After a second talaq, ruju works exactly as after the first, but only one talaq then remains.
+      </p>
+      <p>
+        The talaq that completes three is a major irrevocable divorce (Article 59(2)(b)). There is no ruju,
+        and not even a new contract is possible until she has been validly married to another man who
+        actually consummated that marriage, and has completed her iddah from him. A marriage
+        arranged in advance just to make a return possible, often called halala, is widely condemned by
+        scholars, and this page does not describe or recommend it. If you are in this position, speak to a
+        scholar and a family lawyer before anything else.
+      </p>
+
+      <h3>A worked example</h3>
+      <div class="info-box info-box--gold">
+        <h3>Hypothetical, for illustration</h3>
+        <p>
+          A husband says &ldquo;talaq&rdquo; three times during one argument in January. Under Article 57
+          that is one talaq. In February, while his wife is still in her iddah, he tells her clearly, in
+          front of her brother and a friend, that he takes her back, and he registers the ruju within 15
+          days because the talaq had been registered. Two years later he gives one more talaq: that is his
+          second, and he can still take her back during that iddah. Any later talaq would be the third,
+          and final.
+        </p>
+      </div>
+    </section>
+
+    <!-- How -->
+    <section class="section" aria-labelledby="how-heading">
+      <h2 id="how-heading">How to Do Ruju: Words, Action and What Makes It Invalid</h2>
+      <p>
+        Article 62 accepts three ways to take your wife back: an action, or explicit words spoken or
+        written, and only if neither is possible, a sign that can be understood. The ruju must also be
+        final: it cannot hang on a condition or be set for a future date.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Counts as ruju</h3>
+          <p>
+            &ldquo;I take you back as my wife&rdquo;, said to her directly or in front of witnesses. A clear
+            written message or letter saying the same. Resuming married life with her, which is the
+            &ldquo;action&rdquo; route (which acts count religiously is a question for a scholar). For a
+            husband who cannot speak or write, a clear sign that is understood.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Does not count</h3>
+          <p>
+            &ldquo;If you come home by Friday, I take you back&rdquo; (conditional). &ldquo;From next
+            month you are my wife again&rdquo; (set for the future). Vague hints such as &ldquo;let&rsquo;s
+            see how it goes&rdquo;, which are not explicit words. Anything said after the iddah has ended.
+          </p>
+        </div>
+      </div>
+
+      <h3>Example wording, not a formula</h3>
+      <p>
+        The law does not require a fixed formula. What matters is that the words are explicit, final and
+        unconditional, and that you mean them. A wording many couples use, said to the wife or before two
+        witnesses:
+      </p>
+      <ul class="checklist">
+        <li><strong>English:</strong> &ldquo;I, [husband&rsquo;s full name], take back my wife [wife&rsquo;s full name] into my marriage, from today.&rdquo;</li>
+        <li><strong>Arabic:</strong> <span lang="ar" dir="rtl">راجعتُ زوجتي [اسم الزوجة] إلى عصمتي</span> (raja&rsquo;tu zawjati &hellip; ila &lsquo;ismati), meaning &ldquo;I have taken my wife back into my marriage&rdquo;.</li>
+        <li><strong>Said to her directly:</strong> <span lang="ar" dir="rtl">راجعتُكِ</span> (raja&rsquo;tuki), meaning &ldquo;I have taken you back&rdquo;.</li>
+      </ul>
+      <p>
+        These are examples only. Use words you understand, in any language; no phrase has special power
+        in law.
+      </p>
+
+      <h3>Witnesses, phone calls and WhatsApp</h3>
+      <p>
+        Article 62 does not list witnesses as a condition, and many scholars treat them as recommended
+        rather than required. Have two adult witnesses anyway: if the ruju is ever disputed, proof decides
+        it (Article 63). A ruju said on a phone call is spoken words and a clear WhatsApp message is
+        written words, so both can fall within Article 62, but chats get deleted and numbers get disputed.
+        Keep the message and still register the ruju. The same questions arise for a talaq sent by
+        message; see <a href="/en/whatsapp-divorce-uae/">WhatsApp divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- 15-day rule -->
+    <section class="section" aria-labelledby="register-heading">
+      <h2 id="register-heading">Telling Your Wife and Registering the Ruju: The 15-Day Rule</h2>
+      <p>
+        Article 64(1) puts two duties on the husband. He must tell his wife about the ruju immediately,
+        whether or not the talaq was ever registered. And if he registered the talaq at court, he must
+        register the ruju at the competent court within 15 days of the ruju.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Your situation</th><th>What the law requires</th><th>Risk if ignored</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The talaq was registered at court</td>
+              <td>Tell her at once; register the ruju within 15 days (Article 64(1))</td>
+              <td>If it is not registered in time and she, not knowing of it, marries another man, the ruju is invalid (Article 64(2))</td>
+            </tr>
+            <tr>
+              <td>The talaq was never registered</td>
+              <td>Tell her at once (Article 64(1)); the duty to register the talaq within 15 days still applies (Article 58)</td>
+              <td>Compensation equal to maintenance for an unregistered talaq (Article 58(2)), and a dispute over whether a ruju happened</td>
+            </tr>
+            <tr>
+              <td>She has not been told</td>
+              <td>Inform her immediately</td>
+              <td>She may treat the iddah as over and plan a new marriage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Article 64(2) is the sharp edge. If the ruju was not registered in time, and the wife did not know
+        about it and married another man, the ruju is invalid. A husband who keeps the ruju to himself
+        takes that risk.
+      </p>
+      <p>
+        Registration of the talaq itself is a duty, not a condition of its validity. An unregistered talaq
+        still counts, and under Article 58 a husband who does not register it within 15 days, without an
+        excuse the court accepts, owes his wife compensation equal to maintenance from the date of the
+        talaq until it is registered. Registering both the talaq and the ruju is also the cleanest way to
+        keep the count of talaqs on record.
+      </p>
+    </section>
+
+    <!-- Steps -->
+    <section class="section" aria-labelledby="steps-heading">
+      <h2 id="steps-heading">How to Register a Ruju at the Personal Status Court</h2>
+      <p>
+        You register a ruju by applying to the personal status court that handles your file, with your
+        IDs, the marriage certificate and the divorce certificate if the talaq was registered; the judge
+        or a court officer records it, and the court notifies your wife if she is not there. The details
+        differ between court systems, so check your court&rsquo;s service page before you go.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Check where you stand</h3>
+          <p>Which talaq is this, counted under Articles 56 and 57? On what date? Is the iddah still running?</p>
+        </li>
+        <li>
+          <h3>Make the ruju and tell her</h3>
+          <p>Explicit, unconditional words, ideally before two adult witnesses. Tell your wife at once, in writing if you can (Article 64(1)).</p>
+        </li>
+        <li>
+          <h3>Gather the papers</h3>
+          <p>Emirates IDs or passports for both spouses, the marriage certificate, the divorce certificate if the talaq was registered, and the witnesses&rsquo; IDs. Documents not in Arabic usually need a certified legal translation.</p>
+        </li>
+        <li>
+          <h3>Apply to the competent court</h3>
+          <p>Within 15 days of the ruju if the talaq was registered: Dubai Courts, the Abu Dhabi Judicial Department, the federal courts or the Ras Al Khaimah courts, depending on where your file is.</p>
+        </li>
+        <li>
+          <h3>Collect the record</h3>
+          <p>The judge or notary records the ruju; if your wife is absent, the court notifies her. Keep the certificate with your marriage papers.</p>
+        </li>
+      </ol>
+
+      <h3>What the federal courts&rsquo; rules say</h3>
+      <p>
+        For the federal courts, the procedure is in Federal Judicial Council Resolution No. 69 of 2025 on
+        certifications and documentation (Official Gazette, 31 October 2025). Its main points on ruju:
+      </p>
+      <ul class="checklist">
+        <li>A husband proving a ruju during the iddah submits the divorce certificate showing the date and type of the talaq. The wife is summoned; if she does not attend, the judge records the ruju made before him from the date of the application, and she is notified.</li>
+        <li>If both spouses confirm the ruju during the iddah, a court notary can record their joint confirmation without witnesses.</li>
+        <li>If the iddah has ended and the husband says he took her back in time, the wife must attend and confirm. If she was properly notified, stays away, and he brings evidence of a ruju within the iddah, the judge can record it, and she can challenge that in court. If she attends and does not confirm, it is not recorded.</li>
+        <li>A divorced wife can obtain a record that no ruju took place after her iddah ended, with the husband&rsquo;s confirmation, or on her oath if he was properly notified, stays away, and nothing shows a ruju.</li>
+      </ul>
+      <p>
+        Dubai, Abu Dhabi and Ras Al Khaimah run their own courts under the same federal law, and their
+        counters may ask for slightly different papers. Fees change, so check the current amount on your
+        court&rsquo;s service page rather than relying on a figure quoted online.
+      </p>
+      <div class="cta-inline">
+        <p>Talaq given and the iddah running? Check your position before it ends.</p>
+        <a href="#contact" class="btn btn--primary">Ask for a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Consent -->
+    <section class="section" aria-labelledby="consent-heading">
+      <h2 id="consent-heading">Does the Wife Have to Agree to Ruju?</h2>
+      <p>
+        No consent requirement appears in the 2024 law for a ruju during the iddah. Article 61 gives the
+        right to the husband and says it is not extinguished by waiving it, so even a husband who promised
+        not to take his wife back keeps the right while the iddah runs. Her agreement matters at two other
+        points: a reunion after the iddah needs a new contract (Article 59(2)(a)), which like any marriage
+        needs her consent, and a ruju she disputes needs proof (Article 63).
+      </p>
+      <p>
+        A wife who does not want to resume the marriage still has routes out of it. She can ask for
+        <a href="/en/khula-divorce-uae/">khula</a>, which ends the marriage as a minor irrevocable divorce
+        in return for compensation (Article 65), or ask the court for a
+        <a href="/en/divorce-for-harm-uae/">divorce for harm</a> if she can prove the harm. Neither outcome
+        is automatic, and both carry financial consequences, so take advice before choosing.
+      </p>
+      <div class="info-box info-box--blue">
+        <h3>If you are not safe</h3>
+        <p>
+          If you are being hurt at home, call 999 in an emergency. Protection orders are available under
+          Federal Decree-Law No. 13 of 2024.
+        </p>
+      </div>
+    </section>
+
+    <!-- Money -->
+    <section class="section" aria-labelledby="money-heading">
+      <h2 id="money-heading">Money and Housing While the Iddah Runs</h2>
+      <p>
+        During the iddah of a revocable talaq the wife is entitled to maintenance and to housing (Article
+        101). She may live in the marital home for the iddah, or in a suitable home if the marital home is
+        not suitable. Whether a ruju follows or not, that is her position while the iddah lasts.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Revocable talaq</h3>
+          <p>Iddah maintenance and housing are both due (Article 101).</p>
+        </div>
+        <div class="card">
+          <h3>Irrevocable divorce</h3>
+          <p>Maintenance only if she is pregnant, until the birth; housing during the iddah (Article 101).</p>
+        </div>
+        <div class="card">
+          <h3>Khula</h3>
+          <p>No iddah maintenance; housing during the iddah (Article 101).</p>
+        </div>
+        <div class="card">
+          <h3>Deferred mahr</h3>
+          <p>Falls due on irrevocable separation (Article 46). Read with Article 59, that point comes when the iddah ends without ruju, not on the day of a revocable talaq.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="section" aria-labelledby="table-heading">
+      <h2 id="table-heading">Is Ruju Possible? Situation by Situation</h2>
+      <p>
+        Ruju is possible only in the first four rows below; everywhere else the answer is either a new
+        contract, no reunion at all, or a question for the court.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Situation</th><th>Ruju possible?</th><th>What is needed</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First talaq, consummated marriage (or valid seclusion), iddah still running</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Clear words, writing or action; tell her at once; register within 15 days if the talaq was registered (Articles 61, 62, 64)</td>
+            </tr>
+            <tr>
+              <td>Second talaq, given after an earlier ruju or a new contract, iddah running</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>The same steps; only one talaq then remains</td>
+            </tr>
+            <tr>
+              <td>&ldquo;Talaq&rdquo; repeated, or &ldquo;three talaq&rdquo;, in one sitting</td>
+              <td><span class="verdict verdict--ok">Yes, counts as one</span></td>
+              <td>Treat it as the first (or second) talaq (Article 57); ask a scholar for the religious view</td>
+            </tr>
+            <tr>
+              <td>Talaq said again while she is already in her iddah</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>The repeat does not occur (Article 56(1)); ruju still open until the iddah ends</td>
+            </tr>
+            <tr>
+              <td>First or second talaq, iddah ended without ruju</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>New contract and new mahr, with her agreement (Article 59(2)(a))</td>
+            </tr>
+            <tr>
+              <td>Third talaq (completing three)</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>Not lawful again until she has completed an iddah from another husband who consummated a valid marriage (Article 59(2)(b))</td>
+            </tr>
+            <tr>
+              <td>Talaq before intercourse and before valid seclusion</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>Minor irrevocable from the start (Article 60(2)); no iddah (Article 82); a new contract if both agree</td>
+            </tr>
+            <tr>
+              <td>Khula</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>Minor irrevocable (Article 65); a new contract and new mahr if both agree</td>
+            </tr>
+            <tr>
+              <td>She married another man, unaware of a ruju that was not registered in time</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>The ruju is invalid (Article 64(2))</td>
+            </tr>
+            <tr>
+              <td>Husband says, after the iddah, that he took her back during it</td>
+              <td><span class="verdict verdict--rec">Only with proof</span></td>
+              <td>Her confirmation or evidence; her word on the end of the iddah is accepted if the time fits (Article 63)</td>
+            </tr>
+            <tr>
+              <td>Talaq in uncontrollable anger, under duress or while intoxicated</td>
+              <td><span class="verdict verdict--rec">Not needed</span></td>
+              <td>No talaq occurred (Article 56); if disputed, the court decides</td>
+            </tr>
+            <tr>
+              <td>Divorce ordered by a court on the wife&rsquo;s claim (harm, failure to maintain and others)</td>
+              <td><span class="verdict verdict--rec">Ask a lawyer</span></td>
+              <td>Not covered on this page; read the judgment and take advice</td>
+            </tr>
+            <tr>
+              <td>Non-Muslim civil divorce</td>
+              <td><span class="verdict verdict--ess">No ruju</span></td>
+              <td>Stop the case before judgment, or marry again after it</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          A guide to Federal Decree-Law No. 41 of 2024, not legal advice or a religious ruling.
+        </p>
+      </div>
+    </section>
+
+    <!-- No talaq -->
+    <section class="section" aria-labelledby="notalaq-heading">
+      <h2 id="notalaq-heading">When the Talaq Never Happened: Not a Case for Ruju</h2>
+      <p>
+        Some words that sound like talaq do not count in law at all, and then there is nothing to take
+        back. Article 56 lists the cases in which a divorce does not occur:
+      </p>
+      <ul class="checklist">
+        <li>Talaq given while the wife is already in the iddah of a divorce or of an invalid marriage.</li>
+        <li>Talaq by a husband who is insane or intoxicated, even if he chose to drink or take drugs.</li>
+        <li>Talaq under duress.</li>
+        <li>Talaq in anger so intense that the husband could not control his words.</li>
+        <li>Talaq set for a future date.</li>
+        <li>A conditional talaq (&ldquo;if you go to your mother&rsquo;s house, you are divorced&rdquo;), unless an intention to divorce is proven.</li>
+        <li>A talaq oath, unless an intention to divorce is proven.</li>
+      </ul>
+      <p>
+        A talaq that never happened uses up none of the three and starts no iddah. But the husband&rsquo;s
+        own view that he was too angry is not the end of it: if the wife says a talaq happened, the court
+        decides on the evidence, and a case to prove a divorce skips Family Guidance (Article 8(1)). If
+        you are unsure, take advice while the iddah would still be running, so that a ruju is still
+        possible if the talaq did count.
+      </p>
+    </section>
+
+    <!-- Open cases -->
+    <section class="section" aria-labelledby="cases-heading">
+      <h2 id="cases-heading">Reconciling When a Case or Family Guidance File Is Open</h2>
+      <p>
+        If you reconcile while a file is open, tell the Family Guidance counsellor or the court straight
+        away; do not simply stop attending.
+      </p>
+
+      <h3>At Family Guidance</h3>
+      <p>
+        Family Guidance is discretionary: the supervising judge may refer a couple there if a settlement
+        seems feasible (Article 8(1)). A settlement reached there is recorded in a report signed by both
+        spouses and the counsellor and approved by the judge; it then has the force of an execution writ
+        and cannot be appealed unless it contradicts the law (Article 8(2)). Agreed terms on housing or
+        money can be recorded this way. Ask whether the ruju itself should also be registered, and if in
+        doubt, register it.
+      </p>
+
+      <h3>When a case is already in court</h3>
+      <p>
+        If a wife has filed for khula or divorce for harm and the couple reconcile, she can tell the court
+        she does not wish to pursue the case; ask the court or a lawyer how to close the file properly. If
+        she has filed to prove a talaq and the husband says he took her back, the court weighs the
+        evidence of both, so bring the ruju message and the witnesses.
+      </p>
+    </section>
+
+    <!-- Non-Muslims -->
+    <section class="section" aria-labelledby="nonmuslim-heading">
+      <h2 id="nonmuslim-heading">Non-Muslim Couples: No Talaq and No Ruju</h2>
+      <p>
+        Non-Muslim couples whose divorce runs under Federal Decree-Law No. 41 of 2022 have no talaq and
+        therefore no ruju. Their divorce takes place by court decision after the other spouse has been
+        served (Article 8), and the case goes straight to court with no Family Guidance stage (Article 3).
+        Until the judgment is issued, they are still married, so a couple who reconcile should tell the
+        court before then and ask how to close the case. After the judgment, getting back together means
+        marrying again; a civil marriage requires both spouses to be at least 21 (Article 5). The same
+        advice applies at the Abu Dhabi Civil Family Court, which handles non-Muslim divorces under Abu
+        Dhabi Law No. 14 of 2021.
+      </p>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/talaq-uae/" class="service-link">
+          <strong>Talaq in the UAE</strong>
+          <span>Types of talaq, the 15-day rule and your rights</span>
+        </a>
+        <a href="/en/sharia-divorce-uae/" class="service-link">
+          <strong>Sharia Divorce</strong>
+          <span>Talaq, khula and court divorce under the 2024 law</span>
+        </a>
+        <a href="/en/family-guidance-section-uae/" class="service-link">
+          <strong>Family Guidance</strong>
+          <span>The reconciliation stage before a family case</span>
+        </a>
+        <a href="/en/mahr-divorce-uae/" class="service-link">
+          <strong>Mahr on Divorce</strong>
+          <span>Prompt, deferred and unpaid dower</span>
+        </a>
+        <a href="/en/wife-rights-after-divorce-uae/" class="service-link">
+          <strong>Wife&rsquo;s Rights After Divorce</strong>
+          <span>Maintenance, housing and financial claims</span>
+        </a>
+        <a href="/en/non-muslim-divorce-uae/" class="service-link">
+          <strong>Non-Muslim Divorce</strong>
+          <span>The civil route for expats</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Talaq Given? Ask Before the Iddah Ends</h2>
+      <p>Request a free, confidential consultation with a UAE-licensed family lawyer, in English or Arabic, to check where you stand: which talaq this is in law, how much of the iddah is left, and how to register a ruju or respond to one. For a religious question, a qualified scholar is the right person to ask.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 24px; }
+  .checklist li { position: relative; padding: 14px 18px 14px 48px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; font-size: 0.9rem; line-height: 1.6; }
+  .checklist li::before { content: "✓"; position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+
+  .cost-table { margin-top: 24px; margin-bottom: 16px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .cost-table td a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .cost-table td a:hover { text-decoration: underline; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #6b7280; margin: 10px 0 0; }
+  .table-note a { color: #4b5563; text-decoration: underline; font-weight: 600; }
+
+  .verdict { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .verdict--ok { background: #dcfce7; color: #166534; }
+  .verdict--rec { background: #fef3c7; color: #92400e; }
+  .verdict--ess { background: #fee2e2; color: #991b1b; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .card p { font-size: 0.875rem; color: #4b5563; margin: 0; }
+  .card p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card p a:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>
