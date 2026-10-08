@@ -21,26 +21,26 @@ const breadcrumbs = [
 const iddahDurations = [
   {
     situation: 'Divorced woman with regular menstrual cycle',
-    duration: 'Three menstrual cycles (quru\')',
-    detail: 'The Hanafi and Maliki schools count three complete menstrual periods. The Hanbali and Shafi\'i schools count three complete intervals between periods. In practice, this is approximately 3 months. UAE courts follow the Maliki/Hanafi interpretation as a general rule.',
+    duration: 'Three periods of purity (tuhr)',
+    detail: 'The classical schools differed on whether the Quranic quru\' means menstrual periods or the periods of purity between them. The UAE statute settles it: Article 84 of Federal Decree-Law No. 41 of 2024 sets three periods of purity for a divorced woman who menstruates. In practice this is roughly three months, depending on her cycle.',
     basis: 'Quran 2:228, "Divorced women shall wait for three periods."',
   },
   {
     situation: 'Pregnant divorced woman',
-    duration: 'Until delivery of the child',
-    detail: 'The iddah ends the moment the child is born, regardless of whether the divorce was only days ago. If the wife miscarries a foetus where human features are recognisable, that also ends the iddah.',
+    duration: 'Until birth or miscarriage',
+    detail: 'The iddah ends when the child is born, regardless of whether the divorce was only days ago. A miscarriage also ends it (Article 85 of Federal Decree-Law No. 41 of 2024).',
     basis: 'Quran 65:4, "For those who are pregnant, their term is until they deliver their burden."',
   },
   {
-    situation: 'Post-menopausal woman (or one who has not yet menstruated)',
+    situation: 'Post-menopausal woman (or one who has never menstruated)',
     duration: 'Three lunar months',
-    detail: 'If the wife has stopped menstruating due to age, or has never menstruated, the iddah is three lunar months (approximately 89 days).',
+    detail: 'If the wife has stopped menstruating due to age, or has never menstruated, the iddah is three lunar months (Article 84), roughly 89 days.',
     basis: 'Quran 65:4, "And those who no longer expect menstruation, their waiting period is three months."',
   },
   {
-    situation: 'Divorced before consummation of marriage',
+    situation: 'Divorced before intercourse and before valid seclusion',
     duration: 'No iddah required',
-    detail: 'If the divorce takes place before the marriage was physically consummated, there is no iddah obligation. The wife is free to remarry immediately. She is entitled to half the specified mahr if it was agreed in the contract.',
+    detail: 'There is no iddah only if the divorce comes before intercourse AND before valid seclusion (khalwa), meaning the spouses were never alone together in a place where each felt safe from being overseen (Articles 17 and 82). If valid seclusion took place, the normal iddah applies and the full dowry is confirmed (Article 47(2)). Where there was neither, the divorce is minor irrevocable (Article 60), the wife may remarry at once, and she is entitled to half the named dowry, or no more than half the usual dowry if none was named (Article 47(3)).',
     basis: 'Quran 33:49, "If you marry believing women and then divorce them before you have touched them, you have no waiting period to reckon against them."',
   },
 ];
@@ -48,15 +48,15 @@ const iddahDurations = [
 const rights = [
   {
     right: 'Accommodation in the marital home',
-    detail: 'The divorced wife has the right to remain in the marital home throughout the iddah. The husband cannot evict her, and she should not leave without need. This is a settled right under the UAE Personal Status Law (Federal Decree-Law No. 41 of 2024, which replaced Law 28 of 2005). If the wife leaves voluntarily without a legitimate reason, she may forfeit her maintenance rights.',
+    detail: 'In every type of divorce the wife may live in the marital home during the iddah, or in a suitable home if the marital home is not suitable (Article 101 of Federal Decree-Law No. 41 of 2024, which replaced Law 28 of 2005). The husband cannot evict her, and she should not leave without need. If the wife leaves voluntarily without a legitimate reason, she may weaken any maintenance claim.',
   },
   {
     right: 'Financial maintenance (nafaqa)',
-    detail: 'The husband must pay full financial maintenance, food, clothing, and accommodation costs, throughout the iddah. This applies to revocable divorce, minor irrevocable divorce, and under UAE law to major irrevocable divorce as well. The UAE courts will set the monthly maintenance amount based on the husband\'s income and the couple\'s standard of living.',
+    detail: 'Article 101 makes iddah maintenance (food, clothing, and accommodation costs) obligatory after a revocable divorce. After an irrevocable divorce, minor or major, it is due only if she is pregnant, until the birth. There is no iddah maintenance after khula or after the husband\'s death. Where maintenance is due, the court sets the amount based on the husband\'s income and circumstances.',
   },
   {
     right: 'Maintenance during pregnancy',
-    detail: 'If the wife is pregnant, maintenance continues until the child is born. This includes reasonable medical and childbirth costs. The obligation ends at delivery, not when the iddah might otherwise have ended.',
+    detail: 'If the wife is pregnant, maintenance continues until the child is born, even after an irrevocable divorce (Article 101). This includes reasonable medical and childbirth costs. After khula, Article 101 provides no iddah maintenance, so take advice before agreeing khula terms while pregnant.',
   },
   {
     right: 'Protection from eviction',
@@ -67,7 +67,7 @@ const rights = [
 const faqItems = [
   {
     question: 'What is the iddah and why does UAE law require it?',
-    answer: 'The iddah is a mandatory waiting period after divorce during which a woman may not remarry. Its purposes are: to confirm whether the woman is pregnant (protecting lineage), to give the couple a final opportunity for reconciliation in a revocable divorce, and to protect the woman from being pressured into hasty remarriage while in emotional distress. The UAE Personal Status Law for Muslims, historically Federal Law No. 28 of 2005 and now replaced by Federal Decree-Law No. 41 of 2024 (in force from 2025), incorporates the iddah rules from Islamic jurisprudence. The specific article numbers were renumbered under the new law, so confirm the current text with a lawyer.',
+    answer: 'The iddah is a mandatory waiting period after divorce during which a woman may not remarry. Its purposes are: to confirm whether the woman is pregnant (protecting lineage), to give the couple a final opportunity for reconciliation in a revocable divorce, and to protect the woman from being pressured into hasty remarriage while in emotional distress. The UAE Personal Status Law for Muslims, historically Federal Law No. 28 of 2005 and now replaced by Federal Decree-Law No. 41 of 2024 (in force from 15 April 2025), sets the iddah rules in Articles 81 to 85 and the maintenance and housing rules in Article 101.',
   },
   {
     question: 'Is the iddah the same as the divorce waiting period in Western courts?',
@@ -75,11 +75,11 @@ const faqItems = [
   },
   {
     question: 'Does iddah affect my UAE residence visa?',
-    answer: 'Yes, indirectly. Your residence visa and the iddah are separate legal matters, but both run simultaneously after a divorce decree. If you were residing on your husband\'s visa sponsorship, you have 30 days from the divorce decree to transfer to a new visa category (work visa, investor visa, or the UAE divorcee visa). The iddah does not extend your visa, so you must act on the visa immediately regardless of how long the iddah lasts. Consult a UAE immigration lawyer alongside your family lawyer.',
+    answer: 'Yes, indirectly. Your residence visa and the iddah are separate legal matters, but both run simultaneously after a divorce decree. If you were residing on your husband\'s visa sponsorship, you have a limited grace period after the divorce to transfer to a new visa category (work visa, investor visa, or the residence option for divorced women); check the current period with the immigration authority. The iddah does not extend your visa, so you must act on the visa immediately regardless of how long the iddah lasts. Consult a UAE immigration lawyer alongside your family lawyer.',
   },
   {
     question: 'What financial maintenance is the husband required to pay during iddah?',
-    answer: 'During iddah, the husband must pay: monthly living allowance (nafaqa, covering food, clothing, and personal expenses), the full cost of accommodation in the marital home (or equivalent rental elsewhere if the marital home is unavailable), and medical costs if the wife is pregnant. The UAE courts calculate nafaqa based on the husband\'s documented income and the standard of living the couple maintained during the marriage. Failure to pay is enforceable through the Execution Court.',
+    answer: 'It depends on the type of divorce (Article 101 of Federal Decree-Law No. 41 of 2024). After a revocable divorce he must pay a living allowance (nafaqa, covering food, clothing, and personal expenses). After an irrevocable divorce he pays it only if she is pregnant, until the birth, including medical costs. After khula there is none. In every case she may live in the marital home during the iddah, or in a suitable home if it is unsuitable. The UAE courts calculate nafaqa based on the husband\'s documented income and the standard of living the couple maintained during the marriage. Failure to pay is enforceable through the Execution Court.',
   },
   {
     question: 'Can I leave the UAE during my iddah?',
@@ -91,7 +91,7 @@ const faqItems = [
   },
   {
     question: 'Is the iddah after khula the same length as after talaq?',
-    answer: 'Yes, the duration is the same. Whether the divorce comes through talaq or through khula, the waiting period is three menstrual cycles, or three lunar months if she does not menstruate, or until delivery if she is pregnant. What differs is the legal effect. A revocable talaq gives the husband a reconciliation window during the iddah, while a khula is irrevocable from the start and generally carries narrower maintenance entitlements.',
+    answer: 'Yes, the duration is the same. Whether the divorce comes through talaq or through khula, the waiting period is three periods of purity, or three lunar months if she does not menstruate (Article 84), or until birth or miscarriage if she is pregnant (Article 85). What differs is the legal effect. A revocable talaq gives the husband a reconciliation window during the iddah, while a khula is a minor irrevocable divorce from the start (Article 65) and carries no iddah maintenance, although she may still live in the marital home during the iddah (Article 101).',
   },
   {
     question: 'Can I work during my iddah in the UAE?',
@@ -99,7 +99,7 @@ const faqItems = [
   },
   {
     question: 'When exactly can I remarry after my iddah?',
-    answer: 'You can remarry as soon as the iddah is fully complete. A new marriage contract entered before the waiting period ends is not valid, because the rule exists to confirm you are not carrying the former husband\'s child. Once the iddah expires there is no additional cooling-off period under UAE law, though a new marriage can affect custody and maintenance arrangements from the first marriage.',
+    answer: 'You can remarry as soon as the iddah is fully complete: Article 83 of Federal Decree-Law No. 41 of 2024 says a woman may not marry until her iddah ends. A new marriage contract entered before the waiting period ends is not valid, because the rule exists to confirm you are not carrying the former husband\'s child. Once the iddah expires there is no additional cooling-off period under UAE law, though a new marriage can affect custody and maintenance arrangements from the first marriage.',
   },
 ];
 ---
@@ -119,7 +119,7 @@ const faqItems = [
       <h1>Iddah, The Waiting Period After Divorce in UAE</h1>
       <p class="hero-sub">The iddah is the mandatory waiting period after divorce under UAE personal status law. Its duration depends on your situation, and it comes with specific financial rights that the courts will enforce. Here is everything you need to know.</p>
       <div class="hero-meta">
-        <span>Updated: August 2026</span>
+        <span>Updated: October 2026</span>
         <span class="sep">·</span>
         <span>By Aleksi Suon, UAE Expat &amp; Legal Consultant</span>
       </div>
@@ -131,7 +131,7 @@ const faqItems = [
 
       <div class="key-point">
         <h2>What the Iddah Means in Practice</h2>
-        <p>During the iddah: the wife cannot remarry, the husband cannot evict her from the marital home, and the husband must pay full financial maintenance. In a <strong>revocable divorce</strong> (first or second pronouncement), the iddah is also the window during which the husband can revoke the divorce and resume the marriage without a new contract. If iddah expires without revocation, the divorce converts to an irrevocable one.</p>
+        <p>During the iddah: the wife cannot remarry, and the husband cannot evict her from the marital home. He must pay maintenance after a revocable divorce, and after an irrevocable one only if she is pregnant (Article 101). In a <strong>revocable divorce</strong> (a first or second pronouncement after intercourse or valid seclusion), the iddah is also the window during which the husband can revoke the divorce and resume the marriage without a new contract. If iddah expires without revocation, the divorce converts to an irrevocable one.</p>
       </div>
 
       <section class="content-section">
@@ -162,15 +162,15 @@ const faqItems = [
               </tr>
             </thead>
             <tbody>
-              <tr><td>Menstruating (not pregnant)</td><td>3 menstrual cycles (~3 months)</td></tr>
-              <tr><td>Pregnant</td><td>Until delivery</td></tr>
-              <tr><td>Post-menopausal / pre-pubescent</td><td>3 lunar months</td></tr>
-              <tr><td>Divorced before consummation</td><td>No iddah</td></tr>
-              <tr><td>Widowed (death of husband)</td><td>4 months and 10 days</td></tr>
+              <tr><td>Menstruating (not pregnant)</td><td>3 periods of purity (roughly 3 months), Art. 84</td></tr>
+              <tr><td>Pregnant</td><td>Until birth or miscarriage, Art. 85</td></tr>
+              <tr><td>Post-menopausal / never menstruated</td><td>3 lunar months, Art. 84</td></tr>
+              <tr><td>Divorced before intercourse and before valid seclusion</td><td>No iddah, Art. 82</td></tr>
+              <tr><td>Widowed (death of husband)</td><td>4 months and 10 days (Quran 2:234)</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="table-note">Note: Widowhood iddah is listed for comparison only. It is a separate category under the Personal Status Law, not a divorce iddah.</p>
+        <p class="table-note">Note: Widowhood iddah is listed for comparison only. It is a separate category under the Personal Status Law, not a divorce iddah, and Article 82 applies it even if the marriage was never consummated.</p>
       </section>
 
       <section class="content-section">
@@ -191,35 +191,35 @@ const faqItems = [
 
       <section class="content-section">
         <h2>How UAE Law Governs the Iddah</h2>
-        <p>The iddah is governed by the UAE Personal Status Law for Muslims. That law was Federal Law No. 28 of 2005 and has now been replaced by Federal Decree-Law No. 41 of 2024, in force from 2025, which carries the iddah rules forward. The article numbers below reflect the earlier law and may have been renumbered, so verify the current provision before relying on it. Key provisions:</p>
+        <p>The iddah is governed by the UAE Personal Status Law for Muslims. That law was Federal Law No. 28 of 2005 and has now been replaced by Federal Decree-Law No. 41 of 2024, in force from 15 April 2025. The iddah rules are in Articles 81 to 85, and maintenance and housing during the iddah are in Article 101. Key provisions:</p>
 
         <div class="law-steps">
           <div class="law-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <h3>Iddah starts from the date of divorce</h3>
-              <p>The iddah begins on the date the divorce takes legal effect, for court divorces, this is the date of the final divorce decree. It does not begin when the couple separates physically.</p>
+              <h3>When the iddah starts</h3>
+              <p>For a divorce by court judgment, the iddah runs from the date the judgment becomes final. For a divorce proven before the court, it runs from when the divorce is proven by evidence or by admission, and the divorce is dated to the admission unless an earlier date is proven (Article 83). It does not begin when the couple separates physically, and a woman may not marry until it ends.</p>
             </div>
           </div>
           <div class="law-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <h3>Maintenance is mandatory and enforceable</h3>
-              <p>The law requires the husband to pay maintenance for all types of divorce throughout the iddah (Article 150 under the former numbering). The Execution Court can garnish salary and freeze accounts if he refuses to pay.</p>
+              <h3>Maintenance depends on the type of divorce</h3>
+              <p>Article 101 makes iddah maintenance obligatory after a revocable divorce; after an irrevocable divorce only if she is pregnant, until the birth; and not at all after khula or death. Where it is owed, the Execution Court can garnish salary and freeze accounts if he refuses to pay.</p>
             </div>
           </div>
           <div class="law-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <h3>Marital home rights are absolute during iddah</h3>
-              <p>The law requires the wife to observe the iddah in the marital home and prohibits the husband from expelling her (Article 143 under the former numbering). If the home is unavailable, he must provide equivalent alternative accommodation.</p>
+              <h3>Housing applies in every iddah</h3>
+              <p>In all cases the wife may live in the marital home during the iddah, or in a suitable home if the marital home is unsuitable (Article 101). This applies even where no iddah maintenance is due, for example after khula.</p>
             </div>
           </div>
           <div class="law-step">
             <div class="step-num">4</div>
             <div class="step-content">
               <h3>Foreign women must act on their visa immediately</h3>
-              <p>The iddah and the visa are separate matters. If you were on a spouse visa, the 30-day visa transfer window begins from the divorce decree, the iddah does not pause the clock. Start the visa process the day the divorce is granted.</p>
+              <p>The iddah and the visa are separate matters. If you were on a spouse visa, the visa grace period runs on its own clock, and the iddah does not pause it. Check the current period with the immigration authority and start the visa process the day the divorce is granted.</p>
             </div>
           </div>
         </div>
@@ -227,23 +227,23 @@ const faqItems = [
 
       <section class="content-section">
         <h2>Iddah After Talaq, Khula, and the Husband's Death</h2>
-        <p>The length of the iddah depends on the woman's physical situation, not on how the marriage ended. A woman divorced through <a href="/en/talaq-uae/">talaq</a> and a woman divorced through <a href="/en/khula-divorce-uae/">khula</a> count the same waiting period: three menstrual cycles if she menstruates, three lunar months if she does not, or until delivery if she is pregnant. What changes between these routes is not the duration but the financial and legal consequences attached to the period.</p>
-        <p>After a <strong>talaq</strong>, and especially a revocable first or second talaq, the iddah doubles as a reconciliation window. The husband can take his wife back during this time without a new marriage contract or new dowry, simply by word or conduct. This is the most important practical feature of the talaq iddah, and it is why the waiting period exists in its revocable form.</p>
-        <p>After a <strong>khula</strong>, where the wife initiates the divorce and usually returns her dowry in exchange for release, the divorce is irrevocable from the moment it is granted. The husband has no right to take her back during the iddah. She still observes the waiting period to confirm there is no pregnancy and to settle lineage, but there is no reconciliation window, and maintenance entitlements after khula are narrower because the wife has effectively bought her freedom.</p>
-        <p>The <strong>widow's iddah</strong> is a separate category. If the husband dies, the widow's waiting period is four months and ten days, whether or not the couple had consummated the marriage, and it is extended until delivery if she is pregnant. This period is tied to mourning and lineage rather than divorce, so it does not carry the reconciliation and maintenance rules of a divorce iddah. It is included here only because it is the most common point of confusion for readers researching waiting periods.</p>
+        <p>The length of the iddah depends on the woman's physical situation, not on how the marriage ended. A woman divorced through <a href="/en/talaq-uae/">talaq</a> and a woman divorced through <a href="/en/khula-divorce-uae/">khula</a> count the same waiting period: three periods of purity if she menstruates, three lunar months if she does not (Article 84), or until birth or miscarriage if she is pregnant (Article 85). What changes between these routes is not the duration but the financial and legal consequences attached to the period.</p>
+        <p>After a <strong>talaq</strong>, and especially a revocable first or second talaq, the iddah doubles as a reconciliation window. The husband can take his wife back during this time without a new marriage contract or new dowry, by an explicit spoken or written statement or by action (Articles 61 and 62). He must inform her at once and, if he documented the divorce, document the take back at court within 15 days (Article 64). This is the most important practical feature of the talaq iddah, and it is why the waiting period exists in its revocable form.</p>
+        <p>After a <strong>khula</strong>, where the wife initiates the divorce and usually returns her dowry in exchange for release, the divorce takes place as a minor irrevocable divorce (Article 65). The husband has no right to take her back during the iddah. She still observes the waiting period to confirm there is no pregnancy and to settle lineage, but there is no reconciliation window, and Article 101 gives no iddah maintenance after khula, although she may still live in the marital home during the iddah.</p>
+        <p>The <strong>widow's iddah</strong> is a separate category. If the husband dies, the widow's waiting period is four months and ten days under the Quranic rule (2:234), and Article 82 applies it whether or not the couple had consummated the marriage; it is extended until delivery if she is pregnant. This period is tied to mourning and lineage rather than divorce, so it does not carry the reconciliation rules of a divorce iddah, and Article 101 gives no iddah maintenance after death. It is included here only because it is the most common point of confusion for readers researching waiting periods.</p>
       </section>
 
       <section class="content-section">
         <h2>Iddah for a Pregnant Woman</h2>
-        <p>Pregnancy overrides every other rule. A pregnant divorced woman's iddah runs until she gives birth, whether that is the day after the divorce or eight months later. If she delivers an hour after the divorce is pronounced, her iddah ends an hour later; if the pregnancy still has months to run, the iddah runs the full length of it. A recognisable miscarriage also ends the iddah.</p>
-        <p>Because the iddah tracks the pregnancy, so does the maintenance. The husband owes food, clothing, housing and reasonable medical and delivery costs for the entire pregnancy, and this is one of the strongest maintenance claims a UAE court will enforce. For how pregnancy, custody of the newborn and the waiting period interact, see our dedicated guide on <a href="/en/divorce-while-pregnant-uae/">divorce while pregnant in the UAE</a>.</p>
+        <p>Pregnancy overrides every other rule. A pregnant divorced woman's iddah runs until she gives birth, whether that is the day after the divorce or eight months later. If she delivers an hour after the divorce is pronounced, her iddah ends an hour later; if the pregnancy still has months to run, the iddah runs the full length of it. A miscarriage also ends the iddah (Article 85).</p>
+        <p>Because the iddah tracks the pregnancy, so does the maintenance. After a talaq, revocable or irrevocable, the husband owes food, clothing, housing and reasonable medical and delivery costs for the entire pregnancy (Article 101), and this is one of the strongest maintenance claims a UAE court will enforce. After khula, Article 101 provides no iddah maintenance. For how pregnancy, custody of the newborn and the waiting period interact, see our dedicated guide on <a href="/en/divorce-while-pregnant-uae/">divorce while pregnant in the UAE</a>.</p>
       </section>
 
       <section class="content-section">
         <h2>Maintenance and Housing During the Iddah (Nafaqat al-Iddah)</h2>
-        <p>Maintenance paid specifically for the waiting period is called <em>nafaqat al-iddah</em>. It is separate from any deferred dowry, from child maintenance, and from the compensation payment (mut'ah) some divorced women receive. During the iddah the husband must cover the wife's living costs and her housing, either by letting her stay in the marital home or by funding equivalent accommodation elsewhere.</p>
+        <p>Maintenance paid specifically for the waiting period is called <em>nafaqat al-iddah</em>. It is separate from any deferred dowry, from child maintenance, and from the compensation payment (mut'ah) that Article 102 gives a consummated wife divorced by the husband's sole will without her request or cause. In every type of divorce the wife may live in the marital home during the iddah, or in a suitable home elsewhere if it is unsuitable. Living costs are owed after a revocable divorce, and after an irrevocable one only if she is pregnant (Article 101).</p>
         <p>The amount is set by the court against the husband's documented income and the couple's standard of living during the marriage, not by a fixed formula. Courts look at salary certificates, bank statements and tenancy contracts. Payment is enforceable: if the husband refuses, the Execution Court can attach his salary and freeze his accounts until the arrears are cleared.</p>
-        <p>The entitlement is not identical across divorce types. In a revocable talaq the wife's right to full iddah maintenance and housing is strongest. In a khula it is narrower, because the wife gave consideration for the divorce. A wife who leaves the marital home without a legitimate reason, or who was in open disobedience recognised by the court, can weaken or lose her iddah maintenance claim. For how iddah maintenance sits alongside the other forms of post-divorce support, see our guide to <a href="/en/alimony-uae/">alimony in the UAE</a>.</p>
+        <p>The entitlement is not identical across divorce types. After a revocable talaq the wife has both iddah maintenance and housing. After an irrevocable talaq she keeps the housing right but gets maintenance only if pregnant. After a khula there is no iddah maintenance, only the housing right. A wife who leaves the marital home without a legitimate reason, or who was in open disobedience recognised by the court, can weaken or lose her iddah maintenance claim. For how iddah maintenance sits alongside the other forms of post-divorce support, see our guide to <a href="/en/alimony-uae/">alimony in the UAE</a>.</p>
       </section>
 
       <section class="content-section">
@@ -254,7 +254,7 @@ const faqItems = [
 
       <section class="content-section">
         <h2>Iddah and Remarriage Timing</h2>
-        <p>A woman cannot enter a new marriage contract until her iddah has fully ended. Marrying, or even formally contracting a marriage, before the waiting period expires is not valid. The point of the rule is to establish beyond doubt that she is not carrying the former husband's child, which protects the lineage of any future children.</p>
+        <p>A woman cannot enter a new marriage contract until her iddah has fully ended (Article 83). Marrying, or even formally contracting a marriage, before the waiting period expires is not valid. The point of the rule is to establish beyond doubt that she is not carrying the former husband's child, which protects the lineage of any future children.</p>
         <p>Once the iddah is complete the restriction lifts and she is free to remarry. There is no separate cooling-off period stacked on top of the iddah under UAE law. Timing is the practical question most expat women ask, because a new marriage can also affect custody and maintenance arrangements. Our guide to <a href="/en/remarriage-after-divorce-uae/">remarriage after divorce in the UAE</a> covers the waiting period, the paperwork, and how a new marriage interacts with children from the first.</p>
       </section>
 
@@ -283,7 +283,7 @@ const faqItems = [
             { title: 'Types of Divorce in UAE', href: '/en/types-of-divorce-uae/', desc: 'Revocable, khul\'a, judicial separation and more explained.' },
             { title: 'Alimony in UAE', href: '/en/alimony-uae/', desc: 'All six types of spousal support and how amounts are calculated.' },
             { title: 'Wife Rights After Divorce UAE', href: '/en/wife-rights-after-divorce-uae/', desc: 'Mahr, nafaqa, custody, and housing rights.' },
-            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae/', desc: '30-day rule and all 7 visa pathways after divorce.' },
+            { title: 'Visa After Divorce UAE', href: '/en/visa-after-divorce-uae/', desc: 'The grace period and the visa pathways after divorce.' },
             { title: 'UAE Divorce Law', href: '/en/uae-divorce-law/', desc: 'Guide to the 2024 Personal Status Law and the 2022 civil law.' },
           ].map(link => (
             <a href={link.href} class="related-card">

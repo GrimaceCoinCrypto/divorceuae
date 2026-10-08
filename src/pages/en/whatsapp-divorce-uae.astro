@@ -27,7 +27,7 @@ const faqSchema = {
       name: 'Can my husband divorce me by WhatsApp in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A WhatsApp message containing a clear divorce declaration can constitute a valid talaq in UAE: Article 54 of Federal Decree-Law No. 41 of 2024 says a talaq can be given in writing by any means. Article 58 then requires the husband to document it at the Personal Status Court within 15 days. The law treats this as a duty rather than a condition of validity: if he does not document it without an acceptable excuse, the wife can claim compensation equal to maintenance for the delay, and she can file her own case to prove the divorce. Until the talaq is documented or proven in court there is no official record, and your iddah is counted from the date it is proven (Article 83).',
+        text: 'A WhatsApp message containing a clear divorce declaration can constitute a valid talaq in UAE: Article 57 of Federal Decree-Law No. 41 of 2024 recognises a divorce made verbally, in writing or by signal. Article 58 then requires the husband to document it at the Personal Status Court within 15 days. The law treats this as a duty rather than a condition of validity: if he does not document it without an acceptable excuse, the wife can claim compensation equal to maintenance for the delay, and she can file her own case to prove the divorce. Until the talaq is documented or proven in court there is no official record, and your iddah is counted from the date it is proven (Article 83).',
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: 'Is a text message divorce valid in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, an SMS or text message containing a clear divorce declaration can be a valid talaq under Article 54 of Federal Decree-Law No. 41 of 2024, which allows a talaq by speech or writing by any means. The message must express a clear intent to divorce. The husband must then document it at the Personal Status Court within 15 days (Article 58). Until it is documented or proven in court, there is no official record of the divorce, so do not act on the message alone.',
+        text: 'Yes, an SMS or text message containing a clear divorce declaration can be a valid talaq: Article 57 of Federal Decree-Law No. 41 of 2024 recognises a divorce made verbally, in writing or by signal. The message must express a clear intent to divorce. The husband must then document it at the Personal Status Court within 15 days (Article 58). Until it is documented or proven in court, there is no official record of the divorce, so do not act on the message alone.',
       },
     },
     {
@@ -75,7 +75,7 @@ const faqSchema = {
       name: 'Can I reverse a WhatsApp divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'If the talaq sent by WhatsApp has been registered at court, the husband can revoke it (raj\'i) during the iddah period, approximately three months, without needing a new nikah contract, provided it was a revocable (first) talaq. He must inform the wife of the revocation at once and document it in court within 15 days (Article 64). If the iddah has lapsed, the couple would need a new nikah contract and dowry to remarry. If it was the third talaq, remarriage is not possible until the wife has married another husband and that marriage has ended (Article 59).',
+        text: 'If it was a first or second talaq in a marriage where intercourse or valid seclusion took place, the husband can take his wife back during the iddah without a new nikah contract (Articles 60 and 61), whether or not the talaq was documented. He must inform the wife of the take back at once, and if he documented the divorce he must also document the take back in court within 15 days (Article 64). If the iddah has lapsed, the couple would need a new nikah contract and dowry to remarry. If it was the third talaq, remarriage is not possible until the wife has married another husband who consummated the marriage, that marriage has ended, and her iddah from him has finished (Article 59).',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'Does WhatsApp divorce affect my visa in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A registered divorce, regardless of how it was initiated, affects your visa if your UAE residence was sponsored by your husband. You have a grace period after the divorce certificate is issued (typically 30-60 days per GDRFA rules) to arrange alternative sponsorship. An undocumented WhatsApp divorce has no visa consequences in practice, because the GDRFA and your sponsor act on court documents, not messages. Do not leave the UAE or cancel your visa based on an undocumented WhatsApp message alone.',
+        text: 'A registered divorce, regardless of how it was initiated, affects your visa if your UAE residence was sponsored by your husband. You have a limited grace period after the divorce certificate is issued to arrange alternative sponsorship; check the current period with the immigration authority. An undocumented WhatsApp divorce has no visa consequences in practice, because the GDRFA and your sponsor act on court documents, not messages. Do not leave the UAE or cancel your visa based on an undocumented WhatsApp message alone.',
       },
     },
     {
@@ -91,7 +91,7 @@ const faqSchema = {
       name: 'What about email or voice note divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Email and voice note divorces follow the same legal logic as WhatsApp: they can constitute a valid talaq if intent is clear, because Article 54 of Federal Decree-Law No. 41 of 2024 allows a talaq by speech or writing by any means. Voice notes have been accepted in UAE courts, though authentication is more complex, and voice analysis may be ordered. Emails are admissible as electronic evidence under Federal Decree-Law No. 35 of 2022 on Evidence. In every case the husband must document the talaq in court within 15 days under Article 58.',
+        text: 'Email and voice note divorces follow the same legal logic as WhatsApp: they can constitute a valid talaq if intent is clear, because Article 57 of Federal Decree-Law No. 41 of 2024 recognises a divorce made verbally, in writing or by signal. Voice notes have been accepted in UAE courts, though authentication is more complex, and voice analysis may be ordered. Emails are admissible as electronic evidence under Federal Decree-Law No. 35 of 2022 on Evidence. In every case the husband must document the talaq in court within 15 days under Article 58.',
       },
     },
     {
@@ -99,7 +99,7 @@ const faqSchema = {
       name: 'Is an Instagram DM divorce valid in UAE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In principle, yes, an Instagram direct message containing a clear divorce declaration can be a valid talaq pronouncement under the same framework that governs WhatsApp and SMS. UAE courts apply the communication-of-intent test regardless of the platform. Authentication of Instagram DMs is more complex than WhatsApp screenshots, but Meta\'s law enforcement portal provides authenticated message data to courts with valid orders. The same 15-day documentation duty applies.',
+        text: 'In principle, yes, an Instagram direct message containing a clear divorce declaration can be a valid talaq pronouncement under the same framework that governs WhatsApp and SMS. UAE courts apply the communication-of-intent test regardless of the platform. Authentication of Instagram DMs can be more complex than WhatsApp screenshots, and where it is disputed the court can appoint a technical expert to examine the device. The same 15-day documentation duty applies.',
       },
     },
   ],
@@ -122,15 +122,15 @@ const faqItems = [
   },
   {
     question: 'I sent a WhatsApp divorce to my wife in anger. Can I undo it?',
-    answer: "Do not assume nothing happened: under Article 54 of Federal Decree-Law No. 41 of 2024 a written talaq can take effect even before it is documented, although a talaq given in anger so intense that you could not control your words does not take effect (Article 56). If it was a first or second talaq, you can take your wife back (ruju) during her iddah (Articles 60 to 62). You must inform her of the ruju at once, and document it in court within 15 days if the talaq was documented (Article 64). Leaving the talaq itself undocumented can expose you to compensation under Article 58, so speak to a UAE family lawyer quickly.",
+    answer: "Do not assume nothing happened: Article 57 of Federal Decree-Law No. 41 of 2024 recognises a written divorce, and Article 58 treats a talaq as dated from when it was given, with documentation as a later duty, although a talaq given in anger so intense that you could not control your words does not take effect (Article 56). If it was a first or second talaq, you can take your wife back (ruju) during her iddah (Articles 60 to 62). You must inform her of the ruju at once, and document it in court within 15 days if the talaq was documented (Article 64). Leaving the talaq itself undocumented can expose you to compensation under Article 58, so speak to a UAE family lawyer quickly.",
   },
   {
     question: 'My husband registered a WhatsApp talaq at court and I did not know about it. What are my rights?',
-    answer: "You should be notified when a talaq is documented, and your contact details are normally on file from the marriage registration. If you were not properly notified, a lawyer can check whether there are grounds to challenge the procedure. Regardless, from the moment you become aware of the registered talaq, your financial rights crystallise: mahr (deferred portion falls due immediately), iddah maintenance, mut'a, and child support. File your financial claims without delay. See <a href='/en/mahr-divorce-uae/'>mahr enforcement UAE</a> for the steps.",
+    answer: "Federal Decree-Law No. 41 of 2024 puts the duty to document the talaq on the husband (Article 58); the provisions we have checked do not set out how the court notifies the wife, so ask the court, or a lawyer, what notice was given on your file. From the moment you know of the documented talaq, claim the rights that apply: maintenance during the iddah after a revocable talaq, and the right to live in the marital home during it (Article 101); the dowry, including the deferred part, once the separation is irrevocable (Article 46); mut'a where the husband divorced you by his own will without your request or cause (Article 102); and child support. File your financial claims without delay. See <a href='/en/mahr-divorce-uae/'>mahr enforcement UAE</a> for the steps.",
   },
   {
     question: 'Can a wife use WhatsApp to initiate divorce in UAE?',
-    answer: "Talaq is a husband-initiated mechanism. A wife cannot pronounce talaq. However, a wife can initiate a khula divorce (woman-initiated dissolution) at the Personal Status Court under Articles 65-68 of Federal Decree-Law No. 41 of 2024. Khula does not require the husband's active cooperation, the court can grant it over his objection. WhatsApp messages from the wife are not a divorce initiation mechanism, but they can be used as evidence of marital breakdown in a judicial divorce application. See <a href='/en/khula-divorce-uae/'>khula divorce UAE</a>.",
+    answer: "Talaq is a husband-initiated mechanism. A wife cannot pronounce talaq. However, a wife can initiate a khula divorce (woman-initiated dissolution) at the Personal Status Court under Articles 65 to 68 of Federal Decree-Law No. 41 of 2024. Khula does not depend on the husband's cooperation: if he stubbornly refuses, the court can order it for an appropriate consideration (Article 66). WhatsApp messages from the wife are not a divorce initiation mechanism, but they can be used as evidence of marital breakdown in a judicial divorce application. See <a href='/en/khula-divorce-uae/'>khula divorce UAE</a>.",
   },
   {
     question: 'The WhatsApp divorce was sent to the wrong number. Is that valid?',
@@ -142,7 +142,7 @@ const faqItems = [
   },
   {
     question: 'My husband threatens to send a WhatsApp divorce to avoid supporting us. What can I do?',
-    answer: "A threat to divorce by WhatsApp, or any means, does not create any legal obligation on you or change your current rights. If your husband follows through and registers a divorce, your financial rights (mahr, iddah maintenance, child support) become immediately enforceable as debts. Courts can freeze bank accounts and salary within days of an enforcement order. Do not be pressured by threats of digital divorce. If you are concerned about maintenance, you can apply for an interim maintenance order at the Personal Status Court at any time during the marriage, before any divorce proceedings start.",
+    answer: "A threat to divorce by WhatsApp, or any means, does not create any legal obligation on you or change your current rights. If your husband follows through with a talaq, the rights that apply to your type of divorce (iddah housing and maintenance, the dowry once the separation is irrevocable, mut'a where Article 102 applies, child support) are enforceable as debts, and an undocumented talaq exposes him to compensation under Article 58. Courts can freeze bank accounts and attach salary under an enforcement order. Do not be pressured by threats of digital divorce. If you are concerned about maintenance, you can apply for an interim maintenance order at the Personal Status Court at any time during the marriage, before any divorce proceedings start.",
   },
   {
     question: 'Can the divorce be valid if the WhatsApp message was in a language other than Arabic?',
@@ -170,9 +170,9 @@ const faqItems = [
       <p class="hero-tag">Digital Divorce UAE, 2026 Legal Guide</p>
       <h1>Is WhatsApp Divorce Valid in UAE? What the Law Says</h1>
       <p class="hero-desc">
-        Yes, a WhatsApp message saying "I divorce you" can constitute a valid talaq in UAE: the 2024 Personal Status Law allows a talaq in writing by any means. But the husband must document it in court within 15 days, and until it is documented or proven in court there is no official record you can rely on. Here is what the law actually requires.
+        Yes, a WhatsApp message saying "I divorce you" can constitute a valid talaq in UAE: Article 57 of the 2024 Personal Status Law recognises a divorce made verbally, in writing or by signal. But the husband must document it in court within 15 days, and until it is documented or proven in court there is no official record you can rely on. Here is what the law actually requires.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated October 2026</p>
     </div>
   </section>
 
@@ -183,7 +183,7 @@ const faqItems = [
       <div class="answer-box">
         <h2>The answer in plain terms</h2>
         <ul class="key-facts">
-          <li><strong>A WhatsApp divorce CAN be valid in UAE.</strong> Article 54 of FL 41/2024 says a talaq can be given by speech or in writing by any means.</li>
+          <li><strong>A WhatsApp divorce CAN be valid in UAE.</strong> Article 57 of FL 41/2024 recognises a divorce made verbally, in writing or by signal.</li>
           <li><strong>It must be documented in court.</strong> Article 58 of FL 41/2024 obliges the husband to document it within 15 days; the law frames this as a duty backed by compensation, and nothing official changes until the talaq is documented or proven in court.</li>
           <li><strong>Screenshots are admissible evidence.</strong> Notarised with metadata, or court-extracted from the device.</li>
           <li><strong>No witnesses needed</strong> for the WhatsApp message itself. Intent must be clear from the words used.</li>
@@ -196,10 +196,10 @@ const faqItems = [
       <section class="content-section">
         <h2>The Legal Basis: Why Digital Communication Can Be a Valid Talaq</h2>
         <p>
-          The main source is the personal status law itself. <strong>Article 54 of Federal Decree-Law No. 41 of 2024</strong> provides that a talaq occurs from the husband by speech or by writing by any means, and only by understandable gesture if he cannot do either. A WhatsApp message is writing, so the medium does not stop a talaq from taking effect. On the evidence side, <strong>Federal Decree-Law No. 35 of 2022 on Evidence in Civil and Commercial Transactions</strong> recognises electronic records, including messages, as evidence.
+          The main source is the personal status law itself. <strong>Article 57 of Federal Decree-Law No. 41 of 2024</strong>, which deals with repeated divorce, expressly contemplates a divorce made verbally, in writing or by signal. A WhatsApp message is writing, so the medium does not stop a talaq from taking effect. On the evidence side, <strong>Federal Decree-Law No. 35 of 2022 on Evidence in Civil and Commercial Transactions</strong> recognises electronic records, including messages, as evidence.
         </p>
         <p>
-          The relevant test is whether the message clearly expresses the intent to divorce, not the platform it was sent on. Article 53 treats the word "divorce" and its derivatives as explicit, while ambiguous words only count if the husband intended divorce, and Article 56 lists cases where a talaq does not take effect at all, such as a talaq under duress or in anger so intense that the husband could not control his words.
+          The relevant test is whether the message clearly expresses the intent to divorce, not the platform it was sent on. Clear words such as "I divorce you" leave little room for argument, while ambiguous wording is weighed against what the husband actually intended, and Article 56 lists cases where a talaq does not take effect at all, such as a talaq under duress or in anger so intense that the husband could not control his words.
         </p>
         <p>
           From this legal framework, the position follows logically. A husband who sends his wife "I divorce you" via WhatsApp, SMS, email, or voice note has potentially made a valid talaq pronouncement, just as if he had spoken the words directly. The platform is irrelevant to the validity of the pronouncement.
@@ -217,7 +217,7 @@ const faqItems = [
       <section class="content-section">
         <h2>The 15-Day Documentation Duty: What the Message Does and Does Not Do</h2>
         <p>
-          Here is the part that most discussions of WhatsApp divorce get wrong, in both directions. Under <strong>Article 54 of Federal Decree-Law No. 41 of 2024</strong>, the personal status law in force since 15 April 2025, a talaq can take effect when it is given in writing by any means, so a WhatsApp message is not legally meaningless. But <strong>Article 58</strong> requires the husband to document the talaq before the competent court within 15 days of giving it. The law frames this as a duty on the husband, with a financial penalty if he ignores it, rather than as a condition for the talaq to exist. How a court treats a particular undocumented talaq is for the judge in that case, so take advice on your own facts.
+          Here is the part that most discussions of WhatsApp divorce get wrong, in both directions. Under <strong>Federal Decree-Law No. 41 of 2024</strong>, the personal status law in force since 15 April 2025, a divorce can be made in writing (Article 57), so a WhatsApp message is not legally meaningless. But <strong>Article 58</strong> requires the husband to document the talaq before the competent court within 15 days of giving it. The law frames this as a duty on the husband, with a financial penalty if he ignores it, rather than as a condition for the talaq to exist. How a court treats a particular undocumented talaq is for the judge in that case, so take advice on your own facts.
         </p>
         <p>
           In practice, until the talaq is documented by the husband or proven in court by the wife, there is no official record of the divorce, and nothing official changes. This means:
@@ -296,7 +296,7 @@ const faqItems = [
             <div class="not-badge">NO</div>
             <div class="not-body">
               <h3>It is not an official record of divorce</h3>
-              <p>A WhatsApp talaq can take effect under Article 54, but until the husband documents it at the Personal Status Court, or the wife proves it there, there is no court record of the divorce. Courts, the GDRFA, employers and banks act on that record, not on a message.</p>
+              <p>A WhatsApp talaq can take effect, since Article 57 recognises a written divorce, but until the husband documents it at the Personal Status Court, or the wife proves it there, there is no court record of the divorce. Courts, the GDRFA, employers and banks act on that record, not on a message.</p>
             </div>
           </div>
           <div class="not-card">
@@ -360,7 +360,7 @@ const faqItems = [
 
         <h3>Scenario 4: Voice note divorce, "I divorce you" recorded and sent</h3>
         <p>
-          WhatsApp voice notes containing a clear verbal talaq declaration follow the same legal framework as written messages. UAE courts have accepted voice note evidence in family proceedings. Authentication is more complex, voice analysis may be ordered by the court to verify the speaker's identity. A voice note where the sender's number is confirmed, the voice is identifiable, and the words are unambiguous has been treated as a valid pronouncement in UAE case law. As always, the husband must document it in court within 15 days.
+          WhatsApp voice notes containing a clear verbal talaq declaration follow the same legal framework as written messages. UAE courts have accepted voice note evidence in family proceedings. Authentication is more complex, voice analysis may be ordered by the court to verify the speaker's identity. A voice note where the sender's number is confirmed, the voice is identifiable, and the words are unambiguous can be treated as a valid verbal pronouncement, since Article 57 covers a divorce made verbally. As always, the husband must document it in court within 15 days.
         </p>
       </section>
 
@@ -371,7 +371,7 @@ const faqItems = [
           Once a talaq that was initiated by WhatsApp (or any other means) is registered at the Personal Status Court, the wife's financial rights are identical to those following any other form of divorce. The mechanism of delivery does not affect the financial entitlements.
         </p>
         <p>
-          The deferred mahr (mu'ajjal) falls due on the divorce and can be enforced once the divorce is documented or proven. This is a legally enforceable debt, see the <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a> for how to file for enforcement if payment is refused. Iddah maintenance (housing, food, and living expenses for approximately three months) is owed for the iddah, which for a divorce proven in court runs from the date it is proven (Article 83). Mut'a, a compensatory payment calibrated to the marriage length and the husband's financial position, is ordered by the court at the divorce hearing or shortly after.
+          The dowry, including the deferred mahr (mu'ajjal), falls due on irrevocable separation (Article 46), meaning once the talaq is irrevocable or the iddah of a revocable talaq has ended without a take back, and it can be enforced once the divorce is documented or proven. This is a legally enforceable debt, see the <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a> for how to file for enforcement if payment is refused. Iddah maintenance is owed after a revocable talaq, and after an irrevocable one only if the wife is pregnant, while the right to live in the marital home applies throughout the iddah in every case (Article 101); for a divorce proven in court, the iddah runs from the date it is proven (Article 83). Mut'a, compensation of up to one year's maintenance for women of her standing, is owed where the husband divorced a consummated wife by his own will, without her request or cause (Article 102).
         </p>
         <p>
           Child support and custody are addressed by the Personal Status Court simultaneously or in separate proceedings. The fact that the divorce originated from a WhatsApp message has no bearing on custody determinations.

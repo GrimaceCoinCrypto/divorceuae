@@ -67,7 +67,7 @@ const faqSchema = {
       name: 'Do I need a lawyer for absence divorce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You are not legally required to use a lawyer for absence divorce proceedings in UAE. However, given the complexity of serving process on an absent or foreign respondent, meeting the publication requirements, and presenting the financial abandonment evidence correctly, legal representation significantly increases the efficiency and success rate of the proceedings. Lawyer fees for an absence divorce case typically range from AED 5,000 to AED 25,000 depending on complexity.',
+        text: 'You are not legally required to use a lawyer for absence divorce proceedings in UAE: litigants may appear in person (Article 52 of Federal Decree-Law No. 42 of 2022, the Civil Procedure Code). However, given the complexity of serving process on an absent or foreign respondent, meeting the publication requirements, and presenting the financial abandonment evidence correctly, legal representation often makes the case run more smoothly. Lawyer fees vary with complexity, so ask for a written quote.',
       },
     },
     {
@@ -99,7 +99,7 @@ const faqSchema = {
       name: 'Will I get mahr if he abandoned me?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Mahr is your legal right regardless of who initiated the divorce and regardless of your husband\'s abandonment. A judicial divorce obtained through absence proceedings (faskh) does not extinguish the wife\'s mahr rights. The deferred mahr falls due upon the divorce judgment. If the husband is absent and has no known assets in the UAE, collecting the mahr may require enforcement through international judicial cooperation, which is possible but more complex than domestic enforcement. See the mahr enforcement guide for options.',
+        text: 'Yes. Your husband\'s abandonment does not cost you the mahr. A judicial divorce obtained through absence proceedings (faskh) does not extinguish the wife\'s mahr rights, unlike khula, where the mahr is usually the price of the release (Article 66 of Federal Decree-Law No. 41 of 2024). The dowry, including any deferred part, falls due on irrevocable separation (Article 46). If the husband is absent and has no known assets in the UAE, collecting the mahr may require enforcement through international judicial cooperation, which is possible but more complex than domestic enforcement. See the mahr enforcement guide for options.',
       },
     },
   ],
@@ -172,7 +172,7 @@ const faqItems = [
   },
   {
     question: 'How does the court serve papers on my husband if he is abroad?',
-    answer: "UAE courts have a range of service methods for foreign-located respondents. Formally: (1) email service to the last known email address, which is considered valid if email is confirmed; (2) WhatsApp or SMS to the last known phone number (UAE courts accept this as valid service under digital communications frameworks); (3) service through judicial cooperation agreements with the relevant foreign court or authority; (4) service through diplomatic channels, via the UAE Ministry of Foreign Affairs and the UAE embassy in the relevant country. If all these fail, the court serves by posting on its website or by publication in a widely circulated Arabic daily newspaper, plus a foreign-language one if he is a foreigner. Once service is complete, the court can proceed to judgment.",
+    answer: "UAE courts have a range of service methods for foreign-located respondents. Formally: (1) email service to the last known email address, which is considered valid if email is confirmed; (2) WhatsApp or SMS to the last known phone number (Article 9 of the Civil Procedure Code, Federal Decree-Law No. 42 of 2022, allows service by SMS, smart applications, email and recorded calls); (3) service through judicial cooperation agreements with the relevant foreign court or authority; (4) service through diplomatic channels, via the UAE Ministry of Foreign Affairs and the UAE embassy in the relevant country. If all these fail, the court serves by posting on its website or by publication in a widely circulated Arabic daily newspaper, plus a foreign-language one if he is a foreigner. Once service is complete, the court can proceed to judgment.",
   },
   {
     question: 'Can I get child custody sorted at the same time?',
@@ -184,11 +184,11 @@ const faqItems = [
   },
   {
     question: 'My husband is in another emirate, not abroad. Does this still apply?',
-    answer: "An absent husband in another UAE emirate is much easier to locate and serve than one abroad. UAE courts can serve process via all domestic channels, and the husband cannot claim he was outside UAE service reach. A husband who is physically in the UAE but refuses to participate in divorce proceedings will be served and can be subject to contempt proceedings for deliberate non-cooperation. For Muslim wives, divorce for non-payment of maintenance under Article 77 does not require physical absence: it applies when the husband is contactable but refuses to maintain you and does not pay within the grace period the court gives him. See <a href='/en/how-to-file-for-divorce-in-dubai/'>how to file for divorce in Dubai</a> for the domestic filing process.",
+    answer: "An absent husband in another UAE emirate is much easier to locate and serve than one abroad. UAE courts can serve process via all domestic channels, and the husband cannot claim he was outside UAE service reach. A husband who is physically in the UAE but refuses to participate in divorce proceedings will be served, and if he does not attend, the case can proceed without him. For Muslim wives, divorce for non-payment of maintenance under Article 77 does not require physical absence: it applies when the husband is contactable but refuses to maintain you and does not pay within the grace period the court gives him. See <a href='/en/how-to-file-for-divorce-in-dubai/'>how to file for divorce in Dubai</a> for the domestic filing process.",
   },
   {
     question: 'Will I lose mahr rights by filing for absence divorce rather than waiting for talaq?',
-    answer: "No. A judicial divorce (faskh) on grounds of absence or financial abandonment does not forfeit the wife's mahr rights. Unlike khula, where the wife typically returns the mahr as the price of the dissolution, a faskh is granted because of the husband's wrongdoing or incapacity. The wife retains full mahr rights. The deferred mahr falls due on the divorce judgment. If the husband has been absent and has no known UAE assets, enforcing the mahr may require international cooperation, but the legal right to the mahr is entirely preserved.",
+    answer: "No. A judicial divorce (faskh) on grounds of absence or financial abandonment does not forfeit the wife's mahr rights. Unlike khula, where the wife typically returns the mahr as the price of the dissolution, a faskh is granted because of the husband's wrongdoing or incapacity. The wife retains full mahr rights. The dowry, including any deferred part, falls due on irrevocable separation (Article 46 of Federal Decree-Law No. 41 of 2024). If the husband has been absent and has no known UAE assets, enforcing the mahr may require international cooperation, but the legal right to the mahr is entirely preserved.",
   },
 ];
 ---
@@ -214,7 +214,7 @@ const faqItems = [
       <p class="hero-desc">
         Your husband left. He may have abandoned you financially, disappeared without a word, or moved abroad and refuses to engage with any legal process. UAE law gives you a clear path to divorce without his cooperation. This guide explains exactly how, the legal grounds, the evidence you need, the process, and your full financial rights.
       </p>
-      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated September 2026</p>
+      <p class="hero-author">By <strong>Aleksi Suon</strong>, UAE Expat &amp; Legal Consultant &middot; Updated October 2026</p>
     </div>
   </section>
 
@@ -355,14 +355,14 @@ const faqItems = [
             <div class="step-num">01</div>
             <div class="step-body">
               <h3>Email service to last known address</h3>
-              <p>UAE courts accept email as a valid service method if the email address is confirmed. Your application should include the husband's last known email address. The court sends official notice via email. Read receipt or delivery confirmation strengthens the record, but UAE courts do not require proof of actual reading, only proof that the email was sent to the correct address.</p>
+              <p>Article 9 of the Civil Procedure Code (Federal Decree-Law No. 42 of 2022) allows service by email. Your application should include the husband's last known email address. The court sends official notice via email. Under Article 11, service is effective from the date the email is sent, so the court does not need proof of actual reading, only that the email went to the correct address.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">02</div>
             <div class="step-body">
               <h3>WhatsApp and SMS to last known number</h3>
-              <p>Following the UAE courts' recognition of digital communications as valid legal acts, WhatsApp messages and SMS from the court (or the court-authorised lawyer) to the last known phone number constitute valid service. Message delivery confirmation and read receipts are logged as part of the service record. This is increasingly the first-resort service method for foreign respondents.</p>
+              <p>Article 9 of the Civil Procedure Code lists SMS, smart applications and recorded audio or video calls as service methods, so messages from the court to the last known phone number can constitute valid service. Message delivery confirmation and read receipts are logged as part of the service record. This is increasingly the first-resort service method for foreign respondents.</p>
             </div>
           </div>
           <div class="step-card">
@@ -468,7 +468,7 @@ const faqItems = [
         </p>
         <div class="info-box info-box--info">
           <h3>Urgent case threshold: what qualifies</h3>
-          <p>Courts treat cases as urgent for interim maintenance purposes when: the wife and children have no independent income, the husband has been absent for more than 30 days without payment, there are young children with ongoing educational or medical expenses, or there is evidence that the husband is deliberately dissipating assets. Submit a declaration of your current financial position with the interim maintenance application to assist the court in assessing urgency.</p>
+          <p>Factors that support urgency for interim maintenance include: the wife and children have no independent income, the husband has stopped paying, there are young children with ongoing educational or medical expenses, or there is evidence that the husband is deliberately dissipating assets. Submit a declaration of your current financial position with the interim maintenance application to assist the court in assessing urgency.</p>
         </div>
       </section>
 
@@ -481,12 +481,12 @@ const faqItems = [
 
         <h3>Mahr: your full right is preserved</h3>
         <p>
-          As this guide has noted: faskh on grounds of absence or abandonment fully preserves your mahr rights. The deferred mahr (mu'ajjal) falls due on the divorce judgment. The prompt mahr (muqaddam) should already have been paid. See the <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a> for the enforcement process if the husband refuses to pay from abroad.
+          As this guide has noted: faskh on grounds of absence or abandonment fully preserves your mahr rights. The deferred mahr (mu'ajjal) falls due on irrevocable separation (Article 46 of Federal Decree-Law No. 41 of 2024). The prompt mahr (muqaddam) should already have been paid. See the <a href="/en/mahr-divorce-uae/">mahr divorce UAE guide</a> for the enforcement process if the husband refuses to pay from abroad.
         </p>
 
         <h3>Iddah maintenance</h3>
         <p>
-          Even following an absence-based divorce, iddah maintenance for approximately three months is owed by the husband. If he has no UAE assets and is abroad, collecting iddah maintenance in practice may require international enforcement. However, the legal obligation exists and can be pursued through UAE courts with international judicial cooperation channels.
+          Whether iddah maintenance is owed after an absence-based divorce depends on the type of divorce the judgment records. Article 101 makes it obligatory after a revocable divorce, but after an irrevocable divorce only if you are pregnant, until the birth; a divorce for non-payment under Article 77, for example, is minor irrevocable. In every case you may live in the marital home during the iddah. Arrears of maintenance from before the divorce remain claimable. If he has no UAE assets and is abroad, collecting in practice may require international enforcement through judicial cooperation channels.
         </p>
 
         <h3>Child maintenance and custody</h3>

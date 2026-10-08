@@ -23,66 +23,66 @@ const divorceTypes = [
     name: 'Revocable Divorce (Talaq Raj\'i)',
     arabic: 'الطلاق الرجعي',
     tag: 'First or second pronouncement',
-    desc: 'The husband pronounces divorce once or twice. During the waiting period (iddah, typically three menstrual cycles), he retains the right to revoke the divorce and resume the marriage without a new contract or the wife\'s consent.',
+    desc: 'The husband pronounces divorce once or twice in a marriage where intercourse or valid seclusion took place. During the waiting period (iddah: three periods of purity, or three lunar months for a woman who does not menstruate), he retains the right to take his wife back without a new contract or the wife’s consent.',
     keyPoints: [
-      'Wife remains legally married during the iddah period',
-      'Husband can revoke verbally or by resuming cohabitation',
-      'If iddah ends without revocation, it converts to Minor Irrevocable Divorce',
-      'Wife is entitled to full accommodation and financial support throughout iddah',
+      'The marriage contract continues until the iddah expires',
+      'Husband can take her back by an explicit spoken or written statement, or by action',
+      'If iddah ends without a take back, it converts to Minor Irrevocable Divorce',
+      'Wife is entitled to maintenance and to live in the marital home throughout the iddah',
     ],
-    uaeLaw: 'UAE Personal Status Law (Federal Decree-Law No. 41 of 2024, which replaced Law No. 28 of 2005): the first and second pronouncements are revocable.',
+    uaeLaw: 'Federal Decree-Law No. 41 of 2024 (which replaced Law No. 28 of 2005), Articles 59 to 62 and 101: a first or second divorce after intercourse or seclusion is revocable; a divorce before intercourse or seclusion is minor irrevocable (Article 60).',
   },
   {
     name: 'Minor Irrevocable Divorce (Ba\'in Sughra)',
     arabic: 'الطلاق البائن بينونة صغرى',
     tag: 'After iddah expires, or khul\'a',
-    desc: 'A revocable divorce that expired without the husband revoking it, a divorce before consummation of marriage, or a divorce obtained through khul\'a (wife-initiated). The parties may remarry with a new marriage contract and new mahr.',
+    desc: 'A revocable divorce whose iddah expired without the husband taking his wife back, a divorce before intercourse or valid seclusion, or a divorce obtained through khul\'a (wife-initiated). The parties may remarry with a new marriage contract and new mahr.',
     keyPoints: [
       'Requires a new marriage contract and mahr to remarry',
       'Covers the first and second pronouncements after iddah ends',
-      'Includes divorce before consummation (no iddah required in this case)',
-      'Includes khul\'a (wife returns the mahr in exchange for release)',
+      'Includes divorce before intercourse or valid seclusion (no iddah in this case, and half the named dowry)',
+      'Includes khul\'a (the wife gives a consideration, often the mahr, in exchange for release)',
     ],
-    uaeLaw: 'UAE law Articles 99–101, a divorce completed after iddah, or by court-ordered khul\'a, is Ba\'in Sughra.',
+    uaeLaw: 'Articles 59(2)(a), 60(2) and 65 of Federal Decree-Law No. 41 of 2024: a first or second divorce not followed by a take back during the iddah, a divorce before intercourse or seclusion, and khul\'a are minor irrevocable. No iddah applies after a divorce before intercourse or seclusion (Article 82), and the wife takes half the named dowry (Article 47(3)).',
   },
   {
     name: 'Major Irrevocable Divorce (Ba\'in Kubra)',
     arabic: 'الطلاق البائن بينونة كبرى',
     tag: 'Third pronouncement, final',
-    desc: 'The third pronouncement of divorce. The wife is forbidden from remarrying her former husband until she has married another man in a genuine marriage, that marriage has been consummated, and that second husband has divorced her or died.',
+    desc: 'The divorce that completes three. The wife is forbidden from remarrying her former husband until she has married another man in a valid marriage, that marriage has been consummated, it has ended, and her iddah from him has finished.',
     keyPoints: [
       'Absolutely final, no revocation or remarriage without intervening marriage',
-      'UAE law explicitly prohibits \'tahleel\' (sham marriage to enable remarriage), it is void and criminal',
-      'Three pronouncements in a single sitting count as ONE under UAE Article 99',
-      'All financial rights (alimony during iddah, deferred mahr) still apply',
+      'A pre-arranged \'tahlil\' marriage made only to permit remarriage is widely condemned by Islamic scholars',
+      'Three pronouncements in a single sitting count as ONE under Article 57',
+      'Deferred mahr falls due and she may live in the marital home during the iddah; iddah maintenance is due only if she is pregnant, until birth',
     ],
-    uaeLaw: 'Article 99: "Divorce accompanied by a number, whether by word or gesture, does not count as more than one." Three pronouncements in one session = one revocable divorce under UAE law.',
+    uaeLaw: 'Article 59(2)(b) of Federal Decree-Law No. 41 of 2024: the divorce that completes three is major irrevocable. Article 57: a repeated divorce, or a divorce coupled with a number, verbally, in writing or by signal, counts as one. Articles 46 and 101 govern the dowry and iddah maintenance.',
   },
   {
     name: "Khul'a (Wife-Initiated Divorce)",
     arabic: 'الخلع',
     tag: 'Wife\'s right',
-    desc: 'A wife may request a divorce in exchange for returning the mahr (dower) to her husband. If the husband refuses, she may petition the Personal Status Court which can order the khul\'a over his objection.',
+    desc: 'A wife may request a divorce in exchange for a consideration, most often the mahr (dower). If the husband stubbornly refuses, the Personal Status Court can order the khul\'a for an appropriate consideration.',
     keyPoints: [
-      'Wife returns the advance mahr as the standard compensation',
-      'Court-ordered khul\'a is available even if the husband refuses',
+      'The consideration can be any property; where it is the mahr, returning what she received is enough and the rest is dropped',
+      'Court-ordered khul\'a is available if the husband stubbornly refuses',
       'Counts as Ba\'in Sughra, new contract required to remarry',
-      'Some scholars hold that a khul\'a wife does not need the full three-cycle iddah, UAE practice typically follows a one-cycle waiting period',
+      'The normal iddah rules apply; there is no iddah maintenance after khul\'a, but she may live in the marital home during the iddah',
     ],
-    uaeLaw: 'Articles 110–117 of UAE Personal Status Law govern khul\'a. Court must verify the wife\'s request is free and voluntary and that the mahr arrangement is clear.',
+    uaeLaw: 'Articles 65 to 68 of Federal Decree-Law No. 41 of 2024 govern khul\'a. It cannot waive the children\'s rights, maintenance or custody (Article 66), and the spouses must document it at court within 15 days (Article 68). Iddah maintenance: Article 101.',
   },
   {
     name: 'Judicial Separation (Faskh / Tatliq)',
     arabic: 'التفريق القضائي',
     tag: 'Court-ordered',
-    desc: 'A judge dissolves the marriage on application by either party when specific legal grounds are met: harm or abuse, desertion for four or more months, failure to provide financial support, long absence, or a hidden defect at the time of marriage.',
+    desc: 'A judge dissolves the marriage on application when specific legal grounds are met: harm, desertion, failure to provide maintenance, absence or imprisonment, addiction, or a serious defect or disease.',
     keyPoints: [
-      'Wife can petition on grounds of harm, desertion, non-maintenance, long absence, or contagious disease',
-      'Husband can petition on grounds of hidden defect or fraud',
+      'Wife can petition on grounds of harm, desertion, non-maintenance, absence, imprisonment or addiction',
+      'Either spouse can ask for revocation for a serious defect or disease (Article 69)',
       'Court investigates the claim before granting the separation',
       'Treated as Ba\'in Sughra, a new contract is required to remarry',
     ],
-    uaeLaw: 'Articles 118–132 of UAE Personal Status Law list the specific grounds for judicial separation. The court appoints mediators before granting the separation in cases of harm.',
+    uaeLaw: 'Articles 69 to 80 of Federal Decree-Law No. 41 of 2024 list the grounds for revocation and judicial separation. In contested discord cases the court can appoint arbitrators (Articles 72 to 74).',
   },
   {
     name: "Bid'i Divorce (Forbidden Innovation)",
@@ -90,12 +90,12 @@ const divorceTypes = [
     tag: 'Prohibited, but valid in UAE',
     desc: 'A divorce pronounced in a way that violates Islamic law, most commonly: divorce during menstruation or postnatal bleeding, or three pronouncements in a single session. It is sinful but takes legal effect under most classical and UAE law interpretations.',
     keyPoints: [
-      'Divorce during menstruation: sinful, but UAE courts treat it as valid, the husband may be ordered to revoke it',
-      'Three pronouncements in one session: sinful, but UAE Article 99 treats this as a single revocable divorce',
-      'Marriage with intent to divorce (mutah-style) is explicitly banned and void under UAE law',
+      'Divorce during menstruation: sinful, but it is not among the cases in Article 56 where a divorce does not occur',
+      'Three pronouncements in one session: sinful, but Article 57 treats this as a single divorce',
+      'By contrast, a divorce does not occur at all under duress, in anger so intense it prevents control of one\'s words, or when insane or intoxicated (Article 56)',
       'If in doubt whether your divorce falls into this category, consult a UAE personal status lawyer immediately',
     ],
-    uaeLaw: 'Article 99 of UAE Personal Status Law: three-in-one counts as one revocable divorce, one of the most significant UAE departures from classical Hanbali/Shafi\'i opinion.',
+    uaeLaw: 'Article 57 of Federal Decree-Law No. 41 of 2024: three-in-one counts as one divorce. The classical majority of the four Sunni schools counted three as three; the one-count view is associated with Ibn Taymiyya and Ibn al-Qayyim.',
   },
 ];
 
@@ -106,7 +106,7 @@ const faqItems = [
   },
   {
     question: 'Does UAE law recognise three divorces in one session as final?',
-    answer: 'No. UAE law counts a divorce accompanied by a number, whether by word or gesture, as a single divorce. The old 2005 law said so and Federal Decree-Law No. 41 of 2024 keeps the rule. So "You are divorced three times" counts as one revocable divorce under UAE law. This is a significant departure from the classical majority view and is one of the most practically important distinctions in UAE divorce law.',
+    answer: 'No. Article 57 of Federal Decree-Law No. 41 of 2024 counts a repeated divorce, or a divorce coupled with a number, verbally, in writing or by signal, as a single divorce. So "You are divorced three times" counts as one divorce, which is revocable if it is the first or second in a marriage where intercourse or valid seclusion took place. This is a significant departure from the classical majority view and is one of the most practically important distinctions in UAE divorce law.',
   },
   {
     question: 'Can a wife initiate divorce in the UAE?',
@@ -118,11 +118,11 @@ const faqItems = [
   },
   {
     question: 'How many divorces are allowed before the marriage is permanently over?',
-    answer: 'In Islamic law followed by UAE courts, a Muslim couple may divorce and remarry twice. The third divorce is the Ba\'in Kubra, permanently final unless the wife genuinely marries another man, that marriage is consummated, and she is subsequently divorced or widowed from him. Under UAE Article 99, three pronouncements in one session count as only one divorce, so the count of two-before-final still applies across separate occasions.',
+    answer: 'A husband has three divorces. After a first or second talaq he can take his wife back during the iddah (Article 61), and that talaq still counts towards the three; once the iddah has ended without a take back, they can reunite only with a new contract and a new dowry (Article 59). The divorce that completes three is the Ba\'in Kubra, final unless the wife marries another man in a valid marriage, that marriage is consummated, it ends, and her iddah from him has finished. Under Article 57, three pronouncements in one session count as only one divorce, so the count builds only across separate divorces.',
   },
   {
     question: 'Does UAE divorce type affect alimony and mahr rights?',
-    answer: 'Yes, significantly. In a revocable divorce: the wife retains all maintenance during iddah. In Ba\'in Sughra: maintenance during iddah is due (UAE courts enforce this). In Ba\'in Kubra (third divorce): maintenance during iddah is still due under UAE law. In khul\'a: the wife forfeits the mahr she returns, but deferred mahr arrangements can vary. In judicial separation for the husband\'s fault: the wife retains the full mahr. Always get specific advice on the financial implications for your type of divorce.',
+    answer: 'Yes, significantly. Under Article 101 of Federal Decree-Law No. 41 of 2024: in a revocable divorce the wife is entitled to maintenance during the iddah. After an irrevocable divorce, whether Ba\'in Sughra or Ba\'in Kubra, iddah maintenance is due only if she is pregnant, until the birth. After khul\'a there is no iddah maintenance. In every case she may live in the marital home during the iddah. The dowry falls due on irrevocable separation (Article 46); in khul\'a it is usually the consideration she gives up. In judicial separation for the husband\'s fault: the wife retains the full mahr. Always get specific advice on the financial implications for your type of divorce.',
   },
 ];
 ---
@@ -142,7 +142,7 @@ const faqItems = [
       <h1>Types of Divorce in UAE, Islamic Law and the Personal Status Code</h1>
       <p class="hero-sub">UAE divorce law recognises six distinct types of divorce, each with different rules for revocation, remarriage, and financial rights. Knowing which type applies to your situation determines your rights from day one.</p>
       <div class="hero-meta">
-        <span>Updated: May 2025</span>
+        <span>Updated: October 2026</span>
         <span class="sep">·</span>
         <span>By Aleksi Suon, UAE Expat &amp; Legal Consultant</span>
       </div>
@@ -154,7 +154,7 @@ const faqItems = [
 
       <div class="key-point">
         <h2>The Single Most Important UAE Rule</h2>
-        <p>Under the <strong>UAE Personal Status Law</strong> (a rule of the old 2005 law that Federal Decree-Law No. 41 of 2024 keeps), pronouncing divorce three times in one session counts as only <strong>one revocable divorce</strong>, not three. This departs from the classical majority Islamic opinion and is one of the most practically significant rules in UAE personal status law. Many couples do not realise this until it is too late to act on it correctly.</p>
+        <p>Under Article 57 of the <strong>UAE Personal Status Law</strong> (Federal Decree-Law No. 41 of 2024), pronouncing divorce three times in one session counts as only <strong>one divorce</strong>, not three, and a first or second divorce after consummation can be taken back during the iddah. This departs from the classical majority Islamic opinion and is one of the most practically significant rules in UAE personal status law. Many couples do not realise this until it is too late to act on it correctly.</p>
         <p>For a full breakdown of how the 2024 law changed the Islamic divorce framework for Muslims in UAE, see our guide on <a href="/en/sharia-divorce-uae/">Sharia divorce in UAE</a>. For the specific rules on talaq, including registration deadlines and digital/WhatsApp validity, see our dedicated <a href="/en/talaq-uae/">talaq in UAE guide</a> and the closely related question of whether a <a href="/en/whatsapp-divorce-uae/">WhatsApp divorce</a> is legally recognised.</p>
       </div>
 
@@ -198,7 +198,7 @@ const faqItems = [
             </thead>
             <tbody>
               <tr><td>Revocable (1st or 2nd)</td><td>Husband</td><td>Yes, during iddah</td><td>No</td></tr>
-              <tr><td>Ba'in Sughra (after iddah)</td><td>Husband</td><td>No, new contract needed</td><td>Yes</td></tr>
+              <tr><td>Ba'in Sughra (after iddah, or before consummation)</td><td>Husband</td><td>No, new contract needed</td><td>Yes</td></tr>
               <tr><td>Ba'in Kubra (3rd divorce)</td><td>Husband</td><td>No, until intervening marriage</td><td>Yes (after 2nd marriage)</td></tr>
               <tr><td>Khul'a</td><td>Wife / Court</td><td>No</td><td>Yes</td></tr>
               <tr><td>Judicial Separation</td><td>Court</td><td>No</td><td>Yes</td></tr>

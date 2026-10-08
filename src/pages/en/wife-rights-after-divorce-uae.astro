@@ -22,22 +22,22 @@ const faqItems = [
   {
     question: "What financial rights does a wife have after divorce in UAE?",
     answer:
-      "A Muslim wife is entitled to: unpaid mahr (dowry), iddah maintenance (3 months living expenses), child support if she has custody, and mutaa (consolation gift) in some cases. Under the 2022 civil law for non-Muslims, she is also entitled to 50% of marital assets.",
+      "A Muslim wife is entitled to: unpaid mahr (dowry), which falls due on irrevocable separation (Article 46 of Federal Decree-Law No. 41 of 2024); the right to live in the marital home during the iddah, plus iddah maintenance after a revocable divorce, or after an irrevocable one only if she is pregnant (Article 101); child support if she has custody; and mutaa where Article 102 applies. Under the 2022 civil law for non-Muslims there is no automatic 50/50 split of assets.",
   },
   {
     question: "How long does a husband pay alimony in UAE?",
     answer:
-      "Under Islamic law, the husband must pay maintenance during the iddah period (approximately 3 months). Extended alimony beyond iddah is not automatic under UAE Islamic law, it depends on the specific circumstances. Under the 2022 civil law, courts can order longer-term alimony.",
+      "Under the Muslim personal status law, iddah maintenance runs for the iddah after a revocable divorce, and after an irrevocable divorce only if she is pregnant, until the birth (Article 101). The main payment beyond that is mutaa, capped at one year's maintenance for women of her standing (Article 102). Under the 2022 civil law, the court can award alimony after the divorce judgment on the factors listed in Article 9 of Federal Decree-Law No. 41 of 2022.",
   },
   {
     question: "Can a wife stay in the marital home after divorce in UAE?",
     answer:
-      "A wife with child custody is entitled to suitable housing for herself and the children during the custody period. The court can order the husband to provide or pay for accommodation. After custody ends, the housing entitlement also ends.",
+      "During the iddah, yes, in every type of divorce: she may live in the marital home, or in a suitable home if it is unsuitable (Article 101 of Federal Decree-Law No. 41 of 2024). After the iddah, a wife with child custody is entitled to suitable housing for herself and the children during the custody period, and the court can order the husband to provide or pay for accommodation. After custody ends, that housing entitlement also ends.",
   },
   {
     question: "What is mutaa in UAE divorce?",
     answer:
-      "Mutaa is a consolation payment from the husband to the wife upon divorce, particularly when the husband initiates the divorce (talaq) without fault on the wife's part. UAE courts can order mutaa based on the length of the marriage and the husband's financial capacity.",
+      "Mutaa is compensation from the husband, paid on top of iddah maintenance, where he divorced a wife with whom the marriage was consummated by his sole will, without her request or any cause from her (Article 102 of Federal Decree-Law No. 41 of 2024). The court sets it according to his means, up to one year's maintenance for women of her standing, can allow instalments, and takes the harm she suffered into account.",
   },
   {
     question: "Does a non-Muslim wife get half the assets in UAE divorce?",
@@ -86,17 +86,17 @@ const faqItems = [
         <div class="right-card right-card--green">
           <span class="right-icon">💍</span>
           <h3>Mahr (Dowry)</h3>
-          <p>Full unpaid mahr is due upon divorce. If mahr was deferred, it becomes payable immediately.</p>
+          <p>Unpaid mahr, including any deferred part, falls due once the separation is irrevocable (Article 46). Divorced before intercourse or valid seclusion: half the named mahr (Article 47(3)).</p>
         </div>
         <div class="right-card right-card--blue">
           <span class="right-icon">🏠</span>
           <h3>Housing</h3>
-          <p>The wife with custody is entitled to suitable housing for herself and the children throughout the custody period.</p>
+          <p>Every divorced wife may live in the marital home during the iddah (Article 101). After that, a wife with custody is entitled to suitable housing for herself and the children.</p>
         </div>
         <div class="right-card right-card--gold">
           <span class="right-icon">💰</span>
           <h3>Iddah Maintenance</h3>
-          <p>The husband must pay full living expenses for the 3-month iddah period (Muslim divorces).</p>
+          <p>Owed for the iddah after a revocable divorce; after an irrevocable one only if she is pregnant; none after khula (Article 101).</p>
         </div>
         <div class="right-card right-card--purple">
           <span class="right-icon">👶</span>
@@ -106,12 +106,12 @@ const faqItems = [
         <div class="right-card right-card--teal">
           <span class="right-icon">🎁</span>
           <h3>Mutaa</h3>
-          <p>A consolation gift may be ordered by the court if the husband initiates divorce without fault.</p>
+          <p>Compensation of up to one year's maintenance where the husband divorced her by his own will, without her request or cause (Article 102).</p>
         </div>
         <div class="right-card right-card--orange">
           <span class="right-icon">⚖️</span>
           <h3>Asset Division (Non-Muslims)</h3>
-          <p>Under the 2022 law, non-Muslim wives receive 50% of all marital assets by default.</p>
+          <p>There is no automatic 50/50 split under the 2022 law. Assets are dealt with case by case.</p>
         </div>
       </div>
     </section>
@@ -136,13 +136,18 @@ const faqItems = [
         <li><strong>Deferred mahr (muakhar):</strong> Agreed to be paid upon divorce or death</li>
       </ul>
       <p>
-        Upon divorce, any unpaid deferred mahr becomes immediately due. The wife has the right to
-        pursue this through the Personal Status Court if the husband refuses to pay. The mahr amount
-        is specified in the marriage contract and forms part of the divorce financial settlement.
+        Any unpaid mahr, including the deferred part, becomes due once the separation is
+        irrevocable: when the divorce is irrevocable, or when the iddah of a revocable talaq ends
+        without a take back (Article 46 of Federal Decree-Law No. 41 of 2024). If the divorce came
+        before intercourse or valid seclusion, she is entitled to half the named mahr (Article 47(3)).
+        The wife has the right to pursue this through the Personal Status Court if the husband
+        refuses to pay. The mahr amount is specified in the marriage contract and forms part of the
+        divorce financial settlement.
       </p>
       <p>
-        <strong>Important:</strong> If the wife initiates khul'a (wife-initiated divorce), she typically
-        must return the mahr she received as compensation for the release. However, if she files for
+        <strong>Important:</strong> If the wife initiates khul'a (wife-initiated divorce), the mahr is
+        usually the consideration for the release: where it is, returning what she received is enough
+        and the rest is dropped (Article 66). However, if she files for
         judicial divorce (tafreeq) on grounds of harm, abandonment, or non-payment, she retains the
         right to her mahr.
       </p>
@@ -154,8 +159,11 @@ const faqItems = [
 
       <h3>Iddah Maintenance (Muslim Women)</h3>
       <p>
-        During the iddah period (approximately 3 months after divorce), the husband is obligated to
-        pay the wife's full living expenses regardless of who initiated the divorce. This covers:
+        Whether the husband owes iddah maintenance depends on how the marriage ended, not on a fixed
+        three months (Article 101 of Federal Decree-Law No. 41 of 2024). After a revocable divorce he
+        must pay her living expenses for the whole iddah. After an irrevocable divorce he pays only if
+        she is pregnant, until the birth. After khula there is no iddah maintenance. In every case she
+        may live in the marital home during the iddah. Where maintenance is owed, it covers:
       </p>
       <ul class="list">
         <li>Accommodation (or equivalent rental amount)</li>
@@ -166,13 +174,16 @@ const faqItems = [
       <h3>Extended Alimony</h3>
       <p>
         Under UAE Islamic personal status law, the wife's right to maintenance from her ex-husband
-        generally ends after the iddah period. Extended alimony (beyond 3 months) is not automatically
-        granted, the court assesses whether the wife is able to financially support herself.
+        generally ends with the iddah. The main payment beyond it is mut'a: where the husband
+        divorced a consummated wife by his own will, without her request or cause, the court can
+        award compensation according to his means, up to one year's maintenance for women of her
+        standing (Article 102).
       </p>
       <p>
-        Under the 2022 civil law for non-Muslim expats, courts have broader discretion to award
-        long-term alimony based on factors such as duration of marriage, standard of living, and
-        each party's earning capacity, similar to alimony principles in Western jurisdictions.
+        Under the 2022 civil law for non-Muslim expats, the court can award alimony on application
+        after the divorce judgment, weighing factors listed in Article 9 of Federal Decree-Law No. 41
+        of 2022, such as the years of marriage, the wife's age, each spouse's finances, the husband's
+        fault and any harm.
       </p>
 
       <h3>Child Support, Separate From Alimony</h3>
@@ -197,20 +208,24 @@ const faqItems = [
     <section class="section" aria-labelledby="housing-heading">
       <h2 id="housing-heading">Housing Rights After Divorce</h2>
       <p>
-        A divorced wife who has custody of the children is entitled to suitable housing, either
-        within the marital home or in alternative accommodation provided or paid for by the father.
+        During the iddah, every divorced wife may live in the marital home, or in a suitable home if
+        it is unsuitable (Article 101 of Federal Decree-Law No. 41 of 2024). After the iddah, a
+        divorced wife who has custody of the children is entitled to suitable housing, either within
+        the marital home or in alternative accommodation provided or paid for by the father.
       </p>
       <p>
-        The housing right is tied to custody. Once custody of the children transfers (when children
-        reach the age at which they choose or must legally transfer to the father), the housing
-        entitlement ends.
+        The post-iddah housing right is tied to custody. Under the 2024 law custody runs until the
+        child is 18 (Article 123), and from 15 a child may choose which parent to live with unless
+        the child's interest requires otherwise (Article 122). When custody ends or moves to the
+        father, the custodial housing entitlement ends.
       </p>
 
       <div class="info-box">
         <h3>Important: Visa Status After Divorce</h3>
         <p>
-          If you were on your spouse's visa, you have <strong>30 days</strong> after the divorce
-          is finalised to change your visa status. You can apply for:
+          If you were on your spouse's visa, you have only a <strong>limited grace period</strong>
+          after the divorce is finalised to change your visa status; check the current period with
+          the immigration authority. You can apply for:
         </p>
         <ul>
           <li>Employment visa (if you have or find a job)</li>
@@ -218,7 +233,7 @@ const faqItems = [
           <li>1-year divorce/custody visa (if you have children in UAE)</li>
         </ul>
         <p>Our full guide on <a href="/en/divorce-employer-visa-uae/">UAE residency and divorce</a> covers
-        the 30-day grace period, the 5-year divorced person permit, and how courts protect your visa during active
+        the grace period, the residence options for divorced women, and your visa position during active
         proceedings. Speak to a lawyer immediately to protect your residency status.</p>
       </div>
     </section>
