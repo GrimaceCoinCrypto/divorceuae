@@ -1,0 +1,739 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Bangladeshi Divorce in UAE: Talaq Notice, Papers and Recognition';
+const description =
+  'Bangladeshi Muslims divorcing in the UAE: the section 7 talaq notice and 90 days, getting a UAE divorce recognised in Bangladesh, denmohor, khula and papers.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/bangladeshi-divorce-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Bangladeshi Divorce UAE', url: 'https://divorceu.ae/en/bangladeshi-divorce-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suon', url: 'https://divorceu.ae/en/author/aleksi-suon/' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE', url: 'https://divorceu.ae' },
+  datePublished: '2026-10-09',
+  dateModified: '2026-10-09',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/bangladeshi-divorce-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Is a talaq given in Dubai valid in Bangladesh?',
+    answer:
+      'Not automatically. The Muslim Family Laws Ordinance 1961 applies to Muslim citizens of Bangladesh wherever they live, and section 7 says a talaq is not effective until 90 days after written notice reaches the Chairman (or until the end of a pregnancy, if later). Documenting the talaq in a UAE court within 15 days (Article 58 of Federal Decree-Law No. 41 of 2024) settles the UAE side only. Send the section 7 notice, keep proof of delivery, then register the divorce with the Nikah Registrar.',
+  },
+  {
+    question: 'Do I need to send a talaq notice to the Union Parishad if I divorced in the UAE?',
+    answer:
+      'For a talaq, yes: section 7 covers a talaq pronounced in any form, and failing to give notice can be punished with up to one year’s simple imprisonment, a fine of up to 10,000 taka, or both. For a UAE court judgment such as khula, Bangladeshi law has no procedure written for foreign decrees. Section 8 applies the section 7 procedure to other forms of dissolution, so the safe course is to send the attested judgment to the Chairman with a covering notice and then register it.',
+  },
+  {
+    question: 'My husband lives in the UAE. How can I claim my denmohor from Bangladesh?',
+    answer:
+      'You have two routes. You can file in the Family Court where you ordinarily live, which hears dower and maintenance suits (sections 5 and 6 of the Family Courts Act 2023, plaint fee 200 taka), and the court can serve him by registered post and email. Or a lawyer can file for you in the UAE court where he lives (Article 3 of Federal Decree-Law No. 41 of 2024), where the judgment can be enforced against his UAE income and assets.',
+  },
+  {
+    question: 'How do I attest a Bangladeshi divorce paper for use in the UAE?',
+    answer:
+      'Get the Nikah Registrar’s attested copy of the divorce entry (or the Family Court decree), have it attested in Dhaka by the Ministry of Foreign Affairs, with Ministry of Law attestation first where the office asks for it, then by the UAE Embassy in Dhaka, then by the UAE Ministry of Foreign Affairs. Finally, have a legal translator put it into Arabic. There is no apostille shortcut because the UAE is not a party to the Apostille Convention.',
+  },
+  {
+    question: 'Can a Bangladeshi wife get khula in Dubai?',
+    answer:
+      'Yes, if her husband lives or works in the UAE, or lived here and then abandoned her and moved abroad (Articles 3 and 4(2)). Khula under Articles 65 and 66 of Federal Decree-Law No. 41 of 2024 is a separation at the wife’s request for a consideration, often her denmohor. If the husband stubbornly refuses, the court can order khula for an appropriate consideration. Afterwards, send the attested khula judgment to the Chairman in Bangladesh and register it, because section 8 of the 1961 Ordinance applies the notice procedure to dissolutions other than talaq.',
+  },
+  {
+    question: 'How long until a Bangladeshi divorce is effective?',
+    answer:
+      'In Bangladesh, a talaq takes effect 90 days after the Chairman receives the written notice, unless it is revoked earlier; if the wife is pregnant, it takes effect when the 90 days or the pregnancy end, whichever is later. A Family Court divorce decree also waits 90 days from the Chairman’s receipt of the decree (section 26 of the Family Courts Act 2023). In the UAE, the iddah runs separately, so the two dates rarely match.',
+  },
+  {
+    question: 'Can I send a talaq notice from the UAE through a power of attorney?',
+    answer:
+      'Do not plan on it. The Bangladesh Consulate General in Dubai states on its power of attorney page that a power of attorney is not permissible in case of divorce. Sign the written notice yourself, send it by registered post with acknowledgement due to the Chairman and to your wife, and keep the receipts. A lawyer in Bangladesh can help with dispatch and follow-up.',
+  },
+  {
+    question: 'Does the apostille help with UAE and Bangladeshi divorce papers?',
+    answer:
+      'No. Bangladesh joined the Hague Apostille Convention with effect from 30 March 2025, but the UAE is not a party, so papers moving between the two countries still go through legalisation: attestation by the issuing country’s foreign ministry, then by the other country’s embassy, then by the receiving foreign ministry, plus a legal translation.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+  lastmod="2026-10-09"
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Bangladeshi Divorce in the UAE: Talaq Notice, Recognition and Papers</h1>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated October 2026</p>
+        <p class="hero__sub">
+          Yes, Bangladeshi spouses who live in the UAE can divorce here, but a UAE divorce does not
+          register itself in Bangladesh. Bangladeshi law expects a written talaq notice to the local
+          Chairman, a 90-day wait and registration with the Nikah Registrar, and the papers must be
+          legalised in both directions. Below: the four common situations, step by step.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Bangladeshi statutes read on the official laws portal</li>
+          <li>✓ UAE article numbers from the 2024 law</li>
+          <li>✓ Four real-life scenarios</li>
+          <li>✓ Papers checklist for both countries</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Divorcing Between Two Countries? Ask First" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Short answer -->
+    <section class="section" aria-labelledby="answer-heading">
+      <h2 id="answer-heading">Bangladeshi Divorce in the UAE: The Short Answer</h2>
+      <p>
+        You can get divorced in a UAE court, but the divorce only counts in Bangladesh once Bangladeshi
+        procedure has been followed too. In the UAE, Federal Decree-Law No. 41 of 2024, in force since
+        15 April 2025, governs Muslim divorce for foreign residents unless one spouse insists on their own
+        law (Article 1(3)). In Bangladesh, the Muslim Family Laws Ordinance 1961 applies to Muslim citizens
+        &ldquo;wherever they may be&rdquo; (section 1(2)), and its section 7 decides when a talaq takes effect.
+      </p>
+      <ul class="checklist">
+        <li><strong>UAE side.</strong> A husband documents his talaq in court within 15 days (Article 58), or a wife files for khula or a judicial divorce.</li>
+        <li><strong>Bangladesh side.</strong> Written notice to the Chairman, copy to the wife. The talaq takes effect 90 days after delivery, or when a pregnancy ends if later.</li>
+        <li><strong>Registration.</strong> The Nikah Registrar (Kazi) registers the divorce, and the attested copy of that entry is the &ldquo;divorce paper&rdquo; used for passports and remarriage.</li>
+      </ul>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">90 days</span>
+          <span class="stat-label">after the Chairman receives the notice, a talaq takes effect in Bangladesh</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">15 days</span>
+          <span class="stat-label">for a husband to document a talaq in a UAE court</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Tk 10,000</span>
+          <span class="stat-label">maximum fine for skipping the notice (jail up to 1 year is also possible)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Tk 200</span>
+          <span class="stat-label">court fee for a Family Court plaint in Bangladesh</span>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>How this site earns money</h3>
+        <p>
+          DivorceU.AE is a referral service, not a law firm. We earn when readers ask to be put in touch
+          with a UAE-licensed family lawyer. The Bangladeshi steps below are often done by the spouses
+          themselves or with a lawyer in Bangladesh.
+        </p>
+      </div>
+    </section>
+
+    <!-- Which law -->
+    <section class="section" aria-labelledby="law-heading">
+      <h2 id="law-heading">Which Law Applies: UAE Law, Bangladeshi Law, or Both?</h2>
+      <p>
+        Both, each in its own country: a UAE court applies UAE law, and Bangladeshi offices and courts
+        apply Bangladeshi law when you take the papers home.
+      </p>
+      <h3>In the UAE</h3>
+      <p>
+        UAE courts hear personal status cases against foreigners who live or work in the UAE (Article 3).
+        For a wife&rsquo;s claims for divorce, khula, dowry, alimony or custody, the competent court is
+        where either spouse lives or works, or the marital home. Unless one of you insists on Bangladeshi
+        law, the court applies the 2024 law.
+      </p>
+      <h3>In Bangladesh</h3>
+      <p>
+        The 1961 Ordinance and the Muslim Marriages and Divorces (Registration) Act 1974 both apply to
+        Muslim citizens of Bangladesh wherever they may be (section 1(2) of each), so a Bangladeshi
+        husband in Dubai is still bound by the section 7 notice rule. A foreign judgment is tested under
+        section 13 of the Code of Civil Procedure 1908: it is conclusive unless it came from a court
+        without jurisdiction, was not decided on the merits, refused to recognise Bangladeshi law where it
+        applied, breached natural justice, was obtained by fraud, or upholds a claim founded on a breach
+        of Bangladeshi law. The likely weak spots are a spouse who was never told about the case and a
+        talaq never notified to the Chairman.
+      </p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="section" aria-labelledby="notice-heading">
+      <h2 id="notice-heading">The Section 7 Talaq Notice: What Bangladeshi Law Requires</h2>
+      <p>
+        Section 7 of the Muslim Family Laws Ordinance 1961 requires a husband who pronounces talaq, in any
+        form, to give the Chairman written notice as soon as may be and send a copy to his wife.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Section</th><th>What it says</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7(1)</td><td>Written notice to the Chairman after talaq &ldquo;in any form whatsoever&rdquo;, copy to the wife.</td></tr>
+            <tr><td>7(2)</td><td>No notice: simple imprisonment up to one year, a fine up to 10,000 taka, or both.</td></tr>
+            <tr><td>7(3)</td><td>Unless revoked earlier, the talaq is not effective until 90 days after delivery to the Chairman.</td></tr>
+            <tr><td>7(4)</td><td>Within 30 days, the Chairman forms an Arbitration Council to attempt reconciliation.</td></tr>
+            <tr><td>7(5)</td><td>If the wife is pregnant, the talaq takes effect when the 90 days or the pregnancy end, whichever is later.</td></tr>
+            <tr><td>7(6)</td><td>The couple may remarry each other without an intervening marriage, unless it was the third effective talaq.</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">Source: Muslim Family Laws Ordinance 1961, official text on the Bangladesh laws portal.</p>
+      </div>
+      <h3>Who the &ldquo;Chairman&rdquo; is</h3>
+      <p>
+        Section 2(b) names the Chairman of the Union Parishad or Paurashava, or the Mayor or Administrator
+        of a city corporation (the Ordinance still says Municipal Corporation); where a council has been
+        superseded, the person appointed to run it. Rules under the Ordinance decide which area&rsquo;s
+        office is competent, so confirm it with a Bangladeshi lawyer first: a notice sent to the wrong
+        office is easy to dispute.
+      </p>
+      <h3>What a usable notice contains</h3>
+      <p>
+        The Ordinance only requires notice &ldquo;in writing&rdquo;. The PDFs that circulate online are not
+        official forms. A notice that holds up usually states:
+      </p>
+      <ul class="checklist">
+        <li>Both spouses&rsquo; names, fathers&rsquo; names, NID or passport numbers and addresses, including your UAE address.</li>
+        <li>The kabin nama details: date, Nikah Registrar, and register volume, page and serial number.</li>
+        <li>The date of the talaq, your signature, and the Chairman&rsquo;s office as addressee, with the wife receiving a copy.</li>
+        <li>Proof of delivery: registered post with acknowledgement due or tracked courier, because the 90 days run from delivery.</li>
+      </ul>
+      <p>
+        Section 8 applies the same procedure when a wife uses a delegated right of divorce
+        (talaq-e-tafweez) or when either spouse ends the marriage otherwise than by talaq.
+      </p>
+      <div class="info-box info-box--gold">
+        <h3>Power of attorney: check before you rely on it</h3>
+        <p>
+          The Bangladesh Consulate General in Dubai states on its power of attorney page that a power of
+          attorney is not permissible in case of divorce. Plan on signing the notice yourself.
+        </p>
+      </div>
+    </section>
+
+    <!-- Scenario 1 -->
+    <section class="section" aria-labelledby="s1-heading">
+      <h2 id="s1-heading">Scenario 1: Both Spouses Live in the UAE</h2>
+      <p>
+        If you both live in the UAE, a UAE court can divorce you, and you finish the Bangladeshi side
+        afterwards by notice and registration.
+      </p>
+      <h3>The UAE step</h3>
+      <p>
+        A husband who pronounces talaq must document it before the competent court within 15 days
+        (Article 58). If he does not, without an excuse the court accepts, his wife can claim compensation
+        equal to alimony from the divorce to the documentation date, and she can file her own case to
+        prove the divorce. Documentation is a duty with a penalty, not a condition of validity. A repeated
+        talaq counts as one (Article 57), and a first or second talaq after consummation or valid seclusion is revocable
+        during the iddah (Articles 59 to 61). More in our guide to
+        <a href="/en/talaq-uae/">talaq in the UAE</a>.
+      </p>
+      <h3>The Bangladesh step</h3>
+      <ol class="steps">
+        <li>
+          <h3>Attest the UAE papers</h3>
+          <p>A certified copy of the divorce certificate or judgment, attested by the UAE Ministry of Foreign Affairs, then by the Bangladesh mission.</p>
+        </li>
+        <li>
+          <h3>Send the notice</h3>
+          <p>To the Chairman, copy to the wife, enclosing the attested UAE document. For a court judgment rather than a talaq, use a covering notice under section 8.</p>
+        </li>
+        <li>
+          <h3>Let the 90 days run</h3>
+          <p>The Chairman should form an Arbitration Council within 30 days. A talaq revoked before the 90 days end, for example by reconciling, never takes effect.</p>
+        </li>
+        <li>
+          <h3>Register with the Nikah Registrar</h3>
+          <p>Section 6 of the 1974 Act expects the person who effected the divorce to apply orally, so plan it for a visit home or ask a lawyer there. The attested copy of the entry is free (section 9).</p>
+        </li>
+      </ol>
+      <h3>Does a UAE court divorce still need the Chairman notice?</h3>
+      <p>
+        For a talaq, yes: section 7 covers a talaq &ldquo;in any form whatsoever&rdquo;, and UAE
+        documentation does not replace it. For a UAE judgment, such as khula or divorce for harm,
+        Bangladeshi law has no written procedure for foreign decrees. Two provisions point the same way:
+        section 8 applies the section 7 procedure to other dissolutions, and section 26 of the Family
+        Courts Act 2023 makes a Bangladeshi Family Court send its divorce decree to the Chairman, with
+        effect only 90 days after receipt. Bangladeshi practitioners advise the same for foreign decrees.
+        No statute or reported decision we found settles it, so treat the notice as the safe course.
+      </p>
+      <h3>Worked example: two clocks running</h3>
+      <p>
+        An illustration, not a real case. A husband pronounces talaq in Sharjah on 1 March and documents
+        it on 10 March. Under UAE law it is revocable during her iddah (Articles 59 and 84); if that ends
+        in early June without a take-back, the marriage is over in UAE terms. The Union Parishad receives
+        his section 7 notice on 15 May, so in Bangladesh the talaq is not effective until mid-August.
+      </p>
+      <p>
+        In between, Bangladeshi law may still treat the marriage as subsisting. That matters if he marries
+        again in Bangladesh: section 6 of the 1961 Ordinance requires the Arbitration Council&rsquo;s
+        written permission for another marriage during an existing one, and a man who goes ahead without
+        it must pay the whole dower at once. The fix is to send the notice the same week as the UAE
+        documentation.
+      </p>
+    </section>
+
+    <!-- Scenario 2 -->
+    <section class="section" aria-labelledby="s2-heading">
+      <h2 id="s2-heading">Scenario 2: Husband Works in the UAE, Wife Lives in Bangladesh</h2>
+      <p>
+        A husband in the UAE can divorce a wife in Bangladesh by sending the section 7 notice from here,
+        and she can claim denmohor and maintenance in a Family Court near her home or in the UAE court
+        where he lives.
+      </p>
+      <h3>Sending a talaq from the UAE</h3>
+      <p>
+        Sign the notice yourself, send it by registered post with acknowledgement due to the Chairman and
+        to your wife, and keep the receipts. If you pronounced the talaq while living here, the 2024 law
+        also expects you to document it in a UAE court within 15 days; where the respondent has no
+        domicile in the UAE, the plaintiff&rsquo;s court is competent (Article 3(6)).
+      </p>
+      <h3>The wife&rsquo;s options in Bangladesh</h3>
+      <p>
+        The Family Courts Act 2023, which replaced the Family Courts Ordinance 1985, gives Family Courts
+        jurisdiction over dissolution, dower, maintenance, and custody of children (section 5). For
+        dissolution, dower and maintenance, the court where the wife ordinarily lives has jurisdiction
+        (section 6), and the plaint fee is 200 taka (section 25). The court can also serve the husband by
+        email if satisfied the address is correct (section 7). For maintenance during the marriage,
+        section 9 of the 1961 Ordinance lets her apply to the Chairman, whose Arbitration Council can
+        certify an amount. The catch is collection: a Bangladeshi decree does not enforce itself in the
+        UAE.
+      </p>
+      <h3>The wife&rsquo;s options in the UAE</h3>
+      <p>
+        UAE courts hear a wife&rsquo;s dowry and alimony claims against a husband who lives or works here
+        (Article 3). A plaintiff with no UAE domicile must name an elected domicile and a legal
+        representative (Article 44(2)(a) of Federal Decree-Law No. 42 of 2022, the Civil Procedure Code),
+        so she instructs a UAE lawyer, and the court can handle much of the case remotely (Articles 330
+        and 331). The judgment is enforced in the UAE, where his salary and assets are.
+      </p>
+    </section>
+
+    <!-- Scenario 3 -->
+    <section class="section" aria-labelledby="s3-heading">
+      <h2 id="s3-heading">Scenario 3: Wife in the UAE, Husband Left or Went Back to Bangladesh</h2>
+      <p>
+        A wife who still lives in the UAE can file for divorce here after her husband has gone, if he used
+        to live or work here and then abandoned her and moved abroad, was deported, or has no known
+        address abroad (Article 4(2)). She can also claim alimony as a UAE resident (Article 4(3)).
+      </p>
+      <p>
+        The 2024 law has separate articles on divorce for failure to maintain (Article 77), desertion
+        (Article 78) and absence, loss or imprisonment (Article 79); see our guide to
+        <a href="/en/divorce-absent-husband-uae/">divorce when the husband is absent or abroad</a>. The
+        Civil Procedure Code allows service by recorded call, SMS, smart applications or email, and failing
+        that by posting on the court&rsquo;s website (Article 9(1)(a)).
+      </p>
+      <p>
+        Keep proof of every attempt to reach him: section 13(d) of the Bangladeshi Code of Civil Procedure
+        lets a court refuse a foreign judgment obtained in breach of natural justice, and &ldquo;he was
+        never told&rdquo; is the obvious argument for a husband to raise. After the judgment, she sends
+        the attested copy to the Chairman under section 8 and registers the divorce.
+      </p>
+      <p>
+        She could instead sue in Bangladesh under the Dissolution of Muslim Marriages Act 1939, for
+        example because his whereabouts have been unknown for four years or he has not maintained her for
+        two years (section 2). A decree on the four-year ground waits six months, and his heirs must be
+        notified (section 3). She can file where the couple last lived together (section 6 of the Family
+        Courts Act 2023), normally through a lawyer there.
+      </p>
+    </section>
+
+    <!-- Scenario 4 -->
+    <section class="section" aria-labelledby="s4-heading">
+      <h2 id="s4-heading">Scenario 4: The Wife Wants the Divorce</h2>
+      <p>
+        A Bangladeshi wife can end the marriage in the UAE through khula or a judicial divorce, or in
+        Bangladesh through a Family Court suit under the 1939 Act or a delegated talaq written into her
+        kabin nama.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>In the UAE</h3>
+          <p>
+            Khula is a separation at the wife&rsquo;s request for a consideration, taking effect as a minor
+            irrevocable divorce (Article 65). If the consideration is the dowry, returning what she
+            received is enough; children&rsquo;s rights cannot be traded away; and if the husband
+            stubbornly refuses, the court orders khula (Article 66). There is no iddah maintenance after
+            khula (Article 101). See <a href="/en/khula-divorce-uae/">khula in the UAE</a>.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>In Bangladesh</h3>
+          <p>
+            Section 2 of the 1939 Act lists the grounds, including unknown whereabouts, no maintenance for
+            two years, an additional wife taken in breach of the 1961 Ordinance, cruelty, and any other
+            ground valid under Muslim law. The Family Court sends its decree to the Chairman within 7
+            days, and it takes effect 90 days after receipt unless the couple reconcile (section 26,
+            Family Courts Act 2023).
+          </p>
+        </div>
+      </div>
+      <h3>If your kabin nama delegates the right of divorce</h3>
+      <p>
+        A kabin nama can record that the husband delegates the power of divorce to the wife
+        (talaq-e-tafweez), which she exercises through the notice procedure (section 8 of the 1961
+        Ordinance). The Nikah Registrar registers a tafweez divorce only on production of the registered
+        delegation document or an attested copy of the register entry showing it (section 6(3) of the
+        1974 Act), so get that copy first.
+      </p>
+      <h3>If the marriage was never consummated</h3>
+      <p>
+        Many couples register the nikah long before the wife joins the husband. With no intercourse and no
+        valid seclusion, the UAE court must revoke the contract at the wife&rsquo;s request, without proof
+        of harm, if the husband refuses to divorce or agree khula, she returns the dowry received, and
+        reconciliation is impossible (Article 75). No iddah follows (Article 82).
+      </p>
+    </section>
+
+    <!-- Denmohor -->
+    <section class="section" aria-labelledby="mahr-heading">
+      <h2 id="mahr-heading">Denmohor: Claiming It in a UAE Court or in Bangladesh</h2>
+      <p>
+        You can claim denmohor, the dower written in the kabin nama, in either country: a UAE court can
+        order it under Articles 45 to 47 of the 2024 law, and a Bangladeshi Family Court hears dower suits
+        under section 5 of the Family Courts Act 2023.
+      </p>
+      <ul class="checklist">
+        <li><strong>UAE rule.</strong> Dowry may be deferred, but in all cases it becomes due on irrevocable separation or death (Article 46). A wife divorced before intercourse gets half of the specified dowry (Article 47(3)).</li>
+        <li><strong>Bangladeshi rule.</strong> If the kabin nama gives no details of how the dower is paid, the whole amount is payable on demand (section 10 of the 1961 Ordinance). Dissolution under the 1939 Act does not affect her right to dower (section 5).</li>
+        <li><strong>Proving it in the UAE.</strong> The court needs the kabin nama attested and translated into Arabic. The amount is in taka, so raise the dirham valuation with your lawyer early.</li>
+      </ul>
+      <p>
+        An illustration: the kabin nama records Tk 5,00,000 of denmohor, Tk 1,00,000 of it paid at the
+        wedding in jewellery. On an irrevocable divorce, the unpaid Tk 4,00,000 becomes due under Article
+        46. A khula with the dower as the consideration (Article 66) would usually mean giving up that
+        balance.
+      </p>
+      <p>
+        A UAE court can also award iddah maintenance after a revocable divorce (Article 101) and, where the
+        husband ends a consummated marriage by his sole will without her request or fault, compensation of
+        up to one year&rsquo;s maintenance (Article 102). In Bangladesh, the Appellate Division held in
+        Hefzur Rahman v Shamsun Nahar Begum that a divorced wife&rsquo;s maintenance is limited to the
+        iddat period. Our <a href="/en/mahr-divorce-uae/">guide to mahr on divorce</a> covers prompt and
+        deferred dower in more depth.
+      </p>
+    </section>
+
+    <!-- Children -->
+    <section class="section" aria-labelledby="children-heading">
+      <h2 id="children-heading">Children: Custody, Passports and Travel Consent</h2>
+      <p>
+        In the UAE, custody goes first to the mother after separation (Article 114) until the child turns
+        18 (Article 123), and at 15 the child may choose a parent (Article 122). In Bangladesh, the Family
+        Court decides custody as the District Court under the Guardians and Wards Act 1890 (sections 5 and
+        27 of the Family Courts Act 2023), guided by the child&rsquo;s welfare consistent with the
+        child&rsquo;s personal law (section 17 of the 1890 Act).
+      </p>
+      <ul class="checklist">
+        <li><strong>Travel.</strong> The custodial parent needs the other parent&rsquo;s written approval to take the child abroad. Without it, a court can allow up to 60 days a year in total, with security for the child&rsquo;s return (Article 116).</li>
+        <li><strong>Passports.</strong> The guardian, usually the father, may keep the child&rsquo;s passport except for travel, and the court can order it handed over if he refuses when it is needed (Article 117).</li>
+        <li><strong>No Hague return remedy.</strong> The UAE is not a party to the 1980 Hague Child Abduction Convention, so that Convention cannot bring back a child taken out of the UAE.</li>
+        <li><strong>Holidays in Bangladesh.</strong> Write dates, who holds the passport and the return date into the UAE settlement.</li>
+      </ul>
+    </section>
+
+    <!-- Comparison -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">UAE Law vs Bangladeshi Law at a Glance</h2>
+      <p>
+        The two systems agree on the basics of Muslim divorce but differ on notice, timing, custody and
+        where to file.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Point</th><th>UAE (Decree-Law 41/2024)</th><th>Bangladesh</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Notice of talaq</td><td>Documented in court within 15 days (Art. 58)</td><td>Written notice to the Chairman, copy to the wife (MFLO s. 7(1))</td></tr>
+            <tr><td>Waiting period</td><td>Iddah: three cycles, three lunar months, or until birth (Arts. 84, 85); for a court divorce, from the final judgment (Art. 83)</td><td>90 days from the Chairman&rsquo;s receipt, or end of pregnancy if later (s. 7(3), (5)); same 90 days for a court decree (2023 Act, s. 26)</td></tr>
+            <tr><td>Deferred dower</td><td>Due on irrevocable separation or death (Art. 46)</td><td>Whole dower payable on demand if the kabin nama is silent on payment (MFLO s. 10)</td></tr>
+            <tr><td>Custody</td><td>Mother first (Art. 114), until 18 (Art. 123), child chooses at 15 (Art. 122)</td><td>Family Court under the Guardians and Wards Act 1890; no single statutory age</td></tr>
+            <tr><td>Remarrying each other</td><td>New contract and dowry after a minor irrevocable divorce (Art. 59)</td><td>No intervening marriage needed unless it was the third talaq (s. 7(6))</td></tr>
+            <tr><td>Where to file</td><td>Where either spouse lives or works, or the marital home (Art. 3); wife in UAE whose husband left (Art. 4(2))</td><td>Where the cause arose or the couple last lived together; also where the wife lives (s. 6)</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">A summary, not legal advice. MFLO = Muslim Family Laws Ordinance 1961.</p>
+      </div>
+    </section>
+
+    <!-- Attestation -->
+    <section class="section" aria-labelledby="attest-heading">
+      <h2 id="attest-heading">Attesting Divorce Papers Between the UAE and Bangladesh</h2>
+      <p>
+        Papers travel between the two countries by legalisation because the UAE is not a party to the
+        Hague Apostille Convention. Bangladesh did accede on 29 July 2024, with effect
+        from 30 March 2025, but an apostille only works between two member countries.
+      </p>
+      <h3>A UAE divorce document for use in Bangladesh</h3>
+      <ol class="steps">
+        <li>
+          <h3>Court, then UAE MOFA</h3>
+          <p>A certified copy from the court that documented the talaq or issued the judgment, attested by the UAE Ministry of Foreign Affairs.</p>
+        </li>
+        <li>
+          <h3>Bangladesh mission</h3>
+          <p>The Embassy in Abu Dhabi covers Abu Dhabi; the Consulate General in Dubai covers Dubai, Sharjah, Ajman, Fujairah, Ras Al Khaimah and Umm Al Quwain. Dubai lists foreign document attestation at AED 37 per page.</p>
+        </li>
+        <li>
+          <h3>Translation</h3>
+          <p>The judgment is in Arabic, so get an English translation from a legal translator, and ask the Bangladeshi office whether it also wants verification by the Ministry of Foreign Affairs in Dhaka.</p>
+        </li>
+      </ol>
+      <h3>A Bangladeshi document for use in the UAE</h3>
+      <p>
+        The kabin nama, divorce register entry or Family Court decree is typically attested in Dhaka by the
+        Ministry of Law where required and the Ministry of Foreign Affairs, then by the UAE Embassy in
+        Dhaka and the UAE Ministry of Foreign Affairs, then translated into Arabic. Fees change, so check
+        before you go; the Abu Dhabi Embassy&rsquo;s notice of 19 May 2025 lists document attestation at
+        AED 38 for the first five pages. More in our guide to
+        <a href="/en/divorce-certificate-attestation-uae/">divorce certificate attestation</a>.
+      </p>
+    </section>
+
+    <!-- Documents -->
+    <section class="section" aria-labelledby="docs-heading">
+      <h2 id="docs-heading">Documents Checklist for Each Country</h2>
+      <p>
+        Most delays come from one missing attestation, so gather both sets first.
+      </p>
+      <h3>For the UAE court</h3>
+      <ul class="checklist">
+        <li>Passports, Emirates IDs and residence details, or the last known UAE details of a spouse who left.</li>
+        <li>Kabin nama and marriage certificate, attested in Bangladesh and the UAE, with an Arabic translation.</li>
+        <li>Children&rsquo;s birth certificates; proof of income, rent, school fees and unpaid denmohor.</li>
+        <li>The other spouse&rsquo;s phone, email and messaging details for service.</li>
+      </ul>
+      <h3>For the Bangladesh steps</h3>
+      <ul class="checklist">
+        <li>The signed section 7 or 8 notice, with postal receipts and delivery confirmations.</li>
+        <li>The attested UAE divorce certificate or judgment, with an English translation.</li>
+        <li>Kabin nama copy with the register details, plus NID or passport copies of both spouses.</li>
+      </ul>
+    </section>
+
+    <!-- After -->
+    <section class="section" aria-labelledby="after-heading">
+      <h2 id="after-heading">After the Divorce: Remarriage, Passport and UAE Visa</h2>
+      <p>
+        Remarry only when both systems treat the divorce as final: in the UAE once the iddah has ended
+        (Article 83), and in Bangladesh once the 90 days have run and the divorce is registered.
+      </p>
+      <p>
+        <strong>Remarriage.</strong> A Nikah Registrar registering a new marriage will normally want proof
+        that the earlier one ended: the attested copy of the divorce entry.
+      </p>
+      <p>
+        <strong>Passport.</strong> The Bangladesh Embassy in Abu Dhabi asks e-passport applicants for a copy
+        of the marriage or divorce registration certificate where applicable. Register the divorce in
+        Bangladesh first, then update the passport.
+      </p>
+      <p>
+        <strong>UAE visa.</strong> A wife sponsored by her husband has to move to her own sponsorship or
+        another route. The rules for divorced women changed in 2025, so check current conditions with ICP or
+        GDRFA, and read <a href="/en/visa-after-divorce-uae/">your UAE visa after divorce</a> before the
+        divorce is final.
+      </p>
+    </section>
+
+    <!-- Non-Muslims -->
+    <section class="section" aria-labelledby="nonmuslim-heading">
+      <h2 id="nonmuslim-heading">Hindu and Christian Bangladeshis in the UAE</h2>
+      <p>
+        Non-Muslim Bangladeshis can use the UAE civil route under Federal Decree-Law No. 41 of 2022, where
+        either spouse can ask for a divorce without proving harm, but how Bangladesh treats that divorce is
+        much less certain.
+      </p>
+      <p>
+        The civil law applies to non-Muslim foreigners living in the UAE unless one spouse adheres to their
+        home law (Article 1). Either spouse&rsquo;s wish to separate is enough (Article 7), the court
+        decides after the other spouse is served (Article 8), and there is no Family Guidance (Article 3).
+      </p>
+      <p>
+        <strong>Hindus.</strong> The Hindu Marriage Registration Act 2012 only covers registering
+        marriages, which is optional; an unregistered Hindu marriage stays valid (section 3). It has no
+        divorce provisions, and Bangladesh has no statute giving Hindus a general right to divorce.
+      </p>
+      <p>
+        <strong>Christians.</strong> Under section 2 of the Divorce Act 1869, a Bangladeshi court can
+        dissolve a marriage only if a spouse is Christian and both are domiciled in Bangladesh when the
+        petition is filed, and its grounds are narrow (section 10).
+      </p>
+      <p>
+        If challenged in Bangladesh, a UAE no-fault divorce would face the section 13 test. We found no
+        Bangladeshi decision on it, so take advice in both countries before remarrying there.
+      </p>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/where-to-divorce-uae-or-home-country/" class="service-link">
+          <strong>UAE or Home Country?</strong>
+          <span>How to choose where to file</span>
+        </a>
+        <a href="/en/divorce-for-expats-in-uae/" class="service-link">
+          <strong>Expat Divorce in the UAE</strong>
+          <span>Which law and court apply to foreign residents</span>
+        </a>
+        <a href="/en/talaq-uae/" class="service-link">
+          <strong>Talaq in the UAE</strong>
+          <span>Types, documentation and the wife&rsquo;s rights</span>
+        </a>
+        <a href="/en/khula-divorce-uae/" class="service-link">
+          <strong>Khula Divorce</strong>
+          <span>Wife-initiated divorce and what it costs her</span>
+        </a>
+        <a href="/en/child-custody-uae/" class="service-link">
+          <strong>Child Custody</strong>
+          <span>Custody, guardianship and travel rules</span>
+        </a>
+        <a href="/en/documents-for-divorce-uae/" class="service-link">
+          <strong>Divorce Documents</strong>
+          <span>The full UAE filing checklist</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Married in Bangladesh, Divorcing in the UAE? Ask First</h2>
+      <p>Request a free, confidential consultation with a UAE-licensed family lawyer about the UAE side of your case, in English or Arabic. The Bangladeshi steps may also need a lawyer in Bangladesh; the consultation helps you work out which steps you need, nothing more.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 24px; }
+  .checklist li { position: relative; padding: 14px 18px 14px 48px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; font-size: 0.9rem; line-height: 1.6; }
+  .checklist li::before { content: "✓"; position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+
+  .cost-table { margin-top: 24px; margin-bottom: 16px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .cost-table td a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .cost-table td a:hover { text-decoration: underline; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #6b7280; margin: 10px 0 0; }
+  .table-note a { color: #4b5563; text-decoration: underline; font-weight: 600; }
+
+  .verdict { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .verdict--ok { background: #dcfce7; color: #166534; }
+  .verdict--rec { background: #fef3c7; color: #92400e; }
+  .verdict--ess { background: #fee2e2; color: #991b1b; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .card p { font-size: 0.875rem; color: #4b5563; margin: 0; }
+  .card p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card p a:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

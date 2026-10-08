@@ -1,0 +1,790 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Child Travel Consent UAE: Letter, Court Permit & Passport (2026)';
+const description =
+  'When you need the other parent’s consent to take a child out of the UAE, what the letter must say, notarisation, and the court permit if they refuse.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/child-travel-consent-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Child Travel Consent', url: 'https://divorceu.ae/en/child-travel-consent-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suon', url: 'https://divorceu.ae/en/author/aleksi-suon/' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE', url: 'https://divorceu.ae' },
+  datePublished: '2026-10-09',
+  dateModified: '2026-10-09',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/child-travel-consent-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Does a mother need the father’s permission to travel with her child from the UAE?',
+    answer:
+      'After separation, usually yes. Under Article 116 of Federal Decree-Law No. 41 of 2024, a mother with custody may take the child abroad with the father’s written approval, or with a court permit of up to 60 days a year if he refuses. While the parents are still married we found no published UAE exit rule that asks for his letter, but airlines and foreign border officers may, and a father who objects can ask the court to ban the child’s travel.',
+  },
+  {
+    question: 'Can a father travel with his child without the mother’s consent?',
+    answer:
+      'Not after separation if the mother has custody. A parent without custody has time with the child under the visitation agreement or court order (Article 121 of the 2024 law), not a right to take the child abroad, so a trip needs her written agreement or a court decision. A father who has custody needs the mother’s written approval under Article 116, exactly like a custodial mother. Non-Muslim parents with joint custody need each other’s agreement or the court’s permission.',
+  },
+  {
+    question: 'How long can I take my child abroad with a court permit?',
+    answer:
+      'Up to 60 days in total per year, in one trip or several, with the year counted from the first permit (Article 116(2) of Federal Decree-Law No. 41 of 2024). The court must accept a guarantee that the child will come back. It can allow longer if the travel is for the child’s benefit, for treatment or for another necessity, after hearing the other parent. A permanent move abroad is a relocation case, not a travel permit.',
+  },
+  {
+    question: 'Who keeps the child’s passport after divorce in the UAE?',
+    answer:
+      'Under Article 117 of the 2024 law, the guardian, usually the father, may keep the passport but must hand it to the custodian for travel, and the court can order that the custodian keep it if he obstinately refuses when it is needed. The custodian keeps the birth certificate, Emirates ID and other identity documents but may not use them for travel without the guardian’s or the court’s permission (Article 124). At 18 the child keeps their own passport.',
+  },
+  {
+    question: 'Is a consent letter needed for a child flying with grandparents?',
+    answer:
+      'In practice, yes. UAE law sets no form for it, but airlines and border officers abroad expect a letter signed by both parents when a child travels with someone who is not a parent. US Customs and Border Protection asks for a note signed by both parents in that situation, and Canada recommends a letter from every parent who is not travelling. If the child flies back into Dubai without a parent, the airline may also ask for a parental authorisation naming who will meet the child.',
+  },
+  {
+    question: 'Does a child travel consent letter need to be attested?',
+    answer:
+      'Not always. For most holidays a signed letter, ideally notarised, is what airlines and border officers ask for. Attestation by the UAE Ministry of Foreign Affairs (AED 150 for a personal document), followed by legalisation at the destination country’s embassy, is only needed when a foreign authority or court asks for a legalised document. The UAE is not a party to the Apostille Convention, so there is no UAE apostille.',
+  },
+  {
+    question: 'Is there an official UAE child travel consent form?',
+    answer:
+      'Not for an ordinary holiday. We found no federal government template, so the letter is written by you, a lawyer or the notary’s typing service. Two exceptions: airlines have their own forms for children flying alone, and the Abu Dhabi Civil Family Court uses its own form for travel during joint custody, which the court must authorise under Article 37 of its 2022 regulations.',
+  },
+  {
+    question: 'What if the other parent has died or cannot be found?',
+    answer:
+      'If the father has died, Article 116 of the 2024 law asks for the written approval of the child’s guardian over the person (wali al-nafs) instead, so carry the death certificate with that guardian’s letter. If a parent cannot be found or will not reply, apply to the court for a travel permit by order on petition, and keep proof of your attempts to reach them, because it shows the court why its permit is needed.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+  lastmod="2026-10-09"
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Child Travel Consent in the UAE: Letters, Court Permits and Passports</h1>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated October 2026</p>
+        <p class="hero__sub">
+          After a separation, the parent with custody needs the other parent&rsquo;s written approval to
+          take a child out of the UAE, or a court permit for up to 60 days a year. Married parents
+          travelling alone face no published UAE exit rule, but airlines and border officers abroad may ask
+          for a signed letter. Below: who must consent, a model letter, notarisation, and what to do
+          when the other parent refuses.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Article numbers from the official law text</li>
+          <li>✓ Model consent letter you can adapt</li>
+          <li>✓ Muslim, civil and Abu Dhabi rules</li>
+          <li>✓ Decision table by situation</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Other Parent Will Not Sign? Ask First" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Short answer -->
+    <section class="section" aria-labelledby="answer-heading">
+      <h2 id="answer-heading">Do You Need Consent to Take Your Child Out of the UAE?</h2>
+      <p>
+        If you are separated or divorced, yes: the law expects the other parent&rsquo;s written approval
+        or a court permit before a child leaves the country. If you are still married and simply flying
+        without your spouse, we found no UAE rule requiring a letter at the border, but the airline or
+        the country you land in may ask for one. Which rule applies depends on three things.
+      </p>
+      <ul class="checklist">
+        <li><strong>Your family law.</strong> Muslim families follow Article 116 of Federal Decree-Law No. 41 of 2024. Non-Muslim expats usually fall under Federal Decree-Law No. 41 of 2022, or Abu Dhabi Law No. 14 of 2021 in Abu Dhabi.</li>
+        <li><strong>Who has custody.</strong> The rules are written around the custodian and the guardian, so your custody judgment or agreement decides who asks whom.</li>
+        <li><strong>Where you are going.</strong> Canada, the US and Ireland advise a signed letter from a parent who is not travelling; the UK may ask you to prove your relationship.</li>
+      </ul>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">60 days</span>
+          <span class="stat-label">of travel a year a court can permit when the other parent will not consent</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1 week</span>
+          <span class="stat-label">for any interested party to appeal a court permit</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">AED 150</span>
+          <span class="stat-label">MOFA attestation fee for a personal document</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">18</span>
+          <span class="stat-label">age at which a child keeps their own passport</span>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>How this site earns money</h3>
+        <p>
+          DivorceU.AE is a referral service, not a law firm. It earns when readers ask to be put in touch
+          with a UAE-licensed family lawyer. Most families can sort out a consent letter themselves; a
+          lawyer is worth it when the other parent refuses, a travel ban is in place, or the trip is long.
+        </p>
+      </div>
+    </section>
+
+    <!-- Article 116 -->
+    <section class="section" aria-labelledby="law-heading">
+      <h2 id="law-heading">The Rule for Muslim Families: Article 116 in Plain English</h2>
+      <p>
+        Article 116 of Federal Decree-Law No. 41 of 2024, in force since 15 April 2025, lets the parent
+        with custody take the child out of the UAE only with the other parent&rsquo;s written approval or
+        the court&rsquo;s permission. It governs Muslim families and other residents whose family matters
+        fall under the 2024 law. It has four parts.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Written approval of the other parent</h3>
+          <p>The custodial parent may travel with the child with the written approval of the other parent. If the father has died, the approval comes from the child&rsquo;s guardian over the person (wali al-nafs) instead (Article 116(1)).</p>
+        </li>
+        <li>
+          <h3>A court permit of up to 60 days a year</h3>
+          <p>Without that approval, the court may authorise travel for one or more periods totalling no more than 60 days a year, with a guarantee acceptable to the court that the child will return. The year runs from the first permit (Article 116(2)).</p>
+        </li>
+        <li>
+          <h3>Longer trips for a reason</h3>
+          <p>The court can go beyond 60 days if the travel is for the child&rsquo;s benefit, for medical treatment or for another necessity it accepts, after hearing the other parent unless that is impossible (Article 116(2)).</p>
+        </li>
+        <li>
+          <h3>Custodians who are not parents</h3>
+          <p>A grandmother or other non-parent with custody needs the written consent of both parents, of one if the other has died, or of the wali al-nafs. The court can permit the same 60 days a year with a guarantee (Article 116(3) and (4)).</p>
+        </li>
+      </ol>
+      <h3>Who needs whose consent in practice</h3>
+      <p>
+        After a separation, custody goes first to the mother (Article 114), while the father stays the
+        guardian, so in most separated Muslim families the mother needs the father&rsquo;s written
+        approval. A father who has custody needs the mother&rsquo;s. The two roles are explained in
+        <a href="/en/guardianship-vs-custody-uae/">guardianship vs custody</a>.
+      </p>
+      <p>
+        Article 116 speaks only of the custodial parent. A parent without custody has time with the child
+        under the visitation agreement or order (Article 121), so a trip abroad during a visit needs the
+        custodian&rsquo;s written agreement or a court decision. Custody, and with it these rules, runs
+        until the child is 18 (Article 123).
+      </p>
+      <h3>What Article 116 does not cover</h3>
+      <p>
+        A travel permit is for trips that end with the child coming home. A move abroad is a different
+        case: custody can lapse if the custodian moves somewhere with the intention of living there and
+        the child&rsquo;s interests are not met (Article 115). If that is your plan, read
+        <a href="/en/child-relocation-after-divorce-uae/">child relocation after divorce</a> before you
+        ask for consent to a &ldquo;holiday&rdquo;.
+      </p>
+      <p>
+        Travelling without the permission the law requires is also a criminal offence. Under Article 252 of
+        the 2024 law, a custodian who travels with the child without the permit of the guardian or the
+        court, or uses the child&rsquo;s documents unlawfully, faces imprisonment and a fine of AED 5,000 to
+        AED 50,000, or either penalty. Under Article 255 a prosecution needs a complaint from the person
+        concerned, and a waiver before final judgment ends the case.
+      </p>
+    </section>
+
+    <!-- Passport -->
+    <section class="section" aria-labelledby="passport-heading">
+      <h2 id="passport-heading">Who Keeps the Child&rsquo;s Passport and ID Documents?</h2>
+      <p>
+        The guardian, usually the father, may keep the child&rsquo;s passport, but must hand it to the
+        custodian when the child travels (Article 117(1)). Consent and passport go together: a signed
+        letter is of little use if the passport stays in the other parent&rsquo;s drawer.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Guardian (usually the father)</h3>
+          <p>
+            Holds the passport except for travel, and pays to obtain and renew the child&rsquo;s identity
+            documents (Article 124). If the custodian uses the documents for travel without permission, he
+            can ask for them back, and they return to the custodian only with the court&rsquo;s permission.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Custodian (usually the mother)</h3>
+          <p>
+            Keeps the original birth certificate, the Emirates ID and other identity documents, or
+            authenticated copies (Article 117(3)), but may not use them for travel without the
+            guardian&rsquo;s or the court&rsquo;s permit (Article 124).
+          </p>
+        </div>
+      </div>
+      <p>
+        If the guardian obstinately refuses to hand the passport over when it is needed, the court can
+        order that it stay with the custodian (Article 117(2)). Ask for that order with a travel permit, so
+        the passport stops being a bargaining chip before every trip. Refusing without justification to hand
+        over a minor&rsquo;s papers to the person entitled to them is a separate offence under Article 251(3),
+        with imprisonment and a fine of AED 5,000 to AED 100,000, or either penalty. At
+        18 the child keeps their own passport unless the court decides otherwise (Article 117(4)).
+      </p>
+    </section>
+
+    <!-- Non-Muslims -->
+    <section class="section" aria-labelledby="civil-heading">
+      <h2 id="civil-heading">Non-Muslim Parents: Joint Custody in Dubai, the Northern Emirates and Abu Dhabi</h2>
+      <p>
+        Non-Muslim parents share custody after divorce, so neither can take the child abroad alone over
+        the other&rsquo;s objection; the answer is agreement or a court decision.
+      </p>
+      <h3>Federal civil law (Dubai and the northern emirates)</h3>
+      <p>
+        Federal Decree-Law No. 41 of 2022 makes custody a joint and equal right of both parents after
+        divorce (Article 10). The law itself has no travel article. A disagreement about a trip is a
+        joint-custody dispute: either parent can apply to the court on the prescribed form to decide it
+        (Article 10(3)), and the court decides in the child&rsquo;s best interests (Article 10(4)).
+      </p>
+      <p>
+        The executive regulation of that law, Cabinet Resolution No. 122 of 2023, is more specific
+        according to its published text as summarised by UAE law firms: during joint custody neither
+        parent may take the child abroad by a unilateral decision, a parent whose trip is opposed needs
+        the judge&rsquo;s permission, and the court may require security that the child returns by a set
+        date. After a divorce, either parent can also ask the court to stop the child travelling for a
+        period, stating their objections.
+      </p>
+      <h3>Abu Dhabi Civil Family Court</h3>
+      <p>
+        In Abu Dhabi, non-Muslim families fall under Abu Dhabi Law No. 14 of 2021 and the court&rsquo;s
+        2022 regulations, which spell travel out. Under Article 37 of the regulations, a parent may travel
+        with the child during joint custody only if one of these applies:
+      </p>
+      <ul class="checklist">
+        <li>The other parent&rsquo;s written consent, authorised by the court on the court&rsquo;s form, stating the details, purpose and duration of the trip and any security offered.</li>
+        <li>The judge&rsquo;s permission, applied for on the court&rsquo;s form, if the other parent objects.</li>
+        <li>Either parent may also ask the judge to require sufficient security for the child&rsquo;s return on the agreed date, at the judge&rsquo;s discretion.</li>
+      </ul>
+      <p>
+        Article 38 lets either parent, after divorce, petition for a temporary travel ban on the child,
+        and Article 42 allows provisional orders that temporarily allow or ban travel or order the
+        handover of documents. The practical point: a notarised letter on its own may not meet Article 37,
+        so use the court&rsquo;s form. More in
+        <a href="/en/child-custody-abu-dhabi/">child custody in Abu Dhabi</a>.
+      </p>
+    </section>
+
+    <!-- Married parents -->
+    <section class="section" aria-labelledby="married-heading">
+      <h2 id="married-heading">Married Parents Travelling Alone With a Child</h2>
+      <p>
+        If you are married and one of you flies with the children, we found no published UAE immigration
+        rule requiring a consent letter at exit. What stops a child at a UAE airport is a travel ban. The
+        paperwork demands usually come from the airline and the country you land in.
+      </p>
+      <h3>At the UAE airport</h3>
+      <p>
+        A lawyer answering a Gulf News reader advised a notarised no-objection letter from the
+        other parent for a couple separated but not yet divorced. With reason: a parent who objects can
+        ask the court for a travel ban on the child, and an unagreed trip can be raised later in a custody
+        dispute. If your marriage is under strain, treat the letter as protection, not a formality.
+      </p>
+      <h3>Airlines</h3>
+      <p>
+        Emirates and Etihad set their own rules for children flying alone. Etihad says a child aged 5 to
+        11 flying alone must have its free unaccompanied minor service booked before reaching the airport,
+        and that under-5s cannot fly alone. Emirates asks the parent of a child flying alone to sign a
+        Declaration of Indemnity, available at Emirates airport offices, and strongly advises a consent
+        letter for a child flying to Canada alone or with an adult who has no legal custody.
+      </p>
+      <p>
+        Coming back matters too. Since 2018, following a GDRFA Dubai notice reported by Gulf News,
+        minors flying into the UAE without their parents have needed a parental authorisation
+        naming who will receive them, even when a relative travels with them. Ask your airline what it
+        currently requires.
+      </p>
+      <h3>Destination countries</h3>
+      <p>
+        Official guidance from four common destinations, as published on each government&rsquo;s own site:
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Country</th><th>What the official guidance says</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Canada</td>
+              <td>Written for Canadian children, but the point is general: a consent letter is not legally required, yet immigration officers, airlines and Canadian border officials may ask for one. Any adult can witness the signature; a notary is strongly recommended, and originals are best.</td>
+            </tr>
+            <tr>
+              <td>United Kingdom</td>
+              <td>You may be asked to prove your relationship to a child, for example if your surnames differ: a birth or adoption certificate, a marriage or divorce certificate, or a letter from the child&rsquo;s parent giving permission, with contact details.</td>
+            </tr>
+            <tr>
+              <td>United States</td>
+              <td>If a child travels with only one parent, CBP advises a notarised note from the other parent; with grandparents, other relatives or friends, a note signed by both parents.</td>
+            </tr>
+            <tr>
+              <td>Ireland</td>
+              <td>Where a child travels with one parent only, an immigration officer may ask for evidence of the other parent&rsquo;s consent: a signed letter with contact details, a copy of their passport or ID, and proof of the relationship.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Summarised from each government&rsquo;s official guidance, checked in October 2026. Rules
+          change; check the destination&rsquo;s embassy before you fly, and any transit country too.
+        </p>
+      </div>
+    </section>
+
+    <!-- Decision table -->
+    <section class="section" aria-labelledby="table-heading">
+      <h2 id="table-heading">Who Must Consent and What to Carry: Decision Table</h2>
+      <p>
+        Find your situation below. &ldquo;Required&rdquo; means UAE law asks for it; &ldquo;advised&rdquo;
+        means airlines or border officers abroad may ask for it.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Situation</th><th>Consent needed?</th><th>From whom</th><th>What to carry</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Married, both parents travelling</td>
+              <td><span class="verdict verdict--ok">No</span></td>
+              <td>Nobody</td>
+              <td>Passports; birth certificate if the child&rsquo;s surname differs from a parent&rsquo;s</td>
+            </tr>
+            <tr>
+              <td>Married, one parent travelling with the child</td>
+              <td><span class="verdict verdict--rec">Advised</span></td>
+              <td>The parent staying behind</td>
+              <td>Notarised letter, copy of that parent&rsquo;s passport, birth certificate</td>
+            </tr>
+            <tr>
+              <td>Separated, Muslim family, custodial parent travelling</td>
+              <td><span class="verdict verdict--ess">Required</span></td>
+              <td>The other parent, or wali al-nafs if the father has died (Art. 116(1))</td>
+              <td>Written approval, the passport, custody judgment</td>
+            </tr>
+            <tr>
+              <td>Separated, parent without custody wants a holiday abroad</td>
+              <td><span class="verdict verdict--ess">Required</span></td>
+              <td>The custodian, or a court decision</td>
+              <td>Custodian&rsquo;s written agreement or court order</td>
+            </tr>
+            <tr>
+              <td>Grandmother or other non-parent custodian travelling</td>
+              <td><span class="verdict verdict--ess">Required</span></td>
+              <td>Both parents (Art. 116(3))</td>
+              <td>Both parents&rsquo; letters and ID copies, custody judgment</td>
+            </tr>
+            <tr>
+              <td>Non-Muslim, joint custody, Dubai or northern emirates</td>
+              <td><span class="verdict verdict--ess">Required</span></td>
+              <td>The other parent, or the court if they object</td>
+              <td>Signed letter or court decision, divorce judgment</td>
+            </tr>
+            <tr>
+              <td>Non-Muslim, Abu Dhabi Civil Family Court case</td>
+              <td><span class="verdict verdict--ess">Required</span></td>
+              <td>The other parent on the court&rsquo;s form, authorised by the court (Art. 37)</td>
+              <td>Court-authorised consent or the judge&rsquo;s permission</td>
+            </tr>
+            <tr>
+              <td>Child travelling with grandparents, relatives or a school group</td>
+              <td><span class="verdict verdict--rec">Advised</span></td>
+              <td>Both parents</td>
+              <td>Letter signed by both parents, their ID copies, birth certificate</td>
+            </tr>
+            <tr>
+              <td>Child flying alone</td>
+              <td><span class="verdict verdict--rec">Advised</span></td>
+              <td>Parents, plus the airline&rsquo;s own form</td>
+              <td>Airline form, consent letter, contacts at both ends</td>
+            </tr>
+            <tr>
+              <td>Other parent refuses or cannot be reached</td>
+              <td><span class="verdict verdict--ess">Court permit</span></td>
+              <td>The family court (Art. 116(2))</td>
+              <td>Certified copy of the permit, translated</td>
+            </tr>
+            <tr>
+              <td>Travel ban registered on the child</td>
+              <td><span class="verdict verdict--ess">Court permit</span></td>
+              <td>The court that imposed the ban</td>
+              <td>Court decision lifting the ban; a letter is not enough</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          A guide, not legal advice. Your custody judgment or settlement may set its own travel terms,
+          and those bind you too.
+        </p>
+      </div>
+    </section>
+
+    <!-- Letter -->
+    <section class="section" aria-labelledby="letter-heading">
+      <h2 id="letter-heading">What a Child Travel Consent Letter Must Say</h2>
+      <p>
+        A good letter lets a stranger at a border see in one minute who consents, for which child, with
+        whom, where to and until when. There is no official UAE format. Include:
+      </p>
+      <ul class="checklist">
+        <li>The consenting parent&rsquo;s full name, passport and Emirates ID numbers, address and a phone number reachable from abroad.</li>
+        <li>The child&rsquo;s full name exactly as in the passport, date of birth, nationality and passport number.</li>
+        <li>The travelling adult&rsquo;s full name, passport number and relationship to the child.</li>
+        <li>Every destination, including transit countries where you clear immigration, the travel dates and the address abroad.</li>
+        <li>A plain sentence of consent, and a passport sentence if the consenting parent holds it.</li>
+        <li>An end date, and a line that the letter does not change custody or any court order.</li>
+        <li>Signature and notarisation, with copies of the signer&rsquo;s ID and the child&rsquo;s birth certificate attached.</li>
+      </ul>
+      <p>
+        If you expect to show the letter to UAE authorities or a UAE court, prepare it in Arabic and
+        English. If you travel often, put a standing travel clause in your separation terms instead
+        (notice period, maximum days, who holds the passport), as covered in our
+        <a href="/en/divorce-settlement-uae/">divorce settlement guide</a>.
+      </p>
+      <h3>Model consent letter (adapt the bracketed parts)</h3>
+      <div class="info-box info-box--gold">
+        <p><strong>CONSENT TO TRAVEL ABROAD WITH A MINOR</strong></p>
+        <p style="margin-top:12px;">I, [full name of consenting parent], holder of [nationality] passport no. [number] and Emirates ID no. [number], of [address in the UAE], am the [father/mother] of [child&rsquo;s full name as in passport], born on [date of birth], holder of [nationality] passport no. [number].</p>
+        <p style="margin-top:12px;">I consent to my child travelling with [full name of travelling adult], holder of passport no. [number], who is the child&rsquo;s [mother/father/grandmother/other].</p>
+        <p style="margin-top:12px;">Departure from the UAE: [date], flight [number], to [destination], via [transit country, if any].<br />Return to the UAE: [date], flight [number].<br />Address abroad: [full address], telephone [number].<br />Purpose: [holiday/family visit/medical treatment].</p>
+        <p style="margin-top:12px;">[If you hold the passport:] I have handed my child&rsquo;s passport to [name] for this trip, to be returned to me by [date].</p>
+        <p style="margin-top:12px;">[Optional:] I authorise [name] to consent to urgent medical treatment for my child during the trip.</p>
+        <p style="margin-top:12px;">This consent covers only the trip described above and ends on [return date]. It does not change any custody, guardianship or visitation arrangement or court order. I can be reached at any time on [mobile number with country code] and [email].</p>
+        <p style="margin-top:12px;">Signature: ______________ Date: [date] Place: [city]</p>
+        <p>Attached: copy of my passport and Emirates ID; copy of the child&rsquo;s birth certificate; [custody judgment or settlement, if any].</p>
+      </div>
+      <p style="margin-top:16px;">
+        For a child travelling with grandparents or other relatives, both parents sign. Where a court
+        order exists, refer to it by case number, and never use a letter to describe a trip the order
+        does not allow.
+      </p>
+    </section>
+
+    <!-- Notarisation -->
+    <section class="section" aria-labelledby="notary-heading">
+      <h2 id="notary-heading">Signing, Notarising and Attesting the Letter</h2>
+      <p>
+        Have the letter notarised in the UAE before you travel, so an airline or border officer can trust
+        the signature. Attestation by the Ministry of Foreign Affairs is a further step, needed only when
+        a foreign authority asks for a legalised document.
+      </p>
+      <h3>Where to notarise</h3>
+      <div class="cards">
+        <div class="card">
+          <h3>Dubai</h3>
+          <p>
+            Dubai Courts notary services, online with UAE Pass or in person, and licensed private notaries.
+            The official schedule (Executive Council Resolution No. 72 of 2025) lists AED 200 per signature
+            for an instrument with no stated value; ask which line applies. Private notaries add a service charge.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Abu Dhabi</h3>
+          <p>
+            The Abu Dhabi Judicial Department&rsquo;s notary services, online with UAE Pass or through
+            authorised notaries. Check the current fee when you book.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ras Al Khaimah</h3>
+          <p>
+            The public notary department of the Ras Al Khaimah courts, which run their own system.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sharjah, Ajman, UAQ, Fujairah</h3>
+          <p>
+            The Ministry of Justice notary public system, which the ministry says can be used remotely by
+            clients inside or outside the UAE. Private notaries are another option.
+          </p>
+        </div>
+      </div>
+      <p style="margin-top:24px;">
+        Bring the signer&rsquo;s original passport and Emirates ID. Public notaries generally work in
+        Arabic, so a bilingual letter saves a translation step.
+      </p>
+      <h3>Attestation for use abroad</h3>
+      <p>
+        If a foreign authority asks for a legalised letter, the chain is: notarisation in the UAE, then
+        attestation by the UAE Ministry of Foreign Affairs (MOFA), then legalisation by the destination
+        country&rsquo;s embassy or consulate if that country requires it. MOFA lists a fee of AED 150 for
+        personal documents (AED 2,000 for commercial ones), applied for through its website or app. The
+        UAE is not a party to the Apostille Convention, so if a foreign office asks for an
+        &ldquo;apostille&rdquo;, explain that the UAE uses this legalisation chain instead.
+      </p>
+      <h3>If the consenting parent lives abroad</h3>
+      <p>
+        They sign before a notary where they live; Canada, for example, recommends a notary and lets a
+        parent abroad use a consular officer as witness. For
+        use before a UAE court or authority, the foreign document must be legalised in that country,
+        attested by the UAE embassy or consulate there, then by MOFA in the UAE, and translated into
+        Arabic. Start weeks before the trip.
+      </p>
+    </section>
+
+    <!-- Refusal -->
+    <section class="section" aria-labelledby="refuse-heading">
+      <h2 id="refuse-heading">When the Other Parent Will Not Sign: Getting a Court Permit</h2>
+      <p>
+        If the other parent refuses, ignores you or cannot be found, you can ask the family court for a
+        permit. Where the 2024 law requires the court&rsquo;s permission, you apply by &ldquo;order on
+        petition&rdquo; to the court where you live (Article 6), and for travel the court can allow up to
+        60 days a year (Article 116(2)). Non-Muslim parents apply under Article 10(3) of the 2022 law, or
+        Article 37 of the Abu Dhabi regulations, but the preparation is the same.
+      </p>
+      <ol class="steps">
+        <li>
+          <h3>Ask in writing first</h3>
+          <p>Send the trip details by email or message and give a reasonable deadline. A written refusal, or silence, is your evidence that the court&rsquo;s permit is needed.</p>
+        </li>
+        <li>
+          <h3>Check for a travel ban</h3>
+          <p>If a ban is registered on the child, ask in the same application for it to be lifted for the trip.</p>
+        </li>
+        <li>
+          <h3>Build the file and offer a guarantee</h3>
+          <p>Itinerary, return ticket, purpose, address abroad, residence visas valid beyond the return date, school enrolment, your job and tenancy, and your record of returning from past trips. Say what security you offer; the court decides whether it is acceptable (Article 116(2)).</p>
+        </li>
+        <li>
+          <h3>File the petition</h3>
+          <p>In Dubai this is reported as an online Dubai Courts request, &ldquo;Permission to travel with children during a specific period&rdquo;, also available through a licensed lawyer or an Al Adheed service centre. The court may investigate and ask for more documents (Article 6). For more than 60 days, it must first hear the other parent unless that is impossible (Article 116(2)).</p>
+        </li>
+        <li>
+          <h3>Plan around the appeal window</h3>
+          <p>Any interested party may appeal the order within one week (Article 6). Ask your lawyer whether you can rely on the order before that week ends, and avoid non-refundable bookings until you know.</p>
+        </li>
+        <li>
+          <h3>Travel with certified copies</h3>
+          <p>Carry a certified copy of the permit, translated for the destination if it is in Arabic, and return within the permitted days.</p>
+        </li>
+      </ol>
+      <h3>What counts as a guarantee</h3>
+      <p>
+        The law only says it must be acceptable to the court. Press reports of the Dubai procedure describe
+        the court approving a sponsor who undertakes the child&rsquo;s return, and law-firm guides also
+        mention financial security. Ask what your court accepts before you file.
+      </p>
+      <h3>How long it takes</h3>
+      <p>
+        No court publishes a fixed decision time. Gulf News reported in June 2024 that Dubai&rsquo;s
+        old process, where the court sent a letter to the police to lift a child&rsquo;s travel ban, could
+        take several days, and that a judge&rsquo;s approval now lifts the ban automatically in the system
+        for the trip and reinstates it when the child returns. Add the one-week appeal window and apply
+        several weeks before you fly.
+      </p>
+      <h3>When the passport is the problem</h3>
+      <p>
+        If you have consent or a permit but the guardian will not release the passport, ask the court for
+        an order under Article 117(2) that the custodian keep it. In an Abu Dhabi civil case, a provisional
+        order for the handover of personal documents is available under Article 42 of the 2022 regulations.
+      </p>
+      <p>
+        Leaving without consent or a permit risks criminal liability and your credibility in any custody
+        case, and leaves the other parent with few remedies abroad, as set out in <a href="/en/international-child-abduction-uae/">international child abduction from the UAE</a>.
+      </p>
+      <div class="cta-inline">
+        <p>Other parent refusing to sign before a booked trip?</p>
+        <a href="#contact" class="btn btn--primary">Ask for a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Travel bans -->
+    <section class="section" aria-labelledby="ban-heading">
+      <h2 id="ban-heading">Travel Bans on Children</h2>
+      <p>
+        A court travel ban on a child overrides any consent letter: the child cannot leave until the
+        court lifts the ban, permanently or for a specific trip. Either parent can ask for one after a
+        divorce, and a court can also impose one while custody is disputed.
+      </p>
+      <p>
+        Check whether a ban exists before you book, because an airport is the worst place to find out.
+        If you fear the other parent will take the child abroad, a ban is the tool that works at the
+        border. How bans are imposed, checked and lifted is covered in our
+        <a href="/en/travel-ban-divorce-uae/">travel ban guide</a>.
+      </p>
+    </section>
+
+    <!-- Mistakes -->
+    <section class="section" aria-labelledby="mistakes-heading">
+      <h2 id="mistakes-heading">Mistakes That Stop Families at the Airport</h2>
+      <p>
+        These are the paperwork gaps that cause trouble at a departure gate:
+      </p>
+      <ul class="checklist">
+        <li>A letter with no end date, or one signed months earlier for a different trip.</li>
+        <li>A letter that leaves out the transit country where you clear immigration.</li>
+        <li>Consent in hand, but the passport still with the other parent.</li>
+        <li>A different surname from the child and no birth certificate to prove the relationship.</li>
+        <li>A travel ban nobody checked, which no letter can override.</li>
+        <li>A WhatsApp message treated as consent: useful evidence of agreement, but not a signed letter.</li>
+      </ul>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/travel-ban-divorce-uae/" class="service-link">
+          <strong>Travel Bans in a Divorce</strong>
+          <span>Bans on spouses and children, checks and lifting</span>
+        </a>
+        <a href="/en/child-relocation-after-divorce-uae/" class="service-link">
+          <strong>Child Relocation</strong>
+          <span>Moving abroad with a child for good</span>
+        </a>
+        <a href="/en/international-child-abduction-uae/" class="service-link">
+          <strong>International Child Abduction</strong>
+          <span>Prevention and what to do if it happens</span>
+        </a>
+        <a href="/en/child-custody-uae/" class="service-link">
+          <strong>Child Custody in the UAE</strong>
+          <span>Who gets custody and how courts decide</span>
+        </a>
+        <a href="/en/visitation-rights-uae/" class="service-link">
+          <strong>Visitation Rights</strong>
+          <span>Contact schedules and enforcement</span>
+        </a>
+        <a href="/en/father-custody-rights-uae/" class="service-link">
+          <strong>Father and Mother Rights</strong>
+          <span>Custody and guardianship under the 2024 law</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Need a Travel Permit or a Passport Order? Talk It Through</h2>
+      <p>Request a free, confidential consultation with a UAE-licensed family lawyer about consent, a court travel permit or a passport handover, in English or Arabic. If a signed letter from the other parent is all you need, that is a perfectly good answer to walk away with.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 24px; }
+  .checklist li { position: relative; padding: 14px 18px 14px 48px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; font-size: 0.9rem; line-height: 1.6; }
+  .checklist li::before { content: "✓"; position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+
+  .cost-table { margin-top: 24px; margin-bottom: 16px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .cost-table td a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .cost-table td a:hover { text-decoration: underline; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #6b7280; margin: 10px 0 0; }
+  .table-note a { color: #4b5563; text-decoration: underline; font-weight: 600; }
+
+  .verdict { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .verdict--ok { background: #dcfce7; color: #166534; }
+  .verdict--rec { background: #fef3c7; color: #92400e; }
+  .verdict--ess { background: #fee2e2; color: #991b1b; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .card p { font-size: 0.875rem; color: #4b5563; margin: 0; }
+  .card p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card p a:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

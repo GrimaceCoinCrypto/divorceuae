@@ -1,0 +1,754 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Online Divorce in the UAE (2026): File, Attend and Track a Case';
+const description =
+  'What online divorce really means in the UAE: e-filing, fee deadlines, SMS and WhatsApp service, video hearings, case status and e-judgments, court by court.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/online-divorce-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Online Divorce in the UAE', url: 'https://divorceu.ae/en/online-divorce-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suon', url: 'https://divorceu.ae/en/author/aleksi-suon/' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE', url: 'https://divorceu.ae' },
+  datePublished: '2026-10-09',
+  dateModified: '2026-10-09',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/online-divorce-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Can I get divorced in Dubai without going to court?',
+    answer:
+      'You can avoid the courthouse building for most steps, but not the court. Every valid UAE divorce comes from a judgment, a settlement approved by the supervising judge, or a talaq documented before the competent court. In Dubai the claim, the fee, the uploads and the notices can all be handled online, and hearings can be held by video if the court allows it. Documenting a talaq may be different: Dubai Courts’ documentation and certification service asks you, or an agent with a special power of attorney, to attend with your original ID, so check the current channel before you rely on doing it remotely.',
+  },
+  {
+    question: 'Can I attend a divorce hearing by video from abroad?',
+    answer:
+      'Possibly, but it is the court’s decision, not your right. Part Six of the Civil Procedure Code lets the judge take any step remotely (Article 331), including outside the emirate, in coordination with the authority where you are (Article 332). Ask the court or your lawyer before the hearing date. If the hearing does go remote, any party can ask at each hearing for it to be held in person, and the court decides after notifying the others (Article 333).',
+  },
+  {
+    question: 'How do I check my divorce case status in Dubai or Abu Dhabi?',
+    answer:
+      'In Dubai, log in to the Dubai Courts website or app (individuals sign in with UAE PASS) to see your own files, or use the public inquiry services with your case or application number and year. In Abu Dhabi, the AD Judicial app shows your file, its status and scheduled dates, and the court sends SMS notices to the number you registered. We could not find an official Dubai Courts search that works from an Emirates ID number alone.',
+  },
+  {
+    question: 'Can I file for divorce in Dubai online as a Filipino or Indian expat?',
+    answer:
+      'Yes, nationality does not change the online mechanics. At least one spouse must be a citizen or resident of Dubai for Dubai Courts’ online services, your documents must be uploaded as PDFs with legal Arabic translation, and foreign certificates must be legalised in the issuing country and attested in the UAE. What nationality changes is which law applies and whether your home country recognises the UAE judgment, so check that before you file.',
+  },
+  {
+    question: 'Is a WhatsApp or SMS notice from the court valid service?',
+    answer:
+      'Yes. Article 9 of the Civil Procedure Code lets the court serve the defendant by recorded audio or video call, text message, smart applications, email, fax or other modern means. Service by email, text message, fax or recorded message takes effect from the date it is sent (Article 11), so a notice you ignore still counts. This is different from a husband sending “talaq” by WhatsApp, which raises separate questions under the 2024 Personal Status Law.',
+  },
+  {
+    question: 'Can I submit the Abu Dhabi civil divorce application online?',
+    answer:
+      'Not entirely by yourself. The Abu Dhabi Judicial Department’s Civil Family Court page tells applicants to submit the No-Fault Divorce Application through an Abu Dhabi typing centre. After that the process is largely digital: the court notifies the other spouse by SMS, both parties get the case management session date by SMS, and the court says it aims to finish the case within one month of registration. The application fee is AED 5,000.',
+  },
+  {
+    question: 'How long do I have to pay the court fee after filing online?',
+    answer:
+      'Three business days. Under Article 47(1) of the Civil Procedure Code the fee must be paid within three business days starting from the day after the payment notice, otherwise the registration is void and you have to file again. In Dubai the personal status fee is AED 100 per application, capped at AED 2,000, according to the Dubai Courts service page.',
+  },
+  {
+    question: 'Is an electronic divorce judgment valid for use abroad?',
+    answer:
+      'An electronic judgment is a valid court document in the UAE: Article 338 gives electronic documents and signatures the same authenticity as paper ones, and Article 131 allows certified copies to be delivered electronically. Foreign authorities usually want more, typically an attested copy and a translation. Since the UAE is not a party to the Apostille Convention, plan for attestation rather than an apostille.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+  lastmod="2026-10-09"
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Online Divorce in the UAE: What You Can Do Online, Court by Court</h1>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated October 2026</p>
+        <p class="hero__sub">
+          Most steps of a UAE divorce can now be done online: filing, paying, being served, attending
+          by video and receiving the judgment. What you cannot do is get divorced by a website. The
+          divorce still comes from a court, and a few steps still need you, or someone holding your
+          power of attorney, in person.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Civil Procedure Code rules by article</li>
+          <li>✓ Dubai, Abu Dhabi, federal courts &amp; RAK</li>
+          <li>✓ Fees from official court service pages</li>
+          <li>✓ What no website can do for you</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Filing From Home or Abroad? Ask First" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Short answer -->
+    <section class="section" aria-labelledby="answer-heading">
+      <h2 id="answer-heading">What &ldquo;Online Divorce&rdquo; Means in the UAE</h2>
+      <p>
+        In the UAE, &ldquo;online divorce&rdquo; means an ordinary court divorce handled through the
+        court&rsquo;s digital channels, not a separate, faster kind of divorce. Federal Decree-Law No. 42
+        of 2022, the Civil Procedure Code, lets a case be filed electronically, served by text message or
+        email, heard by video and decided in an electronic judgment. Each court runs its own portal, and
+        each still sets limits.
+      </p>
+      <ul class="checklist">
+        <li><strong>The law is the same online or on paper.</strong> Muslim couples fall under Federal Decree-Law No. 41 of 2024; non-Muslims under Federal Decree-Law No. 41 of 2022, or in Abu Dhabi under Abu Dhabi Law No. 14 of 2021 at the Abu Dhabi Civil Family Court.</li>
+        <li><strong>The court is the same too.</strong> Dubai, Abu Dhabi and Ras Al Khaimah run their own courts; Sharjah, Ajman, Fujairah and Umm Al Quwain use the federal courts.</li>
+        <li><strong>Some steps stay physical.</strong> Signing a power of attorney abroad, documenting a talaq in Dubai and, in Abu Dhabi, lodging the civil divorce form at a typing centre.</li>
+      </ul>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">3</span>
+          <span class="stat-label">business days to pay the fee after the payment notice</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">10</span>
+          <span class="stat-label">business days for the other spouse to file a defence</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">AED 100</span>
+          <span class="stat-label">per Dubai personal status application, capped at AED 2,000</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">AED 5,000</span>
+          <span class="stat-label">Abu Dhabi civil divorce application</span>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>How this site earns money</h3>
+        <p>
+          DivorceU.AE is a referral service, not a law firm. It earns when readers ask to be put in touch
+          with a UAE-licensed family lawyer. Everything below can be done without one; the page says where
+          help tends to pay for itself.
+        </p>
+      </div>
+    </section>
+
+    <!-- Civil Procedure Code -->
+    <section class="section" aria-labelledby="rules-heading">
+      <h2 id="rules-heading">What the Civil Procedure Code Allows You to Do Online</h2>
+      <p>
+        The Civil Procedure Code allows almost every stage of a case to happen electronically: Article
+        330 says fee collection, registration, service, documents, attendance, pleading, witnesses,
+        judgments, appeals and execution are all valid if done wholly or partly remotely. The code
+        applies in every emirate, so these rules hold whichever court hears your divorce.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Stage</th><th>What the law says</th><th>Article</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Filing the claim</td><td>A case starts with a statement of claim filed with the Case Management Office in electronic or paper format, under the court&rsquo;s own procedures.</td><td>44(1)</td></tr>
+            <tr><td>Paying the fee</td><td>The case is registered once fees are collected. Pay within 3 business days from the day after the payment notice, or the registration is void.</td><td>47(1)</td></tr>
+            <tr><td>Service on your spouse</td><td>By recorded audio or video call, text message, smart applications, email, fax or other modern means; also by hand at home, work or an elected domicile; failing that, by posting on the court&rsquo;s website.</td><td>9(1)(a)</td></tr>
+            <tr><td>When service counts</td><td>From the date the email, text, fax or recorded message is sent; for a website posting, from the date of posting.</td><td>11</td></tr>
+            <tr><td>The defence</td><td>Filed electronically or on paper within 10 business days of service. Where the file is electronic, the court lets the parties review the claim on its system or sends it to them.</td><td>48(2), 49</td></tr>
+            <tr><td>Hearings</td><td>The court president, circuit president or judge may take any procedure remotely, at any stage.</td><td>331</td></tr>
+            <tr><td>Asking for an in-person hearing</td><td>In a remote trial, any party may ask at each hearing for the trial to be held in person. The court decides after notifying the other parties.</td><td>333</td></tr>
+            <tr><td>Records</td><td>Remote hearings are recorded, kept electronically and confidential.</td><td>334</td></tr>
+            <tr><td>The judgment</td><td>An enforceable copy obtained remotely carries the writ of execution and an electronic signature. Certified copies can be delivered electronically or on paper.</td><td>131(1), 131(3)</td></tr>
+            <tr><td>E-signatures</td><td>Electronic signatures and documents have the same authenticity as official paper ones if they meet the Electronic Transactions and Trust Services law.</td><td>338</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Federal Decree-Law No. 42 of 2022, official English translation. The Arabic text prevails.
+        </p>
+      </div>
+      <p>
+        Two of these rules are easy to miss. The three-day fee window is short, and a missed payment
+        voids the filing, so pay the same day the notice arrives. And because electronic service counts
+        from the moment of sending, a text from the court that you overlook does not stop the clock on
+        your 10-day defence period. A court notice sent through a messaging app is also a different thing
+        from a spouse&rsquo;s message announcing a divorce; for that, see
+        <a href="/en/whatsapp-divorce-uae/">whether a WhatsApp divorce is valid in the UAE</a>.
+      </p>
+      <p>
+        Article 328 defines remote communication technology as audiovisual communication for remote
+        attendance and the exchange of documents, covering registration, service, trial and execution. A
+        remote hearing is a tool the judge may use, not a right. What you can do is ask for the opposite:
+        if you would rather be in the room, for example with an interpreter beside you, Article 333 lets
+        you ask at each hearing.
+      </p>
+    </section>
+
+    <!-- Court by court -->
+    <section class="section" aria-labelledby="courts-heading">
+      <h2 id="courts-heading">Court by Court: Where Your Divorce Is Handled Online</h2>
+      <p>
+        Which portal you use depends on which court hears the case. The UAE Government portal confirms
+        that Abu Dhabi, Dubai and Ras Al Khaimah keep their own judicial departments, while Sharjah,
+        Ajman, Fujairah and Umm Al Quwain follow the federal judicial system run under the Ministry of
+        Justice. Here is what each one offers for family cases, based on the courts&rsquo; own service
+        pages.
+      </p>
+
+      <h3>Dubai Courts</h3>
+      <p>
+        Dubai Courts takes family cases online through its website and through the government service
+        centres known as Al Adheed, and it also runs a smart app. You need a registered account;
+        individuals sign in with UAE PASS. Two services matter for a divorce.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>Family Conciliation</h3>
+          <p>
+            The Family Guidance file. Open to a citizen or resident of Dubai, or someone working there.
+            You upload your marriage contract as a PDF. There is no fee. The journey is: register the
+            file, attend the sessions, receive a decision, which can be a settlement agreement, a waiver,
+            closure of the file or a referral to the competent court.
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>Personal Status Claims</h3>
+          <p>
+            The divorce claim itself. You upload the statement of claim and a docket of supporting
+            documents, plus the referral from the Family Conciliation section. One party must be a citizen
+            or resident of Dubai. Fee: AED 100 per application, capped at AED 2,000. The result is an
+            electronic first-instance judgment.
+          </p>
+        </div>
+      </div>
+      <p>
+        The claims page still lists the Family Conciliation referral among the uploads. Non-Muslim civil
+        divorces are not referred to Family Guidance (Article 3 of the 2022 law), so in a civil case,
+        check with the court or a typing office what the system asks for at that step. One step is not
+        online at all. Dubai Courts&rsquo; service for certifying uncontested personal status
+        declarations (ishhadat) requires you, or an agent holding a special official power of attorney,
+        to appear with your original ID before a judge or certifier, with two witnesses, for a fee of
+        AED 220. The full Dubai sequence, including timelines, is in our guide on
+        <a href="/en/how-to-file-for-divorce-in-dubai/">how to file for divorce in Dubai</a>.
+      </p>
+
+      <h3>Abu Dhabi Judicial Department</h3>
+      <p>
+        Abu Dhabi handles the two tracks differently, and neither is online from start to finish.
+      </p>
+      <ul class="checklist">
+        <li><strong>Muslim couples, Family Guidance.</strong> The ADJD registers the family dispute through its electronic services, reached through UAE PASS. Its Family Guidance page says sessions are held remotely by videoconference: you install Webex, and both spouses receive an email with the session link on the day. If there is no settlement, the request goes to the competent court at the request of either spouse.</li>
+        <li><strong>Non-Muslims, Abu Dhabi Civil Family Court.</strong> The court publishes a No-Fault Divorce Application form and a Defendant&rsquo;s Response form, but its page tells applicants to submit the application at an Abu Dhabi typing centre. Documents: a copy of the marriage certificate in English and Arabic, and copies of passport and Emirates ID. The fee is AED 5,000.</li>
+        <li><strong>After filing, it is digital.</strong> If the court approves the application, it notifies the other spouse by SMS and gives them access to the documents. Both spouses then receive the case management session date by SMS, and both, or their legal representatives, must attend. The court says it aims to finalise the case within one month of registration.</li>
+      </ul>
+      <p>
+        The court&rsquo;s page lists Abu Dhabi residents and couples who married at that court as
+        eligible, says the parties must come from a country not governed by sharia law, and warns that
+        Arab League nationals may be asked for an official document proving their religion. Proceedings
+        there run in English. Step-by-step detail is in
+        <a href="/en/how-to-file-for-divorce-in-abu-dhabi/">how to file for divorce in Abu Dhabi</a>.
+      </p>
+
+      <h3>Federal courts: Sharjah, Ajman, Fujairah and Umm Al Quwain</h3>
+      <p>
+        Family cases in these four emirates go to the federal courts. The Ministry of Justice runs an
+        e-Filing System for them and lists a family consultations service on its website. In November
+        2025 the federal judiciary issued five regulations under the 2024 Personal Status Law, including
+        Decision No. 67 of 2025 on Family Guidance, with the stated aim of expanding digital services.
+        The ministry&rsquo;s English pages give little procedural detail, so confirm the current steps
+        with the court where you file.
+      </p>
+
+      <h3>Ras Al Khaimah Courts</h3>
+      <p>
+        Ras Al Khaimah has its own local courts. Its family services sit on the Ras Al Khaimah government
+        e-services portal, which the UAE Government portal links to for family cases. We could not load an
+        official page describing the current online steps, so confirm them with RAK Courts directly.
+      </p>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>DIFC and ADGM are not an online shortcut</h3>
+        <p>
+          The DIFC Courts and ADGM Courts often come up in searches for digital courts, but they have no
+          family jurisdiction and cannot grant a divorce. Their portals play no part in a UAE divorce.
+        </p>
+      </div>
+    </section>
+
+    <!-- Family Guidance -->
+    <section class="section" aria-labelledby="guidance-heading">
+      <h2 id="guidance-heading">Family Guidance Online: Who Goes and Can You Attend by Video?</h2>
+      <p>
+        Family Guidance belongs to the 2024 Personal Status Law track used by Muslim couples, and even
+        there it is not automatic. Under Article 8 of
+        Federal Decree-Law No. 41 of 2024, the supervising judge may refer the spouses to Family Guidance
+        before the case goes to court, if he or she thinks a settlement is feasible. There is no fixed
+        guidance period in the law.
+      </p>
+      <p>
+        Some cases skip it altogether: wills, inheritance, urgent and temporary cases, urgent or temporary
+        orders on alimony, custody and tutorship, and cases where reconciliation is not foreseeable, such
+        as cases to prove a marriage or to prove a divorce. If you settle, the agreement is written into a
+        report signed by both spouses and the counsellor and approved by the supervising judge. It then
+        has the force of an execution writ and cannot be appealed unless it contradicts the law.
+      </p>
+      <p>
+        Whether the sessions themselves can be remote depends on the court:
+      </p>
+      <ul class="checklist">
+        <li><strong>Abu Dhabi:</strong> yes, by the ADJD&rsquo;s own description. Sessions are scheduled for videoconference over Webex, and staff contact you to change appointments.</li>
+        <li><strong>Dubai:</strong> the file is opened online, and Dubai Courts&rsquo; personal status procedures guide, issued in January 2021, covers family counselling with the aid of telecommunication technologies. Whether a given session is by video is set by the counsellor, so ask when you are given a date.</li>
+        <li><strong>Federal courts and RAK:</strong> we found no current official statement on video sessions. Ask the Family Guidance section when you register.</li>
+      </ul>
+      <p>
+        Non-Muslims skip this stage completely. Article 3 of Federal Decree-Law No. 41 of 2022 says
+        divorce cases under that law are not referred to Family Guidance and go straight to court for a
+        judgment at the first hearing. Either spouse can apply on the prescribed form without proving harm,
+        and the divorce takes place by court decision once the other spouse has been duly served (Article
+        8). In practice, that makes the civil track the one where &ldquo;online divorce&rdquo; is most
+        real: one electronic filing, electronic service, one hearing, an electronic judgment.
+      </p>
+    </section>
+
+    <!-- From abroad -->
+    <section class="section" aria-labelledby="abroad-heading">
+      <h2 id="abroad-heading">Filing for Divorce in the UAE From Abroad</h2>
+      <p>
+        You can usually start and run a UAE divorce from outside the country, provided a UAE court has
+        jurisdiction and you appoint someone locally. Three things decide whether it works.
+      </p>
+      <h3>1. Which court can hear it</h3>
+      <p>
+        For Muslim couples, Article 3 of the 2024 law lets UAE courts hear cases against citizens and
+        foreigners who have a domicile, residence or place of work in the State. A wife&rsquo;s divorce case
+        can be filed where either spouse lives or works, or where the marital home is. If the respondent
+        has no base in the UAE, the case goes to the plaintiff&rsquo;s court, otherwise to the court of
+        the capital (Article 3(6)). Article 4 also lets a wife resident in the UAE sue a husband who had a
+        base here but abandoned her and moved abroad, was deported, or whose address abroad is unknown.
+      </p>
+      <h3>2. An elected domicile and a representative</h3>
+      <p>
+        A plaintiff with no domicile in the UAE must name an elected domicile and a legal representative
+        in the claim (Article 44(2)(a) of the Civil Procedure Code). Under Article 52, you can appear
+        through a lawyer, or through a relative or in-law up to the fourth degree.
+      </p>
+      <h3>3. A power of attorney that the court will accept</h3>
+      <p>
+        A power of attorney signed abroad is not ready to use until it has been through the legalisation
+        chain. Dubai Courts&rsquo; service pages spell it out: a document issued outside the UAE must be
+        certified by the foreign ministry of the issuing country, then the UAE embassy there, then the UAE
+        Ministry of Foreign Affairs, and translated into Arabic by a legal translator approved by the
+        Ministry of Justice. The UAE is not a party to the Hague Apostille Convention, so an apostille on
+        its own does not replace these steps.
+      </p>
+      <p>
+        Once the case is running, the court can take remote steps outside the emirate&rsquo;s territory,
+        coordinating with the authority where the person or documents are (Article 332), and can use remote
+        technology for judicial assistance with foreign countries under ratified treaties (Article 337).
+        That makes a video appearance from abroad possible, but it remains the judge&rsquo;s decision
+        (Article 331), so ask before the hearing date rather than on the morning.
+      </p>
+      <p>
+        The rules above are from the 2024 Muslim personal status law. The 2022 civil law has its own
+        scope: Article 1 covers non-Muslim UAE nationals and non-Muslim foreigners residing in the State.
+        If you are a non-Muslim couple and neither of you lives in the UAE any more, take advice on
+        jurisdiction before you pay any fee.
+      </p>
+    </section>
+
+    <!-- Documents -->
+    <section class="section" aria-labelledby="documents-heading">
+      <h2 id="documents-heading">Documents to Scan, and How Translation Works</h2>
+      <p>
+        For an online filing in Dubai, every document goes in as a PDF translated into Arabic, while the
+        Abu Dhabi Civil Family Court works in English. Dubai Courts&rsquo; service pages require soft
+        copies in PDF format, translated by a legal translator approved by the Ministry of Justice, with
+        foreign documents legalised abroad and attested in the UAE first. Expect the same Arabic
+        requirement at the federal courts and in Ras Al Khaimah.
+      </p>
+      <ul class="checklist">
+        <li><strong>Marriage certificate,</strong> legalised and attested if issued abroad, plus its Arabic translation. In Abu Dhabi&rsquo;s civil court, a copy in English and Arabic.</li>
+        <li><strong>Passport and Emirates ID</strong> for both spouses, or at least yours and whatever identifying details you have for your spouse.</li>
+        <li><strong>The statement of claim</strong> and a docket of supporting documents, for a Dubai personal status claim.</li>
+        <li><strong>The Family Conciliation referral,</strong> where your case went through guidance.</li>
+        <li><strong>Children&rsquo;s birth certificates,</strong> if custody, maintenance or travel are part of the case.</li>
+        <li><strong>Power of attorney,</strong> fully legalised and translated, if someone files for you.</li>
+        <li><strong>Any written settlement</strong> you want the court to approve.</li>
+      </ul>
+      <p>
+        Scan in colour, one PDF per document, with the translation attached behind the original. Name each
+        file plainly (&ldquo;marriage-certificate-attested.pdf&rdquo;). A blurred attestation stamp can
+        lead to a request to re-upload, which costs time. The complete checklist,
+        including what each emirate asks for, is in
+        <a href="/en/documents-for-divorce-uae/">documents required for divorce in the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Tracking -->
+    <section class="section" aria-labelledby="tracking-heading">
+      <h2 id="tracking-heading">How to Track Your Case and Get the Judgment</h2>
+      <p>
+        You track a UAE divorce case through the court&rsquo;s own account system or app, using your case
+        number. There is no national search across all courts.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Dubai</h3>
+          <p>
+            Logged in, your files appear in your account. The public site also lists inquiry services for
+            case details, &ldquo;smart&rdquo; verdicts, case applications and ishhadat certificates, which
+            work from a case, application or certificate reference number.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Abu Dhabi</h3>
+          <p>
+            The AD Judicial app shows your file, its status in the courts, scheduled dates and
+            notifications, and lets you submit requests on the file. The court also sends SMS notices to
+            the number you gave when filing.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Federal courts and RAK</h3>
+          <p>
+            Use the Ministry of Justice e-Filing System or the Ras Al Khaimah e-services portal, depending
+            on where you filed, and keep the case number from your first receipt.
+          </p>
+        </div>
+      </div>
+      <p>
+        A note on searching by Emirates ID: we could not find an official Dubai Courts public search that
+        works from an Emirates ID number alone. The Emirates ID checks you may read about online are
+        usually Dubai Police services for financial criminal cases and travel bans, not family court
+        files.
+      </p>
+      <h3>Getting the judgment and certificate</h3>
+      <p>
+        The output of a Dubai personal status claim is an electronic first-instance judgment, and the
+        Civil Procedure Code lets certified copies be delivered electronically (Article 131(3)), with the
+        writ of execution and an electronic signature on an enforceable copy obtained remotely (Article
+        131(1)). Under Article 9 of the 2024 law, the appeal period in personal status matters is 30 days,
+        counted from the day after the judgment if it was issued in your presence, otherwise from the day
+        after you were notified (Article 10). Where a divorce was recorded as a declaration in Dubai
+        rather than decided in a claim, the result is an ishhad document instead of a judgment.
+      </p>
+      <p>
+        For use abroad, an electronic copy is rarely the end of it. Foreign registries and courts commonly
+        want an attested copy with a translation. See
+        <a href="/en/divorce-certificate-attestation-uae/">UAE divorce certificate attestation</a> before
+        you book any appointment back home.
+      </p>
+    </section>
+
+    <!-- Table -->
+    <section class="section" aria-labelledby="table-heading">
+      <h2 id="table-heading">Step by Step: What Is Online and What Is Not</h2>
+      <p>
+        Most of the court process is online; the steps that are not are the ones that prove who you are
+        or record a declaration.
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr><th>Step</th><th>Online?</th><th>Where</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Open a court account</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>UAE PASS, then the court portal</td>
+              <td>No UAE PASS? A lawyer or a government service centre can file for you.</td>
+            </tr>
+            <tr>
+              <td>Family Guidance request (Muslim couples)</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Dubai Courts Family Conciliation; ADJD e-services</td>
+              <td>No fee in Dubai. Referral is the judge&rsquo;s call (Article 8, 2024 law).</td>
+            </tr>
+            <tr>
+              <td>Guidance sessions</td>
+              <td><span class="verdict verdict--rec">Partly</span></td>
+              <td>ADJD by Webex; Dubai and others case by case</td>
+              <td>Not used for non-Muslim civil divorce.</td>
+            </tr>
+            <tr>
+              <td>File the divorce claim</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Dubai Courts website or app; MOJ e-Filing; RAK portal</td>
+              <td>Abu Dhabi civil divorce goes in through a typing centre.</td>
+            </tr>
+            <tr>
+              <td>Pay the court fee</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Online payment after the fee notice</td>
+              <td>Within 3 business days or the registration is void (Article 47(1)).</td>
+            </tr>
+            <tr>
+              <td>Serve your spouse</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>The court sends it</td>
+              <td>SMS, email, apps; effective from sending (Articles 9 and 11).</td>
+            </tr>
+            <tr>
+              <td>Defence and documents</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Court portal</td>
+              <td>10 business days after service (Article 48(2)).</td>
+            </tr>
+            <tr>
+              <td>Hearings</td>
+              <td><span class="verdict verdict--rec">Partly</span></td>
+              <td>Video, at the court&rsquo;s discretion</td>
+              <td>Any party may ask for in person (Article 333).</td>
+            </tr>
+            <tr>
+              <td>Judgment</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Electronic judgment, e-certified copies</td>
+              <td>Article 131; e-signatures valid (Article 338).</td>
+            </tr>
+            <tr>
+              <td>Appeal</td>
+              <td><span class="verdict verdict--ok">Yes</span></td>
+              <td>Court portal</td>
+              <td>30 days in personal status matters (Article 9, 2024 law).</td>
+            </tr>
+            <tr>
+              <td>Document a talaq or other declaration (Dubai)</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>Service centre or approved marriage officiant</td>
+              <td>In person or via agent; AED 220; talaq within 15 days (Article 58).</td>
+            </tr>
+            <tr>
+              <td>Sign a power of attorney abroad</td>
+              <td><span class="verdict verdict--ess">No</span></td>
+              <td>Notary, foreign ministry, UAE embassy, then UAE MOFA</td>
+              <td>No apostille route for the UAE.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Based on the Civil Procedure Code and the courts&rsquo; service pages as published in 2025 and
+          2026. Portals change; confirm on the court&rsquo;s own site when you file.
+        </p>
+      </div>
+    </section>
+
+    <!-- Warning -->
+    <section class="section" aria-labelledby="warning-heading">
+      <h2 id="warning-heading">&ldquo;Online Divorce&rdquo; Websites: What They Cannot Do</h2>
+      <p>
+        No website, app or agent can divorce you in the UAE. A UAE divorce is created or recorded by a
+        court: a judgment, a Family Guidance settlement approved by the supervising judge, or a talaq
+        documented before the competent court. Anything else is, at best, a form-filling service.
+      </p>
+      <p>
+        Typing centres and legal translators do real work, and the Abu Dhabi Civil Family Court requires
+        the first. The trouble starts when a site sells something the law does not offer. Be wary of:
+      </p>
+      <ul class="checklist">
+        <li><strong>&ldquo;Divorce in 7 days&rdquo;.</strong> No one controls a court calendar. Even the Abu Dhabi Civil Family Court describes one month from registration as an aim, not a promise.</li>
+        <li><strong>&ldquo;No court needed&rdquo;.</strong> A certificate from a website, or a private agreement signed online, is not a UAE divorce.</li>
+        <li><strong>&ldquo;DIFC or ADGM divorce online&rdquo;.</strong> Neither court can grant a divorce.</li>
+        <li><strong>&ldquo;UAE apostille included&rdquo;.</strong> The UAE uses the attestation chain, not apostilles.</li>
+        <li><strong>A foreign online divorce sold as a UAE solution.</strong> A divorce from another country&rsquo;s court is a foreign judgment, and whether it is recognised here is a separate legal question. A paper from a site that is not a court is not a divorce anywhere.</li>
+        <li><strong>Requests for your UAE PASS login.</strong> Your UAE PASS works as your digital signature. Nobody legitimate needs your password; a lawyer files under a power of attorney.</li>
+      </ul>
+      <h3>A talaq still has to be documented</h3>
+      <p>
+        For Muslim couples, a talaq pronounced by the husband does not end the paperwork. Article 58 of
+        the 2024 Personal Status Law requires the husband to document the divorce before the competent
+        court within 15 days of it happening, and this does not affect the wife&rsquo;s right to bring a
+        case to prove the divorce. If he misses the deadline without an excuse the court accepts, the wife
+        is entitled to compensation equal to alimony from the date of the divorce to the date it is
+        documented. Documentation is a legal duty with a financial penalty, and in Dubai the court&rsquo;s
+        documentation service is described as an in-person step (you or an agent with a special power of
+        attorney), so do not plan on finishing it from a screen without checking the current channel first.
+      </p>
+    </section>
+
+    <!-- Nationality -->
+    <section class="section" aria-labelledby="nationality-heading">
+      <h2 id="nationality-heading">Does Your Nationality Change the Online Process?</h2>
+      <p>
+        No. A Filipino, Indian, British or Emirati filer uses the same portal, uploads the same kind of
+        PDFs and pays the same fees. Nationality affects which law applies and what happens to the
+        judgment back home.
+      </p>
+      <p>
+        For non-Muslim foreigners, Article 1 of Federal Decree-Law No. 41 of 2022 applies the civil law
+        unless one spouse insists on the law of their home country. If that law limits divorce, the
+        insistence changes the whole case, so settle the choice of law before you file. Recognition is the
+        second question: a UAE judgment does not register itself abroad. See our guide to
+        <a href="/en/filipino-divorce-uae/">Filipino divorce in the UAE</a> for what happens in the
+        Philippines.
+      </p>
+      <div class="cta-inline">
+        <p>Filing from abroad, or not sure which court is yours?</p>
+        <a href="#contact" class="btn btn--primary">Ask for a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/family-guidance-section-uae/" class="service-link">
+          <strong>Family Guidance</strong>
+          <span>The step before court for Muslim couples</span>
+        </a>
+        <a href="/en/non-muslim-divorce-uae/" class="service-link">
+          <strong>Non-Muslim Divorce</strong>
+          <span>The civil, no-fault track explained</span>
+        </a>
+        <a href="/en/divorce-absent-husband-uae/" class="service-link">
+          <strong>Spouse Abroad or Missing</strong>
+          <span>Divorce when the other spouse has left the UAE</span>
+        </a>
+        <a href="/en/talaq-uae/" class="service-link">
+          <strong>Talaq in the UAE</strong>
+          <span>Types, documentation and court rules</span>
+        </a>
+        <a href="/en/divorce-appeal-uae/" class="service-link">
+          <strong>Appealing a Divorce</strong>
+          <span>Deadlines, grounds and process</span>
+        </a>
+        <a href="/en/indian-national-divorce-uae/" class="service-link">
+          <strong>Indian Nationals</strong>
+          <span>UAE divorce and recognition in India</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Want Someone to Check Your Online Filing First?</h2>
+      <p>Request a free, confidential consultation with a UAE-licensed family lawyer, in English or Arabic. It is a chance to confirm the right court, the right law and the documents you need before you file. If your case is simple enough to file yourself, that is a perfectly good answer to walk away with.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 24px; }
+  .checklist li { position: relative; padding: 14px 18px 14px 48px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; font-size: 0.9rem; line-height: 1.6; }
+  .checklist li::before { content: "✓"; position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+
+  .cost-table { margin-top: 24px; margin-bottom: 16px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .cost-table td a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .cost-table td a:hover { text-decoration: underline; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #6b7280; margin: 10px 0 0; }
+  .table-note a { color: #4b5563; text-decoration: underline; font-weight: 600; }
+
+  .verdict { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .verdict--ok { background: #dcfce7; color: #166534; }
+  .verdict--rec { background: #fef3c7; color: #92400e; }
+  .verdict--ess { background: #fee2e2; color: #991b1b; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .card p { font-size: 0.875rem; color: #4b5563; margin: 0; }
+  .card p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card p a:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

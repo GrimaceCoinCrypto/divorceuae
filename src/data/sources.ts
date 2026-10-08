@@ -44,6 +44,18 @@ export const SOURCES: Record<string, Source> = {
     url: 'https://uaelegislation.gov.ae/en/legislations/1602',
     urlAr: 'https://uaelegislation.gov.ae/ar/legislations/1602',
   },
+  'bd-mflo-1961': {
+    title: 'The Muslim Family Laws Ordinance, 1961 (Bangladesh)',
+    titleAr: 'قانون الأسرة الإسلامي لعام 1961 في بنغلاديش (بالإنجليزية)',
+    publisher: 'Laws of Bangladesh, Ministry of Law, Justice and Parliamentary Affairs',
+    url: 'https://bdlaws.minlaw.gov.bd/act-details-305.html',
+  },
+  'bd-family-courts-2023': {
+    title: 'Family Courts Act, 2023 (Bangladesh, Act No. 26 of 2023, in Bangla)',
+    titleAr: 'قانون محاكم الأسرة لعام 2023 في بنغلاديش (باللغة البنغالية)',
+    publisher: 'Laws of Bangladesh, Ministry of Law, Justice and Parliamentary Affairs',
+    url: 'https://bdlaws.minlaw.gov.bd/act-details-1444.html',
+  },
   'ad-law-14-2021': {
     title: 'Abu Dhabi Law No. 14 of 2021 (as amended) and Regulation No. 8 of 2022, official English text',
     titleAr: 'قانون أبوظبي رقم 14 لسنة 2021 (بتعديلاته) واللائحة رقم 8 لسنة 2022، النص الإنجليزي الرسمي',
@@ -121,6 +133,8 @@ export const SOURCES: Record<string, Source> = {
 export const TRIGGERS: Array<[string, RegExp[]]> = [
   ['law-41-2024', [/\b41 of 2024\b/, /\b41 2024\b/, /41 لسنة 2024/]],
   ['law-41-2022', [/\b41 of 2022\b/, /\b41 2022\b/, /41 لسنة 2022/]],
+  ['bd-mflo-1961', [/^(?=.*bangladesh)(?=.*muslim family laws ordinance)/, /^(?=.*بنغلاديش)(?=.*قانون الأسرة الإسلامي)/]],
+  ['bd-family-courts-2023', [/^(?=.*bangladesh)(?=.*family courts act 2023)/]],
   ['ad-law-14-2021', [/\b14 of 2021\b/, /\b14 2021\b/, /14 لسنة 2021/]],
   ['adjd-civil-family-court', [/civil family court/, /الأسرة المدنية/]],
   ['dv-law-13-2024', [/\b13 of 2024\b/, /13 لسنة 2024/, /domestic violence/, /العنف الأسري/]],
