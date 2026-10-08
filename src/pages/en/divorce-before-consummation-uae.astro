@@ -1,0 +1,766 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/ui/LeadForm.astro';
+import FAQSection from '../../components/ui/FAQSection.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
+
+const title = 'Divorce Before Consummation in UAE: Mahr, Iddah, Rights (2026)';
+const description =
+  'Divorced before consummation in the UAE? Half the mahr, no iddah, no take-back, the wife’s Article 75 route and what seclusion changes, with AED examples.';
+
+const hreflang = {
+  en: 'https://divorceu.ae/en/divorce-before-consummation-uae/',
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://divorceu.ae/en/' },
+  { name: 'Divorce Before Consummation', url: 'https://divorceu.ae/en/divorce-before-consummation-uae/' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Aleksi Suon', url: 'https://divorceu.ae/en/author/aleksi-suon/' },
+  publisher: { '@type': 'Organization', name: 'Divorce UAE', url: 'https://divorceu.ae' },
+  datePublished: '2026-10-09',
+  dateModified: '2026-10-09',
+  inLanguage: 'en-AE',
+  mainEntityOfPage: 'https://divorceu.ae/en/divorce-before-consummation-uae/',
+};
+
+const faqItems = [
+  {
+    question: 'Is a marriage valid in the UAE if it was never consummated?',
+    answer:
+      'Yes. The marriage exists from the signing of a valid contract. The dowry is owed by the contract itself (Article 47(1) of Federal Decree-Law No. 41 of 2024), and if the husband dies before intercourse the full dowry is confirmed and the widow observes a waiting period (Articles 47(2) and 82). Consummation changes the consequences of a later divorce: how much mahr is owed, whether there is an iddah and whether the husband can take her back.',
+  },
+  {
+    question: 'How much mahr does a wife get after divorce before consummation?',
+    answer:
+      'Half of the mahr named in the contract, or no more than half of the usual mahr if none was named (Article 47(3)). Anything already paid counts towards that half, and any unpaid balance of her half is due straight away, because the separation is irrevocable (Article 46). If there was valid seclusion, the full mahr is confirmed instead (Article 47(2)).',
+  },
+  {
+    question: 'Is there an iddah after divorce before consummation?',
+    answer:
+      'No, provided there was neither intercourse nor valid seclusion. Article 82 makes the waiting period obligatory after a divorce only when it follows seclusion or intercourse in a valid contract. Without an iddah there is no iddah maintenance or iddah housing either. The exception is the husband’s death: a widow observes a waiting period even if the marriage was never consummated.',
+  },
+  {
+    question: 'Can a woman remarry immediately after divorce before consummation?',
+    answer:
+      'Yes. With no iddah, nothing in the 2024 law makes her wait. In practice she needs proof of the divorce to sign a new contract, so make sure the talaq is documented: the husband must do this at court within 15 days (Article 58), and she can file her own case to prove the divorce if he does not. Remarrying the same man needs a new contract and a new mahr.',
+  },
+  {
+    question: 'Can a wife divorce before consummation without the husband’s agreement?',
+    answer:
+      'Yes. Under Article 75 the court shall revoke the marriage contract if she asks before intercourse or seclusion, he refuses talaq or khula, she returns the dowry she received and reconciliation is impossible. She does not need to prove harm. If her reason relates to her, she must also repay, on his request, what he spent at her request for the marriage.',
+  },
+  {
+    question: 'Is non-consummation grounds for divorce in the UAE?',
+    answer:
+      'It is not a stand-alone label, but it opens several routes. Before intercourse or seclusion, a wife can use Article 75 without proving harm. If impotence or another defect prevents intimacy, either spouse can ask for revocation under Article 69, with up to a one-year postponement if the condition is curable, and the wife’s right on this ground never lapses. Khula and divorce for harm also remain open.',
+  },
+  {
+    question: 'Does time alone together count as consummation?',
+    answer:
+      'For most legal purposes, yes. Article 17 defines valid seclusion as the spouses meeting, before intercourse, in a place where each feels safe with the other without being overseen, proved by admission or witnesses. Seclusion confirms the full mahr (Article 47(2)), requires an iddah after divorce (Article 82) and makes a first talaq revocable (Article 60). Meetings with family present or in public places do not fit that wording.',
+  },
+  {
+    question: 'What if he said talaq three times before the rukhsati?',
+    answer:
+      'It counts as one divorce. Article 57 treats a repeated divorce, or one coupled with a number, as a single divorce whether spoken, written or signalled. Before consummation that single divorce is minor irrevocable (Article 60(2)), so the couple can remarry with a new contract and a new mahr without her first marrying someone else, unless he had already divorced her twice before.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  dir="ltr"
+  hreflang={hreflang}
+  schema={schema}
+  lastmod="2026-10-09"
+>
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <Breadcrumb items={breadcrumbs} lang="en" />
+        <h1 class="hero__h1">Divorce Before Consummation in the UAE: Mahr, Iddah and Your Rights</h1>
+        <p class="byline">By Aleksi Suon, UAE Expat &amp; Legal Consultant · Updated October 2026</p>
+        <p class="hero__sub">
+          If a husband divorces his wife before intercourse or valid seclusion, UAE law gives her half
+          the named mahr, she has no iddah and may remarry straight away, and he cannot take her back
+          without a new contract and a new mahr. A wife who wants to end the marriage at this stage can
+          ask the court to revoke it without proving harm, if she returns the dowry she received.
+        </p>
+        <ul class="hero__trust">
+          <li>✓ Federal Decree-Law No. 41 of 2024, article by article</li>
+          <li>✓ Worked examples in AED</li>
+          <li>✓ Talaq, khula and Article 75 compared</li>
+          <li>✓ Muslim, non-Muslim and expat couples</li>
+        </ul>
+      </div>
+      <div class="hero__form">
+        <LeadForm lang="en" variant="hero" heading="Nikah Signed, Never Lived Together? Talk It Through Free" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- Short answer -->
+    <section class="section" aria-labelledby="answer-heading">
+      <h2 id="answer-heading">Divorce Before Consummation in the UAE: The Short Answer</h2>
+      <p>
+        A divorce before consummation halves the mahr and ends the marriage at once, but only if the couple
+        never had intercourse and never had valid seclusion (private time alone together). Federal
+        Decree-Law No. 41 of 2024, in force since 15 April 2025, sets the rules for Muslim couples here,
+        expats included unless one spouse insists on their own law (Article 1):
+      </p>
+      <ul class="checklist">
+        <li><strong>Mahr:</strong> half the named mahr, or no more than half the usual mahr if none was named (Article 47(3)), payable now because the separation is irrevocable (Article 46).</li>
+        <li><strong>No iddah:</strong> a waiting period follows only a separation after seclusion or intercourse (Article 82), so there is no iddah maintenance and she may remarry immediately.</li>
+        <li><strong>No take-back:</strong> it is a minor irrevocable divorce (Article 60(2)); reconciling needs a new contract and a new mahr (Article 59(2)(a)).</li>
+        <li><strong>No mut&rsquo;a:</strong> the Article 102 compensation is for a wife whose valid marriage was consummated.</li>
+        <li><strong>The wife&rsquo;s own exit:</strong> if he refuses talaq or khula, the court must revoke the contract once she returns the dowry received and reconciliation is impossible, without proof of harm (Article 75).</li>
+      </ul>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">Half</span>
+          <span class="stat-label">of the named mahr after talaq before consummation</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">0 days</span>
+          <span class="stat-label">of iddah if there was no seclusion or intercourse</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">15 days</span>
+          <span class="stat-label">for the husband to document the talaq in court</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1 year</span>
+          <span class="stat-label">maximum postponement for a curable defect</span>
+        </div>
+      </div>
+      <div class="info-box info-box--blue" style="margin-top:24px;">
+        <h3>How this site works</h3>
+        <p>
+          DivorceU.AE is a referral service, not a law firm, and earns when a reader asks to be put in touch
+          with a UAE-licensed family lawyer. This page explains the law; it is not legal advice on your
+          situation.
+        </p>
+      </div>
+    </section>
+
+    <!-- What counts as consummation -->
+    <section class="section" aria-labelledby="consummation-heading">
+      <h2 id="consummation-heading">What Counts as Consummation Under UAE Law?</h2>
+      <p>
+        Consummation means intercourse, but in UAE law valid seclusion has most of the same effects.
+        Article 17 of the 2024 law defines seclusion (khalwa) as the meeting of the spouses, before
+        intercourse, in a place where each feels safe with the other without being overseen, proved by
+        their own admission or by witnesses. After seclusion:
+      </p>
+      <ul class="checklist">
+        <li>The full dowry, or full usual dowry, is confirmed by intercourse, proper seclusion or the death of a spouse (Article 47(2)).</li>
+        <li>A waiting period is obligatory after a separation that follows seclusion or intercourse in a valid contract (Article 82).</li>
+        <li>Every divorce in a valid marriage is revocable except the third and one before intercourse or seclusion (Article 60), so after seclusion a first talaq lets him take her back during the iddah (Article 61).</li>
+      </ul>
+
+      <h3>Does a nikah need to be consummated to be valid?</h3>
+      <p>
+        No. The marriage exists from the signing of a valid contract. The dowry is owed by the contract
+        (Article 47(1)), and if the husband dies before intercourse, the full dowry is confirmed
+        (Article 47(2)) and the widow still observes a waiting period (Article 82). Consummation changes the
+        consequences of a later divorce, not whether you are married.
+      </p>
+
+      <h3>What usually counts as seclusion</h3>
+      <p>
+        Whether a meeting was valid seclusion is a question of fact for the court, and on the wording of
+        Article 17 the deciding point is privacy. A closed room in a flat, a hotel room or a family home
+        where nobody could walk in is the kind of setting couples argue about. Meetings with relatives
+        present, in a restaurant or over a video call do not fit a definition built on being unobserved.
+      </p>
+      <p>
+        In a case reported by Gulf News in November 2025, the personal status court in Umm Al Quwain found
+        valid seclusion twice, once at the wife&rsquo;s family home and once in a private car, although the
+        couple never lived together. Because of that finding the post-consummation rules applied: the
+        husband was ordered to pay maintenance up to the divorce and housing for the iddah. The court also
+        held that the wife had chosen to end the marriage, and ordered her to repay about AED 200,000 for the
+        dowry, gold, engagement costs and gifts. The report does not name the articles applied, but two
+        points stand: if you have been alone together, do not assume the before-consummation rules apply to
+        you, and who ended the marriage can matter as much as whether it was consummated.
+      </p>
+    </section>
+
+    <!-- Talaq before consummation -->
+    <section class="section" aria-labelledby="talaq-heading">
+      <h2 id="talaq-heading">Talaq Before Consummation: What the Wife Is Owed</h2>
+      <p>
+        When a husband pronounces talaq before any intercourse or valid seclusion, the wife is owed half of
+        the named mahr and nothing that depends on a waiting period.
+      </p>
+
+      <h3>Half the mahr, payable now</h3>
+      <p>
+        Article 47(3) is direct: a woman divorced before intercourse is entitled to half of the dowry if it
+        was specified, and otherwise to no more than half of the usual dowry. The usual dowry (mahr
+        al-mithl) applies where no dowry was named, the contract denied one, or it was not specified
+        correctly (Article 48). Her whole half is payable now, including any part labelled deferred, because
+        Article 46 makes the dowry due in all cases on irrevocable separation.
+      </p>
+      <p>
+        Gold or cash handed over as mahr counts towards her half. For prompt and deferred mahr in general,
+        see our <a href="/en/mahr-divorce-uae/">guide to mahr on divorce</a>.
+      </p>
+
+      <h3>A minor irrevocable divorce, so no take-back</h3>
+      <p>
+        Article 60(2) makes a divorce before intercourse or seclusion minor irrevocable. The husband cannot
+        take her back (ruju), because that right exists only during the waiting period of a revocable
+        divorce (Article 61). If they later want to try again, they need a new contract and a new mahr
+        (Article 59(2)(a)).
+      </p>
+      <p>
+        Saying talaq three times in one sitting before the rukhsati does not make it final for good. Under
+        Article 57, a repeated divorce, or one coupled with a number, counts as one, whether spoken, written
+        or signalled. Unless he had already divorced her twice before, the couple can remarry with a new
+        contract without her first marrying someone else.
+      </p>
+
+      <h3>No iddah, no iddah maintenance</h3>
+      <p>
+        With no seclusion or intercourse there is no iddah (Article 82), so she may marry someone else as
+        soon as the divorce has happened, instead of waiting the three periods of purity, or three lunar
+        months, that Article 84 sets for other divorcees. Nor is there iddah maintenance (Article 101). Our
+        <a href="/en/iddah-waiting-period-uae/">iddah guide</a> covers the waiting period where it applies.
+      </p>
+
+      <h3>No mut&rsquo;a compensation</h3>
+      <p>
+        Article 102 gives compensation of up to one year&rsquo;s maintenance for women of her standing when a
+        husband divorces by his sole will, without her request or cause, but only to a wife whose valid
+        marriage was consummated. Before intercourse or seclusion, her financial claim is the half mahr.
+      </p>
+
+      <h3>The talaq still has to be documented</h3>
+      <p>
+        Under Article 58, the husband must document the divorce at the competent court within 15 days. If he
+        does not, without an excuse the court accepts, the wife is entitled to compensation equal to alimony
+        from the date of the divorce to the date it is documented, and she can file her own case to prove
+        it, which is exempt from Family Guidance (Article 8). An undocumented talaq still counts, but the
+        court record is what lets her claim the mahr and remarry without argument.
+      </p>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section" aria-labelledby="examples-heading">
+      <h2 id="examples-heading">Worked Examples: What Is Owed in AED</h2>
+      <p>
+        These examples apply the articles to round numbers. They are illustrations, not predictions: a court
+        looks at the actual contract, what was paid and what can be proved. Each assumes a first divorce and
+        a mahr of AED 50,000, of which AED 20,000 was paid at the nikah and AED 30,000 is deferred, unless
+        stated otherwise.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>1. Talaq, never alone together</h3>
+          <p>
+            Her half is AED 25,000 (Article 47(3)). She has received AED 20,000, so he owes AED 5,000 more,
+            payable now (Article 46). The rest of the deferred amount is never owed. No iddah, no iddah
+            maintenance, no mut&rsquo;a.
+          </p>
+        </div>
+        <div class="card">
+          <h3>2. More than half paid up front</h3>
+          <p>
+            AED 40,000 in cash and gold was handed over as mahr at the nikah. Her entitlement is still AED
+            25,000, so the husband can ask for the AED 15,000 difference back. Families often settle this
+            privately, and the Qur&rsquo;anic verse on this situation encourages either side to waive.
+          </p>
+        </div>
+        <div class="card">
+          <h3>3. No mahr named</h3>
+          <p>
+            The court assesses the usual dowry for a woman in her position (Article 48). If that comes to AED
+            40,000, a talaq before consummation gives her no more than AED 20,000 (Article 47(3)).
+          </p>
+        </div>
+        <div class="card">
+          <h3>4. One evening alone at his flat</h3>
+          <p>
+            Both admit it, so there was seclusion (Article 17) and the full AED 50,000 is confirmed
+            (Article 47(2)). The talaq is revocable (Article 60): she observes an iddah (Articles 82 and 84)
+            with iddah maintenance (Article 101), and he may take her back during it (Article 61). The AED
+            30,000 falls due once the separation becomes irrevocable (Article 46).
+          </p>
+        </div>
+        <div class="card">
+          <h3>5. The wife asks the court (Article 75)</h3>
+          <p>
+            At her family&rsquo;s request he also paid AED 15,000 towards a wedding hall. She no longer wants
+            the marriage; he refuses talaq and khula. The court must revoke once she returns the AED 20,000 and
+            reconciliation is impossible (Article 75(1)). As the reason relates to her, she also repays the AED
+            15,000 if he asks (Article 75(2)).
+          </p>
+        </div>
+        <div class="card">
+          <h3>6. He dies before the rukhsati</h3>
+          <p>
+            Death confirms the full dowry (Article 47(2)) and makes it due (Article 46), so the unpaid AED
+            30,000 is a claim against his estate. Unlike a divorce, death before consummation still requires a
+            waiting period (Article 82).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Talaq Before vs After Consummation, Khula and Article 75 Compared</h2>
+      <p>
+        Which column applies depends on two questions: was there intercourse or valid seclusion, and who
+        wants the marriage to end?
+      </p>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Point</th>
+              <th>Talaq before consummation or seclusion</th>
+              <th>Talaq after consummation or seclusion</th>
+              <th>Khula</th>
+              <th>Article 75 revocation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Who ends it</td>
+              <td>Husband, by talaq</td>
+              <td>Husband, by talaq</td>
+              <td>Wife asks, husband accepts a consideration; the court can order it if he refuses (Arts. 65, 66)</td>
+              <td>The court, on the wife&rsquo;s request (Art. 75)</td>
+            </tr>
+            <tr>
+              <td>Mahr</td>
+              <td>Half the named mahr, or up to half the usual mahr (Art. 47(3)); unpaid part due now (Art. 46)</td>
+              <td>Full mahr confirmed (Art. 47(2)); deferred part due on irrevocable separation (Art. 46)</td>
+              <td>The consideration; if it is the dowry, returning what she received is enough (Art. 66)</td>
+              <td>She returns the dowry received, plus wedding spending if the reason relates to her (Art. 75)</td>
+            </tr>
+            <tr>
+              <td>Iddah</td>
+              <td>None (Art. 82)</td>
+              <td>Three periods of purity or three lunar months (Arts. 82, 84); until birth if pregnant (Art. 85)</td>
+              <td>Only if there was seclusion or intercourse (Art. 82)</td>
+              <td>None (Art. 82)</td>
+            </tr>
+            <tr>
+              <td>Iddah maintenance</td>
+              <td>None</td>
+              <td>Yes, after a revocable divorce (Art. 101)</td>
+              <td>None after khula (Art. 101)</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Mut&rsquo;a (Art. 102)</td>
+              <td>No: the article covers a consummated marriage</td>
+              <td>Possible if he divorced by his sole will, without her request or cause</td>
+              <td>No: the separation is at her request</td>
+              <td>No: before consummation and at her request</td>
+            </tr>
+            <tr>
+              <td>Take-back (ruju)</td>
+              <td>No: minor irrevocable (Art. 60(2))</td>
+              <td>Yes, during the iddah (Art. 61)</td>
+              <td>No: minor irrevocable (Art. 65)</td>
+              <td>No: the contract is revoked</td>
+            </tr>
+            <tr>
+              <td>Remarrying each other</td>
+              <td>New contract and new mahr (Art. 59(2)(a))</td>
+              <td>Take-back during the iddah; after it, new contract and new mahr</td>
+              <td>New contract and new mahr (Art. 59(2)(a))</td>
+              <td>A new contract, which carries its own dowry (Art. 47(1))</td>
+            </tr>
+            <tr>
+              <td>Marrying someone else</td>
+              <td>Immediately</td>
+              <td>After the iddah ends (Art. 83)</td>
+              <td>Immediately if there was no seclusion or intercourse; otherwise after the iddah</td>
+              <td>Immediately once the judgment is final</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          Articles of Federal Decree-Law No. 41 of 2024, assuming a first or second divorce; a third is major
+          irrevocable (Art. 59(2)(b)). Article 102 speaks of a consummated marriage, so with seclusion only,
+          take advice before counting on mut&rsquo;a.
+        </p>
+      </div>
+    </section>
+
+    <!-- Article 75 -->
+    <section class="section" aria-labelledby="article75-heading">
+      <h2 id="article75-heading">Can a Wife End the Marriage Before Consummation Without His Agreement?</h2>
+      <p>
+        Yes. Under Article 75 of the 2024 law, if the wife asks for revocation before intercourse or
+        seclusion and the husband refuses to divorce her or agree khula, the court shall revoke the marriage
+        contract, provided she returns the dowry she received and reconciliation is impossible. She does not
+        have to prove harm.
+      </p>
+      <ul class="checklist">
+        <li><strong>The court must act once the conditions are met.</strong> It says &ldquo;shall revoke&rdquo;, not &ldquo;may&rdquo;.</li>
+        <li><strong>No harm to prove.</strong> Compare <a href="/en/divorce-for-harm-uae/">divorce for harm</a> under Article 71, which is built around showing harm, and contested discord, which can go to arbitrators for up to 60 days (Article 72).</li>
+        <li><strong>A possible refund of wedding costs.</strong> If her reason relates to her, she must return, on his request, the dowry and what he spent at her request for the marriage (Article 75(2)).</li>
+      </ul>
+
+      <h3>Article 75 or khula?</h3>
+      <p>
+        Khula is separation at the wife&rsquo;s request with the husband accepting a consideration, taking
+        effect as a minor irrevocable divorce (Article 65). If the consideration is the dowry, giving back
+        what she received is enough and the rest is dropped, and if he stubbornly refuses, the court can
+        order khula for an appropriate consideration (Article 66). Before consummation both routes end with
+        her giving up the dowry and leaving without an iddah. The difference: Article 75 fixes the price at
+        the dowry received, plus wedding spending only where the reason relates to her, while in a contested
+        khula the court decides the consideration. See our <a href="/en/khula-divorce-uae/">khula guide</a>.
+      </p>
+
+      <h3>How an Article 75 case usually runs</h3>
+      <ol class="steps">
+        <li>
+          <h3>Check the facts</h3>
+          <p>Confirm there was no intercourse and no time alone that could be argued as seclusion. If there was, compare khula and divorce for harm instead.</p>
+        </li>
+        <li>
+          <h3>Choose the court</h3>
+          <p>A wife&rsquo;s revocation case can be filed where she or the husband lives or works, or where the marital home is (Article 3). If he has left the UAE, see Article 4 below.</p>
+        </li>
+        <li>
+          <h3>File the claim</h3>
+          <p>Attach the marriage contract (attested if issued abroad), ID documents and proof of the dowry paid. Claims can be filed electronically or on paper (Article 44 of Federal Decree-Law No. 42 of 2022).</p>
+        </li>
+        <li>
+          <h3>Reconciliation is tested</h3>
+          <p>The judge may refer you to Family Guidance if a settlement looks feasible; the referral is discretionary (Article 8). Article 75 requires reconciliation to be impossible, so expect the question.</p>
+        </li>
+        <li>
+          <h3>Return the dowry, keep the receipts</h3>
+          <p>If he claims wedding costs under Article 75(2), proof of who asked for what decides the amount.</p>
+        </li>
+        <li>
+          <h3>Judgment and appeal</h3>
+          <p>Either side may appeal within 30 days (Article 9). There is no iddah, so once the judgment is final she can remarry.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Defects -->
+    <section class="section" aria-labelledby="defect-heading">
+      <h2 id="defect-heading">Non-Consummation Because of Impotence or Another Medical Condition</h2>
+      <p>
+        A condition that prevents intimacy is a ground to end the marriage, and the wife&rsquo;s right to rely
+        on it never lapses. Article 69 lets either spouse ask the court to revoke the contract for a serious,
+        harmful defect, or for one that prevents sexual pleasure, such as impotence, whether it existed
+        before the contract or arose after it.
+      </p>
+      <ul class="checklist">
+        <li><strong>Knowledge usually matters, but not for her.</strong> The right is normally lost if the spouse knew of the defect before the contract or accepted it afterwards, but the wife&rsquo;s right for a defect that prevents sexual pleasure is never extinguished.</li>
+        <li><strong>Incurable:</strong> the court revokes without a grace period.</li>
+        <li><strong>Curable:</strong> the case is postponed for up to one year; if it is not cured and the applicant insists, the court revokes.</li>
+        <li><strong>Evidence:</strong> the court may use experts, in practice medical examination and reports.</li>
+      </ul>
+      <p>
+        The dowry depends on timing and on whose defect it was (Article 70). If the defect existed before
+        the contract and the marriage is revoked before intercourse or seclusion, the husband recovers what
+        he paid of the dowry and the rest falls away (Article 70(2)). If the husband knew of the wife&rsquo;s
+        defect before the contract and still asks for revocation for it before intercourse and seclusion,
+        she receives half the dowry (Article 70(4)). Other paragraphs cover revocation after intercourse.
+      </p>
+      <p>
+        Many couples in this position have lived together, so there has been seclusion even without
+        intercourse. That takes the case outside the before-seclusion paragraphs, and the dowry outcome needs
+        a lawyer&rsquo;s reading of the full Article 70. Talaq and khula stay open too.
+      </p>
+    </section>
+
+    <!-- Refusal to move in -->
+    <section class="section" aria-labelledby="refusal-heading">
+      <h2 id="refusal-heading">When One Spouse Will Not Move In or Consummate</h2>
+      <p>
+        A wife may lawfully refuse to move into the marital home until she receives her due dowry and a
+        suitable home (Article 50). That answers the common complaint that the bride &ldquo;refuses the
+        rukhsati&rdquo;: if the prompt mahr is unpaid or no proper home is ready, waiting is her right. If she
+        consummates before receiving the dowry, it remains a debt she can claim at any time.
+      </p>
+      <p>
+        Once the dowry is paid and a suitable home is ready, the position changes. Under Article 103 a wife
+        loses her right to maintenance if, without a legitimate excuse, she denies herself to her husband or
+        refuses to move into the marital home. Loss of maintenance is the consequence the article names; it
+        is not a divorce in itself.
+      </p>
+      <div class="two-col">
+        <div class="info-box info-box--blue">
+          <h3>If the wife wants out</h3>
+          <p>
+            Article 75 revocation, khula (Articles 65 and 66), divorce for harm, revocation for a defect
+            (Article 69), or, where a dowry that is due has not been paid, revocation for non-payment of the
+            dowry (Article 76).
+          </p>
+        </div>
+        <div class="info-box info-box--gold">
+          <h3>If the husband wants out</h3>
+          <p>
+            Talaq, which before seclusion means paying half the named mahr (Article 47(3)), documented within
+            15 days (Article 58). If he believes her refusal is unjustified, he should ask a lawyer whether a
+            case for discord protects him better before he pronounces anything.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gifts and wedding costs -->
+    <section class="section" aria-labelledby="gifts-heading">
+      <h2 id="gifts-heading">Wedding Costs, Gold and Engagement Gifts</h2>
+      <p>
+        Three kinds of money change hands in a marriage that ends before the rukhsati, and the 2024 law
+        treats them differently.
+      </p>
+      <ul class="checklist">
+        <li><strong>The mahr.</strong> Halved on a talaq before consummation (Article 47(3)), returned under Article 75, or used as the consideration in khula (Article 66). Gold or cash counts as mahr if the contract or the evidence shows it was given as dowry.</li>
+        <li><strong>Wedding spending at the wife&rsquo;s request.</strong> Hall bookings, furniture or other costs she or her family asked for. She repays these on his request when she seeks revocation before consummation for a reason relating to her (Article 75(2)).</li>
+        <li><strong>Engagement gifts.</strong> The 2024 law has separate provisions on engagement and gifts. Whether a ring, jewellery or clothes go back depends on those provisions, what the gift was for and who ended things, so have a lawyer apply them to your list rather than relying on family custom.</li>
+      </ul>
+      <p>
+        Keep receipts, transfers and messages showing who paid for what and at whose request. The Umm Al
+        Quwain repayment order above listed exactly these items.
+      </p>
+    </section>
+
+    <!-- Islamic background -->
+    <section class="section" aria-labelledby="islamic-heading">
+      <h2 id="islamic-heading">Divorce Before Consummation in Islam: The Verses Behind the Rules</h2>
+      <p>
+        The UAE rules follow verses of the Qur&rsquo;an that address this situation directly, and the fatwas
+        most people find online are built on the same verses.
+      </p>
+      <ul class="checklist">
+        <li><strong>Al-Baqarah 2:237:</strong> if a husband divorces his wife before touching her, having fixed a mahr, half of what was fixed is due, unless the wife forgoes it or the one who holds the marriage tie forgoes his share. The verse adds that forgoing is closer to righteousness.</li>
+        <li><strong>Al-Baqarah 2:236:</strong> there is no blame in divorcing a wife before touching her or fixing a mahr, but she should be given a fair provision, the wealthy according to his means and the poor according to his.</li>
+        <li><strong>Al-Ahzab 33:49:</strong> believers who marry and then divorce before touching their wives have no waiting period to count against them; they should provide for them and release them graciously.</li>
+      </ul>
+      <p>
+        The schools of Islamic law differ on one point that matters in practice: whether valid seclusion
+        without intercourse has the same effect as consummation for the mahr and the waiting period. A UAE
+        court does not have to choose a school, because the 2024 law answers it: proper seclusion confirms
+        the full dowry (Article 47(2)), triggers the iddah (Article 82) and makes a first talaq revocable
+        (Article 60). Where no mahr was named, the statute expresses her entitlement as no more than half of
+        the usual dowry (Article 47(3)), which gives the court a measurable figure.
+      </p>
+      <p>
+        For a religious ruling for your own conscience, ask a scholar you trust. For rights a UAE court will
+        enforce, the 2024 law is the reference.
+      </p>
+    </section>
+
+    <!-- Expats -->
+    <section class="section" aria-labelledby="expat-heading">
+      <h2 id="expat-heading">Nikah in Pakistan, India or Bangladesh, but Living in the UAE</h2>
+      <p>
+        If you live in the UAE, a UAE court can usually hear your case even though the nikah was signed
+        abroad, and the 2024 law will usually govern it. Article 3 gives UAE courts jurisdiction over cases
+        against foreigners with a domicile, residence or place of work here, and Article 1(3) applies the
+        2024 law to non-UAE citizens unless one spouse insists on their own law or another agreed law, as
+        permitted.
+      </p>
+      <ul class="checklist">
+        <li><strong>Both of you live here.</strong> A wife&rsquo;s divorce, khula or revocation case can go to the court where either of you lives or works, or where the marital home is (Article 3).</li>
+        <li><strong>She lives here, he has gone home.</strong> Article 4(2) lets a resident wife file for divorce or revocation against a husband who lived or worked here and then left her and moved abroad, or whose address abroad is unknown. He can be served by email or messaging apps (Article 9 of Federal Decree-Law No. 42 of 2022).</li>
+        <li><strong>He lives here, she is abroad.</strong> She can sue in the UAE because he resides here (Article 3), but must name an address for service and a legal representative here (Article 44(2)(a) of the same code).</li>
+      </ul>
+      <p>
+        The court needs the nikah nama or marriage certificate, certified in the issuing country, legalised
+        by the UAE embassy there and attested by the UAE Ministry of Foreign Affairs, with a legal Arabic
+        translation. The UAE is not a party to the Hague Apostille Convention, so an apostille alone is not
+        accepted. Check the mahr entries: the nikah nama usually records the amount, the prompt and deferred
+        split and anything paid at the ceremony, and those entries drive the half-mahr calculation.
+      </p>
+      <p>
+        A UAE divorce also has to be registered or recognised back home under that country&rsquo;s procedure.
+        For Pakistani nationals, see our guide to <a href="/en/pakistani-divorce-uae/">Pakistani divorce in
+        the UAE</a>.
+      </p>
+    </section>
+
+    <!-- Non-Muslims -->
+    <section class="section" aria-labelledby="nonmuslim-heading">
+      <h2 id="nonmuslim-heading">Non-Muslim Couples: Consummation Does Not Affect a Civil Divorce</h2>
+      <p>
+        For non-Muslims, consummation makes no difference to getting divorced. Federal Decree-Law No. 41 of
+        2022 applies to non-Muslim foreigners living in the UAE unless one of them adheres to the law of
+        their home country (Article 1). Either spouse&rsquo;s wish to separate is enough, with no need to
+        justify it or show harm (Article 7), and the court grants the divorce once the other spouse has been
+        served (Article 8), without Family Guidance (Article 3). In Abu Dhabi, non-Muslims use the Abu Dhabi
+        Civil Family Court under Abu Dhabi Law No. 14 of 2021.
+      </p>
+      <p>
+        Whether an unconsummated marriage can instead be annulled, as if it never existed, is a different
+        question, answered by the law that governs the marriage, which may be home-country law. See
+        <a href="/en/annulment-vs-divorce-uae/">annulment vs divorce</a>.
+      </p>
+      <div class="cta-inline">
+        <p>Not sure whether a meeting counted as seclusion, or what mahr is owed?</p>
+        <a href="#contact" class="btn btn--primary">Ask for a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Guides</h2>
+      <div class="service-links">
+        <a href="/en/talaq-uae/" class="service-link">
+          <strong>Talaq in the UAE</strong>
+          <span>Types of talaq, court rules and documentation</span>
+        </a>
+        <a href="/en/annulment-vs-divorce-uae/" class="service-link">
+          <strong>Annulment vs Divorce</strong>
+          <span>When a marriage can be treated as void</span>
+        </a>
+        <a href="/en/mahr-divorce-uae/" class="service-link">
+          <strong>Mahr on Divorce</strong>
+          <span>Prompt, deferred and unpaid mahr claims</span>
+        </a>
+        <a href="/en/iddah-waiting-period-uae/" class="service-link">
+          <strong>Iddah Waiting Period</strong>
+          <span>Length, rights and maintenance during the iddah</span>
+        </a>
+        <a href="/en/khula-divorce-uae/" class="service-link">
+          <strong>Khula Divorce</strong>
+          <span>Wife-initiated divorce and what she gives up</span>
+        </a>
+        <a href="/en/remarriage-after-divorce-uae/" class="service-link">
+          <strong>Remarriage After Divorce</strong>
+          <span>Remarrying each other or someone new</span>
+        </a>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} lang="en" />
+
+    <section class="section section--cta" aria-labelledby="bottom-cta-heading" id="contact">
+      <h2 id="bottom-cta-heading">Married on Paper but Want Out? Ask Before You Sign Anything</h2>
+      <p>Request a free, confidential consultation with a UAE-licensed family lawyer, in English or Arabic, to check whether there was seclusion in law, what mahr is owed and which route fits. If a documented talaq or a simple Article 75 claim will do, that is a good answer to walk away with.</p>
+      <LeadForm lang="en" variant="inline" />
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 DivorceU.AE, a legal referral service. Not a law firm. Information provided is for guidance only and does not constitute legal advice.</p>
+      <nav aria-label="Footer navigation">
+        <a href="/en/privacy-policy/">Privacy Policy</a>
+        <a href="/en/disclaimer/">Disclaimer</a>
+        <a href="/ar/">العربية</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; padding: 80px 0 60px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hero__h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; }
+  .hero__sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
+  .hero__sub a { color: #fff; text-decoration: underline; }
+  .hero__trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 0.9rem; }
+  .hero__trust li { opacity: 0.9; }
+
+  .section { padding: 60px 0; border-bottom: 1px solid #f3f4f6; }
+  .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1e3a5f; margin-bottom: 20px; }
+  .section h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a5f; margin: 24px 0 10px; }
+  .section p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+  .section p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .section p a:hover { text-decoration: underline; }
+  .section--cta { border-bottom: none; background: #f0f4ff; border-radius: 16px; padding: 60px 40px; margin-bottom: 60px; text-align: center; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 24px; }
+  .stat-card { background: #f8faff; border: 2px solid #2563eb; border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 0.875rem; color: #374151; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; margin-bottom: 8px; }
+  .info-box { padding: 24px; border-radius: 12px; }
+  .info-box--blue { background: #eff6ff; border: 2px solid #2563eb; }
+  .info-box--gold { background: #fffbeb; border: 2px solid #c9a84c; }
+  .info-box h3 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .info-box p { font-size: 0.9rem; color: #374151; margin: 0; }
+  .info-box p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .info-box p a:hover { text-decoration: underline; }
+
+  .steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .steps li { counter-increment: steps; padding: 20px 20px 20px 68px; position: relative; background: #f8faff; border-radius: 12px; border-left: 4px solid #2563eb; }
+  .steps li::before { content: counter(steps); position: absolute; left: 18px; top: 20px; width: 32px; height: 32px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+  .steps li h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 6px; }
+  .steps li p { font-size: 0.875rem; color: #374151; margin: 0; }
+  .steps li p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .steps li p a:hover { text-decoration: underline; }
+
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 24px; }
+  .checklist li { position: relative; padding: 14px 18px 14px 48px; background: #f8faff; border-radius: 10px; border-left: 4px solid #c9a84c; color: #374151; font-size: 0.9rem; line-height: 1.6; }
+  .checklist li::before { content: "✓"; position: absolute; left: 16px; top: 13px; width: 22px; height: 22px; background: #c9a84c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+
+  .cost-table { margin-top: 24px; margin-bottom: 16px; overflow-x: auto; }
+  .cost-table table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .cost-table th { background: #1e3a5f; color: #fff; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+  .cost-table td a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .cost-table td a:hover { text-decoration: underline; }
+  .cost-table tr:nth-child(even) td { background: #f8faff; }
+  .table-note { font-size: 0.8rem; color: #6b7280; margin: 10px 0 0; }
+  .table-note a { color: #4b5563; text-decoration: underline; font-weight: 600; }
+
+  .verdict { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .verdict--ok { background: #dcfce7; color: #166534; }
+  .verdict--rec { background: #fef3c7; color: #92400e; }
+  .verdict--ess { background: #fee2e2; color: #991b1b; }
+
+  .cta-inline { display: flex; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .cta-inline p { margin: 0; font-weight: 600; }
+  .btn--primary { display: inline-block; padding: 12px 28px; background: #c9a84c; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+  .btn--primary:hover { background: #b8942d; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { padding: 24px; background: #f8faff; border: 1.5px solid #e5e7eb; border-radius: 12px; }
+  .card h3 { font-size: 0.95rem; font-weight: 700; color: #1e3a5f; margin: 0 0 8px; }
+  .card p { font-size: 0.875rem; color: #4b5563; margin: 0; }
+  .card p a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .card p a:hover { text-decoration: underline; }
+
+  .service-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .service-link { display: flex; flex-direction: column; gap: 4px; padding: 20px; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+  .service-link:hover { border-color: #2563eb; }
+  .service-link strong { color: #1e3a5f; }
+  .service-link span { color: #6b7280; font-size: 0.875rem; }
+
+  .footer { background: #1e3a5f; color: rgba(255,255,255,0.7); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer p { font-size: 0.85rem; margin: 0; }
+  .footer nav { display: flex; gap: 20px; }
+  .footer nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; }
+  .footer nav a:hover { color: #fff; }
+  .main-content { padding-top: 20px; }
+
+  @media (max-width: 768px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 50px 0 40px; }
+    .two-col { grid-template-columns: 1fr; }
+    .section--cta { padding: 40px 24px; }
+    .footer__inner { flex-direction: column; text-align: center; }
+  }
+</style>

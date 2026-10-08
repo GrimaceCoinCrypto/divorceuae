@@ -36,6 +36,14 @@ export const SOURCES: Record<string, Source> = {
     url: 'https://uaelegislation.gov.ae/en/legislations/1586',
     urlAr: 'https://uaelegislation.gov.ae/ar/legislations/1586',
   },
+  'law-42-2022': {
+    title: 'Federal Decree-Law No. 42 of 2022 on the Civil Procedure Code',
+    titleAr: 'مرسوم بقانون اتحادي رقم 42 لسنة 2022 بإصدار قانون الإجراءات المدنية',
+    publisher: UAE_LEG,
+    publisherAr: UAE_LEG_AR,
+    url: 'https://uaelegislation.gov.ae/en/legislations/1602',
+    urlAr: 'https://uaelegislation.gov.ae/ar/legislations/1602',
+  },
   'ad-law-14-2021': {
     title: 'Abu Dhabi Law No. 14 of 2021 (as amended) and Regulation No. 8 of 2022, official English text',
     titleAr: 'قانون أبوظبي رقم 14 لسنة 2021 (بتعديلاته) واللائحة رقم 8 لسنة 2022، النص الإنجليزي الرسمي',
@@ -116,6 +124,7 @@ export const TRIGGERS: Array<[string, RegExp[]]> = [
   ['ad-law-14-2021', [/\b14 of 2021\b/, /\b14 2021\b/, /14 لسنة 2021/]],
   ['adjd-civil-family-court', [/civil family court/, /الأسرة المدنية/]],
   ['dv-law-13-2024', [/\b13 of 2024\b/, /13 لسنة 2024/, /domestic violence/, /العنف الأسري/]],
+  ['law-42-2022', [/\b42 of 2022\b/, /\b42 2022\b/, /42 لسنة 2022/]],
   ['sa-v-fa', [/ewfc 115/]],
   ['uk-fla-1986', [/family law act 1986/]],
   ['hcch-abduction', [/^(?=.*\bhague\b)(?=.*(abduct|custody))/, /^(?=.*لاهاي)(?=.*(اختطاف|حضانة))/]],
